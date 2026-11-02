@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     dataSaver: localStorage.getItem("piradio_datasaver") === "true",
     favorites: JSON.parse(localStorage.getItem("piradio_favs") || "[]"),
     pioneerUser: JSON.parse(localStorage.getItem("piradio_user") || "null"),
+    isBoosted: false,
+    isNormalizerOn: localStorage.getItem("piradio_normalizer") !== "false",
     audio: new Audio(),
     hls: null
   };
@@ -50,14 +52,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchSection = document.getElementById("searchSection");
   const loadMoreBtn = document.getElementById("loadMoreBtn");
   
-  // Lecteur
+  // Lecteur (Axe 3 : Navigation, Boost & Partage)
   const playerThumb = document.getElementById("playerThumb");
   const playerStationTitle = document.getElementById("playerStationTitle");
   const playerStatusText = document.getElementById("playerStatusText");
   const playerStatusIndicator = document.getElementById("playerStatusIndicator");
   const masterPlayBtn = document.getElementById("masterPlayBtn");
   const masterPlayIcon = document.getElementById("masterPlayIcon");
+  const prevStationBtn = document.getElementById("prevStationBtn");
+  const nextStationBtn = document.getElementById("nextStationBtn");
+  const volumeBoostBtn = document.getElementById("volumeBoostBtn");
+  const shareStationBtn = document.getElementById("shareStationBtn");
   const volumeSlider = document.getElementById("volumeSlider");
+  const normalizerToggle = document.getElementById("normalizerToggle");
+  const toastNotification = document.getElementById("toastNotification");
   
   // Auth & Pourboire
   const authBtn = document.getElementById("authBtn");
@@ -125,6 +133,117 @@ document.addEventListener("DOMContentLoaded", () => {
     loadSavedStations();
     populateCountryDropdown();
     renderStations();
+
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    showToast(idx >= 0 ? (t.favorites + " : retirée") : "⭐ Station enregistrée dans l'app !");
+  }
+
+  // ============================================================
+  // AXE 3 : EXPÉRIENCE AUDIO, MEDIASESSION, BOOST & PARTAGE
+  // ============================================================
+  let toastTimer = null;
+  function showToast(msg) {
+    if (!toastNotification) return;
+    toastNotification.textContent = msg;
+    toastNotification.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toastNotification.classList.remove("show");
+    }, 2800);
+  }
+
+  // Contrôles Écran de verrouillage / Bluetooth (MediaSession API)
+  function updateMediaSession(station) {
+    if (!('mediaSession' in navigator) || !station) return;
+    try {
+      const logo = resolveStationLogo(station);
+      const artwork = [
+        { src: logo, sizes: '96x96', type: 'image/png' },
+        { src: logo, sizes: '128x128', type: 'image/png' },
+        { src: logo, sizes: '256x256', type: 'image/png' },
+        { src: logo, sizes: '512x512', type: 'image/png' }
+      ];
+
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: station.name,
+        artist: `${station.country} • ${station.frequency ? station.frequency + ' FM' : station.band}`,
+        album: "Pi Radio • Inform Me",
+        artwork: artwork
+      });
+
+      navigator.mediaSession.playbackState = state.isPlaying ? "playing" : "paused";
+
+      navigator.mediaSession.setActionHandler('play', () => togglePlayback());
+      navigator.mediaSession.setActionHandler('pause', () => togglePlayback());
+      navigator.mediaSession.setActionHandler('stop', () => togglePlayback());
+      navigator.mediaSession.setActionHandler('previoustrack', () => playAdjacentStation(-1));
+      navigator.mediaSession.setActionHandler('nexttrack', () => playAdjacentStation(1));
+    } catch (e) {
+      console.warn("MediaSession non supporté:", e);
+    }
+  }
+
+  // Passer à la station précédente / suivante
+  function playAdjacentStation(direction) {
+    const list = getFilteredList();
+    if (!list || list.length === 0) return;
+    if (!state.currentStation) {
+      startPlayback(list[0], false);
+      return;
+    }
+    const currentIndex = list.findIndex(s => s.id === state.currentStation.id);
+    let nextIndex = 0;
+    if (currentIndex !== -1) {
+      nextIndex = (currentIndex + direction + list.length) % list.length;
+    }
+    startPlayback(list[nextIndex], false);
+  }
+
+  // Application intelligente du volume (Normalisation & Boost)
+  function applyVolumeSettings() {
+    let baseVol = volumeSlider ? parseFloat(volumeSlider.value) : 0.8;
+    
+    // Si Boost sonore actif : amplifie au maximum sans saturation
+    if (state.isBoosted) {
+      state.audio.volume = 1.0;
+      if (volumeBoostBtn) volumeBoostBtn.classList.add("active");
+    } else {
+      // Normalisation active : égalisation automatique
+      if (state.isNormalizerOn && baseVol < 0.9) {
+        state.audio.volume = Math.min(1.0, baseVol * 1.15);
+      } else {
+        state.audio.volume = baseVol;
+      }
+      if (volumeBoostBtn) volumeBoostBtn.classList.remove("active");
+    }
+  }
+
+  // Partager une station en 1 clic (Lien direct / WhatsApp / Pi Chat)
+  async function shareStation(station) {
+    if (!station) return;
+    const url = `${window.location.origin}${window.location.pathname}?station=${encodeURIComponent(station.id)}`;
+    const text = `Écoutez ${station.name} (${station.frequency ? station.frequency + ' FM' : station.country}) en direct sur Pi Radio ! 📻💜`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: station.name,
+          text: text,
+          url: url
+        });
+        return;
+      } catch (err) {
+        // Annulation par l'utilisateur
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(`${text} ${url}`);
+      const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+      showToast(t.stationCopied || "Lien copié dans le presse-papier !");
+    } catch (e) {
+      prompt("Copiez le lien direct vers cette radio :", url);
+    }
   }
 
   // ============================================================
@@ -435,6 +554,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <button class="card-fav-btn ${isFav ? 'active' : ''}" data-id="${st.id}" title="${isFav ? 'Retirer des favoris' : 'Enregistrer dans l\'App'}" aria-label="Favoris">
             ${isFav ? '★' : '☆'}
           </button>
+          <button class="card-share-btn" data-id="${st.id}" title="Partager cette radio" aria-label="Partager">
+            🔗
+          </button>
           <button class="card-play-action" aria-label="Play">
             ${isCardPlaying ? "⏸" : "▶"}
           </button>
@@ -447,6 +569,15 @@ document.addEventListener("DOMContentLoaded", () => {
         favBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           toggleFavorite(st);
+        });
+      }
+
+      // Clic sur le bouton partager (sans déclencher la lecture audio)
+      const shareBtn = card.querySelector(".card-share-btn");
+      if (shareBtn) {
+        shareBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          shareStation(st);
         });
       }
 
@@ -507,6 +638,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     startWatchdog();
+    applyVolumeSettings();
+    updateMediaSession(station);
     renderStations();
   }
 
@@ -528,6 +661,9 @@ document.addEventListener("DOMContentLoaded", () => {
         masterPlayIcon.textContent = "⏸";
         updatePlayerStatusUI();
       }).catch(triggerFallbackOrRetry);
+    }
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.playbackState = state.isPlaying ? "playing" : "paused";
     }
     renderStations();
   }
@@ -730,13 +866,53 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ============================================================
-  // 7. ÉCOUTEURS D'ÉVÉNEMENTS (AXE 2 : PAYS, FM, AM, RECHERCHE DIRECTE)
+  // 7. ÉCOUTEURS D'ÉVÉNEMENTS (AXE 2 & AXE 3 : AUDIO, BOOST, PARTAGE)
   // ============================================================
   masterPlayBtn.addEventListener("click", togglePlayback);
 
+  // Navigation stations (Axe 3)
+  if (prevStationBtn) {
+    prevStationBtn.addEventListener("click", () => playAdjacentStation(-1));
+  }
+  if (nextStationBtn) {
+    nextStationBtn.addEventListener("click", () => playAdjacentStation(1));
+  }
+
+  // Boost sonore (+50%) (Axe 3)
+  if (volumeBoostBtn) {
+    volumeBoostBtn.addEventListener("click", () => {
+      state.isBoosted = !state.isBoosted;
+      applyVolumeSettings();
+      showToast(state.isBoosted ? "⚡ Boost sonore actif (+50%) !" : "Volume standard rétabli");
+    });
+  }
+
+  // Partage de la radio en cours (Axe 3)
+  if (shareStationBtn) {
+    shareStationBtn.addEventListener("click", () => {
+      if (state.currentStation) {
+        shareStation(state.currentStation);
+      } else {
+        showToast("Sélectionnez d'abord une radio pour la partager");
+      }
+    });
+  }
+
+  // Normalisation du son dans les paramètres (Axe 3)
+  if (normalizerToggle) {
+    normalizerToggle.checked = state.isNormalizerOn;
+    normalizerToggle.addEventListener("change", (e) => {
+      state.isNormalizerOn = e.target.checked;
+      localStorage.setItem("piradio_normalizer", state.isNormalizerOn);
+      applyVolumeSettings();
+      showToast(state.isNormalizerOn ? "🔊 Normalisation sonore activée" : "Normalisation désactivée");
+    });
+  }
+
   if (volumeSlider) {
     volumeSlider.addEventListener("input", (e) => {
-      state.audio.volume = parseFloat(e.target.value);
+      state.isBoosted = false;
+      applyVolumeSettings();
     });
   }
 
@@ -915,9 +1091,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Vérification des liens de partage (Deep Linking ?station=id)
+  function checkDeepLink() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const stationId = params.get("station");
+      if (stationId) {
+        const found = state.stations.find(s => s.id === stationId);
+        if (found) {
+          setTimeout(() => startPlayback(found, false), 400);
+        }
+      }
+    } catch (e) {}
+  }
+
   // --- INITIALISATION AU DÉMARRAGE ---
   loadSavedStations();
   populateCountryDropdown();
   updateFrequencyChips();
   applyLanguage(state.lang);
+  checkDeepLink();
 });

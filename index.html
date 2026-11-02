@@ -275,6 +275,18 @@
         </label>
       </div>
 
+      <!-- Normalisation Automatique du Son -->
+      <div class="setting-group">
+        <div class="setting-label">
+          <span>🔊</span> <span data-i18n="normalizerTitle">Normalisation Automatique du Son</span>
+        </div>
+        <div class="setting-desc" data-i18n="normalizerDesc">Égalise le volume pour éviter les écarts entre radios fortes et faibles :</div>
+        <label class="toggle-switch-wrapper" style="cursor: pointer;">
+          <input type="checkbox" id="normalizerToggle" checked style="width: 20px; height: 20px; accent-color: var(--live-green);">
+          <span id="normalizerStatusText" data-i18n="normalizerOn">Actif (Son Équilibré)</span>
+        </label>
+      </div>
+
       <!-- Réinitialiser Données -->
       <div class="setting-group" style="border-bottom: none;">
         <div class="setting-label">
@@ -288,7 +300,7 @@
   </section>
 
   <!-- ============================================================
-       LECTEUR AUDIO FLOTTANT (BOTTOM PLAYER)
+       LECTEUR AUDIO FLOTTANT (BOTTOM PLAYER - AXE 3)
        ============================================================ -->
   <div class="player-bar" id="playerBar">
     <div class="player-inner">
@@ -309,12 +321,24 @@
       </div>
 
       <div class="player-controls">
+        <button id="prevStationBtn" class="player-nav-btn" title="Station précédente" aria-label="Précédent">⏮</button>
         <button id="masterPlayBtn" class="master-play-btn" title="Lecture / Pause">
           <span id="masterPlayIcon">▶</span>
         </button>
+        <button id="nextStationBtn" class="player-nav-btn" title="Station suivante" aria-label="Suivant">⏭</button>
       </div>
 
       <div class="player-extras-right">
+        <!-- Bouton Boost Volume (+50% sonore) -->
+        <button id="volumeBoostBtn" class="volume-boost-btn" title="Booster le volume sonore (+50%)">
+          <span>⚡ Boost</span>
+        </button>
+
+        <!-- Bouton Partager Radio (1-clic) -->
+        <button id="shareStationBtn" class="share-icon-btn" title="Partager cette radio" aria-label="Partager">
+          <span>🔗</span>
+        </button>
+
         <div class="volume-slider-box" style="display: flex; align-items: center; gap: 8px;">
           <span style="font-size: 14px;">🔊</span>
           <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.8" style="width: 80px; accent-color: var(--live-green); cursor: pointer;">
@@ -327,6 +351,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Notification Toast Flottante -->
+  <div id="toastNotification" class="toast-notification"></div>
 
   <!-- ============================================================
        MODALE DE POURBOIRE PI
