@@ -1,11 +1,12 @@
-// Pi Radio v2.0 - Moteur Applicatif & Audio Haute Fiabilité
-// Gère 5 Onglets, 8 Langues, Double Flux de Secours, Reconnexion Watchdog, Sleep Timer & Pi SDK
+// Pi Radio v2.1 - Moteur Applicatif & Audio Haute Fiabilité
+// 6 Menus (Accueil, Explorer, Actualités, Cultures, Sports & Humour, Paramètres)
+// Gère 8 Langues, Double Flux de Secours, Reconnexion Watchdog, Sleep Timer & Pi SDK
 
 document.addEventListener("DOMContentLoaded", () => {
   // --- ÉTAT GLOBAL DE L'APPLICATION ---
   const state = {
     lang: localStorage.getItem("piradio_lang") || "fr",
-    activeTab: "home", // home, explore, culture, sports, settings
+    activeTab: "home", // home, explore, news, culture, sports, settings
     activeContinent: "all",
     searchQuery: "",
     stations: [...CURATED_STATIONS],
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataSaverToggle = document.getElementById("dataSaverToggle");
   const clearCacheBtn = document.getElementById("clearCacheBtn");
 
-  // Helper pour générer un logo de secours officiel avec le drapeau national
+  // Badge officiel avec drapeau national (anti-photos génériques)
   function getFlagFallback(code) {
     return `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23140b27' stroke='%23f3b43f' stroke-width='2'/><text x='50%' y='64%' font-size='44' text-anchor='middle'>${encodeURIComponent(code || '📻')}</text></svg>`;
   }
@@ -98,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================================
-  // 2. GESTION DES VUES & MENUS DE NAVIGATION
+  // 2. GESTION DES 6 ONGLETS DE NAVIGATION (AXE 1)
   // ============================================================
   navTabs.forEach(tab => {
     tab.addEventListener("click", () => {
@@ -133,7 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       continentPills.style.display = "none";
       if (state.activeTab === "home") sectionTitleText.textContent = t.featuredNews;
-      if (state.activeTab === "culture") sectionTitleText.textContent = `${t.catQuran} • ${t.catCulture}`;
+      if (state.activeTab === "news") sectionTitleText.textContent = t.catNews;
+      if (state.activeTab === "culture") sectionTitleText.textContent = t.catCulture;
       if (state.activeTab === "sports") sectionTitleText.textContent = `${t.catSports} • ${t.catComedy}`;
     }
 
@@ -148,8 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (state.activeTab === "home") {
       list = list.filter(st => st.featured || state.favorites.includes(st.id));
+    } else if (state.activeTab === "news") {
+      list = list.filter(st => st.category === "news");
     } else if (state.activeTab === "culture") {
-      list = list.filter(st => st.category === "quran" || st.category === "culture");
+      list = list.filter(st => st.category === "culture" || st.category === "quran");
     } else if (state.activeTab === "sports") {
       list = list.filter(st => st.category === "sports" || st.category === "comedy");
     } else if (state.activeTab === "explore") {
@@ -476,7 +480,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.Pi && window.Pi.createPayment) {
       window.Pi.createPayment({
         amount: 0.1,
-        memo: "Tip for Pi Radio v2.0",
+        memo: "Tip for Pi Radio v2.1",
         metadata: { purpose: "tip" }
       }, {
         onReadyForServerApproval: (pid) => console.log("Approval", pid),

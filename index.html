@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Pi Radio • Inform Me - Application mondiale de radio, actualités, Saint Coran, sports et comédie pour les Pionniers de Pi Network.">
+  <meta name="description" content="Pi Radio • Inform Me - Application mondiale de radio, actualités, cultures, sports et comédie pour les Pionniers de Pi Network.">
   <meta name="theme-color" content="#0c0618">
   <title>Pi Radio • Inform Me - Pioneer Global Streaming</title>
 
@@ -27,7 +27,7 @@
 <body>
 
   <!-- ============================================================
-       EN-TÊTE PRINCIPAL (HEADER AVEC NOUVEAU LOGO ORIGINAL)
+       EN-TÊTE PRINCIPAL (HEADER AVEC LOGO TRICOLORE)
        ============================================================ -->
   <header class="header">
     <div class="header-container">
@@ -73,7 +73,8 @@
   </header>
 
   <!-- ============================================================
-       BARRE DE NAVIGATION PRINCIPALE (5 ONGLETS)
+       BARRE DE NAVIGATION PRINCIPALE (6 ONGLETS - AXE 1)
+       Accueil • Explorer • Actualités • Cultures • Sports & Humour • Paramètres
        ============================================================ -->
   <nav class="nav-tabs-wrapper">
     <div class="nav-tabs-container">
@@ -83,8 +84,11 @@
       <button class="nav-tab-item" data-tab="explore">
         <span>🌍</span> <span data-i18n="navExplore">Explorer</span>
       </button>
+      <button class="nav-tab-item" data-tab="news">
+        <span>📰</span> <span data-i18n="navNews">Actualités</span>
+      </button>
       <button class="nav-tab-item" data-tab="culture">
-        <span>🕌</span> <span data-i18n="navCulture">Cultures & Coran</span>
+        <span>🎭</span> <span data-i18n="navCulture">Cultures</span>
       </button>
       <button class="nav-tab-item" data-tab="sports">
         <span>⚽</span> <span data-i18n="navSports">Sports & Humour</span>
@@ -130,7 +134,7 @@
       <input 
         type="text" 
         id="searchInput" 
-        placeholder="Rechercher une radio, pays, actualité, sport..." 
+        placeholder="Rechercher une radio, fréquence FM (ex: 94.3, 104.7), pays..." 
         autocomplete="off"
       >
     </div>
