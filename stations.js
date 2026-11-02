@@ -633,6 +633,40 @@ const CURATED_STATIONS = [
     fallbackUrl: "https://qurango.net/radio/abdulrahman_alsudaes",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/320px-Flag_of_Egypt.svg.png",
     featured: true
+  },
+  {
+    id: "radio-swiss-jazz",
+    name: "Radio Swiss Jazz",
+    country: "Suisse",
+    code: "🇨🇭",
+    continent: "europe",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Français & Multilingual",
+    genre: "Jazz, Soul, Blues & Swing",
+    streamUrl: "https://stream.srg-ssr.ch/m/rsj/aacp_96",
+    fallbackUrl: "https://stream.srg-ssr.ch/m/rsj/aacp_96",
+    logo: "https://www.google.com/s2/favicons?domain=radioswissjazz.ch&sz=128",
+    homepage: "https://www.radioswissjazz.ch",
+    featured: true
+  },
+  {
+    id: "capital-chill-uk",
+    name: "Capital Chill UK",
+    country: "Royaume-Uni",
+    code: "🇬🇧",
+    continent: "europe",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Chillout, Ambient, Deep Beats & Lounge",
+    streamUrl: "https://media-ssl.musicradio.com/CapitalChill",
+    fallbackUrl: "https://media-ssl.musicradio.com/CapitalChill",
+    logo: "https://www.google.com/s2/favicons?domain=capitalfm.com&sz=128",
+    homepage: "https://www.capitalfm.com",
+    featured: true
   }
 ];
 
@@ -647,6 +681,19 @@ function getCountryFlagEmoji(code) {
   }
 }
 
+// Helper extraction domaine propre pour Google Favicon Service
+function getDomainFromUrl(urlStr) {
+  if (!urlStr || typeof urlStr !== "string") return "";
+  try {
+    let clean = urlStr.trim();
+    if (!clean.startsWith("http")) clean = "https://" + clean;
+    const hostname = new URL(clean).hostname;
+    return hostname.replace(/^www\./, "");
+  } catch (e) {
+    return "";
+  }
+}
+
 // Moteur de recherche mondial Radio Browser API en temps réel (45 000+ stations)
 async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
   try {
@@ -657,9 +704,12 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
     ];
     const base = servers[Math.floor(Math.random() * servers.length)];
     const qClean = (query || "").trim().replace(',', '.');
+    const isTagQuery = ["jazz", "chill", "chillout", "sport", "sports", "news", "rock", "pop", "classical", "culture", "dance"].includes(qClean.toLowerCase());
     
     let url = `${base}/json/stations/search?limit=${limit}&hidebroken=true&order=votes&reverse=true`;
-    if (qClean !== "") {
+    if (isTagQuery) {
+      url += `&tag=${encodeURIComponent(qClean.toLowerCase())}`;
+    } else if (qClean !== "") {
       url += `&name=${encodeURIComponent(qClean)}`;
     }
     if (country && country !== "all") {
@@ -669,6 +719,15 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
     let res = await fetch(url, { headers: { "User-Agent": "PiRadio-PioneerApp/2.1" } });
     if (!res.ok) return [];
     let data = await res.json();
+
+    // Si la recherche par tag renvoie 0 résultat, tenter par nom
+    if ((!data || data.length === 0) && isTagQuery) {
+      const fallbackUrl = `${base}/json/stations/search?limit=${limit}&hidebroken=true&order=votes&reverse=true&name=${encodeURIComponent(qClean)}`;
+      const resName = await fetch(fallbackUrl, { headers: { "User-Agent": "PiRadio-PioneerApp/2.1" } });
+      if (resName.ok) {
+        data = await resName.json();
+      }
+    }
 
     // Si la recherche avec le pays sélectionné ne renvoie rien, bascule automatique sur la recherche globale
     if ((!data || data.length === 0) && country && country !== "all" && qClean !== "") {
@@ -686,23 +745,36 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
       const freqMatch = st.name.match(/\d+([.,]\d+)?/);
       const freq = freqMatch ? freqMatch[0].replace(',', '.') : "";
       const isAM = st.name.toLowerCase().includes("am") || (st.tags && st.tags.toLowerCase().includes("am"));
-      const isFM = st.name.toLowerCase().includes("fm") || (st.tags && st.tags.toLowerCase().includes("fm")) || freq !== "";
+      const freqNum = freq ? parseFloat(freq) : null;
+      const isFM = (freqNum !== null && freqNum >= 87 && freqNum <= 108) || st.name.toLowerCase().includes(" fm") || st.name.toLowerCase().endsWith("fm");
       const flagEmoji = getCountryFlagEmoji(st.countrycode);
       
+      // Récupération intelligente du logo :
+      // 1. Logo officiel fourni en HTTPS
+      // 2. Ou Logo officiel haute résolution via Google Favicon Service sur le domaine du site web de la radio
+      const domain = getDomainFromUrl(st.homepage);
+      let logoUrl = "";
+      if (st.favicon && st.favicon.startsWith("https://")) {
+        logoUrl = st.favicon;
+      } else if (domain) {
+        logoUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+      }
+
       return {
         id: "rb_" + st.stationuuid,
         name: st.name.trim(),
         country: st.country || "Monde",
         code: flagEmoji,
         continent: "all",
-        category: "news",
+        category: isTagQuery ? qClean.toLowerCase() : "news",
         frequency: freq,
         band: isAM ? "AM" : (isFM ? "FM" : "WEB"),
         language: st.language || "Multilingual",
         genre: st.tags ? st.tags.split(",").slice(0, 3).join(", ") : "Radio Live",
         streamUrl: st.url_resolved || st.url,
         fallbackUrl: st.url,
-        logo: st.favicon && st.favicon.startsWith("http") ? st.favicon : "",
+        logo: logoUrl,
+        homepage: st.homepage || "",
         featured: false
       };
     });

@@ -80,6 +80,53 @@ document.addEventListener("DOMContentLoaded", () => {
     return `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23140b27' stroke='%23f3b43f' stroke-width='2'/><text x='50%' y='64%' font-size='44' text-anchor='middle'>${encodeURIComponent(code || '📻')}</text></svg>`;
   }
 
+  // Résolution intelligente du logo : Logo direct HTTPS, ou Google Favicon Service 128px via domaine, ou Drapeau SVG
+  function resolveStationLogo(st) {
+    if (st.logo && st.logo.startsWith("https://") && !st.logo.includes("Globe_icon")) {
+      return st.logo;
+    }
+    const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
+    if (domain) {
+      return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+    }
+    return getFlagFallback(st.code);
+  }
+
+  // Chargement et fusion des stations favorites enregistrées par le Pionnier
+  function loadSavedStations() {
+    try {
+      const saved = JSON.parse(localStorage.getItem("piradio_saved_stations") || "[]");
+      const existingIds = new Set(CURATED_STATIONS.map(s => s.id));
+      const extra = saved.filter(s => !existingIds.has(s.id));
+      state.stations = [...CURATED_STATIONS, ...extra];
+    } catch (e) {
+      state.stations = [...CURATED_STATIONS];
+    }
+  }
+
+  // Enregistrer ou retirer une station des favoris (persistance locale intégrale)
+  function toggleFavorite(st) {
+    const idx = state.favorites.indexOf(st.id);
+    let saved = JSON.parse(localStorage.getItem("piradio_saved_stations") || "[]");
+
+    if (idx >= 0) {
+      state.favorites.splice(idx, 1);
+      saved = saved.filter(s => s.id !== st.id);
+    } else {
+      state.favorites.push(st.id);
+      const isCurated = CURATED_STATIONS.some(s => s.id === st.id);
+      if (!isCurated && !saved.some(s => s.id === st.id)) {
+        saved.push(st);
+      }
+    }
+
+    localStorage.setItem("piradio_favs", JSON.stringify(state.favorites));
+    localStorage.setItem("piradio_saved_stations", JSON.stringify(saved));
+    loadSavedStations();
+    populateCountryDropdown();
+    renderStations();
+  }
+
   // ============================================================
   // AXE 2 : ALIMENTATION DYNAMIQUE DU MENU DÉROULANT DES PAYS
   // ============================================================
@@ -353,7 +400,9 @@ document.addEventListener("DOMContentLoaded", () => {
     list.forEach(st => {
       const isCurrent = state.currentStation && state.currentStation.id === st.id;
       const isCardPlaying = isCurrent && state.isPlaying;
+      const isFav = state.favorites.includes(st.id);
       const fallbackLogo = getFlagFallback(st.code);
+      const resolvedLogo = resolveStationLogo(st);
       
       const badgeHtml = st.frequency 
         ? `<span class="card-freq-badge">${st.frequency} ${st.band || 'FM'}</span>` 
@@ -362,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("div");
       card.className = `station-card ${isCardPlaying ? "playing" : ""}`;
       card.innerHTML = `
-        <img class="station-logo" src="${st.logo}" alt="${st.name}" onerror="this.src='${fallbackLogo}'; this.onerror=null;"/>
+        <img class="station-logo" src="${resolvedLogo}" alt="${st.name}" loading="lazy" onerror="if(this.src!=='${fallbackLogo}'){this.src='${fallbackLogo}';} this.onerror=null;"/>
         <div class="station-info">
           <div class="station-name">${st.name}</div>
           <div class="station-origin">
@@ -377,11 +426,26 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="sound-wave-bar"></div>
           <div class="sound-wave-bar"></div>
         </div>
-        <button class="card-play-action" aria-label="Play">
-          ${isCardPlaying ? "⏸" : "▶"}
-        </button>
+        <div class="card-actions">
+          <button class="card-fav-btn ${isFav ? 'active' : ''}" data-id="${st.id}" title="${isFav ? 'Retirer des favoris' : 'Enregistrer dans l\'App'}" aria-label="Favoris">
+            ${isFav ? '★' : '☆'}
+          </button>
+          <button class="card-play-action" aria-label="Play">
+            ${isCardPlaying ? "⏸" : "▶"}
+          </button>
+        </div>
       `;
 
+      // Clic sur le bouton favoris (sans déclencher la lecture audio)
+      const favBtn = card.querySelector(".card-fav-btn");
+      if (favBtn) {
+        favBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggleFavorite(st);
+        });
+      }
+
+      // Clic sur la carte pour lancer la lecture
       card.addEventListener("click", () => {
         if (isCurrent) {
           togglePlayback();
@@ -405,9 +469,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const streamToLoad = useFallback && station.fallbackUrl ? station.fallbackUrl : station.streamUrl;
     const fallbackLogo = getFlagFallback(station.code);
+    const resolvedLogo = resolveStationLogo(station);
 
     playerStationTitle.textContent = station.name;
-    playerThumb.src = station.logo;
+    playerThumb.src = resolvedLogo;
     playerThumb.onerror = () => { playerThumb.src = fallbackLogo; playerThumb.onerror = null; };
     playerStatusText.textContent = TRANSLATIONS[state.lang].buffering;
     playerStatusIndicator.className = "player-status-indicator buffering";
@@ -846,6 +911,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- INITIALISATION AU DÉMARRAGE ---
+  loadSavedStations();
   populateCountryDropdown();
   updateFrequencyChips();
   applyLanguage(state.lang);
