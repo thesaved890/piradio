@@ -363,6 +363,38 @@ const CURATED_STATIONS = [
     featured: true
   },
   {
+    id: "radio-tiempo-89-5",
+    name: "Radio Tiempo 89.5 FM",
+    country: "Colombie",
+    code: "🇨🇴",
+    continent: "americas",
+    category: "news",
+    frequency: "89.5",
+    band: "FM",
+    language: "Español",
+    genre: "Latino Hits, Actualités & Musique",
+    streamUrl: "https://26583.live.streamtheworld.com/RT_CALIAAC_SC",
+    fallbackUrl: "https://26583.live.streamtheworld.com/RT_CALIAAC_SC",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/320px-Flag_of_Colombia.svg.png",
+    featured: true
+  },
+  {
+    id: "fox-sports-640-am",
+    name: "Fox Sports 640 AM",
+    country: "États-Unis",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "sports",
+    frequency: "640",
+    band: "AM",
+    language: "English",
+    genre: "Live Sports, Football & Talk",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WMENAMAAC.aac",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WMENAMAAC.aac",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png",
+    featured: true
+  },
+  {
     id: "cbn-sao-paulo",
     name: "Rádio CBN 90.5 São Paulo",
     country: "Brésil",

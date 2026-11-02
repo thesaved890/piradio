@@ -485,6 +485,18 @@ body {
   white-space: nowrap;
 }
 
+.chips-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chips-container::-webkit-scrollbar {
+  display: none;
+}
+
 .freq-chip {
   background: rgba(0, 230, 118, 0.08);
   border: 1px solid rgba(0, 230, 118, 0.3);

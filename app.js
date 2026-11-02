@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchApiStatus = document.getElementById("searchApiStatus");
   const searchApiStatusText = document.getElementById("searchApiStatusText");
   const frequencyChips = document.getElementById("frequencyChips");
+  const freqChipLabel = document.getElementById("freqChipLabel");
+  const chipsContainer = document.getElementById("chipsContainer");
   const continentPills = document.getElementById("continentPills");
   const heroSection = document.getElementById("heroSection");
   const searchSection = document.getElementById("searchSection");
@@ -104,6 +106,64 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================================
+  // AXE 2 : PUCE DE FRÉQUENCES DYNAMIQUES SELON LA BANDE CHOISIE
+  // ============================================================
+  function updateFrequencyChips() {
+    if (!freqChipLabel || !chipsContainer) return;
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    let chips = [];
+
+    if (state.selectedBand === "AM") {
+      freqChipLabel.textContent = t.freqLabelAM || "Fréquences AM :";
+      chips = [
+        { label: "540 AM", val: "540" },
+        { label: "640 AM", val: "640" },
+        { label: "740 AM", val: "740" },
+        { label: "820 AM", val: "820" },
+        { label: "1010 AM", val: "1010" },
+        { label: "1130 AM", val: "1130" },
+        { label: "1530 AM", val: "1530" }
+      ];
+    } else if (state.selectedBand === "FM") {
+      freqChipLabel.textContent = t.freqLabelFM || "Fréquences FM :";
+      chips = [
+        { label: "89.5 FM", val: "89.5" },
+        { label: "92.9 FM", val: "92.9" },
+        { label: "93.9 FM", val: "93.9" },
+        { label: "94.3 FM", val: "94.3" },
+        { label: "97.7 FM", val: "97.7" },
+        { label: "98.4 FM", val: "98.4" },
+        { label: "104.3 FM", val: "104.3" },
+        { label: "105.5 FM", val: "105.5" }
+      ];
+    } else if (state.selectedBand === "WEB") {
+      freqChipLabel.textContent = t.freqLabelWEB || "Stations Web :";
+      chips = [
+        { label: "News 24", val: "News" },
+        { label: "Jazz", val: "Jazz" },
+        { label: "Chillout", val: "Chill" },
+        { label: "Sport", val: "Sport" },
+        { label: "Culture", val: "Culture" }
+      ];
+    } else {
+      freqChipLabel.textContent = t.freqLabelAll || "Fréquences & Ondes :";
+      chips = [
+        { label: "89.5 FM", val: "89.5" },
+        { label: "93.9 FM", val: "93.9" },
+        { label: "94.3 FM", val: "94.3" },
+        { label: "97.7 FM", val: "97.7" },
+        { label: "105.5 FM", val: "105.5" },
+        { label: "640 AM", val: "640" },
+        { label: "1010 AM", val: "1010" }
+      ];
+    }
+
+    chipsContainer.innerHTML = chips.map(c => 
+      `<button class="freq-chip ${state.searchQuery.trim() === c.val ? 'active' : ''}" data-freq="${c.val}">${c.label}</button>`
+    ).join("");
+  }
+
+  // ============================================================
   // 1. TRADUCTION & GESTION DES 8 LANGUES (i18n)
   // ============================================================
   function applyLanguage(langCode) {
@@ -130,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       countrySelect.options[0].textContent = `🌍 ${t.allCountries}`;
     }
 
+    updateFrequencyChips();
     updatePlayerStatusUI();
     updateAuthUI();
     renderView();
@@ -153,9 +214,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  function renderView() {
-    const t = TRANSLATIONS[state.lang];
+  function updateSectionTitle() {
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    if (state.searchQuery.trim() !== "") {
+      sectionTitleText.textContent = `${t.searchResultsFor || "Résultats pour"} "${state.searchQuery}"`;
+    } else if (state.activeTab === "explore") {
+      sectionTitleText.textContent = t.navExplore;
+    } else if (state.activeTab === "home") {
+      sectionTitleText.textContent = t.featuredNews;
+    } else if (state.activeTab === "news") {
+      sectionTitleText.textContent = t.catNews;
+    } else if (state.activeTab === "culture") {
+      sectionTitleText.textContent = t.catCulture;
+    } else if (state.activeTab === "sports") {
+      sectionTitleText.textContent = `${t.catSports} • ${t.catComedy}`;
+    }
+  }
 
+  function renderView() {
     if (state.activeTab === "settings") {
       heroSection.style.display = "none";
       searchSection.style.display = "none";
@@ -169,17 +245,15 @@ document.addEventListener("DOMContentLoaded", () => {
     heroSection.style.display = "block";
     searchSection.style.display = "block";
 
-    if (state.activeTab === "explore") {
+    if (state.searchQuery.trim() !== "") {
+      continentPills.style.display = "none";
+    } else if (state.activeTab === "explore") {
       continentPills.style.display = "flex";
-      sectionTitleText.textContent = t.navExplore;
     } else {
       continentPills.style.display = "none";
-      if (state.activeTab === "home") sectionTitleText.textContent = t.featuredNews;
-      if (state.activeTab === "news") sectionTitleText.textContent = t.catNews;
-      if (state.activeTab === "culture") sectionTitleText.textContent = t.catCulture;
-      if (state.activeTab === "sports") sectionTitleText.textContent = `${t.catSports} • ${t.catComedy}`;
     }
 
+    updateSectionTitle();
     renderStations();
   }
 
@@ -188,19 +262,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   function getFilteredList() {
     let list = [...state.stations, ...state.apiStations];
+    const isSearching = state.searchQuery.trim() !== "";
 
-    // 1. Filtrage par onglet actif
-    if (state.activeTab === "home") {
-      list = list.filter(st => st.featured || state.favorites.includes(st.id));
-    } else if (state.activeTab === "news") {
-      list = list.filter(st => st.category === "news");
-    } else if (state.activeTab === "culture") {
-      list = list.filter(st => st.category === "culture" || st.category === "quran");
-    } else if (state.activeTab === "sports") {
-      list = list.filter(st => st.category === "sports" || st.category === "comedy");
-    } else if (state.activeTab === "explore") {
-      if (state.activeContinent !== "all") {
-        list = list.filter(st => st.continent === state.activeContinent);
+    // 1. Filtrage par onglet actif (UNIQUEMENT quand aucune recherche n'est en cours)
+    if (!isSearching) {
+      if (state.activeTab === "home") {
+        list = list.filter(st => st.featured || state.favorites.includes(st.id));
+      } else if (state.activeTab === "news") {
+        list = list.filter(st => st.category === "news");
+      } else if (state.activeTab === "culture") {
+        list = list.filter(st => st.category === "culture" || st.category === "quran");
+      } else if (state.activeTab === "sports") {
+        list = list.filter(st => st.category === "sports" || st.category === "comedy");
+      } else if (state.activeTab === "explore") {
+        if (state.activeContinent !== "all") {
+          list = list.filter(st => st.continent === state.activeContinent);
+        }
       }
     }
 
@@ -224,22 +301,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. Filtrage par Pays sélectionné dans le menu déroulant
     if (state.selectedCountry !== "all") {
-      list = list.filter(st => st.country.toLowerCase() === state.selectedCountry.toLowerCase());
+      const countryFiltered = list.filter(st => (st.country || "").toLowerCase() === state.selectedCountry.toLowerCase());
+      // Si une recherche textuelle/fréquence est en cours et que ce pays n'a pas cette station, afficher les résultats mondiaux
+      if (isSearching && countryFiltered.length === 0) {
+        // conserver list globale
+      } else {
+        list = countryFiltered;
+      }
     }
 
     // 4. Recherche textuelle et par fréquence FM/AM en chiffres
-    if (state.searchQuery.trim() !== "") {
+    if (isSearching) {
       const q = state.searchQuery.toLowerCase().trim();
       const qNum = q.replace(',', '.');
       list = list.filter(st => {
-        const nameMatch = st.name.toLowerCase().includes(q) || st.name.toLowerCase().includes(qNum);
-        const countryMatch = st.country.toLowerCase().includes(q);
-        const genreMatch = st.genre.toLowerCase().includes(q);
-        const langMatch = st.language.toLowerCase().includes(q);
-        // Correspondance numérique directe sur le champ frequency (ex: 93.9, 94.3, 105.5)
+        const nameMatch = (st.name || "").toLowerCase().includes(q) || (st.name || "").toLowerCase().includes(qNum);
+        const countryMatch = (st.country || "").toLowerCase().includes(q);
+        const genreMatch = (st.genre || "").toLowerCase().includes(q);
+        const langMatch = (st.language || "").toLowerCase().includes(q);
+        // Correspondance numérique directe sur le champ frequency (ex: 89.5, 93.9, 94.3, 105.5)
         const freqDirectMatch = st.frequency && (st.frequency.includes(qNum) || qNum.includes(st.frequency));
         // Correspondance sur les chiffres du nom
-        const numbersInName = st.name.match(/\d+([.,]\d+)?/g);
+        const numbersInName = (st.name || "").match(/\d+([.,]\d+)?/g);
         const freqNameMatch = numbersInName && numbersInName.some(num => num.replace(',', '.').includes(qNum));
 
         return nameMatch || countryMatch || genreMatch || langMatch || freqDirectMatch || freqNameMatch;
@@ -250,6 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderStations() {
+    updateSectionTitle();
     const list = getFilteredList();
     stationsGrid.innerHTML = "";
     const t = TRANSLATIONS[state.lang];
@@ -661,7 +745,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (bandSelect) {
     bandSelect.addEventListener("change", (e) => {
       state.selectedBand = e.target.value;
+      updateFrequencyChips();
       renderStations();
+      if (state.searchQuery.trim().length >= 2) {
+        triggerLiveSearch(state.searchQuery);
+      }
     });
   }
 
@@ -759,5 +847,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- INITIALISATION AU DÉMARRAGE ---
   populateCountryDropdown();
+  updateFrequencyChips();
   applyLanguage(state.lang);
 });

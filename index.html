@@ -166,16 +166,12 @@
       <span id="searchApiStatusText" data-i18n="searchingGlobal">🌐 Recherche mondiale en direct...</span>
     </div>
 
-    <!-- Puces d'accès direct aux Fréquences FM populaires -->
+    <!-- Puces d'accès direct aux Fréquences selon la bande choisie -->
     <div class="frequency-chips" id="frequencyChips">
-      <span class="freq-chip-label">Fréquences FM :</span>
-      <button class="freq-chip" data-freq="94.3">94.3 FM</button>
-      <button class="freq-chip" data-freq="97.7">97.7 FM</button>
-      <button class="freq-chip" data-freq="92.9">92.9 FM</button>
-      <button class="freq-chip" data-freq="98.4">98.4 FM</button>
-      <button class="freq-chip" data-freq="104.3">104.3 FM</button>
-      <button class="freq-chip" data-freq="93.9">93.9 FM</button>
-      <button class="freq-chip" data-freq="105.5">105.5 FM</button>
+      <span class="freq-chip-label" id="freqChipLabel">Fréquences & Ondes :</span>
+      <div id="chipsContainer" class="chips-container">
+        <!-- Rendu dynamique par updateFrequencyChips() selon la bande active (FM, AM, WEB, Toutes) -->
+      </div>
     </div>
   </section>
 
