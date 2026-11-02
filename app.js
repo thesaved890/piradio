@@ -357,16 +357,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // 4. Recherche textuelle et par fréquence FM/AM en chiffres
+    // 4. Recherche textuelle et par fréquence FM/AM en chiffres (avec correction des fautes courantes)
     if (isSearching) {
       const q = state.searchQuery.toLowerCase().trim();
+      const qCorrected = q.replace(/aeokuta/g, "abeokuta").replace(/ketou/g, "kétou").replace(/alaketu/g, "alakétu");
       const qNum = q.replace(',', '.');
       list = list.filter(st => {
-        const nameMatch = (st.name || "").toLowerCase().includes(q) || (st.name || "").toLowerCase().includes(qNum);
-        const countryMatch = (st.country || "").toLowerCase().includes(q);
-        const genreMatch = (st.genre || "").toLowerCase().includes(q);
+        const nameMatch = (st.name || "").toLowerCase().includes(q) || 
+                          (st.name || "").toLowerCase().includes(qCorrected) || 
+                          (st.name || "").toLowerCase().includes(qNum);
+        const countryMatch = (st.country || "").toLowerCase().includes(q) || 
+                             (st.country || "").toLowerCase().includes(qCorrected);
+        const genreMatch = (st.genre || "").toLowerCase().includes(q) || 
+                           (st.genre || "").toLowerCase().includes(qCorrected);
         const langMatch = (st.language || "").toLowerCase().includes(q);
-        // Correspondance numérique directe sur le champ frequency (ex: 89.5, 93.9, 94.3, 105.5)
+        // Correspondance numérique directe sur le champ frequency (ex: 95.8, 89.5, 93.9, 94.3, 105.5)
         const freqDirectMatch = st.frequency && (st.frequency.includes(qNum) || qNum.includes(st.frequency));
         // Correspondance sur les chiffres du nom
         const numbersInName = (st.name || "").match(/\d+([.,]\d+)?/g);
@@ -750,7 +755,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const qNormalized = q.replace(',', '.');
+      const qNormalized = q.replace(',', '.').replace(/aeokuta/gi, "abeokuta").replace(/ketou/gi, "kétou");
       const countryParam = state.selectedCountry !== "all" ? state.selectedCountry : "";
       
       const results = await searchRadioBrowserAPI(qNormalized, countryParam, 25);

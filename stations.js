@@ -54,6 +54,23 @@ const CURATED_STATIONS = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Benin.svg/320px-Flag_of_Benin.svg.png",
     featured: false
   },
+  {
+    id: "radio-alaketu-ketou-95-8",
+    name: "Radio Alakétu 95.8 FM (Kétou)",
+    country: "Bénin",
+    code: "🇧🇯",
+    continent: "africa",
+    category: "news",
+    frequency: "95.8",
+    band: "FM",
+    language: "Français, Nago & Yoruba",
+    genre: "Radio Communautaire de Kétou, Culture & Développement",
+    streamUrl: "https://listen.radioking.com/radio/47608/stream/84430",
+    fallbackUrl: "https://listen.radioking.com/radio/51919/stream/88927",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Benin.svg/320px-Flag_of_Benin.svg.png",
+    homepage: "https://www.africawebradio.bj",
+    featured: true
+  },
 
   // ==========================================
   // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE & 🇲🇦 MAROC (MAGHREB)
@@ -192,6 +209,40 @@ const CURATED_STATIONS = [
     streamUrl: "https://go.webgateready.com/bondfm",
     fallbackUrl: "https://go.webgateready.com/metrofm/radio.mp3",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    featured: true
+  },
+  {
+    id: "eagle-7-fm-abeokuta",
+    name: "Eagle 7 FM 103.7 Abeokuta",
+    country: "Nigeria",
+    code: "🇳🇬",
+    continent: "africa",
+    category: "sports",
+    frequency: "103.7",
+    band: "FM",
+    language: "English & Yoruba",
+    genre: "Sports, News & Entertainment Abeokuta",
+    streamUrl: "https://eagle7fm-atunwadigital.streamguys1.com/eagle7fm",
+    fallbackUrl: "https://mpc.my-control-panel.eu/stream/8118",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    homepage: "https://eagle7fm.com",
+    featured: true
+  },
+  {
+    id: "ogbc-fm-abeokuta",
+    name: "OGBC Radio 90.5 FM Abeokuta",
+    country: "Nigeria",
+    code: "🇳🇬",
+    continent: "africa",
+    category: "news",
+    frequency: "90.5",
+    band: "FM",
+    language: "Yoruba & English",
+    genre: "Ogun State Broadcasting Corporation, News & Culture",
+    streamUrl: "https://mpc.my-control-panel.eu/stream/8118",
+    fallbackUrl: "https://eagle7fm-atunwadigital.streamguys1.com/eagle7fm",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    homepage: "https://ogbc.com.ng",
     featured: true
   },
   {
