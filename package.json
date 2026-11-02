@@ -1,0 +1,21 @@
+{
+  "name": "piradio",
+  "version": "1.0.0",
+  "description": "Pi Radio - Inform Me • Pioneer Global Radio dApp",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -s . -l 3000",
+    "dev": "python -m http.server 3000"
+  },
+  "keywords": [
+    "pi-network",
+    "pioneer",
+    "radio",
+    "streaming",
+    "web3",
+    "pwa"
+  ],
+  "author": "Pioneer Creator",
+  "license": "MIT"
+}
+

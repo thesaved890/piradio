@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Pi Radio • Inform Me - Application mondiale de radio, actualités, Saint Coran, sports et comédie pour les Pionniers de Pi Network.">
+  <meta name="theme-color" content="#0c0618">
+  <title>Pi Radio • Inform Me - Pioneer Global Streaming</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Google Fonts: Inter & Cairo (pour l'Arabe) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- HLS.js pour lecture de streaming direct -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <!-- Pi Network SDK Officiel -->
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+
+  <!-- Feuille de Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       EN-TÊTE PRINCIPAL (HEADER AVEC NOUVEAU LOGO ORIGINAL)
+       ============================================================ -->
+  <header class="header">
+    <div class="header-container">
+      <div class="brand">
+        <!-- Logo Original Tricolore en SVG -->
+        <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" fill="url(#violetGrad)" stroke="#f3b43f" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="32" stroke="#00e676" stroke-width="2" stroke-dasharray="4 3"/>
+          <circle cx="50" cy="50" r="18" fill="url(#goldGrad)" />
+          <path d="M44 38L62 50L44 62V38Z" fill="#0c0618"/>
+          <path d="M72 50C72 62.15 62.15 72 50 72" stroke="#00e676" stroke-width="3" stroke-linecap="round"/>
+          <path d="M50 28C62.15 28 72 37.85 72 50" stroke="#f3b43f" stroke-width="3" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="violetGrad" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0%" stop-color="#2d1354"/>
+              <stop offset="100%" stop-color="#120824"/>
+            </linearGradient>
+            <linearGradient id="goldGrad" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0%" stop-color="#ffd064"/>
+              <stop offset="100%" stop-color="#f3b43f"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div>
+          <div class="brand-title">Pi Radio</div>
+          <div class="brand-slogan" data-i18n="slogan">Inform Me • Pioneer Global Radio</div>
+        </div>
+      </div>
+
+      <!-- Connexion / Déconnexion Pi Network -->
+      <div class="header-actions">
+        <button id="authBtn" class="auth-btn disconnected" title="Authentification Pi">
+          <span class="live-dot"></span>
+          <span id="authBtnText" data-i18n="connectPi">Connexion Pi</span>
+        </button>
+
+        <button id="disconnectBtn" class="disconnect-icon-btn" style="display: none;" title="Déconnexion" data-i18n="disconnectPi">
+          Déconnexion
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       BARRE DE NAVIGATION PRINCIPALE (5 ONGLETS)
+       ============================================================ -->
+  <nav class="nav-tabs-wrapper">
+    <div class="nav-tabs-container">
+      <button class="nav-tab-item active" data-tab="home">
+        <span>🏠</span> <span data-i18n="navHome">Accueil</span>
+      </button>
+      <button class="nav-tab-item" data-tab="explore">
+        <span>🌍</span> <span data-i18n="navExplore">Explorer</span>
+      </button>
+      <button class="nav-tab-item" data-tab="culture">
+        <span>🕌</span> <span data-i18n="navCulture">Cultures & Coran</span>
+      </button>
+      <button class="nav-tab-item" data-tab="sports">
+        <span>⚽</span> <span data-i18n="navSports">Sports & Humour</span>
+      </button>
+      <button class="nav-tab-item" data-tab="settings">
+        <span>⚙️</span> <span data-i18n="navSettings">Paramètres</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION HERO BANNER
+       ============================================================ -->
+  <section class="hero-section" id="heroSection">
+    <div class="hero-box">
+      <div class="hero-info">
+        <h1 data-i18n="appTitle">Pi Radio</h1>
+        <p data-i18n="slogan">Inform Me • La Radio Mondiale des Pionniers</p>
+      </div>
+      <div class="hero-badges">
+        <div class="badge-pill green">
+          <div class="badge-val">LIVE</div>
+          <div class="badge-lbl">Double Flux</div>
+        </div>
+        <div class="badge-pill">
+          <div class="badge-val">8</div>
+          <div class="badge-lbl">Langues</div>
+        </div>
+        <div class="badge-pill">
+          <div class="badge-val">0.1 π</div>
+          <div class="badge-lbl">Pourboire</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BARRE DE RECHERCHE & SOUS-FILTRES
+       ============================================================ -->
+  <section class="search-wrapper" id="searchSection">
+    <div class="search-input-box">
+      <span style="font-size: 1.1rem; color: var(--pi-gold);">🔍</span>
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Rechercher une radio, pays, actualité, sport..." 
+        autocomplete="off"
+      >
+    </div>
+  </section>
+
+  <div class="continent-pills" id="continentPills" style="display: none;">
+    <button class="pill-btn active" data-continent="all">
+      <span data-i18n="allContinents">Tous les continents</span>
+    </button>
+    <button class="pill-btn" data-continent="africa">
+      🌍 <span data-i18n="africa">Afrique</span>
+    </button>
+    <button class="pill-btn" data-continent="europe">
+      🏰 <span data-i18n="europe">Europe</span>
+    </button>
+    <button class="pill-btn" data-continent="asia">
+      🏮 <span data-i18n="asia">Asie</span>
+    </button>
+    <button class="pill-btn" data-continent="americas">
+      🌎 <span data-i18n="americas">Amériques</span>
+    </button>
+    <button class="pill-btn" data-continent="middleEast">
+      🕌 <span data-i18n="middleEast">Moyen-Orient</span>
+    </button>
+    <button class="pill-btn" data-continent="oceania">
+      🏝️ <span data-i18n="oceania">Océanie</span>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       ZONE PRINCIPALE DES RADIOS
+       ============================================================ -->
+  <main class="content-area" id="mainContentArea">
+    <div class="section-header">
+      <div class="section-title">
+        <span id="sectionTitleText" data-i18n="featuredNews">Actualités Mondiales en Direct</span>
+      </div>
+      <span id="totalCount" style="font-size: 0.85rem; color: var(--live-green); font-weight: 600;">
+        Vérification...
+      </span>
+    </div>
+
+    <div class="stations-grid" id="stationsGrid">
+      <!-- Rendu dynamique par app.js -->
+    </div>
+
+    <div style="text-align: center; margin: 30px 0;">
+      <button id="loadMoreBtn" class="pill-btn" style="padding: 12px 24px; font-size: 0.95rem; background: var(--bg-card); color: var(--pi-gold); border: 1px solid var(--pi-gold);" data-i18n="loadMore">
+        Explorer plus de radios mondiales (API)
+      </button>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       PANNEAU DES PARAMÈTRES (SETTINGS)
+       ============================================================ -->
+  <section class="content-area">
+    <div class="settings-panel" id="settingsPanel">
+      <h2 style="margin-bottom: 20px; font-size: 1.4rem;" data-i18n="settingsTitle">Paramètres de l'application</h2>
+
+      <!-- Langue -->
+      <div class="setting-group">
+        <div class="setting-label">
+          <span>🌐</span> <span data-i18n="langSetting">Langue d'affichage</span>
+        </div>
+        <select id="langSelectSetting" style="background: var(--bg-surface); color: #fff; border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px; font-size: 0.95rem; width: 100%; max-width: 320px;">
+          <option value="fr">🇫🇷 Français</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="zh">🇨🇳 中文 (Chinois)</option>
+          <option value="hi">🇮🇳 हिन्दी (Hindi)</option>
+          <option value="vi">🇻🇳 Tiếng Việt</option>
+          <option value="ar">🇸🇦 العربية (Arabe - RTL)</option>
+          <option value="yo">🇳🇬 Yorùbá</option>
+        </select>
+      </div>
+
+      <!-- Minuteur de Sommeil -->
+      <div class="setting-group">
+        <div class="setting-label">
+          <span>⏱️</span> <span data-i18n="sleepTimerTitle">Minuteur de sommeil (Sleep Timer)</span>
+          <span id="timerCountdownBadge" style="margin-left: 10px; color: var(--live-green); font-weight: 800;"></span>
+        </div>
+        <div class="setting-desc" data-i18n="sleepTimerDesc">Arrête automatiquement la radio après la durée choisie :</div>
+        <div class="timer-chips">
+          <button class="timer-btn active" data-minutes="0" data-i18n="timerOff">Désactivé</button>
+          <button class="timer-btn" data-minutes="15" data-i18n="timer15">15 min</button>
+          <button class="timer-btn" data-minutes="30" data-i18n="timer30">30 min</button>
+          <button class="timer-btn" data-minutes="45" data-i18n="timer45">45 min</button>
+          <button class="timer-btn" data-minutes="60" data-i18n="timer60">60 min</button>
+        </div>
+      </div>
+
+      <!-- Économiseur de Données -->
+      <div class="setting-group">
+        <div class="setting-label">
+          <span>📶</span> <span data-i18n="dataSaverTitle">Mode Économie de Données</span>
+        </div>
+        <div class="setting-desc" data-i18n="dataSaverDesc">Réduit la consommation de votre forfait mobile :</div>
+        <label class="toggle-switch-wrapper" style="cursor: pointer;">
+          <input type="checkbox" id="dataSaverToggle" style="width: 20px; height: 20px; accent-color: var(--live-green);">
+          <span data-i18n="dataSaverOn">Actif (Qualité Optimisée)</span>
+        </label>
+      </div>
+
+      <!-- Réinitialiser Données -->
+      <div class="setting-group" style="border-bottom: none;">
+        <div class="setting-label">
+          <span>🗑️</span> <span data-i18n="cacheTitle">Gestion des Données</span>
+        </div>
+        <button id="clearCacheBtn" class="danger-btn" data-i18n="clearCacheBtn">
+          Réinitialiser les favoris et le cache
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LECTEUR AUDIO FLOTTANT (BOTTOM PLAYER)
+       ============================================================ -->
+  <div class="player-bar" id="playerBar">
+    <div class="player-inner">
+      <div class="player-details">
+        <img 
+          id="playerThumb" 
+          class="player-thumb" 
+          src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23140b27'/><text x='50%' y='65%' font-size='50' fill='%2300e676' text-anchor='middle'>📻</text></svg>" 
+          alt="Radio Logo"
+        >
+        <div class="player-text-block">
+          <div id="playerStationTitle" class="player-station-title">Pi Radio</div>
+          <div class="player-status-line">
+            <span class="player-status-indicator stopped" id="playerStatusIndicator"></span>
+            <span id="playerStatusText" data-i18n="selectStation">Choisissez une radio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-controls">
+        <button id="masterPlayBtn" class="master-play-btn" title="Lecture / Pause">
+          <span id="masterPlayIcon">▶</span>
+        </button>
+      </div>
+
+      <div class="player-extras-right">
+        <div class="volume-slider-box" style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 14px;">🔊</span>
+          <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.8" style="width: 80px; accent-color: var(--live-green); cursor: pointer;">
+        </div>
+
+        <button id="openTipBtn" class="tip-pi-btn" title="Pourboire en Pi">
+          <span>⚡</span>
+          <span data-i18n="sendTip">Pourboire π</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODALE DE POURBOIRE PI
+       ============================================================ -->
+  <div class="tip-modal-overlay" id="tipModal">
+    <div class="tip-modal-card">
+      <div style="font-size: 40px; margin-bottom: 10px;">⚡</div>
+      <h3 style="font-size: 1.3rem; margin-bottom: 8px;" data-i18n="tipPioneer">Pourboire en Pi</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;" data-i18n="tipDescription">
+        Soutenez le développement et les serveurs avec vos Pi :
+      </p>
+
+      <button id="confirmTipBtn" class="tip-pi-btn" style="width: 100%; justify-content: center; padding: 12px; font-size: 1rem; margin-bottom: 12px;" data-i18n="sendTip">
+        Envoyer 0.1 π
+      </button>
+
+      <button id="closeTipBtn" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer;" data-i18n="close">
+        Fermer
+      </button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="translations.js"></script>
+  <script src="stations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
