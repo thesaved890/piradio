@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     activeTab: "home", // home, explore, news, culture, sports, settings
     activeContinent: "all",
     selectedCountry: "all",
+    selectedBand: "all",
     searchQuery: "",
+    searchDebounceTimer: null,
     stations: [...CURATED_STATIONS],
     apiStations: [],
     currentStation: null,
@@ -36,7 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalCountEl = document.getElementById("totalCount");
   const searchInput = document.getElementById("searchInput");
   const clearSearchBtn = document.getElementById("clearSearchBtn");
+  const bandSelect = document.getElementById("bandSelect");
   const countrySelect = document.getElementById("countrySelect");
+  const searchApiStatus = document.getElementById("searchApiStatus");
+  const searchApiStatusText = document.getElementById("searchApiStatusText");
   const frequencyChips = document.getElementById("frequencyChips");
   const continentPills = document.getElementById("continentPills");
   const heroSection = document.getElementById("heroSection");
@@ -179,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================================
-  // 3. FILTRAGE ET RECHERCHE AVANCÉE (AXE 2 : FM, PAYS, MOT-CLÉ)
+  // 3. FILTRAGE ET RECHERCHE AVANCÉE (AXE 2 : FM, AM, PAYS, MOT-CLÉ)
   // ============================================================
   function getFilteredList() {
     let list = [...state.stations, ...state.apiStations];
@@ -199,23 +204,45 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // 2. Filtrage par Pays sélectionné dans le menu déroulant
+    // 2. Filtrage par Bande d'ondes (FM, AM, WEB)
+    if (state.selectedBand !== "all") {
+      list = list.filter(st => {
+        const band = (st.band || "").toUpperCase();
+        const freqNum = st.frequency ? parseFloat(st.frequency) : null;
+        if (state.selectedBand === "FM") {
+          return band === "FM" || (freqNum !== null && freqNum >= 87 && freqNum <= 108);
+        }
+        if (state.selectedBand === "AM") {
+          return band === "AM" || (freqNum !== null && (freqNum < 87 || freqNum > 108));
+        }
+        if (state.selectedBand === "WEB") {
+          return band === "WEB" || (!st.frequency && band !== "FM" && band !== "AM");
+        }
+        return true;
+      });
+    }
+
+    // 3. Filtrage par Pays sélectionné dans le menu déroulant
     if (state.selectedCountry !== "all") {
       list = list.filter(st => st.country.toLowerCase() === state.selectedCountry.toLowerCase());
     }
 
-    // 3. Recherche textuelle et par fréquence FM en chiffres
+    // 4. Recherche textuelle et par fréquence FM/AM en chiffres
     if (state.searchQuery.trim() !== "") {
       const q = state.searchQuery.toLowerCase().trim();
+      const qNum = q.replace(',', '.');
       list = list.filter(st => {
-        const nameMatch = st.name.toLowerCase().includes(q);
+        const nameMatch = st.name.toLowerCase().includes(q) || st.name.toLowerCase().includes(qNum);
         const countryMatch = st.country.toLowerCase().includes(q);
         const genreMatch = st.genre.toLowerCase().includes(q);
         const langMatch = st.language.toLowerCase().includes(q);
-        // Correspondance numérique sur la fréquence (ex: 94.3, 104, 98.4...)
+        // Correspondance numérique directe sur le champ frequency (ex: 93.9, 94.3, 105.5)
+        const freqDirectMatch = st.frequency && (st.frequency.includes(qNum) || qNum.includes(st.frequency));
+        // Correspondance sur les chiffres du nom
         const numbersInName = st.name.match(/\d+([.,]\d+)?/g);
-        const freqMatch = numbersInName && numbersInName.some(num => num.replace(',', '.').includes(q.replace(',', '.')));
-        return nameMatch || countryMatch || genreMatch || langMatch || freqMatch;
+        const freqNameMatch = numbersInName && numbersInName.some(num => num.replace(',', '.').includes(qNum));
+
+        return nameMatch || countryMatch || genreMatch || langMatch || freqDirectMatch || freqNameMatch;
       });
     }
 
@@ -243,6 +270,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const isCurrent = state.currentStation && state.currentStation.id === st.id;
       const isCardPlaying = isCurrent && state.isPlaying;
       const fallbackLogo = getFlagFallback(st.code);
+      
+      const badgeHtml = st.frequency 
+        ? `<span class="card-freq-badge">${st.frequency} ${st.band || 'FM'}</span>` 
+        : (st.band ? `<span class="card-band-badge">${st.band}</span>` : '');
 
       const card = document.createElement("div");
       card.className = `station-card ${isCardPlaying ? "playing" : ""}`;
@@ -254,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>${st.code}</span>
             <span>${st.country}</span>
           </div>
-          <div class="station-tag">${st.genre} • ${st.language}</div>
+          <div class="station-tag">${badgeHtml ? badgeHtml + ' • ' : ''}${st.genre} • ${st.language}</div>
         </div>
         <div class="sound-wave">
           <div class="sound-wave-bar"></div>
@@ -545,7 +576,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ============================================================
-  // 7. ÉCOUTEURS D'ÉVÉNEMENTS (AXE 2 : PAYS, FM, RECHERCHE)
+  // 7. ÉCOUTEURS D'ÉVÉNEMENTS (AXE 2 : PAYS, FM, AM, RECHERCHE DIRECTE)
   // ============================================================
   masterPlayBtn.addEventListener("click", togglePlayback);
 
@@ -555,28 +586,81 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Écouteur pour la saisie dans la barre de recherche
+  // Moteur de recherche mondiale Radio Browser en direct (avec debounce)
+  async function triggerLiveSearch(rawQuery) {
+    const q = (rawQuery || "").trim();
+    if (q.length < 2) {
+      if (searchApiStatus) searchApiStatus.style.display = "none";
+      return;
+    }
+
+    if (searchApiStatus) {
+      searchApiStatus.style.display = "flex";
+      const t = TRANSLATIONS[state.lang];
+      if (searchApiStatusText) searchApiStatusText.textContent = t.searchingGlobal || "🌐 Recherche mondiale en direct...";
+    }
+
+    try {
+      const qNormalized = q.replace(',', '.');
+      const countryParam = state.selectedCountry !== "all" ? state.selectedCountry : "";
+      
+      const results = await searchRadioBrowserAPI(qNormalized, countryParam, 25);
+      if (results && results.length > 0) {
+        const existingIds = new Set([...state.stations.map(s => s.id), ...state.apiStations.map(s => s.id)]);
+        const fresh = results.filter(s => !existingIds.has(s.id));
+        if (fresh.length > 0) {
+          state.apiStations = [...state.apiStations, ...fresh];
+          populateCountryDropdown();
+        }
+      }
+    } catch (err) {
+      console.warn("Live API Search error:", err);
+    } finally {
+      if (searchApiStatus) searchApiStatus.style.display = "none";
+      renderStations();
+    }
+  }
+
+  // Écouteur pour la saisie dans la barre de recherche (instantanée + API en arrière-plan)
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       state.searchQuery = e.target.value;
       if (clearSearchBtn) {
         clearSearchBtn.style.display = state.searchQuery.trim() !== "" ? "inline-block" : "none";
       }
-      // Désactiver la puce si l'utilisateur efface ou tape autre chose
+      // Désactiver/Activer la puce si l'utilisateur saisit une fréquence connue
       document.querySelectorAll(".freq-chip").forEach(chip => {
         chip.classList.toggle("active", chip.getAttribute("data-freq") === state.searchQuery.trim());
       });
+
+      // Rendu immédiat des correspondances déjà en mémoire
       renderStations();
+
+      // Déclenchement automatique de la recherche mondiale en arrière-plan (debounce 350ms)
+      clearTimeout(state.searchDebounceTimer);
+      state.searchDebounceTimer = setTimeout(() => {
+        triggerLiveSearch(state.searchQuery);
+      }, 350);
     });
   }
 
   // Écouteur pour effacer la recherche en 1 clic
   if (clearSearchBtn) {
     clearSearchBtn.addEventListener("click", () => {
+      clearTimeout(state.searchDebounceTimer);
+      if (searchApiStatus) searchApiStatus.style.display = "none";
       searchInput.value = "";
       state.searchQuery = "";
       clearSearchBtn.style.display = "none";
       document.querySelectorAll(".freq-chip").forEach(c => c.classList.remove("active"));
+      renderStations();
+    });
+  }
+
+  // Écouteur pour le filtre de bandes d'ondes (FM, AM, WEB, Toutes)
+  if (bandSelect) {
+    bandSelect.addEventListener("change", (e) => {
+      state.selectedBand = e.target.value;
       renderStations();
     });
   }
@@ -586,6 +670,9 @@ document.addEventListener("DOMContentLoaded", () => {
     countrySelect.addEventListener("change", (e) => {
       state.selectedCountry = e.target.value;
       renderStations();
+      if (state.searchQuery.trim().length >= 2) {
+        triggerLiveSearch(state.searchQuery);
+      }
     });
   }
 
@@ -602,14 +689,16 @@ document.addEventListener("DOMContentLoaded", () => {
         searchInput.value = "";
         state.searchQuery = "";
         clearSearchBtn.style.display = "none";
+        renderStations();
       } else {
         document.querySelectorAll(".freq-chip").forEach(c => c.classList.remove("active"));
         chip.classList.add("active");
         searchInput.value = freq;
         state.searchQuery = freq;
         clearSearchBtn.style.display = "inline-block";
+        renderStations();
+        triggerLiveSearch(freq);
       }
-      renderStations();
     });
   }
 

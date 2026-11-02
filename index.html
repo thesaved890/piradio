@@ -142,12 +142,28 @@
         <button id="clearSearchBtn" class="clear-search-btn" style="display: none;" title="Effacer la recherche">✕</button>
       </div>
 
+      <!-- Filtre de Bande (FM, AM, WEB, Toutes) -->
+      <div class="band-select-wrapper">
+        <select id="bandSelect" class="band-dropdown" aria-label="Filtrer par bande">
+          <option value="all" data-i18n="allBands">📻 Toutes les ondes</option>
+          <option value="FM" data-i18n="bandFM">FM (87.5 - 108 MHz)</option>
+          <option value="AM" data-i18n="bandAM">AM (Ondes moyennes)</option>
+          <option value="WEB" data-i18n="bandWeb">WEB (100% Digital)</option>
+        </select>
+      </div>
+
       <!-- Menu Déroulant des Pays avec Drapeaux Nationaux -->
       <div class="country-select-wrapper">
         <select id="countrySelect" class="country-dropdown" aria-label="Filtrer par pays">
           <option value="all" data-i18n="allCountries">🌍 Tous les pays</option>
         </select>
       </div>
+    </div>
+
+    <!-- Indicateur de recherche en direct mondiale (Radio Browser API) -->
+    <div id="searchApiStatus" class="search-api-status" style="display: none;">
+      <span class="api-spinner"></span>
+      <span id="searchApiStatusText" data-i18n="searchingGlobal">🌐 Recherche mondiale en direct...</span>
     </div>
 
     <!-- Puces d'accès direct aux Fréquences FM populaires -->
