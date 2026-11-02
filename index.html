@@ -126,17 +126,40 @@
   </section>
 
   <!-- ============================================================
-       BARRE DE RECHERCHE & SOUS-FILTRES
+       BARRE DE RECHERCHE PAR FRÉQUENCE FM & SÉLECTEUR PAR PAYS (AXE 2)
        ============================================================ -->
   <section class="search-wrapper" id="searchSection">
-    <div class="search-input-box">
-      <span style="font-size: 1.1rem; color: var(--pi-gold);">🔍</span>
-      <input 
-        type="text" 
-        id="searchInput" 
-        placeholder="Rechercher une radio, fréquence FM (ex: 94.3, 104.7), pays..." 
-        autocomplete="off"
-      >
+    <div class="search-flex-row">
+      <!-- Saisie de Fréquence FM, Nom ou Pays -->
+      <div class="search-input-box">
+        <span style="font-size: 1.1rem; color: var(--pi-gold);">📻</span>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Rechercher fréquence FM (ex: 94.3, 104.7), nom, pays..." 
+          autocomplete="off"
+        >
+        <button id="clearSearchBtn" class="clear-search-btn" style="display: none;" title="Effacer la recherche">✕</button>
+      </div>
+
+      <!-- Menu Déroulant des Pays avec Drapeaux Nationaux -->
+      <div class="country-select-wrapper">
+        <select id="countrySelect" class="country-dropdown" aria-label="Filtrer par pays">
+          <option value="all" data-i18n="allCountries">🌍 Tous les pays</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Puces d'accès direct aux Fréquences FM populaires -->
+    <div class="frequency-chips" id="frequencyChips">
+      <span class="freq-chip-label">Fréquences FM :</span>
+      <button class="freq-chip" data-freq="94.3">94.3 FM</button>
+      <button class="freq-chip" data-freq="97.7">97.7 FM</button>
+      <button class="freq-chip" data-freq="92.9">92.9 FM</button>
+      <button class="freq-chip" data-freq="98.4">98.4 FM</button>
+      <button class="freq-chip" data-freq="104.3">104.3 FM</button>
+      <button class="freq-chip" data-freq="93.9">93.9 FM</button>
+      <button class="freq-chip" data-freq="105.5">105.5 FM</button>
     </div>
   </section>
 
