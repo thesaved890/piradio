@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevStationBtn = document.getElementById("prevStationBtn");
   const nextStationBtn = document.getElementById("nextStationBtn");
   const volumeBoostBtn = document.getElementById("volumeBoostBtn");
-  const shareStationBtn = document.getElementById("shareStationBtn");
   const volumeSlider = document.getElementById("volumeSlider");
   const normalizerToggle = document.getElementById("normalizerToggle");
   const toastNotification = document.getElementById("toastNotification");
@@ -215,34 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
         state.audio.volume = baseVol;
       }
       if (volumeBoostBtn) volumeBoostBtn.classList.remove("active");
-    }
-  }
-
-  // Partager une station en 1 clic (Lien direct / WhatsApp / Pi Chat)
-  async function shareStation(station) {
-    if (!station) return;
-    const url = `${window.location.origin}${window.location.pathname}?station=${encodeURIComponent(station.id)}`;
-    const text = `Écoutez ${station.name} (${station.frequency ? station.frequency + ' FM' : station.country}) en direct sur Pi Radio ! 📻💜`;
-
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: station.name,
-          text: text,
-          url: url
-        });
-        return;
-      } catch (err) {
-        // Annulation par l'utilisateur
-      }
-    }
-
-    try {
-      await navigator.clipboard.writeText(`${text} ${url}`);
-      const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-      showToast(t.stationCopied || "Lien copié dans le presse-papier !");
-    } catch (e) {
-      prompt("Copiez le lien direct vers cette radio :", url);
     }
   }
 
@@ -476,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // 4. Recherche textuelle et par fréquence FM/AM en chiffres (avec correction des fautes courantes)
+    // 4. Recherche textuelle, par ville/état et par fréquence FM/AM en chiffres (avec correction des fautes courantes)
     if (isSearching) {
       const q = state.searchQuery.toLowerCase().trim();
       const qCorrected = q.replace(/aeokuta/g, "abeokuta").replace(/ketou/g, "kétou").replace(/alaketu/g, "alakétu");
@@ -485,6 +456,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const nameMatch = (st.name || "").toLowerCase().includes(q) || 
                           (st.name || "").toLowerCase().includes(qCorrected) || 
                           (st.name || "").toLowerCase().includes(qNum);
+        const cityMatch = (st.city || "").toLowerCase().includes(q) || 
+                          (st.city || "").toLowerCase().includes(qCorrected);
+        const stateMatch = (st.state || "").toLowerCase().includes(q) || 
+                           (st.state || "").toLowerCase().includes(qCorrected);
         const countryMatch = (st.country || "").toLowerCase().includes(q) || 
                              (st.country || "").toLowerCase().includes(qCorrected);
         const genreMatch = (st.genre || "").toLowerCase().includes(q) || 
@@ -496,7 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const numbersInName = (st.name || "").match(/\d+([.,]\d+)?/g);
         const freqNameMatch = numbersInName && numbersInName.some(num => num.replace(',', '.').includes(qNum));
 
-        return nameMatch || countryMatch || genreMatch || langMatch || freqDirectMatch || freqNameMatch;
+        return nameMatch || cityMatch || stateMatch || countryMatch || genreMatch || langMatch || freqDirectMatch || freqNameMatch;
       });
     }
 
@@ -554,9 +529,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <button class="card-fav-btn ${isFav ? 'active' : ''}" data-id="${st.id}" title="${isFav ? 'Retirer des favoris' : 'Enregistrer dans l\'App'}" aria-label="Favoris">
             ${isFav ? '★' : '☆'}
           </button>
-          <button class="card-share-btn" data-id="${st.id}" title="Partager cette radio" aria-label="Partager">
-            🔗
-          </button>
           <button class="card-play-action" aria-label="Play">
             ${isCardPlaying ? "⏸" : "▶"}
           </button>
@@ -569,15 +541,6 @@ document.addEventListener("DOMContentLoaded", () => {
         favBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           toggleFavorite(st);
-        });
-      }
-
-      // Clic sur le bouton partager (sans déclencher la lecture audio)
-      const shareBtn = card.querySelector(".card-share-btn");
-      if (shareBtn) {
-        shareBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          shareStation(st);
         });
       }
 
@@ -887,17 +850,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Partage de la radio en cours (Axe 3)
-  if (shareStationBtn) {
-    shareStationBtn.addEventListener("click", () => {
-      if (state.currentStation) {
-        shareStation(state.currentStation);
-      } else {
-        showToast("Sélectionnez d'abord une radio pour la partager");
-      }
-    });
-  }
-
   // Normalisation du son dans les paramètres (Axe 3)
   if (normalizerToggle) {
     normalizerToggle.checked = state.isNormalizerOn;
@@ -1091,24 +1043,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Vérification des liens de partage (Deep Linking ?station=id)
-  function checkDeepLink() {
-    try {
-      const params = new URLSearchParams(window.location.search);
-      const stationId = params.get("station");
-      if (stationId) {
-        const found = state.stations.find(s => s.id === stationId);
-        if (found) {
-          setTimeout(() => startPlayback(found, false), 400);
-        }
-      }
-    } catch (e) {}
-  }
-
   // --- INITIALISATION AU DÉMARRAGE ---
   loadSavedStations();
   populateCountryDropdown();
   updateFrequencyChips();
   applyLanguage(state.lang);
-  checkDeepLink();
 });
