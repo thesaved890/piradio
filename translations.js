@@ -33,7 +33,7 @@ const TRANSLATIONS = {
     middleEast: "Moyen-Orient",
     oceania: "Océanie",
     favorites: "Favoris",
-    searchPlaceholder: "Rechercher fréquence (ex: 94.3, 105.7), nom, pays...",
+    searchPlaceholder: "Rechercher fréquence (ex: 95.8), ville (Kétou, Abeokuta...), radio, pays...",
     // Catégories
     catNews: "Actualités & Monde",
     catCulture: "Cultures, Traditions & Spiritualités",
@@ -106,7 +106,7 @@ const TRANSLATIONS = {
     middleEast: "Middle East",
     oceania: "Oceania",
     favorites: "Favorites",
-    searchPlaceholder: "Search frequency (e.g. 94.3, 105.7), name, country...",
+    searchPlaceholder: "Search frequency (e.g. 95.8), city (Kétou, Abeokuta...), station, country...",
     catNews: "News & World",
     catCulture: "Cultures, Heritage & Spiritualities",
     catSports: "Live Sports",
