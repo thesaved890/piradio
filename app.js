@@ -63,6 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataSaverToggle = document.getElementById("dataSaverToggle");
   const clearCacheBtn = document.getElementById("clearCacheBtn");
 
+  // Helper pour générer un logo de secours officiel avec le drapeau national
+  function getFlagFallback(code) {
+    return `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23140b27' stroke='%23f3b43f' stroke-width='2'/><text x='50%' y='64%' font-size='44' text-anchor='middle'>${encodeURIComponent(code || '📻')}</text></svg>`;
+  }
+
   // ============================================================
   // 1. TRADUCTION & GESTION DES 8 LANGUES (i18n)
   // ============================================================
@@ -80,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const t = TRANSLATIONS[langCode];
 
-    // Traduction de tous les éléments balisés data-i18n
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
       if (t[key]) el.textContent = t[key];
@@ -123,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
     heroSection.style.display = "block";
     searchSection.style.display = "block";
 
-    // Gestion de l'affichage des filtres par continent (uniquement dans Explorer)
     if (state.activeTab === "explore") {
       continentPills.style.display = "flex";
       sectionTitleText.textContent = t.navExplore;
@@ -188,11 +191,12 @@ document.addEventListener("DOMContentLoaded", () => {
     list.forEach(st => {
       const isCurrent = state.currentStation && state.currentStation.id === st.id;
       const isCardPlaying = isCurrent && state.isPlaying;
+      const fallbackLogo = getFlagFallback(st.code);
 
       const card = document.createElement("div");
       card.className = `station-card ${isCardPlaying ? "playing" : ""}`;
       card.innerHTML = `
-        <img class="station-logo" src="${st.logo}" alt="${st.name}" onerror="this.src='https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=100'"/>
+        <img class="station-logo" src="${st.logo}" alt="${st.name}" onerror="this.src='${fallbackLogo}'; this.onerror=null;"/>
         <div class="station-info">
           <div class="station-name">${st.name}</div>
           <div class="station-origin">
@@ -234,10 +238,11 @@ document.addEventListener("DOMContentLoaded", () => {
     state.retryCount = 0;
 
     const streamToLoad = useFallback && station.fallbackUrl ? station.fallbackUrl : station.streamUrl;
+    const fallbackLogo = getFlagFallback(station.code);
 
     playerStationTitle.textContent = station.name;
     playerThumb.src = station.logo;
-    playerThumb.onerror = () => { playerThumb.src = "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=100"; };
+    playerThumb.onerror = () => { playerThumb.src = fallbackLogo; playerThumb.onerror = null; };
     playerStatusText.textContent = TRANSLATIONS[state.lang].buffering;
     playerStatusIndicator.className = "player-status-indicator buffering";
     masterPlayIcon.textContent = "⏸";
@@ -294,15 +299,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function triggerFallbackOrRetry() {
     console.warn("Échec du flux actuel:", state.currentStation.name);
 
-    // Si nous n'étions pas encore sur le miroir et qu'un miroir existe, basculer immédiatement
-    if (!state.isFallback && state.currentStation && state.currentStation.fallbackUrl) {
+    if (!state.isFallback && state.currentStation && state.currentStation.fallbackUrl && state.currentStation.fallbackUrl !== state.currentStation.streamUrl) {
       console.log("Basculement automatique sur le flux miroir de secours...");
       playerStatusText.textContent = TRANSLATIONS[state.lang].streamError;
       startPlayback(state.currentStation, true);
       return;
     }
 
-    // Sinon, tentative de reconnexion automatique avec backoff
     if (state.retryCount < 3) {
       state.retryCount++;
       playerStatusText.textContent = `${TRANSLATIONS[state.lang].reconnecting} (${state.retryCount}/3)`;
@@ -325,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(state.watchdogInterval);
     state.watchdogInterval = setInterval(() => {
       if (state.isPlaying && state.audio.paused && !state.audio.ended && state.audio.readyState > 0) {
-        console.log("Watchdog: Flux interrompu sans action utilisateur, reprise...");
+        console.log("Watchdog: reprise automatique...");
         state.audio.play().catch(() => {});
       }
     }, 4000);
