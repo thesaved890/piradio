@@ -88,6 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const pwaInstallBtn = document.getElementById("pwaInstallBtn");
   const pwaInstalledNotice = document.getElementById("pwaInstalledNotice");
 
+  // Modale Licence Poste Pi Radio (Étape 2)
+  const receiverModal = document.getElementById("receiverModal");
+  const activateReceiverBtn = document.getElementById("activateReceiverBtn");
+  const closeReceiverBtn = document.getElementById("closeReceiverBtn");
+  const openReceiverModalFromSettingsBtn = document.getElementById("openReceiverModalFromSettingsBtn");
+  const receiverSettingStatusText = document.getElementById("receiverSettingStatusText");
+
   // Badge officiel avec drapeau national (anti-photos génériques et safe SVG)
   function getFlagFallback(code) {
     const safeCode = encodeURIComponent(code || '📻');
@@ -337,6 +344,15 @@ document.addEventListener("DOMContentLoaded", () => {
     updateFrequencyChips();
     updatePlayerStatusUI();
     updateAuthUI();
+
+    if (receiverSettingStatusText) {
+      if (state.isReceiverActivated) {
+        receiverSettingStatusText.textContent = "✅ " + (t.receiverActivatedBadge || "Poste Activé à vie");
+      } else {
+        receiverSettingStatusText.textContent = t.receiverActivateBtn || "Activer mon Poste (0.00005 π)";
+      }
+    }
+
     renderView();
   }
 
@@ -656,9 +672,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
     showToast(t.trialExpired || "Période d'essai de 3 minutes terminée pour cette recherche !");
-    if (typeof openReceiverModal === "function") {
-      openReceiverModal();
+    openReceiverModal();
+  }
+
+  function openReceiverModal() {
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    if (state.isReceiverActivated) {
+      showToast(t.receiverAlreadyActive || "Votre Poste Pi Radio est déjà actif à vie !");
+      return;
     }
+    if (receiverModal) receiverModal.classList.add("active");
+  }
+
+  function closeReceiverModal() {
+    if (receiverModal) receiverModal.classList.remove("active");
   }
 
   // ============================================================
@@ -951,6 +978,19 @@ document.addEventListener("DOMContentLoaded", () => {
       tipModal.classList.remove("active");
     }
   });
+
+  // Modale Licence Poste Pi Radio (Étape 2)
+  if (closeReceiverBtn) {
+    closeReceiverBtn.addEventListener("click", closeReceiverModal);
+  }
+  if (receiverModal) {
+    receiverModal.addEventListener("click", (e) => {
+      if (e.target === receiverModal) closeReceiverModal();
+    });
+  }
+  if (openReceiverModalFromSettingsBtn) {
+    openReceiverModalFromSettingsBtn.addEventListener("click", openReceiverModal);
+  }
 
   // ============================================================
   // 7. ÉCOUTEURS D'ÉVÉNEMENTS (AXE 2 & AXE 3 : AUDIO, BOOST, PARTAGE)

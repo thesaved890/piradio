@@ -292,6 +292,19 @@
         </label>
       </div>
 
+      <!-- Licence Poste Pi Radio Mondial (0.00005 Pi) -->
+      <div class="setting-group" id="receiverSettingGroup">
+        <div class="setting-label">
+          <span>📻</span> <span data-i18n="receiverSettingTitle">Licence Poste Pi Radio</span>
+        </div>
+        <div class="setting-desc" data-i18n="receiverSettingDesc">Activez votre récepteur Pioneer à vie pour un accès complet sans restriction :</div>
+        <div style="margin-top: 10px;">
+          <button id="openReceiverModalFromSettingsBtn" class="pwa-install-action-btn" style="border-color: var(--pi-gold); color: var(--pi-gold);">
+            <span>📻</span> <span id="receiverSettingStatusText" data-i18n="receiverActivateBtn">Activer mon Poste (0.00005 π)</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Installation PWA de l'App (Axe 4) -->
       <div class="setting-group" id="pwaInstallGroup">
         <div class="setting-label">
@@ -389,6 +402,41 @@
 
       <button id="closeTipBtn" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer;" data-i18n="close">
         Fermer
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODALE ACTIVATION DU POSTE PI RADIO (0.00005 Pi)
+       ============================================================ -->
+  <div class="receiver-modal-overlay" id="receiverModal">
+    <div class="receiver-modal-card">
+      <div class="receiver-modal-icon">📻</div>
+      <h3 class="receiver-modal-title" data-i18n="receiverModalTitle">Activez votre Poste Pi Radio</h3>
+      <p class="receiver-modal-desc" data-i18n="receiverModalDesc">
+        Comme un vrai poste de radio physique, activez votre récepteur Pioneer à vie et profitez d'un accès illimité aux 50 000 stations du monde entier !
+      </p>
+
+      <div class="receiver-price-card">
+        <div class="receiver-price-badge" data-i18n="receiverLifetimeBadge">ACQUISITION À VIE</div>
+        <div class="receiver-price-amount">0.00005 <span class="pi-symbol">π</span></div>
+        <div class="receiver-price-gcv" data-i18n="receiverGcvEquivalent">Équivalent ~15,70 $ GCV • Prix d'un vrai poste de radio</div>
+      </div>
+
+      <ul class="receiver-features-list">
+        <li><span>🌍</span> <span data-i18n="receiverFeature1">Écoute illimitée sur toutes les fréquences mondiales</span></li>
+        <li><span>🔍</span> <span data-i18n="receiverFeature2">Recherche illimitée des radios de vos pays et villes</span></li>
+        <li><span>⭐</span> <span data-i18n="receiverFeature3">Favoris illimités et mémorisation permanente</span></li>
+        <li><span>🎖️</span> <span data-i18n="receiverFeature4">Badge officiel Pioneer Listener Certifié</span></li>
+      </ul>
+
+      <button id="activateReceiverBtn" class="receiver-pay-btn">
+        <span>⚡</span>
+        <span data-i18n="receiverPayBtn">Activer mon Poste (0.00005 π)</span>
+      </button>
+
+      <button id="closeReceiverBtn" class="receiver-cancel-btn" data-i18n="receiverContinueFree">
+        Continuer avec les radios gratuites d'accueil
       </button>
     </div>
   </div>

@@ -1115,6 +1115,156 @@ body {
   box-shadow: var(--shadow-card);
 }
 
+/* Modale d'Activation Poste Pi Radio (Étape 2) */
+.receiver-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 4, 18, 0.88);
+  backdrop-filter: blur(10px);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.25s ease;
+}
+
+.receiver-modal-overlay.active {
+  display: flex;
+}
+
+.receiver-modal-card {
+  background: linear-gradient(145deg, #180d32 0%, #100822 100%);
+  border: 1px solid rgba(243, 180, 63, 0.35);
+  border-top: 5px solid var(--pi-gold);
+  border-radius: 20px;
+  max-width: 440px;
+  width: 100%;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 0 0 30px rgba(243, 180, 63, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.receiver-modal-icon {
+  font-size: 46px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 12px var(--pi-gold-glow));
+  animation: pulse-trial 2.5s infinite ease-in-out;
+}
+
+.receiver-modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.receiver-modal-desc {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.receiver-price-card {
+  background: rgba(243, 180, 63, 0.08);
+  border: 1px dashed rgba(243, 180, 63, 0.5);
+  border-radius: 14px;
+  padding: 14px 12px;
+  margin-bottom: 18px;
+}
+
+.receiver-price-badge {
+  display: inline-block;
+  background: var(--pi-gold);
+  color: #0c0618;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 10px;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+.receiver-price-amount {
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--pi-gold);
+  line-height: 1.1;
+  text-shadow: 0 0 14px var(--pi-gold-glow);
+}
+
+.receiver-price-gcv {
+  font-size: 0.76rem;
+  color: #e0d8f0;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.receiver-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.receiver-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: #e5def5;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.receiver-pay-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #f3b43f 0%, #d49522 100%);
+  color: #0c0618;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 20px;
+  font-size: 0.98rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(243, 180, 63, 0.35);
+  transition: all 0.25s ease;
+  margin-bottom: 10px;
+}
+
+.receiver-pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(243, 180, 63, 0.5);
+  background: #ffc24c;
+}
+
+.receiver-cancel-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: color 0.2s ease;
+}
+
+.receiver-cancel-btn:hover {
+  color: #ffffff;
+}
+
 /* Bouton Installation PWA (Paramètres) */
 
 .pwa-install-action-btn {
