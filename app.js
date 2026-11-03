@@ -88,12 +88,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const pwaInstallBtn = document.getElementById("pwaInstallBtn");
   const pwaInstalledNotice = document.getElementById("pwaInstalledNotice");
 
-  // Modale Licence Poste Pi Radio (Étape 2)
+  // Modale Licence Poste Pi Radio (Étape 2 & 3)
   const receiverModal = document.getElementById("receiverModal");
   const activateReceiverBtn = document.getElementById("activateReceiverBtn");
   const closeReceiverBtn = document.getElementById("closeReceiverBtn");
   const openReceiverModalFromSettingsBtn = document.getElementById("openReceiverModalFromSettingsBtn");
   const receiverSettingStatusText = document.getElementById("receiverSettingStatusText");
+  const headerReceiverBadge = document.getElementById("headerReceiverBadge");
+  const RECEIVER_LICENSE_PRICE_PI = 0.00005;
 
   // Badge officiel avec drapeau national (anti-photos génériques et safe SVG)
   function getFlagFallback(code) {
@@ -344,15 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateFrequencyChips();
     updatePlayerStatusUI();
     updateAuthUI();
-
-    if (receiverSettingStatusText) {
-      if (state.isReceiverActivated) {
-        receiverSettingStatusText.textContent = "✅ " + (t.receiverActivatedBadge || "Poste Activé à vie");
-      } else {
-        receiverSettingStatusText.textContent = t.receiverActivateBtn || "Activer mon Poste (0.00005 π)";
-      }
-    }
-
+    updateReceiverLicenseUI();
     renderView();
   }
 
@@ -688,6 +682,108 @@ document.addEventListener("DOMContentLoaded", () => {
     if (receiverModal) receiverModal.classList.remove("active");
   }
 
+  // Mettre à jour l'affichage de l'état de la licence
+  function updateReceiverLicenseUI() {
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    if (headerReceiverBadge) {
+      headerReceiverBadge.style.display = state.isReceiverActivated ? "inline-flex" : "none";
+    }
+    if (receiverSettingStatusText) {
+      if (state.isReceiverActivated) {
+        receiverSettingStatusText.textContent = "✅ " + (t.receiverActivatedBadge || "Poste Activé à vie");
+      } else {
+        receiverSettingStatusText.textContent = t.receiverActivateBtn || "Activer mon Poste (0.00005 π)";
+      }
+    }
+    if (state.isReceiverActivated && trialCountdownBadge) {
+      trialCountdownBadge.style.display = "inline-flex";
+      trialCountdownBadge.style.color = "var(--live-green)";
+      trialCountdownBadge.style.borderColor = "var(--live-green)";
+      trialCountdownBadge.style.background = "rgba(0, 230, 118, 0.15)";
+      trialCountdownBadge.textContent = t.trialUnlocked || "📻 Débloqué";
+    }
+  }
+
+  // Finalisation du déblocage permanent du Poste Pi Radio
+  function completeReceiverActivation(txid) {
+    state.isReceiverActivated = true;
+    localStorage.setItem("piradio_receiver_activated", "true");
+    if (txid) {
+      localStorage.setItem("piradio_receiver_txid", txid);
+    }
+    stopTrialCountdown();
+    closeReceiverModal();
+    updateReceiverLicenseUI();
+    renderStations();
+
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    showToast(t.receiverActivatedSuccess || "Félicitations ! Votre Poste Pi Radio est activé à vie 📻");
+
+    // Si une station était en attente de lecture, la relancer immédiatement
+    if (state.currentStation && !state.isPlaying) {
+      startPlayback(state.currentStation, false);
+    }
+  }
+
+  // Traitement du paiement officiel Pi Network SDK (0.00005 Pi)
+  function handleReceiverPayment() {
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    if (state.isReceiverActivated) {
+      showToast(t.receiverAlreadyActive || "Votre Poste Pi Radio est déjà actif à vie !");
+      closeReceiverModal();
+      return;
+    }
+
+    // Si on est dans le Pi Browser avec le SDK Pi officiel
+    if (window.Pi && window.Pi.createPayment) {
+      try {
+        window.Pi.createPayment({
+          amount: RECEIVER_LICENSE_PRICE_PI,
+          memo: "Licence Poste Pi Radio à vie - 50 000 stations",
+          metadata: {
+            type: "lifetime_receiver_license",
+            amount_pi: RECEIVER_LICENSE_PRICE_PI,
+            app: "Pi Radio",
+            user_uid: state.pioneerUser ? state.pioneerUser.uid : "guest"
+          }
+        }, {
+          onReadyForServerApproval: function(paymentId) {
+            console.log("[Pi Radio Payment] En attente d'approbation serveur :", paymentId);
+          },
+          onReadyForServerCompletion: function(paymentId, txid) {
+            console.log("[Pi Radio Payment] Transaction blockchain Pi validée :", txid);
+            completeReceiverActivation(txid);
+          },
+          onCancel: function(paymentId) {
+            console.log("[Pi Radio Payment] Annulé par l'utilisateur :", paymentId);
+            showToast("Paiement annulé.");
+          },
+          onError: function(error, payment) {
+            console.error("[Pi Radio Payment] Erreur Pi SDK :", error);
+            showToast("Erreur lors de la transaction Pi Network.");
+          }
+        });
+      } catch (err) {
+        console.warn("[Pi Radio Payment] Erreur SDK, bascule vers mode simulation :", err);
+        simulateReceiverPayment();
+      }
+    } else {
+      // Hors Pi Browser (navigateur classique / test)
+      simulateReceiverPayment();
+    }
+  }
+
+  function simulateReceiverPayment() {
+    const isConfirmed = confirm(
+      "🌐 Mode Démo / Hors Pi Browser :\n\n" +
+      "Dans le Pi Browser, cet écran ouvre directement votre Pi Wallet pour valider les 0.00005 π.\n\n" +
+      "Souhaitez-vous simuler l'activation immédiate de votre Poste Pi Radio à vie ?"
+    );
+    if (isConfirmed) {
+      completeReceiverActivation("sim_tx_" + Date.now());
+    }
+  }
+
   // ============================================================
   // 4. MOTEUR AUDIO DOUBLE-FLUX & WATCHDOG ANTI-COUPURE
   // ============================================================
@@ -979,7 +1075,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Modale Licence Poste Pi Radio (Étape 2)
+  // Modale Licence Poste Pi Radio (Étape 2 & 3)
+  if (activateReceiverBtn) {
+    activateReceiverBtn.addEventListener("click", handleReceiverPayment);
+  }
   if (closeReceiverBtn) {
     closeReceiverBtn.addEventListener("click", closeReceiverModal);
   }

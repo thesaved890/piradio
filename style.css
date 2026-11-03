@@ -128,11 +128,27 @@ body {
   font-weight: 500;
 }
 
-/* Actions En-tête : Auth Pi Network */
+/* Actions En-tête : Auth Pi Network & Badge Licence */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.header-receiver-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 230, 118, 0.12);
+  border: 1px solid var(--live-green);
+  color: var(--live-green);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.2);
+  animation: fadeIn 0.3s ease;
 }
 
 .auth-btn {
