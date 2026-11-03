@@ -579,35 +579,35 @@ const CURATED_STATIONS = [
     featured: true
   },
   {
-    id: "west-coast-radio-gambia",
-    name: "West Coast Radio 92.1 FM Banjul",
+    id: "star-fm-gambia",
+    name: "Star FM 96.6 Banjul",
     country: "Gambie",
     code: "🇬🇲",
     continent: "africa",
     category: "news",
-    frequency: "92.1",
+    frequency: "96.6",
     band: "FM",
-    language: "English, Wolof & Mandinka",
-    genre: "The People's Station • In-Depth Gambian News & Coffee Time",
-    streamUrl: "http://stream.westcoast.gm:8080/westcoast921",
-    fallbackUrl: "http://stream.westcoast.gm:8080/westcoast921",
-    logo: "assets/logos/west-coast-radio-gambia.png",
+    language: "English & Wolof",
+    genre: "The Voice of Truth • Gambian News & Society",
+    streamUrl: "https://stream.zeno.fm/edfd6fhdps8uv",
+    fallbackUrl: "https://stream.zeno.fm/edfd6fhdps8uv",
+    logo: "assets/logos/star-fm-gambia.png",
     featured: true
   },
   {
-    id: "afriradio-gambia",
-    name: "AfriRadio Gambia 107.6 FM",
+    id: "gam-express-gambia",
+    name: "Gam Express FM Banjul",
     country: "Gambie",
     code: "🇬🇲",
     continent: "africa",
     category: "culture",
-    frequency: "107.6",
-    band: "FM",
-    language: "English & Wolof",
-    genre: "West African Music, Culture & Youth Entertainment",
-    streamUrl: "http://dreamsiteradiocp.com:8012/stream",
-    fallbackUrl: "http://dreamsiteradiocp.com:8012/stream",
-    logo: "assets/logos/afriradio-gambia.png",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English, Mandinka & Wolof",
+    genre: "Pure Gambian Melodies & West African Hits",
+    streamUrl: "https://stream.zeno.fm/d1qwim65b68tv",
+    fallbackUrl: "https://stream.zeno.fm/d1qwim65b68tv",
+    logo: "assets/logos/gam-express-gambia.png",
     featured: true
   },
   {
@@ -621,25 +621,25 @@ const CURATED_STATIONS = [
     band: "WEB",
     language: "Français & Langues d'Afrique",
     genre: "La radio panafricaine historique de Libreville",
-    streamUrl: "http://african1paris.ice.infomaniak.ch/african1paris-128.mp3",
-    fallbackUrl: "http://african1paris.ice.infomaniak.ch/african1paris-128.mp3",
+    streamUrl: "https://african1paris.ice.infomaniak.ch/african1paris-128.mp3",
+    fallbackUrl: "https://african1paris.ice.infomaniak.ch/african1paris-128.mp3",
     logo: "assets/logos/africa-no1-gabon.png",
     featured: true
   },
   {
-    id: "eben-radio-gabon",
-    name: "Eben Radio Gabon (Libreville)",
+    id: "africa-mandingue",
+    name: "Africa Mandingue & Rumba (Gabon)",
     country: "Gabon",
     code: "🇬🇦",
     continent: "africa",
     category: "culture",
     frequency: "WEB",
     band: "WEB",
-    language: "Français",
-    genre: "100% Musiques gabonaises, Afro-Beat & Culture urbaine",
-    streamUrl: "http://s8.voscast.com:7558/;stream.ogg",
-    fallbackUrl: "http://s8.voscast.com:7558/;stream.ogg",
-    logo: "assets/logos/eben-radio-gabon.png",
+    language: "Français & Lingala",
+    genre: "Rumba congolaise, Afro-Soul & Musiques d'Afrique Centrale",
+    streamUrl: "https://webradio1.ice.infomaniak.ch/webradio2-128.mp3",
+    fallbackUrl: "https://webradio1.ice.infomaniak.ch/webradio2-128.mp3",
+    logo: "assets/logos/africa-mandingue.png",
     featured: true
   },
   {
@@ -659,19 +659,19 @@ const CURATED_STATIONS = [
     featured: true
   },
   {
-    id: "libyana-hits-libya",
-    name: "Libyana Hits FM (ليبيانا هيتس)",
+    id: "almunir-radio-benghazi",
+    name: "Almunir Radio Benghazi (المنير بنغازي)",
     country: "Libye",
     code: "🇱🇾",
     continent: "africa",
     category: "culture",
-    frequency: "100.1",
-    band: "FM",
-    language: "العربية & English",
-    genre: "أقوى الأغاني الليبية والعربية والغربية 24/7",
-    streamUrl: "http://proxima.shoutca.st:8946/stream",
-    fallbackUrl: "http://proxima.shoutca.st:8946/stream",
-    logo: "assets/logos/libyana-hits-libya.png",
+    frequency: "WEB",
+    band: "WEB",
+    language: "العربية",
+    genre: "إذاعة بنغازي • ثقافة، حوارات وموسيقى ليبية",
+    streamUrl: "https://live.munir.ly/proxy/almunir/stream",
+    fallbackUrl: "https://live.munir.ly/proxy/almunir/stream",
+    logo: "assets/logos/almunir-radio-benghazi.png",
     featured: true
   },
   {
@@ -723,19 +723,19 @@ const CURATED_STATIONS = [
     featured: true
   },
   {
-    id: "akaboozi-fm-uganda",
-    name: "Akaboozi 87.9 FM Kampala",
+    id: "capital-fm-uganda",
+    name: "Capital FM 91.3 Kampala",
     country: "Ouganda",
     code: "🇺🇬",
     continent: "africa",
     category: "news",
-    frequency: "87.9",
+    frequency: "91.3",
     band: "FM",
-    language: "Luganda & English",
-    genre: "Voice of Uganda • News, Current Affairs & Talk",
-    streamUrl: "http://162.244.80.52:8732/stream.mp3",
-    fallbackUrl: "http://162.244.80.52:8732/stream.mp3",
-    logo: "assets/logos/akaboozi-fm-uganda.png",
+    language: "English & Luganda",
+    genre: "Kampala's #1 Hit Station • News, Pop & Talk",
+    streamUrl: "https://capitalfm.cloudrad.io/stream",
+    fallbackUrl: "https://capitalfm.cloudrad.io/stream",
+    logo: "assets/logos/capital-fm-uganda.png",
     featured: true
   },
 
@@ -1623,6 +1623,15 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
     }
 
     if (!data || !Array.isArray(data)) return [];
+
+    // Filtrer les flux HTTP non sécurisés si l'application s'exécute en HTTPS (évite les blocages Mixed Content du navigateur)
+    const isHttpsSite = typeof window !== "undefined" && window.location && window.location.protocol === "https:";
+    if (isHttpsSite) {
+      data = data.filter(st => {
+        const u = (st.url_resolved || st.url || "").trim();
+        return u.startsWith("https://");
+      });
+    }
 
     return data.map(st => {
       // Détection automatique de la fréquence numérique dans le nom (ex: 94.3, 105.5)
