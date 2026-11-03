@@ -111,7 +111,11 @@ const TRANSLATIONS = {
     receiverActivateBtn: "Activer mon Poste (0.00005 π)",
     receiverActivatedSuccess: "Félicitations ! Votre Poste Pi Radio est activé à vie 📻",
     receiverAlreadyActive: "Votre Poste Pi Radio est déjà actif à vie !",
-    badgeLicense: "Licence"
+    badgeLicense: "Licence",
+    myFavorites: "Mes Radios Favorites",
+    backToRadio: "Retour à la radio",
+    backToHome: "Retour à l'accueil",
+    noFavoritesYet: "Aucune radio favorite pour le moment. Cliquez sur l'étoile ☆ d'une radio pour l'ajouter ici !"
   },
   en: {
     appTitle: "Pi Radio",
@@ -216,7 +220,11 @@ const TRANSLATIONS = {
     receiverActivateBtn: "Activate My Receiver (0.00005 π)",
     receiverActivatedSuccess: "Congratulations! Your Pi Radio Receiver is activated for life 📻",
     receiverAlreadyActive: "Your Pi Radio Receiver is already active for life!",
-    badgeLicense: "License"
+    badgeLicense: "License",
+    myFavorites: "My Favorite Radios",
+    backToRadio: "Back to Radio",
+    backToHome: "Back to Home",
+    noFavoritesYet: "No favorite radios yet. Click the star ☆ on any station to pin it here!"
   },
   es: {
     appTitle: "Pi Radio",
@@ -321,7 +329,11 @@ const TRANSLATIONS = {
     receiverActivateBtn: "Activar mi Receptor (0.00005 π)",
     receiverActivatedSuccess: "¡Felicidades! Tu Receptor Pi Radio está activado de por vida 📻",
     receiverAlreadyActive: "¡Tu Receptor Pi Radio ya está activo de por vida!",
-    badgeLicense: "Licencia"
+    badgeLicense: "Licencia",
+    myFavorites: "Mis Radios Favoritas",
+    backToRadio: "Volver a la radio",
+    backToHome: "Volver al inicio",
+    noFavoritesYet: "No hay radios favoritas todavía. ¡Haz clic en la estrella ☆ para añadirla aquí!"
   },
   zh: {
     appTitle: "Pi Radio (先锋电台)",
@@ -426,7 +438,11 @@ const TRANSLATIONS = {
     receiverActivateBtn: "激活我的收音机 (0.00005 π)",
     receiverActivatedSuccess: "恭喜！您的 Pi Radio 收音机已终身激活 📻",
     receiverAlreadyActive: "您的 Pi Radio 收音机已终身处于激活状态！",
-    badgeLicense: "许可证"
+    badgeLicense: "许可证",
+    myFavorites: "我的收藏电台",
+    backToRadio: "返回电台",
+    backToHome: "返回首页",
+    noFavoritesYet: "暂无收藏电台。点击任何电台上的星星 ☆ 即可将其固定在此处！"
   },
   hi: {
     appTitle: "पाई रेडियो (Pi Radio)",
@@ -531,7 +547,11 @@ const TRANSLATIONS = {
     receiverActivateBtn: "रिसीवर सक्रिय करें (0.00005 π)",
     receiverActivatedSuccess: "बधाई हो! आपका पाई रेडियो रिसीवर आजीवन सक्रिय हो गया है 📻",
     receiverAlreadyActive: "आपका पाई रेडियो रिसीवर पहले से ही आजीवन सक्रिय है!",
-    badgeLicense: "लाइसेंस"
+    badgeLicense: "लाइसेंस",
+    myFavorites: "मेरी पसंदीदा रेडियो",
+    backToRadio: "रेडियो पर वापस जाएं",
+    backToHome: "होम पर वापस जाएं",
+    noFavoritesYet: "अभी तक कोई पसंदीदा रेडियो नहीं है। यहां जोड़ने के लिए किसी भी रेडियो पर स्टार ☆ क्लिक करें!"
   },
   vi: {
     appTitle: "Pi Radio",
@@ -636,7 +656,11 @@ const TRANSLATIONS = {
     receiverActivateBtn: "Kích hoạt Máy thu (0.00005 π)",
     receiverActivatedSuccess: "Xin chúc mừng! Máy thu Pi Radio đã được kích hoạt trọn đời 📻",
     receiverAlreadyActive: "Máy thu Pi Radio của bạn đã được kích hoạt trọn đời!",
-    badgeLicense: "Giấy phép"
+    badgeLicense: "Giấy phép",
+    myFavorites: "Đài phát thanh yêu thích",
+    backToRadio: "Quay lại radio",
+    backToHome: "Về trang chủ",
+    noFavoritesYet: "Chưa có đài yêu thích. Nhấp vào ngôi sao ☆ để ghim vào đây!"
   },
   ar: {
     appTitle: "باي راديو (Pi Radio)",
@@ -741,7 +765,11 @@ const TRANSLATIONS = {
     receiverActivateBtn: "تفعيل الجهاز (0.00005 π)",
     receiverActivatedSuccess: "تهانينا! تم تفعيل جهاز استقبال باي راديو مدى الحياة 📻",
     receiverAlreadyActive: "جهاز باي راديو الخاص بك مفعّل بالفعل مدى الحياة!",
-    badgeLicense: "ترخيص"
+    badgeLicense: "ترخيص",
+    myFavorites: "محطاتي المفضلة",
+    backToRadio: "العودة إلى الراديو",
+    backToHome: "العودة للرئيسية",
+    noFavoritesYet: "لا توجد محطات مفضلة حتى الآن. انقر فوق النجمة ☆ لإضافتها هنا!"
   },
   yo: {
     appTitle: "Pi Radio",
@@ -846,6 +874,10 @@ const TRANSLATIONS = {
     receiverActivateBtn: "Ṣí Rédíò Mi (0.00005 π)",
     receiverActivatedSuccess: "Ẹ kú oríire! A ti ṣí Rédíò Pi rẹ títí ayé 📻",
     receiverAlreadyActive: "Rédíò Pi rẹ ti wà ní ṣíṣí tẹ́lẹ̀ títí ayé!",
-    badgeLicense: "Àṣẹ"
+    badgeLicense: "Àṣẹ",
+    myFavorites: "Àwọn Rédíò Àyànfẹ́ Mi",
+    backToRadio: "Pada sí Rédíò",
+    backToHome: "Pada sí Ilé",
+    noFavoritesYet: "Kò tíì sí rédíò àyànfẹ́ kankan. Tẹ ìràwọ̀ ☆ láti fi kún níbí!"
   }
 };

@@ -39,7 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainContentArea = document.getElementById("mainContentArea");
   const settingsPanel = document.getElementById("settingsPanel");
   const stationsGrid = document.getElementById("stationsGrid");
+  const favoritesSection = document.getElementById("favoritesSection");
+  const favoritesGrid = document.getElementById("favoritesGrid");
+  const favoritesCountBadge = document.getElementById("favoritesCountBadge");
   const sectionTitleText = document.getElementById("sectionTitleText");
+  const sectionBackBtn = document.getElementById("sectionBackBtn");
+  const sectionBackBtnText = document.getElementById("sectionBackBtnText");
+  const backFromSettingsBtn = document.getElementById("backFromSettingsBtn");
   const totalCountEl = document.getElementById("totalCount");
   const searchInput = document.getElementById("searchInput");
   const clearSearchBtn = document.getElementById("clearSearchBtn");
@@ -366,12 +372,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateSectionTitle() {
     const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-    if (state.searchQuery.trim() !== "") {
+    const isSearching = state.searchQuery.trim() !== "";
+    const isFiltered = (state.selectedBand && state.selectedBand !== "all") || (state.selectedCountry && state.selectedCountry !== "all");
+
+    if (sectionBackBtn) {
+      if (isSearching || isFiltered || state.activeTab !== "home") {
+        sectionBackBtn.style.display = "inline-flex";
+        if (sectionBackBtnText) {
+          sectionBackBtnText.textContent = t.backToHome || "Retour";
+        }
+      } else {
+        sectionBackBtn.style.display = "none";
+      }
+    }
+
+    if (isSearching) {
       sectionTitleText.textContent = `${t.searchResultsFor || "Résultats pour"} "${state.searchQuery}"`;
+    } else if (state.selectedBand === "FAV") {
+      sectionTitleText.textContent = `⭐ ${t.myFavorites || "Mes Radios Favorites"}`;
     } else if (state.activeTab === "explore") {
       sectionTitleText.textContent = t.navExplore;
     } else if (state.activeTab === "home") {
-      sectionTitleText.textContent = t.featuredNews;
+      if (state.favorites.length > 0 && !isFiltered) {
+        sectionTitleText.textContent = "📻 Toutes les Radios Mondiales";
+      } else {
+        sectionTitleText.textContent = t.featuredNews;
+      }
     } else if (state.activeTab === "news") {
       sectionTitleText.textContent = t.catNews;
     } else if (state.activeTab === "culture") {
@@ -386,6 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
       heroSection.style.display = "none";
       searchSection.style.display = "none";
       mainContentArea.style.display = "none";
+      if (favoritesSection) favoritesSection.style.display = "none";
       settingsPanel.classList.add("active");
       return;
     }
@@ -431,9 +458,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // 2. Filtrage par Bande d'ondes (FM, AM, WEB)
+    // 2. Filtrage par Bande d'ondes (FM, AM, WEB, Favoris)
     if (state.selectedBand !== "all") {
       list = list.filter(st => {
+        if (state.selectedBand === "FAV") {
+          return state.favorites.includes(st.id);
+        }
         const band = (st.band || "").toUpperCase();
         const freqNum = st.frequency ? parseFloat(st.frequency) : null;
         if (state.selectedBand === "FM") {
@@ -491,104 +521,140 @@ document.addEventListener("DOMContentLoaded", () => {
     return list;
   }
 
+  function createStationCard(st) {
+    const isCurrent = state.currentStation && state.currentStation.id === st.id;
+    const isCardPlaying = isCurrent && state.isPlaying;
+    const isFav = state.favorites.includes(st.id);
+    const fallbackLogo = getFlagFallback(st.code);
+    const resolvedLogo = resolveStationLogo(st);
+    
+    const badgeHtml = st.frequency 
+      ? `<span class="card-freq-badge">${st.frequency} ${st.band || 'FM'}</span>` 
+      : (st.band ? `<span class="card-band-badge">${st.band}</span>` : '');
+
+    const lockedForUser = isStationLocked(st);
+    let trialTagHtml = "";
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    if (lockedForUser) {
+      const remaining = getStationRemainingSeconds(st.id);
+      if (remaining <= 0) {
+        trialTagHtml = `<span class="card-trial-badge" style="border-color: #ff5252; color: #ff5252; background: rgba(255, 82, 82, 0.15);">${t.trialCardExpired || '🔒 Essai terminé'}</span>`;
+      } else {
+        trialTagHtml = `<span class="card-trial-badge">${t.trialCardBadge || '🔒 Essai 3min'}</span>`;
+      }
+    } else if (state.isReceiverActivated && (st.locked || st.id.startsWith("rb_"))) {
+      trialTagHtml = `<span class="card-unlocked-badge">${t.trialUnlocked || '📻 Débloqué'}</span>`;
+    }
+
+    const card = document.createElement("div");
+    card.className = `station-card ${isCardPlaying ? "playing" : ""}`;
+    card.innerHTML = `
+      <img class="station-logo" src="${resolvedLogo}" alt="${st.name}" loading="lazy"/>
+      <div class="station-info">
+        <div class="station-name">${st.name}</div>
+        <div class="station-origin">
+          <span>${st.code}</span>
+          <span>${st.country}</span>
+        </div>
+        <div class="station-tag">${badgeHtml ? badgeHtml + ' • ' : ''}${trialTagHtml ? trialTagHtml + ' • ' : ''}${st.genre} • ${st.language}</div>
+      </div>
+      <div class="sound-wave">
+        <div class="sound-wave-bar"></div>
+        <div class="sound-wave-bar"></div>
+        <div class="sound-wave-bar"></div>
+        <div class="sound-wave-bar"></div>
+      </div>
+      <div class="card-actions">
+        <button class="card-fav-btn ${isFav ? 'active' : ''}" data-id="${st.id}" title="${isFav ? 'Retirer des favoris' : 'Enregistrer dans l\'App'}" aria-label="Favoris">
+          ${isFav ? '★' : '☆'}
+        </button>
+        <button class="card-play-action" aria-label="Play">
+          ${isCardPlaying ? "⏸" : "▶"}
+        </button>
+      </div>
+    `;
+
+    const logoImg = card.querySelector(".station-logo");
+    if (logoImg) {
+      logoImg.addEventListener("error", function() {
+        this.src = fallbackLogo;
+      }, { once: true });
+    }
+
+    const favBtn = card.querySelector(".card-fav-btn");
+    if (favBtn) {
+      favBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleFavorite(st);
+      });
+    }
+
+    card.addEventListener("click", () => {
+      if (isCurrent) {
+        togglePlayback();
+      } else {
+        startPlayback(st, false);
+      }
+    });
+
+    return card;
+  }
+
+  function renderFavoritesSection() {
+    if (!favoritesSection || !favoritesGrid) return;
+    const isHome = state.activeTab === "home";
+    const noSearch = state.searchQuery.trim() === "";
+    const noBand = state.selectedBand === "all";
+    const noCountry = state.selectedCountry === "all";
+
+    // Affichage dédié et proéminent en haut de l'accueil dès que le Pionnier a des favoris
+    if (isHome && noSearch && noBand && noCountry && state.favorites.length > 0) {
+      favoritesSection.style.display = "block";
+      favoritesGrid.innerHTML = "";
+
+      const allStations = [...state.stations, ...state.apiStations];
+      const favList = [];
+      state.favorites.forEach(favId => {
+        const found = allStations.find(s => s.id === favId);
+        if (found && !favList.some(x => x.id === found.id)) {
+          favList.push(found);
+        }
+      });
+
+      if (favoritesCountBadge) {
+        favoritesCountBadge.textContent = `${favList.length} radio${favList.length > 1 ? "s" : ""}`;
+      }
+
+      favList.forEach(st => {
+        favoritesGrid.appendChild(createStationCard(st));
+      });
+    } else {
+      favoritesSection.style.display = "none";
+    }
+  }
+
   function renderStations() {
     updateSectionTitle();
+    renderFavoritesSection();
     const list = getFilteredList();
     stationsGrid.innerHTML = "";
-    const t = TRANSLATIONS[state.lang];
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
 
     totalCountEl.textContent = `${list.length} ${t.onlineCount}`;
 
     if (list.length === 0) {
+      const isFavMode = state.selectedBand === "FAV";
       stationsGrid.innerHTML = `
         <div style="grid-column: 1/-1; text-align: center; padding: 50px 20px; color: var(--text-muted);">
-          <div style="font-size: 48px; margin-bottom: 12px;">📻</div>
-          <p style="font-size: 1.1rem;">${t.noResults}</p>
+          <div style="font-size: 48px; margin-bottom: 12px;">${isFavMode ? "⭐" : "📻"}</div>
+          <p style="font-size: 1.1rem;">${isFavMode ? (t.noFavoritesYet || "Aucune radio favorite pour le moment.") : t.noResults}</p>
         </div>
       `;
       return;
     }
 
     list.forEach(st => {
-      const isCurrent = state.currentStation && state.currentStation.id === st.id;
-      const isCardPlaying = isCurrent && state.isPlaying;
-      const isFav = state.favorites.includes(st.id);
-      const fallbackLogo = getFlagFallback(st.code);
-      const resolvedLogo = resolveStationLogo(st);
-      
-      const badgeHtml = st.frequency 
-        ? `<span class="card-freq-badge">${st.frequency} ${st.band || 'FM'}</span>` 
-        : (st.band ? `<span class="card-band-badge">${st.band}</span>` : '');
-
-      const lockedForUser = isStationLocked(st);
-      let trialTagHtml = "";
-      const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-      if (lockedForUser) {
-        const remaining = getStationRemainingSeconds(st.id);
-        if (remaining <= 0) {
-          trialTagHtml = `<span class="card-trial-badge" style="border-color: #ff5252; color: #ff5252; background: rgba(255, 82, 82, 0.15);">${t.trialCardExpired || '🔒 Essai terminé'}</span>`;
-        } else {
-          trialTagHtml = `<span class="card-trial-badge">${t.trialCardBadge || '🔒 Essai 3min'}</span>`;
-        }
-      } else if (state.isReceiverActivated && (st.locked || st.id.startsWith("rb_"))) {
-        trialTagHtml = `<span class="card-unlocked-badge">${t.trialUnlocked || '📻 Débloqué'}</span>`;
-      }
-
-      const card = document.createElement("div");
-      card.className = `station-card ${isCardPlaying ? "playing" : ""}`;
-      card.innerHTML = `
-        <img class="station-logo" src="${resolvedLogo}" alt="${st.name}" loading="lazy"/>
-        <div class="station-info">
-          <div class="station-name">${st.name}</div>
-          <div class="station-origin">
-            <span>${st.code}</span>
-            <span>${st.country}</span>
-          </div>
-          <div class="station-tag">${badgeHtml ? badgeHtml + ' • ' : ''}${trialTagHtml ? trialTagHtml + ' • ' : ''}${st.genre} • ${st.language}</div>
-        </div>
-        <div class="sound-wave">
-          <div class="sound-wave-bar"></div>
-          <div class="sound-wave-bar"></div>
-          <div class="sound-wave-bar"></div>
-          <div class="sound-wave-bar"></div>
-        </div>
-        <div class="card-actions">
-          <button class="card-fav-btn ${isFav ? 'active' : ''}" data-id="${st.id}" title="${isFav ? 'Retirer des favoris' : 'Enregistrer dans l\'App'}" aria-label="Favoris">
-            ${isFav ? '★' : '☆'}
-          </button>
-          <button class="card-play-action" aria-label="Play">
-            ${isCardPlaying ? "⏸" : "▶"}
-          </button>
-        </div>
-      `;
-
-      // Gestionnaire d'erreur robuste sans syntax error inline
-      const logoImg = card.querySelector(".station-logo");
-      if (logoImg) {
-        logoImg.addEventListener("error", function() {
-          this.src = fallbackLogo;
-        }, { once: true });
-      }
-
-      // Clic sur le bouton favoris (sans déclencher la lecture audio)
-      const favBtn = card.querySelector(".card-fav-btn");
-      if (favBtn) {
-        favBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          toggleFavorite(st);
-        });
-      }
-
-      // Clic sur la carte pour lancer la lecture
-      card.addEventListener("click", () => {
-        if (isCurrent) {
-          togglePlayback();
-        } else {
-          startPlayback(st, false);
-        }
-      });
-
-      stationsGrid.appendChild(card);
+      stationsGrid.appendChild(createStationCard(st));
     });
   }
 
@@ -1368,6 +1434,41 @@ document.addEventListener("DOMContentLoaded", () => {
         loadMoreBtn.textContent = TRANSLATIONS[state.lang].loadMore;
         renderStations();
       }
+    });
+  }
+
+  // Flèche de retour depuis la page des Paramètres vers la radio
+  if (backFromSettingsBtn) {
+    backFromSettingsBtn.addEventListener("click", () => {
+      state.activeTab = "home";
+      navTabs.forEach(t => {
+        t.classList.toggle("active", t.getAttribute("data-tab") === "home");
+      });
+      renderView();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // Flèche de retour depuis une recherche, un filtre ou une sous-section vers l'accueil
+  if (sectionBackBtn) {
+    sectionBackBtn.addEventListener("click", () => {
+      state.activeTab = "home";
+      state.searchQuery = "";
+      state.selectedBand = "all";
+      state.selectedCountry = "all";
+      state.activeContinent = "all";
+      if (searchInput) {
+        searchInput.value = "";
+        clearSearchBtn.style.display = "none";
+      }
+      if (bandSelect) bandSelect.value = "all";
+      if (countrySelect) countrySelect.value = "all";
+      navTabs.forEach(t => {
+        t.classList.toggle("active", t.getAttribute("data-tab") === "home");
+      });
+      document.querySelectorAll(".freq-chip").forEach(c => c.classList.remove("active"));
+      renderView();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 

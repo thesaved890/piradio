@@ -134,10 +134,11 @@
         <button id="clearSearchBtn" class="clear-search-btn" style="display: none;" title="Effacer la recherche">✕</button>
       </div>
 
-      <!-- Filtre de Bande (FM, AM, WEB, Toutes) -->
+      <!-- Filtre de Bande (FM, AM, WEB, Favoris, Toutes) -->
       <div class="band-select-wrapper">
         <select id="bandSelect" class="band-dropdown" aria-label="Filtrer par bande">
           <option value="all" data-i18n="allBands">📻 Toutes les ondes</option>
+          <option value="FAV" data-i18n="myFavorites">⭐ Mes Radios Favorites</option>
           <option value="FM" data-i18n="bandFM">FM (87.5 - 108 MHz)</option>
           <option value="AM" data-i18n="bandAM">AM (Ondes moyennes)</option>
           <option value="WEB" data-i18n="bandWeb">WEB (100% Digital)</option>
@@ -192,11 +193,31 @@
   </div>
 
   <!-- ============================================================
+       SECTION DÉDIÉE : MES RADIOS FAVORITES (⭐ FAVORIS DU PIONNIER)
+       ============================================================ -->
+  <section class="content-area favorites-wrapper" id="favoritesSection" style="display: none;">
+    <div class="favorites-banner-card">
+      <div class="section-header" style="margin-bottom: 14px;">
+        <div class="section-title">
+          <span>⭐</span> <span data-i18n="myFavorites">Mes Radios Favorites</span>
+          <span id="favoritesCountBadge" class="fav-count-badge">0</span>
+        </div>
+      </div>
+      <div class="stations-grid" id="favoritesGrid">
+        <!-- Rendu dynamique par app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        ZONE PRINCIPALE DES RADIOS
        ============================================================ -->
   <main class="content-area" id="mainContentArea">
     <div class="section-header">
-      <div class="section-title">
+      <div class="section-title" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <button id="sectionBackBtn" class="back-nav-btn" style="display: none;" title="Retour à l'accueil">
+          <span>←</span> <span id="sectionBackBtnText" data-i18n="backToHome">Retour</span>
+        </button>
         <span id="sectionTitleText" data-i18n="featuredNews">Actualités Mondiales en Direct</span>
       </div>
       <span id="totalCount" style="font-size: 0.85rem; color: var(--live-green); font-weight: 600;">
@@ -220,6 +241,11 @@
        ============================================================ -->
   <section class="content-area">
     <div class="settings-panel" id="settingsPanel">
+      <div class="settings-header-nav" style="margin-bottom: 15px;">
+        <button id="backFromSettingsBtn" class="back-nav-btn" title="Retour à la radio">
+          <span>←</span> <span data-i18n="backToRadio">Retour à la radio</span>
+        </button>
+      </div>
       <h2 style="margin-bottom: 20px; font-size: 1.4rem;" data-i18n="settingsTitle">Paramètres de l'application</h2>
 
       <!-- Langue -->

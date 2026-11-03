@@ -1272,6 +1272,56 @@ body {
   box-shadow: 0 6px 20px rgba(243, 180, 63, 0.5);
 }
 
+/* ============================================================
+   FLÈCHES DE RETOUR & SECTION DÉDIÉE FAVORIS
+   ============================================================ */
+.back-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(243, 180, 63, 0.3);
+  color: var(--pi-gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.back-nav-btn:hover {
+  background: rgba(243, 180, 63, 0.2);
+  border-color: var(--pi-gold);
+  transform: translateX(-3px);
+  box-shadow: 0 0 10px rgba(243, 180, 63, 0.3);
+}
+
+.favorites-wrapper {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.favorites-banner-card {
+  background: linear-gradient(135deg, rgba(243, 180, 63, 0.09) 0%, rgba(107, 56, 194, 0.16) 100%);
+  border: 1.5px solid rgba(243, 180, 63, 0.35);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fav-count-badge {
+  background: linear-gradient(135deg, var(--pi-gold) 0%, #e67e22 100%);
+  color: #120824;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  letter-spacing: 0.3px;
+}
+
 /* Responsiveness Mobile */
 @media (max-width: 768px) {
   .hero-box {
