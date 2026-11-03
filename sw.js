@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v2.1
-// Cache App Shell & Mode Hors-Ligne pour PWA
+// Pi Radio • Service Worker v2.2
+// Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v2.1';
+const CACHE_NAME = 'piradio-v2.2';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -14,15 +14,46 @@ const PRECACHE_ASSETS = [
   './icon-512.png',
   './icon-maskable.png',
   './apple-touch-icon.png',
-  './favicon.png'
+  './favicon.png',
+  // Logos officiels Afrique
+  './assets/logos/ortb-radio-benin.png',
+  './assets/logos/ortb-radio-parakou.jpg',
+  './assets/logos/algerie-chaine-3.png',
+  './assets/logos/tunisie-mosaique-fm.png',
+  './assets/logos/radio-mars-maroc.png',
+  './assets/logos/guinee-espace-fm.png',
+  './assets/logos/angola-radio-nacional.png',
+  './assets/logos/radio-maria-cameroun.png',
+  './assets/logos/eagle-7-fm-abeokuta.png',
+  './assets/logos/ogbc-fm-abeokuta.png',
+  './assets/logos/tatafo-radio-ogun.jpg',
+  './assets/logos/agidigbo-fm-ibadan.png',
+  './assets/logos/diamond-fm-ibadan.png',
+  './assets/logos/cool-fm-lagos.png',
+  './assets/logos/wazobia-fm-lagos.png',
+  './assets/logos/nigeria-info-lagos.png',
+  './assets/logos/metro-fm-lagos.png',
+  './assets/logos/bond-fm-lagos.png',
+  './assets/logos/rhythm-fm-lagos.png',
+  './assets/logos/brila-fm-lagos.png',
+  './assets/logos/vybz-fm-lagos.png',
+  './assets/logos/1radio-ikwerre-rivers.png',
+  './assets/logos/bourdex-fm-abia.png',
+  './assets/logos/kcity-radio-abuja.png',
+  './assets/logos/sud-fm-senegal.png',
+  './assets/logos/rts-radio-senegal.png',
+  './assets/logos/capital-fm-kenya.png',
+  './assets/logos/classic-105-nairobi.png',
+  './assets/logos/peace-fm-ghana.png',
+  './assets/logos/jacaranda-fm-sa.png'
 ];
 
-// Installation : Mise en cache des composants de base (App Shell)
+// Installation : Mise en cache des composants de base (App Shell + Logos)
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Pi Radio SW] Pré-mise en cache des fichiers statiques');
+      console.log('[Pi Radio SW] Pré-mise en cache des fichiers statiques et logos');
       return cache.addAll(PRECACHE_ASSETS);
     })
   );
@@ -66,11 +97,23 @@ self.addEventListener('fetch', (event) => {
     url.pathname.includes('/live') ||
     url.searchParams.has('stream')
   ) {
-    return; // Laisser le navigateur gérer le flux en direct sans passer par le cache
+    return;
+  }
+
+  // Requêtes vers assets/logos : Cache-First avec fallback Réseau
+  if (url.pathname.includes('/assets/logos/')) {
+    event.respondWith(
+      caches.match(req).then((cached) => cached || fetch(req).then((res) => {
+        const copy = res.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
+        return res;
+      }))
+    );
+    return;
   }
 
   // Pour les requêtes d'API externes (Radio Browser, etc.) : Réseau en priorité
-  if (url.hostname.includes('radio-browser.info') || url.hostname.includes('google.com')) {
+  if (url.hostname.includes('radio-browser.info') || url.hostname.includes('google.com') || url.hostname.includes('gstatic.com')) {
     event.respondWith(
       fetch(req).catch(() => caches.match(req))
     );
@@ -90,12 +133,10 @@ self.addEventListener('fetch', (event) => {
         return networkResponse;
       })
       .catch(() => {
-        // En cas d'absence de réseau, charger depuis le cache
         return caches.match(req).then((cachedResponse) => {
           if (cachedResponse) {
             return cachedResponse;
           }
-          // Si navigation HTML hors-ligne, renvoyer la coquille index.html
           if (req.mode === 'navigate') {
             return caches.match('./index.html');
           }

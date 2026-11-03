@@ -85,19 +85,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const pwaInstallBtn = document.getElementById("pwaInstallBtn");
   const pwaInstalledNotice = document.getElementById("pwaInstalledNotice");
 
-  // Badge officiel avec drapeau national (anti-photos génériques)
+  // Badge officiel avec drapeau national (anti-photos génériques et safe SVG)
   function getFlagFallback(code) {
-    return `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23140b27' stroke='%23f3b43f' stroke-width='2'/><text x='50%' y='64%' font-size='44' text-anchor='middle'>${encodeURIComponent(code || '📻')}</text></svg>`;
+    const safeCode = encodeURIComponent(code || '📻');
+    return `data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23140b27' stroke='%23f3b43f' stroke-width='2'/%3E%3Ctext x='50%25' y='64%25' font-size='44' text-anchor='middle'%3E${safeCode}%3C/text%3E%3C/svg%3E`;
   }
 
-  // Résolution intelligente du logo : Logo direct HTTPS, ou Google Favicon Service 128px via domaine, ou Drapeau SVG
+  // Résolution intelligente du logo : Logo direct local assets/, logo HTTPS, ou Google Favicon Service 128px via domaine, ou Drapeau SVG
   function resolveStationLogo(st) {
-    if (st.logo && st.logo.startsWith("https://") && !st.logo.includes("Globe_icon")) {
+    if (st.logo && !st.logo.includes("Flag_of_") && !st.logo.includes("Globe_icon")) {
       return st.logo;
     }
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain) {
-      return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+      return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
     }
     return getFlagFallback(st.code);
   }
@@ -513,7 +514,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("div");
       card.className = `station-card ${isCardPlaying ? "playing" : ""}`;
       card.innerHTML = `
-        <img class="station-logo" src="${resolvedLogo}" alt="${st.name}" loading="lazy" onerror="if(this.src!=='${fallbackLogo}'){this.src='${fallbackLogo}';} this.onerror=null;"/>
+        <img class="station-logo" src="${resolvedLogo}" alt="${st.name}" loading="lazy"/>
         <div class="station-info">
           <div class="station-name">${st.name}</div>
           <div class="station-origin">
@@ -537,6 +538,14 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
         </div>
       `;
+
+      // Gestionnaire d'erreur robuste sans syntax error inline
+      const logoImg = card.querySelector(".station-logo");
+      if (logoImg) {
+        logoImg.addEventListener("error", function() {
+          this.src = fallbackLogo;
+        }, { once: true });
+      }
 
       // Clic sur le bouton favoris (sans déclencher la lecture audio)
       const favBtn = card.querySelector(".card-fav-btn");

@@ -21,7 +21,7 @@ const CURATED_STATIONS = [
     genre: "Actualités nationales & Débats",
     streamUrl: "https://listen.radioking.com/radio/47608/stream/84430",
     fallbackUrl: "https://listen.radioking.com/radio/47608/stream/84430",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Benin.svg/320px-Flag_of_Benin.svg.png",
+    logo: "assets/logos/ortb-radio-benin.png",
     featured: true
   },
   {
@@ -39,7 +39,7 @@ const CURATED_STATIONS = [
     genre: "Informations régionales Nord Bénin",
     streamUrl: "https://listen.radioking.com/radio/51919/stream/88927",
     fallbackUrl: "https://listen.radioking.com/radio/51919/stream/88927",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Benin.svg/320px-Flag_of_Benin.svg.png",
+    logo: "assets/logos/ortb-radio-parakou.jpg",
     featured: true
   },
 
@@ -59,7 +59,7 @@ const CURATED_STATIONS = [
     genre: "Actualités algériennes & Internationales",
     streamUrl: "https://webradio1.tda.dz:8001/Chaine3_64K.mp3",
     fallbackUrl: "https://webradio1.tda.dz:8001/Chaine3_64K.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/320px-Flag_of_Algeria.svg.png",
+    logo: "assets/logos/algerie-chaine-3.png",
     featured: true
   },
   {
@@ -75,7 +75,7 @@ const CURATED_STATIONS = [
     genre: "Première radio de Tunisie, News & Talk",
     streamUrl: "http://radio.mosaiquefm.net:8000/mosalive",
     fallbackUrl: "http://radio.mosaiquefm.net:8000/mosalive",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/320px-Flag_of_Tunisia.svg.png",
+    logo: "assets/logos/tunisie-mosaique-fm.png",
     featured: true
   },
   {
@@ -90,8 +90,8 @@ const CURATED_STATIONS = [
     language: "العربية & Français",
     genre: "100% Football marocain, africain & mondial",
     streamUrl: "https://radiomars.ice.infomaniak.ch/radiomars-128.mp3",
-    fallbackUrl: "https://audio.bfmtv.com/rmcradio_128.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/320px-Flag_of_Morocco.svg.png",
+    fallbackUrl: "https://radiomars.ice.infomaniak.ch/radiomars-128.mp3",
+    logo: "assets/logos/radio-mars-maroc.png",
     featured: true
   },
 
@@ -111,7 +111,7 @@ const CURATED_STATIONS = [
     genre: "Les Grandes Gueules & News Guinée",
     streamUrl: "http://listen.radioking.com/radio/16769/stream/49487",
     fallbackUrl: "http://listen.radioking.com/radio/16769/stream/49487",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Flag_of_Guinea.svg/320px-Flag_of_Guinea.svg.png",
+    logo: "assets/logos/guinee-espace-fm.png",
     featured: true
   },
   {
@@ -127,13 +127,14 @@ const CURATED_STATIONS = [
     genre: "Emissora Oficial de Angola, Notícias & Cultura",
     streamUrl: "https://paineldj5.com.br:20087/stream",
     fallbackUrl: "https://paineldj5.com.br:20087/stream",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Angola.svg/320px-Flag_of_Angola.svg.png",
+    logo: "assets/logos/angola-radio-nacional.png",
     featured: true
   },
   {
     id: "radio-maria-cameroun",
     name: "Radio Maria Cameroun 99.8 FM",
     country: "Cameroun",
+    code: "🇨🇲",
     code: "🇨🇲",
     continent: "africa",
     category: "culture",
@@ -142,8 +143,8 @@ const CURATED_STATIONS = [
     language: "Français & English",
     genre: "Paix, Société, Éducation & Foi",
     streamUrl: "https://dreamsiteradiocp7.com/proxy/rmcameroon?mp=/stream",
-    fallbackUrl: "https://listen.radioking.com/radio/47608/stream/84430",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/320px-Flag_of_Cameroon.svg.png",
+    fallbackUrl: "https://dreamsiteradiocp7.com/proxy/rmcameroon?mp=/stream",
+    logo: "assets/logos/radio-maria-cameroun.png",
     featured: false
   },
 
@@ -167,7 +168,7 @@ const CURATED_STATIONS = [
     genre: "Sports, Musique & Talk Abeokuta",
     streamUrl: "https://eagle7fm-atunwadigital.streamguys1.com/eagle7fm",
     fallbackUrl: "https://eagle7fm-atunwadigital.streamguys1.com/eagle7fm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/eagle-7-fm-abeokuta.png",
     homepage: "https://eagle7fm.com",
     featured: true
   },
@@ -186,7 +187,7 @@ const CURATED_STATIONS = [
     genre: "Ogun State Broadcasting Corporation, Actualités & Culture",
     streamUrl: "https://mpc.my-control-panel.eu/stream/8118",
     fallbackUrl: "https://mpc.my-control-panel.eu/stream/8118",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/ogbc-fm-abeokuta.png",
     homepage: "https://ogbc.com.ng",
     featured: true
   },
@@ -204,7 +205,7 @@ const CURATED_STATIONS = [
     genre: "Informations locales & Culture d'Ogun State",
     streamUrl: "https://pro06.caster.fm:8050/radio",
     fallbackUrl: "https://pro06.caster.fm:8050/radio",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/tatafo-radio-ogun.jpg",
     featured: false
   },
 
@@ -224,7 +225,7 @@ const CURATED_STATIONS = [
     genre: "La voix d'Ibadan (Oriyomi Hamzat), Débats & Société",
     streamUrl: "https://agidigbostream.com.ng/radio/8000/radio.mp3",
     fallbackUrl: "https://agidigbostream.com.ng/radio/8000/radio.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/agidigbo-fm-ibadan.png",
     featured: true
   },
   {
@@ -242,7 +243,7 @@ const CURATED_STATIONS = [
     genre: "University of Ibadan Radio, Débats, Savoir & Musique",
     streamUrl: "https://cast1.asurahosting.com/proxy/brightb1/stream",
     fallbackUrl: "https://cast1.asurahosting.com/proxy/brightb1/stream",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/diamond-fm-ibadan.png",
     featured: false
   },
 
@@ -262,7 +263,7 @@ const CURATED_STATIONS = [
     genre: "Top Hit Music, Afrobeats & Divertissement",
     streamUrl: "https://coolfmlagos969-atunwadigital.streamguys1.com/coolfmlagos969",
     fallbackUrl: "https://coolfmlagos969-atunwadigital.streamguys1.com/coolfmlagos969",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/cool-fm-lagos.png",
     featured: true
   },
   {
@@ -280,7 +281,7 @@ const CURATED_STATIONS = [
     genre: "100% Pidgin English, Afrobeats & Divertissement populaire",
     streamUrl: "https://wazobiafmlagos951-atunwadigital.streamguys1.com/wazobiafmlagos951",
     fallbackUrl: "https://wazobiafmlagos951-atunwadigital.streamguys1.com/wazobiafmlagos951",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/wazobia-fm-lagos.png",
     featured: true
   },
   {
@@ -298,7 +299,7 @@ const CURATED_STATIONS = [
     genre: "News, Débats politiques & Débats citoyens",
     streamUrl: "https://nigeriainfofmlagos993-atunwadigital.streamguys1.com/nigeriainfofmlagos993",
     fallbackUrl: "https://nigeriainfofmlagos993-atunwadigital.streamguys1.com/nigeriainfofmlagos993",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/nigeria-info-lagos.png",
     featured: true
   },
   {
@@ -316,7 +317,7 @@ const CURATED_STATIONS = [
     genre: "Actualités métropolitaines, Musique & Culture urbaine",
     streamUrl: "https://go.webgateready.com/metrofm",
     fallbackUrl: "https://go.webgateready.com/metrofm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/metro-fm-lagos.png",
     featured: true
   },
   {
@@ -334,7 +335,7 @@ const CURATED_STATIONS = [
     genre: "Langues régionales & Culture locale du Nigeria",
     streamUrl: "https://go.webgateready.com/bondfm",
     fallbackUrl: "https://go.webgateready.com/bondfm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/bond-fm-lagos.png",
     featured: true
   },
   {
@@ -352,7 +353,7 @@ const CURATED_STATIONS = [
     genre: "More Music Less Talk, R&B, Hip Hop & Afropop",
     streamUrl: "https://rhythmfmlagos-atunwadigital.streamguys1.com/rhythmfmlagos",
     fallbackUrl: "https://rhythmfmlagos-atunwadigital.streamguys1.com/rhythmfmlagos",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/rhythm-fm-lagos.png",
     featured: false
   },
   {
@@ -370,7 +371,7 @@ const CURATED_STATIONS = [
     genre: "1ère Radio 100% Sports du Nigeria, Football en direct",
     streamUrl: "https://atunwadigital.streamguys1.com/brilafm",
     fallbackUrl: "https://atunwadigital.streamguys1.com/brilafm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/brila-fm-lagos.png",
     featured: true
   },
   {
@@ -388,7 +389,7 @@ const CURATED_STATIONS = [
     genre: "Afrobeats, Dancehall & Culture jeune de Lagos",
     streamUrl: "https://mpc.my-control-panel.eu/stream/8138",
     fallbackUrl: "https://mpc.my-control-panel.eu/stream/8138",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/vybz-fm-lagos.png",
     featured: false
   },
 
@@ -407,7 +408,7 @@ const CURATED_STATIONS = [
     genre: "Culture & Musique de Rivers State",
     streamUrl: "https://fm.imediaport.com/ikwerre",
     fallbackUrl: "https://fm.imediaport.com/ikwerre",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/1radio-ikwerre-rivers.png",
     featured: false
   },
   {
@@ -425,7 +426,7 @@ const CURATED_STATIONS = [
     genre: "Actualités régionales d'Abia State & Musique Highlife",
     streamUrl: "https://a8.asurahosting.com:9080/radio.mp3",
     fallbackUrl: "https://a8.asurahosting.com:9080/radio.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/bourdex-fm-abia.png",
     featured: false
   },
   {
@@ -442,7 +443,7 @@ const CURATED_STATIONS = [
     genre: "Capital City Vibes, Musique & Actualités fédérales",
     streamUrl: "https://radio.gotright.net/radio/8010/radio.mp3",
     fallbackUrl: "https://radio.gotright.net/radio/8010/radio.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/320px-Flag_of_Nigeria.svg.png",
+    logo: "assets/logos/kcity-radio-abuja.png",
     featured: false
   },
   {
@@ -457,8 +458,8 @@ const CURATED_STATIONS = [
     language: "Français & Wolof",
     genre: "Actualités sénégalaises & Débats",
     streamUrl: "https://sd-151888.dedibox.fr/proxy/cotesud/csfm",
-    fallbackUrl: "https://carina.streamerr.co:2020/stream/OnSportFM",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/320px-Flag_of_Senegal.svg.png",
+    fallbackUrl: "https://sd-151888.dedibox.fr/proxy/cotesud/csfm",
+    logo: "assets/logos/sud-fm-senegal.png",
     featured: true
   },
   {
@@ -473,8 +474,8 @@ const CURATED_STATIONS = [
     language: "Français & Wolof",
     genre: "Radio d'État, Informations & Culture",
     streamUrl: "https://carina.streamerr.co:2020/stream/OnSportFM",
-    fallbackUrl: "https://sd-151888.dedibox.fr/proxy/cotesud/csfm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/320px-Flag_of_Senegal.svg.png",
+    fallbackUrl: "https://carina.streamerr.co:2020/stream/OnSportFM",
+    logo: "assets/logos/rts-radio-senegal.png",
     featured: true
   },
   {
@@ -489,8 +490,8 @@ const CURATED_STATIONS = [
     language: "English / Swahili",
     genre: "East Africa Breaking News & Hits",
     streamUrl: "https://atunwadigital.streamguys1.com/capitalfm",
-    fallbackUrl: "https://atunwadigital.streamguys1.com/classic105",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Kenya.svg/320px-Flag_of_Kenya.svg.png",
+    fallbackUrl: "https://atunwadigital.streamguys1.com/capitalfm",
+    logo: "assets/logos/capital-fm-kenya.png",
     featured: true
   },
   {
@@ -505,8 +506,8 @@ const CURATED_STATIONS = [
     language: "English / Swahili",
     genre: "Talk, News & Entertainment",
     streamUrl: "https://atunwadigital.streamguys1.com/classic105",
-    fallbackUrl: "https://atunwadigital.streamguys1.com/capitalfm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Kenya.svg/320px-Flag_of_Kenya.svg.png",
+    fallbackUrl: "https://atunwadigital.streamguys1.com/classic105",
+    logo: "assets/logos/classic-105-nairobi.png",
     featured: false
   },
   {
@@ -521,8 +522,8 @@ const CURATED_STATIONS = [
     language: "English & Twi",
     genre: "Ghanaian News, Politics & Talk",
     streamUrl: "https://peacefm-atunwadigital.streamguys1.com/peacefm",
-    fallbackUrl: "https://atunwadigital.streamguys1.com/capitalfm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/320px-Flag_of_Ghana.svg.png",
+    fallbackUrl: "https://peacefm-atunwadigital.streamguys1.com/peacefm",
+    logo: "assets/logos/peace-fm-ghana.png",
     featured: true
   },
   {
@@ -537,8 +538,8 @@ const CURATED_STATIONS = [
     language: "English & Afrikaans",
     genre: "South African News & Hit Music",
     streamUrl: "https://edge.iono.fm/xice/jacarandafm_live_medium.aac",
-    fallbackUrl: "https://atunwadigital.streamguys1.com/capitalfm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/320px-Flag_of_South_Africa.svg.png",
+    fallbackUrl: "https://edge.iono.fm/xice/jacarandafm_live_medium.aac",
+    logo: "assets/logos/jacaranda-fm-sa.png",
     featured: true
   },
 
