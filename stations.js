@@ -678,8 +678,8 @@ const CURATED_STATIONS = [
     language: "Français",
     genre: "L'actualité mondiale en direct 24h/24",
     streamUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3",
-    fallbackUrl: "https://icecast.radiofrance.fr/franceinter-midfi.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png",
+    fallbackUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3",
+    logo: "assets/logos/france-info.png",
     featured: true
   },
   {
@@ -694,8 +694,8 @@ const CURATED_STATIONS = [
     language: "Français",
     genre: "Grands débats, société & actualités",
     streamUrl: "https://stream.europe1.fr/europe1.aac",
-    fallbackUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png",
+    fallbackUrl: "https://stream.europe1.fr/europe1.aac",
+    logo: "assets/logos/europe-1.png",
     featured: false
   },
   {
@@ -710,8 +710,8 @@ const CURATED_STATIONS = [
     language: "Français",
     genre: "Analyses de fond, voix & culture",
     streamUrl: "https://icecast.radiofrance.fr/franceinter-midfi.mp3",
-    fallbackUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png",
+    fallbackUrl: "https://icecast.radiofrance.fr/franceinter-midfi.mp3",
+    logo: "assets/logos/france-inter.png",
     featured: false
   },
   {
@@ -726,8 +726,8 @@ const CURATED_STATIONS = [
     language: "English",
     genre: "Global Impartial News from London",
     streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
-    fallbackUrl: "https://npr-ice.streamguys1.com/live.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/320px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
+    fallbackUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
+    logo: "assets/logos/bbc-world-service.png",
     featured: true
   },
   {
@@ -742,8 +742,8 @@ const CURATED_STATIONS = [
     language: "Español",
     genre: "Líder en Noticias y Deportes de España",
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENASER.mp3",
-    fallbackUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/320px-Flag_of_Spain.svg.png",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENASER.mp3",
+    logo: "assets/logos/cadena-ser-espana.png",
     featured: true
   },
   {
@@ -758,8 +758,8 @@ const CURATED_STATIONS = [
     language: "Deutsch",
     genre: "Politik, Kultur & Nationale Berichte",
     streamUrl: "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3",
-    fallbackUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/320px-Flag_of_Germany.svg.png",
+    fallbackUrl: "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3",
+    logo: "assets/logos/deutschlandfunk-allemagne.png",
     featured: false
   },
 
@@ -778,8 +778,8 @@ const CURATED_STATIONS = [
     language: "English",
     genre: "Premier League Live Commentary & Debate",
     streamUrl: "https://radio.talksport.com/stream",
-    fallbackUrl: "https://audio.bfmtv.com/rmcradio_128.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/320px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
+    fallbackUrl: "https://radio.talksport.com/stream",
+    logo: "assets/logos/talksport-premier-league.png",
     featured: true
   },
   {
@@ -794,8 +794,8 @@ const CURATED_STATIONS = [
     language: "Français",
     genre: "Football, After Foot & Multiplex en Direct",
     streamUrl: "https://audio.bfmtv.com/rmcradio_128.mp3",
-    fallbackUrl: "https://radio.talksport.com/stream",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png",
+    fallbackUrl: "https://audio.bfmtv.com/rmcradio_128.mp3",
+    logo: "assets/logos/rmc-sport-direct.png",
     featured: true
   },
 
@@ -814,8 +814,8 @@ const CURATED_STATIONS = [
     language: "Français",
     genre: "100% Sketches, Stand-up & Canulars",
     streamUrl: "https://streaming.nrjaudio.fm/ou8o8xgk7oiu?origine=fluxradios",
-    fallbackUrl: "https://icecast.radiofrance.fr/franceinter-midfi.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png",
+    fallbackUrl: "https://streaming.nrjaudio.fm/ou8o8xgk7oiu?origine=fluxradios",
+    logo: "assets/logos/rire-et-chansons-france.png",
     featured: true
   },
 
@@ -899,7 +899,7 @@ const CURATED_STATIONS = [
     genre: "Jazz, Soul, Blues & Swing",
     streamUrl: "https://stream.srg-ssr.ch/m/rsj/aacp_96",
     fallbackUrl: "https://stream.srg-ssr.ch/m/rsj/aacp_96",
-    logo: "https://www.google.com/s2/favicons?domain=radioswissjazz.ch&sz=128",
+    logo: "assets/logos/radio-swiss-jazz.png",
     homepage: "https://www.radioswissjazz.ch",
     featured: true
   },
@@ -916,7 +916,7 @@ const CURATED_STATIONS = [
     genre: "Chillout, Ambient, Deep Beats & Lounge",
     streamUrl: "https://media-ssl.musicradio.com/CapitalChill",
     fallbackUrl: "https://media-ssl.musicradio.com/CapitalChill",
-    logo: "https://www.google.com/s2/favicons?domain=capitalfm.com&sz=128",
+    logo: "assets/logos/capital-chill-uk.png",
     homepage: "https://www.capitalfm.com",
     featured: true
   }
