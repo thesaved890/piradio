@@ -40,7 +40,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://listen.radioking.com/radio/51919/stream/88927",
     fallbackUrl: "https://listen.radioking.com/radio/51919/stream/88927",
     logo: "assets/logos/ortb-radio-parakou.jpg",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -264,7 +265,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://coolfmlagos969-atunwadigital.streamguys1.com/coolfmlagos969",
     fallbackUrl: "https://coolfmlagos969-atunwadigital.streamguys1.com/coolfmlagos969",
     logo: "assets/logos/cool-fm-lagos.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "wazobia-fm-lagos",
@@ -372,7 +374,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://atunwadigital.streamguys1.com/brilafm",
     fallbackUrl: "https://atunwadigital.streamguys1.com/brilafm",
     logo: "assets/logos/brila-fm-lagos.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "vybz-fm-lagos",
@@ -460,7 +463,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://sd-151888.dedibox.fr/proxy/cotesud/csfm",
     fallbackUrl: "https://sd-151888.dedibox.fr/proxy/cotesud/csfm",
     logo: "assets/logos/sud-fm-senegal.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "rts-radio-senegal",
@@ -508,7 +512,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://atunwadigital.streamguys1.com/classic105",
     fallbackUrl: "https://atunwadigital.streamguys1.com/classic105",
     logo: "assets/logos/classic-105-nairobi.png",
-    featured: false
+    featured: false,
+    locked: true
   },
   {
     id: "peace-fm-ghana",
@@ -576,7 +581,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://a9.asurahosting.com/listen/light_radio_93.9fm/radio.mp3",
     fallbackUrl: "https://a9.asurahosting.com/listen/light_radio_93.9fm/radio.mp3",
     logo: "assets/logos/light-radio-togo.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "star-fm-gambia",
@@ -608,7 +614,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/d1qwim65b68tv",
     fallbackUrl: "https://stream.zeno.fm/d1qwim65b68tv",
     logo: "assets/logos/gam-express-gambia.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "africa-no1-gabon",
@@ -640,7 +647,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://webradio1.ice.infomaniak.ch/webradio2-128.mp3",
     fallbackUrl: "https://webradio1.ice.infomaniak.ch/webradio2-128.mp3",
     logo: "assets/logos/africa-mandingue.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "almunir-radio-libya",
@@ -672,7 +680,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://live.munir.ly/proxy/almunir/stream",
     fallbackUrl: "https://live.munir.ly/proxy/almunir/stream",
     logo: "assets/logos/almunir-radio-benghazi.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-rwanda",
@@ -704,7 +713,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://kissfm-atunwadigital.streamguys1.com/kissfm",
     fallbackUrl: "https://kissfm-atunwadigital.streamguys1.com/kissfm",
     logo: "assets/logos/kiss-fm-rwanda.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "nrg-radio-uganda",
@@ -736,7 +746,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://capitalfm.cloudrad.io/stream",
     fallbackUrl: "https://capitalfm.cloudrad.io/stream",
     logo: "assets/logos/capital-fm-uganda.png",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================

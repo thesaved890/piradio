@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isBoosted: false,
     isNormalizerOn: localStorage.getItem("piradio_normalizer") !== "false",
     isReceiverActivated: localStorage.getItem("piradio_receiver_activated") === "true",
-    trialSecondsRemaining: 180,
+    stationTrials: JSON.parse(localStorage.getItem("piradio_station_trials") || "{}"),
     trialTimerInterval: null,
     audio: new Audio(),
     hls: null
@@ -520,15 +520,18 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<span class="card-freq-badge">${st.frequency} ${st.band || 'FM'}</span>` 
         : (st.band ? `<span class="card-band-badge">${st.band}</span>` : '');
 
-      const isSearchStation = st.id.startsWith("rb_");
+      const lockedForUser = isStationLocked(st);
       let trialTagHtml = "";
-      if (isSearchStation) {
-        const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-        if (state.isReceiverActivated) {
-          trialTagHtml = `<span class="card-unlocked-badge">${t.trialUnlocked || '📻 Débloqué'}</span>`;
+      const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+      if (lockedForUser) {
+        const remaining = getStationRemainingSeconds(st.id);
+        if (remaining <= 0) {
+          trialTagHtml = `<span class="card-trial-badge" style="border-color: #ff5252; color: #ff5252; background: rgba(255, 82, 82, 0.15);">🔒 ${t.trialExpired || 'Essai terminé'}</span>`;
         } else {
-          trialTagHtml = `<span class="card-trial-badge">${t.trialCardBadge || '⏳ Essai 3min'}</span>`;
+          trialTagHtml = `<span class="card-trial-badge">🔒 ${t.trialCardBadge || 'Essai 3min'}</span>`;
         }
+      } else if (state.isReceiverActivated && (st.locked || st.id.startsWith("rb_"))) {
+        trialTagHtml = `<span class="card-unlocked-badge">${t.trialUnlocked || '📻 Débloqué'}</span>`;
       }
 
       const card = document.createElement("div");
@@ -590,11 +593,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================================
-  // GESTION DU POSTE PI RADIO & ESSAI 3 MINUTES (ÉTAPE 1)
+  // GESTION DU POSTE PI RADIO & ESSAI 3 MINUTES PAR STATION (ÉTAPE 1 & 2)
   // ============================================================
-  function isStationCurated(station) {
-    if (!station) return true;
-    return !station.id.startsWith("rb_") || CURATED_STATIONS.some(s => s.id === station.id);
+  function isStationLocked(station) {
+    if (!station) return false;
+    if (state.isReceiverActivated) return false;
+    // Une station est verrouillée si station.locked === true ou si issue d'une recherche (rb_...)
+    return station.locked === true || station.id.startsWith("rb_");
+  }
+
+  function getStationRemainingSeconds(stId) {
+    if (state.isReceiverActivated) return 999999;
+    if (!stId) return 180;
+    if (state.stationTrials[stId] === undefined) {
+      return 180; // 3 minutes complètes garanties
+    }
+    return Math.max(0, state.stationTrials[stId]);
   }
 
   function formatTrialTime(sec) {
@@ -603,7 +617,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${m}:${s}`;
   }
 
-  function startTrialCountdown() {
+  function startTrialCountdown(station) {
     stopTrialCountdown();
     if (state.isReceiverActivated) {
       if (trialCountdownBadge) {
@@ -617,6 +631,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (!isStationLocked(station)) {
+      if (trialCountdownBadge) trialCountdownBadge.style.display = "none";
+      return;
+    }
+
+    const stId = station.id;
+    let remaining = getStationRemainingSeconds(stId);
+
     if (trialCountdownBadge) {
       trialCountdownBadge.style.display = "inline-flex";
       trialCountdownBadge.style.color = "var(--pi-gold)";
@@ -624,22 +646,26 @@ document.addEventListener("DOMContentLoaded", () => {
       trialCountdownBadge.style.background = "rgba(243, 180, 63, 0.18)";
       const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
       const label = t.trialBadge || "⏳ Essai";
-      trialCountdownBadge.textContent = `${label} : ${formatTrialTime(state.trialSecondsRemaining)}`;
+      trialCountdownBadge.textContent = `${label} : ${formatTrialTime(remaining)}`;
     }
 
     state.trialTimerInterval = setInterval(() => {
-      if (!state.isPlaying) return;
+      // Décompte UNIQUEMENT quand le son est réellement en cours de lecture
+      if (!state.isPlaying || state.audio.paused || state.audio.ended) return;
 
-      state.trialSecondsRemaining--;
+      remaining--;
+      state.stationTrials[stId] = remaining;
+      localStorage.setItem("piradio_station_trials", JSON.stringify(state.stationTrials));
+
       if (trialCountdownBadge) {
         const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
         const label = t.trialBadge || "⏳ Essai";
-        trialCountdownBadge.textContent = `${label} : ${formatTrialTime(state.trialSecondsRemaining)}`;
+        trialCountdownBadge.textContent = `${label} : ${formatTrialTime(remaining)}`;
       }
 
-      if (state.trialSecondsRemaining <= 0) {
+      if (remaining <= 0) {
         stopTrialCountdown();
-        handleTrialExpiration();
+        handleTrialExpiration(station);
       }
     }, 1000);
   }
@@ -651,7 +677,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function handleTrialExpiration() {
+  function handleTrialExpiration(station) {
     state.audio.pause();
     state.isPlaying = false;
     masterPlayIcon.textContent = "▶";
@@ -661,7 +687,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trialCountdownBadge.textContent = t.trialExpired || "🔒 Essai 3min terminé";
     }
     const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-    showToast(t.trialExpired || "Période d'essai de 3 minutes terminée pour cette recherche !");
+    showToast(t.trialExpired || "Période d'essai de 3 minutes terminée pour cette station !");
     openReceiverModal();
   }
 
@@ -784,12 +810,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. MOTEUR AUDIO DOUBLE-FLUX & WATCHDOG ANTI-COUPURE
   // ============================================================
   function startPlayback(station, useFallback = false) {
-    if (!isStationCurated(station)) {
-      if (!state.isReceiverActivated && state.trialSecondsRemaining <= 0) {
-        handleTrialExpiration();
+    if (isStationLocked(station)) {
+      const remaining = getStationRemainingSeconds(station.id);
+      if (!state.isReceiverActivated && remaining <= 0) {
+        handleTrialExpiration(station);
         return;
       }
-      startTrialCountdown();
+      startTrialCountdown(station);
     } else {
       stopTrialCountdown();
       if (trialCountdownBadge) trialCountdownBadge.style.display = "none";
@@ -847,9 +874,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (!isStationCurated(state.currentStation) && !state.isReceiverActivated && state.trialSecondsRemaining <= 0) {
-      handleTrialExpiration();
-      return;
+    if (isStationLocked(state.currentStation)) {
+      const remaining = getStationRemainingSeconds(state.currentStation.id);
+      if (!state.isReceiverActivated && remaining <= 0) {
+        handleTrialExpiration(state.currentStation);
+        return;
+      }
     }
 
     if (state.isPlaying) {
@@ -863,8 +893,8 @@ document.addEventListener("DOMContentLoaded", () => {
         state.isPlaying = true;
         masterPlayIcon.textContent = "⏸";
         updatePlayerStatusUI();
-        if (!isStationCurated(state.currentStation)) {
-          startTrialCountdown();
+        if (isStationLocked(state.currentStation)) {
+          startTrialCountdown(state.currentStation);
         }
       }).catch(triggerFallbackOrRetry);
     }
