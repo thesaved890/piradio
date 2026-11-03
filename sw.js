@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v2.5
+// Pi Radio • Service Worker v2.6
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v2.5';
+const CACHE_NAME = 'piradio-v2.6';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -73,7 +73,18 @@ const PRECACHE_ASSETS = [
   './assets/logos/cnr-1-voice-of-china.png',
   './assets/logos/easy-rock-manila.png',
   './assets/logos/capital-958-singapore.png',
-  './assets/logos/sonora-fm-jakarta.png'
+  './assets/logos/sonora-fm-jakarta.png',
+  // Logos officiels Moyen-Orient
+  './assets/logos/makkah-alsudais.png',
+  './assets/logos/makkah-alshuraim.png',
+  './assets/logos/quran-mishary-alafasy.png',
+  './assets/logos/quran-abdulbasit.png',
+  './assets/logos/monte-carlo-doualiya.png',
+  './assets/logos/quran-radio-sharjah.png',
+  './assets/logos/alaraby-radio-qatar.png',
+  './assets/logos/radio-9090-egypt.png',
+  './assets/logos/radio-fairuz-liban.png',
+  './assets/logos/hayat-fm-jordan.png'
 ];
 
 // Installation : Mise en cache des composants de base (App Shell + Logos)

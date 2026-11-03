@@ -932,7 +932,7 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
-  // 10. 🕌 SPIRITUALITÉ & PATRIMOINE DU MONDE
+  // 10. 🕌 MOYEN-ORIENT & MONDE ARABE (SPIRITUALITÉ, ACTUALITÉS & CULTURE)
   // ==========================================
   {
     id: "makkah-alsudais",
@@ -946,8 +946,8 @@ const CURATED_STATIONS = [
     language: "العربية",
     genre: "تلاوات الحرم المكي الشريف مباشر",
     streamUrl: "https://qurango.net/radio/abdulrahman_alsudaes",
-    fallbackUrl: "https://qurango.net/radio/saud_alshuraim",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/320px-Flag_of_Saudi_Arabia.svg.png",
+    fallbackUrl: "https://qurango.net/radio/abdulrahman_alsudaes",
+    logo: "assets/logos/makkah-alsudais.png",
     featured: true
   },
   {
@@ -962,8 +962,8 @@ const CURATED_STATIONS = [
     language: "العربية",
     genre: "تلاوة خاشعة 24/7 من مكة المكرمة",
     streamUrl: "https://qurango.net/radio/saud_alshuraim",
-    fallbackUrl: "https://qurango.net/radio/abdulrahman_alsudaes",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/320px-Flag_of_Saudi_Arabia.svg.png",
+    fallbackUrl: "https://qurango.net/radio/saud_alshuraim",
+    logo: "assets/logos/makkah-alshuraim.png",
     featured: true
   },
   {
@@ -978,8 +978,8 @@ const CURATED_STATIONS = [
     language: "العربية",
     genre: "القرآن الكريم بصوت العفاسي",
     streamUrl: "https://qurango.net/radio/mishary_alafasi",
-    fallbackUrl: "https://qurango.net/radio/abdulbasit_abdulsamad_mojawwad",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Kuwait.svg/320px-Flag_of_Kuwait.svg.png",
+    fallbackUrl: "https://qurango.net/radio/mishary_alafasi",
+    logo: "assets/logos/quran-mishary-alafasy.png",
     featured: true
   },
   {
@@ -994,8 +994,104 @@ const CURATED_STATIONS = [
     language: "العربية",
     genre: "تلاوة مجودة نادرة ومؤثرة",
     streamUrl: "https://qurango.net/radio/abdulbasit_abdulsamad_mojawwad",
-    fallbackUrl: "https://qurango.net/radio/abdulrahman_alsudaes",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/320px-Flag_of_Egypt.svg.png",
+    fallbackUrl: "https://qurango.net/radio/abdulbasit_abdulsamad_mojawwad",
+    logo: "assets/logos/quran-abdulbasit.png",
+    featured: true
+  },
+  {
+    id: "monte-carlo-doualiya",
+    name: "Monte Carlo Doualiya (مونت كارلو الدولية)",
+    country: "Moyen-Orient",
+    code: "🌐",
+    continent: "middleEast",
+    category: "news",
+    frequency: "WEB / FM",
+    band: "WEB",
+    language: "العربية",
+    genre: "الأخبار الدولية والتحليلات والثقافة في الشرق الأوسط",
+    streamUrl: "https://montecarlodoualiya128k.ice.infomaniak.ch/mc-doualiya.mp3",
+    fallbackUrl: "https://montecarlodoualiya128k.ice.infomaniak.ch/mc-doualiya.mp3",
+    logo: "assets/logos/monte-carlo-doualiya.png",
+    featured: true
+  },
+  {
+    id: "quran-radio-sharjah",
+    name: "إذاعة القرآن الكريم من الشارقة (Sharjah)",
+    country: "Émirats Arabes Unis",
+    code: "🇦🇪",
+    continent: "middleEast",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "العربية",
+    genre: "القرآن الكريم والأدعية من دولة الإمارات",
+    streamUrl: "https://l3.itworkscdn.net/smcquranlive/quranradiolive/icecast.audio",
+    fallbackUrl: "https://l3.itworkscdn.net/smcquranlive/quranradiolive/icecast.audio",
+    logo: "assets/logos/quran-radio-sharjah.png",
+    featured: true
+  },
+  {
+    id: "alaraby-radio-qatar",
+    name: "Al Araby Radio (إذاعة العربي قطر)",
+    country: "Qatar",
+    code: "🇶🇦",
+    continent: "middleEast",
+    category: "news",
+    frequency: "WEB",
+    band: "WEB",
+    language: "العربية",
+    genre: "أخبار الشرق الأوسط والعالم، حوارات وثقافة",
+    streamUrl: "https://l3.itworkscdn.net/alarabyradiolive/alarabyradio_audio/icecast.audio",
+    fallbackUrl: "https://l3.itworkscdn.net/alarabyradiolive/alarabyradio_audio/icecast.audio",
+    logo: "assets/logos/alaraby-radio-qatar.png",
+    featured: true
+  },
+  {
+    id: "radio-9090-egypt",
+    name: "Radio 9090 FM Le Caire (الراديو 9090)",
+    country: "Égypte",
+    code: "🇪🇬",
+    continent: "middleEast",
+    category: "culture",
+    frequency: "90.9",
+    band: "FM",
+    language: "العربية",
+    genre: "هواها مصري • الأخبار والموسيقى والبرامج الحوارية",
+    streamUrl: "http://9090streaming.mobtada.com/9090FMEGYPT",
+    fallbackUrl: "http://9090streaming.mobtada.com/9090FMEGYPT",
+    logo: "assets/logos/radio-9090-egypt.png",
+    featured: true
+  },
+  {
+    id: "radio-fairuz-liban",
+    name: "Radio Fairuz (صوت لبنان وفيروزيات)",
+    country: "Liban",
+    code: "🇱🇧",
+    continent: "middleEast",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "العربية",
+    genre: "أجمل روائع السيدة فيروز والتراث اللبناني الخالد",
+    streamUrl: "https://stream.zeno.fm/9vrahqqfuuhvv",
+    fallbackUrl: "https://stream.zeno.fm/9vrahqqfuuhvv",
+    logo: "assets/logos/radio-fairuz-liban.png",
+    featured: true
+  },
+  {
+    id: "hayat-fm-jordan",
+    name: "Hayat FM 104.7 Amman (إذاعة حياة إف إم)",
+    country: "Jordanie",
+    code: "🇯🇴",
+    continent: "middleEast",
+    category: "culture",
+    frequency: "104.7",
+    band: "FM",
+    language: "العربية",
+    genre: "صوتك للخير • برامج اجتماعية وثقافية أردنية",
+    streamUrl: "https://dc1.serverse.com/proxy/kjxwtpdt/stream",
+    fallbackUrl: "https://dc1.serverse.com/proxy/kjxwtpdt/stream",
+    logo: "assets/logos/hayat-fm-jordan.png",
     featured: true
   },
   {
