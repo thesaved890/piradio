@@ -594,8 +594,8 @@ const CURATED_STATIONS = [
     language: "English",
     genre: "In-Depth US News, Investigations & Analysis",
     streamUrl: "https://npr-ice.streamguys1.com/live.mp3",
-    fallbackUrl: "https://fm939.wnyc.org/wnycfm",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png",
+    fallbackUrl: "https://npr-ice.streamguys1.com/live.mp3",
+    logo: "assets/logos/npr-news-usa.png",
     featured: true
   },
   {
@@ -610,8 +610,8 @@ const CURATED_STATIONS = [
     language: "English",
     genre: "New York City Culture & World News",
     streamUrl: "https://fm939.wnyc.org/wnycfm",
-    fallbackUrl: "https://npr-ice.streamguys1.com/live.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png",
+    fallbackUrl: "https://fm939.wnyc.org/wnycfm",
+    logo: "assets/logos/wnyc-fm-newyork.png",
     featured: true
   },
   {
@@ -627,7 +627,7 @@ const CURATED_STATIONS = [
     genre: "Latino Hits, Actualités & Musique",
     streamUrl: "https://26583.live.streamtheworld.com/RT_CALIAAC_SC",
     fallbackUrl: "https://26583.live.streamtheworld.com/RT_CALIAAC_SC",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/320px-Flag_of_Colombia.svg.png",
+    logo: "assets/logos/radio-tiempo-89-5.png",
     featured: true
   },
   {
@@ -643,7 +643,7 @@ const CURATED_STATIONS = [
     genre: "Live Sports, Football & Talk",
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WMENAMAAC.aac",
     fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WMENAMAAC.aac",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png",
+    logo: "assets/logos/fox-sports-640-am.png",
     featured: true
   },
   {
@@ -658,8 +658,8 @@ const CURATED_STATIONS = [
     language: "Português",
     genre: "A Rádio Que Toca Notícia em Tempo Real",
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_SP_SC.mp3",
-    fallbackUrl: "https://npr-ice.streamguys1.com/live.mp3",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/320px-Flag_of_Brazil.svg.png",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_SP_SC.mp3",
+    logo: "assets/logos/cbn-sao-paulo.png",
     featured: true
   },
 
