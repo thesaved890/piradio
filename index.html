@@ -37,25 +37,8 @@
   <header class="header">
     <div class="header-container">
       <div class="brand">
-        <!-- Logo Original Tricolore en SVG -->
-        <svg class="brand-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="46" fill="url(#violetGrad)" stroke="#f3b43f" stroke-width="2.5"/>
-          <circle cx="50" cy="50" r="32" stroke="#00e676" stroke-width="2" stroke-dasharray="4 3"/>
-          <circle cx="50" cy="50" r="18" fill="url(#goldGrad)" />
-          <path d="M44 38L62 50L44 62V38Z" fill="#0c0618"/>
-          <path d="M72 50C72 62.15 62.15 72 50 72" stroke="#00e676" stroke-width="3" stroke-linecap="round"/>
-          <path d="M50 28C62.15 28 72 37.85 72 50" stroke="#f3b43f" stroke-width="3" stroke-linecap="round"/>
-          <defs>
-            <linearGradient id="violetGrad" x1="0" y1="0" x2="100" y2="100">
-              <stop offset="0%" stop-color="#2d1354"/>
-              <stop offset="100%" stop-color="#120824"/>
-            </linearGradient>
-            <linearGradient id="goldGrad" x1="0" y1="0" x2="100" y2="100">
-              <stop offset="0%" stop-color="#ffd064"/>
-              <stop offset="100%" stop-color="#f3b43f"/>
-            </linearGradient>
-          </defs>
-        </svg>
+        <!-- Logo Officiel Pi Radio (Poste Récepteur & Symbole π) -->
+        <img src="icon-192.png" alt="Pi Radio Logo" class="brand-icon-img" width="44" height="44" />
 
         <div>
           <div class="brand-title">Pi Radio</div>
@@ -306,22 +289,6 @@
           <button id="openReceiverModalFromSettingsBtn" class="pwa-install-action-btn" style="border-color: var(--pi-gold); color: var(--pi-gold);">
             <span>📻</span> <span id="receiverSettingStatusText" data-i18n="receiverActivateBtn">Activer mon Poste (0.00005 π)</span>
           </button>
-        </div>
-      </div>
-
-      <!-- Installation PWA de l'App (Axe 4) -->
-      <div class="setting-group" id="pwaInstallGroup">
-        <div class="setting-label">
-          <span>📲</span> <span data-i18n="pwaTitle">Application Mobile (PWA)</span>
-        </div>
-        <div class="setting-desc" data-i18n="pwaDesc">Installez Pi Radio sur votre écran d'accueil pour une expérience plein écran sans navigateur :</div>
-        <div style="margin-top: 10px;">
-          <button id="pwaInstallBtn" class="pwa-install-action-btn">
-            <span>📲</span> <span data-i18n="pwaInstallBtn">Installer sur l'écran d'accueil</span>
-          </button>
-          <div id="pwaInstalledNotice" style="display: none; color: var(--live-green); font-size: 0.95rem; font-weight: 700; margin-top: 8px;">
-            ✅ <span data-i18n="pwaAlreadyInstalled">Application installée avec succès sur cet appareil !</span>
-          </div>
         </div>
       </div>
 
