@@ -90,7 +90,11 @@ const TRANSLATIONS = {
     pwaInstallBtn: "Installer sur l'écran d'accueil",
     pwaInstallHeader: "Installer l'App",
     pwaAlreadyInstalled: "Application installée avec succès sur cet appareil !",
-    pwaIosGuide: "Sur iPhone / iPad : Appuyez sur Partager dans Safari, puis 'Sur l'écran d'accueil' ➕."
+    pwaIosGuide: "Sur iPhone / iPad : Appuyez sur Partager dans Safari, puis 'Sur l'écran d'accueil' ➕.",
+    trialBadge: "⏳ Essai",
+    trialExpired: "🔒 Essai de 3 min terminé",
+    trialUnlocked: "📻 Poste Débloqué",
+    trialCardBadge: "⏳ Essai 3min"
   },
   en: {
     appTitle: "Pi Radio",
@@ -174,7 +178,11 @@ const TRANSLATIONS = {
     pwaInstallBtn: "Install on Home Screen",
     pwaInstallHeader: "Install App",
     pwaAlreadyInstalled: "App installed successfully on this device!",
-    pwaIosGuide: "On iPhone / iPad: Tap Share in Safari, then select 'Add to Home Screen' ➕."
+    pwaIosGuide: "On iPhone / iPad: Tap Share in Safari, then select 'Add to Home Screen' ➕.",
+    trialBadge: "⏳ Trial",
+    trialExpired: "🔒 3-min trial ended",
+    trialUnlocked: "📻 Receiver Unlocked",
+    trialCardBadge: "⏳ 3min Trial"
   },
   es: {
     appTitle: "Pi Radio",
@@ -258,7 +266,11 @@ const TRANSLATIONS = {
     pwaInstallBtn: "Instalar en la pantalla de inicio",
     pwaInstallHeader: "Instalar App",
     pwaAlreadyInstalled: "¡Aplicación instalada con éxito en este dispositivo!",
-    pwaIosGuide: "En iPhone / iPad: Toca Compartir en Safari, luego 'Agregar al inicio' ➕."
+    pwaIosGuide: "En iPhone / iPad: Toca Compartir en Safari, luego 'Agregar al inicio' ➕.",
+    trialBadge: "⏳ Prueba",
+    trialExpired: "🔒 Prueba de 3 min finalizada",
+    trialUnlocked: "📻 Receptor Desbloqueado",
+    trialCardBadge: "⏳ Prueba 3min"
   },
   zh: {
     appTitle: "Pi Radio (先锋电台)",
@@ -342,7 +354,11 @@ const TRANSLATIONS = {
     pwaInstallBtn: "安装到主屏幕",
     pwaInstallHeader: "安装应用",
     pwaAlreadyInstalled: "应用已在此设备上安装！",
-    pwaIosGuide: "在 iPhone / iPad 上：轻点 Safari 中的“分享”，然后选择“添加到主屏幕”➕。"
+    pwaIosGuide: "在 iPhone / iPad 上：轻点 Safari 中的“分享”，然后选择“添加到主屏幕”➕。",
+    trialBadge: "⏳ 试听",
+    trialExpired: "🔒 3分钟试听已结束",
+    trialUnlocked: "📻 收音机已解锁",
+    trialCardBadge: "⏳ 3分钟试听"
   },
   hi: {
     appTitle: "पाई रेडियो (Pi Radio)",
@@ -426,7 +442,11 @@ const TRANSLATIONS = {
     pwaInstallBtn: "होम स्क्रीन पर इंस्टॉल करें",
     pwaInstallHeader: "ऐप इंस्टॉल करें",
     pwaAlreadyInstalled: "इस डिवाइस पर ऐप इंस्टॉल हो गया है!",
-    pwaIosGuide: "iPhone / iPad पर: Safari में शेयर पर टैप करें, फिर 'होम स्क्रीन में जोड़ें' ➕ चुनें।"
+    pwaIosGuide: "iPhone / iPad पर: Safari में शेयर पर टैप करें, फिर 'होम स्क्रीन में जोड़ें' ➕ चुनें।",
+    trialBadge: "⏳ परीक्षण",
+    trialExpired: "🔒 3 मिनट का परीक्षण समाप्त",
+    trialUnlocked: "📻 रेडियो अनलॉक",
+    trialCardBadge: "⏳ 3 मिनट ट्रायल"
   },
   vi: {
     appTitle: "Pi Radio",
@@ -510,7 +530,11 @@ const TRANSLATIONS = {
     pwaInstallBtn: "Cài đặt vào màn hình chính",
     pwaInstallHeader: "Cài đặt ứng dụng",
     pwaAlreadyInstalled: "Ứng dụng đã được cài đặt trên thiết bị này!",
-    pwaIosGuide: "Trên iPhone / iPad: Nhấn Chia sẻ trong Safari, sau đó chọn 'Thêm vào MH chính' ➕."
+    pwaIosGuide: "Trên iPhone / iPad: Nhấn Chia sẻ trong Safari, sau đó chọn 'Thêm vào MH chính' ➕.",
+    trialBadge: "⏳ Dùng thử",
+    trialExpired: "🔒 Hết 3 phút nghe thử",
+    trialUnlocked: "📻 Đã mở khóa",
+    trialCardBadge: "⏳ Thử 3 phút"
   },
   ar: {
     appTitle: "باي راديو (Pi Radio)",
@@ -594,7 +618,11 @@ const TRANSLATIONS = {
     pwaInstallBtn: "تثبيت على الشاشة الرئيسية",
     pwaInstallHeader: "تثبيت التطبيق",
     pwaAlreadyInstalled: "تم تثبيت التطبيق بنجاح على هذا الجهاز!",
-    pwaIosGuide: "على iPhone / iPad: اضغط على مشاركة في Safari ثم 'إضافة إلى الصفحة الرئيسية' ➕."
+    pwaIosGuide: "على iPhone / iPad: اضغط على مشاركة في Safari ثم 'إضافة إلى الصفحة الرئيسية' ➕.",
+    trialBadge: "⏳ تجربة",
+    trialExpired: "🔒 انتهت التجربة (3 دقائق)",
+    trialUnlocked: "📻 جهاز الراديو مفعل",
+    trialCardBadge: "⏳ تجربة 3 دقائق"
   },
   yo: {
     appTitle: "Pi Radio",
@@ -678,6 +706,10 @@ const TRANSLATIONS = {
     pwaInstallBtn: "Fi sórí Ojú Fóònù",
     pwaInstallHeader: "Fi Àpù Sí Fóònù",
     pwaAlreadyInstalled: "Àpù ti wà lórí fóònù rẹ tẹ́lẹ̀!",
-    pwaIosGuide: "Lórí iPhone / iPad: Tẹ Pínpin ní Safari, lẹ́yìn náà yan 'Fi kún Ojú Fóònù' ➕."
+    pwaIosGuide: "Lórí iPhone / iPad: Tẹ Pínpin ní Safari, lẹ́yìn náà yan 'Fi kún Ojú Fóònù' ➕.",
+    trialBadge: "⏳ Ìdánwò",
+    trialExpired: "🔒 Ìdánwò ìṣẹ́jú 3 ti parí",
+    trialUnlocked: "📻 Rédíò ti Ṣí",
+    trialCardBadge: "⏳ Ìdánwò 3min"
   }
 };

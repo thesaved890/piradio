@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     pioneerUser: JSON.parse(localStorage.getItem("piradio_user") || "null"),
     isBoosted: false,
     isNormalizerOn: localStorage.getItem("piradio_normalizer") !== "false",
+    isReceiverActivated: localStorage.getItem("piradio_receiver_activated") === "true",
+    trialSecondsRemaining: 180,
+    trialTimerInterval: null,
     audio: new Audio(),
     hls: null
   };
@@ -65,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const volumeSlider = document.getElementById("volumeSlider");
   const normalizerToggle = document.getElementById("normalizerToggle");
   const toastNotification = document.getElementById("toastNotification");
+  const trialCountdownBadge = document.getElementById("trialCountdownBadge");
   
   // Auth & Pourboire
   const authBtn = document.getElementById("authBtn");
@@ -510,6 +514,17 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<span class="card-freq-badge">${st.frequency} ${st.band || 'FM'}</span>` 
         : (st.band ? `<span class="card-band-badge">${st.band}</span>` : '');
 
+      const isSearchStation = st.id.startsWith("rb_");
+      let trialTagHtml = "";
+      if (isSearchStation) {
+        const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+        if (state.isReceiverActivated) {
+          trialTagHtml = `<span class="card-unlocked-badge">${t.trialUnlocked || '📻 Débloqué'}</span>`;
+        } else {
+          trialTagHtml = `<span class="card-trial-badge">${t.trialCardBadge || '⏳ Essai 3min'}</span>`;
+        }
+      }
+
       const card = document.createElement("div");
       card.className = `station-card ${isCardPlaying ? "playing" : ""}`;
       card.innerHTML = `
@@ -520,7 +535,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>${st.code}</span>
             <span>${st.country}</span>
           </div>
-          <div class="station-tag">${badgeHtml ? badgeHtml + ' • ' : ''}${st.genre} • ${st.language}</div>
+          <div class="station-tag">${badgeHtml ? badgeHtml + ' • ' : ''}${trialTagHtml ? trialTagHtml + ' • ' : ''}${st.genre} • ${st.language}</div>
         </div>
         <div class="sound-wave">
           <div class="sound-wave-bar"></div>
@@ -569,9 +584,98 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================================
+  // GESTION DU POSTE PI RADIO & ESSAI 3 MINUTES (ÉTAPE 1)
+  // ============================================================
+  function isStationCurated(station) {
+    if (!station) return true;
+    return !station.id.startsWith("rb_") || CURATED_STATIONS.some(s => s.id === station.id);
+  }
+
+  function formatTrialTime(sec) {
+    const m = Math.floor(sec / 60).toString().padStart(2, "0");
+    const s = (sec % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+  }
+
+  function startTrialCountdown() {
+    stopTrialCountdown();
+    if (state.isReceiverActivated) {
+      if (trialCountdownBadge) {
+        trialCountdownBadge.style.display = "inline-flex";
+        trialCountdownBadge.style.color = "var(--live-green)";
+        trialCountdownBadge.style.borderColor = "var(--live-green)";
+        trialCountdownBadge.style.background = "rgba(0, 230, 118, 0.15)";
+        const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+        trialCountdownBadge.textContent = t.trialUnlocked || "📻 Débloqué";
+      }
+      return;
+    }
+
+    if (trialCountdownBadge) {
+      trialCountdownBadge.style.display = "inline-flex";
+      trialCountdownBadge.style.color = "var(--pi-gold)";
+      trialCountdownBadge.style.borderColor = "var(--pi-gold)";
+      trialCountdownBadge.style.background = "rgba(243, 180, 63, 0.18)";
+      const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+      const label = t.trialBadge || "⏳ Essai";
+      trialCountdownBadge.textContent = `${label} : ${formatTrialTime(state.trialSecondsRemaining)}`;
+    }
+
+    state.trialTimerInterval = setInterval(() => {
+      if (!state.isPlaying) return;
+
+      state.trialSecondsRemaining--;
+      if (trialCountdownBadge) {
+        const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+        const label = t.trialBadge || "⏳ Essai";
+        trialCountdownBadge.textContent = `${label} : ${formatTrialTime(state.trialSecondsRemaining)}`;
+      }
+
+      if (state.trialSecondsRemaining <= 0) {
+        stopTrialCountdown();
+        handleTrialExpiration();
+      }
+    }, 1000);
+  }
+
+  function stopTrialCountdown() {
+    if (state.trialTimerInterval) {
+      clearInterval(state.trialTimerInterval);
+      state.trialTimerInterval = null;
+    }
+  }
+
+  function handleTrialExpiration() {
+    state.audio.pause();
+    state.isPlaying = false;
+    masterPlayIcon.textContent = "▶";
+    updatePlayerStatusUI();
+    if (trialCountdownBadge) {
+      const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+      trialCountdownBadge.textContent = t.trialExpired || "🔒 Essai 3min terminé";
+    }
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    showToast(t.trialExpired || "Période d'essai de 3 minutes terminée pour cette recherche !");
+    if (typeof openReceiverModal === "function") {
+      openReceiverModal();
+    }
+  }
+
+  // ============================================================
   // 4. MOTEUR AUDIO DOUBLE-FLUX & WATCHDOG ANTI-COUPURE
   // ============================================================
   function startPlayback(station, useFallback = false) {
+    if (!isStationCurated(station)) {
+      if (!state.isReceiverActivated && state.trialSecondsRemaining <= 0) {
+        handleTrialExpiration();
+        return;
+      }
+      startTrialCountdown();
+    } else {
+      stopTrialCountdown();
+      if (trialCountdownBadge) trialCountdownBadge.style.display = "none";
+    }
+
     state.currentStation = station;
     state.isFallback = useFallback;
     state.isPlaying = true;
@@ -624,16 +728,25 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (!isStationCurated(state.currentStation) && !state.isReceiverActivated && state.trialSecondsRemaining <= 0) {
+      handleTrialExpiration();
+      return;
+    }
+
     if (state.isPlaying) {
       state.audio.pause();
       state.isPlaying = false;
       masterPlayIcon.textContent = "▶";
       updatePlayerStatusUI();
+      stopTrialCountdown();
     } else {
       state.audio.play().then(() => {
         state.isPlaying = true;
         masterPlayIcon.textContent = "⏸";
         updatePlayerStatusUI();
+        if (!isStationCurated(state.currentStation)) {
+          startTrialCountdown();
+        }
       }).catch(triggerFallbackOrRetry);
     }
     if ('mediaSession' in navigator) {
