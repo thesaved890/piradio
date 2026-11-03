@@ -526,9 +526,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (lockedForUser) {
         const remaining = getStationRemainingSeconds(st.id);
         if (remaining <= 0) {
-          trialTagHtml = `<span class="card-trial-badge" style="border-color: #ff5252; color: #ff5252; background: rgba(255, 82, 82, 0.15);">🔒 ${t.trialExpired || 'Essai terminé'}</span>`;
+          trialTagHtml = `<span class="card-trial-badge" style="border-color: #ff5252; color: #ff5252; background: rgba(255, 82, 82, 0.15);">${t.trialCardExpired || '🔒 Essai terminé'}</span>`;
         } else {
-          trialTagHtml = `<span class="card-trial-badge">🔒 ${t.trialCardBadge || 'Essai 3min'}</span>`;
+          trialTagHtml = `<span class="card-trial-badge">${t.trialCardBadge || '🔒 Essai 3min'}</span>`;
         }
       } else if (state.isReceiverActivated && (st.locked || st.id.startsWith("rb_"))) {
         trialTagHtml = `<span class="card-unlocked-badge">${t.trialUnlocked || '📻 Débloqué'}</span>`;
