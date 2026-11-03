@@ -115,7 +115,12 @@ const TRANSLATIONS = {
     myFavorites: "Mes Radios Favorites",
     backToRadio: "Retour à la radio",
     backToHome: "Retour à l'accueil",
-    noFavoritesYet: "Aucune radio favorite pour le moment. Cliquez sur l'étoile ☆ d'une radio pour l'ajouter ici !"
+    noFavoritesYet: "Aucune radio favorite pour le moment. Cliquez sur l'étoile ☆ d'une radio pour l'ajouter ici !",
+    authGateTitle: "Allumez votre Poste Pi Radio",
+    authGateDesc: "Pour syntoniser et écouter les radios en direct, veuillez vous connecter avec votre compte Pi Network.",
+    authGateBtn: "Se connecter avec Pi Network",
+    authGateClose: "Explorer sans écouter",
+    authRequired: "Connexion Pi requise pour allumer le poste et écouter."
   },
   en: {
     appTitle: "Pi Radio",
@@ -224,7 +229,12 @@ const TRANSLATIONS = {
     myFavorites: "My Favorite Radios",
     backToRadio: "Back to Radio",
     backToHome: "Back to Home",
-    noFavoritesYet: "No favorite radios yet. Click the star ☆ on any station to pin it here!"
+    noFavoritesYet: "No favorite radios yet. Click the star ☆ on any station to pin it here!",
+    authGateTitle: "Turn On Your Pi Radio Set",
+    authGateDesc: "To tune in and listen to live stations, please connect with your Pi Network account.",
+    authGateBtn: "Connect with Pi Network",
+    authGateClose: "Explore without listening",
+    authRequired: "Pi Network connection required to turn on the radio and listen."
   },
   es: {
     appTitle: "Pi Radio",
@@ -333,7 +343,12 @@ const TRANSLATIONS = {
     myFavorites: "Mis Radios Favoritas",
     backToRadio: "Volver a la radio",
     backToHome: "Volver al inicio",
-    noFavoritesYet: "No hay radios favoritas todavía. ¡Haz clic en la estrella ☆ para añadirla aquí!"
+    noFavoritesYet: "No hay radios favoritas todavía. ¡Haz clic en la estrella ☆ para añadirla aquí!",
+    authGateTitle: "Enciende tu Receptor Pi Radio",
+    authGateDesc: "Para sintonizar y escuchar emisoras en directo, conéctate con tu cuenta de Pi Network.",
+    authGateBtn: "Conectar con Pi Network",
+    authGateClose: "Explorar sin escuchar",
+    authRequired: "Se requiere conexión Pi para encender el receptor y escuchar."
   },
   zh: {
     appTitle: "Pi Radio (先锋电台)",
@@ -442,7 +457,12 @@ const TRANSLATIONS = {
     myFavorites: "我的收藏电台",
     backToRadio: "返回电台",
     backToHome: "返回首页",
-    noFavoritesYet: "暂无收藏电台。点击任何电台上的星星 ☆ 即可将其固定在此处！"
+    noFavoritesYet: "暂无收藏电台。点击任何电台上的星星 ☆ 即可将其固定在此处！",
+    authGateTitle: "开启您的 Pi Radio 收音机",
+    authGateDesc: "如需收听全球电台直播，请先连接您的 Pi Network 账号。",
+    authGateBtn: "连接 Pi Network 账号",
+    authGateClose: "先浏览不播放",
+    authRequired: "收听电台需要先连接 Pi 账号。"
   },
   hi: {
     appTitle: "पाई रेडियो (Pi Radio)",
@@ -551,7 +571,12 @@ const TRANSLATIONS = {
     myFavorites: "मेरी पसंदीदा रेडियो",
     backToRadio: "रेडियो पर वापस जाएं",
     backToHome: "होम पर वापस जाएं",
-    noFavoritesYet: "अभी तक कोई पसंदीदा रेडियो नहीं है। यहां जोड़ने के लिए किसी भी रेडियो पर स्टार ☆ क्लिक करें!"
+    noFavoritesYet: "अभी तक कोई पसंदीदा रेडियो नहीं है। यहां जोड़ने के लिए किसी भी रेडियो पर स्टार ☆ क्लिक करें!",
+    authGateTitle: "अपना पाई रेडियो चालू करें",
+    authGateDesc: "लाइव रेडियो स्टेशन सुनने के लिए, कृपया अपने पाई नेटवर्क खाते से जुड़ें।",
+    authGateBtn: "पाई नेटवर्क से कनेक्ट करें",
+    authGateClose: "बिना सुने एक्सप्लोर करें",
+    authRequired: "रेडियो सुनने के लिए पाई लॉगिन आवश्यक है।"
   },
   vi: {
     appTitle: "Pi Radio",
@@ -660,7 +685,12 @@ const TRANSLATIONS = {
     myFavorites: "Đài phát thanh yêu thích",
     backToRadio: "Quay lại radio",
     backToHome: "Về trang chủ",
-    noFavoritesYet: "Chưa có đài yêu thích. Nhấp vào ngôi sao ☆ để ghim vào đây!"
+    noFavoritesYet: "Chưa có đài yêu thích. Nhấp vào ngôi sao ☆ để ghim vào đây!",
+    authGateTitle: "Bật Máy Thu Pi Radio của Bạn",
+    authGateDesc: "Để nghe trực tiếp các đài phát thanh toàn cầu, vui lòng kết nối tài khoản Pi Network của bạn.",
+    authGateBtn: "Kết nối với Pi Network",
+    authGateClose: "Khám phá mà không nghe",
+    authRequired: "Yêu cầu kết nối Pi để nghe đài."
   },
   ar: {
     appTitle: "باي راديو (Pi Radio)",
@@ -769,7 +799,12 @@ const TRANSLATIONS = {
     myFavorites: "محطاتي المفضلة",
     backToRadio: "العودة إلى الراديو",
     backToHome: "العودة للرئيسية",
-    noFavoritesYet: "لا توجد محطات مفضلة حتى الآن. انقر فوق النجمة ☆ لإضافتها هنا!"
+    noFavoritesYet: "لا توجد محطات مفضلة حتى الآن. انقر فوق النجمة ☆ لإضافتها هنا!",
+    authGateTitle: "قم بتشغيل مذياعك في Pi Radio",
+    authGateDesc: "للاستماع إلى المحطات الإذاعية المباشرة، يرجى تسجيل الدخول بحساب Pi Network الخاص بك.",
+    authGateBtn: "الاتصال عبر Pi Network",
+    authGateClose: "تصفح دون استماع",
+    authRequired: "يلزم الاتصال بـ Pi للاستماع إلى الراديو."
   },
   yo: {
     appTitle: "Pi Radio",
@@ -878,6 +913,11 @@ const TRANSLATIONS = {
     myFavorites: "Àwọn Rédíò Àyànfẹ́ Mi",
     backToRadio: "Pada sí Rédíò",
     backToHome: "Pada sí Ilé",
-    noFavoritesYet: "Kò tíì sí rédíò àyànfẹ́ kankan. Tẹ ìràwọ̀ ☆ láti fi kún níbí!"
+    noFavoritesYet: "Kò tíì sí rédíò àyànfẹ́ kankan. Tẹ ìràwọ̀ ☆ láti fi kún níbí!",
+    authGateTitle: "Tanna Rédíò Pi Rẹ",
+    authGateDesc: "Láti gbádùn àwọn ilé-iṣẹ́ rédíò lójúkan náà, jọ̀wọ́ so pọ̀ mọ́ àkọọ́lẹ̀ Pi Network rẹ.",
+    authGateBtn: "So pọ̀ mọ́ Pi Network",
+    authGateClose: "Wò láìtẹ́tísí",
+    authRequired: "A nílò ìsopọ̀ Pi láti gbọ́ rédíò."
   }
 };

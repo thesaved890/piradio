@@ -3,6 +3,16 @@
 // Axe 2 : Recherche Avancée (Fréquences FM, Sélecteur de Pays & Puces directes)
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialisation propre du SDK Pi Network (Prêt pour Developer Portal, sans connexion automatique en temps réel)
+  if (window.Pi) {
+    try {
+      window.Pi.init({ version: "2.0", sandbox: false });
+      console.log("[Pi Radio] Pi SDK v2.0 initialisé avec succès.");
+    } catch (err) {
+      console.warn("[Pi Radio] Pi.init notification :", err);
+    }
+  }
+
   // --- ÉTAT GLOBAL DE L'APPLICATION ---
   const state = {
     lang: localStorage.getItem("piradio_lang") || "fr",
@@ -15,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stations: [...CURATED_STATIONS],
     apiStations: [],
     currentStation: null,
+    pendingStationToPlay: null,
     isFallback: false,
     isPlaying: false,
     retryCount: 0,
@@ -76,10 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const toastNotification = document.getElementById("toastNotification");
   const trialCountdownBadge = document.getElementById("trialCountdownBadge");
   
-  // Auth Pi Network
+  // Auth Pi Network & Modale Connexion Obligatoire
   const authBtn = document.getElementById("authBtn");
   const authBtnText = document.getElementById("authBtnText");
   const disconnectBtn = document.getElementById("disconnectBtn");
+  const authGateModal = document.getElementById("authGateModal");
+  const authGateConnectBtn = document.getElementById("authGateConnectBtn");
+  const closeAuthGateBtn = document.getElementById("closeAuthGateBtn");
 
   // Paramètres & PWA (Axe 4)
   const langSelectSetting = document.getElementById("langSelectSetting");
@@ -876,6 +890,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. MOTEUR AUDIO DOUBLE-FLUX & WATCHDOG ANTI-COUPURE
   // ============================================================
   function startPlayback(station, useFallback = false) {
+    // Axe Pi Network : Accès aux radios réservé aux Pionniers connectés
+    if (!state.pioneerUser) {
+      state.pendingStationToPlay = station;
+      openAuthGateModal();
+      return;
+    }
+
     if (isStationLocked(station)) {
       const remaining = getStationRemainingSeconds(station.id);
       if (!state.isReceiverActivated && remaining <= 0) {
@@ -934,6 +955,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function togglePlayback() {
+    if (!state.pioneerUser) {
+      openAuthGateModal();
+      return;
+    }
+
     if (!state.currentStation) {
       const list = getFilteredList();
       if (list.length > 0) startPlayback(list[0], false);
@@ -1090,41 +1116,107 @@ document.addEventListener("DOMContentLoaded", () => {
   // 6. AUTHENTIFICATION & SESSION PI NETWORK
   // ============================================================
   function updateAuthUI() {
-    const t = TRANSLATIONS[state.lang];
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
     if (state.pioneerUser) {
       authBtn.className = "auth-btn connected";
       authBtnText.textContent = `@${state.pioneerUser.username || "Pioneer"}`;
       disconnectBtn.style.display = "inline-flex";
     } else {
       authBtn.className = "auth-btn disconnected";
-      authBtnText.textContent = t.connectPi;
+      authBtnText.textContent = t.connectPi || "Connexion Pi";
       disconnectBtn.style.display = "none";
     }
   }
 
-  authBtn.addEventListener("click", () => {
-    if (state.pioneerUser) return;
+  function openAuthGateModal() {
+    if (authGateModal) authGateModal.style.display = "flex";
+  }
 
-    if (window.Pi && window.Pi.authenticate) {
+  function closeAuthGateModal() {
+    if (authGateModal) authGateModal.style.display = "none";
+  }
+
+  function handlePiLogin() {
+    if (state.pioneerUser) {
+      showToast(`Pionnier connecté : @${state.pioneerUser.username || "Pioneer"}`);
+      return;
+    }
+
+    authBtn.classList.add("loading");
+    authBtnText.textContent = "Connexion...";
+
+    const isPiBrowser = /PiBrowser/i.test(navigator.userAgent);
+
+    if (isPiBrowser && window.Pi && window.Pi.authenticate) {
+      // Dans le Pi Browser : appel officiel du Pi SDK pour Developer Portal
       try {
-        window.Pi.init({ version: "2.0", sandbox: false });
-        window.Pi.authenticate(["username", "payments"], () => {})
+        let authTimedOut = false;
+        const timer = setTimeout(() => {
+          authTimedOut = true;
+          authBtn.classList.remove("loading");
+          updateAuthUI();
+          showToast("Délai de connexion Pi dépassé. Veuillez réessayer.", "error");
+        }, 12000);
+
+        window.Pi.authenticate(["username", "payments"], function onIncompletePaymentFound(payment) {
+          console.log("[Pi Radio] Paiement incomplet trouvé :", payment);
+        })
           .then(auth => {
+            if (authTimedOut) return;
+            clearTimeout(timer);
             state.pioneerUser = auth.user;
             localStorage.setItem("piradio_user", JSON.stringify(auth.user));
             updateAuthUI();
+            closeAuthGateModal();
+            showToast(`Bienvenue @${auth.user.username} !`);
+            if (state.pendingStationToPlay) {
+              const st = state.pendingStationToPlay;
+              state.pendingStationToPlay = null;
+              startPlayback(st, false);
+            }
           })
           .catch(err => {
-            console.log("Connexion simulation :", err);
-            simulatePiLogin();
+            if (authTimedOut) return;
+            clearTimeout(timer);
+            console.warn("[Pi Radio] Erreur Pi.authenticate :", err);
+            showToast("Erreur de connexion Pi Network.");
+            authBtn.classList.remove("loading");
+            updateAuthUI();
           });
       } catch (e) {
-        simulatePiLogin();
+        console.warn("[Pi Radio] Exception authenticate :", e);
+        authBtn.classList.remove("loading");
+        updateAuthUI();
       }
     } else {
-      simulatePiLogin();
+      // Hors Pi Browser (ordinateur / Chrome / tests de développement)
+      setTimeout(() => {
+        authBtn.classList.remove("loading");
+        simulatePiLogin();
+        closeAuthGateModal();
+        showToast("Session Démo connectée (@PioneerGlobal). Dans le Pi Browser avec Developer Portal, votre compte réel sera connecté !");
+        if (state.pendingStationToPlay) {
+          const st = state.pendingStationToPlay;
+          state.pendingStationToPlay = null;
+          startPlayback(st, false);
+        }
+      }, 350);
     }
-  });
+  }
+
+  authBtn.addEventListener("click", handlePiLogin);
+
+  if (authGateConnectBtn) {
+    authGateConnectBtn.addEventListener("click", handlePiLogin);
+  }
+  if (closeAuthGateBtn) {
+    closeAuthGateBtn.addEventListener("click", closeAuthGateModal);
+  }
+  if (authGateModal) {
+    authGateModal.addEventListener("click", (e) => {
+      if (e.target === authGateModal) closeAuthGateModal();
+    });
+  }
 
   function simulatePiLogin() {
     const simulatedUser = { username: "PioneerGlobal", uid: "pi_" + Date.now() };
@@ -1136,7 +1228,16 @@ document.addEventListener("DOMContentLoaded", () => {
   disconnectBtn.addEventListener("click", () => {
     state.pioneerUser = null;
     localStorage.removeItem("piradio_user");
+    if (state.isPlaying) {
+      state.audio.pause();
+      state.isPlaying = false;
+      masterPlayIcon.textContent = "▶";
+      updatePlayerStatusUI();
+      stopTrialCountdown();
+      renderStations();
+    }
     updateAuthUI();
+    showToast("Session déconnectée.");
   });
 
   // Modale Licence Poste Pi Radio (Étape 2 & 3)

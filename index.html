@@ -378,6 +378,30 @@
   <div id="toastNotification" class="toast-notification"></div>
 
   <!-- ============================================================
+       MODALE CONNEXION PI OBLIGATOIRE (ACCÈS AUX RADIOS)
+       ============================================================ -->
+  <div class="receiver-modal-overlay" id="authGateModal" style="display: none;">
+    <div class="receiver-modal-card">
+      <div class="receiver-modal-icon">
+        <img src="icon-192.png" alt="Pi Radio" style="width: 70px; height: 70px; border-radius: 18px; box-shadow: 0 0 20px rgba(243, 180, 63, 0.4); display: block; margin: 0 auto;" />
+      </div>
+      <h3 class="receiver-modal-title" data-i18n="authGateTitle">Allumez votre Poste Pi Radio</h3>
+      <p class="receiver-modal-desc" data-i18n="authGateDesc">
+        Pour syntoniser et écouter les radios en direct, veuillez vous connecter avec votre compte Pi Network.
+      </p>
+
+      <button id="authGateConnectBtn" class="receiver-pay-btn" style="background: linear-gradient(135deg, #f3b43f 0%, #e09819 100%); color: #0c0618; font-weight: 800; border: none;">
+        <span>⚡</span>
+        <span data-i18n="authGateBtn">Se connecter avec Pi Network</span>
+      </button>
+
+      <button id="closeAuthGateBtn" class="receiver-cancel-btn" data-i18n="authGateClose">
+        Explorer sans écouter pour le moment
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
        MODALE ACTIVATION DU POSTE PI RADIO (0.00005 Pi)
        ============================================================ -->
   <div class="receiver-modal-overlay" id="receiverModal">

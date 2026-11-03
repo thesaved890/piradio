@@ -179,6 +179,8 @@ body {
   border: 1px solid var(--border-subtle);
   background: var(--bg-surface);
   color: #fff;
+  user-select: none;
+  touch-action: manipulation;
 }
 
 .auth-btn.connected {
@@ -189,13 +191,18 @@ body {
 
 .auth-btn.disconnected {
   border-color: var(--pi-gold);
-  background: linear-gradient(135deg, rgba(243, 180, 63, 0.2) 0%, rgba(120, 60, 185, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(243, 180, 63, 0.22) 0%, rgba(120, 60, 185, 0.45) 100%);
   color: #fff;
 }
 
 .auth-btn:hover {
   transform: translateY(-1px);
-  border-color: var(--live-green);
+  border-color: var(--pi-gold);
+}
+
+.auth-btn.loading {
+  opacity: 0.75;
+  pointer-events: none;
 }
 
 .live-dot {
@@ -204,6 +211,25 @@ body {
   border-radius: 50%;
   background: var(--live-green);
   box-shadow: 0 0 8px var(--live-green);
+  flex-shrink: 0;
+}
+
+.auth-btn.disconnected .live-dot {
+  background: var(--pi-gold);
+  box-shadow: 0 0 8px var(--pi-gold);
+  animation: pulseDotGold 2s infinite ease-in-out;
+}
+
+.auth-btn.connected .live-dot {
+  background: var(--live-green);
+  box-shadow: 0 0 8px var(--live-green);
+  animation: none;
+}
+
+@keyframes pulseDotGold {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 12px var(--pi-gold); }
+  100% { transform: scale(0.9); opacity: 0.8; }
 }
 
 .disconnect-icon-btn {
