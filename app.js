@@ -70,14 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const toastNotification = document.getElementById("toastNotification");
   const trialCountdownBadge = document.getElementById("trialCountdownBadge");
   
-  // Auth & Pourboire
+  // Auth Pi Network
   const authBtn = document.getElementById("authBtn");
   const authBtnText = document.getElementById("authBtnText");
   const disconnectBtn = document.getElementById("disconnectBtn");
-  const openTipBtn = document.getElementById("openTipBtn");
-  const tipModal = document.getElementById("tipModal");
-  const closeTipBtn = document.getElementById("closeTipBtn");
-  const confirmTipBtn = document.getElementById("confirmTipBtn");
 
   // Paramètres & PWA (Axe 4)
   const langSelectSetting = document.getElementById("langSelectSetting");
@@ -1045,34 +1041,6 @@ document.addEventListener("DOMContentLoaded", () => {
     state.pioneerUser = null;
     localStorage.removeItem("piradio_user");
     updateAuthUI();
-  });
-
-  // Pourboire Pi
-  openTipBtn.addEventListener("click", () => tipModal.classList.add("active"));
-  closeTipBtn.addEventListener("click", () => tipModal.classList.remove("active"));
-  tipModal.addEventListener("click", (e) => {
-    if (e.target === tipModal) tipModal.classList.remove("active");
-  });
-
-  confirmTipBtn.addEventListener("click", () => {
-    if (window.Pi && window.Pi.createPayment) {
-      window.Pi.createPayment({
-        amount: 0.1,
-        memo: "Tip for Pi Radio v2.1",
-        metadata: { purpose: "tip" }
-      }, {
-        onReadyForServerApproval: (pid) => console.log("Approval", pid),
-        onReadyForServerCompletion: (pid, txid) => {
-          alert(`Merci cher Pionnier ! Pourboire de 0.1 π validé (Tx: ${txid})`);
-          tipModal.classList.remove("active");
-        },
-        onCancel: () => {},
-        onError: () => alert("Erreur paiement Pi")
-      });
-    } else {
-      alert("Simulation Pi Payment : 0.1 π envoyé avec succès ! Merci pour votre soutien 💜🟢");
-      tipModal.classList.remove("active");
-    }
   });
 
   // Modale Licence Poste Pi Radio (Étape 2 & 3)

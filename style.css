@@ -1084,53 +1084,6 @@ body {
   justify-content: flex-end;
 }
 
-.tip-pi-btn {
-  background: linear-gradient(135deg, var(--pi-gold) 0%, #e67e22 100%);
-  color: #0c0618;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 0 15px var(--pi-gold-glow);
-  transition: all 0.2s;
-}
-
-.tip-pi-btn:hover {
-  transform: scale(1.05);
-}
-
-/* Modale de Pourboire */
-.tip-modal-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
-  z-index: 250;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.tip-modal-overlay.active {
-  display: flex;
-}
-.tip-modal-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-top: 4px solid var(--pi-gold);
-  border-radius: var(--radius-lg);
-  max-width: 400px;
-  width: 100%;
-  padding: 26px;
-  text-align: center;
-  box-shadow: var(--shadow-card);
-}
-
 /* Modale d'Activation Poste Pi Radio (Étape 2) */
 .receiver-modal-overlay {
   display: none;

@@ -377,38 +377,12 @@
           <span style="font-size: 14px;">🔊</span>
           <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.8" style="width: 80px; accent-color: var(--live-green); cursor: pointer;">
         </div>
-
-        <button id="openTipBtn" class="tip-pi-btn" title="Pourboire en Pi">
-          <span>⚡</span>
-          <span data-i18n="sendTip">Pourboire π</span>
-        </button>
       </div>
     </div>
   </div>
 
   <!-- Notification Toast Flottante -->
   <div id="toastNotification" class="toast-notification"></div>
-
-  <!-- ============================================================
-       MODALE DE POURBOIRE PI
-       ============================================================ -->
-  <div class="tip-modal-overlay" id="tipModal">
-    <div class="tip-modal-card">
-      <div style="font-size: 40px; margin-bottom: 10px;">⚡</div>
-      <h3 style="font-size: 1.3rem; margin-bottom: 8px;" data-i18n="tipPioneer">Pourboire en Pi</h3>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;" data-i18n="tipDescription">
-        Soutenez le développement et les serveurs avec vos Pi :
-      </p>
-
-      <button id="confirmTipBtn" class="tip-pi-btn" style="width: 100%; justify-content: center; padding: 12px; font-size: 1rem; margin-bottom: 12px;" data-i18n="sendTip">
-        Envoyer 0.1 π
-      </button>
-
-      <button id="closeTipBtn" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer;" data-i18n="close">
-        Fermer
-      </button>
-    </div>
-  </div>
 
   <!-- ============================================================
        MODALE ACTIVATION DU POSTE PI RADIO (0.00005 Pi)
