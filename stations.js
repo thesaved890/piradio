@@ -171,7 +171,8 @@ const CURATED_STATIONS = [
     fallbackUrl: "https://eagle7fm-atunwadigital.streamguys1.com/eagle7fm",
     logo: "assets/logos/eagle-7-fm-abeokuta.png",
     homepage: "https://eagle7fm.com",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "ogbc-fm-abeokuta",
@@ -190,7 +191,8 @@ const CURATED_STATIONS = [
     fallbackUrl: "https://mpc.my-control-panel.eu/stream/8118",
     logo: "assets/logos/ogbc-fm-abeokuta.png",
     homepage: "https://ogbc.com.ng",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "tatafo-radio-ogun",
@@ -227,7 +229,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://agidigbostream.com.ng/radio/8000/radio.mp3",
     fallbackUrl: "https://agidigbostream.com.ng/radio/8000/radio.mp3",
     logo: "assets/logos/agidigbo-fm-ibadan.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "diamond-fm-ibadan",
@@ -303,7 +306,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://nigeriainfofmlagos993-atunwadigital.streamguys1.com/nigeriainfofmlagos993",
     fallbackUrl: "https://nigeriainfofmlagos993-atunwadigital.streamguys1.com/nigeriainfofmlagos993",
     logo: "assets/logos/nigeria-info-lagos.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "metro-fm-lagos",
@@ -415,7 +419,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://fm.imediaport.com/ikwerre",
     fallbackUrl: "https://fm.imediaport.com/ikwerre",
     logo: "assets/logos/1radio-ikwerre-rivers.png",
-    featured: false
+    featured: false,
+    locked: true
   },
   {
     id: "bourdex-fm-abia",
@@ -770,7 +775,8 @@ const CURATED_STATIONS = [
     streamUrl: "http://shoutcast.wrn.org:8025/nhk41left",
     fallbackUrl: "http://shoutcast.wrn.org:8025/nhk41left",
     logo: "assets/logos/nhk-world-japan.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "j-pop-powerplay",
@@ -803,7 +809,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://drive.uber.radio/uber/bollywoodnow/icecast.audio",
     fallbackUrl: "https://drive.uber.radio/uber/bollywoodnow/icecast.audio",
     logo: "assets/logos/radio-mirchi-top20.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "bollywood-gaane-purane",
@@ -836,7 +843,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://antares.dribbcast.com/proxy/kpop?mp=/s",
     fallbackUrl: "https://antares.dribbcast.com/proxy/kpop?mp=/s",
     logo: "assets/logos/big-b-radio-kpop.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "cnr-1-voice-of-china",
@@ -852,7 +860,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://lhttp.qtfm.cn/live/15318317/64k.mp3",
     fallbackUrl: "https://lhttp.qtfm.cn/live/15318317/64k.mp3",
     logo: "assets/logos/cnr-1-voice-of-china.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "easy-rock-manila",
@@ -920,7 +929,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://npr-ice.streamguys1.com/live.mp3",
     fallbackUrl: "https://npr-ice.streamguys1.com/live.mp3",
     logo: "assets/logos/npr-news-usa.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "wnyc-fm-newyork",
@@ -936,7 +946,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://fm939.wnyc.org/wnycfm",
     fallbackUrl: "https://fm939.wnyc.org/wnycfm",
     logo: "assets/logos/wnyc-fm-newyork.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-tiempo-89-5",
@@ -1137,7 +1148,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3",
     fallbackUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3",
     logo: "assets/logos/france-info.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "europe-1",
@@ -1186,7 +1198,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
     fallbackUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
     logo: "assets/logos/bbc-world-service.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "cadena-ser-espana",
@@ -1202,7 +1215,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENASER.mp3",
     fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENASER.mp3",
     logo: "assets/logos/cadena-ser-espana.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "deutschlandfunk-allemagne",
@@ -1218,7 +1232,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3",
     fallbackUrl: "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3",
     logo: "assets/logos/deutschlandfunk-allemagne.png",
-    featured: false
+    featured: false,
+    locked: true
   },
   {
     id: "swr3-allemagne",
@@ -1494,7 +1509,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://qurango.net/radio/abdulrahman_alsudaes",
     fallbackUrl: "https://qurango.net/radio/abdulrahman_alsudaes",
     logo: "assets/logos/makkah-alsudais.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "makkah-alshuraim",
@@ -1560,7 +1576,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://montecarlodoualiya128k.ice.infomaniak.ch/mc-doualiya.mp3",
     fallbackUrl: "https://montecarlodoualiya128k.ice.infomaniak.ch/mc-doualiya.mp3",
     logo: "assets/logos/monte-carlo-doualiya.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "quran-radio-sharjah",
@@ -1608,7 +1625,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://9090streaming.mobtada.com/9090FMEGYPT",
     fallbackUrl: "https://9090streaming.mobtada.com/9090FMEGYPT",
     logo: "assets/logos/radio-9090-egypt.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-fairuz-liban",
@@ -1695,7 +1713,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://abc.streamguys1.com/live/newsradio/icecast.audio",
     fallbackUrl: "https://abc.streamguys1.com/live/newsradio/icecast.audio",
     logo: "assets/logos/abc-newsradio-australia.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "sky-news-australia",
@@ -1728,7 +1747,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream-ice.radionz.co.nz/national.mp3",
     fallbackUrl: "https://stream-ice.radionz.co.nz/national.mp3",
     logo: "assets/logos/rnz-national-nz.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "the-breeze-auckland",
