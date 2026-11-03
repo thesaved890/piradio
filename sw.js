@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v3.0
+// Pi Radio • Service Worker v3.1
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v3.0';
+const CACHE_NAME = 'piradio-v3.1';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -70,6 +70,18 @@ const PRECACHE_ASSETS = [
   './assets/logos/rire-et-chansons-france.png',
   './assets/logos/radio-swiss-jazz.png',
   './assets/logos/capital-chill-uk.png',
+  './assets/logos/swr3-allemagne.png',
+  './assets/logos/antenne-bayern-allemagne.png',
+  './assets/logos/radio-marca-espana.png',
+  './assets/logos/los40-espana.png',
+  './assets/logos/rai-radio1-italie.png',
+  './assets/logos/rtl-1025-italie.png',
+  './assets/logos/rtbf-la-premiere-belgique.png',
+  './assets/logos/rtbf-classic21-belgique.png',
+  './assets/logos/hit-fm-ukraine.png',
+  './assets/logos/radioroks-ukraine.png',
+  './assets/logos/radio-vanya-russie.png',
+  './assets/logos/dfm-russian-dance.png',
   // Logos officiels Amériques & USA (Villes américaines)
   './assets/logos/npr-news-usa.png',
   './assets/logos/wnyc-fm-newyork.png',

@@ -109,7 +109,8 @@ const TRANSLATIONS = {
     receiverSettingDesc: "Activez votre récepteur Pioneer à vie pour un accès complet sans restriction :",
     receiverActivateBtn: "Activer mon Poste (0.00005 π)",
     receiverActivatedSuccess: "Félicitations ! Votre Poste Pi Radio est activé à vie 📻",
-    receiverAlreadyActive: "Votre Poste Pi Radio est déjà actif à vie !"
+    receiverAlreadyActive: "Votre Poste Pi Radio est déjà actif à vie !",
+    badgeLicense: "Licence"
   },
   en: {
     appTitle: "Pi Radio",
@@ -212,7 +213,8 @@ const TRANSLATIONS = {
     receiverSettingDesc: "Activate your Pioneer Receiver for lifetime unrestricted radio access:",
     receiverActivateBtn: "Activate My Receiver (0.00005 π)",
     receiverActivatedSuccess: "Congratulations! Your Pi Radio Receiver is activated for life 📻",
-    receiverAlreadyActive: "Your Pi Radio Receiver is already active for life!"
+    receiverAlreadyActive: "Your Pi Radio Receiver is already active for life!",
+    badgeLicense: "License"
   },
   es: {
     appTitle: "Pi Radio",
@@ -315,7 +317,8 @@ const TRANSLATIONS = {
     receiverSettingDesc: "Activa tu Receptor Pioneer de por vida para un acceso total sin restricciones:",
     receiverActivateBtn: "Activar mi Receptor (0.00005 π)",
     receiverActivatedSuccess: "¡Felicidades! Tu Receptor Pi Radio está activado de por vida 📻",
-    receiverAlreadyActive: "¡Tu Receptor Pi Radio ya está activo de por vida!"
+    receiverAlreadyActive: "¡Tu Receptor Pi Radio ya está activo de por vida!",
+    badgeLicense: "Licencia"
   },
   zh: {
     appTitle: "Pi Radio (先锋电台)",
@@ -418,7 +421,8 @@ const TRANSLATIONS = {
     receiverSettingDesc: "终身激活您的先锋接收器，享受无限制广播服务：",
     receiverActivateBtn: "激活我的收音机 (0.00005 π)",
     receiverActivatedSuccess: "恭喜！您的 Pi Radio 收音机已终身激活 📻",
-    receiverAlreadyActive: "您的 Pi Radio 收音机已终身处于激活状态！"
+    receiverAlreadyActive: "您的 Pi Radio 收音机已终身处于激活状态！",
+    badgeLicense: "许可证"
   },
   hi: {
     appTitle: "पाई रेडियो (Pi Radio)",
@@ -521,7 +525,8 @@ const TRANSLATIONS = {
     receiverSettingDesc: "आजीवन अप्रतिबंधित रेडियो पहुंच के लिए सक्रिय करें:",
     receiverActivateBtn: "रिसीवर सक्रिय करें (0.00005 π)",
     receiverActivatedSuccess: "बधाई हो! आपका पाई रेडियो रिसीवर आजीवन सक्रिय हो गया है 📻",
-    receiverAlreadyActive: "आपका पाई रेडियो रिसीवर पहले से ही आजीवन सक्रिय है!"
+    receiverAlreadyActive: "आपका पाई रेडियो रिसीवर पहले से ही आजीवन सक्रिय है!",
+    badgeLicense: "लाइसेंस"
   },
   vi: {
     appTitle: "Pi Radio",
@@ -624,7 +629,8 @@ const TRANSLATIONS = {
     receiverSettingDesc: "Kích hoạt Máy thu Tiên phong trọn đời để truy cập không giới hạn:",
     receiverActivateBtn: "Kích hoạt Máy thu (0.00005 π)",
     receiverActivatedSuccess: "Xin chúc mừng! Máy thu Pi Radio đã được kích hoạt trọn đời 📻",
-    receiverAlreadyActive: "Máy thu Pi Radio của bạn đã được kích hoạt trọn đời!"
+    receiverAlreadyActive: "Máy thu Pi Radio của bạn đã được kích hoạt trọn đời!",
+    badgeLicense: "Giấy phép"
   },
   ar: {
     appTitle: "باي راديو (Pi Radio)",
@@ -727,7 +733,8 @@ const TRANSLATIONS = {
     receiverSettingDesc: "فعّل جهاز الاستقبال الخاص بك مدى الحياة لاستماع مفتوح بلا قيود:",
     receiverActivateBtn: "تفعيل الجهاز (0.00005 π)",
     receiverActivatedSuccess: "تهانينا! تم تفعيل جهاز استقبال باي راديو مدى الحياة 📻",
-    receiverAlreadyActive: "جهاز باي راديو الخاص بك مفعّل بالفعل مدى الحياة!"
+    receiverAlreadyActive: "جهاز باي راديو الخاص بك مفعّل بالفعل مدى الحياة!",
+    badgeLicense: "ترخيص"
   },
   yo: {
     appTitle: "Pi Radio",
@@ -830,6 +837,7 @@ const TRANSLATIONS = {
     receiverSettingDesc: "Ṣí ẹ̀rọ rédíò aṣáájú rẹ títí ayé fún ìrírí pípé:",
     receiverActivateBtn: "Ṣí Rédíò Mi (0.00005 π)",
     receiverActivatedSuccess: "Ẹ kú oríire! A ti ṣí Rédíò Pi rẹ títí ayé 📻",
-    receiverAlreadyActive: "Rédíò Pi rẹ ti wà ní ṣíṣí tẹ́lẹ̀ títí ayé!"
+    receiverAlreadyActive: "Rédíò Pi rẹ ti wà ní ṣíṣí tẹ́lẹ̀ títí ayé!",
+    badgeLicense: "Àṣẹ"
   }
 };

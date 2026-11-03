@@ -284,7 +284,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://wazobiafmlagos951-atunwadigital.streamguys1.com/wazobiafmlagos951",
     fallbackUrl: "https://wazobiafmlagos951-atunwadigital.streamguys1.com/wazobiafmlagos951",
     logo: "assets/logos/wazobia-fm-lagos.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "nigeria-info-lagos",
@@ -356,7 +357,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://rhythmfmlagos-atunwadigital.streamguys1.com/rhythmfmlagos",
     fallbackUrl: "https://rhythmfmlagos-atunwadigital.streamguys1.com/rhythmfmlagos",
     logo: "assets/logos/rhythm-fm-lagos.png",
-    featured: false
+    featured: false,
+    locked: true
   },
   {
     id: "brila-fm-lagos",
@@ -393,7 +395,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://mpc.my-control-panel.eu/stream/8138",
     fallbackUrl: "https://mpc.my-control-panel.eu/stream/8138",
     logo: "assets/logos/vybz-fm-lagos.png",
-    featured: false
+    featured: false,
+    locked: true
   },
 
   // --- AUTRES ÉTATS DU NIGERIA ---
@@ -783,7 +786,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://kathy.torontocast.com:3560/stream",
     fallbackUrl: "https://kathy.torontocast.com:3560/stream",
     logo: "assets/logos/j-pop-powerplay.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-mirchi-top20",
@@ -815,7 +819,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/6n6ewddtad0uv",
     fallbackUrl: "https://stream.zeno.fm/6n6ewddtad0uv",
     logo: "assets/logos/bollywood-gaane-purane.png",
-    featured: false
+    featured: false,
+    locked: true
   },
   {
     id: "big-b-radio-kpop",
@@ -963,7 +968,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WMENAMAAC.aac",
     fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WMENAMAAC.aac",
     logo: "assets/logos/fox-sports-640-am.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "cbn-sao-paulo",
@@ -995,7 +1001,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://18313.live.streamtheworld.com/WQHTFMAAC.aac",
     fallbackUrl: "https://18313.live.streamtheworld.com/WQHTFMAAC.aac",
     logo: "assets/logos/hot-97-newyork.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "kcrw-89-9-los-angeles",
@@ -1011,7 +1018,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://streams.kcrw.com/kcrw_mp3",
     fallbackUrl: "https://streams.kcrw.com/kcrw_mp3",
     logo: "assets/logos/kcrw-89-9-los-angeles.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "kqed-88-5-san-francisco",
@@ -1040,8 +1048,8 @@ const CURATED_STATIONS = [
     band: "FM",
     language: "English",
     genre: "Chicago Public Media & Investigations",
-    streamUrl: "http://stream.wbez.org/wbez128.mp3",
-    fallbackUrl: "http://stream.wbez.org/wbez128.mp3",
+    streamUrl: "https://stream.wbez.org/wbez128.mp3",
+    fallbackUrl: "https://stream.wbez.org/wbez128.mp3",
     logo: "assets/logos/wbez-91-5-chicago.png",
     featured: true
   },
@@ -1059,7 +1067,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://wlrn.streamguys1.com/wlrn-news-web-icy",
     fallbackUrl: "https://wlrn.streamguys1.com/wlrn-news-web-icy",
     logo: "assets/logos/wlrn-91-3-miami.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "houston-public-media-88-7",
@@ -1091,7 +1100,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://streams.kut.org/4426_128.mp3",
     fallbackUrl: "https://streams.kut.org/4426_128.mp3",
     logo: "assets/logos/kut-90-5-austin.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "jazz24-seattle",
@@ -1143,7 +1153,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.europe1.fr/europe1.aac",
     fallbackUrl: "https://stream.europe1.fr/europe1.aac",
     logo: "assets/logos/europe-1.png",
-    featured: false
+    featured: false,
+    locked: true
   },
   {
     id: "france-inter",
@@ -1209,6 +1220,204 @@ const CURATED_STATIONS = [
     logo: "assets/logos/deutschlandfunk-allemagne.png",
     featured: false
   },
+  {
+    id: "swr3-allemagne",
+    name: "SWR3 99.9 FM Baden-Baden",
+    country: "Allemagne",
+    code: "🇩🇪",
+    continent: "europe",
+    category: "culture",
+    frequency: "99.9",
+    band: "FM",
+    language: "Deutsch",
+    genre: "Pop, Rock, Comedy & Der beste Mix",
+    streamUrl: "https://liveradio.swr.de/sw282p3/swr3/play.mp3",
+    fallbackUrl: "https://liveradio.swr.de/sw282p3/swr3/play.mp3",
+    logo: "assets/logos/swr3-allemagne.png",
+    featured: false
+  },
+  {
+    id: "antenne-bayern-allemagne",
+    name: "Antenne Bayern 101.3 FM",
+    country: "Allemagne",
+    code: "🇩🇪",
+    continent: "europe",
+    category: "culture",
+    frequency: "101.3",
+    band: "FM",
+    language: "Deutsch",
+    genre: "Bayerns bester Musikmix & Infotainment",
+    streamUrl: "https://s1-webradio.antenne.de/antenne",
+    fallbackUrl: "https://s1-webradio.antenne.de/antenne",
+    logo: "assets/logos/antenne-bayern-allemagne.png",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "radio-marca-espana",
+    name: "Radio Marca 103.5 FM Madrid",
+    country: "Espagne",
+    code: "🇪🇸",
+    continent: "europe",
+    category: "sports",
+    frequency: "103.5",
+    band: "FM",
+    language: "Español",
+    genre: "El deporte que se vive • La Liga en directo",
+    streamUrl: "https://sonic.mediatelekom.net/9316/stream",
+    fallbackUrl: "https://sonic.mediatelekom.net/9316/stream",
+    logo: "assets/logos/radio-marca-espana.png",
+    featured: false
+  },
+  {
+    id: "los40-espana",
+    name: "Los 40 Principales 93.9 FM Madrid",
+    country: "Espagne",
+    code: "🇪🇸",
+    continent: "europe",
+    category: "culture",
+    frequency: "93.9",
+    band: "FM",
+    language: "Español",
+    genre: "Todos los Éxitos • La radio musical líder",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/Los40.mp3",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/Los40.mp3",
+    logo: "assets/logos/los40-espana.png",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "rai-radio1-italie",
+    name: "Rai Radio 1 89.7 FM Rome",
+    country: "Italie",
+    code: "🇮🇹",
+    continent: "europe",
+    category: "news",
+    frequency: "89.7",
+    band: "FM",
+    language: "Italiano",
+    genre: "Informazione, Attualità e Giornale Radio",
+    streamUrl: "https://icestreaming.rai.it/1.mp3",
+    fallbackUrl: "https://icestreaming.rai.it/1.mp3",
+    logo: "assets/logos/rai-radio1-italie.png",
+    featured: false
+  },
+  {
+    id: "rtl-1025-italie",
+    name: "RTL 102.5 FM Very Normal People",
+    country: "Italie",
+    code: "🇮🇹",
+    continent: "europe",
+    category: "culture",
+    frequency: "102.5",
+    band: "FM",
+    language: "Italiano",
+    genre: "La prima radiovisione d'Italia • Grandi Successi",
+    streamUrl: "https://streamingv2.shoutcast.com/rtl-1025",
+    fallbackUrl: "https://streamingv2.shoutcast.com/rtl-1025",
+    logo: "assets/logos/rtl-1025-italie.png",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "rtbf-la-premiere-belgique",
+    name: "RTBF La Première 92.5 FM Bruxelles",
+    country: "Belgique",
+    code: "🇧🇪",
+    continent: "europe",
+    category: "news",
+    frequency: "92.5",
+    band: "FM",
+    language: "Français",
+    genre: "Info, Débats, Société & Culture belge",
+    streamUrl: "https://radio.rtbf.be/lapremiere/mp3-160/rv",
+    fallbackUrl: "https://radios.rtbf.be/laprem1ere-128.mp3",
+    logo: "assets/logos/rtbf-la-premiere-belgique.png",
+    featured: false
+  },
+  {
+    id: "rtbf-classic21-belgique",
+    name: "RTBF Classic 21 95.6 FM Bruxelles",
+    country: "Belgique",
+    code: "🇧🇪",
+    continent: "europe",
+    category: "culture",
+    frequency: "95.6",
+    band: "FM",
+    language: "Français",
+    genre: "Écoutez l'original • Rock, Pop & Blues classique",
+    streamUrl: "https://radio.rtbf.be/classic21/mp3-160/rv",
+    fallbackUrl: "https://radios.rtbf.be/classic21-128.mp3",
+    logo: "assets/logos/rtbf-classic21-belgique.png",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "hit-fm-ukraine",
+    name: "Hit FM 96.4 FM Kyiv (Хіт FM)",
+    country: "Ukraine",
+    code: "🇺🇦",
+    continent: "europe",
+    category: "culture",
+    frequency: "96.4",
+    band: "FM",
+    language: "Українська",
+    genre: "Найбільші хіти України та світу • Поп-музика",
+    streamUrl: "https://online.hitfm.ua/HitFM_HD",
+    fallbackUrl: "https://online.hitfm.ua/HitFM_HD",
+    logo: "assets/logos/hit-fm-ukraine.png",
+    featured: false
+  },
+  {
+    id: "radioroks-ukraine",
+    name: "Radio ROKS 103.6 FM Kyiv (Радіо ROKS)",
+    country: "Ukraine",
+    code: "🇺🇦",
+    continent: "europe",
+    category: "culture",
+    frequency: "103.6",
+    band: "FM",
+    language: "Українська",
+    genre: "Рок. Тільки рок! Рок-класика світового рівня",
+    streamUrl: "https://online.radioroks.ua/RadioROKS_HD",
+    fallbackUrl: "https://online.radioroks.ua/RadioROKS_HD",
+    logo: "assets/logos/radioroks-ukraine.png",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "radio-vanya-russie",
+    name: "Радио Ваня 100.1 FM (Radio Vanya)",
+    country: "Russie",
+    code: "🇷🇺",
+    continent: "europe",
+    category: "culture",
+    frequency: "100.1",
+    band: "FM",
+    language: "Русский",
+    genre: "Позитивная музыка для хорошего настроения",
+    streamUrl: "https://icecast-radiovanya.cdnvideo.ru/radiovanya",
+    fallbackUrl: "https://icecast-radiovanya.cdnvideo.ru/radiovanya",
+    logo: "assets/logos/radio-vanya-russie.png",
+    featured: false
+  },
+  {
+    id: "dfm-russian-dance",
+    name: "DFM Russian Dance 107.4 FM",
+    country: "Russie",
+    code: "🇷🇺",
+    continent: "europe",
+    category: "culture",
+    frequency: "107.4",
+    band: "FM",
+    language: "Русский",
+    genre: "Клубная танцевальная музыка & Топ-чарты",
+    streamUrl: "https://dfm-dfmrusdance.hostingradio.ru/dfmrusdance96.aacp",
+    fallbackUrl: "https://dfm-dfmrusdance.hostingradio.ru/dfmrusdance96.aacp",
+    logo: "assets/logos/dfm-russian-dance.png",
+    featured: true,
+    locked: true
+  },
 
   // ==========================================
   // 8. ⚽ SPORTS EN DIRECT (FOOTBALL & MULTIPLEX)
@@ -1243,7 +1452,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://audio.bfmtv.com/rmcradio_128.mp3",
     fallbackUrl: "https://audio.bfmtv.com/rmcradio_128.mp3",
     logo: "assets/logos/rmc-sport-direct.png",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -1263,7 +1473,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://streaming.nrjaudio.fm/ou8o8xgk7oiu?origine=fluxradios",
     fallbackUrl: "https://streaming.nrjaudio.fm/ou8o8xgk7oiu?origine=fluxradios",
     logo: "assets/logos/rire-et-chansons-france.png",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -1299,7 +1510,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://qurango.net/radio/saud_alshuraim",
     fallbackUrl: "https://qurango.net/radio/saud_alshuraim",
     logo: "assets/logos/makkah-alshuraim.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "quran-mishary-alafasy",
@@ -1331,7 +1543,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://qurango.net/radio/abdulbasit_abdulsamad_mojawwad",
     fallbackUrl: "https://qurango.net/radio/abdulbasit_abdulsamad_mojawwad",
     logo: "assets/logos/quran-abdulbasit.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "monte-carlo-doualiya",
@@ -1392,8 +1605,8 @@ const CURATED_STATIONS = [
     band: "FM",
     language: "العربية",
     genre: "هواها مصري • الأخبار والموسيقى والبرامج الحوارية",
-    streamUrl: "http://9090streaming.mobtada.com/9090FMEGYPT",
-    fallbackUrl: "http://9090streaming.mobtada.com/9090FMEGYPT",
+    streamUrl: "https://9090streaming.mobtada.com/9090FMEGYPT",
+    fallbackUrl: "https://9090streaming.mobtada.com/9090FMEGYPT",
     logo: "assets/logos/radio-9090-egypt.png",
     featured: true
   },
@@ -1461,7 +1674,8 @@ const CURATED_STATIONS = [
     fallbackUrl: "https://media-ssl.musicradio.com/CapitalChill",
     logo: "assets/logos/capital-chill-uk.png",
     homepage: "https://www.capitalfm.com",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -1478,8 +1692,8 @@ const CURATED_STATIONS = [
     band: "WEB",
     language: "English",
     genre: "Australia's Continuous News Network 24/7",
-    streamUrl: "http://abc.streamguys1.com/live/newsradio/icecast.audio",
-    fallbackUrl: "http://abc.streamguys1.com/live/newsradio/icecast.audio",
+    streamUrl: "https://abc.streamguys1.com/live/newsradio/icecast.audio",
+    fallbackUrl: "https://abc.streamguys1.com/live/newsradio/icecast.audio",
     logo: "assets/logos/abc-newsradio-australia.png",
     featured: true
   },
@@ -1497,7 +1711,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/NOVA_SKYNEWSAAC.aac",
     fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/NOVA_SKYNEWSAAC.aac",
     logo: "assets/logos/sky-news-australia.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "rnz-national-nz",
@@ -1510,8 +1725,8 @@ const CURATED_STATIONS = [
     band: "FM",
     language: "English / Māori",
     genre: "New Zealand's Premier Public Radio & Journalism",
-    streamUrl: "http://radionz-ice.streamguys.com/national.mp3",
-    fallbackUrl: "http://radionz-ice.streamguys.com/national.mp3",
+    streamUrl: "https://stream-ice.radionz.co.nz/national.mp3",
+    fallbackUrl: "https://stream-ice.radionz.co.nz/national.mp3",
     logo: "assets/logos/rnz-national-nz.png",
     featured: true
   },
@@ -1529,7 +1744,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://mediaworks.streamguys1.com/breeze-akl-high_icy",
     fallbackUrl: "https://mediaworks.streamguys1.com/breeze-akl-high_icy",
     logo: "assets/logos/the-breeze-auckland.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "bula-fm-fiji",
