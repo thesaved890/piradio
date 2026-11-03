@@ -1127,6 +1127,106 @@ const CURATED_STATIONS = [
     logo: "assets/logos/capital-chill-uk.png",
     homepage: "https://www.capitalfm.com",
     featured: true
+  },
+
+  // ==========================================
+  // 11. 🇦🇺 AUSTRALIE, 🇳🇿 NOUVELLE-ZÉLANDE, 🇫🇯 FIDJI & 🇵🇫 POLYNÉSIE (OCÉANIE)
+  // ==========================================
+  {
+    id: "abc-newsradio-australia",
+    name: "ABC NewsRadio Australia",
+    country: "Australie",
+    code: "🇦🇺",
+    continent: "oceania",
+    category: "news",
+    frequency: "WEB / AM",
+    band: "WEB",
+    language: "English",
+    genre: "Australia's Continuous News Network 24/7",
+    streamUrl: "http://abc.streamguys1.com/live/newsradio/icecast.audio",
+    fallbackUrl: "http://abc.streamguys1.com/live/newsradio/icecast.audio",
+    logo: "assets/logos/abc-newsradio-australia.png",
+    featured: true
+  },
+  {
+    id: "sky-news-australia",
+    name: "Sky News Australia Radio",
+    country: "Australie",
+    code: "🇦🇺",
+    continent: "oceania",
+    category: "news",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "National Politics, Opinions & Breaking News",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/NOVA_SKYNEWSAAC.aac",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/NOVA_SKYNEWSAAC.aac",
+    logo: "assets/logos/sky-news-australia.png",
+    featured: true
+  },
+  {
+    id: "rnz-national-nz",
+    name: "RNZ National (Radio New Zealand)",
+    country: "Nouvelle-Zélande",
+    code: "🇳🇿",
+    continent: "oceania",
+    category: "news",
+    frequency: "101.0",
+    band: "FM",
+    language: "English / Māori",
+    genre: "New Zealand's Premier Public Radio & Journalism",
+    streamUrl: "http://radionz-ice.streamguys.com/national.mp3",
+    fallbackUrl: "http://radionz-ice.streamguys.com/national.mp3",
+    logo: "assets/logos/rnz-national-nz.png",
+    featured: true
+  },
+  {
+    id: "the-breeze-auckland",
+    name: "The Breeze 93.4 FM Auckland",
+    country: "Nouvelle-Zélande",
+    code: "🇳🇿",
+    continent: "oceania",
+    category: "culture",
+    frequency: "93.4",
+    band: "FM",
+    language: "English",
+    genre: "Easy Listening, Pop & Feel Good Hits",
+    streamUrl: "https://mediaworks.streamguys1.com/breeze-akl-high_icy",
+    fallbackUrl: "https://mediaworks.streamguys1.com/breeze-akl-high_icy",
+    logo: "assets/logos/the-breeze-auckland.png",
+    featured: true
+  },
+  {
+    id: "bula-fm-fiji",
+    name: "Bula FM 102.6 Suva (Fiji)",
+    country: "Fidji",
+    code: "🇫🇯",
+    continent: "oceania",
+    category: "culture",
+    frequency: "102.6",
+    band: "FM",
+    language: "iTaukei / English",
+    genre: "N°1 Radio in Fiji • Music & Pacific Island Culture",
+    streamUrl: "https://icecast1.sere.plus/Bula",
+    fallbackUrl: "https://icecast1.sere.plus/Bula",
+    logo: "assets/logos/bula-fm-fiji.png",
+    featured: true
+  },
+  {
+    id: "polynesie-la-1ere-tahiti",
+    name: "Polynésie La 1ère (Tahiti)",
+    country: "Polynésie française",
+    code: "🇵🇫",
+    continent: "oceania",
+    category: "news",
+    frequency: "89.0",
+    band: "FM",
+    language: "Français / Reo Tahiti",
+    genre: "L'actualité et les sonorités chaleureuses du Pacifique",
+    streamUrl: "https://polynesie.ice.infomaniak.ch/polynesie-128.mp3",
+    fallbackUrl: "https://polynesie.ice.infomaniak.ch/polynesie-128.mp3",
+    logo: "assets/logos/polynesie-la-1ere-tahiti.png",
+    featured: true
   }
 ];
 
