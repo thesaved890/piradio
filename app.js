@@ -75,12 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeTipBtn = document.getElementById("closeTipBtn");
   const confirmTipBtn = document.getElementById("confirmTipBtn");
 
-  // Paramètres
+  // Paramètres & PWA (Axe 4)
   const langSelectSetting = document.getElementById("langSelectSetting");
   const timerButtons = document.querySelectorAll(".timer-btn");
   const timerCountdownBadge = document.getElementById("timerCountdownBadge");
   const dataSaverToggle = document.getElementById("dataSaverToggle");
   const clearCacheBtn = document.getElementById("clearCacheBtn");
+  const headerInstallBtn = document.getElementById("headerInstallBtn");
+  const pwaInstallBtn = document.getElementById("pwaInstallBtn");
+  const pwaInstalledNotice = document.getElementById("pwaInstalledNotice");
 
   // Badge officiel avec drapeau national (anti-photos génériques)
   function getFlagFallback(code) {
@@ -1016,8 +1019,80 @@ document.addEventListener("DOMContentLoaded", () => {
   if (clearCacheBtn) {
     clearCacheBtn.addEventListener("click", () => {
       localStorage.clear();
+      if ('caches' in window) {
+        caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
+      }
       alert(TRANSLATIONS[state.lang].cacheCleared);
       location.reload();
+    });
+  }
+
+  // ============================================================
+  // AXE 4 : INSTALLATION PWA & GESTION HORS-LIGNE (APPLICATION MOBILE)
+  // ============================================================
+  let deferredInstallPrompt = null;
+
+  // Détection de l'événement PWA 'beforeinstallprompt'
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    if (headerInstallBtn) headerInstallBtn.style.display = "inline-flex";
+    if (pwaInstallBtn) pwaInstallBtn.style.display = "inline-flex";
+    console.log("[Pi Radio PWA] Invitation d'installation disponible.");
+  });
+
+  // Détection quand l'application a été installée avec succès
+  window.addEventListener("appinstalled", () => {
+    deferredInstallPrompt = null;
+    if (headerInstallBtn) headerInstallBtn.style.display = "none";
+    if (pwaInstallBtn) pwaInstallBtn.style.display = "none";
+    if (pwaInstalledNotice) pwaInstalledNotice.style.display = "block";
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    showToast(t.pwaAlreadyInstalled || "Application installée avec succès !");
+    console.log("[Pi Radio PWA] Application installée sur l'appareil !");
+  });
+
+  // Déclenchement de l'installation au clic
+  function triggerPwaInstall() {
+    if (deferredInstallPrompt) {
+      deferredInstallPrompt.prompt();
+      deferredInstallPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("[Pi Radio PWA] Le Pionnier a validé l'installation.");
+        } else {
+          console.log("[Pi Radio PWA] Installation différée.");
+        }
+        deferredInstallPrompt = null;
+      });
+    } else {
+      // Détection iOS (Safari)
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+      if (isIOS) {
+        alert(t.pwaIosGuide || "Sur iPhone / iPad : Appuyez sur Partager dans Safari, puis 'Sur l'écran d'accueil' ➕.");
+      } else {
+        showToast(t.pwaAlreadyInstalled || "L'application est déjà prête ou installée sur votre écran d'accueil !");
+      }
+    }
+  }
+
+  if (headerInstallBtn) {
+    headerInstallBtn.addEventListener("click", triggerPwaInstall);
+  }
+  if (pwaInstallBtn) {
+    pwaInstallBtn.addEventListener("click", triggerPwaInstall);
+  }
+
+  // Enregistrement du Service Worker pour le cache et le mode hors-ligne
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js")
+        .then((reg) => {
+          console.log("[Pi Radio SW] Service Worker actif (Axe 4) :", reg.scope);
+        })
+        .catch((err) => {
+          console.warn("[Pi Radio SW] Enregistrement SW non supporté ou erreur :", err);
+        });
     });
   }
 

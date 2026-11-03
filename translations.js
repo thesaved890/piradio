@@ -84,7 +84,13 @@ const TRANSLATIONS = {
     normalizerOff: "Désactivé",
     cacheTitle: "Gestion des Données",
     clearCacheBtn: "Réinitialiser les favoris et le cache",
-    cacheCleared: "Cache réinitialisé avec succès !"
+    cacheCleared: "Cache réinitialisé avec succès !",
+    pwaTitle: "Application Mobile (PWA)",
+    pwaDesc: "Installez Pi Radio sur votre écran d'accueil pour une expérience plein écran sans navigateur :",
+    pwaInstallBtn: "Installer sur l'écran d'accueil",
+    pwaInstallHeader: "Installer l'App",
+    pwaAlreadyInstalled: "Application installée avec succès sur cet appareil !",
+    pwaIosGuide: "Sur iPhone / iPad : Appuyez sur Partager dans Safari, puis 'Sur l'écran d'accueil' ➕."
   },
   en: {
     appTitle: "Pi Radio",
@@ -162,7 +168,13 @@ const TRANSLATIONS = {
     normalizerOff: "Disabled",
     cacheTitle: "Data & Storage",
     clearCacheBtn: "Reset favorites and local cache",
-    cacheCleared: "Cache successfully reset!"
+    cacheCleared: "Cache successfully reset!",
+    pwaTitle: "Mobile App (PWA)",
+    pwaDesc: "Install Pi Radio on your home screen for a seamless full-screen app experience:",
+    pwaInstallBtn: "Install on Home Screen",
+    pwaInstallHeader: "Install App",
+    pwaAlreadyInstalled: "App installed successfully on this device!",
+    pwaIosGuide: "On iPhone / iPad: Tap Share in Safari, then select 'Add to Home Screen' ➕."
   },
   es: {
     appTitle: "Pi Radio",
@@ -240,7 +252,13 @@ const TRANSLATIONS = {
     normalizerOff: "Desactivado",
     cacheTitle: "Almacenamiento",
     clearCacheBtn: "Restablecer favoritos y caché",
-    cacheCleared: "¡Caché restablecida con éxito!"
+    cacheCleared: "¡Caché restablecida con éxito!",
+    pwaTitle: "Aplicación Móvil (PWA)",
+    pwaDesc: "Instala Pi Radio en tu pantalla de inicio para una experiencia a pantalla completa:",
+    pwaInstallBtn: "Instalar en la pantalla de inicio",
+    pwaInstallHeader: "Instalar App",
+    pwaAlreadyInstalled: "¡Aplicación instalada con éxito en este dispositivo!",
+    pwaIosGuide: "En iPhone / iPad: Toca Compartir en Safari, luego 'Agregar al inicio' ➕."
   },
   zh: {
     appTitle: "Pi Radio (先锋电台)",
@@ -318,7 +336,13 @@ const TRANSLATIONS = {
     normalizerOff: "已关闭",
     cacheTitle: "数据与缓存",
     clearCacheBtn: "重置收藏与本地缓存",
-    cacheCleared: "缓存已成功清空！"
+    cacheCleared: "缓存已成功清空！",
+    pwaTitle: "移动应用 (PWA)",
+    pwaDesc: "将 Pi Radio 安装到主屏幕，享受全屏原生应用体验：",
+    pwaInstallBtn: "安装到主屏幕",
+    pwaInstallHeader: "安装应用",
+    pwaAlreadyInstalled: "应用已在此设备上安装！",
+    pwaIosGuide: "在 iPhone / iPad 上：轻点 Safari 中的“分享”，然后选择“添加到主屏幕”➕。"
   },
   hi: {
     appTitle: "पाई रेडियो (Pi Radio)",
@@ -396,7 +420,13 @@ const TRANSLATIONS = {
     normalizerOff: "निष्क्रिय",
     cacheTitle: "डेटा प्रबंधन",
     clearCacheBtn: "पसंदीदा और कैश रीसेट करें",
-    cacheCleared: "कैश रीसेट हो गया!"
+    cacheCleared: "कैश रीसेट हो गया!",
+    pwaTitle: "मोबाइल ऐप (PWA)",
+    pwaDesc: "फ़ुल-स्क्रीन अनुभव के लिए Pi Radio को अपनी होम स्क्रीन पर इंस्टॉल करें:",
+    pwaInstallBtn: "होम स्क्रीन पर इंस्टॉल करें",
+    pwaInstallHeader: "ऐप इंस्टॉल करें",
+    pwaAlreadyInstalled: "इस डिवाइस पर ऐप इंस्टॉल हो गया है!",
+    pwaIosGuide: "iPhone / iPad पर: Safari में शेयर पर टैप करें, फिर 'होम स्क्रीन में जोड़ें' ➕ चुनें।"
   },
   vi: {
     appTitle: "Pi Radio",
@@ -474,7 +504,13 @@ const TRANSLATIONS = {
     normalizerOff: "Tắt",
     cacheTitle: "Dữ liệu & Bộ nhớ",
     clearCacheBtn: "Xóa dữ liệu đệm & yêu thích",
-    cacheCleared: "Đã làm sạch bộ nhớ đệm!"
+    cacheCleared: "Đã làm sạch bộ nhớ đệm!",
+    pwaTitle: "Ứng dụng Di động (PWA)",
+    pwaDesc: "Cài đặt Pi Radio vào màn hình chính để có trải nghiệm toàn màn hình mượt mà:",
+    pwaInstallBtn: "Cài đặt vào màn hình chính",
+    pwaInstallHeader: "Cài đặt ứng dụng",
+    pwaAlreadyInstalled: "Ứng dụng đã được cài đặt trên thiết bị này!",
+    pwaIosGuide: "Trên iPhone / iPad: Nhấn Chia sẻ trong Safari, sau đó chọn 'Thêm vào MH chính' ➕."
   },
   ar: {
     appTitle: "باي راديو (Pi Radio)",
@@ -552,7 +588,13 @@ const TRANSLATIONS = {
     normalizerOff: "معطل",
     cacheTitle: "البيانات والذاكرة المؤقتة",
     clearCacheBtn: "إعادة ضبط المفضلة والذاكرة المؤقتة",
-    cacheCleared: "تم مسح الذاكرة المؤقتة بنجاح!"
+    cacheCleared: "تم مسح الذاكرة المؤقتة بنجاح!",
+    pwaTitle: "تطبيق الهاتف (PWA)",
+    pwaDesc: "قم بتثبيت Pi Radio على شاشتك الرئيسية لتجربة تطبيق كاملة بدون متصفح:",
+    pwaInstallBtn: "تثبيت على الشاشة الرئيسية",
+    pwaInstallHeader: "تثبيت التطبيق",
+    pwaAlreadyInstalled: "تم تثبيت التطبيق بنجاح على هذا الجهاز!",
+    pwaIosGuide: "على iPhone / iPad: اضغط على مشاركة في Safari ثم 'إضافة إلى الصفحة الرئيسية' ➕."
   },
   yo: {
     appTitle: "Pi Radio",
@@ -630,6 +672,12 @@ const TRANSLATIONS = {
     normalizerOff: "Ó wà ní pípa",
     cacheTitle: "Àkójọ Ìrántí (Cache)",
     clearCacheBtn: "Nu àwọn ìrántí àti àwọn ayànfẹ́ kúrò",
-    cacheCleared: "Àkójọ ìrántí ti di mímọ́!"
+    cacheCleared: "Àkójọ ìrántí ti di mímọ́!",
+    pwaTitle: "Àpù Fóònù (PWA)",
+    pwaDesc: "Fi Pi Radio sórí ojú ibi ìbẹ̀rẹ̀ fóònù rẹ fún ìrírí àpù pípé:",
+    pwaInstallBtn: "Fi sórí Ojú Fóònù",
+    pwaInstallHeader: "Fi Àpù Sí Fóònù",
+    pwaAlreadyInstalled: "Àpù ti wà lórí fóònù rẹ tẹ́lẹ̀!",
+    pwaIosGuide: "Lórí iPhone / iPad: Tẹ Pínpin ní Safari, lẹ́yìn náà yan 'Fi kún Ojú Fóònù' ➕."
   }
 };

@@ -7,8 +7,13 @@
   <meta name="theme-color" content="#0c0618">
   <title>Pi Radio • Inform Me - Pioneer Global Streaming</title>
 
-  <!-- PWA Manifest -->
+  <!-- PWA Manifest & Icônes Mobiles -->
   <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pi Radio">
 
   <!-- Google Fonts: Inter & Cairo (pour l'Arabe) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,8 +63,13 @@
         </div>
       </div>
 
-      <!-- Connexion / Déconnexion Pi Network -->
+      <!-- Connexion / Déconnexion Pi Network & Bouton Installation PWA -->
       <div class="header-actions">
+        <button id="headerInstallBtn" class="header-install-btn" style="display: none;" title="Installer Pi Radio sur votre appareil">
+          <span>📲</span>
+          <span data-i18n="pwaInstallHeader">Installer l'App</span>
+        </button>
+
         <button id="authBtn" class="auth-btn disconnected" title="Authentification Pi">
           <span class="live-dot"></span>
           <span id="authBtnText" data-i18n="connectPi">Connexion Pi</span>
@@ -285,6 +295,22 @@
           <input type="checkbox" id="normalizerToggle" checked style="width: 20px; height: 20px; accent-color: var(--live-green);">
           <span id="normalizerStatusText" data-i18n="normalizerOn">Actif (Son Équilibré)</span>
         </label>
+      </div>
+
+      <!-- Installation PWA de l'App (Axe 4) -->
+      <div class="setting-group" id="pwaInstallGroup">
+        <div class="setting-label">
+          <span>📲</span> <span data-i18n="pwaTitle">Application Mobile (PWA)</span>
+        </div>
+        <div class="setting-desc" data-i18n="pwaDesc">Installez Pi Radio sur votre écran d'accueil pour une expérience plein écran sans navigateur :</div>
+        <div style="margin-top: 10px;">
+          <button id="pwaInstallBtn" class="pwa-install-action-btn">
+            <span>📲</span> <span data-i18n="pwaInstallBtn">Installer sur l'écran d'accueil</span>
+          </button>
+          <div id="pwaInstalledNotice" style="display: none; color: var(--live-green); font-size: 0.95rem; font-weight: 700; margin-top: 8px;">
+            ✅ <span data-i18n="pwaAlreadyInstalled">Application installée avec succès sur cet appareil !</span>
+          </div>
+        </div>
       </div>
 
       <!-- Réinitialiser Données -->
