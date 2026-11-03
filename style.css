@@ -1073,28 +1073,7 @@ body {
   box-shadow: var(--shadow-card);
 }
 
-/* Boutons Installation PWA (Axe 4) */
-.header-install-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(243, 180, 63, 0.12);
-  border: 1px solid var(--pi-gold);
-  color: var(--pi-gold);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.header-install-btn:hover {
-  background: var(--pi-gold);
-  color: #0c0618;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px var(--pi-gold-glow);
-}
+/* Bouton Installation PWA (Paramètres) */
 
 .pwa-install-action-btn {
   display: inline-flex;

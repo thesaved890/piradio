@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const timerCountdownBadge = document.getElementById("timerCountdownBadge");
   const dataSaverToggle = document.getElementById("dataSaverToggle");
   const clearCacheBtn = document.getElementById("clearCacheBtn");
-  const headerInstallBtn = document.getElementById("headerInstallBtn");
   const pwaInstallBtn = document.getElementById("pwaInstallBtn");
   const pwaInstalledNotice = document.getElementById("pwaInstalledNotice");
 
@@ -1045,7 +1044,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     deferredInstallPrompt = e;
-    if (headerInstallBtn) headerInstallBtn.style.display = "inline-flex";
     if (pwaInstallBtn) pwaInstallBtn.style.display = "inline-flex";
     console.log("[Pi Radio PWA] Invitation d'installation disponible.");
   });
@@ -1053,7 +1051,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Détection quand l'application a été installée avec succès
   window.addEventListener("appinstalled", () => {
     deferredInstallPrompt = null;
-    if (headerInstallBtn) headerInstallBtn.style.display = "none";
     if (pwaInstallBtn) pwaInstallBtn.style.display = "none";
     if (pwaInstalledNotice) pwaInstalledNotice.style.display = "block";
     const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
@@ -1085,9 +1082,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (headerInstallBtn) {
-    headerInstallBtn.addEventListener("click", triggerPwaInstall);
-  }
   if (pwaInstallBtn) {
     pwaInstallBtn.addEventListener("click", triggerPwaInstall);
   }
