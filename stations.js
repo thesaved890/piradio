@@ -1825,62 +1825,153 @@ function getDomainFromUrl(urlStr) {
   }
 }
 
+// Dictionnaire des équivalences États américains & régions mondiales (Français, Anglais, Typo)
+const US_STATE_SYNONYMS = {
+  "californie": "California",
+  "california": "California",
+  "hawai": "Hawaii",
+  "hawaï": "Hawaii",
+  "hawaii": "Hawaii",
+  "goergie": "Georgia",
+  "georgie": "Georgia",
+  "géorgie": "Georgia",
+  "georgia": "Georgia",
+  "iowa": "Iowa",
+  "michigan": "Michigan",
+  "floride": "Florida",
+  "florida": "Florida",
+  "texas": "Texas",
+  "louisiane": "Louisiana",
+  "louisiana": "Louisiana",
+  "pennsylvanie": "Pennsylvania",
+  "pennsylvania": "Pennsylvania",
+  "ohio": "Ohio",
+  "illinois": "Illinois",
+  "washington": "Washington",
+  "arizona": "Arizona",
+  "colorado": "Colorado",
+  "nevada": "Nevada",
+  "caroline du nord": "North Carolina",
+  "north carolina": "North Carolina",
+  "caroline du sud": "South Carolina",
+  "south carolina": "South Carolina",
+  "virginie": "Virginia",
+  "virginia": "Virginia",
+  "nouveau-mexique": "New Mexico",
+  "new mexico": "New Mexico",
+  "alabama": "Alabama",
+  "alaska": "Alaska",
+  "arkansas": "Arkansas",
+  "connecticut": "Connecticut",
+  "delaware": "Delaware",
+  "idaho": "Idaho",
+  "indiana": "Indiana",
+  "kansas": "Kansas",
+  "kentucky": "Kentucky",
+  "maine": "Maine",
+  "maryland": "Maryland",
+  "massachusetts": "Massachusetts",
+  "minnesota": "Minnesota",
+  "mississippi": "Mississippi",
+  "missouri": "Missouri",
+  "montana": "Montana",
+  "nebraska": "Nebraska",
+  "new hampshire": "New Hampshire",
+  "new jersey": "New Jersey",
+  "new york": "New York",
+  "north dakota": "North Dakota",
+  "oklahoma": "Oklahoma",
+  "oregon": "Oregon",
+  "rhode island": "Rhode Island",
+  "south dakota": "South Dakota",
+  "tennessee": "Tennessee",
+  "utah": "Utah",
+  "vermont": "Vermont",
+  "wisconsin": "Wisconsin",
+  "wyoming": "Wyoming"
+};
+
 // Moteur de recherche mondial Radio Browser API en temps réel (45 000+ stations)
 async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
   try {
     const servers = [
       "https://de1.api.radio-browser.info",
-      "https://at1.api.radio-browser.info",
-      "https://nl1.api.radio-browser.info"
+      "https://all.api.radio-browser.info"
     ];
-    const base = servers[Math.floor(Math.random() * servers.length)];
-    const qClean = (query || "").trim().replace(',', '.');
-    const isTagQuery = ["jazz", "chill", "chillout", "sport", "sports", "news", "rock", "pop", "classical", "culture", "dance"].includes(qClean.toLowerCase());
-    
-    let url = `${base}/json/stations/search?limit=${limit}&hidebroken=true&order=votes&reverse=true`;
-    if (isTagQuery) {
-      url += `&tag=${encodeURIComponent(qClean.toLowerCase())}`;
-    } else if (qClean !== "") {
-      url += `&name=${encodeURIComponent(qClean)}`;
-    }
-    if (country && country !== "all") {
-      url += `&country=${encodeURIComponent(country.trim())}`;
+    const base = servers[0];
+    const qRaw = (query || "").trim();
+    const qLower = qRaw.toLowerCase().replace(/['"`]/g, "");
+    const qClean = qRaw.replace(',', '.');
+    const stateTarget = US_STATE_SYNONYMS[qLower];
+    const isTagQuery = ["jazz", "chill", "chillout", "sport", "sports", "news", "rock", "pop", "classical", "culture", "dance"].includes(qLower);
+
+    async function fetchFromEndpoint(url) {
+      try {
+        const res = await fetch(url, { headers: { "User-Agent": "PiRadio-PioneerApp/2.1" } });
+        if (res.ok) return await res.json();
+      } catch (e) {
+        // En cas d'indisponibilité du serveur primaire, bascule sur le miroir secondaire
+        const fallbackUrl = url.replace(servers[0], servers[1]);
+        try {
+          const res2 = await fetch(fallbackUrl, { headers: { "User-Agent": "PiRadio-PioneerApp/2.1" } });
+          if (res2.ok) return await res2.json();
+        } catch (e2) {}
+      }
+      return [];
     }
 
-    let res = await fetch(url, { headers: { "User-Agent": "PiRadio-PioneerApp/2.1" } });
-    if (!res.ok) return [];
-    let data = await res.json();
+    let allFetched = [];
 
-    // Si la recherche par tag renvoie 0 résultat, tenter par nom
-    if ((!data || data.length === 0) && isTagQuery) {
-      const fallbackUrl = `${base}/json/stations/search?limit=${limit}&hidebroken=true&order=votes&reverse=true&name=${encodeURIComponent(qClean)}`;
-      const resName = await fetch(fallbackUrl, { headers: { "User-Agent": "PiRadio-PioneerApp/2.1" } });
-      if (resName.ok) {
-        data = await resName.json();
+    // 1. Si la recherche correspond à un État américain (ex: Californie, Hawaï, Géorgie, Iowa, Michigan...)
+    if (stateTarget) {
+      const stateUrl = `${base}/json/stations/search?limit=${limit}&state=${encodeURIComponent(stateTarget)}&countrycode=US&hidebroken=true&order=votes&reverse=true`;
+      const nameUrl = `${base}/json/stations/search?limit=${limit}&name=${encodeURIComponent(stateTarget)}&countrycode=US&hidebroken=true&order=votes&reverse=true`;
+      const [resState, resName] = await Promise.all([fetchFromEndpoint(stateUrl), fetchFromEndpoint(nameUrl)]);
+      allFetched = [...(resState || []), ...(resName || [])];
+    } else {
+      let mainUrl = `${base}/json/stations/search?limit=${limit}&hidebroken=true&order=votes&reverse=true`;
+      if (isTagQuery) {
+        mainUrl += `&tag=${encodeURIComponent(qLower)}`;
+      } else if (qClean !== "") {
+        mainUrl += `&name=${encodeURIComponent(qClean)}`;
+      }
+      if (country && country !== "all") {
+        mainUrl += `&country=${encodeURIComponent(country.trim())}`;
+      }
+      allFetched = await fetchFromEndpoint(mainUrl);
+
+      // Si peu de résultats par nom, tenter également par État/Région
+      if ((!allFetched || allFetched.length < 5) && !isTagQuery && qClean.length >= 3) {
+        const altStateUrl = `${base}/json/stations/search?limit=${limit}&state=${encodeURIComponent(qClean)}&hidebroken=true&order=votes&reverse=true`;
+        const altData = await fetchFromEndpoint(altStateUrl);
+        if (altData && altData.length > 0) {
+          allFetched = [...(allFetched || []), ...altData];
+        }
       }
     }
 
-    // Si la recherche avec le pays sélectionné ne renvoie rien, bascule automatique sur la recherche globale
-    if ((!data || data.length === 0) && country && country !== "all" && qClean !== "") {
-      const globalUrl = `${base}/json/stations/search?limit=${limit}&hidebroken=true&order=votes&reverse=true&name=${encodeURIComponent(qClean)}`;
-      const fallbackRes = await fetch(globalUrl, { headers: { "User-Agent": "PiRadio-PioneerApp/2.1" } });
-      if (fallbackRes.ok) {
-        data = await fallbackRes.json();
+    if (!allFetched || !Array.isArray(allFetched)) return [];
+
+    // Dédoublonnage par stationuuid
+    const seenUuids = new Set();
+    let uniqueData = [];
+    allFetched.forEach(st => {
+      if (!seenUuids.has(st.stationuuid)) {
+        seenUuids.add(st.stationuuid);
+        uniqueData.push(st);
       }
-    }
+    });
 
-    if (!data || !Array.isArray(data)) return [];
-
-    // Filtrer les flux HTTP non sécurisés si l'application s'exécute en HTTPS (évite les blocages Mixed Content du navigateur)
+    // Filtrer les flux HTTP non sécurisés si l'application s'exécute en HTTPS
     const isHttpsSite = typeof window !== "undefined" && window.location && window.location.protocol === "https:";
     if (isHttpsSite) {
-      data = data.filter(st => {
+      uniqueData = uniqueData.filter(st => {
         const u = (st.url_resolved || st.url || "").trim();
         return u.startsWith("https://");
       });
     }
 
-    return data.map(st => {
+    return uniqueData.map(st => {
       // Détection automatique de la fréquence numérique dans le nom (ex: 94.3, 105.5)
       const freqMatch = st.name.match(/\d+([.,]\d+)?/);
       const freq = freqMatch ? freqMatch[0].replace(',', '.') : "";
@@ -1889,9 +1980,6 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
       const isFM = (freqNum !== null && freqNum >= 87 && freqNum <= 108) || st.name.toLowerCase().includes(" fm") || st.name.toLowerCase().endsWith("fm");
       const flagEmoji = getCountryFlagEmoji(st.countrycode);
       
-      // Récupération intelligente du logo :
-      // 1. Logo officiel fourni en HTTPS
-      // 2. Ou Logo officiel haute résolution via Google Favicon Service sur le domaine du site web de la radio
       const domain = getDomainFromUrl(st.homepage);
       let logoUrl = "";
       if (st.favicon && st.favicon.startsWith("https://")) {
@@ -1900,16 +1988,20 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
         logoUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
       }
 
+      const stateDisplay = st.state ? st.state.trim() : (stateTarget || "");
+
       return {
         id: "rb_" + st.stationuuid,
         name: st.name.trim(),
-        country: st.country || "Monde",
+        country: st.country || "United States",
+        state: stateDisplay,
+        city: stateDisplay ? `${stateDisplay}, ${st.country || 'USA'}` : (st.country || "Monde"),
         code: flagEmoji,
-        continent: "all",
-        category: isTagQuery ? qClean.toLowerCase() : "news",
+        continent: "americas",
+        category: isTagQuery ? qLower : "news",
         frequency: freq,
         band: isAM ? "AM" : (isFM ? "FM" : "WEB"),
-        language: st.language || "Multilingual",
+        language: st.language || "English",
         genre: st.tags ? st.tags.split(",").slice(0, 3).join(", ") : "Radio Live",
         streamUrl: st.url_resolved || st.url,
         fallbackUrl: st.url,

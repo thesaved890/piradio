@@ -507,16 +507,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4. Recherche textuelle, par ville/état et par fréquence FM/AM en chiffres (avec correction des fautes courantes)
     if (isSearching) {
       const q = state.searchQuery.toLowerCase().trim();
+      const qClean = q.replace(/['"`]/g, "");
+      const qStateTarget = (typeof US_STATE_SYNONYMS !== "undefined" && US_STATE_SYNONYMS[qClean]) 
+        ? US_STATE_SYNONYMS[qClean].toLowerCase() 
+        : "";
       const qCorrected = q.replace(/aeokuta/g, "abeokuta").replace(/ketou/g, "kétou").replace(/alaketu/g, "alakétu");
       const qNum = q.replace(',', '.');
       list = list.filter(st => {
         const nameMatch = (st.name || "").toLowerCase().includes(q) || 
                           (st.name || "").toLowerCase().includes(qCorrected) || 
+                          (qStateTarget && (st.name || "").toLowerCase().includes(qStateTarget)) ||
                           (st.name || "").toLowerCase().includes(qNum);
         const cityMatch = (st.city || "").toLowerCase().includes(q) || 
-                          (st.city || "").toLowerCase().includes(qCorrected);
+                          (st.city || "").toLowerCase().includes(qCorrected) ||
+                          (qStateTarget && (st.city || "").toLowerCase().includes(qStateTarget));
         const stateMatch = (st.state || "").toLowerCase().includes(q) || 
-                           (st.state || "").toLowerCase().includes(qCorrected);
+                           (st.state || "").toLowerCase().includes(qCorrected) ||
+                           (qStateTarget && (st.state || "").toLowerCase().includes(qStateTarget));
         const countryMatch = (st.country || "").toLowerCase().includes(q) || 
                              (st.country || "").toLowerCase().includes(qCorrected);
         const genreMatch = (st.genre || "").toLowerCase().includes(q) || 
