@@ -691,6 +691,154 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 1.f 🇧🇫 BURKINA FASO
+  // ==========================================
+  {
+    id: "radio-omega-burkina",
+    name: "Radio Oméga 103.9 FM (Ouaga)",
+    country: "Burkina Faso",
+    city: "Ouagadougou",
+    state: "Centre",
+    code: "🇧🇫",
+    continent: "africa",
+    category: "news",
+    frequency: "103.9",
+    band: "FM",
+    language: "Français & Mooré",
+    genre: "L'info en temps réel, Politique, Débats & Société",
+    streamUrl: "https://listen.radioking.com/radio/891831/stream/962296",
+    fallbackUrl: "https://listen.radioking.com/radio/891831/stream/962296",
+    logo: "assets/logos/radio-omega-burkina.svg",
+    featured: true
+  },
+  {
+    id: "radio-pulsar-ouaga",
+    name: "Radio Pulsar 94.8 FM (Ouaga)",
+    country: "Burkina Faso",
+    city: "Ouagadougou",
+    state: "Centre",
+    code: "🇧🇫",
+    continent: "africa",
+    category: "culture",
+    frequency: "94.8",
+    band: "FM",
+    language: "Français & Mooré",
+    genre: "Le Rythme de la Cité, Musique urbaine, Hip-hop & Afro",
+    streamUrl: "https://pulsarouagadougou.ice.infomaniak.ch/pulsarouagadougou-128.mp3",
+    fallbackUrl: "https://pulsarouagadougou.ice.infomaniak.ch/pulsarouagadougou-128.mp3",
+    logo: "assets/logos/radio-pulsar-ouaga.svg",
+    featured: true
+  },
+  {
+    id: "savane-fm-burkina",
+    name: "Savane FM 103.4 (Ouagadougou)",
+    country: "Burkina Faso",
+    city: "Ouagadougou",
+    state: "Centre",
+    code: "🇧🇫",
+    continent: "africa",
+    category: "news",
+    frequency: "103.4",
+    band: "FM",
+    language: "Mooré, Français & Dioula",
+    genre: "Radio n°1 du Burkina, Débats, Contes & Musiques du terroir",
+    streamUrl: "https://stream.zeno.fm/97fyu5a10bruv",
+    fallbackUrl: "https://stream.zeno.fm/97fyu5a10bruv",
+    logo: "assets/logos/savane-fm-burkina.svg",
+    featured: true
+  },
+  {
+    id: "rtb-radio-burkina",
+    name: "RTB Radio Nationale (99.9 FM)",
+    country: "Burkina Faso",
+    city: "Ouagadougou",
+    state: "Centre",
+    code: "🇧🇫",
+    continent: "africa",
+    category: "news",
+    frequency: "99.9",
+    band: "FM",
+    language: "Français, Mooré, Dioula & Fulfuldé",
+    genre: "Radiodiffusion Télévision du Burkina, Actualités officielles",
+    streamUrl: "https://stream.zeno.fm/94799gsteg0uv",
+    fallbackUrl: "https://stream.zeno.fm/94799gsteg0uv",
+    logo: "assets/logos/rtb-radio-burkina.svg",
+    featured: true
+  },
+  {
+    id: "horizon-fm-ouaga",
+    name: "Horizon FM 104.4 (Ouagadougou)",
+    country: "Burkina Faso",
+    city: "Ouagadougou",
+    state: "Centre",
+    code: "🇧🇫",
+    continent: "africa",
+    category: "culture",
+    frequency: "104.4",
+    band: "FM",
+    language: "Français & Mooré",
+    genre: "1ère radio privée d'Afrique de l'Ouest (1987), Variétés & Talk",
+    streamUrl: "https://stream.zeno.fm/0945crn4bf9uv",
+    fallbackUrl: "https://stream.zeno.fm/7861hrn4bf9uv",
+    logo: "assets/logos/horizon-fm-ouaga.svg",
+    featured: true
+  },
+  {
+    id: "radio-balafon-bobo",
+    name: "Radio Balafon 102.7 FM (Bobo)",
+    country: "Burkina Faso",
+    city: "Bobo-Dioulasso",
+    state: "Hauts-Bassins",
+    code: "🇧🇫",
+    continent: "africa",
+    category: "culture",
+    frequency: "102.7",
+    band: "FM",
+    language: "Dioula & Français",
+    genre: "Sya, Musique mandingue, Balafon, Culture & Infos",
+    streamUrl: "https://stream.zeno.fm/v3ddfda0cf9uv",
+    fallbackUrl: "https://stream.zeno.fm/v3ddfda0cf9uv",
+    logo: "assets/logos/radio-balafon-bobo.svg",
+    featured: true
+  },
+  {
+    id: "radio-bizi-inter",
+    name: "Radio Bizi Inter (Groupe BZ)",
+    country: "Burkina Faso",
+    city: "Ouagadougou",
+    state: "Centre",
+    code: "🇧🇫",
+    continent: "africa",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Français & Mooré",
+    genre: "Musique burkinabè, Diaspora, Variétés & Culture",
+    streamUrl: "https://sonic.mediacp.eu/8040/;",
+    fallbackUrl: "https://sonic.mediacp.eu/8040/;",
+    logo: "assets/logos/radio-bizi-inter.svg",
+    featured: true
+  },
+  {
+    id: "radio-maria-burkina",
+    name: "Radio Maria Burkina Faso",
+    country: "Burkina Faso",
+    city: "Ouagadougou",
+    state: "Centre",
+    code: "🇧🇫",
+    continent: "africa",
+    category: "culture",
+    frequency: "91.6",
+    band: "FM",
+    language: "Français & Mooré",
+    genre: "Spiritualité chrétienne, Évangélisation, Prière & Paix",
+    streamUrl: "https://rcblive.stream/radio/8024/stream",
+    fallbackUrl: "https://rcblive.stream/radio/8024/stream",
+    logo: "assets/logos/radio-maria-burkina.svg",
+    featured: true
+  },
+
+  // ==========================================
   // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE & 🇲🇦 MAROC (MAGHREB)
   // ==========================================
   {
@@ -3361,6 +3509,22 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "tillabéri": { code: "NE", en: "The Niger", fr: "Tillabéri", continent: "africa", type: "country" },
   "baleyara": { code: "NE", en: "The Niger", fr: "Baleyara", continent: "africa", type: "country" },
 
+  "bf": { code: "BF", en: "Burkina Faso", fr: "Burkina Faso", continent: "africa", type: "country" },
+  "burkina": { code: "BF", en: "Burkina Faso", fr: "Burkina Faso", continent: "africa", type: "country" },
+  "burkina faso": { code: "BF", en: "Burkina Faso", fr: "Burkina Faso", continent: "africa", type: "country" },
+  "burkina-faso": { code: "BF", en: "Burkina Faso", fr: "Burkina Faso", continent: "africa", type: "country" },
+  "ouagadougou": { code: "BF", en: "Burkina Faso", fr: "Ouagadougou", continent: "africa", type: "country" },
+  "ouaga": { code: "BF", en: "Burkina Faso", fr: "Ouagadougou", continent: "africa", type: "country" },
+  "bobo": { code: "BF", en: "Burkina Faso", fr: "Bobo-Dioulasso", continent: "africa", type: "country" },
+  "bobo-dioulasso": { code: "BF", en: "Burkina Faso", fr: "Bobo-Dioulasso", continent: "africa", type: "country" },
+  "koudougou": { code: "BF", en: "Burkina Faso", fr: "Koudougou", continent: "africa", type: "country" },
+  "banfora": { code: "BF", en: "Burkina Faso", fr: "Banfora", continent: "africa", type: "country" },
+  "ouahigouya": { code: "BF", en: "Burkina Faso", fr: "Ouahigouya", continent: "africa", type: "country" },
+  "kaya": { code: "BF", en: "Burkina Faso", fr: "Kaya", continent: "africa", type: "country" },
+  "dédougou": { code: "BF", en: "Burkina Faso", fr: "Dédougou", continent: "africa", type: "country" },
+  "dedougou": { code: "BF", en: "Burkina Faso", fr: "Dédougou", continent: "africa", type: "country" },
+  "fada": { code: "BF", en: "Burkina Faso", fr: "Fada N'Gourma", continent: "africa", type: "country" },
+
   "maroc": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "morocco": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "casablanca": { code: "MA", en: "Morocco", fr: "Casablanca", continent: "africa", type: "country" },
@@ -3745,6 +3909,23 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/niger-radio-badge.svg";
   }
 
+  // 1.o Logos officiels Burkina Faso 🇧🇫
+  const isBurkina = (cCode === "BF") || (st.code === "🇧🇫") || (st.country || "").toLowerCase().includes("burkina") || stState.includes("ouaga") || stState.includes("bobo") || stState.includes("koudougou") || stState.includes("banfora") || stState.includes("ouahigouya") || nameLow.includes("burkina") || nameLow.includes("ouaga") || nameLow.includes("bobo") || nameLow.includes("koudougou") || nameLow.includes("balafon") || nameLow.includes("bizi") || nameLow.includes("biwi");
+  if (isBurkina) {
+    if (nameLow.includes("horizon") && nameLow.includes("koudougou")) return "assets/logos/horizon-fm-koudougou.svg";
+    if (nameLow.includes("horizon")) return "assets/logos/horizon-fm-ouaga.svg";
+    if (nameLow.includes("balafon")) return "assets/logos/radio-balafon-bobo.svg";
+    if (nameLow.includes("bizi") || nameLow.includes("biwi")) return "assets/logos/radio-bizi-inter.svg";
+    if (nameLow.includes("omega") || nameLow.includes("oméga")) return "assets/logos/radio-omega-burkina.svg";
+    if (nameLow.includes("pulsar")) return "assets/logos/radio-pulsar-ouaga.svg";
+    if (nameLow.includes("savane")) return "assets/logos/savane-fm-burkina.svg";
+    if (nameLow.includes("rtb")) return "assets/logos/rtb-radio-burkina.svg";
+    if (nameLow.includes("ouaga fm")) return "assets/logos/ouaga-fm-burkina.svg";
+    if (nameLow.includes("maria")) return "assets/logos/radio-maria-burkina.svg";
+    if (nameLow.includes("legende") || nameLow.includes("légende")) return "assets/logos/radio-legende-ouaga.svg";
+    return "assets/logos/burkina-faso-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -3811,6 +3992,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isNiger) {
     return "assets/logos/niger-radio-badge.svg";
+  }
+  if (isBurkina) {
+    return "assets/logos/burkina-faso-radio-badge.svg";
   }
 
   return "";

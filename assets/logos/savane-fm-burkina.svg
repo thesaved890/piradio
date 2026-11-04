@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="savaneBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1206"/>
+      <stop offset="50%" stop-color="#2d1c0b"/>
+      <stop offset="100%" stop-color="#0a0602"/>
+    </linearGradient>
+    <linearGradient id="savaneGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFDD00"/>
+      <stop offset="100%" stop-color="#FF8800"/>
+    </linearGradient>
+    <linearGradient id="savaneGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C853"/>
+      <stop offset="100%" stop-color="#69F0AE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#savaneBg)"/>
+  <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#savaneGold)" stroke-width="2.5" stroke-opacity="0.85"/>
+
+  <!-- African Baobab / Savanna Tree Silhouette -->
+  <circle cx="100" cy="74" r="38" fill="#100a03" stroke="url(#savaneGreen)" stroke-width="2"/>
+  <path d="M 96 90 L 104 90 L 102 74 C 108 72, 114 66, 112 58 C 106 56, 102 60, 100 62 C 98 60, 94 56, 88 58 C 86 66, 92 72, 98 74 Z" fill="url(#savaneGold)"/>
+
+  <text x="100" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle">SAVANE FM</text>
+  <text x="100" y="152" fill="url(#savaneGold)" font-family="'Inter', sans-serif" font-weight="800" font-size="13" letter-spacing="2" text-anchor="middle">103.4 FM</text>
+
+  <rect x="36" y="166" width="128" height="20" rx="6" fill="#080401" stroke="url(#savaneGold)" stroke-width="1.2"/>
+  <text x="100" y="180" fill="#69F0AE" font-family="'Inter', sans-serif" font-weight="700" font-size="9" letter-spacing="1.5" text-anchor="middle">OUAGADOUGOU • 100% TERROIR</text>
+</svg>

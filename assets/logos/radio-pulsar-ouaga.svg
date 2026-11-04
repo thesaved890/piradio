@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pulsarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14061a"/>
+      <stop offset="50%" stop-color="#240c2e"/>
+      <stop offset="100%" stop-color="#08020a"/>
+    </linearGradient>
+    <linearGradient id="pulsarPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DA22FF"/>
+      <stop offset="100%" stop-color="#9733EE"/>
+    </linearGradient>
+    <linearGradient id="pulsarCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#4FACFE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#pulsarBg)"/>
+  <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#pulsarPurple)" stroke-width="2.5" stroke-opacity="0.85"/>
+
+  <!-- Pulsar Star / Audio Pulse Waves -->
+  <circle cx="100" cy="74" r="38" fill="#0d0412" stroke="url(#pulsarCyan)" stroke-width="2"/>
+  <path d="M 74 74 L 84 74 L 92 60 L 98 88 L 104 64 L 110 82 L 116 74 L 126 74" fill="none" stroke="url(#pulsarPurple)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="100" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle">PULSAR</text>
+  <text x="100" y="152" fill="url(#pulsarCyan)" font-family="'Inter', sans-serif" font-weight="800" font-size="13" letter-spacing="2" text-anchor="middle">94.8 FM</text>
+
+  <rect x="36" y="166" width="128" height="20" rx="6" fill="#060108" stroke="url(#pulsarPurple)" stroke-width="1.2"/>
+  <text x="100" y="180" fill="#00F2FE" font-family="'Inter', sans-serif" font-weight="700" font-size="9" letter-spacing="1.5" text-anchor="middle">OUAGA • LE RYTHME DE LA CITÉ</text>
+</svg>

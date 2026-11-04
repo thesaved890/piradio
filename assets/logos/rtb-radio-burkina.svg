@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rtbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19080b"/>
+      <stop offset="50%" stop-color="#2a0d12"/>
+      <stop offset="100%" stop-color="#080e09"/>
+    </linearGradient>
+    <linearGradient id="rtbRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF2B3E"/>
+      <stop offset="100%" stop-color="#E01E2E"/>
+    </linearGradient>
+    <linearGradient id="rtbGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C853"/>
+      <stop offset="100%" stop-color="#009E49"/>
+    </linearGradient>
+    <linearGradient id="rtbGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFE000"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#rtbBg)"/>
+  <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#rtbGold)" stroke-width="2.5" stroke-opacity="0.85"/>
+
+  <!-- Burkina Faso Emblem with Star -->
+  <g transform="translate(100, 72) scale(0.9)">
+    <circle cx="0" cy="0" r="42" fill="#0d0406" stroke="url(#rtbGold)" stroke-width="2"/>
+    <path d="M -26 -16 L 26 -16 L 26 0 L -26 0 Z" fill="url(#rtbRed)"/>
+    <path d="M -26 0 L 26 0 L 26 16 L -26 16 Z" fill="url(#rtbGreen)"/>
+    <polygon points="0,-8 3,-1 10,-1 4,3 7,10 0,6 -7,10 -4,3 -10,-1 -3,-1" fill="url(#rtbGold)"/>
+  </g>
+
+  <text x="100" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="22" letter-spacing="2.5" text-anchor="middle">RTB</text>
+  <text x="100" y="152" fill="url(#rtbGold)" font-family="'Inter', sans-serif" font-weight="800" font-size="12" letter-spacing="2" text-anchor="middle">RADIO NATIONALE</text>
+
+  <rect x="36" y="166" width="128" height="20" rx="6" fill="#050805" stroke="url(#rtbGold)" stroke-width="1.2"/>
+  <text x="100" y="180" fill="#69F0AE" font-family="'Inter', sans-serif" font-weight="700" font-size="8.5" letter-spacing="1" text-anchor="middle">99.9 FM • BURKINA FASO</text>
+</svg>
