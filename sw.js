@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.3
+// Pi Radio • Service Worker v5.4
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.3';
+const CACHE_NAME = 'piradio-v5.4';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,22 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Guinée (Conakry) 🇬🇳 (v5.4)
+  './assets/logos/guinee-radio-badge.svg',
+  './assets/logos/espace-fm-guinee.svg',
+  './assets/logos/bonheur-fm-guinee.svg',
+  './assets/logos/littoral-fm-guinee.svg',
+  './assets/logos/lgf-fun-guinee.svg',
+  './assets/logos/lgf-talk-guinee.svg',
+  './assets/logos/afrionde-conakry.svg',
+  './assets/logos/rtg-radio-guinee.svg',
+  // Logos officiels Guinée-Bissau 🇬🇼 (v5.4)
+  './assets/logos/guinee-bissau-radio-badge.svg',
+  './assets/logos/radio-voz-da-guine.svg',
+  './assets/logos/radio-esperanca-bissau.svg',
+  // Logos officiels Guinée équatoriale 🇬🇶 (v5.4)
+  './assets/logos/guinee-equatoriale-badge.svg',
+  './assets/logos/rnge-radio-malabo.svg',
   // Logos officiels Burkina Faso 🇧🇫 (v5.3)
   './assets/logos/burkina-faso-radio-badge.svg',
   './assets/logos/horizon-fm-ouaga.svg',

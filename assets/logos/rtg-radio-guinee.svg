@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rtgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1713"/>
+      <stop offset="50%" stop-color="#162c21"/>
+      <stop offset="100%" stop-color="#080e0b"/>
+    </linearGradient>
+    <linearGradient id="rtgGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCD116"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </linearGradient>
+    <filter id="rtgShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#rtgBg)" stroke="#FCD116" stroke-width="3" filter="url(#rtgShadow)"/>
+
+  <!-- Tri-bande nationale au sommet -->
+  <g transform="translate(68, 22)">
+    <rect x="0" y="0" width="21" height="10" fill="#CE1126" rx="2"/>
+    <rect x="21" y="0" width="22" height="10" fill="#FCD116"/>
+    <rect x="43" y="0" width="21" height="10" fill="#009460" rx="2"/>
+  </g>
+
+  <!-- Sigle RTG imposant -->
+  <g transform="translate(100, 72)" filter="url(#rtgShadow)">
+    <text x="0" y="0" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="36" letter-spacing="4" text-anchor="middle">RTG</text>
+  </g>
+
+  <!-- Bannière RADIO KOLOMA GUINÉE -->
+  <rect x="30" y="96" width="140" height="34" rx="8" fill="#CE1126" stroke="#FCD116" stroke-width="1.5"/>
+  <text x="100" y="118" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="14" letter-spacing="1.5" text-anchor="middle">RADIO GUINÉE</text>
+
+  <!-- Fréquence et statut officiel -->
+  <rect x="24" y="150" width="152" height="30" rx="8" fill="#0a1a12" stroke="url(#rtgGold)" stroke-width="1.2"/>
+  <text x="100" y="170" fill="#FCD116" font-family="'Inter', sans-serif" font-weight="800" font-size="10.5" letter-spacing="2" text-anchor="middle">VOIX NATIONALE • CONAKRY</text>
+</svg>

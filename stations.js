@@ -839,6 +839,180 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 1.g 🇬🇳 GUINÉE (CONAKRY)
+  // ==========================================
+  {
+    id: "espace-fm-guinee-conakry",
+    name: "Espace FM 101.5 (Conakry)",
+    country: "Guinée",
+    city: "Conakry",
+    state: "Conakry",
+    code: "🇬🇳",
+    continent: "africa",
+    category: "news",
+    frequency: "101.5",
+    band: "FM",
+    language: "Français, Malinké, Soussou, Peul",
+    genre: "Les Grandes Gueules, Actualités & Débats en direct",
+    streamUrl: "http://listen.radioking.com/radio/16769/stream/49487",
+    fallbackUrl: "http://listen.radioking.com/radio/16769/stream/49487",
+    logo: "assets/logos/espace-fm-guinee.svg",
+    featured: true
+  },
+  {
+    id: "bonheur-fm-guinee-conakry",
+    name: "BONHEUR FM Guinée 101.4 FM",
+    country: "Guinée",
+    city: "Conakry",
+    state: "Conakry",
+    code: "🇬🇳",
+    continent: "africa",
+    category: "general",
+    frequency: "101.4",
+    band: "FM",
+    language: "Français & Langues nationales",
+    genre: "Musique urbaine, Culture & Information Conakry",
+    streamUrl: "https://stream.zeno.fm/gzxp5eqkafeuv",
+    fallbackUrl: "https://stream.zeno.fm/gzxp5eqkafeuv",
+    logo: "assets/logos/bonheur-fm-guinee.svg",
+    featured: true
+  },
+  {
+    id: "littoral-fm-guinee",
+    name: "Littoral FM Guinée 99.7 FM",
+    country: "Guinée",
+    city: "Conakry",
+    state: "Conakry",
+    code: "🇬🇳",
+    continent: "africa",
+    category: "music",
+    frequency: "99.7",
+    band: "FM",
+    language: "Français & Musique Mandingue",
+    genre: "Hits guinéens, Musique Mandingue & Afrobeats",
+    streamUrl: "https://stream.zeno.fm/q94z1t5hsm5tv",
+    fallbackUrl: "https://stream.zeno.fm/q94z1t5hsm5tv",
+    logo: "assets/logos/littoral-fm-guinee.svg",
+    featured: true
+  },
+  {
+    id: "lgf-fun-guinee",
+    name: "LGF FUN GUINEE",
+    country: "Guinée",
+    city: "Conakry",
+    state: "Conakry",
+    code: "🇬🇳",
+    continent: "africa",
+    category: "music",
+    frequency: "92.5",
+    band: "FM",
+    language: "Français & Pop",
+    genre: "Jeunesse, Pop urbaine, RnB & Hits mondiaux",
+    streamUrl: "https://stream.zeno.fm/6y3sswt61pcuv",
+    fallbackUrl: "https://stream.zeno.fm/6y3sswt61pcuv",
+    logo: "assets/logos/lgf-fun-guinee.svg",
+    featured: true
+  },
+  {
+    id: "lgf-talk-guinee",
+    name: "LGF TALK GUINEE",
+    country: "Guinée",
+    city: "Conakry",
+    state: "Conakry",
+    code: "🇬🇳",
+    continent: "africa",
+    category: "news",
+    frequency: "95.0",
+    band: "FM",
+    language: "Français & Débats",
+    genre: "Talk show, Débats d'opinion, Politique & Société",
+    streamUrl: "https://stream.zeno.fm/xirmzwnnpintv",
+    fallbackUrl: "https://stream.zeno.fm/xirmzwnnpintv",
+    logo: "assets/logos/lgf-talk-guinee.svg",
+    featured: true
+  },
+  {
+    id: "afrionde-conakry",
+    name: "AfriOnde Conakry",
+    country: "Guinée",
+    city: "Conakry",
+    state: "Conakry",
+    code: "🇬🇳",
+    continent: "africa",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Français & Langues d'Afrique",
+    genre: "Culture africaine, Actualités & Variétés guinéennes",
+    streamUrl: "https://live.afrionde.fr/afrionde5",
+    fallbackUrl: "https://live.afrionde.fr/afrionde5",
+    logo: "assets/logos/afrionde-conakry.svg",
+    featured: true
+  },
+
+  // ==========================================
+  // 1.h 🇬🇼 GUINÉE-BISSAU
+  // ==========================================
+  {
+    id: "radio-voz-da-guine-bissau",
+    name: "Rádio Voz da Guiné (Bissau)",
+    country: "Guinée-Bissau",
+    city: "Bissau",
+    state: "Bissau",
+    code: "🇬🇼",
+    continent: "africa",
+    category: "news",
+    frequency: "98.5",
+    band: "FM",
+    language: "Português & Crioulo",
+    genre: "Música africana, Informação & Cultura da Guiné-Bissau",
+    streamUrl: "https://stream.zeno.fm/iwioelqe6qwtv",
+    fallbackUrl: "https://stream.zeno.fm/iwioelqe6qwtv",
+    logo: "assets/logos/radio-voz-da-guine.svg",
+    featured: true
+  },
+  {
+    id: "radio-voz-de-esperanca-bissau",
+    name: "Rádio Voz de Esperança (Bissau)",
+    country: "Guinée-Bissau",
+    city: "Bissau",
+    state: "Bissau",
+    code: "🇬🇼",
+    continent: "africa",
+    category: "culture",
+    frequency: "92.0",
+    band: "FM",
+    language: "Português & Crioulo",
+    genre: "Programação cristã, Esperança & Valores Comunitários",
+    streamUrl: "https://stream.zeno.fm/c857sevbu18uv",
+    fallbackUrl: "https://stream.zeno.fm/c857sevbu18uv",
+    logo: "assets/logos/radio-esperanca-bissau.svg",
+    featured: true
+  },
+
+  // ==========================================
+  // 1.i 🇬🇶 GUINÉE ÉQUATORIALE
+  // ==========================================
+  {
+    id: "rnge-radio-malabo",
+    name: "Radio Nacional de Guinea Ecuatorial (RNGE Malabo)",
+    country: "Guinée équatoriale",
+    city: "Malabo",
+    state: "Bioko Norte",
+    code: "🇬🇶",
+    continent: "africa",
+    category: "news",
+    frequency: "95.5",
+    band: "FM",
+    language: "Español & Français",
+    genre: "Emisora oficial nacional, Noticias de Guinea Ecuatorial & Música",
+    streamUrl: "https://rpn.bozztv.com/ses/tvge/tvgeradio/playlist.m3u8",
+    fallbackUrl: "https://rpn.bozztv.com/ses/tvge/tvgeradio/playlist.m3u8",
+    logo: "assets/logos/rnge-radio-malabo.svg",
+    featured: true
+  },
+
+  // ==========================================
   // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE & 🇲🇦 MAROC (MAGHREB)
   // ==========================================
   {
@@ -891,24 +1065,8 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
-  // 3. 🇬🇳 GUINÉE & 🇦🇴 ANGOLA & 🇨🇲 CAMEROUN
+  // 3. 🇦🇴 ANGOLA & 🇨🇲 CAMEROUN
   // ==========================================
-  {
-    id: "guinee-espace-fm",
-    name: "Espace FM 101.5 Conakry",
-    country: "Guinée",
-    code: "🇬🇳",
-    continent: "africa",
-    category: "news",
-    frequency: "101.5",
-    band: "FM",
-    language: "Français, Malinké, Soussou, Peul",
-    genre: "Les Grandes Gueules & News Guinée",
-    streamUrl: "http://listen.radioking.com/radio/16769/stream/49487",
-    fallbackUrl: "http://listen.radioking.com/radio/16769/stream/49487",
-    logo: "assets/logos/guinee-espace-fm.png",
-    featured: true
-  },
   {
     id: "angola-radio-nacional",
     name: "Rádio Nacional de Angola (Canal A)",
@@ -3558,8 +3716,42 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "kenya": { code: "KE", en: "Kenya", fr: "Kenya", continent: "africa", type: "country" },
   "angola": { code: "AO", en: "Angola", fr: "Angola", continent: "africa", type: "country" },
   "gabon": { code: "GA", en: "Gabon", fr: "Gabon", continent: "africa", type: "country" },
+  // Guinée (Conakry) 🇬🇳
+  "gn": { code: "GN", en: "Guinea", fr: "Guinée", continent: "africa", type: "country" },
+  "guinea": { code: "GN", en: "Guinea", fr: "Guinée", continent: "africa", type: "country" },
   "guinee": { code: "GN", en: "Guinea", fr: "Guinée", continent: "africa", type: "country" },
   "guinée": { code: "GN", en: "Guinea", fr: "Guinée", continent: "africa", type: "country" },
+  "guinee conakry": { code: "GN", en: "Guinea", fr: "Guinée (Conakry)", continent: "africa", type: "country" },
+  "guinée conakry": { code: "GN", en: "Guinea", fr: "Guinée (Conakry)", continent: "africa", type: "country" },
+  "guinea conakry": { code: "GN", en: "Guinea", fr: "Guinée (Conakry)", continent: "africa", type: "country" },
+  "conakry": { code: "GN", en: "Guinea", fr: "Conakry", continent: "africa", type: "country" },
+  "kankan": { code: "GN", en: "Guinea", fr: "Kankan", continent: "africa", type: "country" },
+  "kindia": { code: "GN", en: "Guinea", fr: "Kindia", continent: "africa", type: "country" },
+  "labe": { code: "GN", en: "Guinea", fr: "Labé", continent: "africa", type: "country" },
+  "labé": { code: "GN", en: "Guinea", fr: "Labé", continent: "africa", type: "country" },
+  "nzerekore": { code: "GN", en: "Guinea", fr: "Nzérékoré", continent: "africa", type: "country" },
+  "nzérékoré": { code: "GN", en: "Guinea", fr: "Nzérékoré", continent: "africa", type: "country" },
+
+  // Guinée-Bissau 🇬🇼
+  "gw": { code: "GW", en: "Guinea-Bissau", fr: "Guinée-Bissau", continent: "africa", type: "country" },
+  "guinee-bissau": { code: "GW", en: "Guinea-Bissau", fr: "Guinée-Bissau", continent: "africa", type: "country" },
+  "guinée-bissau": { code: "GW", en: "Guinea-Bissau", fr: "Guinée-Bissau", continent: "africa", type: "country" },
+  "guinee bissau": { code: "GW", en: "Guinea-Bissau", fr: "Guinée-Bissau", continent: "africa", type: "country" },
+  "guinée bissau": { code: "GW", en: "Guinea-Bissau", fr: "Guinée-Bissau", continent: "africa", type: "country" },
+  "guinea-bissau": { code: "GW", en: "Guinea-Bissau", fr: "Guinée-Bissau", continent: "africa", type: "country" },
+  "guinea bissau": { code: "GW", en: "Guinea-Bissau", fr: "Guinée-Bissau", continent: "africa", type: "country" },
+  "bissau": { code: "GW", en: "Guinea-Bissau", fr: "Bissau", continent: "africa", type: "country" },
+
+  // Guinée équatoriale 🇬🇶
+  "gq": { code: "GQ", en: "Equatorial Guinea", fr: "Guinée équatoriale", continent: "africa", type: "country" },
+  "guinee equatoriale": { code: "GQ", en: "Equatorial Guinea", fr: "Guinée équatoriale", continent: "africa", type: "country" },
+  "guinée équatoriale": { code: "GQ", en: "Equatorial Guinea", fr: "Guinée équatoriale", continent: "africa", type: "country" },
+  "guinee-equatoriale": { code: "GQ", en: "Equatorial Guinea", fr: "Guinée équatoriale", continent: "africa", type: "country" },
+  "guinée-équatoriale": { code: "GQ", en: "Equatorial Guinea", fr: "Guinée équatoriale", continent: "africa", type: "country" },
+  "guinea ecuatorial": { code: "GQ", en: "Equatorial Guinea", fr: "Guinée équatoriale", continent: "africa", type: "country" },
+  "equatorial guinea": { code: "GQ", en: "Equatorial Guinea", fr: "Guinée équatoriale", continent: "africa", type: "country" },
+  "malabo": { code: "GQ", en: "Equatorial Guinea", fr: "Malabo", continent: "africa", type: "country" },
+  "bata": { code: "GQ", en: "Equatorial Guinea", fr: "Bata", continent: "africa", type: "country" },
   "niger": { code: "NE", en: "Niger", fr: "Niger", continent: "africa", type: "country" },
   "rwanda": { code: "RW", en: "Rwanda", fr: "Rwanda", continent: "africa", type: "country" },
 
@@ -3926,6 +4118,42 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/burkina-faso-radio-badge.svg";
   }
 
+  // 1.p Logos officiels Guinée (Conakry) 🇬🇳
+  const isGuinee = (cCode === "GN") || (st.code === "🇬🇳") || 
+    ((st.country || "").toLowerCase().includes("guinea") && !(st.country || "").toLowerCase().includes("bissau") && !(st.country || "").toLowerCase().includes("equat")) ||
+    ((st.country || "").toLowerCase().includes("guinée") && !(st.country || "").toLowerCase().includes("bissau") && !(st.country || "").toLowerCase().includes("équat")) ||
+    stState.includes("conakry") || stState.includes("kindia") || stState.includes("kankan") || stState.includes("labé") || stState.includes("nzérékoré") ||
+    nameLow.includes("conakry") || (nameLow.includes("guinée") && !nameLow.includes("bissau") && !nameLow.includes("équat")) || (nameLow.includes("guinee") && !nameLow.includes("bissau") && !nameLow.includes("equat"));
+  if (isGuinee) {
+    if (nameLow.includes("espace")) return "assets/logos/espace-fm-guinee.svg";
+    if (nameLow.includes("bonheur")) return "assets/logos/bonheur-fm-guinee.svg";
+    if (nameLow.includes("littoral")) return "assets/logos/littoral-fm-guinee.svg";
+    if (nameLow.includes("lgf fun") || nameLow.includes("lgf-fun") || (nameLow.includes("lgf") && nameLow.includes("fun"))) return "assets/logos/lgf-fun-guinee.svg";
+    if (nameLow.includes("lgf talk") || nameLow.includes("lgf-talk") || (nameLow.includes("lgf") && nameLow.includes("talk"))) return "assets/logos/lgf-talk-guinee.svg";
+    if (nameLow.includes("afrionde")) return "assets/logos/afrionde-conakry.svg";
+    if (nameLow.includes("rtg") || nameLow.includes("koloma")) return "assets/logos/rtg-radio-guinee.svg";
+    return "assets/logos/guinee-radio-badge.svg";
+  }
+
+  // 1.q Logos officiels Guinée-Bissau 🇬🇼
+  const isGuineeBissau = (cCode === "GW") || (st.code === "🇬🇼") ||
+    (st.country || "").toLowerCase().includes("bissau") ||
+    stState.includes("bissau") || nameLow.includes("bissau") || nameLow.includes("voz da guiné") || nameLow.includes("voz da guine");
+  if (isGuineeBissau) {
+    if (nameLow.includes("esperança") || nameLow.includes("esperanca")) return "assets/logos/radio-esperanca-bissau.svg";
+    if (nameLow.includes("voz da guin") || nameLow.includes("voz da guiné")) return "assets/logos/radio-voz-da-guine.svg";
+    return "assets/logos/guinee-bissau-radio-badge.svg";
+  }
+
+  // 1.r Logos officiels Guinée équatoriale 🇬🇶
+  const isGuineeEquatoriale = (cCode === "GQ") || (st.code === "🇬🇶") ||
+    (st.country || "").toLowerCase().includes("equatorial") || (st.country || "").toLowerCase().includes("équatoriale") || (st.country || "").toLowerCase().includes("ecuatorial") ||
+    stState.includes("malabo") || stState.includes("bioko") || stState.includes("bata") || nameLow.includes("malabo") || nameLow.includes("rnge");
+  if (isGuineeEquatoriale) {
+    if (nameLow.includes("rnge") || nameLow.includes("nacional")) return "assets/logos/rnge-radio-malabo.svg";
+    return "assets/logos/guinee-equatoriale-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -3995,6 +4223,15 @@ function resolveRegionalStationLogo(st) {
   }
   if (isBurkina) {
     return "assets/logos/burkina-faso-radio-badge.svg";
+  }
+  if (isGuinee) {
+    return "assets/logos/guinee-radio-badge.svg";
+  }
+  if (isGuineeBissau) {
+    return "assets/logos/guinee-bissau-radio-badge.svg";
+  }
+  if (isGuineeEquatoriale) {
+    return "assets/logos/guinee-equatoriale-badge.svg";
   }
 
   return "";
@@ -4105,6 +4342,39 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
         if (c === "NG" || country.includes("nigeria") || name.includes("nigeria")) return false;
         if (name.includes("leipzig") || name.includes("muziekknallers")) return false;
         return c === "NE" || country.includes("the niger") || country === "niger";
+      });
+    }
+
+    // Filtre spécifique Guinée (Conakry) 🇬🇳 pour écarter Bissau, Guinée équatoriale et Papouasie
+    if (loc && loc.code === "GN") {
+      uniqueData = uniqueData.filter(st => {
+        const c = (st.countrycode || "").toUpperCase();
+        const country = (st.country || "").toLowerCase();
+        const name = (st.name || "").toLowerCase();
+        if (c === "GW" || country.includes("bissau") || name.includes("bissau")) return false;
+        if (c === "GQ" || country.includes("equat") || country.includes("équat") || name.includes("malabo")) return false;
+        if (c === "PG" || country.includes("papua")) return false;
+        return c === "GN" || country === "guinea" || country === "guinée" || name.includes("conakry") || name.includes("guinée live");
+      });
+    }
+
+    // Filtre spécifique Guinée-Bissau 🇬🇼
+    if (loc && loc.code === "GW") {
+      uniqueData = uniqueData.filter(st => {
+        const c = (st.countrycode || "").toUpperCase();
+        const country = (st.country || "").toLowerCase();
+        const name = (st.name || "").toLowerCase();
+        if (c === "GN" || c === "GQ" || c === "PG") return false;
+        return c === "GW" || country.includes("bissau") || name.includes("bissau") || name.includes("voz da guiné");
+      });
+    }
+
+    // Filtre spécifique Guinée équatoriale 🇬🇶
+    if (loc && loc.code === "GQ") {
+      uniqueData = uniqueData.filter(st => {
+        const c = (st.countrycode || "").toUpperCase();
+        const country = (st.country || "").toLowerCase();
+        return c === "GQ" || country.includes("equat") || country.includes("équat") || country.includes("ecuatorial");
       });
     }
 

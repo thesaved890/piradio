@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vozGuineBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141a0d"/>
+      <stop offset="50%" stop-color="#223015"/>
+      <stop offset="100%" stop-color="#0a0d07"/>
+    </linearGradient>
+    <linearGradient id="vozGuineGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCD116"/>
+      <stop offset="50%" stop-color="#FFB703"/>
+      <stop offset="100%" stop-color="#FB8500"/>
+    </linearGradient>
+    <filter id="vozGuineShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#vozGuineBg)" stroke="url(#vozGuineGold)" stroke-width="3" filter="url(#vozGuineShadow)"/>
+
+  <!-- Ondes et micro stylisé -->
+  <g transform="translate(100, 52)">
+    <circle cx="0" cy="0" r="22" fill="#009460" stroke="#FCD116" stroke-width="2"/>
+    <!-- Étoile noire -->
+    <polygon points="0,-14 3.5,-4 14,-4 5.5,2 8.5,12 0,6 -8.5,12 -5.5,2 -14,-4 -3.5,-4" fill="#000000"/>
+    <!-- Ondes sonores latérales -->
+    <path d="M -28 -8 Q -34 0 -28 8" fill="none" stroke="#FCD116" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 28 -8 Q 34 0 28 8" fill="none" stroke="#FCD116" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Titre VOZ DA GUINÉ -->
+  <text x="100" y="104" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="20" letter-spacing="1.5" text-anchor="middle" filter="url(#vozGuineShadow)">VOZ DA GUINÉ</text>
+
+  <!-- Tag RÁDIO BISSAU -->
+  <rect x="36" y="116" width="128" height="26" rx="8" fill="#CE1126" stroke="#FCD116" stroke-width="1.2"/>
+  <text x="100" y="134" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.5" text-anchor="middle">BISSAU • RÁDIO</text>
+
+  <!-- Pied de badge -->
+  <rect x="24" y="152" width="152" height="28" rx="8" fill="#11180a" stroke="url(#vozGuineGold)" stroke-width="1.2"/>
+  <text x="100" y="171" fill="#FCD116" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="1.8" text-anchor="middle">A VOZ DO POVO</text>
+</svg>

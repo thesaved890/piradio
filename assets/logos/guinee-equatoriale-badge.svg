@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gqBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07141f"/>
+      <stop offset="50%" stop-color="#0f2638"/>
+      <stop offset="100%" stop-color="#040b12"/>
+    </linearGradient>
+    <linearGradient id="gqGoldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD100"/>
+      <stop offset="50%" stop-color="#FFA000"/>
+      <stop offset="100%" stop-color="#0073CE"/>
+    </linearGradient>
+    <filter id="gqDropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Fond arrondi avec bordure dorée/bleue -->
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#gqBgGrad)" stroke="url(#gqGoldGlow)" stroke-width="3" filter="url(#gqDropShadow)"/>
+
+  <!-- Écusson officiel Guinée équatoriale -->
+  <g transform="translate(42, 28)" filter="url(#gqDropShadow)">
+    <clipPath id="gqShieldClip">
+      <path d="M 0 10 Q 0 0 10 0 L 106 0 Q 116 0 116 10 L 116 55 Q 116 95 58 116 Q 0 95 0 55 Z"/>
+    </clipPath>
+    <g clip-path="url(#gqShieldClip)">
+      <!-- 3 bandes horizontales : Verte, Blanche, Rouge -->
+      <rect x="0" y="0" width="116" height="40" fill="#3E9A00"/>
+      <rect x="0" y="40" width="116" height="40" fill="#FFFFFF"/>
+      <rect x="0" y="80" width="116" height="40" fill="#E32118"/>
+      <!-- Triangle bleu à la hampe (gauche) -->
+      <polygon points="0,0 48,60 0,120" fill="#0073CE"/>
+    </g>
+    <!-- Contour de l'écusson -->
+    <path d="M 0 10 Q 0 0 10 0 L 106 0 Q 116 0 116 10 L 116 55 Q 116 95 58 116 Q 0 95 0 55 Z" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.9"/>
+    
+    <!-- Médaillon Pi au centre -->
+    <circle cx="68" cy="60" r="22" fill="#081521" opacity="0.92" stroke="url(#gqGoldGlow)" stroke-width="2.5"/>
+    <text x="68" y="68" fill="#FFD100" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" text-anchor="middle">π</text>
+  </g>
+
+  <!-- Cartouche GUINÉE ÉQUATORIALE -->
+  <rect x="14" y="152" width="172" height="30" rx="8" fill="#0a1824" stroke="url(#gqGoldGlow)" stroke-width="1.5"/>
+  <text x="100" y="172" fill="#FFD100" font-family="'Inter', sans-serif" font-weight="900" font-size="11" letter-spacing="1.2" text-anchor="middle">GUINÉE ÉQUATORIALE</text>
+</svg>

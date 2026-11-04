@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rngeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06182c"/>
+      <stop offset="50%" stop-color="#0e2a4a"/>
+      <stop offset="100%" stop-color="#030c17"/>
+    </linearGradient>
+    <linearGradient id="rngeGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD100"/>
+      <stop offset="50%" stop-color="#FFA000"/>
+      <stop offset="100%" stop-color="#FF6F00"/>
+    </linearGradient>
+    <filter id="rngeShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#rngeBg)" stroke="#0073CE" stroke-width="3" filter="url(#rngeShadow)"/>
+
+  <!-- 6 Étoiles d'or officielles au sommet -->
+  <g transform="translate(45, 24)" fill="#FFD100">
+    <polygon points="10,2 12,7 18,7 13,10 15,15 10,12 5,15 7,10 2,7 8,7"/>
+    <polygon points="28,2 30,7 36,7 31,10 33,15 28,12 23,15 25,10 20,7 26,7"/>
+    <polygon points="46,2 48,7 54,7 49,10 51,15 46,12 41,15 43,10 38,7 44,7"/>
+    <polygon points="64,2 66,7 72,7 67,10 69,15 64,12 59,15 61,10 56,7 62,7"/>
+    <polygon points="82,2 84,7 90,7 85,10 87,15 82,12 77,15 79,10 74,7 80,7"/>
+    <polygon points="100,2 102,7 108,7 103,10 105,15 100,12 95,15 97,10 92,7 98,7"/>
+  </g>
+
+  <!-- Sigle RNGE imposant -->
+  <g transform="translate(100, 72)" filter="url(#rngeShadow)">
+    <text x="0" y="0" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="34" letter-spacing="3" text-anchor="middle">RNGE</text>
+  </g>
+
+  <!-- Bandeau RADIO NACIONAL -->
+  <rect x="28" y="96" width="144" height="34" rx="8" fill="#3E9A00" stroke="#FFD100" stroke-width="1.5"/>
+  <text x="100" y="118" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="13" letter-spacing="1.5" text-anchor="middle">RADIO NACIONAL</text>
+
+  <!-- Pied MALABO • GUINEA ECUATORIAL -->
+  <rect x="20" y="150" width="160" height="30" rx="8" fill="#081e36" stroke="url(#rngeGold)" stroke-width="1.2"/>
+  <text x="100" y="170" fill="#FFD100" font-family="'Inter', sans-serif" font-weight="800" font-size="10.5" letter-spacing="1.5" text-anchor="middle">MALABO • EMISORA OFICIAL</text>
+</svg>

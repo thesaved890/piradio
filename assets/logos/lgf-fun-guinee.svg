@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lgfFunBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19042b"/>
+      <stop offset="50%" stop-color="#2d0a4e"/>
+      <stop offset="100%" stop-color="#0e021a"/>
+    </linearGradient>
+    <linearGradient id="lgfFunNeon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7209B7"/>
+      <stop offset="50%" stop-color="#B5179E"/>
+      <stop offset="100%" stop-color="#F72585"/>
+    </linearGradient>
+    <filter id="lgfFunShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#lgfFunBg)" stroke="url(#lgfFunNeon)" stroke-width="3" filter="url(#lgfFunShadow)"/>
+
+  <!-- Égaliseur dynamique -->
+  <g transform="translate(100, 52)">
+    <rect x="-35" y="-14" width="8" height="28" rx="4" fill="#4CC9F0"/>
+    <rect x="-21" y="-22" width="8" height="44" rx="4" fill="#7209B7"/>
+    <rect x="-7" y="-30" width="8" height="60" rx="4" fill="#B5179E"/>
+    <rect x="7" y="-24" width="8" height="48" rx="4" fill="#F72585"/>
+    <rect x="21" y="-12" width="8" height="24" rx="4" fill="#4CC9F0"/>
+  </g>
+
+  <!-- Titre LGF FUN -->
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="24" letter-spacing="2" text-anchor="middle" filter="url(#lgfFunShadow)">LGF FUN</text>
+
+  <!-- Tag HITS & POP -->
+  <rect x="42" y="116" width="116" height="26" rx="8" fill="url(#lgfFunNeon)"/>
+  <text x="100" y="134" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.5" text-anchor="middle">GUINÉE • HITS</text>
+
+  <!-- Pied de badge -->
+  <rect x="24" y="152" width="152" height="28" rx="8" fill="#1b082e" stroke="#F72585" stroke-width="1.2"/>
+  <text x="100" y="171" fill="#4CC9F0" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="2" text-anchor="middle">POP &amp; JEUNESSE</text>
+</svg>

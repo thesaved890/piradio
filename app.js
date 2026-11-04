@@ -407,6 +407,39 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/burkina-faso-radio-badge.svg";
     }
 
+    const isGuinee = (st.code === "🇬🇳") || 
+      ((st.country || "").toLowerCase().includes("guinea") && !(st.country || "").toLowerCase().includes("bissau") && !(st.country || "").toLowerCase().includes("equat")) ||
+      ((st.country || "").toLowerCase().includes("guinée") && !(st.country || "").toLowerCase().includes("bissau") && !(st.country || "").toLowerCase().includes("équat")) ||
+      stState.includes("conakry") || stState.includes("kindia") || stState.includes("kankan") || stState.includes("labé") || stState.includes("nzérékoré") ||
+      nameLow.includes("conakry") || (nameLow.includes("guinée") && !nameLow.includes("bissau") && !nameLow.includes("équat")) || (nameLow.includes("guinee") && !nameLow.includes("bissau") && !nameLow.includes("equat"));
+    if (isGuinee) {
+      if (nameLow.includes("espace")) return "assets/logos/espace-fm-guinee.svg";
+      if (nameLow.includes("bonheur")) return "assets/logos/bonheur-fm-guinee.svg";
+      if (nameLow.includes("littoral")) return "assets/logos/littoral-fm-guinee.svg";
+      if (nameLow.includes("lgf fun") || nameLow.includes("lgf-fun") || (nameLow.includes("lgf") && nameLow.includes("fun"))) return "assets/logos/lgf-fun-guinee.svg";
+      if (nameLow.includes("lgf talk") || nameLow.includes("lgf-talk") || (nameLow.includes("lgf") && nameLow.includes("talk"))) return "assets/logos/lgf-talk-guinee.svg";
+      if (nameLow.includes("afrionde")) return "assets/logos/afrionde-conakry.svg";
+      if (nameLow.includes("rtg") || nameLow.includes("koloma")) return "assets/logos/rtg-radio-guinee.svg";
+      return "assets/logos/guinee-radio-badge.svg";
+    }
+
+    const isGuineeBissau = (st.code === "🇬🇼") ||
+      (st.country || "").toLowerCase().includes("bissau") ||
+      stState.includes("bissau") || nameLow.includes("bissau") || nameLow.includes("voz da guiné") || nameLow.includes("voz da guine");
+    if (isGuineeBissau) {
+      if (nameLow.includes("esperança") || nameLow.includes("esperanca")) return "assets/logos/radio-esperanca-bissau.svg";
+      if (nameLow.includes("voz da guin") || nameLow.includes("voz da guiné")) return "assets/logos/radio-voz-da-guine.svg";
+      return "assets/logos/guinee-bissau-radio-badge.svg";
+    }
+
+    const isGuineeEquatoriale = (st.code === "🇬🇶") ||
+      (st.country || "").toLowerCase().includes("equatorial") || (st.country || "").toLowerCase().includes("équatoriale") || (st.country || "").toLowerCase().includes("ecuatorial") ||
+      stState.includes("malabo") || stState.includes("bioko") || stState.includes("bata") || nameLow.includes("malabo") || nameLow.includes("rnge");
+    if (isGuineeEquatoriale) {
+      if (nameLow.includes("rnge") || nameLow.includes("nacional")) return "assets/logos/rnge-radio-malabo.svg";
+      return "assets/logos/guinee-equatoriale-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -426,6 +459,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isMali) return "assets/logos/mali-radio-badge.svg";
     if (isNiger) return "assets/logos/niger-radio-badge.svg";
     if (isBurkina) return "assets/logos/burkina-faso-radio-badge.svg";
+    if (isGuinee) return "assets/logos/guinee-radio-badge.svg";
+    if (isGuineeBissau) return "assets/logos/guinee-bissau-radio-badge.svg";
+    if (isGuineeEquatoriale) return "assets/logos/guinee-equatoriale-badge.svg";
     return getFlagFallback(st.code);
   }
 

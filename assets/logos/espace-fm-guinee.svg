@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="espaceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1224"/>
+      <stop offset="50%" stop-color="#121f3d"/>
+      <stop offset="100%" stop-color="#070b16"/>
+    </linearGradient>
+    <linearGradient id="espaceOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5500"/>
+      <stop offset="50%" stop-color="#FF7B00"/>
+      <stop offset="100%" stop-color="#FFB703"/>
+    </linearGradient>
+    <filter id="espaceShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Fond arrondi sombre -->
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#espaceBg)" stroke="url(#espaceOrange)" stroke-width="3" filter="url(#espaceShadow)"/>
+
+  <!-- Logo Stylisé ESPACE FM -->
+  <!-- Ondes radio / dynamique Hadafo -->
+  <path d="M 40 55 C 70 35, 130 35, 160 55" fill="none" stroke="url(#espaceOrange)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+  <path d="M 55 42 C 78 28, 122 28, 145 42" fill="none" stroke="#FFD100" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Nom ESPACE -->
+  <text x="100" y="92" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="28" letter-spacing="3" text-anchor="middle" filter="url(#espaceShadow)">ESPACE</text>
+  
+  <!-- Badge FM & Fréquence 101.5 -->
+  <rect x="34" y="106" width="132" height="34" rx="10" fill="url(#espaceOrange)"/>
+  <text x="100" y="129" fill="#0A1128" font-family="'Inter', sans-serif" font-weight="900" font-size="16" letter-spacing="1.5" text-anchor="middle">FM 101.5</text>
+
+  <!-- Mention Hadafo Médias / Guinée -->
+  <rect x="24" y="152" width="152" height="28" rx="8" fill="#0e172a" stroke="#FF5500" stroke-width="1.2"/>
+  <text x="100" y="171" fill="#FFB703" font-family="'Inter', sans-serif" font-weight="800" font-size="10.5" letter-spacing="1.8" text-anchor="middle">CONAKRY • GUINÉE</text>
+</svg>
