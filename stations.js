@@ -543,6 +543,154 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 1.e 🇳🇪 NIGER
+  // ==========================================
+  {
+    id: "radio-gaskia-niger",
+    name: "Radio Gaskia (Niger)",
+    country: "Niger",
+    city: "Niamey",
+    state: "Niamey",
+    code: "🇳🇪",
+    continent: "africa",
+    category: "news",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Français & Hausa",
+    genre: "Gaskia, Actualités nigériennes, Débats & Culture",
+    streamUrl: "https://s1.free-shoutcast.com/stream/18478/;",
+    fallbackUrl: "https://s1.free-shoutcast.com/stream/18478/;",
+    logo: "assets/logos/radio-gaskia-niger.svg",
+    featured: true
+  },
+  {
+    id: "radio-garkuwa-niger",
+    name: "Radio Garkuwa (Zinder / Niamey)",
+    country: "Niger",
+    city: "Zinder",
+    state: "Zinder",
+    code: "🇳🇪",
+    continent: "africa",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Hausa, Zarma & Français",
+    genre: "Le Bouclier du Sahel, Terroir & Musique nigérienne",
+    streamUrl: "https://s1.free-shoutcast.com/stream/18046",
+    fallbackUrl: "https://s1.free-shoutcast.com/stream/18046",
+    logo: "assets/logos/radio-garkuwa-niger.svg",
+    featured: true
+  },
+  {
+    id: "wadata-radio-niamey",
+    name: "Wadata Radio 107.4 FM (Niamey)",
+    country: "Niger",
+    city: "Niamey",
+    state: "Niamey",
+    code: "🇳🇪",
+    continent: "africa",
+    category: "news",
+    frequency: "107.4",
+    band: "FM",
+    language: "Français, Hausa & Zarma",
+    genre: "La Radio Autrement, Société, Débats & Jeunesse",
+    streamUrl: "https://stream.zeno.fm/1y2c3qbgbchvv",
+    fallbackUrl: "https://stream.zeno.fm/1y2c3qbgbchvv",
+    logo: "assets/logos/wadata-radio-niger.svg",
+    featured: true
+  },
+  {
+    id: "radio-dallol-baleyara",
+    name: "Radio Dallol 92.8 FM (Baleyara)",
+    country: "Niger",
+    city: "Baleyara",
+    state: "Tillabéri",
+    code: "🇳🇪",
+    continent: "africa",
+    category: "culture",
+    frequency: "92.8",
+    band: "FM",
+    language: "Hausa, Zarma & Peulh",
+    genre: "Voix du Dallol Bosso, Marché de Baleyara & Communauté",
+    streamUrl: "https://stream.zeno.fm/kvxeteg0cf9uv",
+    fallbackUrl: "https://stream.zeno.fm/kvxeteg0cf9uv",
+    logo: "assets/logos/radio-dallol-niger.svg",
+    featured: true
+  },
+  {
+    id: "mudubar-radio-niamey",
+    name: "Mudubar Radio TV (Niamey)",
+    country: "Niger",
+    city: "Niamey",
+    state: "Niamey",
+    code: "🇳🇪",
+    continent: "africa",
+    category: "news",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Français & Langues nationales",
+    genre: "Actualités en direct, Événements & Médias du Niger",
+    streamUrl: "https://stream.zeno.fm/aslxrjp4djutv",
+    fallbackUrl: "https://stream.zeno.fm/aslxrjp4djutv",
+    logo: "assets/logos/mudubar-radio-niger.svg",
+    featured: true
+  },
+  {
+    id: "voix-du-sahel-niamey",
+    name: "RTN La Voix du Sahel (91.3 FM)",
+    country: "Niger",
+    city: "Niamey",
+    state: "Niamey",
+    code: "🇳🇪",
+    continent: "africa",
+    category: "news",
+    frequency: "91.3",
+    band: "FM",
+    language: "Français, Hausa, Zarma & Tamasheq",
+    genre: "Radio Télévision du Niger, Voix Officielle & Culture",
+    streamUrl: "https://s1.free-shoutcast.com/stream/18478/;",
+    fallbackUrl: "https://stream.zeno.fm/1y2c3qbgbchvv",
+    logo: "assets/logos/voix-du-sahel-niger.svg",
+    featured: true
+  },
+  {
+    id: "radio-saraounia-niamey",
+    name: "Radio Saraounia 96.2 FM (Niamey)",
+    country: "Niger",
+    city: "Niamey",
+    state: "Niamey",
+    code: "🇳🇪",
+    continent: "africa",
+    category: "culture",
+    frequency: "96.2",
+    band: "FM",
+    language: "Français & Hausa",
+    genre: "Voix de la Reine Saraounia, Société, Femmes & Musique",
+    streamUrl: "https://s1.free-shoutcast.com/stream/18046",
+    fallbackUrl: "https://s1.free-shoutcast.com/stream/18046",
+    logo: "assets/logos/radio-saraounia-niger.svg",
+    featured: true
+  },
+  {
+    id: "radio-anfani-niamey",
+    name: "Radio Anfani 100.0 FM (Niamey)",
+    country: "Niger",
+    city: "Niamey",
+    state: "Niamey",
+    code: "🇳🇪",
+    continent: "africa",
+    category: "news",
+    frequency: "100.0",
+    band: "FM",
+    language: "Français, Hausa & Zarma",
+    genre: "1ère radio privée indépendante, Débats & Liberté d'expression",
+    streamUrl: "https://stream.zeno.fm/1y2c3qbgbchvv",
+    fallbackUrl: "https://s1.free-shoutcast.com/stream/18478/;",
+    logo: "assets/logos/radio-anfani-niger.svg",
+    featured: true
+  },
+
+  // ==========================================
   // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE & 🇲🇦 MAROC (MAGHREB)
   // ==========================================
   {
@@ -3200,6 +3348,19 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "markala": { code: "ML", en: "Mali", fr: "Markala", continent: "africa", type: "country" },
   "san": { code: "ML", en: "Mali", fr: "San", continent: "africa", type: "country" },
 
+  "ne": { code: "NE", en: "The Niger", fr: "Niger", continent: "africa", type: "country" },
+  "niger": { code: "NE", en: "The Niger", fr: "Niger", continent: "africa", type: "country" },
+  "niamey": { code: "NE", en: "The Niger", fr: "Niamey", continent: "africa", type: "country" },
+  "maradi": { code: "NE", en: "The Niger", fr: "Maradi", continent: "africa", type: "country" },
+  "zinder": { code: "NE", en: "The Niger", fr: "Zinder", continent: "africa", type: "country" },
+  "tahoua": { code: "NE", en: "The Niger", fr: "Tahoua", continent: "africa", type: "country" },
+  "agadez": { code: "NE", en: "The Niger", fr: "Agadez", continent: "africa", type: "country" },
+  "diffa": { code: "NE", en: "The Niger", fr: "Diffa", continent: "africa", type: "country" },
+  "dosso": { code: "NE", en: "The Niger", fr: "Dosso", continent: "africa", type: "country" },
+  "tillaberi": { code: "NE", en: "The Niger", fr: "Tillabéri", continent: "africa", type: "country" },
+  "tillabéri": { code: "NE", en: "The Niger", fr: "Tillabéri", continent: "africa", type: "country" },
+  "baleyara": { code: "NE", en: "The Niger", fr: "Baleyara", continent: "africa", type: "country" },
+
   "maroc": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "morocco": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "casablanca": { code: "MA", en: "Morocco", fr: "Casablanca", continent: "africa", type: "country" },
@@ -3568,6 +3729,22 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/mali-radio-badge.svg";
   }
 
+  // 1.n Logos officiels Niger 🇳🇪
+  const isNiger = (cCode === "NE") || (st.code === "🇳🇪") || (st.country || "").toLowerCase() === "the niger" || (st.country || "").toLowerCase() === "niger" || stState.includes("niamey") || stState.includes("maradi") || stState.includes("zinder") || stState.includes("tahoua") || stState.includes("agadez") || stState.includes("dosso") || stState.includes("diffa") || stState.includes("tillaberi") || stState.includes("tillabéri") || nameLow.includes("niamey") || nameLow.includes("wadata") || nameLow.includes("gaskia") || nameLow.includes("garkuwa") || (nameLow.includes("dallol") && !nameLow.includes("texas"));
+  if (isNiger) {
+    if (nameLow.includes("wadata")) return "assets/logos/wadata-radio-niger.svg";
+    if (nameLow.includes("gaskia")) return "assets/logos/radio-gaskia-niger.svg";
+    if (nameLow.includes("garkuwa")) return "assets/logos/radio-garkuwa-niger.svg";
+    if (nameLow.includes("dallol")) return "assets/logos/radio-dallol-niger.svg";
+    if (nameLow.includes("mudubar")) return "assets/logos/mudubar-radio-niger.svg";
+    if (nameLow.includes("sahel") || nameLow.includes("rtn") || nameLow.includes("voix du sahel")) return "assets/logos/voix-du-sahel-niger.svg";
+    if (nameLow.includes("anfani")) return "assets/logos/radio-anfani-niger.svg";
+    if (nameLow.includes("saraounia")) return "assets/logos/radio-saraounia-niger.svg";
+    if (nameLow.includes("kalangou")) return "assets/logos/studio-kalangou-niger.svg";
+    if (nameLow.includes("bonferey")) return "assets/logos/radio-bonferey-niger.svg";
+    return "assets/logos/niger-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -3632,6 +3809,9 @@ function resolveRegionalStationLogo(st) {
   if (isMali) {
     return "assets/logos/mali-radio-badge.svg";
   }
+  if (isNiger) {
+    return "assets/logos/niger-radio-badge.svg";
+  }
 
   return "";
 }
@@ -3669,10 +3849,18 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
 
     // 1. Si la recherche correspond à un Pays reconnu (ex: Vietname, Korré du Sude, Allemagne, Espagne, Sénégal...)
     if (loc && loc.type === "country" && loc.code) {
-      const countryUrl = `${base}/json/stations/search?limit=${limit}&countrycode=${loc.code}&hidebroken=true&order=votes&reverse=true`;
-      const nameUrl = `${base}/json/stations/search?limit=${limit}&name=${encodeURIComponent(loc.en)}&hidebroken=true&order=votes&reverse=true`;
-      const [resCountry, resName] = await Promise.all([fetchFromEndpoint(countryUrl), fetchFromEndpoint(nameUrl)]);
-      allFetched = [...(resCountry || []), ...(resName || [])];
+      if (loc.code === "NE") {
+        // Traitement spécifique Niger 🇳🇪 pour éviter toute confusion avec le Nigéria (NG)
+        const countryUrl = `${base}/json/stations/bycountrycodeexact/NE`;
+        const countryTheUrl = `${base}/json/stations/bycountryexact/The%20Niger`;
+        const [resCountry, resThe] = await Promise.all([fetchFromEndpoint(countryUrl), fetchFromEndpoint(countryTheUrl)]);
+        allFetched = [...(resCountry || []), ...(resThe || [])];
+      } else {
+        const countryUrl = `${base}/json/stations/search?limit=${limit}&countrycode=${loc.code}&hidebroken=true&order=votes&reverse=true`;
+        const nameUrl = `${base}/json/stations/search?limit=${limit}&name=${encodeURIComponent(loc.en)}&hidebroken=true&order=votes&reverse=true`;
+        const [resCountry, resName] = await Promise.all([fetchFromEndpoint(countryUrl), fetchFromEndpoint(nameUrl)]);
+        allFetched = [...(resCountry || []), ...(resName || [])];
+      }
     }
     // 2. Si la recherche correspond à un État/Région (ex: Californie, Iowa, Michigan, Goergie, Québec...)
     else if (loc && loc.type === "state" && loc.state) {
@@ -3723,6 +3911,18 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
         uniqueData.push(st);
       }
     });
+
+    // Filtre spécifique Niger 🇳🇪 pour écarter le Nigéria et les radios pirates étrangères mal indexées
+    if (loc && loc.code === "NE") {
+      uniqueData = uniqueData.filter(st => {
+        const c = (st.countrycode || "").toUpperCase();
+        const country = (st.country || "").toLowerCase();
+        const name = (st.name || "").toLowerCase();
+        if (c === "NG" || country.includes("nigeria") || name.includes("nigeria")) return false;
+        if (name.includes("leipzig") || name.includes("muziekknallers")) return false;
+        return c === "NE" || country.includes("the niger") || country === "niger";
+      });
+    }
 
     // Filtrer les flux HTTP non sécurisés si l'application s'exécute en HTTPS
     const isHttpsSite = typeof window !== "undefined" && window.location && window.location.protocol === "https:";

@@ -376,6 +376,21 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/mali-radio-badge.svg";
     }
 
+    const isNiger = (st.code === "🇳🇪") || (st.country && (st.country.toLowerCase() === "the niger" || st.country.toLowerCase() === "niger")) || stState.includes("niamey") || stState.includes("maradi") || stState.includes("zinder") || stState.includes("tahoua") || stState.includes("agadez") || stState.includes("dosso") || stState.includes("diffa") || stState.includes("tillaberi") || stState.includes("tillabéri") || nameLow.includes("niamey") || nameLow.includes("wadata") || nameLow.includes("gaskia") || nameLow.includes("garkuwa") || (nameLow.includes("dallol") && !nameLow.includes("texas"));
+    if (isNiger) {
+      if (nameLow.includes("wadata")) return "assets/logos/wadata-radio-niger.svg";
+      if (nameLow.includes("gaskia")) return "assets/logos/radio-gaskia-niger.svg";
+      if (nameLow.includes("garkuwa")) return "assets/logos/radio-garkuwa-niger.svg";
+      if (nameLow.includes("dallol")) return "assets/logos/radio-dallol-niger.svg";
+      if (nameLow.includes("mudubar")) return "assets/logos/mudubar-radio-niger.svg";
+      if (nameLow.includes("sahel") || nameLow.includes("rtn") || nameLow.includes("voix du sahel")) return "assets/logos/voix-du-sahel-niger.svg";
+      if (nameLow.includes("anfani")) return "assets/logos/radio-anfani-niger.svg";
+      if (nameLow.includes("saraounia")) return "assets/logos/radio-saraounia-niger.svg";
+      if (nameLow.includes("kalangou")) return "assets/logos/studio-kalangou-niger.svg";
+      if (nameLow.includes("bonferey")) return "assets/logos/radio-bonferey-niger.svg";
+      return "assets/logos/niger-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -393,6 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isCoteIvoire) return "assets/logos/cote-divoire-radio-badge.svg";
     if (isGhana) return "assets/logos/ghana-radio-badge.svg";
     if (isMali) return "assets/logos/mali-radio-badge.svg";
+    if (isNiger) return "assets/logos/niger-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 

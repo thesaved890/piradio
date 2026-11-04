@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="neDarkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180e05"/>
+      <stop offset="50%" stop-color="#241408"/>
+      <stop offset="100%" stop-color="#0e0702"/>
+    </linearGradient>
+    <linearGradient id="neOrangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B1A"/>
+      <stop offset="100%" stop-color="#E05206"/>
+    </linearGradient>
+    <linearGradient id="neGreenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#13C338"/>
+      <stop offset="100%" stop-color="#0A8F25"/>
+    </linearGradient>
+    <linearGradient id="neGoldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE066"/>
+      <stop offset="50%" stop-color="#FFB703"/>
+      <stop offset="100%" stop-color="#D48800"/>
+    </linearGradient>
+    <filter id="neGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded card -->
+  <rect width="200" height="200" rx="36" fill="url(#neDarkBg)"/>
+  <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#neOrangeGrad)" stroke-width="2.5" stroke-opacity="0.85"/>
+
+  <!-- Subtle Niger flag horizontal stripe accents -->
+  <g opacity="0.3">
+    <rect x="22" y="24" width="156" height="46" rx="8" fill="url(#neOrangeGrad)"/>
+    <rect x="22" y="77" width="156" height="46" rx="8" fill="#FFFFFF"/>
+    <rect x="22" y="130" width="156" height="46" rx="8" fill="url(#neGreenGrad)"/>
+  </g>
+
+  <!-- Inner Dark Glass Circle -->
+  <circle cx="100" cy="95" r="62" fill="#120a04" stroke="url(#neOrangeGrad)" stroke-width="2" filter="url(#neGlow)"/>
+
+  <!-- Niger Sun Disk in Center -->
+  <circle cx="100" cy="95" r="46" fill="none" stroke="url(#neOrangeGrad)" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/>
+
+  <!-- Signal Waves -->
+  <path d="M 68 80 A 42 42 0 0 1 68 110" fill="none" stroke="url(#neOrangeGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 58 72 A 56 56 0 0 1 58 118" fill="none" stroke="url(#neOrangeGrad)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <path d="M 132 80 A 42 42 0 0 0 132 110" fill="none" stroke="url(#neGreenGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 142 72 A 56 56 0 0 0 142 118" fill="none" stroke="url(#neGreenGrad)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+
+  <!-- Golden Pi Symbol π -->
+  <g transform="translate(100, 92) scale(1.15)">
+    <!-- Pi top bar -->
+    <path d="M -22 -14 C -20 -18, -12 -18, 0 -18 C 12 -18, 20 -18, 22 -14 C 23 -11, 20 -11, 16 -13 C 10 -15, -10 -15, -16 -13 C -20 -11, -23 -11, -22 -14 Z" fill="url(#neGoldGlow)"/>
+    <!-- Pi legs -->
+    <path d="M -12 -14 C -12 0, -14 10, -18 16 C -20 18, -17 20, -14 18 C -10 13, -7 0, -6 -14 Z" fill="url(#neGoldGlow)"/>
+    <path d="M 7 -14 L 7 12 C 7 17, 10 19, 14 19 C 17 19, 18 17, 16 16 C 13 16, 12 14, 12 11 L 12 -14 Z" fill="url(#neGoldGlow)"/>
+  </g>
+
+  <!-- Orange Sun Dot (Symbol of Niger) -->
+  <circle cx="100" cy="56" r="6" fill="#FF6B1A" filter="url(#neGlow)"/>
+
+  <!-- Banner Bottom -->
+  <rect x="22" y="152" width="156" height="30" rx="8" fill="#0c0602" stroke="url(#neGoldGlow)" stroke-width="1.5"/>
+  <text x="100" y="172" fill="#FFB703" font-family="'Inter', sans-serif" font-weight="900" font-size="13" letter-spacing="2.5" text-anchor="middle">NIGER RADIO</text>
+</svg>

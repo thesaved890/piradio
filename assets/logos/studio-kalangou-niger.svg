@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="kalangouBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141006"/>
+      <stop offset="50%" stop-color="#241d0b"/>
+      <stop offset="100%" stop-color="#0a0802"/>
+    </linearGradient>
+    <linearGradient id="kalangouOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF512F"/>
+      <stop offset="100%" stop-color="#F09819"/>
+    </linearGradient>
+    <linearGradient id="kalangouBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C9FF"/>
+      <stop offset="100%" stop-color="#92FE9D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#kalangouBg)"/>
+  <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#kalangouOrange)" stroke-width="2.5" stroke-opacity="0.85"/>
+
+  <!-- Kalangou Talking Drum shape (hourglass drum) -->
+  <circle cx="100" cy="74" r="38" fill="#0d0a03" stroke="url(#kalangouBlue)" stroke-width="2"/>
+  <path d="M 84 56 L 116 56 L 108 74 L 116 92 L 84 92 L 92 74 Z" fill="url(#kalangouOrange)"/>
+  <line x1="84" y1="56" x2="84" y2="92" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <line x1="116" y1="56" x2="116" y2="92" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+
+  <text x="100" y="130" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="16" letter-spacing="1.5" text-anchor="middle">KALANGOU</text>
+  <text x="100" y="148" fill="url(#kalangouOrange)" font-family="'Inter', sans-serif" font-weight="800" font-size="12" letter-spacing="2" text-anchor="middle">STUDIO • HIRONDELLE</text>
+
+  <rect x="36" y="166" width="128" height="20" rx="6" fill="#060501" stroke="url(#kalangouOrange)" stroke-width="1.2"/>
+  <text x="100" y="180" fill="#92FE9D" font-family="'Inter', sans-serif" font-weight="700" font-size="9" letter-spacing="1.5" text-anchor="middle">NIGER TOUS LES JOURS</text>
+</svg>

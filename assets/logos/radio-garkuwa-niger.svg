@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="garkuwaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140a1c"/>
+      <stop offset="50%" stop-color="#241232"/>
+      <stop offset="100%" stop-color="#09040c"/>
+    </linearGradient>
+    <linearGradient id="garkuwaPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DA22FF"/>
+      <stop offset="100%" stop-color="#9733EE"/>
+    </linearGradient>
+    <linearGradient id="garkuwaGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCE38A"/>
+      <stop offset="100%" stop-color="#F38181"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#garkuwaBg)"/>
+  <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#garkuwaPurple)" stroke-width="2.5" stroke-opacity="0.85"/>
+
+  <!-- Icon: Traditional Sahelian Shield (Garkuwa) -->
+  <circle cx="100" cy="74" r="38" fill="#0d0613" stroke="url(#garkuwaGold)" stroke-width="2"/>
+  <path d="M 86 54 L 114 54 C 114 74, 108 90, 100 94 C 92 90, 86 74, 86 54 Z" fill="url(#garkuwaPurple)"/>
+  <circle cx="100" cy="70" r="5" fill="url(#garkuwaGold)"/>
+
+  <text x="100" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle">GARKUWA</text>
+  <text x="100" y="152" fill="url(#garkuwaGold)" font-family="'Inter', sans-serif" font-weight="800" font-size="12" letter-spacing="2" text-anchor="middle">LE BOUCLIER DU SAHEL</text>
+
+  <rect x="36" y="166" width="128" height="20" rx="6" fill="#060209" stroke="url(#garkuwaPurple)" stroke-width="1.2"/>
+  <text x="100" y="180" fill="#FCE38A" font-family="'Inter', sans-serif" font-weight="700" font-size="9" letter-spacing="1.5" text-anchor="middle">ZINDER • NIAMEY</text>
+</svg>

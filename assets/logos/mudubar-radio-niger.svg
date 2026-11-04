@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mudubarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1a26"/>
+      <stop offset="50%" stop-color="#11293c"/>
+      <stop offset="100%" stop-color="#050d13"/>
+    </linearGradient>
+    <linearGradient id="mudubarCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C9FF"/>
+      <stop offset="100%" stop-color="#92FE9D"/>
+    </linearGradient>
+    <linearGradient id="mudubarRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF416C"/>
+      <stop offset="100%" stop-color="#FF4B2B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#mudubarBg)"/>
+  <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#mudubarCyan)" stroke-width="2.5" stroke-opacity="0.85"/>
+
+  <!-- Screen / Play TV Icon -->
+  <circle cx="100" cy="74" r="38" fill="#07131c" stroke="url(#mudubarRed)" stroke-width="2"/>
+  <polygon points="92,60 116,74 92,88" fill="url(#mudubarCyan)"/>
+
+  <text x="100" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="20" letter-spacing="2" text-anchor="middle">MUDUBAR</text>
+  <text x="100" y="152" fill="url(#mudubarCyan)" font-family="'Inter', sans-serif" font-weight="800" font-size="12" letter-spacing="2" text-anchor="middle">RADIO &amp; TV WEB</text>
+
+  <rect x="36" y="166" width="128" height="20" rx="6" fill="#03080d" stroke="url(#mudubarCyan)" stroke-width="1.2"/>
+  <text x="100" y="180" fill="#92FE9D" font-family="'Inter', sans-serif" font-weight="700" font-size="9" letter-spacing="1.5" text-anchor="middle">NIAMEY • ACTUALITÉS NIGER</text>
+</svg>

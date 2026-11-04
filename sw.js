@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.1
+// Pi Radio • Service Worker v5.2
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.1';
+const CACHE_NAME = 'piradio-v5.2';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,18 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Niger 🇳🇪 (v5.2)
+  './assets/logos/niger-radio-badge.svg',
+  './assets/logos/wadata-radio-niger.svg',
+  './assets/logos/radio-gaskia-niger.svg',
+  './assets/logos/radio-garkuwa-niger.svg',
+  './assets/logos/radio-dallol-niger.svg',
+  './assets/logos/mudubar-radio-niger.svg',
+  './assets/logos/voix-du-sahel-niger.svg',
+  './assets/logos/radio-anfani-niger.svg',
+  './assets/logos/radio-saraounia-niger.svg',
+  './assets/logos/studio-kalangou-niger.svg',
+  './assets/logos/radio-bonferey-niger.svg',
   // Logos officiels Mali 🇲🇱 (v5.1)
   './assets/logos/mali-radio-badge.svg',
   './assets/logos/radio-kledu.svg',
