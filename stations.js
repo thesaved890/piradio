@@ -247,7 +247,7 @@ const CURATED_STATIONS = [
     genre: "University of Ibadan Radio, Débats, Savoir & Musique",
     streamUrl: "https://cast1.asurahosting.com/proxy/brightb1/stream",
     fallbackUrl: "https://cast1.asurahosting.com/proxy/brightb1/stream",
-    logo: "assets/logos/diamond-fm-ibadan.png",
+    logo: "assets/logos/diamond-fm-ibadan.svg",
     featured: false
   },
 
@@ -324,7 +324,7 @@ const CURATED_STATIONS = [
     genre: "Actualités métropolitaines, Musique & Culture urbaine",
     streamUrl: "https://go.webgateready.com/metrofm",
     fallbackUrl: "https://go.webgateready.com/metrofm",
-    logo: "assets/logos/metro-fm-lagos.png",
+    logo: "assets/logos/metro-fm-lagos.svg",
     featured: true
   },
   {
@@ -342,7 +342,7 @@ const CURATED_STATIONS = [
     genre: "Langues régionales & Culture locale du Nigeria",
     streamUrl: "https://go.webgateready.com/bondfm",
     fallbackUrl: "https://go.webgateready.com/bondfm",
-    logo: "assets/logos/bond-fm-lagos.png",
+    logo: "assets/logos/bond-fm-lagos.svg",
     featured: true
   },
   {
@@ -405,6 +405,58 @@ const CURATED_STATIONS = [
 
   // --- AUTRES ÉTATS DU NIGERIA ---
   {
+    id: "urban-radio-enugu",
+    name: "Urban Radio 94.5 FM Enugu",
+    country: "Nigeria",
+    city: "Enugu",
+    state: "Enugu State",
+    code: "🇳🇬",
+    continent: "africa",
+    category: "culture",
+    frequency: "94.5",
+    band: "FM",
+    language: "English & Igbo",
+    genre: "The Sound of the East, Urban Music, News & Culture",
+    streamUrl: "https://edge.mixlr.com/channel/cfldr",
+    fallbackUrl: "https://edge.mixlr.com/channel/cfldr",
+    logo: "assets/logos/urban-radio-enugu.svg",
+    featured: true
+  },
+  {
+    id: "lagosjump-radio",
+    name: "LagosJump Radio",
+    country: "Nigeria",
+    city: "Lagos",
+    state: "Lagos State",
+    code: "🇳🇬",
+    continent: "africa",
+    category: "culture",
+    band: "WEB",
+    language: "English & Pidgin",
+    genre: "Afrobeats, Lagos Vibes & Non-Stop Urban Music",
+    streamUrl: "https://radio.lagosjumpradio.com/listen/lagosjump_radio/radio.mp3",
+    fallbackUrl: "https://radio.lagosjumpradio.com/listen/lagosjump_radio/radio.mp3",
+    logo: "assets/logos/lagosjump-radio.svg",
+    featured: true
+  },
+  {
+    id: "gospotainment-radio",
+    name: "Gospotainment Radio Lagos",
+    country: "Nigeria",
+    city: "Lagos",
+    state: "Lagos State",
+    code: "🇳🇬",
+    continent: "africa",
+    category: "culture",
+    band: "WEB",
+    language: "English & Pidgin",
+    genre: "Gospel Entertainment, Inspiration & Praise 24/7",
+    streamUrl: "https://radio.gotright.net/radio/8000/radio.mp3",
+    fallbackUrl: "https://radio.gotright.net/radio/8000/radio.mp3",
+    logo: "assets/logos/gospotainment-radio.svg",
+    featured: false
+  },
+  {
     id: "1radio-ikwerre-rivers",
     name: "1Radio Ikwerre (Port Harcourt)",
     country: "Nigeria",
@@ -418,7 +470,7 @@ const CURATED_STATIONS = [
     genre: "Culture & Musique de Rivers State",
     streamUrl: "https://fm.imediaport.com/ikwerre",
     fallbackUrl: "https://fm.imediaport.com/ikwerre",
-    logo: "assets/logos/1radio-ikwerre-rivers.png",
+    logo: "assets/logos/1radio-ikwerre-rivers.svg",
     featured: false,
     locked: true
   },
@@ -437,7 +489,7 @@ const CURATED_STATIONS = [
     genre: "Actualités régionales d'Abia State & Musique Highlife",
     streamUrl: "https://a8.asurahosting.com:9080/radio.mp3",
     fallbackUrl: "https://a8.asurahosting.com:9080/radio.mp3",
-    logo: "assets/logos/bourdex-fm-abia.png",
+    logo: "assets/logos/bourdex-fm-abia.svg",
     featured: false
   },
   {
@@ -454,7 +506,7 @@ const CURATED_STATIONS = [
     genre: "Capital City Vibes, Musique & Actualités fédérales",
     streamUrl: "https://radio.gotright.net/radio/8010/radio.mp3",
     fallbackUrl: "https://radio.gotright.net/radio/8010/radio.mp3",
-    logo: "assets/logos/kcity-radio-abuja.png",
+    logo: "assets/logos/kcity-radio-abuja.svg",
     featured: false
   },
   {
@@ -2656,6 +2708,45 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("wnua") || nameLow.includes("smooth jazz")) return "assets/logos/smooth-jazz-wnua-chicago.svg";
   }
 
+  // 1.g Logos officiels Nigéria 🇳🇬
+  const isNigeria = (cCode === "NG") || (st.code === "🇳🇬") || (st.country || "").toLowerCase().includes("nigeria") || (st.country || "").toLowerCase().includes("nigéria") || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
+  if (isNigeria) {
+    if (nameLow.includes("rfi") && (nameLow.includes("haoussa") || nameLow.includes("hausa"))) return "assets/logos/rfi-haoussa.svg";
+    if (nameLow.includes("urban") && (nameLow.includes("enugu") || nameLow.includes("94.5"))) return "assets/logos/urban-radio-enugu.svg";
+    if (nameLow.includes("radio east")) return "assets/logos/radio-east-nigeria.svg";
+    if (nameLow.includes("inform me")) return "assets/logos/inform-me-radio.svg";
+    if (nameLow.includes("lagosjump") || nameLow.includes("lagos jump")) return "assets/logos/lagosjump-radio.svg";
+    if (nameLow.includes("crest")) return "assets/logos/crest-fm-ibadan.svg";
+    if (nameLow.includes("yes fm") || nameLow.includes("yes 101.7")) return "assets/logos/yes-fm-ibadan.svg";
+    if (nameLow.includes("gospotainment")) return "assets/logos/gospotainment-radio.svg";
+    if (nameLow.includes("nagari")) return "assets/logos/nagari-radio.svg";
+    if (nameLow.includes("radiotiwa") || nameLow.includes("radio tiwa")) return "assets/logos/radiotiwa-nigeria.svg";
+    if (nameLow.includes("hod radio") || nameLow.includes("hod")) return "assets/logos/hod-radio-nigeria.svg";
+    if (nameLow.includes("splash")) return "assets/logos/splash-fm-nigeria.svg";
+    if (nameLow.includes("max fm") || nameLow.includes("102.3")) return "assets/logos/max-fm-lagos.svg";
+    if (nameLow.includes("the beat") || nameLow.includes("beat fm") || nameLow.includes("99.9")) return "assets/logos/beat-fm-lagos.svg";
+    if (nameLow.includes("classic fm") || nameLow.includes("97.3")) return "assets/logos/classic-fm-lagos.svg";
+    if (nameLow.includes("fresh fm") || nameLow.includes("105.9")) return "assets/logos/fresh-fm-ibadan.svg";
+    if (nameLow.includes("soundcity")) return "assets/logos/soundcity-fm-lagos.svg";
+    if (nameLow.includes("raypower") || nameLow.includes("100.5")) return "assets/logos/raypower-fm-nigeria.svg";
+    if (nameLow.includes("metro fm") || nameLow.includes("97.7")) return "assets/logos/metro-fm-lagos.svg";
+    if (nameLow.includes("bond fm") || nameLow.includes("92.9")) return "assets/logos/bond-fm-lagos.svg";
+    if (nameLow.includes("diamond fm") || nameLow.includes("101.1")) return "assets/logos/diamond-fm-ibadan.svg";
+    if (nameLow.includes("cool fm") || nameLow.includes("96.9")) return "assets/logos/cool-fm-lagos.png";
+    if (nameLow.includes("wazobia")) return "assets/logos/wazobia-fm-lagos.png";
+    if (nameLow.includes("nigeria info") || nameLow.includes("99.3")) return "assets/logos/nigeria-info-lagos.png";
+    if (nameLow.includes("rhythm") || nameLow.includes("93.7")) return "assets/logos/rhythm-fm-lagos.png";
+    if (nameLow.includes("brila") || nameLow.includes("88.9")) return "assets/logos/brila-fm-lagos.png";
+    if (nameLow.includes("vybz") || nameLow.includes("94.5")) return "assets/logos/vybz-fm-lagos.png";
+    if (nameLow.includes("eagle 7") || nameLow.includes("103.7")) return "assets/logos/eagle-7-fm-abeokuta.png";
+    if (nameLow.includes("ogbc") || nameLow.includes("90.5")) return "assets/logos/ogbc-fm-abeokuta.png";
+    if (nameLow.includes("tatafo")) return "assets/logos/tatafo-radio-ogun.jpg";
+    if (nameLow.includes("agidigbo") || nameLow.includes("88.7")) return "assets/logos/agidigbo-fm-ibadan.png";
+    if (nameLow.includes("1radio") || nameLow.includes("ikwerre")) return "assets/logos/1radio-ikwerre-rivers.svg";
+    if (nameLow.includes("bourdex") || nameLow.includes("abiriba")) return "assets/logos/bourdex-fm-abia.svg";
+    if (nameLow.includes("kcity")) return "assets/logos/kcity-radio-abuja.svg";
+  }
+
   // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
   if (st.favicon && st.favicon.startsWith("https://")) {
     return st.favicon;
@@ -2685,6 +2776,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isChicago) {
     return "assets/logos/chicago-radio-badge.svg";
+  }
+  if (isNigeria) {
+    return "assets/logos/nigeria-radio-badge.svg";
   }
 
   return "";

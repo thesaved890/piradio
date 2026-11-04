@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v3.4
+// Pi Radio • Service Worker v4.5
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v4.4';
+const CACHE_NAME = 'piradio-v4.5';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,7 +15,32 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
-  // Logos officiels Afrique
+  // Logos officiels Afrique & Nigéria 🇳🇬
+  './assets/logos/nigeria-radio-badge.svg',
+  './assets/logos/rfi-haoussa.svg',
+  './assets/logos/urban-radio-enugu.svg',
+  './assets/logos/radio-east-nigeria.svg',
+  './assets/logos/inform-me-radio.svg',
+  './assets/logos/lagosjump-radio.svg',
+  './assets/logos/crest-fm-ibadan.svg',
+  './assets/logos/yes-fm-ibadan.svg',
+  './assets/logos/gospotainment-radio.svg',
+  './assets/logos/nagari-radio.svg',
+  './assets/logos/radiotiwa-nigeria.svg',
+  './assets/logos/hod-radio-nigeria.svg',
+  './assets/logos/splash-fm-nigeria.svg',
+  './assets/logos/max-fm-lagos.svg',
+  './assets/logos/beat-fm-lagos.svg',
+  './assets/logos/classic-fm-lagos.svg',
+  './assets/logos/fresh-fm-ibadan.svg',
+  './assets/logos/soundcity-fm-lagos.svg',
+  './assets/logos/raypower-fm-nigeria.svg',
+  './assets/logos/metro-fm-lagos.svg',
+  './assets/logos/bond-fm-lagos.svg',
+  './assets/logos/diamond-fm-ibadan.svg',
+  './assets/logos/1radio-ikwerre-rivers.svg',
+  './assets/logos/bourdex-fm-abia.svg',
+  './assets/logos/kcity-radio-abuja.svg',
   './assets/logos/ortb-radio-benin.png',
   './assets/logos/ortb-radio-parakou.jpg',
   './assets/logos/algerie-chaine-3.png',

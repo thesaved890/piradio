@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ngBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00351b"/>
+      <stop offset="50%" stop-color="#006633"/>
+      <stop offset="100%" stop-color="#002412"/>
+    </linearGradient>
+    <linearGradient id="ngGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#F3B43F"/>
+      <stop offset="100%" stop-color="#B7791F"/>
+    </linearGradient>
+    <linearGradient id="flagGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#008751"/>
+      <stop offset="100%" stop-color="#006038"/>
+    </linearGradient>
+    <filter id="ngGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Base Card -->
+  <rect width="512" height="512" rx="96" fill="url(#ngBg)"/>
+  <rect width="504" height="504" x="4" y="4" rx="92" fill="none" stroke="url(#ngGold)" stroke-width="4" stroke-opacity="0.85"/>
+
+  <!-- Nigerian Flag Tricolor Banner (Vertical stripes) -->
+  <g transform="translate(146, 50)">
+    <rect x="0" y="0" width="70" height="42" rx="6" fill="url(#flagGreen)"/>
+    <rect x="74" y="0" width="72" height="42" fill="#FFFFFF"/>
+    <rect x="150" y="0" width="70" height="42" rx="6" fill="url(#flagGreen)"/>
+    <rect x="0" y="0" width="220" height="42" rx="6" fill="none" stroke="url(#ngGold)" stroke-width="2"/>
+  </g>
+
+  <!-- Concentric Radio Waves -->
+  <g fill="none" stroke="url(#ngGold)" stroke-linecap="round" opacity="0.35">
+    <circle cx="256" cy="235" r="90" stroke-width="3" stroke-dasharray="8 6"/>
+    <circle cx="256" cy="235" r="125" stroke-width="2.5" stroke-dasharray="10 8"/>
+    <circle cx="256" cy="235" r="160" stroke-width="2" stroke-dasharray="14 10"/>
+  </g>
+
+  <!-- Central Glowing Disc -->
+  <circle cx="256" cy="235" r="70" fill="#002412" stroke="url(#ngGold)" stroke-width="4" filter="url(#ngGlow)"/>
+
+  <!-- Radio Tower / Microphone / Pi Hybrid -->
+  <!-- Radio Mast Legs -->
+  <path d="M 230 275 L 256 195 L 282 275" fill="none" stroke="url(#ngGold)" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M 238 250 L 274 250" fill="none" stroke="url(#ngGold)" stroke-width="3"/>
+  <path d="M 244 230 L 268 230" fill="none" stroke="url(#ngGold)" stroke-width="3"/>
+  <!-- Broadcast Spark / Pi Symbol -->
+  <circle cx="256" cy="188" r="8" fill="#FFFFFF"/>
+  <text x="256" y="244" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="34" fill="url(#ngGold)" text-anchor="middle">π</text>
+
+  <!-- Broadcast Signal Arcs left & right -->
+  <path d="M 205 215 A 32 32 0 0 0 205 255" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 190 205 A 46 46 0 0 0 190 265" fill="none" stroke="url(#ngGold)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 307 215 A 32 32 0 0 1 307 255" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 322 205 A 46 46 0 0 1 322 265" fill="none" stroke="url(#ngGold)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Typography -->
+  <text x="256" y="360" font-family="'Segoe UI', Roboto, -apple-system, sans-serif" font-weight="900" font-size="44" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">NIGERIA</text>
+  <text x="256" y="398" font-family="'Segoe UI', Roboto, -apple-system, sans-serif" font-weight="800" font-size="20" fill="url(#ngGold)" text-anchor="middle" letter-spacing="6">RADIO PIONEER</text>
+
+  <!-- Bottom Tag Badge -->
+  <g transform="translate(116, 428)">
+    <rect width="280" height="42" rx="21" fill="#001a0d" stroke="url(#ngGold)" stroke-width="2"/>
+    <circle cx="28" cy="21" r="6" fill="#00E676"/>
+    <text x="150" y="28" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">100% LIVE • VERIFIED</text>
+  </g>
+</svg>
