@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v4.6
+// Pi Radio • Service Worker v4.7
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v4.6';
+const CACHE_NAME = 'piradio-v4.7';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,26 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Sénégal 🇸🇳
+  './assets/logos/senegal-radio-badge.svg',
+  './assets/logos/rts-radio-senegal.svg',
+  './assets/logos/sud-fm-senegal.svg',
+  './assets/logos/radio-al-fayda-kaolack.svg',
+  './assets/logos/radio-thiossane-dakar.svg',
+  './assets/logos/h24-senegal.svg',
+  './assets/logos/rfm-senegal.svg',
+  './assets/logos/zik-fm-senegal.svg',
+  './assets/logos/lamp-fall-fm.svg',
+  './assets/logos/walf-fm-senegal.svg',
+  './assets/logos/zig-fm-ziguinchor.svg',
+  './assets/logos/rewmi-fm-dakar.svg',
+  './assets/logos/radio-fulbe-dakar.svg',
+  './assets/logos/timtimol-fm-ourossogui.svg',
+  './assets/logos/bamtaare-fm-dodel.svg',
+  './assets/logos/manoore-fm-dakar.svg',
+  './assets/logos/dakar-musique.svg',
+  './assets/logos/vibe-radio-dakar.svg',
+  './assets/logos/iradio-senegal.svg',
   // Logos officiels Cameroun 🇨🇲
   './assets/logos/cameroon-radio-badge.svg',
   './assets/logos/crtv-poste-national.svg',

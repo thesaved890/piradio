@@ -617,6 +617,8 @@ const CURATED_STATIONS = [
     id: "sud-fm-senegal",
     name: "Sud FM 98.5 Dakar (La Première)",
     country: "Sénégal",
+    city: "Dakar",
+    state: "Dakar",
     code: "🇸🇳",
     continent: "africa",
     category: "news",
@@ -626,7 +628,7 @@ const CURATED_STATIONS = [
     genre: "Actualités sénégalaises & Débats",
     streamUrl: "https://sd-151888.dedibox.fr/proxy/cotesud/csfm",
     fallbackUrl: "https://sd-151888.dedibox.fr/proxy/cotesud/csfm",
-    logo: "assets/logos/sud-fm-senegal.png",
+    logo: "assets/logos/sud-fm-senegal.svg",
     featured: true,
     locked: true
   },
@@ -634,6 +636,8 @@ const CURATED_STATIONS = [
     id: "rts-radio-senegal",
     name: "RTS Radio Sénégal 92.5 FM",
     country: "Sénégal",
+    city: "Dakar",
+    state: "Dakar",
     code: "🇸🇳",
     continent: "africa",
     category: "news",
@@ -643,8 +647,60 @@ const CURATED_STATIONS = [
     genre: "Radio d'État, Informations & Culture",
     streamUrl: "https://carina.streamerr.co:2020/stream/OnSportFM",
     fallbackUrl: "https://carina.streamerr.co:2020/stream/OnSportFM",
-    logo: "assets/logos/rts-radio-senegal.png",
+    logo: "assets/logos/rts-radio-senegal.svg",
     featured: true
+  },
+  {
+    id: "radio-al-fayda-kaolack",
+    name: "Radio Al Fayda 90.1 FM Kaolack",
+    country: "Sénégal",
+    city: "Kaolack",
+    state: "Kaolack",
+    code: "🇸🇳",
+    continent: "africa",
+    category: "culture",
+    frequency: "90.1",
+    band: "FM",
+    language: "Wolof, Arabe & Français",
+    genre: "Médina Baye Niass, Spiritualité & Développement",
+    streamUrl: "https://usa5.fastcast4u.com/proxy/lyartech?mp=/stream/1/",
+    fallbackUrl: "https://usa5.fastcast4u.com/proxy/lyartech?mp=/stream/1/",
+    logo: "assets/logos/radio-al-fayda-kaolack.svg",
+    featured: true
+  },
+  {
+    id: "radio-thiossane-dakar",
+    name: "Radio Thiossane Dakar",
+    country: "Sénégal",
+    city: "Dakar",
+    state: "Dakar",
+    code: "🇸🇳",
+    continent: "africa",
+    category: "culture",
+    band: "WEB",
+    language: "Wolof & Français",
+    genre: "Culture sénégalaise, Mbalax & Musique traditionnelle",
+    streamUrl: "https://listen.senemultimedia.net:8112/stream",
+    fallbackUrl: "https://listen.senemultimedia.net:8112/stream",
+    logo: "assets/logos/radio-thiossane-dakar.svg",
+    featured: true
+  },
+  {
+    id: "h24-senegal",
+    name: "H24 Radio Sénégal",
+    country: "Sénégal",
+    city: "Dakar",
+    state: "Dakar",
+    code: "🇸🇳",
+    continent: "africa",
+    category: "news",
+    band: "WEB",
+    language: "Wolof & Français",
+    genre: "L'Actualité en Direct 24/7, Débats & Société",
+    streamUrl: "https://listen.senemultimedia.net:8072/stream",
+    fallbackUrl: "https://listen.senemultimedia.net:8072/stream",
+    logo: "assets/logos/h24-senegal.svg",
+    featured: false
   },
   {
     id: "capital-fm-kenya",
@@ -2598,6 +2654,13 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "senegal": { code: "SN", en: "Senegal", fr: "Sénégal", continent: "africa", type: "country" },
   "sénégal": { code: "SN", en: "Senegal", fr: "Sénégal", continent: "africa", type: "country" },
   "dakar": { code: "SN", en: "Senegal", fr: "Dakar", continent: "africa", type: "country" },
+  "thies": { code: "SN", en: "Senegal", fr: "Thiès", continent: "africa", type: "country" },
+  "thiès": { code: "SN", en: "Senegal", fr: "Thiès", continent: "africa", type: "country" },
+  "kaolack": { code: "SN", en: "Senegal", fr: "Kaolack", continent: "africa", type: "country" },
+  "touba": { code: "SN", en: "Senegal", fr: "Touba", continent: "africa", type: "country" },
+  "ziguinchor": { code: "SN", en: "Senegal", fr: "Ziguinchor", continent: "africa", type: "country" },
+  "saint-louis": { code: "SN", en: "Senegal", fr: "Saint-Louis", continent: "africa", type: "country" },
+  "matam": { code: "SN", en: "Senegal", fr: "Matam", continent: "africa", type: "country" },
 
   "cameroun": { code: "CM", en: "Cameroon", fr: "Cameroun", continent: "africa", type: "country" },
   "cameroune": { code: "CM", en: "Cameroon", fr: "Cameroun", continent: "africa", type: "country" },
@@ -2879,6 +2942,29 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("radio maria")) return "assets/logos/radio-maria-cameroun.png";
   }
 
+  // 1.i Logos officiels Sénégal 🇸🇳
+  const isSenegal = (cCode === "SN") || (st.code === "🇸🇳") || (st.country || "").toLowerCase().includes("sénégal") || (st.country || "").toLowerCase().includes("senegal") || stState.includes("dakar") || stState.includes("thiès") || stState.includes("thies") || stState.includes("kaolack") || stState.includes("touba") || stState.includes("ziguinchor") || stState.includes("saint-louis") || stState.includes("matam") || nameLow.includes("sénégal") || nameLow.includes("senegal") || nameLow.includes("dakar") || nameLow.includes("touba") || nameLow.includes("ziguinchor") || nameLow.includes("kaolack");
+  if (isSenegal) {
+    if (nameLow.includes("h24")) return "assets/logos/h24-senegal.svg";
+    if (nameLow.includes("rfm") || nameLow.includes("futurs medias") || nameLow.includes("futurs médias") || nameLow.includes("94.0")) return "assets/logos/rfm-senegal.svg";
+    if (nameLow.includes("zik fm") || nameLow.includes("d-media") || nameLow.includes("89.7")) return "assets/logos/zik-fm-senegal.svg";
+    if (nameLow.includes("lamp fall") || nameLow.includes("lampfall") || nameLow.includes("touba")) return "assets/logos/lamp-fall-fm.svg";
+    if (nameLow.includes("walf") || nameLow.includes("walfadjri") || nameLow.includes("99.0")) return "assets/logos/walf-fm-senegal.svg";
+    if (nameLow.includes("rts") || nameLow.includes("rsi") || (nameLow.includes("radio sénégal") && !nameLow.includes("h24"))) return "assets/logos/rts-radio-senegal.svg";
+    if (nameLow.includes("sud fm") || nameLow.includes("sen radio")) return "assets/logos/sud-fm-senegal.svg";
+    if (nameLow.includes("al fayda") || nameLow.includes("alfayda") || nameLow.includes("kaolack")) return "assets/logos/radio-al-fayda-kaolack.svg";
+    if (nameLow.includes("thiossane")) return "assets/logos/radio-thiossane-dakar.svg";
+    if (nameLow.includes("zig fm") || nameLow.includes("ziguinchor") || nameLow.includes("kolda")) return "assets/logos/zig-fm-ziguinchor.svg";
+    if (nameLow.includes("rewmi") || nameLow.includes("97.5")) return "assets/logos/rewmi-fm-dakar.svg";
+    if (nameLow.includes("fulbe") || nameLow.includes("102.6")) return "assets/logos/radio-fulbe-dakar.svg";
+    if (nameLow.includes("timtimol") || nameLow.includes("91.9") || nameLow.includes("ourossogui")) return "assets/logos/timtimol-fm-ourossogui.svg";
+    if (nameLow.includes("bamtaare") || nameLow.includes("103.4") || nameLow.includes("dodel")) return "assets/logos/bamtaare-fm-dodel.svg";
+    if (nameLow.includes("manoore") || nameLow.includes("manooré") || nameLow.includes("89.4")) return "assets/logos/manoore-fm-dakar.svg";
+    if (nameLow.includes("dakar musique")) return "assets/logos/dakar-musique.svg";
+    if (nameLow.includes("vibe") || nameLow.includes("102.3")) return "assets/logos/vibe-radio-dakar.svg";
+    if (nameLow.includes("iradio") || nameLow.includes("e-media") || nameLow.includes("90.3")) return "assets/logos/iradio-senegal.svg";
+  }
+
   // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
   if (st.favicon && st.favicon.startsWith("https://")) {
     return st.favicon;
@@ -2914,6 +3000,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isCameroon) {
     return "assets/logos/cameroon-radio-badge.svg";
+  }
+  if (isSenegal) {
+    return "assets/logos/senegal-radio-badge.svg";
   }
 
   return "";

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="walfBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001833"/>
+      <stop offset="50%" stop-color="#003366"/>
+      <stop offset="100%" stop-color="#000F21"/>
+    </linearGradient>
+    <linearGradient id="walfRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1744"/>
+      <stop offset="100%" stop-color="#D50000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#F3B43F"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#walfBg)"/>
+  <rect width="504" height="504" x="4" y="4" rx="92" fill="none" stroke="url(#gold)" stroke-width="4" stroke-opacity="0.85"/>
+
+  <!-- Frequency Pill -->
+  <g transform="translate(156, 65)">
+    <rect width="200" height="46" rx="23" fill="url(#walfRed)"/>
+    <text x="100" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="26" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">99.0 FM</text>
+  </g>
+
+  <!-- Big WALF FM Typography -->
+  <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="110" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">WALF FM</text>
+  <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="36" fill="url(#gold)" text-anchor="middle" letter-spacing="6">GROUPE WALFADJRI</text>
+
+  <!-- Slogan & Country -->
+  <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#BBDEFB" text-anchor="middle" letter-spacing="3">LA VOIX DES SANS-VOIX</text>
+  <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#E3F2FD" text-anchor="middle" letter-spacing="2">DAKAR • SÉNÉGAL</text>
+
+  <!-- Live Tag -->
+  <g transform="translate(146, 422)">
+    <rect width="220" height="40" rx="20" fill="#00180B" stroke="url(#gold)" stroke-width="2"/>
+    <text x="110" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="16" fill="#00E676" text-anchor="middle" letter-spacing="3">🇸🇳 DAKAR LIVE</text>
+  </g>
+</svg>

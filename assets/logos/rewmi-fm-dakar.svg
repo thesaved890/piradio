@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rewmiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140A00"/>
+      <stop offset="50%" stop-color="#331A00"/>
+      <stop offset="100%" stop-color="#0A0500"/>
+    </linearGradient>
+    <linearGradient id="rewmiOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9800"/>
+      <stop offset="100%" stop-color="#F57C00"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#F3B43F"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#rewmiBg)"/>
+  <rect width="504" height="504" x="4" y="4" rx="92" fill="none" stroke="url(#gold)" stroke-width="4" stroke-opacity="0.85"/>
+
+  <!-- Frequency Pill -->
+  <g transform="translate(156, 65)">
+    <rect width="200" height="46" rx="23" fill="url(#rewmiOrange)"/>
+    <text x="100" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="26" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">97.5 FM</text>
+  </g>
+
+  <!-- Big REWMI FM Typography -->
+  <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="105" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">REWMI FM</text>
+  <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="38" fill="url(#rewmiOrange)" text-anchor="middle" letter-spacing="6">DAKAR</text>
+
+  <!-- Slogan & Country -->
+  <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#FFE0B2" text-anchor="middle" letter-spacing="3">L'INFO EN TEMPS RÉEL</text>
+  <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#FFF3E0" text-anchor="middle" letter-spacing="2">DAKAR • SÉNÉGAL</text>
+
+  <!-- Live Tag -->
+  <g transform="translate(146, 422)">
+    <rect width="220" height="40" rx="20" fill="#00180B" stroke="url(#gold)" stroke-width="2"/>
+    <text x="110" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="16" fill="#00E676" text-anchor="middle" letter-spacing="3">🇸🇳 DAKAR LIVE</text>
+  </g>
+</svg>

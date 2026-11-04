@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fulBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00240F"/>
+      <stop offset="50%" stop-color="#004D21"/>
+      <stop offset="100%" stop-color="#001408"/>
+    </linearGradient>
+    <linearGradient id="fulGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="50%" stop-color="#FCD116"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#F3B43F"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#fulBg)"/>
+  <rect width="504" height="504" x="4" y="4" rx="92" fill="none" stroke="url(#gold)" stroke-width="4" stroke-opacity="0.85"/>
+
+  <!-- Frequency Pill -->
+  <g transform="translate(156, 65)">
+    <rect width="200" height="46" rx="23" fill="url(#fulGold)"/>
+    <text x="100" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="26" fill="#00240F" text-anchor="middle" letter-spacing="2">102.6 FM</text>
+  </g>
+
+  <!-- Big FULBE FM Typography -->
+  <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="96" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">FULBE FM</text>
+  <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="38" fill="url(#fulGold)" text-anchor="middle" letter-spacing="6">DAKAR SÉNÉGAL</text>
+
+  <!-- Slogan & Culture -->
+  <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#C8E6C9" text-anchor="middle" letter-spacing="3">PINAL E NEEDI PULAAR</text>
+  <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#E8F5E9" text-anchor="middle" letter-spacing="2">CULTURE &amp; TRADITION PEULE</text>
+
+  <!-- Live Tag -->
+  <g transform="translate(146, 422)">
+    <rect width="220" height="40" rx="20" fill="#00180B" stroke="url(#gold)" stroke-width="2"/>
+    <text x="110" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="16" fill="#00E676" text-anchor="middle" letter-spacing="3">🇸🇳 PULAAR LIVE</text>
+  </g>
+</svg>
