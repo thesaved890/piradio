@@ -1101,6 +1101,8 @@ const CURATED_STATIONS = [
     id: "kut-90-5-austin",
     name: "KUT 90.5 FM Austin (Texas)",
     country: "États-Unis",
+    city: "Austin, TX",
+    state: "Texas",
     code: "🇺🇸",
     continent: "americas",
     category: "news",
@@ -1113,6 +1115,82 @@ const CURATED_STATIONS = [
     logo: "assets/logos/kut-90-5-austin.png",
     featured: true,
     locked: true
+  },
+  {
+    id: "kera-90-1-dallas",
+    name: "KERA 90.1 FM Dallas-Fort Worth (NPR)",
+    country: "États-Unis",
+    city: "Dallas, TX",
+    state: "Texas",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "news",
+    frequency: "90.1",
+    band: "FM",
+    language: "English",
+    genre: "North Texas Public Radio, NPR News & Arts",
+    streamUrl: "https://kera.streamguys1.com/keralive",
+    fallbackUrl: "https://kera.streamguys1.com/keralive",
+    logo: "assets/logos/kera-90-1-dallas.png",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "radio-free-texas",
+    name: "Radio Free Texas (Americana & Red Dirt)",
+    country: "États-Unis",
+    city: "Texas",
+    state: "Texas",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Independent Texas Artists, Americana & Country",
+    streamUrl: "https://server10.reliastream.com/proxy/damiller?mp=/stream",
+    fallbackUrl: "https://server10.reliastream.com/proxy/damiller?mp=/stream",
+    logo: "assets/logos/radio-free-texas.png",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "kora-98-3-texas",
+    name: "KORA 98.3 The Texas Country Original",
+    country: "États-Unis",
+    city: "Bryan-College Station, TX",
+    state: "Texas",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "98.3",
+    band: "FM",
+    language: "English",
+    genre: "Real Texas Country, Legends & Red Dirt Favorites",
+    streamUrl: "https://ais-sa1.streamon.fm/7410_48k.aac/playlist.m3u8",
+    fallbackUrl: "https://ais-sa1.streamon.fm/7410_48k.aac/playlist.m3u8",
+    logo: "assets/logos/kora-98-3-texas.png",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "koke-fm-austin",
+    name: "KOKE 99.3 & 98.5 FM Austin (Texas Country)",
+    country: "États-Unis",
+    city: "Austin, TX",
+    state: "Texas",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "99.3",
+    band: "FM",
+    language: "English",
+    genre: "Austin Country Music Tradition & Live Artists",
+    streamUrl: "https://server10.reliastream.com/proxy/damiller?mp=/stream",
+    fallbackUrl: "https://server10.reliastream.com/proxy/damiller?mp=/stream",
+    logo: "assets/logos/koke-fm-austin.svg",
+    featured: false,
+    locked: false
   },
   {
     id: "jazz24-seattle",
@@ -2320,6 +2398,18 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("drumbase")) return "assets/logos/drumbase-radio.svg";
   }
 
+  // 1.c Logos officiels Texas 🇺🇸
+  const isTexas = stState.includes("texas") || nameLow.includes("texas") || nameLow.includes("houston") || nameLow.includes("austin") || nameLow.includes("dallas") || nameLow.includes("san antonio") || nameLow.includes("fort worth");
+  if (isTexas) {
+    if (nameLow.includes("houston public") || nameLow.includes("kuhf")) return "assets/logos/houston-public-media-88-7.png";
+    if (nameLow.includes("kut ") || nameLow.includes("kut 90") || nameLow.includes("austin music")) return "assets/logos/kut-90-5-austin.png";
+    if (nameLow.includes("kera")) return "assets/logos/kera-90-1-dallas.png";
+    if (nameLow.includes("radio free texas")) return "assets/logos/radio-free-texas.png";
+    if (nameLow.includes("kora")) return "assets/logos/kora-98-3-texas.png";
+    if (nameLow.includes("rebel")) return "assets/logos/texas-rebel-radio.svg";
+    if (nameLow.includes("koke")) return "assets/logos/koke-fm-austin.svg";
+  }
+
   // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
   if (st.favicon && st.favicon.startsWith("https://")) {
     return st.favicon;
@@ -2337,6 +2427,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isMichigan) {
     return "assets/logos/michigan-radio-badge.svg";
+  }
+  if (isTexas) {
+    return "assets/logos/texas-radio-badge.svg";
   }
 
   return "";
