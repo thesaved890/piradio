@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="ktuhbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#023020"/>
+      <stop offset="100%" stop-color="#01140d"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#ktuhbg)" stroke="#00e676" stroke-width="2"/>
+  <text x="100" y="85" font-family="'Inter',sans-serif" font-size="38" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">KTUH</text>
+  <text x="100" y="120" font-family="'Inter',sans-serif" font-size="18" font-weight="800" fill="#00e676" text-anchor="middle" letter-spacing="1">90.1 FM</text>
+  <text x="100" y="152" font-family="'Inter',sans-serif" font-size="12" font-weight="800" fill="#f3b43f" text-anchor="middle" letter-spacing="2">UNIV. OF HAWAII</text>
+  <text x="100" y="172" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#c5bcdb" text-anchor="middle" letter-spacing="2">MANOA • HONOLULU</text>
+</svg>

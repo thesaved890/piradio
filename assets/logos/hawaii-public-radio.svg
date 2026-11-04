@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="hprbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003554"/>
+      <stop offset="100%" stop-color="#001424"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#hprbg)" stroke="#0582ca" stroke-width="2"/>
+  <circle cx="100" cy="72" r="32" fill="#006494"/>
+  <text x="100" y="80" font-family="'Inter',sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle">HPR</text>
+  <text x="100" y="128" font-family="'Inter',sans-serif" font-size="14" font-weight="900" fill="#00a6fb" text-anchor="middle" letter-spacing="1.5">HAWAII PUBLIC RADIO</text>
+  <text x="100" y="150" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#f3b43f" text-anchor="middle" letter-spacing="2">HPR-1 88.1 FM • NPR</text>
+  <text x="100" y="170" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#ffffff" opacity="0.8" text-anchor="middle" letter-spacing="2">HONOLULU</text>
+</svg>

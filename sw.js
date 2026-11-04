@@ -1,7 +1,7 @@
 // Pi Radio • Service Worker v3.4
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v4.1';
+const CACHE_NAME = 'piradio-v4.2';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -110,6 +110,13 @@ const PRECACHE_ASSETS = [
   './assets/logos/texas-rebel-radio.svg',
   './assets/logos/koke-fm-austin.svg',
   './assets/logos/texas-radio-badge.svg',
+  // Logos officiels Hawaï 🌺
+  './assets/logos/hawaii-public-radio.svg',
+  './assets/logos/94-7-kumu-honolulu.svg',
+  './assets/logos/mana-o-radio-maui.svg',
+  './assets/logos/ukulele-island-radio.svg',
+  './assets/logos/ktuh-honolulu.svg',
+  './assets/logos/hawaii-radio-badge.svg',
   // Logos officiels Canada 🇨🇦
   './assets/logos/cbc-radio-one.png',
   './assets/logos/radio-canada-premiere.png',

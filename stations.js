@@ -1287,6 +1287,84 @@ const CURATED_STATIONS = [
     locked: true
   },
 
+  // --- 🌺 Hawaï (USA) ---
+  {
+    id: "hpr-1-hawaii-public-radio",
+    name: "HPR-1 88.1 FM Hawaii Public Radio (NPR)",
+    country: "États-Unis",
+    city: "Honolulu, HI",
+    state: "Hawaii",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "news",
+    frequency: "88.1",
+    band: "FM",
+    language: "English",
+    genre: "Statewide Hawaii & Global News, NPR Journalism",
+    streamUrl: "https://khpr-ice.streamguys1.com/khpr2",
+    fallbackUrl: "https://khpr-ice.streamguys1.com/khpr2",
+    logo: "assets/logos/hawaii-public-radio.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "94-7-kumu-honolulu",
+    name: "94.7 KUMU (Honolulu, HI)",
+    country: "États-Unis",
+    city: "Honolulu, HI",
+    state: "Hawaii",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "94.7",
+    band: "FM",
+    language: "English",
+    genre: "Hawaii's R&B, Island Grooves & Soul Classics",
+    streamUrl: "https://pacificmedia.cdnstream1.com/2783_128.mp3",
+    fallbackUrl: "https://pacificmedia.cdnstream1.com/2783_128.mp3",
+    logo: "assets/logos/94-7-kumu-honolulu.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "mana-o-radio-maui",
+    name: "KMNO Mana'o Radio 91.7 FM (Maui, HI)",
+    country: "États-Unis",
+    city: "Maui, HI",
+    state: "Hawaii",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "culture",
+    frequency: "91.7",
+    band: "FM",
+    language: "English",
+    genre: "Eclectic Maui Island Music, Blues, Reggae & Rock",
+    streamUrl: "https://kmno.streamguys1.com/live",
+    fallbackUrl: "https://kmno.streamguys1.com/live",
+    logo: "assets/logos/mana-o-radio-maui.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "ktuh-manoa-honolulu",
+    name: "KTUH 90.1 FM (University of Hawaii, Honolulu)",
+    country: "États-Unis",
+    city: "Honolulu, HI",
+    state: "Hawaii",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "culture",
+    frequency: "90.1",
+    band: "FM",
+    language: "English",
+    genre: "College Radio, Island Indie, Reggae & Underground",
+    streamUrl: "https://stream.ktuh.org:8001/stream",
+    fallbackUrl: "https://stream.ktuh.org:8001/stream",
+    logo: "assets/logos/ktuh-honolulu.svg",
+    featured: false,
+    locked: true
+  },
+
   // ==========================================
   // 6.b 🇨🇦 CANADA (AMÉRIQUES)
   // ==========================================
@@ -2410,6 +2488,16 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("koke")) return "assets/logos/koke-fm-austin.svg";
   }
 
+  // 1.d Logos officiels Hawaï 🌺
+  const isHawaii = stState.includes("hawaii") || stState.includes("hawai") || nameLow.includes("hawaii") || nameLow.includes("hawai") || nameLow.includes("honolulu") || nameLow.includes("maui") || nameLow.includes("oahu") || nameLow.includes("kauai");
+  if (isHawaii) {
+    if (nameLow.includes("hpr") || nameLow.includes("hawaii public")) return "assets/logos/hawaii-public-radio.svg";
+    if (nameLow.includes("kumu")) return "assets/logos/94-7-kumu-honolulu.svg";
+    if (nameLow.includes("mana")) return "assets/logos/mana-o-radio-maui.svg";
+    if (nameLow.includes("ukulele")) return "assets/logos/ukulele-island-radio.svg";
+    if (nameLow.includes("ktuh")) return "assets/logos/ktuh-honolulu.svg";
+  }
+
   // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
   if (st.favicon && st.favicon.startsWith("https://")) {
     return st.favicon;
@@ -2430,6 +2518,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isTexas) {
     return "assets/logos/texas-radio-badge.svg";
+  }
+  if (isHawaii) {
+    return "assets/logos/hawaii-radio-badge.svg";
   }
 
   return "";

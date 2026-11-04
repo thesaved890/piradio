@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="manabg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00382b"/>
+      <stop offset="100%" stop-color="#00140f"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#manabg)" stroke="#00e676" stroke-width="2"/>
+  <text x="100" y="80" font-family="'Inter',sans-serif" font-size="28" font-weight="900" fill="#00e676" text-anchor="middle" letter-spacing="1">MANA'O</text>
+  <text x="100" y="112" font-family="'Inter',sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="2">RADIO 91.7 FM</text>
+  <text x="100" y="148" font-family="'Inter',sans-serif" font-size="13" font-weight="800" fill="#f3b43f" text-anchor="middle" letter-spacing="2">MAUI, HAWAII</text>
+  <text x="100" y="168" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#ffffff" opacity="0.8" text-anchor="middle" letter-spacing="2">COMMUNITY RADIO</text>
+</svg>
