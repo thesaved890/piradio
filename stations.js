@@ -63,6 +63,154 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 1.b 🇨🇮 CÔTE D'IVOIRE
+  // ==========================================
+  {
+    id: "radio-cote-divoire",
+    name: "Radio Côte d'Ivoire (RTI 88.0 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "news",
+    frequency: "88.0",
+    band: "FM",
+    language: "Français & Langues nationales",
+    genre: "Actualités nationales, Débats & Culture",
+    streamUrl: "https://listen.radioking.com/radio/732974/stream/799223",
+    fallbackUrl: "https://listen.radioking.com/radio/732974/stream/799223",
+    logo: "assets/logos/radio-cote-divoire.svg",
+    featured: true
+  },
+  {
+    id: "rti-frequence-2",
+    name: "RTI Fréquence 2 (92.0 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "92.0",
+    band: "FM",
+    language: "Français & Nouchi",
+    genre: "Hits, Jeunesse, Humour & Variétés",
+    streamUrl: "https://listen.radioking.com/radio/734192/stream/800486",
+    fallbackUrl: "https://listen.radioking.com/radio/734192/stream/800486",
+    logo: "assets/logos/rti-frequence-2.svg",
+    featured: true
+  },
+  {
+    id: "radio-jam-abidjan",
+    name: "Radio Jam 99.3 FM",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "99.3",
+    band: "FM",
+    language: "Français & Nouchi",
+    genre: "Zouglou, Coupé-Décalé, Afrobeats & Rap",
+    streamUrl: "https://listen.radioking.com/radio/61201/stream/98566",
+    fallbackUrl: "https://listen.radioking.com/radio/61201/stream/98566",
+    logo: "assets/logos/radio-jam-abidjan.svg",
+    featured: true
+  },
+  {
+    id: "alpha-blondy-fm",
+    name: "Alpha Blondy FM (97.9 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "97.9",
+    band: "FM",
+    language: "Français & Dioula",
+    genre: "Reggae, Paix, Droits de l'Homme & Société",
+    streamUrl: "https://listen.radioking.com/radio/364633/stream/414370",
+    fallbackUrl: "https://listen.radioking.com/radio/364633/stream/414370",
+    logo: "assets/logos/alpha-blondy-fm.svg",
+    featured: true
+  },
+  {
+    id: "africa-radio-abidjan",
+    name: "Africa Radio Abidjan (107.5 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "news",
+    frequency: "107.5",
+    band: "FM",
+    language: "Français",
+    genre: "Actualités panafricaines, Débats & Afropop",
+    streamUrl: "https://africaradio.ice.infomaniak.ch/abidjan128.mp3",
+    fallbackUrl: "https://africaradio.ice.infomaniak.ch/abidjan128.mp3",
+    logo: "assets/logos/africa-radio-abidjan.svg",
+    featured: true
+  },
+  {
+    id: "hit-radio-ci",
+    name: "Hit Radio Côte d'Ivoire (106.9 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "106.9",
+    band: "FM",
+    language: "Français",
+    genre: "100% Hits, RnB, Dance & Pop urbaine",
+    streamUrl: "https://hrci.ice.infomaniak.ch/ci-abidjan-128.mp3",
+    fallbackUrl: "https://hrci.ice.infomaniak.ch/ci-abidjan-128.mp3",
+    logo: "assets/logos/hit-radio-ci.svg",
+    featured: true
+  },
+  {
+    id: "life-radio-ci",
+    name: "Life Radio (107.7 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "107.7",
+    band: "FM",
+    language: "Français",
+    genre: "Musique urbaine, Talk, Société & Divertissement",
+    streamUrl: "https://cast4.asurahosting.com/proxy/life/stream",
+    fallbackUrl: "https://cast4.asurahosting.com/proxy/life/stream",
+    logo: "assets/logos/life-radio-ci.svg",
+    featured: true
+  },
+  {
+    id: "radio-al-bayane-ci",
+    name: "Radio Al Bayane (98.2 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "98.2",
+    band: "FM",
+    language: "Français, Arabe & Langues ivoiriennes",
+    genre: "Spiritualité, Éducation, Société & Bien-être",
+    streamUrl: "https://stream.zeno.fm/0t1c5kna90duv",
+    fallbackUrl: "https://stream.zeno.fm/0t1c5kna90duv",
+    logo: "assets/logos/radio-al-bayane-ci.svg",
+    featured: true
+  },
+
+  // ==========================================
   // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE & 🇲🇦 MAROC (MAGHREB)
   // ==========================================
   {
@@ -2663,11 +2811,21 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "ibadan": { code: "NG", en: "Nigeria", fr: "Ibadan", continent: "africa", type: "country" },
   "abeokuta": { code: "NG", en: "Nigeria", fr: "Abeokuta", continent: "africa", type: "country" },
 
+  "ci": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
   "cote d'ivoire": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
   "côte d'ivoire": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
   "cotedivoire": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
   "ivory coast": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
   "abidjan": { code: "CI", en: "Ivory Coast", fr: "Abidjan", continent: "africa", type: "country" },
+  "yamoussoukro": { code: "CI", en: "Ivory Coast", fr: "Yamoussoukro", continent: "africa", type: "country" },
+  "bouake": { code: "CI", en: "Ivory Coast", fr: "Bouaké", continent: "africa", type: "country" },
+  "bouaké": { code: "CI", en: "Ivory Coast", fr: "Bouaké", continent: "africa", type: "country" },
+  "daloa": { code: "CI", en: "Ivory Coast", fr: "Daloa", continent: "africa", type: "country" },
+  "san-pedro": { code: "CI", en: "Ivory Coast", fr: "San-Pédro", continent: "africa", type: "country" },
+  "korhogo": { code: "CI", en: "Ivory Coast", fr: "Korhogo", continent: "africa", type: "country" },
+  "duekoue": { code: "CI", en: "Ivory Coast", fr: "Duékoué", continent: "africa", type: "country" },
+  "duékoué": { code: "CI", en: "Ivory Coast", fr: "Duékoué", continent: "africa", type: "country" },
+  "katiola": { code: "CI", en: "Ivory Coast", fr: "Katiola", continent: "africa", type: "country" },
 
   "senegal": { code: "SN", en: "Senegal", fr: "Sénégal", continent: "africa", type: "country" },
   "sénégal": { code: "SN", en: "Senegal", fr: "Sénégal", continent: "africa", type: "country" },
@@ -2998,6 +3156,31 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/benin-radio-badge.svg";
   }
 
+  // 1.k Logos officiels Côte d'Ivoire 🇨🇮
+  const isCoteIvoire = (cCode === "CI") || (st.code === "🇨🇮") || (st.country || "").toLowerCase().includes("ivoire") || (st.country || "").toLowerCase().includes("ivory") || stState.includes("abidjan") || stState.includes("yamoussoukro") || stState.includes("bouaké") || stState.includes("bouake") || stState.includes("daloa") || stState.includes("san-pedro") || stState.includes("korhogo") || stState.includes("lagunes") || nameLow.includes("ivoire") || nameLow.includes("ivory") || nameLow.includes("abidjan") || nameLow.includes("yamoussoukro") || nameLow.includes("bouake");
+  if (isCoteIvoire) {
+    if (nameLow.includes("fréquence 2") || nameLow.includes("frequence 2") || (nameLow.includes("rti") && nameLow.includes("2"))) return "assets/logos/rti-frequence-2.svg";
+    if (nameLow.includes("radio côte d'ivoire") || nameLow.includes("radio cote d'ivoire") || (nameLow.includes("rti") && !nameLow.includes("2"))) return "assets/logos/radio-cote-divoire.svg";
+    if (nameLow.includes("jam")) return "assets/logos/radio-jam-abidjan.svg";
+    if (nameLow.includes("alpha blondy") || nameLow.includes("blondy")) return "assets/logos/alpha-blondy-fm.svg";
+    if (nameLow.includes("africa radio")) return "assets/logos/africa-radio-abidjan.svg";
+    if (nameLow.includes("hit radio")) return "assets/logos/hit-radio-ci.svg";
+    if (nameLow.includes("life radio") || nameLow.includes("life")) return "assets/logos/life-radio-ci.svg";
+    if (nameLow.includes("bayane") || nameLow.includes("al bayane")) return "assets/logos/radio-al-bayane-ci.svg";
+    if (nameLow.includes("nostalgie")) return "assets/logos/nostalgie-ci.svg";
+    if (nameLow.includes("trace")) return "assets/logos/trace-fm-ci.svg";
+    if (nameLow.includes("skyrock")) return "assets/logos/skyrock-abidjan.svg";
+    if (nameLow.includes("paix")) return "assets/logos/radio-de-la-paix.svg";
+    if (nameLow.includes("espoir")) return "assets/logos/radio-espoir-ci.svg";
+    if (nameLow.includes("catholique") || nameLow.includes("rnc") || nameLow.includes("évangile") || nameLow.includes("evangile")) return "assets/logos/radio-nationale-catholique.svg";
+    if (nameLow.includes("daloa")) return "assets/logos/radio-daloa-fm.svg";
+    if (nameLow.includes("gbêkê") || nameLow.includes("gbeke")) return "assets/logos/gbeke-fm-bouake.svg";
+    if (nameLow.includes("guémon") || nameLow.includes("guemon")) return "assets/logos/guemon-fm.svg";
+    if (nameLow.includes("attécoubé") || nameLow.includes("attecoube")) return "assets/logos/attecoube-fm.svg";
+    if (nameLow.includes("fer fm") || nameLow.includes("fer")) return "assets/logos/fer-fm-ci.svg";
+    return "assets/logos/cote-divoire-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -3051,6 +3234,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isBenin) {
     return "assets/logos/benin-radio-badge.svg";
+  }
+  if (isCoteIvoire) {
+    return "assets/logos/cote-divoire-radio-badge.svg";
   }
 
   return "";

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="f2Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f0a21"/>
+      <stop offset="50%" stop-color="#36123b"/>
+      <stop offset="100%" stop-color="#120514"/>
+    </linearGradient>
+    <linearGradient id="f2Magenta" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="50%" stop-color="#E91E63"/>
+      <stop offset="100%" stop-color="#C2185B"/>
+    </linearGradient>
+    <linearGradient id="f2Orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA040"/>
+      <stop offset="50%" stop-color="#FF8200"/>
+      <stop offset="100%" stop-color="#D65F00"/>
+    </linearGradient>
+    <radialGradient id="f2Glow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#E91E63" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#E91E63" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="f2Drop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="240" fill="url(#f2Bg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#f2Magenta)" stroke-width="3" stroke-opacity="0.8"/>
+  <circle cx="256" cy="190" r="170" fill="url(#f2Glow)"/>
+
+  <!-- Ondes radio -->
+  <g fill="none" stroke="url(#f2Magenta)" stroke-linecap="round" opacity="0.8">
+    <path d="M 140 170 A 130 130 0 0 1 372 170" stroke-width="3" stroke-dasharray="6 8"/>
+    <path d="M 170 180 A 100 100 0 0 1 342 180" stroke-width="4"/>
+    <path d="M 200 190 A 70 70 0 0 1 312 190" stroke-width="5"/>
+  </g>
+
+  <!-- Capsule F2 Blanche avec le grand chiffre 2 stylisé -->
+  <g filter="url(#f2Drop)" transform="translate(256, 185)">
+    <rect x="-90" y="-55" width="180" height="110" rx="20" fill="#FFFFFF"/>
+    <!-- Texte RTI miniature au-dessus -->
+    <text x="0" y="-22" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="900" fill="#FF8200" text-anchor="middle" letter-spacing="3">RTI</text>
+    <!-- Grand 2 stylisé magenta -->
+    <text x="0" y="38" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="900" fill="url(#f2Magenta)" text-anchor="middle">2</text>
+  </g>
+
+  <!-- Badge 92.0 FM Musique & Jeunesse -->
+  <g transform="translate(256, 285)">
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#f2Orange)" filter="url(#f2Drop)"/>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">92.0 FM • ABIDJAN</text>
+  </g>
+
+  <!-- Titre Principal RTI FRÉQUENCE 2 -->
+  <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">FRÉQUENCE 2</text>
+
+  <!-- Sous-titre Culture & Musique -->
+  <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#f2Magenta)" text-anchor="middle" letter-spacing="3">JEUNESSE, HITS &amp; CULTURE</text>
+
+  <!-- Drapeau ivoirien miniature en bas -->
+  <g transform="translate(256, 430)">
+    <rect x="-18" y="-7" width="12" height="14" fill="#FF8200" rx="2"/>
+    <rect x="-6" y="-7" width="12" height="14" fill="#FFFFFF"/>
+    <rect x="6" y="-7" width="12" height="14" fill="#009A44" rx="2"/>
+    <rect x="-18" y="-7" width="36" height="14" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" rx="2"/>
+  </g>
+</svg>

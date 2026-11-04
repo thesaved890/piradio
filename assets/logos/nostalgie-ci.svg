@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nosBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c0709"/>
+      <stop offset="50%" stop-color="#360f14"/>
+      <stop offset="100%" stop-color="#120305"/>
+    </linearGradient>
+    <linearGradient id="nosRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E53935"/>
+      <stop offset="50%" stop-color="#D32F2F"/>
+      <stop offset="100%" stop-color="#C62828"/>
+    </linearGradient>
+    <linearGradient id="nosGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="50%" stop-color="#FCD116"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+    <radialGradient id="nosGlow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#D32F2F" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#D32F2F" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="nosDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="240" fill="url(#nosBg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#nosRed)" stroke-width="3" stroke-opacity="0.8"/>
+  <circle cx="256" cy="190" r="170" fill="url(#nosGlow)"/>
+
+  <!-- Ondes radio -->
+  <g fill="none" stroke="url(#nosGold)" stroke-linecap="round" opacity="0.8">
+    <path d="M 140 170 A 130 130 0 0 1 372 170" stroke-width="3" stroke-dasharray="6 8"/>
+    <path d="M 170 180 A 100 100 0 0 1 342 180" stroke-width="4"/>
+    <path d="M 200 190 A 70 70 0 0 1 312 190" stroke-width="5"/>
+  </g>
+
+  <!-- Capsule Nostalgie Rouge avec losange classique -->
+  <g filter="url(#nosDrop)" transform="translate(256, 185)">
+    <polygon points="0,-55 95,0 0,55 -95,0" fill="url(#nosRed)"/>
+    <text x="0" y="10" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">NOSTALGIE</text>
+  </g>
+
+  <!-- Badge 101.1 FM Les Plus Grands Tubes -->
+  <g transform="translate(256, 285)">
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#nosGold)" filter="url(#nosDrop)"/>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#1c0709" text-anchor="middle" letter-spacing="2">101.1 FM • ABIDJAN</text>
+  </g>
+
+  <!-- Titre Principal NOSTALGIE CI -->
+  <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">NOSTALGIE CÔTE D'IVOIRE</text>
+
+  <!-- Sous-titre Les Plus Grands Tubes -->
+  <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#nosGold)" text-anchor="middle" letter-spacing="3">LES PLUS GRANDS TUBES</text>
+
+  <!-- Drapeau ivoirien miniature en bas -->
+  <g transform="translate(256, 430)">
+    <rect x="-18" y="-7" width="12" height="14" fill="#FF8200" rx="2"/>
+    <rect x="-6" y="-7" width="12" height="14" fill="#FFFFFF"/>
+    <rect x="6" y="-7" width="12" height="14" fill="#009A44" rx="2"/>
+    <rect x="-18" y="-7" width="36" height="14" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" rx="2"/>
+  </g>
+</svg>

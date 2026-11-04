@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051926"/>
+      <stop offset="50%" stop-color="#0b2e47"/>
+      <stop offset="100%" stop-color="#031019"/>
+    </linearGradient>
+    <linearGradient id="rpCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#80D8FF"/>
+      <stop offset="50%" stop-color="#00B0FF"/>
+      <stop offset="100%" stop-color="#0091EA"/>
+    </linearGradient>
+    <linearGradient id="rpGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="50%" stop-color="#FCD116"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+    <filter id="rpDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="240" fill="url(#rpBg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#rpCyan)" stroke-width="3" stroke-opacity="0.8"/>
+
+  <g filter="url(#rpDrop)" transform="translate(256, 185)">
+    <circle cx="0" cy="0" r="62" fill="url(#rpCyan)"/>
+    <circle cx="0" cy="0" r="54" fill="#051926"/>
+    <!-- Colombe stylisée avec rameau d'olivier -->
+    <path d="M -24 8 C -10 -20 20 -20 32 -6 C 20 4 6 16 -12 18 C -18 18 -22 14 -24 8 Z" fill="#FFFFFF"/>
+    <circle cx="18" cy="-8" r="3" fill="#051926"/>
+    <path d="M 28 -2 C 34 -8 40 -8 42 -6" fill="none" stroke="url(#rpGold)" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Badge 96.0 FM La Voix de la Cohésion -->
+  <g transform="translate(256, 285)">
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#rpGold)" filter="url(#rpDrop)"/>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#051926" text-anchor="middle" letter-spacing="2">96.0 FM • ABIDJAN</text>
+  </g>
+
+  <!-- Titre Principal RADIO DE LA PAIX -->
+  <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">RADIO DE LA PAIX</text>
+
+  <!-- Sous-titre Cohésion & Développement -->
+  <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#rpCyan)" text-anchor="middle" letter-spacing="3">COHÉSION &amp; DÉVELOPPEMENT</text>
+
+  <!-- Drapeau ivoirien miniature en bas -->
+  <g transform="translate(256, 430)">
+    <rect x="-18" y="-7" width="12" height="14" fill="#FF8200" rx="2"/>
+    <rect x="-6" y="-7" width="12" height="14" fill="#FFFFFF"/>
+    <rect x="6" y="-7" width="12" height="14" fill="#009A44" rx="2"/>
+    <rect x="-18" y="-7" width="36" height="14" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" rx="2"/>
+  </g>
+</svg>

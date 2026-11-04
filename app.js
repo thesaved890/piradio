@@ -308,6 +308,30 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/benin-radio-badge.svg";
     }
 
+    const isCoteIvoire = (st.code === "🇨🇮") || (st.country && (st.country.toLowerCase().includes("ivoire") || st.country.toLowerCase().includes("ivory"))) || stState.includes("abidjan") || stState.includes("yamoussoukro") || stState.includes("bouaké") || stState.includes("bouake") || stState.includes("daloa") || stState.includes("san-pedro") || stState.includes("korhogo") || stState.includes("lagunes") || nameLow.includes("ivoire") || nameLow.includes("ivory") || nameLow.includes("abidjan") || nameLow.includes("yamoussoukro") || nameLow.includes("bouake");
+    if (isCoteIvoire) {
+      if (nameLow.includes("fréquence 2") || nameLow.includes("frequence 2") || (nameLow.includes("rti") && nameLow.includes("2"))) return "assets/logos/rti-frequence-2.svg";
+      if (nameLow.includes("radio côte d'ivoire") || nameLow.includes("radio cote d'ivoire") || (nameLow.includes("rti") && !nameLow.includes("2"))) return "assets/logos/radio-cote-divoire.svg";
+      if (nameLow.includes("jam")) return "assets/logos/radio-jam-abidjan.svg";
+      if (nameLow.includes("alpha blondy") || nameLow.includes("blondy")) return "assets/logos/alpha-blondy-fm.svg";
+      if (nameLow.includes("africa radio")) return "assets/logos/africa-radio-abidjan.svg";
+      if (nameLow.includes("hit radio")) return "assets/logos/hit-radio-ci.svg";
+      if (nameLow.includes("life radio") || nameLow.includes("life")) return "assets/logos/life-radio-ci.svg";
+      if (nameLow.includes("bayane") || nameLow.includes("al bayane")) return "assets/logos/radio-al-bayane-ci.svg";
+      if (nameLow.includes("nostalgie")) return "assets/logos/nostalgie-ci.svg";
+      if (nameLow.includes("trace")) return "assets/logos/trace-fm-ci.svg";
+      if (nameLow.includes("skyrock")) return "assets/logos/skyrock-abidjan.svg";
+      if (nameLow.includes("paix")) return "assets/logos/radio-de-la-paix.svg";
+      if (nameLow.includes("espoir")) return "assets/logos/radio-espoir-ci.svg";
+      if (nameLow.includes("catholique") || nameLow.includes("rnc") || nameLow.includes("évangile") || nameLow.includes("evangile")) return "assets/logos/radio-nationale-catholique.svg";
+      if (nameLow.includes("daloa")) return "assets/logos/radio-daloa-fm.svg";
+      if (nameLow.includes("gbêkê") || nameLow.includes("gbeke")) return "assets/logos/gbeke-fm-bouake.svg";
+      if (nameLow.includes("guémon") || nameLow.includes("guemon")) return "assets/logos/guemon-fm.svg";
+      if (nameLow.includes("attécoubé") || nameLow.includes("attecoube")) return "assets/logos/attecoube-fm.svg";
+      if (nameLow.includes("fer fm") || nameLow.includes("fer")) return "assets/logos/fer-fm-ci.svg";
+      return "assets/logos/cote-divoire-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -322,6 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isCameroon) return "assets/logos/cameroon-radio-badge.svg";
     if (isSenegal) return "assets/logos/senegal-radio-badge.svg";
     if (isBenin) return "assets/logos/benin-radio-badge.svg";
+    if (isCoteIvoire) return "assets/logos/cote-divoire-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#1a0000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="skyRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF334B"/>
+      <stop offset="50%" stop-color="#E50914"/>
+      <stop offset="100%" stop-color="#B20710"/>
+    </linearGradient>
+    <filter id="skyDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="240" fill="url(#skyBg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#skyRed)" stroke-width="3" stroke-opacity="0.8"/>
+
+  <g filter="url(#skyDrop)" transform="translate(256, 185)">
+    <polygon points="-90,-45 90,-45 75,45 -105,45" fill="url(#skyRed)"/>
+    <text x="-8" y="16" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" font-style="italic">SKYROCK</text>
+  </g>
+
+  <!-- Badge 92.3 FM Abidjan -->
+  <g transform="translate(256, 285)">
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="#FFFFFF" filter="url(#skyDrop)"/>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#E50914" text-anchor="middle" letter-spacing="2">92.3 FM • ABIDJAN</text>
+  </g>
+
+  <!-- Titre Principal SKYROCK ABIDJAN -->
+  <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">SKYROCK ABIDJAN</text>
+
+  <!-- Sous-titre Premier sur le Rap -->
+  <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#skyRed)" text-anchor="middle" letter-spacing="3">PREMIER SUR LE RAP</text>
+
+  <!-- Drapeau ivoirien miniature en bas -->
+  <g transform="translate(256, 430)">
+    <rect x="-18" y="-7" width="12" height="14" fill="#FF8200" rx="2"/>
+    <rect x="-6" y="-7" width="12" height="14" fill="#FFFFFF"/>
+    <rect x="6" y="-7" width="12" height="14" fill="#009A44" rx="2"/>
+    <rect x="-18" y="-7" width="36" height="14" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" rx="2"/>
+  </g>
+</svg>

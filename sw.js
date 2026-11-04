@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v4.8
+// Pi Radio • Service Worker v4.9
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v4.8';
+const CACHE_NAME = 'piradio-v4.9';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,27 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Côte d'Ivoire 🇨🇮
+  './assets/logos/cote-divoire-radio-badge.svg',
+  './assets/logos/radio-cote-divoire.svg',
+  './assets/logos/rti-frequence-2.svg',
+  './assets/logos/radio-jam-abidjan.svg',
+  './assets/logos/alpha-blondy-fm.svg',
+  './assets/logos/africa-radio-abidjan.svg',
+  './assets/logos/hit-radio-ci.svg',
+  './assets/logos/life-radio-ci.svg',
+  './assets/logos/radio-al-bayane-ci.svg',
+  './assets/logos/nostalgie-ci.svg',
+  './assets/logos/trace-fm-ci.svg',
+  './assets/logos/skyrock-abidjan.svg',
+  './assets/logos/radio-de-la-paix.svg',
+  './assets/logos/radio-espoir-ci.svg',
+  './assets/logos/radio-nationale-catholique.svg',
+  './assets/logos/radio-daloa-fm.svg',
+  './assets/logos/gbeke-fm-bouake.svg',
+  './assets/logos/guemon-fm.svg',
+  './assets/logos/attecoube-fm.svg',
+  './assets/logos/fer-fm-ci.svg',
   // Logos officiels Bénin 🇧🇯
   './assets/logos/benin-radio-badge.svg',
   './assets/logos/radio-cotonou-94-3.svg',

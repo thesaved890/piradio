@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rncBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1226"/>
+      <stop offset="50%" stop-color="#122045"/>
+      <stop offset="100%" stop-color="#050a17"/>
+    </linearGradient>
+    <linearGradient id="rncGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="50%" stop-color="#FCD116"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+    <filter id="rncDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="240" fill="url(#rncBg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#rncGold)" stroke-width="3" stroke-opacity="0.8"/>
+
+  <g filter="url(#rncDrop)" transform="translate(256, 185)">
+    <circle cx="0" cy="0" r="62" fill="#122045" stroke="url(#rncGold)" stroke-width="3"/>
+    <text x="0" y="16" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="900" fill="url(#rncGold)" text-anchor="middle" letter-spacing="2">RNC</text>
+  </g>
+
+  <!-- Badge La Voix de l'Évangile -->
+  <g transform="translate(256, 285)">
+    <rect x="-115" y="-18" width="230" height="36" rx="18" fill="url(#rncGold)" filter="url(#rncDrop)"/>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="900" fill="#0a1226" text-anchor="middle" letter-spacing="2">LA VOIX DE L'ÉVANGILE</text>
+  </g>
+
+  <!-- Titre Principal RADIO NATIONALE CATHOLIQUE -->
+  <text x="256" y="358" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">RADIO NATIONALE CATHOLIQUE</text>
+
+  <!-- Sous-titre CÔTE D'IVOIRE -->
+  <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#rncGold)" text-anchor="middle" letter-spacing="3">CÔTE D'IVOIRE • ÉVANGÉLISATION</text>
+
+  <!-- Drapeau ivoirien miniature en bas -->
+  <g transform="translate(256, 430)">
+    <rect x="-18" y="-7" width="12" height="14" fill="#FF8200" rx="2"/>
+    <rect x="-6" y="-7" width="12" height="14" fill="#FFFFFF"/>
+    <rect x="6" y="-7" width="12" height="14" fill="#009A44" rx="2"/>
+    <rect x="-18" y="-7" width="36" height="14" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" rx="2"/>
+  </g>
+</svg>

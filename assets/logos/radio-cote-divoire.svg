@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rtiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140a02"/>
+      <stop offset="50%" stop-color="#241405"/>
+      <stop offset="100%" stop-color="#0a0501"/>
+    </linearGradient>
+    <linearGradient id="rtiOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA040"/>
+      <stop offset="50%" stop-color="#FF8200"/>
+      <stop offset="100%" stop-color="#D65F00"/>
+    </linearGradient>
+    <linearGradient id="rtiGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E676"/>
+      <stop offset="50%" stop-color="#009A44"/>
+      <stop offset="100%" stop-color="#00662A"/>
+    </linearGradient>
+    <linearGradient id="rtiGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="50%" stop-color="#FCD116"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+    <radialGradient id="rtiGlow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FF8200" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FF8200" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rtiDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="240" fill="url(#rtiBg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#rtiOrange)" stroke-width="3" stroke-opacity="0.8"/>
+  <circle cx="256" cy="190" r="170" fill="url(#rtiGlow)"/>
+
+  <!-- Ondes radio -->
+  <g fill="none" stroke="url(#rtiOrange)" stroke-linecap="round" opacity="0.8">
+    <path d="M 140 170 A 130 130 0 0 1 372 170" stroke-width="3" stroke-dasharray="6 8"/>
+    <path d="M 170 180 A 100 100 0 0 1 342 180" stroke-width="4"/>
+    <path d="M 200 190 A 70 70 0 0 1 312 190" stroke-width="5"/>
+  </g>
+
+  <!-- Capsule RTI Blanche -->
+  <g filter="url(#rtiDrop)" transform="translate(256, 185)">
+    <rect x="-105" y="-55" width="210" height="110" rx="20" fill="#FFFFFF"/>
+    <!-- Ruban spiralé RTI Orange et Vert -->
+    <path d="M -80 5 C -80 -30 -40 -30 -20 -5 C 0 20 40 20 60 -5 C 70 -20 80 -20 80 -5" fill="none" stroke="url(#rtiOrange)" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="65" cy="-8" r="7" fill="url(#rtiGreen)"/>
+    <!-- Texte RTI -->
+    <text x="0" y="34" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="36" font-weight="900" fill="#FF8200" text-anchor="middle" letter-spacing="4">rti</text>
+  </g>
+
+  <!-- Badge 88.0 FM La Nationale -->
+  <g transform="translate(256, 285)">
+    <rect x="-115" y="-18" width="230" height="36" rx="18" fill="url(#rtiOrange)" filter="url(#rtiDrop)"/>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">88.0 FM • LA NATIONALE</text>
+  </g>
+
+  <!-- Titre Principal RADIO CÔTE D'IVOIRE -->
+  <text x="256" y="358" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="25" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">RADIO CÔTE D'IVOIRE</text>
+
+  <!-- Sous-titre Abidjan Service Public -->
+  <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#rtiGreen)" text-anchor="middle" letter-spacing="3">ABIDJAN • SERVICE PUBLIC</text>
+
+  <!-- Drapeau ivoirien miniature en bas -->
+  <g transform="translate(256, 430)">
+    <rect x="-18" y="-7" width="12" height="14" fill="#FF8200" rx="2"/>
+    <rect x="-6" y="-7" width="12" height="14" fill="#FFFFFF"/>
+    <rect x="6" y="-7" width="12" height="14" fill="#009A44" rx="2"/>
+    <rect x="-18" y="-7" width="36" height="14" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" rx="2"/>
+  </g>
+</svg>
