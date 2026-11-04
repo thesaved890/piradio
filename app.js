@@ -504,28 +504,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // 4. Recherche textuelle, par ville/état et par fréquence FM/AM en chiffres (avec correction des fautes courantes)
+    // 4. Recherche textuelle, par ville/état/pays/continent et par fréquence FM/AM
     if (isSearching) {
       const q = state.searchQuery.toLowerCase().trim();
       const qClean = q.replace(/['"`]/g, "");
-      const qStateTarget = (typeof US_STATE_SYNONYMS !== "undefined" && US_STATE_SYNONYMS[qClean]) 
-        ? US_STATE_SYNONYMS[qClean].toLowerCase() 
-        : "";
+      const loc = (typeof GLOBAL_LOCATION_SYNONYMS !== "undefined" && GLOBAL_LOCATION_SYNONYMS[qClean]) 
+        ? GLOBAL_LOCATION_SYNONYMS[qClean] 
+        : null;
       const qCorrected = q.replace(/aeokuta/g, "abeokuta").replace(/ketou/g, "kétou").replace(/alaketu/g, "alakétu");
       const qNum = q.replace(',', '.');
+
       list = list.filter(st => {
         const nameMatch = (st.name || "").toLowerCase().includes(q) || 
                           (st.name || "").toLowerCase().includes(qCorrected) || 
-                          (qStateTarget && (st.name || "").toLowerCase().includes(qStateTarget)) ||
+                          (loc && loc.en && (st.name || "").toLowerCase().includes(loc.en.toLowerCase())) ||
+                          (loc && loc.fr && (st.name || "").toLowerCase().includes(loc.fr.toLowerCase())) ||
                           (st.name || "").toLowerCase().includes(qNum);
         const cityMatch = (st.city || "").toLowerCase().includes(q) || 
                           (st.city || "").toLowerCase().includes(qCorrected) ||
-                          (qStateTarget && (st.city || "").toLowerCase().includes(qStateTarget));
+                          (loc && loc.state && (st.city || "").toLowerCase().includes(loc.state.toLowerCase()));
         const stateMatch = (st.state || "").toLowerCase().includes(q) || 
                            (st.state || "").toLowerCase().includes(qCorrected) ||
-                           (qStateTarget && (st.state || "").toLowerCase().includes(qStateTarget));
+                           (loc && loc.state && (st.state || "").toLowerCase().includes(loc.state.toLowerCase()));
         const countryMatch = (st.country || "").toLowerCase().includes(q) || 
-                             (st.country || "").toLowerCase().includes(qCorrected);
+                             (st.country || "").toLowerCase().includes(qCorrected) ||
+                             (loc && loc.en && (st.country || "").toLowerCase().includes(loc.en.toLowerCase())) ||
+                             (loc && loc.fr && (st.country || "").toLowerCase().includes(loc.fr.toLowerCase())) ||
+                             (loc && loc.code && (st.code === loc.code || (st.code && st.code.includes(loc.code))));
+        const continentMatch = (loc && loc.type === "continent" && loc.continent && st.continent === loc.continent) ||
+                               ((qClean === "afrique" || qClean === "africa") && st.continent === "africa") ||
+                               ((qClean === "europe") && st.continent === "europe") ||
+                               ((qClean === "asie" || qClean === "azie" || qClean === "asia") && st.continent === "asia") ||
+                               ((qClean === "amerique" || qClean === "ameriques" || qClean === "america") && st.continent === "americas") ||
+                               ((qClean === "oceanie" || qClean === "océanie" || qClean === "oceania") && st.continent === "oceania");
         const genreMatch = (st.genre || "").toLowerCase().includes(q) || 
                            (st.genre || "").toLowerCase().includes(qCorrected);
         const langMatch = (st.language || "").toLowerCase().includes(q);
@@ -535,7 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const numbersInName = (st.name || "").match(/\d+([.,]\d+)?/g);
         const freqNameMatch = numbersInName && numbersInName.some(num => num.replace(',', '.').includes(qNum));
 
-        return nameMatch || cityMatch || stateMatch || countryMatch || genreMatch || langMatch || freqDirectMatch || freqNameMatch;
+        return nameMatch || cityMatch || stateMatch || countryMatch || continentMatch || genreMatch || langMatch || freqDirectMatch || freqNameMatch;
       });
     }
 

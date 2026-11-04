@@ -1825,71 +1825,269 @@ function getDomainFromUrl(urlStr) {
   }
 }
 
-// Dictionnaire des équivalences États américains & régions mondiales (Français, Anglais, Typo)
-const US_STATE_SYNONYMS = {
-  "californie": "California",
-  "california": "California",
-  "hawai": "Hawaii",
-  "hawaï": "Hawaii",
-  "hawaii": "Hawaii",
-  "goergie": "Georgia",
-  "georgie": "Georgia",
-  "géorgie": "Georgia",
-  "georgia": "Georgia",
-  "iowa": "Iowa",
-  "michigan": "Michigan",
-  "floride": "Florida",
-  "florida": "Florida",
-  "texas": "Texas",
-  "louisiane": "Louisiana",
-  "louisiana": "Louisiana",
-  "pennsylvanie": "Pennsylvania",
-  "pennsylvania": "Pennsylvania",
-  "ohio": "Ohio",
-  "illinois": "Illinois",
-  "washington": "Washington",
-  "arizona": "Arizona",
-  "colorado": "Colorado",
-  "nevada": "Nevada",
-  "caroline du nord": "North Carolina",
-  "north carolina": "North Carolina",
-  "caroline du sud": "South Carolina",
-  "south carolina": "South Carolina",
-  "virginie": "Virginia",
-  "virginia": "Virginia",
-  "nouveau-mexique": "New Mexico",
-  "new mexico": "New Mexico",
-  "alabama": "Alabama",
-  "alaska": "Alaska",
-  "arkansas": "Arkansas",
-  "connecticut": "Connecticut",
-  "delaware": "Delaware",
-  "idaho": "Idaho",
-  "indiana": "Indiana",
-  "kansas": "Kansas",
-  "kentucky": "Kentucky",
-  "maine": "Maine",
-  "maryland": "Maryland",
-  "massachusetts": "Massachusetts",
-  "minnesota": "Minnesota",
-  "mississippi": "Mississippi",
-  "missouri": "Missouri",
-  "montana": "Montana",
-  "nebraska": "Nebraska",
-  "new hampshire": "New Hampshire",
-  "new jersey": "New Jersey",
-  "new york": "New York",
-  "north dakota": "North Dakota",
-  "oklahoma": "Oklahoma",
-  "oregon": "Oregon",
-  "rhode island": "Rhode Island",
-  "south dakota": "South Dakota",
-  "tennessee": "Tennessee",
-  "utah": "Utah",
-  "vermont": "Vermont",
-  "wisconsin": "Wisconsin",
-  "wyoming": "Wyoming"
+// ============================================================
+// DICTIONNAIRE MONDIAL DES SYNONYMES, PAYS, ÉTATS & CONTINENTS
+// Supporte le Français, l'Anglais, les fautes courantes et phonétiques
+// Ex: "Vietname", "Korré du Sude", "Azie", "Goergie", "Californie", "Allemagne"...
+// ============================================================
+const GLOBAL_LOCATION_SYNONYMS = {
+  // --- ASIE & OCÉANIE ---
+  "vietname": { code: "VN", en: "Vietnam", fr: "Vietnam", continent: "asia", type: "country" },
+  "vietnam": { code: "VN", en: "Vietnam", fr: "Vietnam", continent: "asia", type: "country" },
+  "viêt nam": { code: "VN", en: "Vietnam", fr: "Vietnam", continent: "asia", type: "country" },
+  "viet nam": { code: "VN", en: "Vietnam", fr: "Vietnam", continent: "asia", type: "country" },
+  "hanoi": { code: "VN", en: "Vietnam", fr: "Hanoï", continent: "asia", type: "country" },
+  "saigon": { code: "VN", en: "Vietnam", fr: "Saïgon", continent: "asia", type: "country" },
+
+  "korré du sude": { code: "KR", en: "South Korea", fr: "Corée du Sud", continent: "asia", type: "country" },
+  "korre du sude": { code: "KR", en: "South Korea", fr: "Corée du Sud", continent: "asia", type: "country" },
+  "corée du sud": { code: "KR", en: "South Korea", fr: "Corée du Sud", continent: "asia", type: "country" },
+  "coree du sud": { code: "KR", en: "South Korea", fr: "Corée du Sud", continent: "asia", type: "country" },
+  "corée": { code: "KR", en: "South Korea", fr: "Corée du Sud", continent: "asia", type: "country" },
+  "coree": { code: "KR", en: "South Korea", fr: "Corée du Sud", continent: "asia", type: "country" },
+  "korea": { code: "KR", en: "South Korea", fr: "Corée du Sud", continent: "asia", type: "country" },
+  "south korea": { code: "KR", en: "South Korea", fr: "Corée du Sud", continent: "asia", type: "country" },
+  "seoul": { code: "KR", en: "South Korea", fr: "Séoul", continent: "asia", type: "country" },
+  "séoul": { code: "KR", en: "South Korea", fr: "Séoul", continent: "asia", type: "country" },
+
+  "japon": { code: "JP", en: "Japan", fr: "Japon", continent: "asia", type: "country" },
+  "japan": { code: "JP", en: "Japan", fr: "Japon", continent: "asia", type: "country" },
+  "tokyo": { code: "JP", en: "Japan", fr: "Tokyo", continent: "asia", type: "country" },
+
+  "chine": { code: "CN", en: "China", fr: "Chine", continent: "asia", type: "country" },
+  "china": { code: "CN", en: "China", fr: "Chine", continent: "asia", type: "country" },
+  "beijing": { code: "CN", en: "China", fr: "Pékin", continent: "asia", type: "country" },
+
+  "inde": { code: "IN", en: "India", fr: "Inde", continent: "asia", type: "country" },
+  "india": { code: "IN", en: "India", fr: "Inde", continent: "asia", type: "country" },
+  "delhi": { code: "IN", en: "India", fr: "Delhi", continent: "asia", type: "country" },
+
+  "indonesie": { code: "ID", en: "Indonesia", fr: "Indonésie", continent: "asia", type: "country" },
+  "indonésie": { code: "ID", en: "Indonesia", fr: "Indonésie", continent: "asia", type: "country" },
+  "indonesia": { code: "ID", en: "Indonesia", fr: "Indonésie", continent: "asia", type: "country" },
+
+  "thailande": { code: "TH", en: "Thailand", fr: "Thaïlande", continent: "asia", type: "country" },
+  "thaïlande": { code: "TH", en: "Thailand", fr: "Thaïlande", continent: "asia", type: "country" },
+  "thailand": { code: "TH", en: "Thailand", fr: "Thaïlande", continent: "asia", type: "country" },
+
+  "philippines": { code: "PH", en: "Philippines", fr: "Philippines", continent: "asia", type: "country" },
+  "malaisie": { code: "MY", en: "Malaysia", fr: "Malaisie", continent: "asia", type: "country" },
+  "malaysia": { code: "MY", en: "Malaysia", fr: "Malaisie", continent: "asia", type: "country" },
+
+  "australie": { code: "AU", en: "Australia", fr: "Australie", continent: "oceania", type: "country" },
+  "australia": { code: "AU", en: "Australia", fr: "Australie", continent: "oceania", type: "country" },
+  "nouvelle-zelande": { code: "NZ", en: "New Zealand", fr: "Nouvelle-Zélande", continent: "oceania", type: "country" },
+  "nouvelle-zélande": { code: "NZ", en: "New Zealand", fr: "Nouvelle-Zélande", continent: "oceania", type: "country" },
+  "new zealand": { code: "NZ", en: "New Zealand", fr: "Nouvelle-Zélande", continent: "oceania", type: "country" },
+
+  "arabie saoudite": { code: "SA", en: "Saudi Arabia", fr: "Arabie Saoudite", continent: "asia", type: "country" },
+  "saudi arabia": { code: "SA", en: "Saudi Arabia", fr: "Arabie Saoudite", continent: "asia", type: "country" },
+  "emirats": { code: "AE", en: "United Arab Emirates", fr: "Émirats Arabes Unis", continent: "asia", type: "country" },
+  "émirats": { code: "AE", en: "United Arab Emirates", fr: "Émirats Arabes Unis", continent: "asia", type: "country" },
+  "dubai": { code: "AE", en: "United Arab Emirates", fr: "Dubaï", continent: "asia", type: "country" },
+  "dubaï": { code: "AE", en: "United Arab Emirates", fr: "Dubaï", continent: "asia", type: "country" },
+  "turquie": { code: "TR", en: "Turkey", fr: "Turquie", continent: "asia", type: "country" },
+  "turkey": { code: "TR", en: "Turkey", fr: "Turquie", continent: "asia", type: "country" },
+
+  // --- EUROPE ---
+  "france": { code: "FR", en: "France", fr: "France", continent: "europe", type: "country" },
+  "paris": { code: "FR", en: "France", fr: "Paris", continent: "europe", type: "country" },
+
+  "allemagne": { code: "DE", en: "Germany", fr: "Allemagne", continent: "europe", type: "country" },
+  "germany": { code: "DE", en: "Germany", fr: "Allemagne", continent: "europe", type: "country" },
+  "deutschland": { code: "DE", en: "Germany", fr: "Allemagne", continent: "europe", type: "country" },
+  "berlin": { code: "DE", en: "Germany", fr: "Berlin", continent: "europe", type: "country" },
+
+  "espagne": { code: "ES", en: "Spain", fr: "Espagne", continent: "europe", type: "country" },
+  "spain": { code: "ES", en: "Spain", fr: "Espagne", continent: "europe", type: "country" },
+  "españa": { code: "ES", en: "Spain", fr: "Espagne", continent: "europe", type: "country" },
+  "madrid": { code: "ES", en: "Spain", fr: "Madrid", continent: "europe", type: "country" },
+
+  "angleterre": { code: "GB", en: "United Kingdom", fr: "Angleterre", continent: "europe", type: "country" },
+  "royaume-uni": { code: "GB", en: "United Kingdom", fr: "Royaume-Uni", continent: "europe", type: "country" },
+  "royaume uni": { code: "GB", en: "United Kingdom", fr: "Royaume-Uni", continent: "europe", type: "country" },
+  "uk": { code: "GB", en: "United Kingdom", fr: "Royaume-Uni", continent: "europe", type: "country" },
+  "united kingdom": { code: "GB", en: "United Kingdom", fr: "Royaume-Uni", continent: "europe", type: "country" },
+  "londres": { code: "GB", en: "United Kingdom", fr: "Londres", continent: "europe", type: "country" },
+  "london": { code: "GB", en: "United Kingdom", fr: "Londres", continent: "europe", type: "country" },
+
+  "italie": { code: "IT", en: "Italy", fr: "Italie", continent: "europe", type: "country" },
+  "italy": { code: "IT", en: "Italy", fr: "Italie", continent: "europe", type: "country" },
+  "italia": { code: "IT", en: "Italy", fr: "Italie", continent: "europe", type: "country" },
+
+  "portugal": { code: "PT", en: "Portugal", fr: "Portugal", continent: "europe", type: "country" },
+  "belgique": { code: "BE", en: "Belgium", fr: "Belgique", continent: "europe", type: "country" },
+  "belgium": { code: "BE", en: "Belgium", fr: "Belgique", continent: "europe", type: "country" },
+  "suisse": { code: "CH", en: "Switzerland", fr: "Suisse", continent: "europe", type: "country" },
+  "switzerland": { code: "CH", en: "Switzerland", fr: "Suisse", continent: "europe", type: "country" },
+  "pays-bas": { code: "NL", en: "Netherlands", fr: "Pays-Bas", continent: "europe", type: "country" },
+  "pays bas": { code: "NL", en: "Netherlands", fr: "Pays-Bas", continent: "europe", type: "country" },
+  "hollande": { code: "NL", en: "Netherlands", fr: "Hollande", continent: "europe", type: "country" },
+  "netherlands": { code: "NL", en: "Netherlands", fr: "Pays-Bas", continent: "europe", type: "country" },
+  "russie": { code: "RU", en: "Russia", fr: "Russie", continent: "europe", type: "country" },
+  "russia": { code: "RU", en: "Russia", fr: "Russie", continent: "europe", type: "country" },
+  "pologne": { code: "PL", en: "Poland", fr: "Pologne", continent: "europe", type: "country" },
+  "grece": { code: "GR", en: "Greece", fr: "Grèce", continent: "europe", type: "country" },
+  "grèce": { code: "GR", en: "Greece", fr: "Grèce", continent: "europe", type: "country" },
+
+  // --- AFRIQUE ---
+  "benin": { code: "BJ", en: "Benin", fr: "Bénin", continent: "africa", type: "country" },
+  "bénin": { code: "BJ", en: "Benin", fr: "Bénin", continent: "africa", type: "country" },
+  "cotonou": { code: "BJ", en: "Benin", fr: "Cotonou", continent: "africa", type: "country" },
+  "parakou": { code: "BJ", en: "Benin", fr: "Parakou", continent: "africa", type: "country" },
+  "porto-novo": { code: "BJ", en: "Benin", fr: "Porto-Novo", continent: "africa", type: "country" },
+
+  "nigeria": { code: "NG", en: "Nigeria", fr: "Nigéria", continent: "africa", type: "country" },
+  "nigéria": { code: "NG", en: "Nigeria", fr: "Nigéria", continent: "africa", type: "country" },
+  "lagos": { code: "NG", en: "Nigeria", fr: "Lagos", continent: "africa", type: "country" },
+  "abuja": { code: "NG", en: "Nigeria", fr: "Abuja", continent: "africa", type: "country" },
+  "ibadan": { code: "NG", en: "Nigeria", fr: "Ibadan", continent: "africa", type: "country" },
+  "abeokuta": { code: "NG", en: "Nigeria", fr: "Abeokuta", continent: "africa", type: "country" },
+
+  "cote d'ivoire": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
+  "côte d'ivoire": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
+  "cotedivoire": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
+  "ivory coast": { code: "CI", en: "Ivory Coast", fr: "Côte d'Ivoire", continent: "africa", type: "country" },
+  "abidjan": { code: "CI", en: "Ivory Coast", fr: "Abidjan", continent: "africa", type: "country" },
+
+  "senegal": { code: "SN", en: "Senegal", fr: "Sénégal", continent: "africa", type: "country" },
+  "sénégal": { code: "SN", en: "Senegal", fr: "Sénégal", continent: "africa", type: "country" },
+  "dakar": { code: "SN", en: "Senegal", fr: "Dakar", continent: "africa", type: "country" },
+
+  "cameroun": { code: "CM", en: "Cameroon", fr: "Cameroun", continent: "africa", type: "country" },
+  "cameroune": { code: "CM", en: "Cameroon", fr: "Cameroun", continent: "africa", type: "country" },
+  "cameroon": { code: "CM", en: "Cameroon", fr: "Cameroun", continent: "africa", type: "country" },
+  "yaounde": { code: "CM", en: "Cameroon", fr: "Yaoundé", continent: "africa", type: "country" },
+  "yaoundé": { code: "CM", en: "Cameroon", fr: "Yaoundé", continent: "africa", type: "country" },
+  "douala": { code: "CM", en: "Cameroon", fr: "Douala", continent: "africa", type: "country" },
+
+  "togo": { code: "TG", en: "Togo", fr: "Togo", continent: "africa", type: "country" },
+  "lome": { code: "TG", en: "Togo", fr: "Lomé", continent: "africa", type: "country" },
+  "lomé": { code: "TG", en: "Togo", fr: "Lomé", continent: "africa", type: "country" },
+
+  "ghana": { code: "GH", en: "Ghana", fr: "Ghana", continent: "africa", type: "country" },
+  "accra": { code: "GH", en: "Ghana", fr: "Accra", continent: "africa", type: "country" },
+
+  "maroc": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
+  "morocco": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
+  "casablanca": { code: "MA", en: "Morocco", fr: "Casablanca", continent: "africa", type: "country" },
+  "rabat": { code: "MA", en: "Morocco", fr: "Rabat", continent: "africa", type: "country" },
+
+  "algerie": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
+  "algérie": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
+  "algeria": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
+  "alger": { code: "DZ", en: "Algeria", fr: "Alger", continent: "africa", type: "country" },
+
+  "tunisie": { code: "TN", en: "Tunisia", fr: "Tunisie", continent: "africa", type: "country" },
+  "tunisia": { code: "TN", en: "Tunisia", fr: "Tunisie", continent: "africa", type: "country" },
+  "tunis": { code: "TN", en: "Tunisia", fr: "Tunis", continent: "africa", type: "country" },
+
+  "egypte": { code: "EG", en: "Egypt", fr: "Égypte", continent: "africa", type: "country" },
+  "égypte": { code: "EG", en: "Egypt", fr: "Égypte", continent: "africa", type: "country" },
+  "egypt": { code: "EG", en: "Egypt", fr: "Égypte", continent: "africa", type: "country" },
+  "le caire": { code: "EG", en: "Egypt", fr: "Le Caire", continent: "africa", type: "country" },
+  "cairo": { code: "EG", en: "Egypt", fr: "Le Caire", continent: "africa", type: "country" },
+
+  "rdc": { code: "CD", en: "Congo", fr: "RDC", continent: "africa", type: "country" },
+  "congo": { code: "CD", en: "Congo", fr: "Congo", continent: "africa", type: "country" },
+  "kinshasa": { code: "CD", en: "Congo", fr: "Kinshasa", continent: "africa", type: "country" },
+  "mali": { code: "ML", en: "Mali", fr: "Mali", continent: "africa", type: "country" },
+  "bamako": { code: "ML", en: "Mali", fr: "Bamako", continent: "africa", type: "country" },
+  "burkina": { code: "BF", en: "Burkina Faso", fr: "Burkina Faso", continent: "africa", type: "country" },
+  "burkina faso": { code: "BF", en: "Burkina Faso", fr: "Burkina Faso", continent: "africa", type: "country" },
+  "madagascar": { code: "MG", en: "Madagascar", fr: "Madagascar", continent: "africa", type: "country" },
+  "afrique du sud": { code: "ZA", en: "South Africa", fr: "Afrique du Sud", continent: "africa", type: "country" },
+  "south africa": { code: "ZA", en: "South Africa", fr: "Afrique du Sud", continent: "africa", type: "country" },
+  "kenya": { code: "KE", en: "Kenya", fr: "Kenya", continent: "africa", type: "country" },
+  "angola": { code: "AO", en: "Angola", fr: "Angola", continent: "africa", type: "country" },
+  "gabon": { code: "GA", en: "Gabon", fr: "Gabon", continent: "africa", type: "country" },
+  "guinee": { code: "GN", en: "Guinea", fr: "Guinée", continent: "africa", type: "country" },
+  "guinée": { code: "GN", en: "Guinea", fr: "Guinée", continent: "africa", type: "country" },
+  "niger": { code: "NE", en: "Niger", fr: "Niger", continent: "africa", type: "country" },
+  "rwanda": { code: "RW", en: "Rwanda", fr: "Rwanda", continent: "africa", type: "country" },
+
+  // --- AMÉRIQUES ---
+  "usa": { code: "US", en: "United States", fr: "États-Unis", continent: "americas", type: "country" },
+  "etats-unis": { code: "US", en: "United States", fr: "États-Unis", continent: "americas", type: "country" },
+  "états-unis": { code: "US", en: "United States", fr: "États-Unis", continent: "americas", type: "country" },
+  "etats unis": { code: "US", en: "United States", fr: "États-Unis", continent: "americas", type: "country" },
+  "united states": { code: "US", en: "United States", fr: "États-Unis", continent: "americas", type: "country" },
+
+  "californie": { code: "US", state: "California", en: "California", fr: "Californie", continent: "americas", type: "state" },
+  "california": { code: "US", state: "California", en: "California", fr: "Californie", continent: "americas", type: "state" },
+  "hawai": { code: "US", state: "Hawaii", en: "Hawaii", fr: "Hawaï", continent: "americas", type: "state" },
+  "hawaï": { code: "US", state: "Hawaii", en: "Hawaii", fr: "Hawaï", continent: "americas", type: "state" },
+  "hawaii": { code: "US", state: "Hawaii", en: "Hawaii", fr: "Hawaï", continent: "americas", type: "state" },
+  "goergie": { code: "US", state: "Georgia", en: "Georgia", fr: "Géorgie", continent: "americas", type: "state" },
+  "georgie": { code: "US", state: "Georgia", en: "Georgia", fr: "Géorgie", continent: "americas", type: "state" },
+  "géorgie": { code: "US", state: "Georgia", en: "Georgia", fr: "Géorgie", continent: "americas", type: "state" },
+  "georgia": { code: "US", state: "Georgia", en: "Georgia", fr: "Géorgie", continent: "americas", type: "state" },
+  "iowa": { code: "US", state: "Iowa", en: "Iowa", fr: "Iowa", continent: "americas", type: "state" },
+  "michigan": { code: "US", state: "Michigan", en: "Michigan", fr: "Michigan", continent: "americas", type: "state" },
+  "floride": { code: "US", state: "Florida", en: "Florida", fr: "Floride", continent: "americas", type: "state" },
+  "florida": { code: "US", state: "Florida", en: "Florida", fr: "Floride", continent: "americas", type: "state" },
+  "texas": { code: "US", state: "Texas", en: "Texas", fr: "Texas", continent: "americas", type: "state" },
+  "louisiane": { code: "US", state: "Louisiana", en: "Louisiana", fr: "Louisiane", continent: "americas", type: "state" },
+  "louisiana": { code: "US", state: "Louisiana", en: "Louisiana", fr: "Louisiane", continent: "americas", type: "state" },
+  "pennsylvanie": { code: "US", state: "Pennsylvania", en: "Pennsylvania", fr: "Pennsylvanie", continent: "americas", type: "state" },
+  "pennsylvania": { code: "US", state: "Pennsylvania", en: "Pennsylvania", fr: "Pennsylvanie", continent: "americas", type: "state" },
+  "ohio": { code: "US", state: "Ohio", en: "Ohio", fr: "Ohio", continent: "americas", type: "state" },
+  "illinois": { code: "US", state: "Illinois", en: "Illinois", fr: "Illinois", continent: "americas", type: "state" },
+  "washington": { code: "US", state: "Washington", en: "Washington", fr: "Washington", continent: "americas", type: "state" },
+  "arizona": { code: "US", state: "Arizona", en: "Arizona", fr: "Arizona", continent: "americas", type: "state" },
+  "colorado": { code: "US", state: "Colorado", en: "Colorado", fr: "Colorado", continent: "americas", type: "state" },
+  "nevada": { code: "US", state: "Nevada", en: "Nevada", fr: "Nevada", continent: "americas", type: "state" },
+  "caroline du nord": { code: "US", state: "North Carolina", en: "North Carolina", fr: "Caroline du Nord", continent: "americas", type: "state" },
+  "caroline du sud": { code: "US", state: "South Carolina", en: "South Carolina", fr: "Caroline du Sud", continent: "americas", type: "state" },
+  "virginie": { code: "US", state: "Virginia", en: "Virginia", fr: "Virginie", continent: "americas", type: "state" },
+  "new york": { code: "US", state: "New York", en: "New York", fr: "New York", continent: "americas", type: "state" },
+  "new jersey": { code: "US", state: "New Jersey", en: "New Jersey", fr: "New Jersey", continent: "americas", type: "state" },
+  "tennessee": { code: "US", state: "Tennessee", en: "Tennessee", fr: "Tennessee", continent: "americas", type: "state" },
+
+  "canada": { code: "CA", en: "Canada", fr: "Canada", continent: "americas", type: "country" },
+  "quebec": { code: "CA", state: "Quebec", en: "Canada", fr: "Québec", continent: "americas", type: "state" },
+  "québec": { code: "CA", state: "Quebec", en: "Canada", fr: "Québec", continent: "americas", type: "state" },
+  "montreal": { code: "CA", state: "Quebec", en: "Canada", fr: "Montréal", continent: "americas", type: "state" },
+  "montréal": { code: "CA", state: "Quebec", en: "Canada", fr: "Montréal", continent: "americas", type: "state" },
+  "haiti": { code: "HT", en: "Haiti", fr: "Haïti", continent: "americas", type: "country" },
+  "haïti": { code: "HT", en: "Haiti", fr: "Haïti", continent: "americas", type: "country" },
+  "bresil": { code: "BR", en: "Brazil", fr: "Brésil", continent: "americas", type: "country" },
+  "brésil": { code: "BR", en: "Brazil", fr: "Brésil", continent: "americas", type: "country" },
+  "brazil": { code: "BR", en: "Brazil", fr: "Brésil", continent: "americas", type: "country" },
+  "mexique": { code: "MX", en: "Mexico", fr: "Mexique", continent: "americas", type: "country" },
+  "colombie": { code: "CO", en: "Colombia", fr: "Colombie", continent: "americas", type: "country" },
+  "argentine": { code: "AR", en: "Argentina", fr: "Argentine", continent: "americas", type: "country" },
+
+  // --- CONTINENTS DIRECTS (avec variantes d'orthographe) ---
+  "afrique": { continent: "africa", en: "Africa", fr: "Afrique", type: "continent", topCodes: ["NG", "SN", "CI", "CM", "MA", "DZ", "EG", "BJ"] },
+  "africa": { continent: "africa", en: "Africa", fr: "Afrique", type: "continent", topCodes: ["NG", "SN", "CI", "CM", "MA", "DZ", "EG", "BJ"] },
+  "europe": { continent: "europe", en: "Europe", fr: "Europe", type: "continent", topCodes: ["FR", "GB", "DE", "ES", "IT"] },
+  "azie": { continent: "asia", en: "Asia", fr: "Asie", type: "continent", topCodes: ["JP", "KR", "VN", "CN", "IN"] },
+  "aziez": { continent: "asia", en: "Asia", fr: "Asie", type: "continent", topCodes: ["JP", "KR", "VN", "CN", "IN"] },
+  "asie": { continent: "asia", en: "Asia", fr: "Asie", type: "continent", topCodes: ["JP", "KR", "VN", "CN", "IN"] },
+  "asia": { continent: "asia", en: "Asia", fr: "Asie", type: "continent", topCodes: ["JP", "KR", "VN", "CN", "IN"] },
+  "amerique": { continent: "americas", en: "Americas", fr: "Amériques", type: "continent", topCodes: ["US", "CA", "BR", "MX"] },
+  "ameriques": { continent: "americas", en: "Americas", fr: "Amériques", type: "continent", topCodes: ["US", "CA", "BR", "MX"] },
+  "oceanie": { continent: "oceania", en: "Oceania", fr: "Océanie", type: "continent", topCodes: ["AU", "NZ"] },
+  "océanie": { continent: "oceania", en: "Oceania", fr: "Océanie", type: "continent", topCodes: ["AU", "NZ"] }
 };
+
+// Fonction pour déterminer le continent d'un pays à partir de son code ISO 2 lettres
+function getContinentFromCountryCode(code) {
+  if (!code) return "all";
+  const c = code.toUpperCase();
+  const AF = ["BJ", "NG", "CI", "SN", "CM", "TG", "GH", "MA", "DZ", "TN", "EG", "CD", "ML", "BF", "MG", "ZA", "KE", "AO", "GA", "GN", "NE", "RW"];
+  const EU = ["FR", "DE", "ES", "GB", "IT", "PT", "BE", "CH", "NL", "RU", "PL", "GR", "SE", "NO", "IE", "AT"];
+  const AS = ["VN", "KR", "JP", "CN", "IN", "ID", "TH", "PH", "MY", "PK", "SA", "AE", "TR"];
+  const AM = ["US", "CA", "HT", "BR", "MX", "CO", "AR", "CL", "PE"];
+  const OC = ["AU", "NZ"];
+  if (AF.includes(c)) return "africa";
+  if (EU.includes(c)) return "europe";
+  if (AS.includes(c)) return "asia";
+  if (AM.includes(c)) return "americas";
+  if (OC.includes(c)) return "oceania";
+  return "all";
+}
 
 // Moteur de recherche mondial Radio Browser API en temps réel (45 000+ stations)
 async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
@@ -1902,7 +2100,7 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
     const qRaw = (query || "").trim();
     const qLower = qRaw.toLowerCase().replace(/['"`]/g, "");
     const qClean = qRaw.replace(',', '.');
-    const stateTarget = US_STATE_SYNONYMS[qLower];
+    const loc = GLOBAL_LOCATION_SYNONYMS[qLower];
     const isTagQuery = ["jazz", "chill", "chillout", "sport", "sports", "news", "rock", "pop", "classical", "culture", "dance"].includes(qLower);
 
     async function fetchFromEndpoint(url) {
@@ -1922,13 +2120,30 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
 
     let allFetched = [];
 
-    // 1. Si la recherche correspond à un État américain (ex: Californie, Hawaï, Géorgie, Iowa, Michigan...)
-    if (stateTarget) {
-      const stateUrl = `${base}/json/stations/search?limit=${limit}&state=${encodeURIComponent(stateTarget)}&countrycode=US&hidebroken=true&order=votes&reverse=true`;
-      const nameUrl = `${base}/json/stations/search?limit=${limit}&name=${encodeURIComponent(stateTarget)}&countrycode=US&hidebroken=true&order=votes&reverse=true`;
+    // 1. Si la recherche correspond à un Pays reconnu (ex: Vietname, Korré du Sude, Allemagne, Espagne, Sénégal...)
+    if (loc && loc.type === "country" && loc.code) {
+      const countryUrl = `${base}/json/stations/search?limit=${limit}&countrycode=${loc.code}&hidebroken=true&order=votes&reverse=true`;
+      const nameUrl = `${base}/json/stations/search?limit=${limit}&name=${encodeURIComponent(loc.en)}&hidebroken=true&order=votes&reverse=true`;
+      const [resCountry, resName] = await Promise.all([fetchFromEndpoint(countryUrl), fetchFromEndpoint(nameUrl)]);
+      allFetched = [...(resCountry || []), ...(resName || [])];
+    }
+    // 2. Si la recherche correspond à un État/Région (ex: Californie, Iowa, Michigan, Goergie, Québec...)
+    else if (loc && loc.type === "state" && loc.state) {
+      const stateUrl = `${base}/json/stations/search?limit=${limit}&state=${encodeURIComponent(loc.state)}&countrycode=${loc.code || 'US'}&hidebroken=true&order=votes&reverse=true`;
+      const nameUrl = `${base}/json/stations/search?limit=${limit}&name=${encodeURIComponent(loc.state)}&countrycode=${loc.code || 'US'}&hidebroken=true&order=votes&reverse=true`;
       const [resState, resName] = await Promise.all([fetchFromEndpoint(stateUrl), fetchFromEndpoint(nameUrl)]);
       allFetched = [...(resState || []), ...(resName || [])];
-    } else {
+    }
+    // 3. Si la recherche correspond à un Continent complet (ex: Afrique, Europe, Azie...)
+    else if (loc && loc.type === "continent" && loc.topCodes) {
+      const promises = loc.topCodes.slice(0, 5).map(cCode => 
+        fetchFromEndpoint(`${base}/json/stations/search?limit=6&countrycode=${cCode}&hidebroken=true&order=votes&reverse=true`)
+      );
+      const resGroup = await Promise.all(promises);
+      allFetched = resGroup.flat();
+    }
+    // 4. Recherche standard par mot-clé, tag ou pays sélectionné
+    else {
       let mainUrl = `${base}/json/stations/search?limit=${limit}&hidebroken=true&order=votes&reverse=true`;
       if (isTagQuery) {
         mainUrl += `&tag=${encodeURIComponent(qLower)}`;
@@ -1972,7 +2187,6 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
     }
 
     return uniqueData.map(st => {
-      // Détection automatique de la fréquence numérique dans le nom (ex: 94.3, 105.5)
       const freqMatch = st.name.match(/\d+([.,]\d+)?/);
       const freq = freqMatch ? freqMatch[0].replace(',', '.') : "";
       const isAM = st.name.toLowerCase().includes("am") || (st.tags && st.tags.toLowerCase().includes("am"));
@@ -1988,20 +2202,28 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
         logoUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
       }
 
-      const stateDisplay = st.state ? st.state.trim() : (stateTarget || "");
+      const assignedContinent = (loc && loc.continent) 
+        ? loc.continent 
+        : getContinentFromCountryCode(st.countrycode);
+
+      const countryDisplay = (loc && loc.type === "country") 
+        ? (loc.fr || loc.en) 
+        : (st.country || "Monde");
+
+      const stateDisplay = st.state ? st.state.trim() : (loc && loc.state ? loc.state : "");
 
       return {
         id: "rb_" + st.stationuuid,
         name: st.name.trim(),
-        country: st.country || "United States",
+        country: countryDisplay,
         state: stateDisplay,
-        city: stateDisplay ? `${stateDisplay}, ${st.country || 'USA'}` : (st.country || "Monde"),
+        city: stateDisplay ? `${stateDisplay}, ${countryDisplay}` : countryDisplay,
         code: flagEmoji,
-        continent: "americas",
+        continent: assignedContinent,
         category: isTagQuery ? qLower : "news",
         frequency: freq,
         band: isAM ? "AM" : (isFM ? "FM" : "WEB"),
-        language: st.language || "English",
+        language: st.language || "International",
         genre: st.tags ? st.tags.split(",").slice(0, 3).join(", ") : "Radio Live",
         streamUrl: st.url_resolved || st.url,
         fallbackUrl: st.url,
