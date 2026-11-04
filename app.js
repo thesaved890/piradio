@@ -121,7 +121,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Résolution intelligente du logo : Logo direct local assets/, logos régionaux (Canada, etc.), Favicon Google 128px ou Badge SVG
   function resolveStationLogo(st) {
-    if (st.logo && !st.logo.includes("Flag_of_") && !st.logo.includes("Globe_icon")) {
+    const isSocialOrGenericLogo = (url) => {
+      if (!url) return false;
+      const u = url.toLowerCase();
+      return u.includes("facebook.com") || u.includes("fb.com") || u.includes("fbcdn") ||
+             u.includes("twitter.com") || u.includes("twimg.com") || u.includes("x.com") ||
+             u.includes("instagram.com") || u.includes("youtube.com") || u.includes("ytimg") ||
+             u.includes("tiktok.com") || u.includes("linkedin.com") ||
+             u.includes("radioking") || u.includes("torontocast") || u.includes("streamguys") ||
+             u.includes("zeno.fm") || u.includes("zeno-fm");
+    };
+
+    if (st.logo && !st.logo.includes("Flag_of_") && !st.logo.includes("Globe_icon") && !isSocialOrGenericLogo(st.logo)) {
       return st.logo;
     }
     const nameLow = (st.name || "").toLowerCase();
@@ -283,8 +294,22 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/senegal-radio-badge.svg";
     }
 
+    const isBenin = (st.code === "🇧🇯") || (st.country && (st.country.toLowerCase().includes("bénin") || st.country.toLowerCase().includes("benin"))) || stState.includes("cotonou") || stState.includes("parakou") || stState.includes("littoral") || stState.includes("borgou") || stState.includes("ouémé") || stState.includes("oueme") || stState.includes("porto-novo") || nameLow.includes("bénin") || nameLow.includes("benin") || nameLow.includes("cotonou") || nameLow.includes("parakou") || nameLow.includes("ortb");
+    if (isBenin) {
+      if (nameLow.includes("cotonou") || nameLow.includes("94.3")) return "assets/logos/radio-cotonou-94-3.svg";
+      if (nameLow.includes("parakou") || nameLow.includes("91.4")) return "assets/logos/ortb-radio-parakou.svg";
+      if (nameLow.includes("ortb") || nameLow.includes("radio bénin") || nameLow.includes("radio benin") || nameLow.includes("98.2")) return "assets/logos/ortb-radio-benin.svg";
+      if (nameLow.includes("tokpa") || nameLow.includes("104.3")) return "assets/logos/radio-tokpa.svg";
+      if (nameLow.includes("capp") || nameLow.includes("99.6")) return "assets/logos/capp-fm.svg";
+      if (nameLow.includes("immacul") || nameLow.includes("94.0")) return "assets/logos/radio-immaculee-conception.svg";
+      if (nameLow.includes("soleil") || nameLow.includes("89.0")) return "assets/logos/soleil-fm-benin.svg";
+      if (nameLow.includes("deeman") || nameLow.includes("90.2")) return "assets/logos/deeman-fm-parakou.svg";
+      if (nameLow.includes("frisson")) return "assets/logos/frisson-radio-benin.svg";
+      return "assets/logos/benin-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
-    if (domain && !domain.includes("torontocast") && !domain.includes("radioking")) {
+    if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
     }
     if (isCanada) return "assets/logos/canada-radio-badge.svg";
@@ -296,6 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isNigeria) return "assets/logos/nigeria-radio-badge.svg";
     if (isCameroon) return "assets/logos/cameroon-radio-badge.svg";
     if (isSenegal) return "assets/logos/senegal-radio-badge.svg";
+    if (isBenin) return "assets/logos/benin-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 
@@ -619,8 +645,76 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   // 3. FILTRAGE ET RECHERCHE AVANCÉE (AXE 2 : FM, AM, PAYS, MOT-CLÉ)
   // ============================================================
+  // Normalisation intelligente pour la déduplication sans faille
+  function normalizeForDedup(name) {
+    return (name || "").toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[\(\)\[\]\-–—•\.\,\/\\]/g, " ")
+      .replace(/\s+/g, " ")
+      .replace(/\b(la nationale|nationale|radio|fm|am|station|live|officiel|official|web)\b/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function getCleanStreamUrl(url) {
+    if (!url) return "";
+    return url.trim().toLowerCase()
+      .replace(/^https?:\/\//, "")
+      .replace(/\?.*$/, "")
+      .replace(/\/+$/, "");
+  }
+
+  function deduplicateStationList(curatedList, dynamicList) {
+    const seenIds = new Set();
+    const seenUrls = new Set();
+    const seenItems = [];
+    const result = [];
+
+    // Priorité absolue aux stations officielles vérifiées (curated)
+    for (const st of (curatedList || [])) {
+      seenIds.add(st.id);
+      const url = getCleanStreamUrl(st.streamUrl);
+      if (url) seenUrls.add(url);
+      const norm = normalizeForDedup(st.name);
+      const country = (st.country || "").toLowerCase().trim();
+      if (norm) seenItems.push({ norm, country, id: st.id });
+      result.push(st);
+    }
+
+    // Ajout des stations dynamiques uniquement si elles ne doublent pas une station officielle
+    for (const st of (dynamicList || [])) {
+      if (seenIds.has(st.id)) continue;
+      const url = getCleanStreamUrl(st.streamUrl);
+      if (url && seenUrls.has(url)) continue;
+
+      const norm = normalizeForDedup(st.name);
+      const country = (st.country || "").toLowerCase().trim();
+
+      // Vérification de collision de nom dans le même pays
+      let isDuplicateName = false;
+      if (norm && norm.length >= 4) {
+        for (const item of seenItems) {
+          const sameCountry = !item.country || !country || item.country === country;
+          if (sameCountry) {
+            if (item.norm === norm || (item.norm.length >= 6 && norm.length >= 6 && (item.norm.includes(norm) || norm.includes(item.norm)))) {
+              isDuplicateName = true;
+              break;
+            }
+          }
+        }
+      }
+      if (isDuplicateName) continue;
+
+      seenIds.add(st.id);
+      if (url) seenUrls.add(url);
+      if (norm) seenItems.push({ norm, country, id: st.id });
+      result.push(st);
+    }
+    return result;
+  }
+
   function getFilteredList() {
-    let list = [...state.stations, ...state.apiStations];
+    let list = deduplicateStationList(state.stations, state.apiStations);
     const isSearching = state.searchQuery.trim() !== "";
 
     // 1. Filtrage par onglet actif (UNIQUEMENT quand aucune recherche n'est en cours)
@@ -1537,8 +1631,9 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const results = await searchRadioBrowserAPI(qNormalized, countryParam, 25);
       if (results && results.length > 0) {
-        const existingIds = new Set([...state.stations.map(s => s.id), ...state.apiStations.map(s => s.id)]);
-        const fresh = results.filter(s => !existingIds.has(s.id));
+        const combined = deduplicateStationList([...state.stations, ...state.apiStations], results);
+        const existingMap = new Set([...state.stations.map(s => s.id), ...state.apiStations.map(s => s.id)]);
+        const fresh = combined.filter(s => !existingMap.has(s.id));
         if (fresh.length > 0) {
           state.apiStations = [...state.apiStations, ...fresh];
           populateCountryDropdown();
@@ -1744,10 +1839,13 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const results = await searchRadioBrowserAPI(state.searchQuery || "news", "", 24);
         if (results && results.length > 0) {
-          const ids = new Set(state.stations.map(s => s.id));
-          const fresh = results.filter(s => !ids.has(s.id));
-          state.apiStations = [...state.apiStations, ...fresh];
-          populateCountryDropdown(); // Mettre à jour les pays avec les nouvelles stations
+          const combined = deduplicateStationList([...state.stations, ...state.apiStations], results);
+          const existingMap = new Set([...state.stations.map(s => s.id), ...state.apiStations.map(s => s.id)]);
+          const fresh = combined.filter(s => !existingMap.has(s.id));
+          if (fresh.length > 0) {
+            state.apiStations = [...state.apiStations, ...fresh];
+            populateCountryDropdown(); // Mettre à jour les pays avec les nouvelles stations
+          }
         }
       } catch (err) {
         console.warn("Erreur API:", err);

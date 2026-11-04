@@ -21,7 +21,7 @@ const CURATED_STATIONS = [
     genre: "Actualités nationales & Débats",
     streamUrl: "https://listen.radioking.com/radio/47608/stream/84430",
     fallbackUrl: "https://listen.radioking.com/radio/47608/stream/84430",
-    logo: "assets/logos/ortb-radio-benin.png",
+    logo: "assets/logos/ortb-radio-benin.svg",
     featured: true
   },
   {
@@ -39,9 +39,27 @@ const CURATED_STATIONS = [
     genre: "Informations régionales Nord Bénin",
     streamUrl: "https://listen.radioking.com/radio/51919/stream/88927",
     fallbackUrl: "https://listen.radioking.com/radio/51919/stream/88927",
-    logo: "assets/logos/ortb-radio-parakou.jpg",
+    logo: "assets/logos/ortb-radio-parakou.svg",
     featured: true,
     locked: true
+  },
+  {
+    id: "radio-cotonou-94-3",
+    name: "Radio Cotonou 94.3 FM",
+    country: "Bénin",
+    city: "Cotonou",
+    state: "Littoral",
+    code: "🇧🇯",
+    continent: "africa",
+    category: "news",
+    frequency: "94.3",
+    band: "FM",
+    language: "Français & Fon",
+    genre: "Musique africaine, Actualités & Culture",
+    streamUrl: "https://stream.zeno.fm/o9bspgm4y78vv",
+    fallbackUrl: "https://stream.zeno.fm/o9bspgm4y78vv",
+    logo: "assets/logos/radio-cotonou-94-3.svg",
+    featured: true
   },
 
   // ==========================================
@@ -2965,14 +2983,41 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("iradio") || nameLow.includes("e-media") || nameLow.includes("90.3")) return "assets/logos/iradio-senegal.svg";
   }
 
-  // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
-  if (st.favicon && st.favicon.startsWith("https://")) {
+  // 1.j Logos officiels Bénin 🇧🇯
+  const isBenin = (cCode === "BJ") || (st.code === "🇧🇯") || (st.country || "").toLowerCase().includes("bénin") || (st.country || "").toLowerCase().includes("benin") || stState.includes("cotonou") || stState.includes("parakou") || stState.includes("littoral") || stState.includes("borgou") || stState.includes("ouémé") || stState.includes("oueme") || stState.includes("porto-novo") || nameLow.includes("bénin") || nameLow.includes("benin") || nameLow.includes("cotonou") || nameLow.includes("parakou") || nameLow.includes("ortb");
+  if (isBenin) {
+    if (nameLow.includes("cotonou") || nameLow.includes("94.3")) return "assets/logos/radio-cotonou-94-3.svg";
+    if (nameLow.includes("parakou") || nameLow.includes("91.4")) return "assets/logos/ortb-radio-parakou.svg";
+    if (nameLow.includes("ortb") || nameLow.includes("radio bénin") || nameLow.includes("radio benin") || nameLow.includes("98.2")) return "assets/logos/ortb-radio-benin.svg";
+    if (nameLow.includes("tokpa") || nameLow.includes("104.3")) return "assets/logos/radio-tokpa.svg";
+    if (nameLow.includes("capp") || nameLow.includes("99.6")) return "assets/logos/capp-fm.svg";
+    if (nameLow.includes("immacul") || nameLow.includes("94.0")) return "assets/logos/radio-immaculee-conception.svg";
+    if (nameLow.includes("soleil") || nameLow.includes("89.0")) return "assets/logos/soleil-fm-benin.svg";
+    if (nameLow.includes("deeman") || nameLow.includes("90.2")) return "assets/logos/deeman-fm-parakou.svg";
+    if (nameLow.includes("frisson")) return "assets/logos/frisson-radio-benin.svg";
+    return "assets/logos/benin-radio-badge.svg";
+  }
+
+  // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
+  const isSocialOrGenericFavicon = (url) => {
+    if (!url) return true;
+    const u = url.toLowerCase();
+    return u.includes("facebook.com") || u.includes("fb.com") || u.includes("fbcdn") ||
+           u.includes("twitter.com") || u.includes("twimg.com") || u.includes("x.com") ||
+           u.includes("instagram.com") || u.includes("youtube.com") || u.includes("ytimg") ||
+           u.includes("tiktok.com") || u.includes("linkedin.com") ||
+           u.includes("radioking") || u.includes("torontocast") || u.includes("streamguys") ||
+           u.includes("zeno.fm") || u.includes("zeno-fm");
+  };
+
+  // 2. Favicon HTTPS officiel fourni par l'API Radio Browser (filtré contre les réseaux sociaux)
+  if (st.favicon && st.favicon.startsWith("https://") && !isSocialOrGenericFavicon(st.favicon)) {
     return st.favicon;
   }
 
   // 3. Favicon haute résolution via domaine racine
   const domain = getDomainFromUrl(st.homepage);
-  if (domain && !domain.includes("torontocast") && !domain.includes("radioking") && !domain.includes("streamguys")) {
+  if (domain && !isSocialOrGenericFavicon(domain)) {
     return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
   }
 
@@ -3003,6 +3048,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isSenegal) {
     return "assets/logos/senegal-radio-badge.svg";
+  }
+  if (isBenin) {
+    return "assets/logos/benin-radio-badge.svg";
   }
 
   return "";

@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v4.7
+// Pi Radio • Service Worker v4.8
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v4.7';
+const CACHE_NAME = 'piradio-v4.8';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,17 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Bénin 🇧🇯
+  './assets/logos/benin-radio-badge.svg',
+  './assets/logos/radio-cotonou-94-3.svg',
+  './assets/logos/ortb-radio-benin.svg',
+  './assets/logos/ortb-radio-parakou.svg',
+  './assets/logos/radio-tokpa.svg',
+  './assets/logos/capp-fm.svg',
+  './assets/logos/radio-immaculee-conception.svg',
+  './assets/logos/soleil-fm-benin.svg',
+  './assets/logos/deeman-fm-parakou.svg',
+  './assets/logos/frisson-radio-benin.svg',
   // Logos officiels Sénégal 🇸🇳
   './assets/logos/senegal-radio-badge.svg',
   './assets/logos/rts-radio-senegal.svg',
