@@ -101,8 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const timerCountdownBadge = document.getElementById("timerCountdownBadge");
   const dataSaverToggle = document.getElementById("dataSaverToggle");
   const clearCacheBtn = document.getElementById("clearCacheBtn");
-  const pwaInstallBtn = document.getElementById("pwaInstallBtn");
-  const pwaInstalledNotice = document.getElementById("pwaInstalledNotice");
+  const pwaInstallBtn = null;
+  const pwaInstalledNotice = null;
 
   // Modale Licence Poste Pi Radio (Étape 2 & 3)
   const receiverModal = document.getElementById("receiverModal");
@@ -956,6 +956,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function togglePlayback() {
     if (!state.pioneerUser) {
+      if (!state.currentStation) {
+        const list = getFilteredList();
+        if (list.length > 0) state.pendingStationToPlay = list[0];
+      } else {
+        state.pendingStationToPlay = state.currentStation;
+      }
       openAuthGateModal();
       return;
     }
@@ -1144,6 +1150,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     authBtn.classList.add("loading");
     authBtnText.textContent = "Connexion...";
+    if (authGateConnectBtn) {
+      authGateConnectBtn.classList.add("loading");
+      authGateConnectBtn.innerHTML = `<span>⏳</span> <span>Connexion en cours...</span>`;
+    }
+
+    function resetAuthButtons() {
+      authBtn.classList.remove("loading");
+      if (authGateConnectBtn) {
+        authGateConnectBtn.classList.remove("loading");
+        const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+        authGateConnectBtn.innerHTML = `<span>⚡</span> <span data-i18n="authGateBtn">${t.authGateBtn || "Se connecter avec Pi Network"}</span>`;
+      }
+      updateAuthUI();
+    }
 
     const isPiBrowser = /PiBrowser/i.test(navigator.userAgent);
 
@@ -1153,8 +1173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let authTimedOut = false;
         const timer = setTimeout(() => {
           authTimedOut = true;
-          authBtn.classList.remove("loading");
-          updateAuthUI();
+          resetAuthButtons();
           showToast("Délai de connexion Pi dépassé. Veuillez réessayer.", "error");
         }, 12000);
 
@@ -1166,7 +1185,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clearTimeout(timer);
             state.pioneerUser = auth.user;
             localStorage.setItem("piradio_user", JSON.stringify(auth.user));
-            updateAuthUI();
+            resetAuthButtons();
             closeAuthGateModal();
             showToast(`Bienvenue @${auth.user.username} !`);
             if (state.pendingStationToPlay) {
@@ -1180,18 +1199,16 @@ document.addEventListener("DOMContentLoaded", () => {
             clearTimeout(timer);
             console.warn("[Pi Radio] Erreur Pi.authenticate :", err);
             showToast("Erreur de connexion Pi Network.");
-            authBtn.classList.remove("loading");
-            updateAuthUI();
+            resetAuthButtons();
           });
       } catch (e) {
         console.warn("[Pi Radio] Exception authenticate :", e);
-        authBtn.classList.remove("loading");
-        updateAuthUI();
+        resetAuthButtons();
       }
     } else {
       // Hors Pi Browser (ordinateur / Chrome / tests de développement)
       setTimeout(() => {
-        authBtn.classList.remove("loading");
+        resetAuthButtons();
         simulatePiLogin();
         closeAuthGateModal();
         showToast("Session Démo connectée (@PioneerGlobal). Dans le Pi Browser avec Developer Portal, votre compte réel sera connecté !");
