@@ -119,16 +119,37 @@ document.addEventListener("DOMContentLoaded", () => {
     return `data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23140b27' stroke='%23f3b43f' stroke-width='2'/%3E%3Ctext x='50%25' y='64%25' font-size='44' text-anchor='middle'%3E${safeCode}%3C/text%3E%3C/svg%3E`;
   }
 
-  // Résolution intelligente du logo : Logo direct local assets/, logo HTTPS, ou Google Favicon Service 128px via domaine, ou Drapeau SVG
+  // Résolution intelligente du logo : Logo direct local assets/, logos régionaux (Canada, etc.), Favicon Google 128px ou Badge SVG
   function resolveStationLogo(st) {
     if (st.logo && !st.logo.includes("Flag_of_") && !st.logo.includes("Globe_icon")) {
       return st.logo;
     }
+    const nameLow = (st.name || "").toLowerCase();
+    const isCanada = (st.code === "🇨🇦") || (st.country && st.country.toLowerCase().includes("canada"));
+
+    if (isCanada || nameLow.includes("canada") || nameLow.includes("toronto") || nameLow.includes("montreal")) {
+      if (nameLow.includes("reggae chill")) return "assets/logos/reggae-chill-cafe.svg";
+      if (nameLow.includes("labgate")) return "assets/logos/labgate-radio.svg";
+      if (nameLow.includes("100 greatest") || nameLow.includes("greatest of the 80")) return "assets/logos/100-greatest-80s.svg";
+      if (nameLow.includes("nature radio") || nameLow.includes("rain")) return "assets/logos/nature-radio-rain.svg";
+      if (nameLow.includes("ctv news") || nameLow.includes("ctv")) return "assets/logos/ctv-news-audio.svg";
+      if (nameLow.includes("bluesflac")) return "assets/logos/radio-bluesflac.svg";
+      if (nameLow.includes("vibrazioni") || nameLow.includes("rdmix")) return "assets/logos/vibrazioni-rock.svg";
+      if (nameLow.includes("cbc radio") || nameLow.includes("cbc one") || nameLow.includes("cbc 1")) return "assets/logos/cbc-radio-one.png";
+      if (nameLow.includes("radio-canada") || nameLow.includes("première") || nameLow.includes("premiere")) return "assets/logos/radio-canada-premiere.png";
+      if (nameLow.includes("680 news") || nameLow.includes("citynews")) return "assets/logos/680-news-toronto.png";
+      if (nameLow.includes("newstalk 1010") || nameLow.includes("cfrb")) return "assets/logos/newstalk-1010.png";
+      if (nameLow.includes("chronix")) return "assets/logos/chronix-radio.png";
+      if (nameLow.includes("calm radio")) return "assets/logos/calm-radio.png";
+      if (nameLow.includes("ancient fm")) return "assets/logos/ancient-fm.png";
+      if (isCanada) return "assets/logos/canada-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
-    if (domain) {
+    if (domain && !domain.includes("torontocast") && !domain.includes("radioking")) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
     }
-    return getFlagFallback(st.code);
+    return isCanada ? "assets/logos/canada-radio-badge.svg" : getFlagFallback(st.code);
   }
 
   // Chargement et fusion des stations favorites enregistrées par le Pionnier
@@ -557,7 +578,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const isCurrent = state.currentStation && state.currentStation.id === st.id;
     const isCardPlaying = isCurrent && state.isPlaying;
     const isFav = state.favorites.includes(st.id);
-    const fallbackLogo = getFlagFallback(st.code);
+    const isCanada = (st.code === "🇨🇦") || (st.country && st.country.toLowerCase().includes("canada"));
+    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : getFlagFallback(st.code);
     const resolvedLogo = resolveStationLogo(st);
     
     const badgeHtml = st.frequency 
@@ -933,7 +955,8 @@ document.addEventListener("DOMContentLoaded", () => {
     state.retryCount = 0;
 
     const streamToLoad = useFallback && station.fallbackUrl ? station.fallbackUrl : station.streamUrl;
-    const fallbackLogo = getFlagFallback(station.code);
+    const isCanada = (station.code === "🇨🇦") || (station.country && station.country.toLowerCase().includes("canada"));
+    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : getFlagFallback(station.code);
     const resolvedLogo = resolveStationLogo(station);
 
     playerStationTitle.textContent = station.name;

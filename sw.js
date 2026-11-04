@@ -1,7 +1,7 @@
 // Pi Radio • Service Worker v3.4
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v3.8';
+const CACHE_NAME = 'piradio-v3.9';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -96,6 +96,22 @@ const PRECACHE_ASSETS = [
   './assets/logos/radio-tiempo-89-5.png',
   './assets/logos/fox-sports-640-am.png',
   './assets/logos/cbn-sao-paulo.png',
+  // Logos officiels Canada 🇨🇦
+  './assets/logos/cbc-radio-one.png',
+  './assets/logos/radio-canada-premiere.png',
+  './assets/logos/680-news-toronto.png',
+  './assets/logos/ancient-fm.png',
+  './assets/logos/reggae-chill-cafe.svg',
+  './assets/logos/100-greatest-80s.svg',
+  './assets/logos/calm-radio.png',
+  './assets/logos/chronix-radio.png',
+  './assets/logos/newstalk-1010.png',
+  './assets/logos/labgate-radio.svg',
+  './assets/logos/nature-radio-rain.svg',
+  './assets/logos/ctv-news-audio.svg',
+  './assets/logos/radio-bluesflac.svg',
+  './assets/logos/vibrazioni-rock.svg',
+  './assets/logos/canada-radio-badge.svg',
   // Logos officiels Asie
   './assets/logos/nhk-world-japan.png',
   './assets/logos/j-pop-powerplay.png',

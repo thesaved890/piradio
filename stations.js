@@ -1132,6 +1132,124 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 6.b 🇨🇦 CANADA (AMÉRIQUES)
+  // ==========================================
+  {
+    id: "cbc-radio-one-toronto",
+    name: "CBC Radio One 99.1 FM (Toronto)",
+    country: "Canada",
+    city: "Toronto",
+    state: "Ontario",
+    code: "🇨🇦",
+    continent: "americas",
+    category: "news",
+    frequency: "99.1",
+    band: "FM",
+    language: "English",
+    genre: "Canadian & World News, In-depth Current Affairs",
+    streamUrl: "https://cbcradiolive.akamaized.net/hls/live/2041036/ES_R1ETR/master.m3u8",
+    fallbackUrl: "https://cbcliveradio.akamaized.net/hls/live/2041036/ES_R1ETR/master.m3u8",
+    logo: "assets/logos/cbc-radio-one.png",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "radio-canada-premiere-montreal",
+    name: "ICI Radio-Canada Première 95.1 FM (Montréal)",
+    country: "Canada",
+    city: "Montréal",
+    state: "Quebec",
+    code: "🇨🇦",
+    continent: "americas",
+    category: "news",
+    frequency: "95.1",
+    band: "FM",
+    language: "Français",
+    genre: "Actualités, culture et débats francophones du Canada",
+    streamUrl: "https://rcavliveaudio.akamaized.net/hls/live/2006635/P-2QMTL0_MTL/playlist.m3u8",
+    fallbackUrl: "https://rcavliveaudio.akamaized.net/hls/live/2006635/P-2QMTL0_MTL/playlist.m3u8",
+    logo: "assets/logos/radio-canada-premiere.png",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "680-news-toronto",
+    name: "CityNews 680 AM (Toronto)",
+    country: "Canada",
+    city: "Toronto",
+    state: "Ontario",
+    code: "🇨🇦",
+    continent: "americas",
+    category: "news",
+    frequency: "680",
+    band: "AM",
+    language: "English",
+    genre: "24/7 Breaking News, Traffic & Weather",
+    streamUrl: "https://rogers-hls.leanstream.co/rogers/tor680.stream/playlist.m3u8",
+    fallbackUrl: "https://rogers-hls.leanstream.co/rogers/tor680.stream/playlist.m3u8",
+    logo: "assets/logos/680-news-toronto.png",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "ancient-fm-canada",
+    name: "Ancient FM (Toronto, Canada)",
+    country: "Canada",
+    city: "Toronto",
+    state: "Ontario",
+    code: "🇨🇦",
+    continent: "americas",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Medieval & Renaissance Commercial-Free Classical",
+    streamUrl: "https://mediaserv73.live-streams.nl:18058/stream",
+    fallbackUrl: "https://mediaserv73.live-streams.nl:18058/stream",
+    logo: "assets/logos/ancient-fm.png",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "reggae-chill-cafe-canada",
+    name: "Reggae Chill Cafe (Toronto, Canada)",
+    country: "Canada",
+    city: "Toronto",
+    state: "Ontario",
+    code: "🇨🇦",
+    continent: "americas",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Roots, Dub & Chillout Reggae Melodies",
+    streamUrl: "https://maggie.torontocast.com:2020/stream/reggaechillcafe",
+    fallbackUrl: "https://maggie.torontocast.com:2020/stream/reggaechillcafe",
+    logo: "assets/logos/reggae-chill-cafe.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "100-greatest-80s-canada",
+    name: "100 Greatest of the 80s (Canada)",
+    country: "Canada",
+    city: "Toronto",
+    state: "Ontario",
+    code: "🇨🇦",
+    continent: "americas",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Non-Stop Iconic 80s Pop, Rock & Synth Classics",
+    streamUrl: "https://maggie.torontocast.com:2020/stream/100greatestofthe80s",
+    fallbackUrl: "https://maggie.torontocast.com:2020/stream/100greatestofthe80s",
+    logo: "assets/logos/100-greatest-80s.svg",
+    featured: false,
+    locked: false
+  },
+
+  // ==========================================
   // 7. 🇫🇷 FRANCE & 🇬🇧 ROYAUME-UNI & 🇪🇸 ESPAGNE & 🇩🇪 ALLEMAGNE (EUROPE)
   // ==========================================
   {
@@ -2089,6 +2207,49 @@ function getContinentFromCountryCode(code) {
   return "all";
 }
 
+// Résolveur de logo haute fidélité par région (Canada, etc.)
+function resolveRegionalStationLogo(st) {
+  const nameLow = (st.name || "").toLowerCase();
+  const cCode = (st.countrycode || "").toUpperCase();
+  const isCanada = cCode === "CA" || (st.country || "").toLowerCase().includes("canada");
+
+  // 1. Logos officiels et stations majeures du Canada 🇨🇦
+  if (isCanada || nameLow.includes("canada") || nameLow.includes("toronto") || nameLow.includes("montreal")) {
+    if (nameLow.includes("reggae chill")) return "assets/logos/reggae-chill-cafe.svg";
+    if (nameLow.includes("labgate")) return "assets/logos/labgate-radio.svg";
+    if (nameLow.includes("100 greatest") || nameLow.includes("greatest of the 80")) return "assets/logos/100-greatest-80s.svg";
+    if (nameLow.includes("nature radio") || nameLow.includes("rain")) return "assets/logos/nature-radio-rain.svg";
+    if (nameLow.includes("ctv news") || nameLow.includes("ctv")) return "assets/logos/ctv-news-audio.svg";
+    if (nameLow.includes("bluesflac")) return "assets/logos/radio-bluesflac.svg";
+    if (nameLow.includes("vibrazioni") || nameLow.includes("rdmix")) return "assets/logos/vibrazioni-rock.svg";
+    if (nameLow.includes("cbc radio") || nameLow.includes("cbc one") || nameLow.includes("cbc 1")) return "assets/logos/cbc-radio-one.png";
+    if (nameLow.includes("radio-canada") || nameLow.includes("première") || nameLow.includes("premiere")) return "assets/logos/radio-canada-premiere.png";
+    if (nameLow.includes("680 news") || nameLow.includes("citynews")) return "assets/logos/680-news-toronto.png";
+    if (nameLow.includes("newstalk 1010") || nameLow.includes("cfrb")) return "assets/logos/newstalk-1010.png";
+    if (nameLow.includes("chronix")) return "assets/logos/chronix-radio.png";
+    if (nameLow.includes("calm radio")) return "assets/logos/calm-radio.png";
+    if (nameLow.includes("ancient fm")) return "assets/logos/ancient-fm.png";
+  }
+
+  // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
+  if (st.favicon && st.favicon.startsWith("https://")) {
+    return st.favicon;
+  }
+
+  // 3. Favicon haute résolution via domaine racine
+  const domain = getDomainFromUrl(st.homepage);
+  if (domain && !domain.includes("torontocast") && !domain.includes("radioking") && !domain.includes("streamguys")) {
+    return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
+  }
+
+  // 4. Badge officiel régional si la station est au Canada
+  if (isCanada) {
+    return "assets/logos/canada-radio-badge.svg";
+  }
+
+  return "";
+}
+
 // Moteur de recherche mondial Radio Browser API en temps réel (45 000+ stations)
 async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
   try {
@@ -2193,14 +2354,7 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
       const freqNum = freq ? parseFloat(freq) : null;
       const isFM = (freqNum !== null && freqNum >= 87 && freqNum <= 108) || st.name.toLowerCase().includes(" fm") || st.name.toLowerCase().endsWith("fm");
       const flagEmoji = getCountryFlagEmoji(st.countrycode);
-      
-      const domain = getDomainFromUrl(st.homepage);
-      let logoUrl = "";
-      if (st.favicon && st.favicon.startsWith("https://")) {
-        logoUrl = st.favicon;
-      } else if (domain) {
-        logoUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
-      }
+      const logoUrl = resolveRegionalStationLogo(st);
 
       const assignedContinent = (loc && loc.continent) 
         ? loc.continent 

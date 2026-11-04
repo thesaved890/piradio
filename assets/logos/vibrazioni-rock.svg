@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="vibrabg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#331400"/>
+      <stop offset="100%" stop-color="#110600"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ff3d00"/>
+      <stop offset="100%" stop-color="#ffea00"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#vibrabg)"/>
+  <path d="M70,55 Q100,45 130,55 Q145,100 100,125 Q55,100 70,55 Z" fill="url(#flame)"/>
+  <text x="100" y="92" font-family="'Inter',sans-serif" font-size="18" font-weight="900" fill="#000" text-anchor="middle">70 80 90</text>
+  <text x="100" y="154" font-family="'Inter',sans-serif" font-size="13" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="1">VIBRAZIONI</text>
+  <text x="100" y="172" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#ff9100" text-anchor="middle" letter-spacing="2">ROCK RADIO</text>
+</svg>
