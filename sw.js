@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v4.5
+// Pi Radio • Service Worker v4.6
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v4.5';
+const CACHE_NAME = 'piradio-v4.6';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,25 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Cameroun 🇨🇲
+  './assets/logos/cameroon-radio-badge.svg',
+  './assets/logos/crtv-poste-national.svg',
+  './assets/logos/jambo-fm-douala.svg',
+  './assets/logos/237onair-yaounde.svg',
+  './assets/logos/camerhits-radio.svg',
+  './assets/logos/radio-bonne-nouvelle.svg',
+  './assets/logos/rush-fm-bamenda.svg',
+  './assets/logos/mmuock-community-radio.svg',
+  './assets/logos/eternity-gospel-radio.svg',
+  './assets/logos/radio-voice-of-the-cross.svg',
+  './assets/logos/glory-fm-cameroon.svg',
+  './assets/logos/protestant-voice-radio.svg',
+  './assets/logos/gl-radio-cameroon.svg',
+  './assets/logos/go-music-media.svg',
+  './assets/logos/for-you-radio-douala.svg',
+  './assets/logos/radio-jesus-vient.svg',
+  './assets/logos/ictu-radio-yaounde.svg',
+  './assets/logos/radio-maria-cameroun.png',
   // Logos officiels Afrique & Nigéria 🇳🇬
   './assets/logos/nigeria-radio-badge.svg',
   './assets/logos/rfi-haoussa.svg',

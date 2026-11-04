@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="onairBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="50%" stop-color="#1f1f1f"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <linearGradient id="onairRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1744"/>
+      <stop offset="100%" stop-color="#D50000"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#F3B43F"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#onairBg)"/>
+  <rect width="504" height="504" x="4" y="4" rx="92" fill="none" stroke="url(#gold)" stroke-width="4" stroke-opacity="0.85"/>
+
+  <!-- ON AIR Red Pill -->
+  <g transform="translate(156, 65)">
+    <rect width="200" height="46" rx="23" fill="url(#onairRed)"/>
+    <circle cx="35" cy="23" r="6" fill="#FFFFFF"/>
+    <text x="115" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">ON AIR</text>
+  </g>
+
+  <!-- Big 237 Typography -->
+  <text x="256" y="225" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="120" fill="url(#gold)" text-anchor="middle" letter-spacing="4">237</text>
+  <text x="256" y="285" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="44" fill="#FFFFFF" text-anchor="middle" letter-spacing="8">ONAIR RADIO</text>
+
+  <!-- Slogan & Country -->
+  <text x="256" y="350" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#E0E0E0" text-anchor="middle" letter-spacing="3">LE SON DU CAMEROUN</text>
+  <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="16" fill="#90CAF9" text-anchor="middle" letter-spacing="2">YAOUNDÉ • HIT MUSIC 24/7</text>
+
+  <!-- Live Tag -->
+  <g transform="translate(146, 422)">
+    <rect width="220" height="40" rx="20" fill="#003318" stroke="url(#gold)" stroke-width="2"/>
+    <text x="110" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="16" fill="#00E676" text-anchor="middle" letter-spacing="3">🇨🇲 YAOUNDÉ LIVE</text>
+  </g>
+</svg>

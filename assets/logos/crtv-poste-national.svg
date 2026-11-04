@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crtvBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001F3F"/>
+      <stop offset="50%" stop-color="#003366"/>
+      <stop offset="100%" stop-color="#001428"/>
+    </linearGradient>
+    <linearGradient id="crtvGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="50%" stop-color="#FCD116"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+    <linearGradient id="crtvRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3D00"/>
+      <stop offset="100%" stop-color="#D50000"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#crtvBg)"/>
+  <rect width="504" height="504" x="4" y="4" rx="92" fill="none" stroke="url(#crtvGold)" stroke-width="4" stroke-opacity="0.85"/>
+
+  <!-- Frequency Pill -->
+  <g transform="translate(136, 65)">
+    <rect width="240" height="46" rx="23" fill="url(#crtvGold)"/>
+    <text x="120" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="24" fill="#001F3F" text-anchor="middle" letter-spacing="2">88.8 FM • 89.9 FM</text>
+  </g>
+
+  <!-- Big CRTV Typography -->
+  <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="115" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">CRTV</text>
+  <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="38" fill="url(#crtvGold)" text-anchor="middle" letter-spacing="6">POSTE NATIONAL</text>
+
+  <!-- Slogan & Country -->
+  <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#BBDEFB" text-anchor="middle" letter-spacing="3">CAMEROON RADIO TELEVISION</text>
+  <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">LE CŒUR DE LA NATION • 24/7</text>
+
+  <!-- Live Tag -->
+  <g transform="translate(146, 422)">
+    <rect width="220" height="40" rx="20" fill="#003318" stroke="url(#crtvGold)" stroke-width="2"/>
+    <text x="110" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="16" fill="#00E676" text-anchor="middle" letter-spacing="3">🇨🇲 YAOUNDÉ LIVE</text>
+  </g>
+</svg>

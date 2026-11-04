@@ -132,10 +132,114 @@ const CURATED_STATIONS = [
     featured: true
   },
   {
+    id: "crtv-poste-national",
+    name: "CRTV Poste National 88.8 FM",
+    country: "Cameroun",
+    city: "Yaoundé",
+    state: "Centre",
+    code: "🇨🇲",
+    continent: "africa",
+    category: "news",
+    frequency: "88.8",
+    band: "FM",
+    language: "Français & English",
+    genre: "Radio Télévision Nationale du Cameroun, Actualités & Culture",
+    streamUrl: "https://10gb1.acangroup.org:8000/postenational",
+    fallbackUrl: "https://10gb1.acangroup.org:8000/postenational",
+    logo: "assets/logos/crtv-poste-national.svg",
+    featured: true
+  },
+  {
+    id: "jambo-fm-douala",
+    name: "Jambo FM Douala",
+    country: "Cameroun",
+    city: "Douala",
+    state: "Littoral",
+    code: "🇨🇲",
+    continent: "africa",
+    category: "culture",
+    band: "WEB",
+    language: "Français & Pidgin",
+    genre: "L'Afrique en Couleurs, Musique Urbaine & Divertissement",
+    streamUrl: "https://kdevstream.myvnc.com/listen/jambofm/jambofm",
+    fallbackUrl: "https://kdevstream.myvnc.com/listen/jambofm/jambofm",
+    logo: "assets/logos/jambo-fm-douala.svg",
+    featured: true
+  },
+  {
+    id: "237onair-yaounde",
+    name: "237ONAIR Yaoundé",
+    country: "Cameroun",
+    city: "Yaoundé",
+    state: "Centre",
+    code: "🇨🇲",
+    continent: "africa",
+    category: "culture",
+    band: "WEB",
+    language: "Français & English",
+    genre: "Le Son du 237, Afrobeats, Makossa & Hit Music",
+    streamUrl: "https://radio.237onair.com/listen/237onair/radio.mp3",
+    fallbackUrl: "https://radio.237onair.com/listen/237onair/radio.mp3",
+    logo: "assets/logos/237onair-yaounde.svg",
+    featured: true
+  },
+  {
+    id: "camerhits-radio",
+    name: "CamerHits Radio",
+    country: "Cameroun",
+    city: "Yaoundé",
+    state: "Centre",
+    code: "🇨🇲",
+    continent: "africa",
+    category: "culture",
+    band: "WEB",
+    language: "Français & English",
+    genre: "100% 237 Hits, Makossa, Bikutsi & Musiques Camerounaises",
+    streamUrl: "https://camerhits.com/icecast/stream",
+    fallbackUrl: "https://camerhits.com/icecast/stream",
+    logo: "assets/logos/camerhits-radio.svg",
+    featured: false
+  },
+  {
+    id: "radio-bonne-nouvelle",
+    name: "Radio Bonne Nouvelle Douala",
+    country: "Cameroun",
+    city: "Douala",
+    state: "Littoral",
+    code: "🇨🇲",
+    continent: "africa",
+    category: "culture",
+    band: "WEB",
+    language: "Français",
+    genre: "Évangile, Société, Paix & Musique chrétienne",
+    streamUrl: "https://radiobonnenouvelle2.ice.infomaniak.ch/radiobonnenouvelle2-96.mp3",
+    fallbackUrl: "https://radiobonnenouvelle2.ice.infomaniak.ch/radiobonnenouvelle2-96.mp3",
+    logo: "assets/logos/radio-bonne-nouvelle.svg",
+    featured: false
+  },
+  {
+    id: "mmuock-community-radio",
+    name: "Mmuock Community Radio",
+    country: "Cameroun",
+    city: "Alou",
+    state: "Southwest",
+    code: "🇨🇲",
+    continent: "africa",
+    category: "culture",
+    band: "WEB",
+    language: "English & Mmuock",
+    genre: "Community Voice, Cultural Heritage of Southwest Cameroon",
+    streamUrl: "https://a7.asurahosting.com/listen/mmuock_community_radio_/radio.mp3",
+    fallbackUrl: "https://a7.asurahosting.com/listen/mmuock_community_radio_/radio.mp3",
+    logo: "assets/logos/mmuock-community-radio.svg",
+    featured: false
+  },
+  {
     id: "radio-maria-cameroun",
     name: "Radio Maria Cameroun 99.8 FM",
     country: "Cameroun",
-    code: "🇨🇲",
+    city: "Yaoundé",
+    state: "Centre",
     code: "🇨🇲",
     continent: "africa",
     category: "culture",
@@ -2501,6 +2605,12 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "yaounde": { code: "CM", en: "Cameroon", fr: "Yaoundé", continent: "africa", type: "country" },
   "yaoundé": { code: "CM", en: "Cameroon", fr: "Yaoundé", continent: "africa", type: "country" },
   "douala": { code: "CM", en: "Cameroon", fr: "Douala", continent: "africa", type: "country" },
+  "bamenda": { code: "CM", en: "Cameroon", fr: "Bamenda", continent: "africa", type: "country" },
+  "buea": { code: "CM", en: "Cameroon", fr: "Buéa", continent: "africa", type: "country" },
+  "buéa": { code: "CM", en: "Cameroon", fr: "Buéa", continent: "africa", type: "country" },
+  "limbe": { code: "CM", en: "Cameroon", fr: "Limbé", continent: "africa", type: "country" },
+  "limbé": { code: "CM", en: "Cameroon", fr: "Limbé", continent: "africa", type: "country" },
+  "ebolowa": { code: "CM", en: "Cameroon", fr: "Ebolowa", continent: "africa", type: "country" },
 
   "togo": { code: "TG", en: "Togo", fr: "Togo", continent: "africa", type: "country" },
   "lome": { code: "TG", en: "Togo", fr: "Lomé", continent: "africa", type: "country" },
@@ -2747,6 +2857,28 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("kcity")) return "assets/logos/kcity-radio-abuja.svg";
   }
 
+  // 1.h Logos officiels Cameroun 🇨🇲
+  const isCameroon = (cCode === "CM") || (st.code === "🇨🇲") || (st.country || "").toLowerCase().includes("cameroun") || (st.country || "").toLowerCase().includes("cameroon") || stState.includes("yaoundé") || stState.includes("yaounde") || stState.includes("douala") || stState.includes("bamenda") || stState.includes("buea") || stState.includes("limbe") || stState.includes("ebolowa") || nameLow.includes("cameroun") || nameLow.includes("cameroon") || nameLow.includes("yaounde") || nameLow.includes("douala") || nameLow.includes("crtv") || nameLow.includes("237");
+  if (isCameroon) {
+    if (nameLow.includes("crtv") || nameLow.includes("poste national")) return "assets/logos/crtv-poste-national.svg";
+    if (nameLow.includes("jambo")) return "assets/logos/jambo-fm-douala.svg";
+    if (nameLow.includes("237") || nameLow.includes("onair")) return "assets/logos/237onair-yaounde.svg";
+    if (nameLow.includes("camerhits") || nameLow.includes("camer hits")) return "assets/logos/camerhits-radio.svg";
+    if (nameLow.includes("bonne nouvelle")) return "assets/logos/radio-bonne-nouvelle.svg";
+    if (nameLow.includes("rush fm") || nameLow.includes("104.5") || nameLow.includes("bamenda")) return "assets/logos/rush-fm-bamenda.svg";
+    if (nameLow.includes("mmuock")) return "assets/logos/mmuock-community-radio.svg";
+    if (nameLow.includes("eternity") || nameLow.includes("limbe")) return "assets/logos/eternity-gospel-radio.svg";
+    if (nameLow.includes("voice of the cross") || nameLow.includes("rvc")) return "assets/logos/radio-voice-of-the-cross.svg";
+    if (nameLow.includes("glory fm") || nameLow.includes("ebolowa")) return "assets/logos/glory-fm-cameroon.svg";
+    if (nameLow.includes("protestant voice")) return "assets/logos/protestant-voice-radio.svg";
+    if (nameLow.includes("god's love") || nameLow.includes("gl radio") || nameLow.includes("gospel jamburee") || nameLow.includes("koumé") || nameLow.includes("koume")) return "assets/logos/gl-radio-cameroon.svg";
+    if (nameLow.includes("go music")) return "assets/logos/go-music-media.svg";
+    if (nameLow.includes("for you")) return "assets/logos/for-you-radio-douala.svg";
+    if (nameLow.includes("jesus vient") || nameLow.includes("jésus vient")) return "assets/logos/radio-jesus-vient.svg";
+    if (nameLow.includes("ict university") || nameLow.includes("ictu")) return "assets/logos/ictu-radio-yaounde.svg";
+    if (nameLow.includes("radio maria")) return "assets/logos/radio-maria-cameroun.png";
+  }
+
   // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
   if (st.favicon && st.favicon.startsWith("https://")) {
     return st.favicon;
@@ -2779,6 +2911,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isNigeria) {
     return "assets/logos/nigeria-radio-badge.svg";
+  }
+  if (isCameroon) {
+    return "assets/logos/cameroon-radio-badge.svg";
   }
 
   return "";
