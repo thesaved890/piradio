@@ -145,11 +145,24 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isCanada) return "assets/logos/canada-radio-badge.svg";
     }
 
+    const stState = (st.state || "").toLowerCase();
+    const isMichigan = stState.includes("michigan") || nameLow.includes("michigan") || nameLow.includes("ann arbor") || nameLow.includes("east lansing") || nameLow.includes("detroit");
+    if (isMichigan) {
+      if (nameLow.includes("wuom") || nameLow.includes("michigan radio") || nameLow.includes("michigan public")) return "assets/logos/wuom-michigan-radio.png";
+      if (nameLow.includes("wkar")) return "assets/logos/wkar-east-lansing.png";
+      if (nameLow.includes("wemu")) return "assets/logos/wemu-89-1-michigan.svg";
+      if (nameLow.includes("muskegon")) return "assets/logos/muskegon-channel-radio.svg";
+      if (nameLow.includes("drumbase")) return "assets/logos/drumbase-radio.svg";
+      return "assets/logos/michigan-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !domain.includes("torontocast") && !domain.includes("radioking")) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
     }
-    return isCanada ? "assets/logos/canada-radio-badge.svg" : getFlagFallback(st.code);
+    if (isCanada) return "assets/logos/canada-radio-badge.svg";
+    if (isMichigan) return "assets/logos/michigan-radio-badge.svg";
+    return getFlagFallback(st.code);
   }
 
   // Chargement et fusion des stations favorites enregistrées par le Pionnier
@@ -579,7 +592,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const isCardPlaying = isCurrent && state.isPlaying;
     const isFav = state.favorites.includes(st.id);
     const isCanada = (st.code === "🇨🇦") || (st.country && st.country.toLowerCase().includes("canada"));
-    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : getFlagFallback(st.code);
+    const isMichigan = (st.state && st.state.toLowerCase().includes("michigan")) || (st.name && st.name.toLowerCase().includes("michigan"));
+    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : (isMichigan ? "assets/logos/michigan-radio-badge.svg" : getFlagFallback(st.code));
     const resolvedLogo = resolveStationLogo(st);
     
     const badgeHtml = st.frequency 
@@ -956,7 +970,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const streamToLoad = useFallback && station.fallbackUrl ? station.fallbackUrl : station.streamUrl;
     const isCanada = (station.code === "🇨🇦") || (station.country && station.country.toLowerCase().includes("canada"));
-    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : getFlagFallback(station.code);
+    const isMichigan = (station.state && station.state.toLowerCase().includes("michigan")) || (station.name && station.name.toLowerCase().includes("michigan"));
+    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : (isMichigan ? "assets/logos/michigan-radio-badge.svg" : getFlagFallback(station.code));
     const resolvedLogo = resolveStationLogo(station);
 
     playerStationTitle.textContent = station.name;

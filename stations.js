@@ -1131,6 +1131,84 @@ const CURATED_STATIONS = [
     featured: true
   },
 
+  // --- 🇺🇸 Michigan ---
+  {
+    id: "wuom-michigan-radio",
+    name: "WUOM 91.7 FM Michigan Public (NPR)",
+    country: "États-Unis",
+    city: "Ann Arbor, MI",
+    state: "Michigan",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "news",
+    frequency: "91.7",
+    band: "FM",
+    language: "English",
+    genre: "In-Depth Michigan & World News, NPR Journalism",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WUOMFM.mp3",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WUOMFM.mp3",
+    logo: "assets/logos/wuom-michigan-radio.png",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "wkar-east-lansing-michigan",
+    name: "WKAR 90.5 FM (East Lansing, MI)",
+    country: "États-Unis",
+    city: "East Lansing, MI",
+    state: "Michigan",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "culture",
+    frequency: "90.5",
+    band: "FM",
+    language: "English",
+    genre: "Classical Music, NPR News & Arts from MSU",
+    streamUrl: "https://wkar.streamguys1.com/wkar-fm-mp3",
+    fallbackUrl: "https://wkar.streamguys1.com/wkar-fm-mp3",
+    logo: "assets/logos/wkar-east-lansing.png",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "wemu-michigan-jazz",
+    name: "WEMU 89.1 FM (Ypsilanti / Ann Arbor, MI)",
+    country: "États-Unis",
+    city: "Ypsilanti, MI",
+    state: "Michigan",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "89.1",
+    band: "FM",
+    language: "English",
+    genre: "NPR News, Legendary Jazz, Blues & Roots",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WEMUFM.mp3",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WEMUFM.mp3",
+    logo: "assets/logos/wemu-89-1-michigan.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "muskegon-channel-radio-mi",
+    name: "Muskegon Channel Radio (Muskegon, MI)",
+    country: "États-Unis",
+    city: "Muskegon, MI",
+    state: "Michigan",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "West Michigan Hits, Local Artists & Coastal Vibes",
+    streamUrl: "https://muskegonchannelradio.radioca.st/stream",
+    fallbackUrl: "https://muskegonchannelradio.radioca.st/stream",
+    logo: "assets/logos/muskegon-channel-radio.svg",
+    featured: false,
+    locked: true
+  },
+
   // ==========================================
   // 6.b 🇨🇦 CANADA (AMÉRIQUES)
   // ==========================================
@@ -2231,6 +2309,17 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("ancient fm")) return "assets/logos/ancient-fm.png";
   }
 
+  // 1.b Logos officiels Michigan 🇺🇸
+  const stState = (st.state || "").toLowerCase();
+  const isMichigan = stState.includes("michigan") || nameLow.includes("michigan") || nameLow.includes("ann arbor") || nameLow.includes("east lansing") || nameLow.includes("detroit");
+  if (isMichigan) {
+    if (nameLow.includes("wuom") || nameLow.includes("michigan radio") || nameLow.includes("michigan public")) return "assets/logos/wuom-michigan-radio.png";
+    if (nameLow.includes("wkar")) return "assets/logos/wkar-east-lansing.png";
+    if (nameLow.includes("wemu")) return "assets/logos/wemu-89-1-michigan.svg";
+    if (nameLow.includes("muskegon")) return "assets/logos/muskegon-channel-radio.svg";
+    if (nameLow.includes("drumbase")) return "assets/logos/drumbase-radio.svg";
+  }
+
   // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
   if (st.favicon && st.favicon.startsWith("https://")) {
     return st.favicon;
@@ -2242,9 +2331,12 @@ function resolveRegionalStationLogo(st) {
     return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
   }
 
-  // 4. Badge officiel régional si la station est au Canada
+  // 4. Badges officiels régionaux de secours
   if (isCanada) {
     return "assets/logos/canada-radio-badge.svg";
+  }
+  if (isMichigan) {
+    return "assets/logos/michigan-radio-badge.svg";
   }
 
   return "";

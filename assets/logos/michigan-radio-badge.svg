@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mibg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#142340"/>
+      <stop offset="100%" stop-color="#060c18"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#mibg)" stroke="#f3b43f" stroke-width="2"/>
+  <!-- Broadcast tower with waves -->
+  <line x1="100" y1="45" x2="100" y2="120" stroke="#f3b43f" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="100,50 82,120 118,120" fill="none" stroke="#f3b43f" stroke-width="2.5"/>
+  <line x1="88" y1="95" x2="112" y2="95" stroke="#f3b43f" stroke-width="2"/>
+  <circle cx="100" cy="45" r="5" fill="#00e676"/>
+  <!-- Waves -->
+  <path d="M75,60 A35,35 0 0,0 75,100" fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M125,60 A35,35 0 0,1 125,100" fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="100" y="152" font-family="'Inter',sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">MICHIGAN</text>
+  <text x="100" y="172" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#f3b43f" text-anchor="middle" letter-spacing="3">RADIO DIRECT</text>
+</svg>

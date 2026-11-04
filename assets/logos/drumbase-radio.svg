@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="drumbg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3d1435"/>
+      <stop offset="100%" stop-color="#140512"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#drumbg)" stroke="#e040fb" stroke-width="2"/>
+  <circle cx="100" cy="80" r="36" fill="none" stroke="#e040fb" stroke-width="4"/>
+  <polygon points="90,65 118,80 90,95" fill="#f3b43f"/>
+  <text x="100" y="148" font-family="'Inter',sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">DRUMBASE</text>
+  <text x="100" y="170" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#e040fb" text-anchor="middle" letter-spacing="2">DRUM &amp; BASS • MI</text>
+</svg>
