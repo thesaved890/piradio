@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.0
+// Pi Radio • Service Worker v5.1
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.0';
+const CACHE_NAME = 'piradio-v5.1';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,23 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Mali 🇲🇱 (v5.1)
+  './assets/logos/mali-radio-badge.svg',
+  './assets/logos/radio-kledu.svg',
+  './assets/logos/noura-fm-bamako.svg',
+  './assets/logos/radio-bougouni-kunkan.svg',
+  './assets/logos/radio-kassara-kayes.svg',
+  './assets/logos/radio-malijet.svg',
+  './assets/logos/radio-neneba-fm.svg',
+  './assets/logos/radio-tissa-mamelon.svg',
+  './assets/logos/kalux-fm-bamako.svg',
+  './assets/logos/radio-woyowayanko.svg',
+  './assets/logos/radio-yele-sagabali.svg',
+  './assets/logos/radio-madjoura-touba.svg',
+  './assets/logos/joliba-fm-mali.svg',
+  './assets/logos/radio-bamakan.svg',
+  './assets/logos/radio-dambe-mali.svg',
+  './assets/logos/ortm-chaine2-mali.svg',
   // Logos officiels Ghana 🇬🇭
   './assets/logos/ghana-radio-badge.svg',
   './assets/logos/joy-fm-ghana.svg',

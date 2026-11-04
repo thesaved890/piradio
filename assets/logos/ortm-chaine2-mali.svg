@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ortmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1a12"/>
+      <stop offset="50%" stop-color="#142e1f"/>
+      <stop offset="100%" stop-color="#040d08"/>
+    </linearGradient>
+    <linearGradient id="ortmGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C853"/>
+      <stop offset="100%" stop-color="#69F0AE"/>
+    </linearGradient>
+    <linearGradient id="ortmGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD600"/>
+      <stop offset="100%" stop-color="#FFAB00"/>
+    </linearGradient>
+    <linearGradient id="ortmRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF1744"/>
+      <stop offset="100%" stop-color="#D50000"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#ortmBg)"/>
+  <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#ortmGold)" stroke-width="2.5" stroke-opacity="0.85"/>
+
+  <!-- ORTM Mali Flag Shield -->
+  <g transform="translate(100, 72) scale(0.9)">
+    <circle cx="0" cy="0" r="42" fill="#05120a" stroke="url(#ortmGold)" stroke-width="2"/>
+    <path d="M -22 -20 L -8 -20 L -8 20 L -22 20 Z" fill="url(#ortmGreen)"/>
+    <path d="M -7 -20 L 7 -20 L 7 20 L -7 20 Z" fill="url(#ortmGold)"/>
+    <path d="M 8 -20 L 22 -20 L 22 20 L 8 20 Z" fill="url(#ortmRed)"/>
+  </g>
+
+  <text x="100" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="22" letter-spacing="2.5" text-anchor="middle">ORTM</text>
+  <text x="100" y="152" fill="url(#ortmGold)" font-family="'Inter', sans-serif" font-weight="800" font-size="12" letter-spacing="2" text-anchor="middle">CHAÎNE 2 NATIONALE</text>
+
+  <rect x="36" y="166" width="128" height="20" rx="6" fill="#030a05" stroke="url(#ortmGold)" stroke-width="1.2"/>
+  <text x="100" y="180" fill="#69F0AE" font-family="'Inter', sans-serif" font-weight="700" font-size="9" letter-spacing="1.5" text-anchor="middle">MALI • RADIO NATIONALE</text>
+</svg>

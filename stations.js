@@ -395,6 +395,154 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 1.d 🇲🇱 MALI
+  // ==========================================
+  {
+    id: "radio-kledu-bamako",
+    name: "Radio Klédu 101.2 FM (Bamako)",
+    country: "Mali",
+    city: "Bamako",
+    state: "District de Bamako",
+    code: "🇲🇱",
+    continent: "africa",
+    category: "news",
+    frequency: "101.2",
+    band: "FM",
+    language: "Français & Bambara",
+    genre: "Actualités maliennes, Débats, Société & Musique",
+    streamUrl: "https://stream.zeno.fm/f38bxpt3v2quv",
+    fallbackUrl: "https://stream.zenolive.com/yerp85sughwtv",
+    logo: "assets/logos/radio-kledu.svg",
+    featured: true
+  },
+  {
+    id: "radio-malijet-bamako",
+    name: "Radio Malijet (Bamako)",
+    country: "Mali",
+    city: "Bamako",
+    state: "District de Bamako",
+    code: "🇲🇱",
+    continent: "africa",
+    category: "news",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Français & Bambara",
+    genre: "Actualités, Débats politiques & Variétés maliennes",
+    streamUrl: "https://stream.zenolive.com/yerp85sughwtv",
+    fallbackUrl: "https://stream.zeno.fm/yerp85sughwtv",
+    logo: "assets/logos/radio-malijet.svg",
+    featured: true
+  },
+  {
+    id: "noura-fm-bamako",
+    name: "Noura FM 94.5 (Bamako)",
+    country: "Mali",
+    city: "Bamako",
+    state: "District de Bamako",
+    code: "🇲🇱",
+    continent: "africa",
+    category: "culture",
+    frequency: "94.5",
+    band: "FM",
+    language: "Français & Bambara",
+    genre: "Spiritualité, Culture, Éducation & Paix",
+    streamUrl: "https://stream.zeno.fm/60x209af8e9uv",
+    fallbackUrl: "https://stream-151.zeno.fm/60x209af8e9uv",
+    logo: "assets/logos/noura-fm-bamako.svg",
+    featured: true
+  },
+  {
+    id: "joliba-fm-bamako",
+    name: "Joliba FM 105.0 (Bamako)",
+    country: "Mali",
+    city: "Bamako",
+    state: "District de Bamako",
+    code: "🇲🇱",
+    continent: "africa",
+    category: "news",
+    frequency: "105.0",
+    band: "FM",
+    language: "Français & Bambara",
+    genre: "Voix du Djoliba, Analyses, Débats & Culture",
+    streamUrl: "https://stream.zenolive.com/bux0vqx79zquv",
+    fallbackUrl: "https://stream.zenolive.com/bux0vqx79zquv",
+    logo: "assets/logos/joliba-fm-mali.svg",
+    featured: true
+  },
+  {
+    id: "radio-bamakan-bamako",
+    name: "Radio Bamakan 100.3 FM (Bamako)",
+    country: "Mali",
+    city: "Bamako",
+    state: "District de Bamako",
+    code: "🇲🇱",
+    continent: "africa",
+    category: "culture",
+    frequency: "100.3",
+    band: "FM",
+    language: "Français & Bambara",
+    genre: "1ère radio libre du Mali, Communauté & Musique traditionnelle",
+    streamUrl: "https://stream.zeno.fm/a9pfgv7zw3duv",
+    fallbackUrl: "https://stream.zeno.fm/a9pfgv7zw3duv",
+    logo: "assets/logos/radio-bamakan.svg",
+    featured: true
+  },
+  {
+    id: "radio-dambe-bamako",
+    name: "Radio Dambé (Bamako)",
+    country: "Mali",
+    city: "Bamako",
+    state: "District de Bamako",
+    code: "🇲🇱",
+    continent: "africa",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Français & Bambara",
+    genre: "Dignité, Société, Débats & Tradition",
+    streamUrl: "https://stream.zenolive.com/pynbqy45xreuv",
+    fallbackUrl: "https://stream.zenolive.com/pynbqy45xreuv",
+    logo: "assets/logos/radio-dambe-mali.svg",
+    featured: true
+  },
+  {
+    id: "radio-bougouni-kunkan",
+    name: "Radio Bougouni Kunkan 102.9 FM",
+    country: "Mali",
+    city: "Bougouni",
+    state: "Sikasso",
+    code: "🇲🇱",
+    continent: "africa",
+    category: "culture",
+    frequency: "102.9",
+    band: "FM",
+    language: "Bambara & Français",
+    genre: "Voix du Banimonotié, Terroir & Société",
+    streamUrl: "https://stream.zeno.fm/x3gb8t9nzk0uv",
+    fallbackUrl: "https://stream.zeno.fm/e1fq9sdhrntuv",
+    logo: "assets/logos/radio-bougouni-kunkan.svg",
+    featured: true
+  },
+  {
+    id: "radio-kassara-kayes",
+    name: "Radio Kassara Barikama 107.4 FM (Kayes)",
+    country: "Mali",
+    city: "Kayes",
+    state: "Kayes",
+    code: "🇲🇱",
+    continent: "africa",
+    category: "culture",
+    frequency: "107.4",
+    band: "FM",
+    language: "Soninké, Khassonké, Bambara & Français",
+    genre: "Première région du Mali, Diaspora & Développement",
+    streamUrl: "https://stream.zeno.fm/0ef19uaxh4duv",
+    fallbackUrl: "https://stream.zeno.fm/0ef19uaxh4duv",
+    logo: "assets/logos/radio-kassara-kayes.svg",
+    featured: true
+  },
+
+  // ==========================================
   // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE & 🇲🇦 MAROC (MAGHREB)
   // ==========================================
   {
@@ -3035,6 +3183,23 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "koforidua": { code: "GH", en: "Ghana", fr: "Koforidua", continent: "africa", type: "country" },
   "ashanti": { code: "GH", en: "Ghana", fr: "Ashanti", continent: "africa", type: "country" },
 
+  "ml": { code: "ML", en: "Mali", fr: "Mali", continent: "africa", type: "country" },
+  "mali": { code: "ML", en: "Mali", fr: "Mali", continent: "africa", type: "country" },
+  "bamako": { code: "ML", en: "Mali", fr: "Bamako", continent: "africa", type: "country" },
+  "sikasso": { code: "ML", en: "Mali", fr: "Sikasso", continent: "africa", type: "country" },
+  "kayes": { code: "ML", en: "Mali", fr: "Kayes", continent: "africa", type: "country" },
+  "mopti": { code: "ML", en: "Mali", fr: "Mopti", continent: "africa", type: "country" },
+  "segou": { code: "ML", en: "Mali", fr: "Ségou", continent: "africa", type: "country" },
+  "ségou": { code: "ML", en: "Mali", fr: "Ségou", continent: "africa", type: "country" },
+  "gao": { code: "ML", en: "Mali", fr: "Gao", continent: "africa", type: "country" },
+  "tombouctou": { code: "ML", en: "Mali", fr: "Tombouctou", continent: "africa", type: "country" },
+  "timbuktu": { code: "ML", en: "Mali", fr: "Tombouctou", continent: "africa", type: "country" },
+  "koutiala": { code: "ML", en: "Mali", fr: "Koutiala", continent: "africa", type: "country" },
+  "koulikoro": { code: "ML", en: "Mali", fr: "Koulikoro", continent: "africa", type: "country" },
+  "bougouni": { code: "ML", en: "Mali", fr: "Bougouni", continent: "africa", type: "country" },
+  "markala": { code: "ML", en: "Mali", fr: "Markala", continent: "africa", type: "country" },
+  "san": { code: "ML", en: "Mali", fr: "San", continent: "africa", type: "country" },
+
   "maroc": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "morocco": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "casablanca": { code: "MA", en: "Morocco", fr: "Casablanca", continent: "africa", type: "country" },
@@ -3296,12 +3461,12 @@ function resolveRegionalStationLogo(st) {
   }
 
   // 1.i Logos officiels Sénégal 🇸🇳
-  const isSenegal = (cCode === "SN") || (st.code === "🇸🇳") || (st.country || "").toLowerCase().includes("sénégal") || (st.country || "").toLowerCase().includes("senegal") || stState.includes("dakar") || stState.includes("thiès") || stState.includes("thies") || stState.includes("kaolack") || stState.includes("touba") || stState.includes("ziguinchor") || stState.includes("saint-louis") || stState.includes("matam") || nameLow.includes("sénégal") || nameLow.includes("senegal") || nameLow.includes("dakar") || nameLow.includes("touba") || nameLow.includes("ziguinchor") || nameLow.includes("kaolack");
+  const isSenegal = ((cCode === "SN") || (st.code === "🇸🇳") || (st.country || "").toLowerCase().includes("sénégal") || (st.country || "").toLowerCase().includes("senegal") || stState.includes("dakar") || stState.includes("thiès") || stState.includes("thies") || stState.includes("kaolack") || stState.includes("ziguinchor") || stState.includes("saint-louis") || stState.includes("matam") || nameLow.includes("sénégal") || nameLow.includes("senegal") || nameLow.includes("dakar") || nameLow.includes("ziguinchor") || nameLow.includes("kaolack") || (nameLow.includes("touba") && !nameLow.includes("madjoura"))) && cCode !== "ML" && !(st.country || "").toLowerCase().includes("mali");
   if (isSenegal) {
     if (nameLow.includes("h24")) return "assets/logos/h24-senegal.svg";
     if (nameLow.includes("rfm") || nameLow.includes("futurs medias") || nameLow.includes("futurs médias") || nameLow.includes("94.0")) return "assets/logos/rfm-senegal.svg";
     if (nameLow.includes("zik fm") || nameLow.includes("d-media") || nameLow.includes("89.7")) return "assets/logos/zik-fm-senegal.svg";
-    if (nameLow.includes("lamp fall") || nameLow.includes("lampfall") || nameLow.includes("touba")) return "assets/logos/lamp-fall-fm.svg";
+    if (nameLow.includes("lamp fall") || nameLow.includes("lampfall") || (nameLow.includes("touba") && !nameLow.includes("madjoura"))) return "assets/logos/lamp-fall-fm.svg";
     if (nameLow.includes("walf") || nameLow.includes("walfadjri") || nameLow.includes("99.0")) return "assets/logos/walf-fm-senegal.svg";
     if (nameLow.includes("rts") || nameLow.includes("rsi") || (nameLow.includes("radio sénégal") && !nameLow.includes("h24"))) return "assets/logos/rts-radio-senegal.svg";
     if (nameLow.includes("sud fm") || nameLow.includes("sen radio")) return "assets/logos/sud-fm-senegal.svg";
@@ -3382,6 +3547,27 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/ghana-radio-badge.svg";
   }
 
+  // 1.m Logos officiels Mali 🇲🇱
+  const isMali = (cCode === "ML") || (st.code === "🇲🇱") || (st.country || "").toLowerCase().includes("mali") || stState.includes("bamako") || stState.includes("sikasso") || stState.includes("kayes") || stState.includes("mopti") || stState.includes("segou") || stState.includes("ségou") || stState.includes("gao") || stState.includes("tombouctou") || stState.includes("koulikoro") || nameLow.includes("mali") || nameLow.includes("bamako") || nameLow.includes("bougouni");
+  if (isMali) {
+    if (nameLow.includes("kledu") || nameLow.includes("klédu")) return "assets/logos/radio-kledu.svg";
+    if (nameLow.includes("noura")) return "assets/logos/noura-fm-bamako.svg";
+    if (nameLow.includes("bougouni") || nameLow.includes("kunkan")) return "assets/logos/radio-bougouni-kunkan.svg";
+    if (nameLow.includes("kassara") || nameLow.includes("barikama")) return "assets/logos/radio-kassara-kayes.svg";
+    if (nameLow.includes("malijet")) return "assets/logos/radio-malijet.svg";
+    if (nameLow.includes("neneba") || nameLow.includes("nénèba") || nameLow.includes("markala")) return "assets/logos/radio-neneba-fm.svg";
+    if (nameLow.includes("tissa") || nameLow.includes("mamelon")) return "assets/logos/radio-tissa-mamelon.svg";
+    if (nameLow.includes("kalux")) return "assets/logos/kalux-fm-bamako.svg";
+    if (nameLow.includes("woyowayanko")) return "assets/logos/radio-woyowayanko.svg";
+    if (nameLow.includes("yele") || nameLow.includes("yélé") || nameLow.includes("sagabali") || nameLow.includes("beledougou") || nameLow.includes("bélédougou")) return "assets/logos/radio-yele-sagabali.svg";
+    if (nameLow.includes("madjoura") || nameLow.includes("touba")) return "assets/logos/radio-madjoura-touba.svg";
+    if (nameLow.includes("joliba") || nameLow.includes("djoliba")) return "assets/logos/joliba-fm-mali.svg";
+    if (nameLow.includes("bamakan")) return "assets/logos/radio-bamakan.svg";
+    if (nameLow.includes("dambe") || nameLow.includes("dambé")) return "assets/logos/radio-dambe-mali.svg";
+    if (nameLow.includes("ortm") || nameLow.includes("chaine 2") || nameLow.includes("chaîne 2")) return "assets/logos/ortm-chaine2-mali.svg";
+    return "assets/logos/mali-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -3390,6 +3576,7 @@ function resolveRegionalStationLogo(st) {
            u.includes("twitter.com") || u.includes("twimg.com") || u.includes("x.com") ||
            u.includes("instagram.com") || u.includes("youtube.com") || u.includes("ytimg") ||
            u.includes("tiktok.com") || u.includes("linkedin.com") ||
+           u.includes("lwshosting.name") ||
            u.includes("radioking") || u.includes("torontocast") || u.includes("streamguys") ||
            u.includes("zeno.fm") || u.includes("zeno-fm");
   };
@@ -3441,6 +3628,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isGhana) {
     return "assets/logos/ghana-radio-badge.svg";
+  }
+  if (isMali) {
+    return "assets/logos/mali-radio-badge.svg";
   }
 
   return "";

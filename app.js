@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
              u.includes("twitter.com") || u.includes("twimg.com") || u.includes("x.com") ||
              u.includes("instagram.com") || u.includes("youtube.com") || u.includes("ytimg") ||
              u.includes("tiktok.com") || u.includes("linkedin.com") ||
+             u.includes("lwshosting.name") ||
              u.includes("radioking") || u.includes("torontocast") || u.includes("streamguys") ||
              u.includes("zeno.fm") || u.includes("zeno-fm");
     };
@@ -271,12 +272,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/cameroon-radio-badge.svg";
     }
 
-    const isSenegal = (st.code === "🇸🇳") || (st.country && (st.country.toLowerCase().includes("sénégal") || st.country.toLowerCase().includes("senegal"))) || stState.includes("dakar") || stState.includes("thiès") || stState.includes("thies") || stState.includes("kaolack") || stState.includes("touba") || stState.includes("ziguinchor") || stState.includes("saint-louis") || stState.includes("matam") || nameLow.includes("sénégal") || nameLow.includes("senegal") || nameLow.includes("dakar") || nameLow.includes("touba") || nameLow.includes("ziguinchor") || nameLow.includes("kaolack");
+    const isSenegal = ((st.code === "🇸🇳") || (st.country && (st.country.toLowerCase().includes("sénégal") || st.country.toLowerCase().includes("senegal"))) || stState.includes("dakar") || stState.includes("thiès") || stState.includes("thies") || stState.includes("kaolack") || stState.includes("ziguinchor") || stState.includes("saint-louis") || stState.includes("matam") || nameLow.includes("sénégal") || nameLow.includes("senegal") || nameLow.includes("dakar") || nameLow.includes("ziguinchor") || nameLow.includes("kaolack") || (nameLow.includes("touba") && !nameLow.includes("madjoura"))) && (st.code !== "🇲🇱") && !(st.country && st.country.toLowerCase().includes("mali"));
     if (isSenegal) {
       if (nameLow.includes("h24")) return "assets/logos/h24-senegal.svg";
       if (nameLow.includes("rfm") || nameLow.includes("futurs medias") || nameLow.includes("futurs médias") || nameLow.includes("94.0")) return "assets/logos/rfm-senegal.svg";
       if (nameLow.includes("zik fm") || nameLow.includes("d-media") || nameLow.includes("89.7")) return "assets/logos/zik-fm-senegal.svg";
-      if (nameLow.includes("lamp fall") || nameLow.includes("lampfall") || nameLow.includes("touba")) return "assets/logos/lamp-fall-fm.svg";
+      if (nameLow.includes("lamp fall") || nameLow.includes("lampfall") || (nameLow.includes("touba") && !nameLow.includes("madjoura"))) return "assets/logos/lamp-fall-fm.svg";
       if (nameLow.includes("walf") || nameLow.includes("walfadjri") || nameLow.includes("99.0")) return "assets/logos/walf-fm-senegal.svg";
       if (nameLow.includes("rts") || nameLow.includes("rsi") || (nameLow.includes("radio sénégal") && !nameLow.includes("h24"))) return "assets/logos/rts-radio-senegal.svg";
       if (nameLow.includes("sud fm") || nameLow.includes("sen radio")) return "assets/logos/sud-fm-senegal.svg";
@@ -355,6 +356,26 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/ghana-radio-badge.svg";
     }
 
+    const isMali = (st.code === "🇲🇱") || (st.country && st.country.toLowerCase().includes("mali")) || stState.includes("bamako") || stState.includes("sikasso") || stState.includes("kayes") || stState.includes("mopti") || stState.includes("segou") || stState.includes("ségou") || stState.includes("gao") || stState.includes("tombouctou") || stState.includes("koulikoro") || nameLow.includes("mali") || nameLow.includes("bamako") || nameLow.includes("bougouni");
+    if (isMali) {
+      if (nameLow.includes("kledu") || nameLow.includes("klédu")) return "assets/logos/radio-kledu.svg";
+      if (nameLow.includes("noura")) return "assets/logos/noura-fm-bamako.svg";
+      if (nameLow.includes("bougouni") || nameLow.includes("kunkan")) return "assets/logos/radio-bougouni-kunkan.svg";
+      if (nameLow.includes("kassara") || nameLow.includes("barikama")) return "assets/logos/radio-kassara-kayes.svg";
+      if (nameLow.includes("malijet")) return "assets/logos/radio-malijet.svg";
+      if (nameLow.includes("neneba") || nameLow.includes("nénèba") || nameLow.includes("markala")) return "assets/logos/radio-neneba-fm.svg";
+      if (nameLow.includes("tissa") || nameLow.includes("mamelon")) return "assets/logos/radio-tissa-mamelon.svg";
+      if (nameLow.includes("kalux")) return "assets/logos/kalux-fm-bamako.svg";
+      if (nameLow.includes("woyowayanko")) return "assets/logos/radio-woyowayanko.svg";
+      if (nameLow.includes("yele") || nameLow.includes("yélé") || nameLow.includes("sagabali") || nameLow.includes("beledougou") || nameLow.includes("bélédougou")) return "assets/logos/radio-yele-sagabali.svg";
+      if (nameLow.includes("madjoura") || nameLow.includes("touba")) return "assets/logos/radio-madjoura-touba.svg";
+      if (nameLow.includes("joliba") || nameLow.includes("djoliba")) return "assets/logos/joliba-fm-mali.svg";
+      if (nameLow.includes("bamakan")) return "assets/logos/radio-bamakan.svg";
+      if (nameLow.includes("dambe") || nameLow.includes("dambé")) return "assets/logos/radio-dambe-mali.svg";
+      if (nameLow.includes("ortm") || nameLow.includes("chaine 2") || nameLow.includes("chaîne 2")) return "assets/logos/ortm-chaine2-mali.svg";
+      return "assets/logos/mali-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -371,6 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isBenin) return "assets/logos/benin-radio-badge.svg";
     if (isCoteIvoire) return "assets/logos/cote-divoire-radio-badge.svg";
     if (isGhana) return "assets/logos/ghana-radio-badge.svg";
+    if (isMali) return "assets/logos/mali-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 
