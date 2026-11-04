@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="manaratBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081c12"/>
+      <stop offset="50%" stop-color="#0e3020"/>
+      <stop offset="100%" stop-color="#040e09"/>
+    </linearGradient>
+    <linearGradient id="manaratGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#F3E5AB"/>
+      <stop offset="100%" stop-color="#52B788"/>
+    </linearGradient>
+    <filter id="manaratShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#manaratBg)" stroke="#D4AF37" stroke-width="3" filter="url(#manaratShadow)"/>
+
+  <!-- Minaret / phare de savoir (Manarat) -->
+  <g transform="translate(100, 52)">
+    <circle cx="0" cy="0" r="23" fill="#0d261a" stroke="#D4AF37" stroke-width="2"/>
+    <rect x="-6" y="-6" width="12" height="18" fill="#52B788"/>
+    <polygon points="-8,-6 8,-6 0,-16" fill="#D4AF37"/>
+    <circle cx="0" cy="-2" r="2.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Titre MANARAT -->
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle" filter="url(#manaratShadow)">MANARAT</text>
+
+  <!-- Tag CULTURE & ÉDUCATION -->
+  <rect x="34" y="116" width="132" height="26" rx="8" fill="url(#manaratGold)"/>
+  <text x="100" y="134" fill="#081C12" font-family="'Inter', sans-serif" font-weight="900" font-size="11" letter-spacing="1.2" text-anchor="middle">CULTURE &amp; FORMATION</text>
+
+  <!-- Pied FM6 MAROC -->
+  <rect x="24" y="152" width="152" height="28" rx="8" fill="#0b2417" stroke="#D4AF37" stroke-width="1.2"/>
+  <text x="100" y="171" fill="#D4AF37" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="1.8" text-anchor="middle">FONDATION FM6 • MAROC</text>
+</svg>

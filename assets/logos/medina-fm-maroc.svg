@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="medinaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091f15"/>
+      <stop offset="50%" stop-color="#143625"/>
+      <stop offset="100%" stop-color="#05120c"/>
+    </linearGradient>
+    <linearGradient id="medinaGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2D6A4F"/>
+      <stop offset="50%" stop-color="#52B788"/>
+      <stop offset="100%" stop-color="#DDA15E"/>
+    </linearGradient>
+    <filter id="medinaShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#medinaBg)" stroke="#52B788" stroke-width="3" filter="url(#medinaShadow)"/>
+
+  <!-- Porte mauresque / arche de médina -->
+  <g transform="translate(100, 52)">
+    <circle cx="0" cy="0" r="23" fill="#0d2b1d" stroke="#52B788" stroke-width="2"/>
+    <path d="M -10 12 L -10 0 C -10 -12 10 -12 10 0 L 10 12 Z" fill="none" stroke="#DDA15E" stroke-width="2.5"/>
+    <circle cx="0" cy="-2" r="3" fill="#52B788"/>
+  </g>
+
+  <!-- Titre MEDINA FM -->
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle" filter="url(#medinaShadow)">MEDINA FM</text>
+
+  <!-- Tag LA RADIO DU TERROIR -->
+  <rect x="34" y="116" width="132" height="26" rx="8" fill="#2D6A4F" stroke="#52B788" stroke-width="1.2"/>
+  <text x="100" y="134" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="11.5" letter-spacing="1.2" text-anchor="middle">RADIO DU TERROIR</text>
+
+  <!-- Pied MAROC -->
+  <rect x="24" y="152" width="152" height="28" rx="8" fill="#0c2117" stroke="#52B788" stroke-width="1.2"/>
+  <text x="100" y="171" fill="#DDA15E" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="1.8" text-anchor="middle">AUTHENTICITÉ &amp; TRADITION</text>
+</svg>

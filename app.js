@@ -440,6 +440,33 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/guinee-equatoriale-badge.svg";
     }
 
+    const isMaroc = (st.code === "🇲🇦") || (st.country && (st.country.toLowerCase().includes("maroc") || st.country.toLowerCase().includes("morocco"))) ||
+      stState.includes("casablanca") || stState.includes("rabat") || stState.includes("marrakech") || stState.includes("fès") || stState.includes("fes") || stState.includes("tanger") || stState.includes("agadir") || stState.includes("oujda") ||
+      nameLow.includes("maroc") || nameLow.includes("morocco") || nameLow.includes("casablanca") || nameLow.includes("rabat") || nameLow.includes("marrakech") || nameLow.includes("tanger") || nameLow.includes("agadir");
+    if (isMaroc) {
+      if (nameLow.includes("medi 1") || nameLow.includes("medi1")) return "assets/logos/medi1-radio-maroc.svg";
+      if (nameLow.includes("hit radio")) return "assets/logos/hit-radio-maroc.svg";
+      if (nameLow.includes("2m")) return "assets/logos/radio-2m-maroc.svg";
+      if (nameLow.includes("mars")) return "assets/logos/radio-mars-maroc.svg";
+      if (nameLow.includes("aswat")) return "assets/logos/radio-aswat-maroc.svg";
+      if (nameLow.includes("mfm")) return "assets/logos/radio-mfm-maroc.svg";
+      if (nameLow.includes("atlantic")) return "assets/logos/atlantic-radio-maroc.svg";
+      if (nameLow.includes("chada")) return "assets/logos/chada-fm-maroc.svg";
+      if (nameLow.includes("medina")) return "assets/logos/medina-fm-maroc.svg";
+      if (nameLow.includes("cap")) return "assets/logos/cap-radio-maroc.svg";
+      if (nameLow.includes("plus") && !nameLow.includes("yan")) return "assets/logos/radio-plus-maroc.svg";
+      if (nameLow.includes("bldi") || nameLow.includes("beldi") || nameLow.includes("bladi")) return "assets/logos/bldi-radio-maroc.svg";
+      if (nameLow.includes("rai") || nameLow.includes("raï")) return "assets/logos/only-rai-radio.svg";
+      if (nameLow.includes("fayroz") || nameLow.includes("fairouz") || nameLow.includes("fayrouz")) return "assets/logos/radio-fayrouz-maroc.svg";
+      if (nameLow.includes("manarat")) return "assets/logos/radio-manarat-maroc.svg";
+      if (nameLow.includes("amal")) return "assets/logos/radio-sawt-alamal.svg";
+      if (nameLow.includes("adwaa")) return "assets/logos/radio-adwaa-maroc.svg";
+      if (nameLow.includes("achkid")) return "assets/logos/radio-achkid-fm.svg";
+      if (nameLow.includes("yan plus")) return "assets/logos/radio-yan-plus.svg";
+      if (nameLow.includes("hip hop") || nameLow.includes("soul")) return "assets/logos/hip-hop-soul-maroc.svg";
+      return "assets/logos/maroc-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -462,6 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isGuinee) return "assets/logos/guinee-radio-badge.svg";
     if (isGuineeBissau) return "assets/logos/guinee-bissau-radio-badge.svg";
     if (isGuineeEquatoriale) return "assets/logos/guinee-equatoriale-badge.svg";
+    if (isMaroc) return "assets/logos/maroc-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 

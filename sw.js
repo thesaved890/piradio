@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.4
+// Pi Radio • Service Worker v5.5
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.4';
+const CACHE_NAME = 'piradio-v5.5';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,28 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Maroc 🇲🇦 (v5.5)
+  './assets/logos/maroc-radio-badge.svg',
+  './assets/logos/medi1-radio-maroc.svg',
+  './assets/logos/hit-radio-maroc.svg',
+  './assets/logos/radio-2m-maroc.svg',
+  './assets/logos/radio-mars-maroc.svg',
+  './assets/logos/radio-aswat-maroc.svg',
+  './assets/logos/radio-mfm-maroc.svg',
+  './assets/logos/atlantic-radio-maroc.svg',
+  './assets/logos/chada-fm-maroc.svg',
+  './assets/logos/medina-fm-maroc.svg',
+  './assets/logos/cap-radio-maroc.svg',
+  './assets/logos/radio-plus-maroc.svg',
+  './assets/logos/bldi-radio-maroc.svg',
+  './assets/logos/only-rai-radio.svg',
+  './assets/logos/radio-fayrouz-maroc.svg',
+  './assets/logos/radio-manarat-maroc.svg',
+  './assets/logos/radio-sawt-alamal.svg',
+  './assets/logos/radio-adwaa-maroc.svg',
+  './assets/logos/radio-achkid-fm.svg',
+  './assets/logos/radio-yan-plus.svg',
+  './assets/logos/hip-hop-soul-maroc.svg',
   // Logos officiels Guinée (Conakry) 🇬🇳 (v5.4)
   './assets/logos/guinee-radio-badge.svg',
   './assets/logos/espace-fm-guinee.svg',

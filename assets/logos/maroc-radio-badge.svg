@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="maBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#240709"/>
+      <stop offset="50%" stop-color="#3d0b10"/>
+      <stop offset="100%" stop-color="#140305"/>
+    </linearGradient>
+    <linearGradient id="maGoldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD100"/>
+      <stop offset="50%" stop-color="#FFA000"/>
+      <stop offset="100%" stop-color="#FF6F00"/>
+    </linearGradient>
+    <filter id="maDropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Fond arrondi avec bordure dorée -->
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#maBgGrad)" stroke="url(#maGoldGlow)" stroke-width="3" filter="url(#maDropShadow)"/>
+
+  <!-- Écusson chérifien marocain -->
+  <g transform="translate(42, 28)" filter="url(#maDropShadow)">
+    <clipPath id="maShieldClip">
+      <path d="M 0 10 Q 0 0 10 0 L 106 0 Q 116 0 116 10 L 116 55 Q 116 95 58 116 Q 0 95 0 55 Z"/>
+    </clipPath>
+    <g clip-path="url(#maShieldClip)">
+      <!-- Fond Rouge Royal Marocain -->
+      <rect x="0" y="0" width="116" height="120" fill="#C1272D"/>
+      <!-- Étoile verte chérifienne à 5 branches (pentagramme entrelacé) -->
+      <polygon points="58,18 69,52 104,52 75,73 86,106 58,85 30,106 41,73 12,52 47,52" fill="none" stroke="#006233" stroke-width="7" stroke-linejoin="round"/>
+      <polygon points="58,18 69,52 104,52 75,73 86,106 58,85 30,106 41,73 12,52 47,52" fill="none" stroke="#FFD100" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+    <!-- Contour de l'écusson -->
+    <path d="M 0 10 Q 0 0 10 0 L 106 0 Q 116 0 116 10 L 116 55 Q 116 95 58 116 Q 0 95 0 55 Z" fill="none" stroke="#FFD100" stroke-width="3" opacity="0.9"/>
+    
+    <!-- Médaillon Pi au centre -->
+    <circle cx="58" cy="62" r="22" fill="#180507" opacity="0.92" stroke="url(#maGoldGlow)" stroke-width="2.2"/>
+    <text x="58" y="70" fill="#FFD100" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" text-anchor="middle">π</text>
+  </g>
+
+  <!-- Cartouche MAROC -->
+  <rect x="22" y="152" width="156" height="30" rx="8" fill="#1a0407" stroke="url(#maGoldGlow)" stroke-width="1.5"/>
+  <text x="100" y="172" fill="#FFD100" font-family="'Inter', sans-serif" font-weight="900" font-size="13" letter-spacing="2.5" text-anchor="middle">MAROC 🇲🇦</text>
+</svg>

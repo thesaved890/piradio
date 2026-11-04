@@ -1013,7 +1013,191 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
-  // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE & 🇲🇦 MAROC (MAGHREB)
+  // 1.j 🇲🇦 MAROC
+  // ==========================================
+  {
+    id: "medi1-radio-maroc",
+    name: "Medi 1 Radio (Radio Méditerranée)",
+    country: "Maroc",
+    city: "Tanger",
+    state: "Tanger-Tétouan-Al Hoceïma",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "news",
+    frequency: "99.6",
+    band: "FM",
+    language: "Français & Arabe",
+    genre: "La grande radio d'information du Grand Maghreb & Musique",
+    streamUrl: "https://cdn.live.easybroadcast.io/live/83_medi1radio-maghreb_8s9i4bn/playlist.m3u8",
+    fallbackUrl: "https://cdn.live.easybroadcast.io/live/83_medi1radio-maghreb_8s9i4bn/playlist.m3u8",
+    logo: "assets/logos/medi1-radio-maroc.svg",
+    featured: true
+  },
+  {
+    id: "hit-radio-maroc",
+    name: "Hit Radio Maroc (100% Hits)",
+    country: "Maroc",
+    city: "Rabat",
+    state: "Rabat-Salé-Kénitra",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "music",
+    frequency: "100.3",
+    band: "FM",
+    language: "Français & Darija",
+    genre: "100% Hits, Pop, RnB, Dance & Jeunesse marocaine",
+    streamUrl: "https://hitradio-maroc.ice.infomaniak.ch/hitradio-maroc-128.mp3",
+    fallbackUrl: "https://hitradio-maroc.ice.infomaniak.ch/hitradio-maroc-128.mp3",
+    logo: "assets/logos/hit-radio-maroc.svg",
+    featured: true
+  },
+  {
+    id: "radio-mars-maroc",
+    name: "Radio Mars 91.2 FM Maroc",
+    country: "Maroc",
+    city: "Casablanca",
+    state: "Casablanca-Settat",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "sports",
+    frequency: "91.2",
+    band: "FM",
+    language: "العربية & Français",
+    genre: "100% Football marocain, Botola Pro, Sport & Musique",
+    streamUrl: "https://radiomars.ice.infomaniak.ch/radiomars-128.mp3",
+    fallbackUrl: "https://radiomars.ice.infomaniak.ch/radiomars-128.mp3",
+    logo: "assets/logos/radio-mars-maroc.svg",
+    featured: true
+  },
+  {
+    id: "radio-aswat-maroc",
+    name: "Radio Aswat 104.5 FM",
+    country: "Maroc",
+    city: "Casablanca",
+    state: "Casablanca-Settat",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "news",
+    frequency: "104.5",
+    band: "FM",
+    language: "العربية & Français",
+    genre: "Des voix et des hommes, Information, Société & Famille",
+    streamUrl: "https://broadcast.ice.infomaniak.ch/aswat-high.mp3",
+    fallbackUrl: "http://aswat.ice.infomaniak.ch/aswat-high.mp3",
+    logo: "assets/logos/radio-aswat-maroc.svg",
+    featured: true
+  },
+  {
+    id: "radio-2m-maroc",
+    name: "Radio 2M (Casablanca)",
+    country: "Maroc",
+    city: "Casablanca",
+    state: "Casablanca-Settat",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "general",
+    frequency: "93.1",
+    band: "FM",
+    language: "العربية & Français",
+    genre: "La radio de la 2ème chaîne nationale marocaine",
+    streamUrl: "https://radio2m.ice.infomaniak.ch/radio2m-64.mp3",
+    fallbackUrl: "https://radio2m.ice.infomaniak.ch/radio2m-64.mp3",
+    logo: "assets/logos/radio-2m-maroc.svg",
+    featured: true
+  },
+  {
+    id: "radio-mfm-maroc",
+    name: "MFM Radio Maroc",
+    country: "Maroc",
+    city: "Casablanca",
+    state: "Casablanca-Settat",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "general",
+    frequency: "103.5",
+    band: "FM",
+    language: "العربية",
+    genre: "La radio de proximité du Maroc, Conseils, Société & Musique",
+    streamUrl: "https://mfm.ice.infomaniak.ch/mfm-128.mp3",
+    fallbackUrl: "https://a5.asurahosting.com:7980/radio.mp3",
+    logo: "assets/logos/radio-mfm-maroc.svg",
+    featured: true
+  },
+  {
+    id: "atlantic-radio-maroc",
+    name: "Atlantic Radio 97.6 FM",
+    country: "Maroc",
+    city: "Casablanca",
+    state: "Casablanca-Settat",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "news",
+    frequency: "97.6",
+    band: "FM",
+    language: "Français & Arabe",
+    genre: "Économie, Politique, Culture & Débats de société",
+    streamUrl: "https://atlantic-sonic.nindohost.net:9300/stream",
+    fallbackUrl: "https://atlantic-sonic.nindohost.net:9300/stream",
+    logo: "assets/logos/atlantic-radio-maroc.svg",
+    featured: true
+  },
+  {
+    id: "chada-fm-maroc",
+    name: "Chada FM 100.8",
+    country: "Maroc",
+    city: "Casablanca",
+    state: "Casablanca-Settat",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "music",
+    frequency: "100.8",
+    band: "FM",
+    language: "العربية",
+    genre: "Chansons marocaines, Variétés orientales & Divertissement",
+    streamUrl: "https://stream.bodkas.com/playlist?id=chadafmradio",
+    fallbackUrl: "https://stream.bodkas.com/playlist?id=chadafmradio",
+    logo: "assets/logos/chada-fm-maroc.svg",
+    featured: true
+  },
+  {
+    id: "medina-fm-maroc",
+    name: "Medina FM Maroc",
+    country: "Maroc",
+    city: "Meknès",
+    state: "Fès-Meknès",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "culture",
+    frequency: "100.1",
+    band: "FM",
+    language: "العربية & Amazigh",
+    genre: "Radio du monde rural, Patrimoine, Terroir & Chaabi",
+    streamUrl: "https://medinafm.ice.infomaniak.ch/medinafm-128.mp3",
+    fallbackUrl: "https://medinafm.ice.infomaniak.ch/medinafm-64.mp3",
+    logo: "assets/logos/medina-fm-maroc.svg",
+    featured: true
+  },
+  {
+    id: "cap-radio-maroc",
+    name: "Cap Radio Tanger",
+    country: "Maroc",
+    city: "Tanger",
+    state: "Tanger-Tétouan-Al Hoceïma",
+    code: "🇲🇦",
+    continent: "africa",
+    category: "news",
+    frequency: "105.4",
+    band: "FM",
+    language: "العربية & Tarifit",
+    genre: "La voix du Détroit et du Nord marocain, Info & Musique",
+    streamUrl: "https://listen.radioking.com/radio/710810/stream/776366",
+    fallbackUrl: "https://listen.radioking.com/radio/710810/stream/776366",
+    logo: "assets/logos/cap-radio-maroc.svg",
+    featured: true
+  },
+
+  // ==========================================
+  // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE (MAGHREB)
   // ==========================================
   {
     id: "algerie-chaine-3",
@@ -1045,22 +1229,6 @@ const CURATED_STATIONS = [
     streamUrl: "http://radio.mosaiquefm.net:8000/mosalive",
     fallbackUrl: "http://radio.mosaiquefm.net:8000/mosalive",
     logo: "assets/logos/tunisie-mosaique-fm.png",
-    featured: true
-  },
-  {
-    id: "radio-mars-maroc",
-    name: "Radio Mars 91.2 FM Maroc",
-    country: "Maroc",
-    code: "🇲🇦",
-    continent: "africa",
-    category: "sports",
-    frequency: "91.2",
-    band: "FM",
-    language: "العربية & Français",
-    genre: "100% Football marocain, africain & mondial",
-    streamUrl: "https://radiomars.ice.infomaniak.ch/radiomars-128.mp3",
-    fallbackUrl: "https://radiomars.ice.infomaniak.ch/radiomars-128.mp3",
-    logo: "assets/logos/radio-mars-maroc.png",
     featured: true
   },
 
@@ -3683,10 +3851,23 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "dedougou": { code: "BF", en: "Burkina Faso", fr: "Dédougou", continent: "africa", type: "country" },
   "fada": { code: "BF", en: "Burkina Faso", fr: "Fada N'Gourma", continent: "africa", type: "country" },
 
+  // Maroc 🇲🇦
+  "ma": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "maroc": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "morocco": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
+  "المغرب": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "casablanca": { code: "MA", en: "Morocco", fr: "Casablanca", continent: "africa", type: "country" },
+  "casa": { code: "MA", en: "Morocco", fr: "Casablanca", continent: "africa", type: "country" },
   "rabat": { code: "MA", en: "Morocco", fr: "Rabat", continent: "africa", type: "country" },
+  "marrakech": { code: "MA", en: "Morocco", fr: "Marrakech", continent: "africa", type: "country" },
+  "tanger": { code: "MA", en: "Morocco", fr: "Tanger", continent: "africa", type: "country" },
+  "tangier": { code: "MA", en: "Morocco", fr: "Tanger", continent: "africa", type: "country" },
+  "agadir": { code: "MA", en: "Morocco", fr: "Agadir", continent: "africa", type: "country" },
+  "fès": { code: "MA", en: "Morocco", fr: "Fès", continent: "africa", type: "country" },
+  "fes": { code: "MA", en: "Morocco", fr: "Fès", continent: "africa", type: "country" },
+  "meknès": { code: "MA", en: "Morocco", fr: "Meknès", continent: "africa", type: "country" },
+  "meknes": { code: "MA", en: "Morocco", fr: "Meknès", continent: "africa", type: "country" },
+  "oujda": { code: "MA", en: "Morocco", fr: "Oujda", continent: "africa", type: "country" },
 
   "algerie": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
   "algérie": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
@@ -4154,6 +4335,34 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/guinee-equatoriale-badge.svg";
   }
 
+  // 1.s Logos officiels Maroc 🇲🇦
+  const isMaroc = (cCode === "MA") || (st.code === "🇲🇦") || (st.country || "").toLowerCase().includes("maroc") || (st.country || "").toLowerCase().includes("morocco") ||
+    stState.includes("casablanca") || stState.includes("rabat") || stState.includes("marrakech") || stState.includes("fès") || stState.includes("fes") || stState.includes("tanger") || stState.includes("agadir") || stState.includes("oujda") ||
+    nameLow.includes("maroc") || nameLow.includes("morocco") || nameLow.includes("casablanca") || nameLow.includes("rabat") || nameLow.includes("marrakech") || nameLow.includes("tanger") || nameLow.includes("agadir");
+  if (isMaroc) {
+    if (nameLow.includes("medi 1") || nameLow.includes("medi1")) return "assets/logos/medi1-radio-maroc.svg";
+    if (nameLow.includes("hit radio")) return "assets/logos/hit-radio-maroc.svg";
+    if (nameLow.includes("2m")) return "assets/logos/radio-2m-maroc.svg";
+    if (nameLow.includes("mars")) return "assets/logos/radio-mars-maroc.svg";
+    if (nameLow.includes("aswat")) return "assets/logos/radio-aswat-maroc.svg";
+    if (nameLow.includes("mfm")) return "assets/logos/radio-mfm-maroc.svg";
+    if (nameLow.includes("atlantic")) return "assets/logos/atlantic-radio-maroc.svg";
+    if (nameLow.includes("chada")) return "assets/logos/chada-fm-maroc.svg";
+    if (nameLow.includes("medina")) return "assets/logos/medina-fm-maroc.svg";
+    if (nameLow.includes("cap")) return "assets/logos/cap-radio-maroc.svg";
+    if (nameLow.includes("plus") && !nameLow.includes("yan")) return "assets/logos/radio-plus-maroc.svg";
+    if (nameLow.includes("bldi") || nameLow.includes("beldi") || nameLow.includes("bladi")) return "assets/logos/bldi-radio-maroc.svg";
+    if (nameLow.includes("rai") || nameLow.includes("raï")) return "assets/logos/only-rai-radio.svg";
+    if (nameLow.includes("fayroz") || nameLow.includes("fairouz") || nameLow.includes("fayrouz")) return "assets/logos/radio-fayrouz-maroc.svg";
+    if (nameLow.includes("manarat")) return "assets/logos/radio-manarat-maroc.svg";
+    if (nameLow.includes("amal")) return "assets/logos/radio-sawt-alamal.svg";
+    if (nameLow.includes("adwaa")) return "assets/logos/radio-adwaa-maroc.svg";
+    if (nameLow.includes("achkid")) return "assets/logos/radio-achkid-fm.svg";
+    if (nameLow.includes("yan plus")) return "assets/logos/radio-yan-plus.svg";
+    if (nameLow.includes("hip hop") || nameLow.includes("soul")) return "assets/logos/hip-hop-soul-maroc.svg";
+    return "assets/logos/maroc-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -4232,6 +4441,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isGuineeEquatoriale) {
     return "assets/logos/guinee-equatoriale-badge.svg";
+  }
+  if (isMaroc) {
+    return "assets/logos/maroc-radio-badge.svg";
   }
 
   return "";

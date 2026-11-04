@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fayBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1324"/>
+      <stop offset="50%" stop-color="#14213d"/>
+      <stop offset="100%" stop-color="#050a12"/>
+    </linearGradient>
+    <linearGradient id="fayGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E0E1DD"/>
+      <stop offset="50%" stop-color="#FCA311"/>
+      <stop offset="100%" stop-color="#FFD100"/>
+    </linearGradient>
+    <filter id="fayShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#fayBg)" stroke="#FCA311" stroke-width="3" filter="url(#fayShadow)"/>
+
+  <!-- Croissant de lune et étoile Tarab -->
+  <g transform="translate(100, 52)">
+    <circle cx="0" cy="0" r="23" fill="#1b2a47" stroke="#FCA311" stroke-width="2"/>
+    <path d="M 6 -12 A 14 14 0 1 0 6 12 A 11 11 0 1 1 6 -12 Z" fill="#FCA311"/>
+    <polygon points="10,-2 11.5,1.5 15,1.5 12,3.5 13,7 10,5 7,7 8,3.5 5,1.5 8.5,1.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Titre FAYROUZ -->
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2.5" text-anchor="middle" filter="url(#fayShadow)">FAYROUZ</text>
+
+  <!-- Tag TARAB & NOSTALGIE -->
+  <rect x="34" y="116" width="132" height="26" rx="8" fill="url(#fayGold)"/>
+  <text x="100" y="134" fill="#0A1324" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.5" text-anchor="middle">TARAB &amp; CLASSIQUES</text>
+
+  <!-- Pied MAROC -->
+  <rect x="24" y="152" width="152" height="28" rx="8" fill="#0a162a" stroke="#FCA311" stroke-width="1.2"/>
+  <text x="100" y="171" fill="#FCA311" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="1.8" text-anchor="middle">LES VOIX ÉTERNELLES</text>
+</svg>
