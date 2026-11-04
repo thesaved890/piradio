@@ -211,6 +211,190 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 1.c 🇬🇭 GHANA
+  // ==========================================
+  {
+    id: "joy-fm-ghana",
+    name: "Joy FM 99.7 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "news",
+    frequency: "99.7",
+    band: "FM",
+    language: "English",
+    genre: "Ghana News, Business, Talk & Pop",
+    streamUrl: "https://mmg.streamguys1.com/JoyFM-mp3",
+    fallbackUrl: "https://mmg.streamguys1.com/JoyFM-mp3",
+    logo: "assets/logos/joy-fm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "citi-fm-ghana",
+    name: "Citi FM 97.3 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "news",
+    frequency: "97.3",
+    band: "FM",
+    language: "English",
+    genre: "Relevant Radio, Politics, Talk & Business",
+    streamUrl: "https://citi973fm.radioca.st/index.html:80/;stream.mp3",
+    fallbackUrl: "https://citi973fm.radioca.st/index.html:80/;stream.mp3",
+    logo: "assets/logos/citi-fm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "peace-fm-ghana",
+    name: "Peace FM 104.3 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "news",
+    frequency: "104.3",
+    band: "FM",
+    language: "English & Twi",
+    genre: "Kɔkrokoo, National News, Culture & Talk",
+    streamUrl: "https://peacefm-atunwadigital.streamguys1.com/peacefm",
+    fallbackUrl: "https://peacefm-atunwadigital.streamguys1.com/peacefm",
+    logo: "assets/logos/peace-fm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "adom-fm-ghana",
+    name: "Adom FM 106.3 (Tema / Accra)",
+    country: "Ghana",
+    city: "Tema",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "culture",
+    frequency: "106.3",
+    band: "FM",
+    language: "Akan, Twi & English",
+    genre: "Highlife, Hiplife, Afrobeats & News",
+    streamUrl: "https://mmg.streamguys1.com/AdomFM-mp3",
+    fallbackUrl: "https://mmg.streamguys1.com/AdomFM-mp3",
+    logo: "assets/logos/adom-fm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "yfm-ghana",
+    name: "YFM 107.9 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "culture",
+    frequency: "107.9",
+    band: "FM",
+    language: "English & Pidgin",
+    genre: "Afrobeats, Hip Hop, Urban Youth & Dance",
+    streamUrl: "https://atunwadigital.streamguys1.com/yfm1079accra",
+    fallbackUrl: "https://atunwadigital.streamguys1.com/yfm1079accra",
+    logo: "assets/logos/yfm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "asempa-fm-ghana",
+    name: "Asempa FM 94.7 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "sports",
+    frequency: "94.7",
+    band: "FM",
+    language: "Akan, Twi & English",
+    genre: "All Sports, Talk, Football & Debate",
+    streamUrl: "https://mmg.streamguys1.com/AsempaFM-mp3",
+    fallbackUrl: "https://mmg.streamguys1.com/AsempaFM-mp3",
+    logo: "assets/logos/asempa-fm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "oman-fm-ghana",
+    name: "Oman FM 107.1 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "news",
+    frequency: "107.1",
+    band: "FM",
+    language: "English & Twi",
+    genre: "Current Affairs, Politics & National News",
+    streamUrl: "https://omanfm-atunwadigital.streamguys1.com/omanfm",
+    fallbackUrl: "https://omanfm-atunwadigital.streamguys1.com/omanfm",
+    logo: "assets/logos/oman-fm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "angel-fm-ghana",
+    name: "Angel FM 102.9 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "culture",
+    frequency: "102.9",
+    band: "FM",
+    language: "Twi & English",
+    genre: "Anɔpa Bɔfoɔ, Highlife, Sports & Talk",
+    streamUrl: "https://atunwadigital.streamguys1.com/angelfm",
+    fallbackUrl: "https://atunwadigital.streamguys1.com/angelfm",
+    logo: "assets/logos/angel-fm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "happy-fm-ghana",
+    name: "Happy FM 98.9 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "sports",
+    frequency: "98.9",
+    band: "FM",
+    language: "English & Twi",
+    genre: "Sports Station, Premier League & Entertainment",
+    streamUrl: "https://atunwadigital.streamguys1.com/happyfm989accra",
+    fallbackUrl: "https://atunwadigital.streamguys1.com/happyfm989accra",
+    logo: "assets/logos/happy-fm-ghana.svg",
+    featured: true
+  },
+  {
+    id: "sunny-fm-ghana",
+    name: "Sunny FM 88.7 (Accra)",
+    country: "Ghana",
+    city: "Accra",
+    state: "Greater Accra",
+    code: "🇬🇭",
+    continent: "africa",
+    category: "culture",
+    frequency: "88.7",
+    band: "FM",
+    language: "English",
+    genre: "Christian Contemporary, Gospel & Inspiration",
+    streamUrl: "https://sunny-radio-server.cloud-ip.cc/radio/sunnyradio",
+    fallbackUrl: "https://sunny-radio-server.cloud-ip.cc/radio/sunnyradio",
+    logo: "assets/logos/sunny-fm-ghana.svg",
+    featured: true
+  },
+
+  // ==========================================
   // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE & 🇲🇦 MAROC (MAGHREB)
   // ==========================================
   {
@@ -900,22 +1084,6 @@ const CURATED_STATIONS = [
     logo: "assets/logos/classic-105-nairobi.png",
     featured: false,
     locked: true
-  },
-  {
-    id: "peace-fm-ghana",
-    name: "Peace FM 104.3 Accra",
-    country: "Ghana",
-    code: "🇬🇭",
-    continent: "africa",
-    category: "news",
-    frequency: "104.3",
-    band: "FM",
-    language: "English & Twi",
-    genre: "Ghanaian News, Politics & Talk",
-    streamUrl: "https://peacefm-atunwadigital.streamguys1.com/peacefm",
-    fallbackUrl: "https://peacefm-atunwadigital.streamguys1.com/peacefm",
-    logo: "assets/logos/peace-fm-ghana.png",
-    featured: true
   },
   {
     id: "jacaranda-fm-sa",
@@ -2855,8 +3023,17 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "lome": { code: "TG", en: "Togo", fr: "Lomé", continent: "africa", type: "country" },
   "lomé": { code: "TG", en: "Togo", fr: "Lomé", continent: "africa", type: "country" },
 
+  "gh": { code: "GH", en: "Ghana", fr: "Ghana", continent: "africa", type: "country" },
   "ghana": { code: "GH", en: "Ghana", fr: "Ghana", continent: "africa", type: "country" },
   "accra": { code: "GH", en: "Ghana", fr: "Accra", continent: "africa", type: "country" },
+  "kumasi": { code: "GH", en: "Ghana", fr: "Kumasi", continent: "africa", type: "country" },
+  "tema": { code: "GH", en: "Ghana", fr: "Tema", continent: "africa", type: "country" },
+  "tamale": { code: "GH", en: "Ghana", fr: "Tamale", continent: "africa", type: "country" },
+  "takoradi": { code: "GH", en: "Ghana", fr: "Takoradi", continent: "africa", type: "country" },
+  "cape coast": { code: "GH", en: "Ghana", fr: "Cape Coast", continent: "africa", type: "country" },
+  "sunyani": { code: "GH", en: "Ghana", fr: "Sunyani", continent: "africa", type: "country" },
+  "koforidua": { code: "GH", en: "Ghana", fr: "Koforidua", continent: "africa", type: "country" },
+  "ashanti": { code: "GH", en: "Ghana", fr: "Ashanti", continent: "africa", type: "country" },
 
   "maroc": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
   "morocco": { code: "MA", en: "Morocco", fr: "Maroc", continent: "africa", type: "country" },
@@ -3181,6 +3358,30 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/cote-divoire-radio-badge.svg";
   }
 
+  // 1.l Logos officiels Ghana 🇬🇭
+  const isGhana = (cCode === "GH") || (st.code === "🇬🇭") || (st.country || "").toLowerCase().includes("ghana") || stState.includes("accra") || stState.includes("kumasi") || stState.includes("ashanti") || stState.includes("tema") || stState.includes("tamale") || stState.includes("takoradi") || stState.includes("cape coast") || nameLow.includes("ghana") || nameLow.includes("accra") || nameLow.includes("kumasi");
+  if (isGhana) {
+    if (nameLow.includes("joy fm") || nameLow.includes("joy 99.7") || (nameLow.includes("joy") && !nameLow.includes("enjoy"))) return "assets/logos/joy-fm-ghana.svg";
+    if (nameLow.includes("citi") || nameLow.includes("97.3")) return "assets/logos/citi-fm-ghana.svg";
+    if (nameLow.includes("peace fm") || nameLow.includes("peace 104.3") || nameLow.includes("peacefm")) return "assets/logos/peace-fm-ghana.svg";
+    if (nameLow.includes("adom") || nameLow.includes("106.3")) return "assets/logos/adom-fm-ghana.svg";
+    if (nameLow.includes("yfm") || nameLow.includes("y fm") || nameLow.includes("107.9")) return "assets/logos/yfm-ghana.svg";
+    if (nameLow.includes("asempa") || nameLow.includes("94.7")) return "assets/logos/asempa-fm-ghana.svg";
+    if (nameLow.includes("oman") || nameLow.includes("107.1")) return "assets/logos/oman-fm-ghana.svg";
+    if (nameLow.includes("angel") || nameLow.includes("102.9")) return "assets/logos/angel-fm-ghana.svg";
+    if (nameLow.includes("happy") || nameLow.includes("98.9")) return "assets/logos/happy-fm-ghana.svg";
+    if (nameLow.includes("sunny") || nameLow.includes("88.7")) return "assets/logos/sunny-fm-ghana.svg";
+    if (nameLow.includes("okay") || nameLow.includes("101.7")) return "assets/logos/okay-fm-ghana.svg";
+    if (nameLow.includes("asaase") || nameLow.includes("99.5")) return "assets/logos/asaase-radio-ghana.svg";
+    if (nameLow.includes("starr") || nameLow.includes("103.5")) return "assets/logos/starr-fm-ghana.svg";
+    if (nameLow.includes("class fm") || nameLow.includes("class 91.3") || nameLow.includes("classfm")) return "assets/logos/class-fm-ghana.svg";
+    if (nameLow.includes("ghana waves") || nameLow.includes("ghanawaves")) return "assets/logos/ghana-waves-radio.svg";
+    if (nameLow.includes("agoo") || nameLow.includes("96.9")) return "assets/logos/agoo-fm-ghana.svg";
+    if (nameLow.includes("ahotor") || nameLow.includes("92.3")) return "assets/logos/ahotor-fm-ghana.svg";
+    if (nameLow.includes("atinka") || nameLow.includes("104.7")) return "assets/logos/atinka-fm-ghana.svg";
+    return "assets/logos/ghana-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -3237,6 +3438,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isCoteIvoire) {
     return "assets/logos/cote-divoire-radio-badge.svg";
+  }
+  if (isGhana) {
+    return "assets/logos/ghana-radio-badge.svg";
   }
 
   return "";

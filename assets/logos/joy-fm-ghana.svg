@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="joyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1226"/>
+      <stop offset="50%" stop-color="#122045"/>
+      <stop offset="100%" stop-color="#050a17"/>
+    </linearGradient>
+    <linearGradient id="joyYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="50%" stop-color="#FFD600"/>
+      <stop offset="100%" stop-color="#FFAB00"/>
+    </linearGradient>
+    <linearGradient id="joyRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5252"/>
+      <stop offset="100%" stop-color="#D50000"/>
+    </linearGradient>
+    <radialGradient id="joyGlow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFD600" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FFD600" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="joyDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="240" fill="url(#joyBg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#joyYellow)" stroke-width="3" stroke-opacity="0.8"/>
+  <circle cx="256" cy="190" r="170" fill="url(#joyGlow)"/>
+
+  <!-- Ondes radio -->
+  <g fill="none" stroke="url(#joyYellow)" stroke-linecap="round" opacity="0.8">
+    <path d="M 140 170 A 130 130 0 0 1 372 170" stroke-width="3" stroke-dasharray="6 8"/>
+    <path d="M 170 180 A 100 100 0 0 1 342 180" stroke-width="4"/>
+    <path d="M 200 190 A 70 70 0 0 1 312 190" stroke-width="5"/>
+  </g>
+
+  <!-- Capsule JOY FM Stylisée Jaune et Bleu -->
+  <g filter="url(#joyDrop)" transform="translate(256, 185)">
+    <rect x="-95" y="-50" width="190" height="100" rx="20" fill="url(#joyYellow)"/>
+    <text x="0" y="20" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="52" font-weight="900" fill="#0c1a3b" text-anchor="middle" font-style="italic">joy</text>
+  </g>
+
+  <!-- Badge 99.7 FM The Super Station -->
+  <g transform="translate(256, 285)">
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#joyRed)" filter="url(#joyDrop)"/>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">99.7 FM • ACCRA</text>
+  </g>
+
+  <!-- Titre Principal JOY FM -->
+  <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">JOY 99.7 FM</text>
+
+  <!-- Sous-titre Ghana's Super Station -->
+  <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#joyYellow)" text-anchor="middle" letter-spacing="3">GHANA'S SUPER STATION</text>
+
+  <!-- Drapeau ghanéen miniature en bas -->
+  <g transform="translate(256, 430)">
+    <rect x="-18" y="-7" width="36" height="5" fill="#CE1126" rx="1"/>
+    <rect x="-18" y="-2" width="36" height="5" fill="#FCD116"/>
+    <polygon points="0,-2 1.5,0.5 4,0.5 2,2 2.5,4.5 0,3 -2.5,4.5 -2,2 -4,0.5 -1.5,0.5" fill="#000000"/>
+    <rect x="-18" y="3" width="36" height="5" fill="#006B3F" rx="1"/>
+    <rect x="-18" y="-7" width="36" height="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" rx="2"/>
+  </g>
+</svg>

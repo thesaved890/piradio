@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="strBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a19"/>
+      <stop offset="50%" stop-color="#0a1533"/>
+      <stop offset="100%" stop-color="#02050f"/>
+    </linearGradient>
+    <linearGradient id="strGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="50%" stop-color="#FCD116"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+    <filter id="strDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="240" fill="url(#strBg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#strGold)" stroke-width="3" stroke-opacity="0.8"/>
+
+  <!-- Étoile d'or STARR FM -->
+  <g filter="url(#strDrop)" transform="translate(256, 185)">
+    <polygon points="0,-48 15,-15 48,-15 22,6 32,40 0,20 -32,40 -22,6 -48,-15 -15,-15" fill="url(#strGold)"/>
+  </g>
+
+  <!-- Badge 103.5 FM EIB Network -->
+  <g transform="translate(256, 285)">
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#strGold)" filter="url(#strDrop)"/>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#050a19" text-anchor="middle" letter-spacing="2">103.5 FM • ACCRA</text>
+  </g>
+
+  <!-- Titre Principal STARR FM -->
+  <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">STARR 103.5 FM</text>
+
+  <!-- Sous-titre EIB Network -->
+  <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#strGold)" text-anchor="middle" letter-spacing="3">EXCELLENCE IN BROADCASTING</text>
+
+  <!-- Drapeau ghanéen miniature en bas -->
+  <g transform="translate(256, 430)">
+    <rect x="-18" y="-7" width="36" height="5" fill="#CE1126" rx="1"/>
+    <rect x="-18" y="-2" width="36" height="5" fill="#FCD116"/>
+    <polygon points="0,-2 1.5,0.5 4,0.5 2,2 2.5,4.5 0,3 -2.5,4.5 -2,2 -4,0.5 -1.5,0.5" fill="#000000"/>
+    <rect x="-18" y="3" width="36" height="5" fill="#006B3F" rx="1"/>
+    <rect x="-18" y="-7" width="36" height="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" rx="2"/>
+  </g>
+</svg>

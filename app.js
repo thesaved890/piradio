@@ -332,6 +332,29 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/cote-divoire-radio-badge.svg";
     }
 
+    const isGhana = (st.code === "🇬🇭") || (st.country && st.country.toLowerCase().includes("ghana")) || stState.includes("accra") || stState.includes("kumasi") || stState.includes("ashanti") || stState.includes("tema") || stState.includes("tamale") || stState.includes("takoradi") || stState.includes("cape coast") || nameLow.includes("ghana") || nameLow.includes("accra") || nameLow.includes("kumasi");
+    if (isGhana) {
+      if (nameLow.includes("joy fm") || nameLow.includes("joy 99.7") || (nameLow.includes("joy") && !nameLow.includes("enjoy"))) return "assets/logos/joy-fm-ghana.svg";
+      if (nameLow.includes("citi") || nameLow.includes("97.3")) return "assets/logos/citi-fm-ghana.svg";
+      if (nameLow.includes("peace fm") || nameLow.includes("peace 104.3") || nameLow.includes("peacefm")) return "assets/logos/peace-fm-ghana.svg";
+      if (nameLow.includes("adom") || nameLow.includes("106.3")) return "assets/logos/adom-fm-ghana.svg";
+      if (nameLow.includes("yfm") || nameLow.includes("y fm") || nameLow.includes("107.9")) return "assets/logos/yfm-ghana.svg";
+      if (nameLow.includes("asempa") || nameLow.includes("94.7")) return "assets/logos/asempa-fm-ghana.svg";
+      if (nameLow.includes("oman") || nameLow.includes("107.1")) return "assets/logos/oman-fm-ghana.svg";
+      if (nameLow.includes("angel") || nameLow.includes("102.9")) return "assets/logos/angel-fm-ghana.svg";
+      if (nameLow.includes("happy") || nameLow.includes("98.9")) return "assets/logos/happy-fm-ghana.svg";
+      if (nameLow.includes("sunny") || nameLow.includes("88.7")) return "assets/logos/sunny-fm-ghana.svg";
+      if (nameLow.includes("okay") || nameLow.includes("101.7")) return "assets/logos/okay-fm-ghana.svg";
+      if (nameLow.includes("asaase") || nameLow.includes("99.5")) return "assets/logos/asaase-radio-ghana.svg";
+      if (nameLow.includes("starr") || nameLow.includes("103.5")) return "assets/logos/starr-fm-ghana.svg";
+      if (nameLow.includes("class fm") || nameLow.includes("class 91.3") || nameLow.includes("classfm")) return "assets/logos/class-fm-ghana.svg";
+      if (nameLow.includes("ghana waves") || nameLow.includes("ghanawaves")) return "assets/logos/ghana-waves-radio.svg";
+      if (nameLow.includes("agoo") || nameLow.includes("96.9")) return "assets/logos/agoo-fm-ghana.svg";
+      if (nameLow.includes("ahotor") || nameLow.includes("92.3")) return "assets/logos/ahotor-fm-ghana.svg";
+      if (nameLow.includes("atinka") || nameLow.includes("104.7")) return "assets/logos/atinka-fm-ghana.svg";
+      return "assets/logos/ghana-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -347,6 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isSenegal) return "assets/logos/senegal-radio-badge.svg";
     if (isBenin) return "assets/logos/benin-radio-badge.svg";
     if (isCoteIvoire) return "assets/logos/cote-divoire-radio-badge.svg";
+    if (isGhana) return "assets/logos/ghana-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 

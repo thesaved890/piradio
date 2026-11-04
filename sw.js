@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v4.9
+// Pi Radio • Service Worker v5.0
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v4.9';
+const CACHE_NAME = 'piradio-v5.0';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,26 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Ghana 🇬🇭
+  './assets/logos/ghana-radio-badge.svg',
+  './assets/logos/joy-fm-ghana.svg',
+  './assets/logos/citi-fm-ghana.svg',
+  './assets/logos/peace-fm-ghana.svg',
+  './assets/logos/adom-fm-ghana.svg',
+  './assets/logos/yfm-ghana.svg',
+  './assets/logos/asempa-fm-ghana.svg',
+  './assets/logos/oman-fm-ghana.svg',
+  './assets/logos/angel-fm-ghana.svg',
+  './assets/logos/happy-fm-ghana.svg',
+  './assets/logos/sunny-fm-ghana.svg',
+  './assets/logos/okay-fm-ghana.svg',
+  './assets/logos/asaase-radio-ghana.svg',
+  './assets/logos/starr-fm-ghana.svg',
+  './assets/logos/class-fm-ghana.svg',
+  './assets/logos/ghana-waves-radio.svg',
+  './assets/logos/agoo-fm-ghana.svg',
+  './assets/logos/ahotor-fm-ghana.svg',
+  './assets/logos/atinka-fm-ghana.svg',
   // Logos officiels Côte d'Ivoire 🇨🇮
   './assets/logos/cote-divoire-radio-badge.svg',
   './assets/logos/radio-cote-divoire.svg',
