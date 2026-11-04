@@ -1052,6 +1052,8 @@ const CURATED_STATIONS = [
     id: "wbez-91-5-chicago",
     name: "WBEZ 91.5 FM Chicago",
     country: "États-Unis",
+    city: "Chicago, IL",
+    state: "Illinois",
     code: "🇺🇸",
     continent: "americas",
     category: "news",
@@ -1063,6 +1065,82 @@ const CURATED_STATIONS = [
     fallbackUrl: "https://stream.wbez.org/wbez128.mp3",
     logo: "assets/logos/wbez-91-5-chicago.png",
     featured: true
+  },
+  {
+    id: "wfmt-98-7-chicago",
+    name: "WFMT 98.7 FM (Classical Chicago)",
+    country: "États-Unis",
+    city: "Chicago, IL",
+    state: "Illinois",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "culture",
+    frequency: "98.7",
+    band: "FM",
+    language: "English",
+    genre: "Classical Music, Opera & Fine Arts from Chicago",
+    streamUrl: "https://wfmt.streamguys1.com/main128.aac",
+    fallbackUrl: "https://wfmt.streamguys1.com/main128.aac",
+    logo: "assets/logos/wfmt-98-7-chicago.png",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "wls-94-7-chicago",
+    name: "94.7 WLS-FM (Chicago's Classic Hits)",
+    country: "États-Unis",
+    city: "Chicago, IL",
+    state: "Illinois",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "94.7",
+    band: "FM",
+    language: "English",
+    genre: "Chicago 70s, 80s & 90s Legendary Classic Hits",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WLSFM.mp3",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WLSFM.mp3",
+    logo: "assets/logos/wls-94-7-chicago.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "chicago-house-radio",
+    name: "Chicago House Radio (House Music Origin)",
+    country: "États-Unis",
+    city: "Chicago, IL",
+    state: "Illinois",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "The Authentic Birthplace of Deep & Soulful House",
+    streamUrl: "https://stream.radio.co/sae989fe39/listen",
+    fallbackUrl: "https://stream.radio.co/sae989fe39/listen",
+    logo: "assets/logos/chicago-house-radio.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "smooth-jazz-wnua-chicago",
+    name: "Smooth Jazz WNUA (Chicago, IL)",
+    country: "États-Unis",
+    city: "Chicago, IL",
+    state: "Illinois",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Chicago's Legendary Smooth Jazz & Instrumental Soul",
+    streamUrl: "https://vip2.fastcast4u.com/proxy/wnua?mp=/1",
+    fallbackUrl: "https://vip2.fastcast4u.com/proxy/wnua?mp=/1",
+    logo: "assets/logos/smooth-jazz-wnua-chicago.svg",
+    featured: false,
+    locked: true
   },
   {
     id: "wlrn-91-3-miami",
@@ -2568,6 +2646,16 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("miami beach")) return "assets/logos/miami-beach-radio.svg";
   }
 
+  // 1.f Logos officiels Chicago 🏙️
+  const isChicago = nameLow.includes("chicago") || nameLow.includes("wbez") || nameLow.includes("wfmt") || (stState.includes("illinois") && nameLow.includes("chi"));
+  if (isChicago) {
+    if (nameLow.includes("wbez")) return "assets/logos/wbez-91-5-chicago.png";
+    if (nameLow.includes("wfmt")) return "assets/logos/wfmt-98-7-chicago.png";
+    if (nameLow.includes("wls") || nameLow.includes("94.7")) return "assets/logos/wls-94-7-chicago.svg";
+    if (nameLow.includes("house")) return "assets/logos/chicago-house-radio.svg";
+    if (nameLow.includes("wnua") || nameLow.includes("smooth jazz")) return "assets/logos/smooth-jazz-wnua-chicago.svg";
+  }
+
   // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
   if (st.favicon && st.favicon.startsWith("https://")) {
     return st.favicon;
@@ -2594,6 +2682,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isFlorida) {
     return "assets/logos/florida-radio-badge.svg";
+  }
+  if (isChicago) {
+    return "assets/logos/chicago-radio-badge.svg";
   }
 
   return "";

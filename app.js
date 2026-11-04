@@ -189,6 +189,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/florida-radio-badge.svg";
     }
 
+    const isChicago = nameLow.includes("chicago") || nameLow.includes("wbez") || nameLow.includes("wfmt") || (stState.includes("illinois") && nameLow.includes("chi"));
+    if (isChicago) {
+      if (nameLow.includes("wbez")) return "assets/logos/wbez-91-5-chicago.png";
+      if (nameLow.includes("wfmt")) return "assets/logos/wfmt-98-7-chicago.png";
+      if (nameLow.includes("wls") || nameLow.includes("94.7")) return "assets/logos/wls-94-7-chicago.svg";
+      if (nameLow.includes("house")) return "assets/logos/chicago-house-radio.svg";
+      if (nameLow.includes("wnua") || nameLow.includes("smooth jazz")) return "assets/logos/smooth-jazz-wnua-chicago.svg";
+      return "assets/logos/chicago-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !domain.includes("torontocast") && !domain.includes("radioking")) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -198,6 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isTexas) return "assets/logos/texas-radio-badge.svg";
     if (isHawaii) return "assets/logos/hawaii-radio-badge.svg";
     if (isFlorida) return "assets/logos/florida-radio-badge.svg";
+    if (isChicago) return "assets/logos/chicago-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 
@@ -632,7 +643,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const isTexas = (st.state && st.state.toLowerCase().includes("texas")) || (st.name && st.name.toLowerCase().includes("texas"));
     const isHawaii = (st.state && (st.state.toLowerCase().includes("hawaii") || st.state.toLowerCase().includes("hawai"))) || (st.name && (st.name.toLowerCase().includes("hawaii") || st.name.toLowerCase().includes("hawai")));
     const isFlorida = (st.state && (st.state.toLowerCase().includes("florida") || st.state.toLowerCase().includes("floride"))) || (st.name && (st.name.toLowerCase().includes("florida") || st.name.toLowerCase().includes("floride")));
-    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : (isMichigan ? "assets/logos/michigan-radio-badge.svg" : (isTexas ? "assets/logos/texas-radio-badge.svg" : (isHawaii ? "assets/logos/hawaii-radio-badge.svg" : (isFlorida ? "assets/logos/florida-radio-badge.svg" : getFlagFallback(st.code)))));
+    const isChicago = (st.city && st.city.toLowerCase().includes("chicago")) || (st.name && st.name.toLowerCase().includes("chicago"));
+    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : (isMichigan ? "assets/logos/michigan-radio-badge.svg" : (isTexas ? "assets/logos/texas-radio-badge.svg" : (isHawaii ? "assets/logos/hawaii-radio-badge.svg" : (isFlorida ? "assets/logos/florida-radio-badge.svg" : (isChicago ? "assets/logos/chicago-radio-badge.svg" : getFlagFallback(st.code))))));
     const resolvedLogo = resolveStationLogo(st);
     
     const badgeHtml = st.frequency 
@@ -1013,7 +1025,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const isTexas = (station.state && station.state.toLowerCase().includes("texas")) || (station.name && station.name.toLowerCase().includes("texas"));
     const isHawaii = (station.state && (station.state.toLowerCase().includes("hawaii") || station.state.toLowerCase().includes("hawai"))) || (station.name && (station.name.toLowerCase().includes("hawaii") || station.name.toLowerCase().includes("hawai")));
     const isFlorida = (station.state && (station.state.toLowerCase().includes("florida") || station.state.toLowerCase().includes("floride"))) || (station.name && (station.name.toLowerCase().includes("florida") || station.name.toLowerCase().includes("floride")));
-    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : (isMichigan ? "assets/logos/michigan-radio-badge.svg" : (isTexas ? "assets/logos/texas-radio-badge.svg" : (isHawaii ? "assets/logos/hawaii-radio-badge.svg" : (isFlorida ? "assets/logos/florida-radio-badge.svg" : getFlagFallback(station.code)))));
+    const isChicago = (station.city && station.city.toLowerCase().includes("chicago")) || (station.name && station.name.toLowerCase().includes("chicago"));
+    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : (isMichigan ? "assets/logos/michigan-radio-badge.svg" : (isTexas ? "assets/logos/texas-radio-badge.svg" : (isHawaii ? "assets/logos/hawaii-radio-badge.svg" : (isFlorida ? "assets/logos/florida-radio-badge.svg" : (isChicago ? "assets/logos/chicago-radio-badge.svg" : getFlagFallback(station.code))))));
     const resolvedLogo = resolveStationLogo(station);
 
     playerStationTitle.textContent = station.name;

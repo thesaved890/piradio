@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="wlsbg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1b2038"/>
+      <stop offset="100%" stop-color="#080a14"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#wlsbg)" stroke="#f3b43f" stroke-width="2"/>
+  <text x="100" y="80" font-family="'Inter',sans-serif" font-size="34" font-weight="900" fill="#f3b43f" text-anchor="middle" letter-spacing="2">94.7</text>
+  <text x="100" y="118" font-family="'Inter',sans-serif" font-size="30" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">WLS-FM</text>
+  <text x="100" y="152" font-family="'Inter',sans-serif" font-size="12" font-weight="800" fill="#ff5252" text-anchor="middle" letter-spacing="2">CHICAGO'S CLASSIC HITS</text>
+  <text x="100" y="172" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#c5bcdb" text-anchor="middle" letter-spacing="2">CHICAGO, ILLINOIS</text>
+</svg>
