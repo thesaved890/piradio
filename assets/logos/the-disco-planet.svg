@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="discobg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#300d38"/>
+      <stop offset="100%" stop-color="#100314"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#discobg)" stroke="#e040fb" stroke-width="2"/>
+  <!-- Mirror ball / planet with ring -->
+  <circle cx="100" cy="80" r="32" fill="#e040fb" opacity="0.8"/>
+  <ellipse cx="100" cy="80" rx="48" ry="12" fill="none" stroke="#00e5ff" stroke-width="3" transform="rotate(-20 100 80)"/>
+  <text x="100" y="148" font-family="'Inter',sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">DISCO PLANET</text>
+  <text x="100" y="170" font-family="'Inter',sans-serif" font-size="10" font-weight="800" fill="#00e5ff" text-anchor="middle" letter-spacing="2">70s &amp; 80s DANCE • MIAMI</text>
+</svg>

@@ -1068,6 +1068,8 @@ const CURATED_STATIONS = [
     id: "wlrn-91-3-miami",
     name: "WLRN 91.3 FM Miami",
     country: "États-Unis",
+    city: "Miami, FL",
+    state: "Florida",
     code: "🇺🇸",
     continent: "americas",
     category: "news",
@@ -1079,6 +1081,63 @@ const CURATED_STATIONS = [
     fallbackUrl: "https://wlrn.streamguys1.com/wlrn-news-web-icy",
     logo: "assets/logos/wlrn-91-3-miami.png",
     featured: true,
+    locked: true
+  },
+  {
+    id: "wjct-89-9-jacksonville",
+    name: "WJCT 89.9 FM Jacksonville (NPR)",
+    country: "États-Unis",
+    city: "Jacksonville, FL",
+    state: "Florida",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "news",
+    frequency: "89.9",
+    band: "FM",
+    language: "English",
+    genre: "Northeast Florida News, In-depth NPR Journalism",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WJCTFM.mp3",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/WJCTFM.mp3",
+    logo: "assets/logos/wjct-jacksonville.png",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "radio-motown-miami",
+    name: "Radio Motown (Miami, Florida)",
+    country: "États-Unis",
+    city: "Miami, FL",
+    state: "Florida",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Non-Stop Soul, R&B & Legendary Motown Classics",
+    streamUrl: "https://broadcast.miami/proxy/motown?mp=/stream/;",
+    fallbackUrl: "https://broadcast.miami/proxy/motown?mp=/stream/;",
+    logo: "assets/logos/radio-motown-miami.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "radio-italo-disco-miami",
+    name: "Radio Italo Disco (Miami, Florida)",
+    country: "États-Unis",
+    city: "Miami, FL",
+    state: "Florida",
+    code: "🇺🇸",
+    continent: "americas",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Euro-Disco, Italo Synth & 80s Club Vibes",
+    streamUrl: "https://broadcast.miami/proxy/italodisco?mp=/stream",
+    fallbackUrl: "https://broadcast.miami/proxy/italodisco?mp=/stream",
+    logo: "assets/logos/radio-italo-disco.svg",
+    featured: false,
     locked: true
   },
   {
@@ -2498,6 +2557,17 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("ktuh")) return "assets/logos/ktuh-honolulu.svg";
   }
 
+  // 1.e Logos officiels Floride ☀️
+  const isFlorida = stState.includes("florida") || stState.includes("floride") || nameLow.includes("florida") || nameLow.includes("floride") || nameLow.includes("miami") || nameLow.includes("orlando") || nameLow.includes("tampa") || nameLow.includes("jacksonville");
+  if (isFlorida) {
+    if (nameLow.includes("wlrn")) return "assets/logos/wlrn-91-3-miami.png";
+    if (nameLow.includes("wjct")) return "assets/logos/wjct-jacksonville.png";
+    if (nameLow.includes("motown")) return "assets/logos/radio-motown-miami.svg";
+    if (nameLow.includes("disco planet")) return "assets/logos/the-disco-planet.svg";
+    if (nameLow.includes("italo disco") || nameLow.includes("italodisco")) return "assets/logos/radio-italo-disco.svg";
+    if (nameLow.includes("miami beach")) return "assets/logos/miami-beach-radio.svg";
+  }
+
   // 2. Favicon HTTPS officiel fourni par l'API Radio Browser
   if (st.favicon && st.favicon.startsWith("https://")) {
     return st.favicon;
@@ -2521,6 +2591,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isHawaii) {
     return "assets/logos/hawaii-radio-badge.svg";
+  }
+  if (isFlorida) {
+    return "assets/logos/florida-radio-badge.svg";
   }
 
   return "";
