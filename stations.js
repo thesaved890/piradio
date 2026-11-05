@@ -3227,6 +3227,158 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 4f. 🇿🇲 ZAMBIE (LUSAKA & AFRIQUE AUSTRALE)
+  // ==========================================
+  {
+    id: "radio-phoenix-zambia",
+    name: "Radio Phoenix 89.5 FM Lusaka",
+    country: "Zambie",
+    city: "Lusaka",
+    state: "Lusaka Province",
+    code: "🇿🇲",
+    continent: "africa",
+    category: "news",
+    frequency: "89.5",
+    band: "FM",
+    language: "English & Zambian languages",
+    genre: "Station of the Nation • News, Talk & Music",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_PHOENIXAAC_SC",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_PHOENIXAAC_SC",
+    logo: "assets/logos/radio-phoenix-zambia.svg",
+    featured: true
+  },
+  {
+    id: "hot-fm-zambia",
+    name: "Hot FM 87.7 Lusaka",
+    country: "Zambie",
+    city: "Lusaka",
+    state: "Lusaka Province",
+    code: "🇿🇲",
+    continent: "africa",
+    category: "culture",
+    frequency: "87.7",
+    band: "FM",
+    language: "English",
+    genre: "Zambia's Hottest Station • Urban Hits & Entertainment",
+    streamUrl: "http://s2.yesstreaming.net:7091/stream?type=.mp3",
+    fallbackUrl: "http://s2.yesstreaming.net:7091/stream?type=.mp3",
+    logo: "assets/logos/hot-fm-zambia.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "radio-christian-voice-zm",
+    name: "Radio Christian Voice 106.1 FM",
+    country: "Zambie",
+    city: "Lusaka",
+    state: "Lusaka Province",
+    code: "🇿🇲",
+    continent: "africa",
+    category: "culture",
+    frequency: "106.1",
+    band: "FM",
+    language: "English, Bemba & Nyanja",
+    genre: "Christian Ministry, Gospel, Hope & Family",
+    streamUrl: "https://streaming.shoutcast.com/rcv",
+    fallbackUrl: "https://streaming.shoutcast.com/rcv",
+    logo: "assets/logos/radio-christian-voice-zm.svg",
+    featured: true
+  },
+  {
+    id: "metro-fm-zambia",
+    name: "Metro FM 94.5 Lusaka",
+    country: "Zambie",
+    city: "Lusaka",
+    state: "Lusaka Province",
+    code: "🇿🇲",
+    continent: "africa",
+    category: "culture",
+    frequency: "94.5",
+    band: "FM",
+    language: "English & Nyanja",
+    genre: "Urban Contemporary, RnB, Zed Beats & Lifestyle",
+    streamUrl: "https://s24.myradiostream.com:15422/;;",
+    fallbackUrl: "https://s24.myradiostream.com:15422/;;",
+    logo: "assets/logos/metro-fm-zambia.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "5fm-radio-zambia",
+    name: "5FM Radio 89.9 Lusaka",
+    country: "Zambie",
+    city: "Lusaka",
+    state: "Lusaka Province",
+    code: "🇿🇲",
+    continent: "africa",
+    category: "news",
+    frequency: "89.9",
+    band: "FM",
+    language: "English & Nyanja",
+    genre: "Talk, Debates, Current Affairs & Golden Oldies",
+    streamUrl: "http://ca9.rcast.net:8014/;stream.mp3",
+    fallbackUrl: "http://ca9.rcast.net:8014/;stream.mp3",
+    logo: "assets/logos/5fm-radio-zambia.svg",
+    featured: true
+  },
+  {
+    id: "rock-fm-zambia",
+    name: "96.5 Rock FM Lusaka",
+    country: "Zambie",
+    city: "Lusaka",
+    state: "Lusaka Province",
+    code: "🇿🇲",
+    continent: "africa",
+    category: "culture",
+    frequency: "96.5",
+    band: "FM",
+    language: "English",
+    genre: "Rock, Alternative, Pop & Youth Urban Culture",
+    streamUrl: "http://broadcast.shoutcheap.com:8702/stream",
+    fallbackUrl: "http://broadcast.shoutcheap.com:8702/stream",
+    logo: "assets/logos/rock-fm-zambia.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "parliament-radio-zambia",
+    name: "Parliament Radio 92.5 FM Lusaka",
+    country: "Zambie",
+    city: "Lusaka",
+    state: "Lusaka Province",
+    code: "🇿🇲",
+    continent: "africa",
+    category: "news",
+    frequency: "92.5",
+    band: "FM",
+    language: "English & Zambian national languages",
+    genre: "Parliamentary Live Debates, Democracy & Governance",
+    streamUrl: "https://streamer.parliament.gov.zm:9446/;",
+    fallbackUrl: "https://streamer.parliament.gov.zm:9446/;",
+    logo: "assets/logos/parliament-radio-zambia.svg",
+    featured: true
+  },
+  {
+    id: "radio-maria-zambia",
+    name: "Radio Maria Zambia (Lusaka)",
+    country: "Zambie",
+    city: "Lusaka",
+    state: "Lusaka Province",
+    code: "🇿🇲",
+    continent: "africa",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English, Bemba & Nyanja",
+    genre: "Catholic Faith, Spiritual Meditations & Peace",
+    streamUrl: "https://dreamsiteradiocp5.com/proxy/zambialusakaaac?mp=/stream",
+    fallbackUrl: "https://dreamsiteradiocp5.com/proxy/zambialusakaaac?mp=/stream",
+    logo: "assets/logos/radio-maria-zambia.svg",
+    featured: true,
+    locked: true
+  },
+
+  // ==========================================
   // 5. 🇯🇵 JAPON, 🇮🇳 INDE, 🇰🇷 CORÉE, 🇨🇳 CHINE, 🇵🇭 PHILIPPINES, 🇸🇬 SINGAPOUR, 🇮🇩 INDONÉSIE (ASIE)
   // ==========================================
   {
@@ -5174,6 +5326,18 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "niger": { code: "NE", en: "Niger", fr: "Niger", continent: "africa", type: "country" },
   "rwanda": { code: "RW", en: "Rwanda", fr: "Rwanda", continent: "africa", type: "country" },
 
+  // Zambie 🇿🇲
+  "zm": { code: "ZM", en: "Zambia", fr: "Zambie", continent: "africa", type: "country" },
+  "zambia": { code: "ZM", en: "Zambia", fr: "Zambie", continent: "africa", type: "country" },
+  "zambie": { code: "ZM", en: "Zambia", fr: "Zambie", continent: "africa", type: "country" },
+  "zambien": { code: "ZM", en: "Zambia", fr: "Zambie", continent: "africa", type: "country" },
+  "zambienne": { code: "ZM", en: "Zambia", fr: "Zambie", continent: "africa", type: "country" },
+  "lusaka": { code: "ZM", en: "Zambia", fr: "Lusaka", continent: "africa", type: "country" },
+  "ndola": { code: "ZM", en: "Zambia", fr: "Ndola", continent: "africa", type: "country" },
+  "kitwe": { code: "ZM", en: "Zambia", fr: "Kitwe", continent: "africa", type: "country" },
+  "livingstone": { code: "ZM", en: "Zambia", fr: "Livingstone", continent: "africa", type: "country" },
+  "kabwe": { code: "ZM", en: "Zambia", fr: "Kabwe", continent: "africa", type: "country" },
+
   // --- AMÉRIQUES ---
   "usa": { code: "US", en: "United States", fr: "États-Unis", continent: "americas", type: "country" },
   "etats-unis": { code: "US", en: "United States", fr: "États-Unis", continent: "americas", type: "country" },
@@ -5734,6 +5898,21 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("star")) return "assets/logos/star-fm-gambia.svg";
     if (nameLow.includes("gam express")) return "assets/logos/gam-express-gambia.png";
     return "assets/logos/gambia-radio-badge.svg";
+  }
+  // 1.za Logos officiels Zambie 🇿🇲
+  const isZambia = (cCode === "ZM") || (st.code === "🇿🇲") || (st.country || "").toLowerCase().includes("zambia") || (st.country || "").toLowerCase().includes("zambie") ||
+    stState.includes("lusaka") || stState.includes("ndola") || stState.includes("kitwe") || stState.includes("livingstone") ||
+    nameLow.includes("zambia") || nameLow.includes("zambie") || nameLow.includes("phoenix") || nameLow.includes("hot fm") || nameLow.includes("rock fm") || nameLow.includes("5fm") || nameLow.includes("zamcom") || nameLow.includes("christian voice");
+  if (isZambia) {
+    if (nameLow.includes("phoenix")) return "assets/logos/radio-phoenix-zambia.svg";
+    if (nameLow.includes("hot")) return "assets/logos/hot-fm-zambia.svg";
+    if (nameLow.includes("christian voice")) return "assets/logos/radio-christian-voice-zm.svg";
+    if (nameLow.includes("metro")) return "assets/logos/metro-fm-zambia.svg";
+    if (nameLow.includes("5fm")) return "assets/logos/5fm-radio-zambia.svg";
+    if (nameLow.includes("rock")) return "assets/logos/rock-fm-zambia.svg";
+    if (nameLow.includes("parliament")) return "assets/logos/parliament-radio-zambia.svg";
+    if (nameLow.includes("maria")) return "assets/logos/radio-maria-zambia.svg";
+    return "assets/logos/zambia-radio-badge.svg";
   }
 
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)

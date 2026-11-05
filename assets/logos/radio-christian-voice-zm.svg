@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rcvBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b172a"/>
+      <stop offset="50%" stop-color="#142646"/>
+      <stop offset="100%" stop-color="#070e1c"/>
+    </linearGradient>
+    <linearGradient id="rcvGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe082"/>
+      <stop offset="100%" stop-color="#ffb300"/>
+    </linearGradient>
+    <linearGradient id="rcvCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4fc3f7"/>
+      <stop offset="100%" stop-color="#0288d1"/>
+    </linearGradient>
+    <filter id="rcvDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#ffd54f" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="512" height="512" rx="100" fill="url(#rcvBg)"/>
+  <rect x="12" y="12" width="488" height="488" rx="88" fill="none" stroke="#4fc3f7" stroke-opacity="0.3" stroke-width="4"/>
+
+  <!-- Croix stylisée et onde de foi -->
+  <g filter="url(#rcvDrop)" transform="translate(256, 175)">
+    <circle cx="0" cy="0" r="76" fill="#0d1f3b" stroke="url(#rcvGold)" stroke-width="5"/>
+    <!-- Croix chrétienne dorée -->
+    <rect x="-6" y="-42" width="12" height="84" rx="4" fill="url(#rcvGold)"/>
+    <rect x="-30" y="-22" width="60" height="12" rx="4" fill="url(#rcvGold)"/>
+    <!-- Rayons d'espoir -->
+    <circle cx="0" cy="-16" r="28" fill="none" stroke="#fff9c4" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Badge Fréquence 106.1 FM -->
+  <g transform="translate(256, 285)">
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#rcvGold)" filter="url(#rcvDrop)"/>
+    <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="21" font-weight="900" fill="#0b172a" text-anchor="middle" letter-spacing="1">106.1 FM</text>
+  </g>
+
+  <!-- Titre Principal -->
+  <text x="256" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">RADIO CHRISTIAN VOICE</text>
+
+  <!-- Slogan -->
+  <text x="256" y="395" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#81d4fa" text-anchor="middle" letter-spacing="3">HOPE, FAITH &amp; FAMILY</text>
+
+  <!-- Ville / Pays -->
+  <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#ffd54f" text-anchor="middle" letter-spacing="2">LUSAKA • ZAMBIA 🇿🇲</text>
+</svg>

@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.14
+// Pi Radio • Service Worker v5.15
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.14';
+const CACHE_NAME = 'piradio-v5.15';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -347,6 +347,16 @@ const PRECACHE_ASSETS = [
   './assets/logos/kiss-fm-rwanda.png',
   './assets/logos/nrg-radio-uganda.png',
   './assets/logos/capital-fm-uganda.png',
+  // Logos officiels Zambie 🇿🇲 (v5.15)
+  './assets/logos/zambia-radio-badge.svg',
+  './assets/logos/radio-phoenix-zambia.svg',
+  './assets/logos/hot-fm-zambia.svg',
+  './assets/logos/radio-christian-voice-zm.svg',
+  './assets/logos/metro-fm-zambia.svg',
+  './assets/logos/5fm-radio-zambia.svg',
+  './assets/logos/rock-fm-zambia.svg',
+  './assets/logos/parliament-radio-zambia.svg',
+  './assets/logos/radio-maria-zambia.svg',
   // Logos officiels Europe
   './assets/logos/france-info.png',
   './assets/logos/europe-1.png',

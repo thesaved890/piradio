@@ -636,6 +636,21 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/gambia-radio-badge.svg";
     }
 
+    const isZambia = (cCode === "ZM") || (st.code === "🇿🇲") || (st.country && (st.country.toLowerCase().includes("zambia") || st.country.toLowerCase().includes("zambie"))) ||
+      stState.includes("lusaka") || stState.includes("ndola") || stState.includes("kitwe") || stState.includes("livingstone") ||
+      nameLow.includes("zambia") || nameLow.includes("zambie") || nameLow.includes("phoenix") || nameLow.includes("hot fm") || nameLow.includes("rock fm") || nameLow.includes("5fm") || nameLow.includes("zamcom") || nameLow.includes("christian voice");
+    if (isZambia) {
+      if (nameLow.includes("phoenix")) return "assets/logos/radio-phoenix-zambia.svg";
+      if (nameLow.includes("hot")) return "assets/logos/hot-fm-zambia.svg";
+      if (nameLow.includes("christian voice")) return "assets/logos/radio-christian-voice-zm.svg";
+      if (nameLow.includes("metro")) return "assets/logos/metro-fm-zambia.svg";
+      if (nameLow.includes("5fm")) return "assets/logos/5fm-radio-zambia.svg";
+      if (nameLow.includes("rock")) return "assets/logos/rock-fm-zambia.svg";
+      if (nameLow.includes("parliament")) return "assets/logos/parliament-radio-zambia.svg";
+      if (nameLow.includes("maria")) return "assets/logos/radio-maria-zambia.svg";
+      return "assets/logos/zambia-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -666,6 +681,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isMauritanie) return "assets/logos/mauritanie-radio-badge.svg";
     if (isSierraLeone) return "assets/logos/sierra-leone-radio-badge.svg";
     if (isGambia) return "assets/logos/gambia-radio-badge.svg";
+    if (isZambia) return "assets/logos/zambia-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 
