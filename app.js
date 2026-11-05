@@ -347,6 +347,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (nameLow.includes("soleil") || nameLow.includes("89.0")) return "assets/logos/soleil-fm-benin.svg";
       if (nameLow.includes("deeman") || nameLow.includes("90.2")) return "assets/logos/deeman-fm-parakou.svg";
       if (nameLow.includes("frisson")) return "assets/logos/frisson-radio-benin.svg";
+      if (nameLow.includes("bip") || nameLow.includes("106.0")) return "assets/logos/bip-radio-cotonou.svg";
+      if (nameLow.includes("alleluia") || nameLow.includes("alléluia") || nameLow.includes("96.5")) return "assets/logos/alleluia-fm-porto-novo.svg";
       return "assets/logos/benin-radio-badge.svg";
     }
 

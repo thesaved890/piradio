@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="tokpaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041f12"/>
+      <stop offset="50%" stop-color="#093d25"/>
+      <stop offset="100%" stop-color="#02140b"/>
+    </linearGradient>
+    <linearGradient id="tokpaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd54f"/>
+      <stop offset="50%" stop-color="#ffb300"/>
+      <stop offset="100%" stop-color="#ff6f00"/>
+    </linearGradient>
+    <linearGradient id="beninTricolor" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#008751"/>
+      <stop offset="50%" stop-color="#fcd116"/>
+      <stop offset="100%" stop-color="#e8112d"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#tokpaBg)"/>
+  <circle cx="100" cy="84" r="58" fill="none" stroke="url(#tokpaGold)" stroke-width="2.5"/>
+  <!-- Dantokpa Canoe / Sun & Radio Tower Motif -->
+  <path d="M 64 100 C 76 108, 124 108, 136 100 C 128 114, 72 114, 64 100 Z" fill="url(#tokpaGold)"/>
+  <!-- Lagoon Waves beneath -->
+  <path d="M 68 116 Q 84 110 100 116 T 132 116" fill="none" stroke="#26a69a" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Tower / Sun rising -->
+  <circle cx="100" cy="62" r="14" fill="#fcd116"/>
+  <polygon points="98,54 102,54 105,98 95,98" fill="#ffffff"/>
+  <!-- Broadcast rings -->
+  <path d="M 80 56 A 24 24 0 0 0 80 72" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 120 56 A 24 24 0 0 1 120 72" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <text x="100" y="132" font-family="system-ui,-apple-system,sans-serif" font-size="15" font-weight="900" fill="#ffffff" letter-spacing="2" text-anchor="middle">TOKPA</text>
+  <!-- Banner -->
+  <rect x="18" y="146" width="164" height="36" rx="10" fill="#031a0e" stroke="url(#tokpaGold)" stroke-width="1.5"/>
+  <text x="100" y="163" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="900" fill="#ffffff" letter-spacing="1" text-anchor="middle">RADIO TOKPA</text>
+  <text x="100" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="700" fill="url(#tokpaGold)" letter-spacing="1.2" text-anchor="middle">LA VOIX DU MARCHÉ • 104.3 FM</text>
+</svg>

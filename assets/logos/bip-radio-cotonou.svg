@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bipBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071b2e"/>
+      <stop offset="50%" stop-color="#0b2c4a"/>
+      <stop offset="100%" stop-color="#04101c"/>
+    </linearGradient>
+    <linearGradient id="bipRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff334b"/>
+      <stop offset="100%" stop-color="#d50000"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#bipBg)"/>
+  <circle cx="100" cy="84" r="58" fill="none" stroke="url(#bipRed)" stroke-width="2.5"/>
+  <!-- Bold "BIP" Emblem -->
+  <rect x="54" y="62" width="92" height="42" rx="8" fill="url(#bipRed)"/>
+  <text x="100" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="26" font-weight="900" fill="#ffffff" letter-spacing="4" text-anchor="middle">BIP</text>
+  <!-- Broadcast Signal / Live Wave -->
+  <circle cx="100" cy="116" r="4" fill="#00e5ff"/>
+  <path d="M 86 116 A 14 14 0 0 1 114 116" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 78 116 A 22 22 0 0 1 122 116" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+  <text x="100" y="134" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="900" fill="#00e5ff" letter-spacing="1.5" text-anchor="middle">BÉNIN INFO PREMIÈRE</text>
+  <!-- Banner -->
+  <rect x="18" y="146" width="164" height="36" rx="10" fill="#051422" stroke="url(#bipRed)" stroke-width="1.5"/>
+  <text x="100" y="163" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="900" fill="#ffffff" letter-spacing="1" text-anchor="middle">BIP RADIO 106.0</text>
+  <text x="100" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="700" fill="#ff334b" letter-spacing="1.2" text-anchor="middle">L'INFO EN CONTINU • COTONOU</text>
+</svg>

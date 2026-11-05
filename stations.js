@@ -61,6 +61,80 @@ const CURATED_STATIONS = [
     logo: "assets/logos/radio-cotonou-94-3.svg",
     featured: true
   },
+  {
+    id: "frissons-radio-cotonou",
+    name: "Frissons Radio 95.2 FM",
+    country: "Bénin",
+    city: "Cotonou",
+    state: "Littoral",
+    code: "🇧🇯",
+    continent: "africa",
+    category: "music",
+    frequency: "95.2",
+    band: "FM",
+    language: "Français & Fon",
+    genre: "La radio des Hits • Musique, Jeunesse & Divertissement",
+    streamUrl: "https://frissonsradio.ice.infomaniak.ch/frissonsradio-128.mp3",
+    fallbackUrl: "https://frissonsradio.ice.infomaniak.ch/frissonsradio-128.mp3",
+    logo: "assets/logos/frisson-radio-benin.svg",
+    featured: true
+  },
+  {
+    id: "radio-tokpa-cotonou",
+    name: "Radio Tokpa 104.3 FM",
+    country: "Bénin",
+    city: "Cotonou",
+    state: "Littoral",
+    code: "🇧🇯",
+    continent: "africa",
+    category: "news",
+    frequency: "104.3",
+    band: "FM",
+    language: "Fon & Français",
+    genre: "La Voix du Marché Dantokpa • Économie, Proximité & Société",
+    streamUrl: "https://radiotokpa.info/liveradio",
+    fallbackUrl: "https://radiotokpa.info/liveradio",
+    logo: "assets/logos/radio-tokpa.svg",
+    featured: true
+  },
+  {
+    id: "bip-radio-cotonou",
+    name: "BIP Radio 106.0 FM (Bénin Info Première)",
+    country: "Bénin",
+    city: "Cotonou",
+    state: "Littoral",
+    code: "🇧🇯",
+    continent: "africa",
+    category: "news",
+    frequency: "106.0",
+    band: "FM",
+    language: "Français",
+    genre: "L'information en continu 24h/24 • Politique, Économie & Société",
+    streamUrl: "https://ice.creacast.com/bipradio",
+    fallbackUrl: "https://ice.creacast.com/bipradio",
+    logo: "assets/logos/bip-radio-cotonou.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "alleluia-fm-porto-novo",
+    name: "Alléluia FM 96.5 Porto-Novo",
+    country: "Bénin",
+    city: "Porto-Novo",
+    state: "Ouémé",
+    code: "🇧🇯",
+    continent: "africa",
+    category: "culture",
+    frequency: "96.5",
+    band: "FM",
+    language: "Français, Goun & Yoruba",
+    genre: "La Voix de la Foi • Louange, Évangile & Société",
+    streamUrl: "https://ecmanager6.pro-fhi.net:1770/stream",
+    fallbackUrl: "https://ecmanager6.pro-fhi.net:1770/stream",
+    logo: "assets/logos/alleluia-fm-porto-novo.svg",
+    featured: true,
+    locked: true
+  },
 
   // ==========================================
   // 1.b 🇨🇮 CÔTE D'IVOIRE
@@ -4599,11 +4673,16 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "grèce": { code: "GR", en: "Greece", fr: "Grèce", continent: "europe", type: "country" },
 
   // --- AFRIQUE ---
+  "bj": { code: "BJ", en: "Benin", fr: "Bénin", continent: "africa", type: "country" },
   "benin": { code: "BJ", en: "Benin", fr: "Bénin", continent: "africa", type: "country" },
   "bénin": { code: "BJ", en: "Benin", fr: "Bénin", continent: "africa", type: "country" },
   "cotonou": { code: "BJ", en: "Benin", fr: "Cotonou", continent: "africa", type: "country" },
   "parakou": { code: "BJ", en: "Benin", fr: "Parakou", continent: "africa", type: "country" },
   "porto-novo": { code: "BJ", en: "Benin", fr: "Porto-Novo", continent: "africa", type: "country" },
+  "porto novo": { code: "BJ", en: "Benin", fr: "Porto-Novo", continent: "africa", type: "country" },
+  "portonovo": { code: "BJ", en: "Benin", fr: "Porto-Novo", continent: "africa", type: "country" },
+  "oueme": { code: "BJ", en: "Benin", fr: "Ouémé", continent: "africa", type: "country" },
+  "ouémé": { code: "BJ", en: "Benin", fr: "Ouémé", continent: "africa", type: "country" },
 
   "nigeria": { code: "NG", en: "Nigeria", fr: "Nigéria", continent: "africa", type: "country" },
   "nigéria": { code: "NG", en: "Nigeria", fr: "Nigéria", continent: "africa", type: "country" },
@@ -5137,6 +5216,8 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("soleil") || nameLow.includes("89.0")) return "assets/logos/soleil-fm-benin.svg";
     if (nameLow.includes("deeman") || nameLow.includes("90.2")) return "assets/logos/deeman-fm-parakou.svg";
     if (nameLow.includes("frisson")) return "assets/logos/frisson-radio-benin.svg";
+    if (nameLow.includes("bip") || nameLow.includes("106.0")) return "assets/logos/bip-radio-cotonou.svg";
+    if (nameLow.includes("alleluia") || nameLow.includes("alléluia") || nameLow.includes("96.5")) return "assets/logos/alleluia-fm-porto-novo.svg";
     return "assets/logos/benin-radio-badge.svg";
   }
 
