@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sabBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241005"/>
+      <stop offset="50%" stop-color="#401d0a"/>
+      <stop offset="100%" stop-color="#140802"/>
+    </linearGradient>
+    <linearGradient id="sabOchre" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E76F51"/>
+      <stop offset="50%" stop-color="#F4A261"/>
+      <stop offset="100%" stop-color="#E9C46A"/>
+    </linearGradient>
+    <filter id="sabShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#sabBg)" stroke="#F4A261" stroke-width="3" filter="url(#sabShadow)"/>
+
+  <!-- Minaret de Kairouan stylisé / Sabra -->
+  <g transform="translate(100, 52)">
+    <circle cx="0" cy="0" r="23" fill="#301507" stroke="#F4A261" stroke-width="2"/>
+    <rect x="-6" y="-12" width="12" height="24" rx="2" fill="url(#sabOchre)"/>
+    <rect x="-4" y="-8" width="8" height="4" fill="#241005"/>
+    <circle cx="0" cy="-16" r="2.5" fill="#E9C46A"/>
+  </g>
+
+  <!-- Titre SABRA FM -->
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle" filter="url(#sabShadow)">SABRA FM</text>
+
+  <!-- Tag KAIROUAN & CENTRE -->
+  <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#sabOchre)"/>
+  <text x="100" y="134" fill="#241005" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.2" text-anchor="middle">صبرة إف إم • 98.8 FM</text>
+
+  <!-- Pied TUNISIE -->
+  <rect x="24" y="152" width="152" height="28" rx="8" fill="#1c0c04" stroke="#F4A261" stroke-width="1.2"/>
+  <text x="100" y="171" fill="#F4A261" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="1.8" text-anchor="middle">KAIROUAN • TUNISIE</text>
+</svg>

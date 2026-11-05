@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="diwanBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12133b"/>
+      <stop offset="50%" stop-color="#1f215e"/>
+      <stop offset="100%" stop-color="#0a0a24"/>
+    </linearGradient>
+    <linearGradient id="diwanGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD100"/>
+      <stop offset="50%" stop-color="#FF9E00"/>
+      <stop offset="100%" stop-color="#E70013"/>
+    </linearGradient>
+    <filter id="diwanShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#diwanBg)" stroke="#FFD100" stroke-width="3" filter="url(#diwanShadow)"/>
+
+  <!-- Bulle de dialogue / Diwan (مجلس الحوار) -->
+  <g transform="translate(100, 52)">
+    <circle cx="0" cy="0" r="23" fill="#1b1d52" stroke="#FFD100" stroke-width="2"/>
+    <path d="M -12 -6 L 12 -6 Q 14 -6 14 -2 L 14 6 Q 14 10 10 10 L 0 10 L -6 16 L -4 10 L -12 10 Q -14 10 -14 6 L -14 -2 Q -14 -6 -12 -6 Z" fill="url(#diwanGold)"/>
+  </g>
+
+  <!-- Titre DIWAN FM -->
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="23" letter-spacing="2" text-anchor="middle" filter="url(#diwanShadow)">DIWAN FM</text>
+
+  <!-- Tag صوتكم • SFAX & TUNIS -->
+  <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#diwanGold)"/>
+  <text x="100" y="134" fill="#12133B" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.2" text-anchor="middle">SFAX • GRAND TUNIS</text>
+
+  <!-- Pied TUNISIE -->
+  <rect x="24" y="152" width="152" height="28" rx="8" fill="#151747" stroke="#FFD100" stroke-width="1.2"/>
+  <text x="100" y="171" fill="#FFD100" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="1.8" text-anchor="middle">صوتكم • VÔTRE VOIX</text>
+</svg>

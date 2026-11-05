@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.5
+// Pi Radio • Service Worker v5.6
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.5';
+const CACHE_NAME = 'piradio-v5.6';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,24 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Tunisie 🇹🇳 (v5.6)
+  './assets/logos/tunisie-radio-badge.svg',
+  './assets/logos/mosaique-fm-tunisie.svg',
+  './assets/logos/jawhara-fm-tunisie.svg',
+  './assets/logos/diwan-fm-tunisie.svg',
+  './assets/logos/express-fm-tunisie.svg',
+  './assets/logos/radio-nationale-tunisie.svg',
+  './assets/logos/radio-jeunes-tunisie.svg',
+  './assets/logos/rtci-radio-tunisie.svg',
+  './assets/logos/sabra-fm-tunisie.svg',
+  './assets/logos/zitouna-fm-tunisie.svg',
+  './assets/logos/knooz-fm-tunisie.svg',
+  './assets/logos/oxygene-fm-tunisie.svg',
+  './assets/logos/radio-misk-tunisie.svg',
+  './assets/logos/radio-sfax-tunisie.svg',
+  './assets/logos/radio-monastir-tunisie.svg',
+  './assets/logos/alhayet-fm-tunisie.svg',
+  './assets/logos/babnet-tunisie.svg',
   // Logos officiels Maroc 🇲🇦 (v5.5)
   './assets/logos/maroc-radio-badge.svg',
   './assets/logos/medi1-radio-maroc.svg',

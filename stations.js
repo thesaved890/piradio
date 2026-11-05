@@ -1197,7 +1197,191 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
-  // 2. 🇩🇿 ALGÉRIE & 🇹🇳 TUNISIE (MAGHREB)
+  // 1.k 🇹🇳 TUNISIE
+  // ==========================================
+  {
+    id: "mosaique-fm-tunisie",
+    name: "Mosaïque FM 94.9 (Radio n°1)",
+    country: "Tunisie",
+    city: "Tunis",
+    state: "Grand Tunis",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "news",
+    frequency: "94.9",
+    band: "FM",
+    language: "العربية & Français",
+    genre: "Première radio de Tunisie, News, Talk & Variétés",
+    streamUrl: "https://radio.mosaiquefm.net/mosalive",
+    fallbackUrl: "http://radio.mosaiquefm.net:8000/mosalive",
+    logo: "assets/logos/mosaique-fm-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "jawhara-fm-tunisie",
+    name: "Jawhara FM 102.5 (Sousse & Sahel)",
+    country: "Tunisie",
+    city: "Sousse",
+    state: "Sousse",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "general",
+    frequency: "102.5",
+    band: "FM",
+    language: "العربية & Français",
+    genre: "La radio n°1 du Sahel tunisien, Divertissement & Info",
+    streamUrl: "https://streaming2.toutech.net/jawharafm",
+    fallbackUrl: "http://streaming2.toutech.net:8000/jawharafm",
+    logo: "assets/logos/jawhara-fm-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "diwan-fm-tunisie",
+    name: "Diwan FM (Sfax & Grand Tunis)",
+    country: "Tunisie",
+    city: "Sfax",
+    state: "Sfax",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "news",
+    frequency: "91.2",
+    band: "FM",
+    language: "العربية",
+    genre: "صوتكم, Débats d'actualité, Économie & Musique",
+    streamUrl: "https://streaming.diwanfm.net/stream",
+    fallbackUrl: "https://streaming.diwanfm.net/stream",
+    logo: "assets/logos/diwan-fm-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "express-fm-tunisie",
+    name: "Radio Express FM 103.6",
+    country: "Tunisie",
+    city: "Tunis",
+    state: "Grand Tunis",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "news",
+    frequency: "103.6",
+    band: "FM",
+    language: "Français & Arabe",
+    genre: "1ère radio économique et financière de Tunisie, Business & Talk",
+    streamUrl: "https://expressfm.ice.infomaniak.ch/expressfm-64.mp3",
+    fallbackUrl: "https://expressfm.ice.infomaniak.ch/expressfm-64.mp3",
+    logo: "assets/logos/express-fm-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "radio-nationale-tunisie",
+    name: "Radio Nationale Tunisienne",
+    country: "Tunisie",
+    city: "Tunis",
+    state: "Grand Tunis",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "news",
+    frequency: "101.5",
+    band: "FM",
+    language: "العربية",
+    genre: "الإذاعة الوطنية, La voix officielle de la Tunisie depuis 1938",
+    streamUrl: "https://radio.radiotunisienne.tn/nationale",
+    fallbackUrl: "http://rtstream.tanitweb.com/nationale",
+    logo: "assets/logos/radio-nationale-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "radio-jeunes-tunisie",
+    name: "Radio Jeunes Tunisie (إذاعة الشباب)",
+    country: "Tunisie",
+    city: "Tunis",
+    state: "Grand Tunis",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "music",
+    frequency: "96.5",
+    band: "FM",
+    language: "العربية & Français",
+    genre: "Hits tunisiens et internationaux, Jeunesse & Pop",
+    streamUrl: "https://radio.radiotunisienne.tn/jeunes",
+    fallbackUrl: "http://rtstream.tanitweb.com/jeunes",
+    logo: "assets/logos/radio-jeunes-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "rtci-radio-tunisie",
+    name: "RTCI (Radio Tunis Chaîne Internationale)",
+    country: "Tunisie",
+    city: "Tunis",
+    state: "Grand Tunis",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "news",
+    frequency: "92.0",
+    band: "FM",
+    language: "Français, English, Italiano, Deutsch",
+    genre: "Émissions polyglottes en Français, Anglais, Italien & Allemand",
+    streamUrl: "https://radio.radiotunisienne.tn/rtci",
+    fallbackUrl: "http://rtstream.tanitweb.com/rtci",
+    logo: "assets/logos/rtci-radio-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "sabra-fm-tunisie",
+    name: "Sabra FM 98.8 (Kairouan)",
+    country: "Tunisie",
+    city: "Kairouan",
+    state: "Kairouan",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "general",
+    frequency: "98.8",
+    band: "FM",
+    language: "العربية",
+    genre: "صبرة إف إم, La voix du Centre de la Tunisie et du patrimoine",
+    streamUrl: "https://manager5.streamradio.fr:1905/stream",
+    fallbackUrl: "https://manager5.streamradio.fr:1905/stream",
+    logo: "assets/logos/sabra-fm-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "zitouna-fm-tunisie",
+    name: "Zitouna FM (إذاعة الزيتونة)",
+    country: "Tunisie",
+    city: "Tunis",
+    state: "Grand Tunis",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "culture",
+    frequency: "102.9",
+    band: "FM",
+    language: "العربية",
+    genre: "Récitations du Saint Coran, Émissions religieuses & Spiritualité",
+    streamUrl: "https://radio.radiotunisienne.tn/radiozaitouna",
+    fallbackUrl: "https://radio.radiotunisienne.tn/radiozaitouna",
+    logo: "assets/logos/zitouna-fm-tunisie.svg",
+    featured: true
+  },
+  {
+    id: "radio-misk-tunisie",
+    name: "Radio Misk (Tunis)",
+    country: "Tunisie",
+    city: "Tunis",
+    state: "Grand Tunis",
+    code: "🇹🇳",
+    continent: "africa",
+    category: "culture",
+    frequency: "106.9",
+    band: "FM",
+    language: "Français & Arabe",
+    genre: "Culture, Musique alternative, Cinéma & Art tunisien",
+    streamUrl: "https://live.misk.art/stream",
+    fallbackUrl: "https://live.misk.art/stream",
+    logo: "assets/logos/radio-misk-tunisie.svg",
+    featured: true
+  },
+
+  // ==========================================
+  // 2. 🇩🇿 ALGÉRIE (MAGHREB)
   // ==========================================
   {
     id: "algerie-chaine-3",
@@ -1213,22 +1397,6 @@ const CURATED_STATIONS = [
     streamUrl: "https://webradio1.tda.dz:8001/Chaine3_64K.mp3",
     fallbackUrl: "https://webradio1.tda.dz:8001/Chaine3_64K.mp3",
     logo: "assets/logos/algerie-chaine-3.png",
-    featured: true
-  },
-  {
-    id: "tunisie-mosaique-fm",
-    name: "Mosaïque FM 94.9 (Radio n°1)",
-    country: "Tunisie",
-    code: "🇹🇳",
-    continent: "africa",
-    category: "news",
-    frequency: "94.9",
-    band: "FM",
-    language: "العربية & Français",
-    genre: "Première radio de Tunisie, News & Talk",
-    streamUrl: "http://radio.mosaiquefm.net:8000/mosalive",
-    fallbackUrl: "http://radio.mosaiquefm.net:8000/mosalive",
-    logo: "assets/logos/tunisie-mosaique-fm.png",
     featured: true
   },
 
@@ -3874,9 +4042,23 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "algeria": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
   "alger": { code: "DZ", en: "Algeria", fr: "Alger", continent: "africa", type: "country" },
 
+  // Tunisie 🇹🇳
+  "tn": { code: "TN", en: "Tunisia", fr: "Tunisie", continent: "africa", type: "country" },
   "tunisie": { code: "TN", en: "Tunisia", fr: "Tunisie", continent: "africa", type: "country" },
   "tunisia": { code: "TN", en: "Tunisia", fr: "Tunisie", continent: "africa", type: "country" },
+  "تونس": { code: "TN", en: "Tunisia", fr: "Tunisie", continent: "africa", type: "country" },
   "tunis": { code: "TN", en: "Tunisia", fr: "Tunis", continent: "africa", type: "country" },
+  "sfax": { code: "TN", en: "Tunisia", fr: "Sfax", continent: "africa", type: "country" },
+  "sousse": { code: "TN", en: "Tunisia", fr: "Sousse", continent: "africa", type: "country" },
+  "kairouan": { code: "TN", en: "Tunisia", fr: "Kairouan", continent: "africa", type: "country" },
+  "bizerte": { code: "TN", en: "Tunisia", fr: "Bizerte", continent: "africa", type: "country" },
+  "monastir": { code: "TN", en: "Tunisia", fr: "Monastir", continent: "africa", type: "country" },
+  "gabes": { code: "TN", en: "Tunisia", fr: "Gabès", continent: "africa", type: "country" },
+  "gabès": { code: "TN", en: "Tunisia", fr: "Gabès", continent: "africa", type: "country" },
+  "ariana": { code: "TN", en: "Tunisia", fr: "Ariana", continent: "africa", type: "country" },
+  "gafsa": { code: "TN", en: "Tunisia", fr: "Gafsa", continent: "africa", type: "country" },
+  "kef": { code: "TN", en: "Tunisia", fr: "Le Kef", continent: "africa", type: "country" },
+  "tataouine": { code: "TN", en: "Tunisia", fr: "Tataouine", continent: "africa", type: "country" },
 
   "egypte": { code: "EG", en: "Egypt", fr: "Égypte", continent: "africa", type: "country" },
   "égypte": { code: "EG", en: "Egypt", fr: "Égypte", continent: "africa", type: "country" },
@@ -4363,6 +4545,30 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/maroc-radio-badge.svg";
   }
 
+  // 1.t Logos officiels Tunisie 🇹🇳
+  const isTunisie = (cCode === "TN") || (st.code === "🇹🇳") || (st.country || "").toLowerCase().includes("tunis") ||
+    stState.includes("tunis") || stState.includes("sfax") || stState.includes("sousse") || stState.includes("kairouan") || stState.includes("bizerte") || stState.includes("monastir") || stState.includes("gafsa") || stState.includes("tataouine") || stState.includes("kef") ||
+    nameLow.includes("tunis") || nameLow.includes("sfax") || nameLow.includes("sousse") || nameLow.includes("kairouan") || nameLow.includes("bizerte") || nameLow.includes("monastir");
+  if (isTunisie) {
+    if (nameLow.includes("mosaique") || nameLow.includes("mosaïque") || nameLow.includes("mosalive") || nameLow.includes("mosat")) return "assets/logos/mosaique-fm-tunisie.svg";
+    if (nameLow.includes("jawhara")) return "assets/logos/jawhara-fm-tunisie.svg";
+    if (nameLow.includes("diwan")) return "assets/logos/diwan-fm-tunisie.svg";
+    if (nameLow.includes("express")) return "assets/logos/express-fm-tunisie.svg";
+    if (nameLow.includes("nationale")) return "assets/logos/radio-nationale-tunisie.svg";
+    if (nameLow.includes("jeunes") || nameLow.includes("jeune")) return "assets/logos/radio-jeunes-tunisie.svg";
+    if (nameLow.includes("rtci")) return "assets/logos/rtci-radio-tunisie.svg";
+    if (nameLow.includes("sabra")) return "assets/logos/sabra-fm-tunisie.svg";
+    if (nameLow.includes("zitouna") || nameLow.includes("zaitouna")) return "assets/logos/zitouna-fm-tunisie.svg";
+    if (nameLow.includes("knooz")) return "assets/logos/knooz-fm-tunisie.svg";
+    if (nameLow.includes("oxygene") || nameLow.includes("oxygène")) return "assets/logos/oxygene-fm-tunisie.svg";
+    if (nameLow.includes("misk")) return "assets/logos/radio-misk-tunisie.svg";
+    if (nameLow.includes("sfax")) return "assets/logos/radio-sfax-tunisie.svg";
+    if (nameLow.includes("monastir")) return "assets/logos/radio-monastir-tunisie.svg";
+    if (nameLow.includes("hayet") || nameLow.includes("alhayet")) return "assets/logos/alhayet-fm-tunisie.svg";
+    if (nameLow.includes("babnet")) return "assets/logos/babnet-tunisie.svg";
+    return "assets/logos/tunisie-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -4444,6 +4650,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isMaroc) {
     return "assets/logos/maroc-radio-badge.svg";
+  }
+  if (isTunisie) {
+    return "assets/logos/tunisie-radio-badge.svg";
   }
 
   return "";

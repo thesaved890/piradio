@@ -467,6 +467,29 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/maroc-radio-badge.svg";
     }
 
+    const isTunisie = (st.code === "🇹🇳") || (st.country && st.country.toLowerCase().includes("tunis")) ||
+      stState.includes("tunis") || stState.includes("sfax") || stState.includes("sousse") || stState.includes("kairouan") || stState.includes("bizerte") || stState.includes("monastir") || stState.includes("gafsa") || stState.includes("tataouine") || stState.includes("kef") ||
+      nameLow.includes("tunis") || nameLow.includes("sfax") || nameLow.includes("sousse") || nameLow.includes("kairouan") || nameLow.includes("bizerte") || nameLow.includes("monastir");
+    if (isTunisie) {
+      if (nameLow.includes("mosaique") || nameLow.includes("mosaïque") || nameLow.includes("mosalive") || nameLow.includes("mosat")) return "assets/logos/mosaique-fm-tunisie.svg";
+      if (nameLow.includes("jawhara")) return "assets/logos/jawhara-fm-tunisie.svg";
+      if (nameLow.includes("diwan")) return "assets/logos/diwan-fm-tunisie.svg";
+      if (nameLow.includes("express")) return "assets/logos/express-fm-tunisie.svg";
+      if (nameLow.includes("nationale")) return "assets/logos/radio-nationale-tunisie.svg";
+      if (nameLow.includes("jeunes") || nameLow.includes("jeune")) return "assets/logos/radio-jeunes-tunisie.svg";
+      if (nameLow.includes("rtci")) return "assets/logos/rtci-radio-tunisie.svg";
+      if (nameLow.includes("sabra")) return "assets/logos/sabra-fm-tunisie.svg";
+      if (nameLow.includes("zitouna") || nameLow.includes("zaitouna")) return "assets/logos/zitouna-fm-tunisie.svg";
+      if (nameLow.includes("knooz")) return "assets/logos/knooz-fm-tunisie.svg";
+      if (nameLow.includes("oxygene") || nameLow.includes("oxygène")) return "assets/logos/oxygene-fm-tunisie.svg";
+      if (nameLow.includes("misk")) return "assets/logos/radio-misk-tunisie.svg";
+      if (nameLow.includes("sfax")) return "assets/logos/radio-sfax-tunisie.svg";
+      if (nameLow.includes("monastir")) return "assets/logos/radio-monastir-tunisie.svg";
+      if (nameLow.includes("hayet") || nameLow.includes("alhayet")) return "assets/logos/alhayet-fm-tunisie.svg";
+      if (nameLow.includes("babnet")) return "assets/logos/babnet-tunisie.svg";
+      return "assets/logos/tunisie-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -490,6 +513,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isGuineeBissau) return "assets/logos/guinee-bissau-radio-badge.svg";
     if (isGuineeEquatoriale) return "assets/logos/guinee-equatoriale-badge.svg";
     if (isMaroc) return "assets/logos/maroc-radio-badge.svg";
+    if (isTunisie) return "assets/logos/tunisie-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 
