@@ -3,14 +3,26 @@
 // Axe 2 : Recherche Avancée (Fréquences FM, Sélecteur de Pays & Puces directes)
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialisation propre du SDK Pi Network (Prêt pour Developer Portal, sans connexion automatique en temps réel)
+  // Initialisation officielle du SDK Pi Network en mode Testnet (sandbox: true)
   if (window.Pi) {
     try {
-      window.Pi.init({ version: "2.0", sandbox: false });
-      console.log("[Pi Radio] Pi SDK v2.0 initialisé avec succès.");
+      window.Pi.init({ version: "2.0", sandbox: true });
+      console.log("[Pi Radio] Pi SDK v2.0 initialisé avec succès en mode Testnet (sandbox: true).");
     } catch (err) {
       console.warn("[Pi Radio] Pi.init notification :", err);
     }
+  }
+
+  // Reverrouillage strict : suppression de toute fausse activation due au mode démo / simulation
+  const savedTxid = localStorage.getItem("piradio_receiver_txid");
+  if (!savedTxid || savedTxid.startsWith("sim_")) {
+    localStorage.removeItem("piradio_receiver_activated");
+    localStorage.removeItem("piradio_receiver_txid");
+    localStorage.removeItem("piradio_station_trials");
+  }
+  const savedUser = JSON.parse(localStorage.getItem("piradio_user") || "null");
+  if (savedUser && savedUser.username === "PioneerGlobal") {
+    localStorage.removeItem("piradio_user");
   }
 
   // --- ÉTAT GLOBAL DE L'APPLICATION ---
@@ -38,7 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
     pioneerUser: JSON.parse(localStorage.getItem("piradio_user") || "null"),
     isBoosted: false,
     isNormalizerOn: localStorage.getItem("piradio_normalizer") !== "false",
-    isReceiverActivated: localStorage.getItem("piradio_receiver_activated") === "true",
+    isReceiverActivated: Boolean(
+      localStorage.getItem("piradio_receiver_activated") === "true" &&
+      localStorage.getItem("piradio_receiver_txid") &&
+      !localStorage.getItem("piradio_receiver_txid").startsWith("sim_")
+    ),
     stationTrials: JSON.parse(localStorage.getItem("piradio_station_trials") || "{}"),
     trialTimerInterval: null,
     audio: new Audio(),
@@ -1526,7 +1542,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Traitement du paiement officiel Pi Network SDK (0.00005 Pi)
+  // Traitement officiel du paiement Pi Network SDK (0.00005 Pi) via Pi Wallet
   function handleReceiverPayment() {
     const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
     if (state.isReceiverActivated) {
@@ -1535,82 +1551,108 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Si on est dans le Pi Browser avec le SDK Pi officiel
-    if (window.Pi && window.Pi.createPayment) {
-      try {
-        window.Pi.createPayment({
-          amount: RECEIVER_LICENSE_PRICE_PI,
-          memo: "Licence Poste Pi Radio à vie - 50 000 stations",
-          metadata: {
-            type: "lifetime_receiver_license",
-            amount_pi: RECEIVER_LICENSE_PRICE_PI,
-            app: "Pi Radio",
-            user_uid: state.pioneerUser ? state.pioneerUser.uid : "guest"
-          }
-        }, {
-          onReadyForServerApproval: function(paymentId) {
-            console.log("[Pi Radio Payment] Envoi de l'approbation au serveur pour :", paymentId);
-            fetch("/api/approve", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ paymentId: paymentId })
-            })
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
-              console.log("[Pi Radio Payment] Réponse approbation serveur :", data);
-              if (data && data.error) {
-                console.warn("[Pi Radio Payment] Avertissement approbation :", data.error);
-              }
-            })
-            .catch(function(err) {
-              console.error("[Pi Radio Payment] Erreur réseau approbation :", err);
-            });
-          },
-          onReadyForServerCompletion: function(paymentId, txid) {
-            console.log("[Pi Radio Payment] Transaction blockchain Pi validée :", txid);
-            fetch("/api/complete", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ paymentId: paymentId, txid: txid })
-            })
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
-              console.log("[Pi Radio Payment] Réponse finalisation serveur :", data);
-              completeReceiverActivation(txid);
-            })
-            .catch(function(err) {
-              console.error("[Pi Radio Payment] Erreur réseau finalisation :", err);
-              // On active quand même le poste localement puisque la transaction blockchain a été confirmée
-              completeReceiverActivation(txid);
-            });
-          },
-          onCancel: function(paymentId) {
-            console.log("[Pi Radio Payment] Annulé par l'utilisateur :", paymentId);
-            showToast("Paiement annulé.");
-          },
-          onError: function(error, payment) {
-            console.error("[Pi Radio Payment] Erreur Pi SDK :", error);
-            showToast("Erreur lors de la transaction Pi Network.");
-          }
-        });
-      } catch (err) {
-        console.warn("[Pi Radio Payment] Erreur SDK, bascule vers mode simulation :", err);
-        simulateReceiverPayment();
-      }
-    } else {
-      // Hors Pi Browser (navigateur classique / test)
-      simulateReceiverPayment();
+    if (!window.Pi) {
+      showToast("Veuillez ouvrir Pi Radio dans le Pi Browser pour payer avec votre Pi Wallet.", "error");
+      return;
     }
+
+    // Si le pionnier n'est pas encore connecté avec son compte Pi, on déclenche l'authentification Pi officielle
+    if (!state.pioneerUser && window.Pi.authenticate) {
+      showToast("Connexion au compte Pi en cours...");
+      window.Pi.authenticate(["username", "payments"], function onIncompletePaymentFound(payment) {
+        console.log("[Pi Radio] Paiement incomplet trouvé :", payment);
+        if (payment && payment.identifier && payment.transaction && payment.transaction.txid) {
+          fetch("/api/complete", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ paymentId: payment.identifier, txid: payment.transaction.txid })
+          }).then(function() {
+            completeReceiverActivation(payment.transaction.txid);
+          });
+        }
+      })
+      .then(function(auth) {
+        state.pioneerUser = auth.user;
+        localStorage.setItem("piradio_user", JSON.stringify(auth.user));
+        updateAuthUI();
+        executePiPayment();
+      })
+      .catch(function(err) {
+        console.error("[Pi Radio] Erreur authentification Pi :", err);
+        showToast("Erreur de connexion Pi : " + (err.message || err), "error");
+      });
+      return;
+    }
+
+    executePiPayment();
   }
 
-  function simulateReceiverPayment() {
-    const isConfirmed = confirm(
-      "🌐 Mode Démo / Hors Pi Browser :\n\n" +
-      "Dans le Pi Browser, cet écran ouvre directement votre Pi Wallet pour valider les 0.00005 π.\n\n" +
-      "Souhaitez-vous simuler l'activation immédiate de votre Poste Pi Radio à vie ?"
-    );
-    if (isConfirmed) {
-      completeReceiverActivation("sim_tx_" + Date.now());
+  function executePiPayment() {
+    if (!window.Pi || !window.Pi.createPayment) {
+      showToast("Pi SDK non disponible. Veuillez ouvrir dans le Pi Browser.", "error");
+      return;
+    }
+
+    showToast("Ouverture de votre Pi Wallet...");
+
+    try {
+      window.Pi.createPayment({
+        amount: RECEIVER_LICENSE_PRICE_PI,
+        memo: "Licence Poste Pi Radio à vie - 50 000 stations",
+        metadata: {
+          type: "lifetime_receiver_license",
+          amount_pi: RECEIVER_LICENSE_PRICE_PI,
+          app: "Pi Radio",
+          user_uid: state.pioneerUser ? state.pioneerUser.uid : "pioneer"
+        }
+      }, {
+        onReadyForServerApproval: function(paymentId) {
+          console.log("[Pi Radio Payment] Envoi de l'approbation au serveur pour :", paymentId);
+          fetch("/api/approve", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ paymentId: paymentId })
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            console.log("[Pi Radio Payment] Réponse approbation serveur :", data);
+            if (data && data.error) {
+              console.warn("[Pi Radio Payment] Avertissement approbation :", data.error);
+            }
+          })
+          .catch(function(err) {
+            console.error("[Pi Radio Payment] Erreur réseau approbation :", err);
+          });
+        },
+        onReadyForServerCompletion: function(paymentId, txid) {
+          console.log("[Pi Radio Payment] Transaction blockchain Pi validée :", txid);
+          fetch("/api/complete", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ paymentId: paymentId, txid: txid })
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            console.log("[Pi Radio Payment] Réponse finalisation serveur :", data);
+            completeReceiverActivation(txid);
+          })
+          .catch(function(err) {
+            console.error("[Pi Radio Payment] Erreur réseau finalisation :", err);
+            completeReceiverActivation(txid);
+          });
+        },
+        onCancel: function(paymentId) {
+          console.log("[Pi Radio Payment] Annulé par l'utilisateur :", paymentId);
+          showToast("Paiement annulé.");
+        },
+        onError: function(error, payment) {
+          console.error("[Pi Radio Payment] Erreur Pi SDK :", error);
+          showToast("Erreur Pi Network : " + (error ? (error.message || JSON.stringify(error)) : "Transaction non aboutie"), "error");
+        }
+      });
+    } catch (err) {
+      console.error("[Pi Radio Payment] Exception createPayment :", err);
+      showToast("Erreur Pi : " + (err.message || err), "error");
     }
   }
 
@@ -1893,9 +1935,9 @@ document.addEventListener("DOMContentLoaded", () => {
       updateAuthUI();
     }
 
-    const isPiBrowser = /PiBrowser/i.test(navigator.userAgent);
+    const isPiBrowser = Boolean(window.Pi || /PiBrowser/i.test(navigator.userAgent));
 
-    if (isPiBrowser && window.Pi && window.Pi.authenticate) {
+    if (window.Pi && window.Pi.authenticate) {
       // Dans le Pi Browser : appel officiel du Pi SDK pour Developer Portal
       try {
         let authTimedOut = false;
@@ -1907,6 +1949,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.Pi.authenticate(["username", "payments"], function onIncompletePaymentFound(payment) {
           console.log("[Pi Radio] Paiement incomplet trouvé :", payment);
+          if (payment && payment.identifier && payment.transaction && payment.transaction.txid) {
+            fetch("/api/complete", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ paymentId: payment.identifier, txid: payment.transaction.txid })
+            }).then(function() {
+              completeReceiverActivation(payment.transaction.txid);
+            });
+          }
         })
           .then(auth => {
             if (authTimedOut) return;
@@ -1926,26 +1977,18 @@ document.addEventListener("DOMContentLoaded", () => {
             if (authTimedOut) return;
             clearTimeout(timer);
             console.warn("[Pi Radio] Erreur Pi.authenticate :", err);
-            showToast("Erreur de connexion Pi Network.");
+            showToast("Erreur de connexion Pi Network : " + (err.message || err), "error");
             resetAuthButtons();
           });
       } catch (e) {
         console.warn("[Pi Radio] Exception authenticate :", e);
+        showToast("Erreur Pi : " + (e.message || e), "error");
         resetAuthButtons();
       }
     } else {
-      // Hors Pi Browser (ordinateur / Chrome / tests de développement)
-      setTimeout(() => {
-        resetAuthButtons();
-        simulatePiLogin();
-        closeAuthGateModal();
-        showToast("Session Démo connectée (@PioneerGlobal). Dans le Pi Browser avec Developer Portal, votre compte réel sera connecté !");
-        if (state.pendingStationToPlay) {
-          const st = state.pendingStationToPlay;
-          state.pendingStationToPlay = null;
-          startPlayback(st, false);
-        }
-      }, 350);
+      // Hors Pi Browser
+      resetAuthButtons();
+      showToast("Veuillez ouvrir Pi Radio dans le Pi Browser pour vous connecter avec votre compte Pi.", "error");
     }
   }
 
@@ -1961,13 +2004,6 @@ document.addEventListener("DOMContentLoaded", () => {
     authGateModal.addEventListener("click", (e) => {
       if (e.target === authGateModal) closeAuthGateModal();
     });
-  }
-
-  function simulatePiLogin() {
-    const simulatedUser = { username: "PioneerGlobal", uid: "pi_" + Date.now() };
-    state.pioneerUser = simulatedUser;
-    localStorage.setItem("piradio_user", JSON.stringify(simulatedUser));
-    updateAuthUI();
   }
 
   disconnectBtn.addEventListener("click", () => {
