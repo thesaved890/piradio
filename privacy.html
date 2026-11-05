@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy • Pi Radio</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --bg-main: #0c0618;
+      --bg-surface: #140b27;
+      --bg-card: rgba(26, 15, 53, 0.85);
+      --border-subtle: rgba(157, 93, 232, 0.25);
+      --gold: #f3b43f;
+      --green: #00e676;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-main);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(243, 180, 63, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(243, 180, 63, 0.3);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .meta {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    h2 {
+      font-size: 20px;
+      color: var(--gold);
+      margin-top: 28px;
+      margin-bottom: 12px;
+      border-left: 3px solid var(--gold);
+      padding-left: 10px;
+    }
+    p, ul {
+      margin-bottom: 14px;
+      color: #e2e8f0;
+      font-size: 15px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--gold);
+      color: #0c0618;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-align: center;
+      transition: opacity 0.2s;
+    }
+    .btn-back:hover {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Pi Network Ecosystem</div>
+      <h1>Privacy Policy • Pi Radio</h1>
+      <p class="meta">Last updated: November 2026 • Valid for Pi Browser &amp; Web</p>
+    </header>
+
+    <h2>1. Overview</h2>
+    <p>Pi Radio (accessible at <a href="https://piradiolive.vercel.app">piradiolive.vercel.app</a>) is a decentralized Web3 live radio streaming dApp designed for Pioneers within the Pi Network ecosystem. We are committed to protecting user privacy and adhering to the highest standards of data minimization.</p>
+
+    <h2>2. Data Collection &amp; Use</h2>
+    <p>Pi Radio operates under a <strong>strict privacy-by-design</strong> model:</p>
+    <ul>
+      <li><strong>No Personal Tracking:</strong> We do not collect names, email addresses, phone numbers, or passwords.</li>
+      <li><strong>No Third-Party Advertising Trackers:</strong> Pi Radio contains zero ad trackers, no Google Analytics tracking, and no data broker scripts.</li>
+      <li><strong>Pi Network Authentication:</strong> When you connect through the official Pi Browser, the official Pi SDK communicates directly with Pi Network servers to authenticate your username and unique Pioneer identifier (UID). This information is solely used to verify your Pioneer status.</li>
+    </ul>
+
+    <h2>3. Local Device Storage (LocalStorage)</h2>
+    <p>Pi Radio stores all user preferences locally inside your browser's private sandbox (<code>localStorage</code>). This data stays exclusively on your device and is never uploaded to any remote server:</p>
+    <ul>
+      <li>Your favorite radio stations list (<code>piradio_favs</code>)</li>
+      <li>Your selected interface language (<code>piradio_lang</code>)</li>
+      <li>Your lifetime receiver activation status and transaction hash (<code>piradio_receiver_activated</code>, <code>piradio_receiver_txid</code>)</li>
+      <li>Audio normalizer and data saver preferences</li>
+    </ul>
+
+    <h2>4. Radio Streams &amp; External Connections</h2>
+    <p>Pi Radio connects your browser directly to publicly available, official audio broadcast streams provided by authorized radio stations worldwide. No intermediate recording or profiling of your listening habits is conducted.</p>
+
+    <h2>5. Pi Cryptocurrency Transactions</h2>
+    <p>When you unlock the lifetime receiver license using Pi cryptocurrency (<code>0.00005 π</code>), the transaction is processed directly through the official Pi Network blockchain via the Pi SDK. Pi Radio never has access to your passphrase, private keys, or wallet seed.</p>
+
+    <h2>6. Contact &amp; Governance</h2>
+    <p>For any questions or inquiries regarding this Privacy Policy, please reach out to the Pi Radio developer team via the official Pi Developer Portal or at: <a href="mailto:contact@piradiolive.vercel.app">contact@piradiolive.vercel.app</a>.</p>
+
+    <div style="text-align: center;">
+      <a href="./" class="btn-back">← Back to Pi Radio</a>
+    </div>
+  </div>
+</body>
+</html>
