@@ -2444,7 +2444,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://a9.asurahosting.com/listen/groove100_fm/radio.mp3",
     fallbackUrl: "https://a9.asurahosting.com/listen/groove100_fm/radio.mp3",
     logo: "assets/logos/groove100-malawi.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "kuwala-fm-malawi",
@@ -2480,7 +2481,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://host2.streamafrica.net/listen/mzati_radio/radio.mp3",
     fallbackUrl: "https://host2.streamafrica.net/listen/mzati_radio/radio.mp3",
     logo: "assets/logos/mzati-radio-malawi.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "twr-malawi",
@@ -2516,7 +2518,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://s4.radio.co/s40c05d6b1/low",
     fallbackUrl: "https://s4.radio.co/s40c05d6b1/low",
     logo: "assets/logos/amaryllis-radio-malawi.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "kasupe-radio-malawi",
@@ -2534,7 +2537,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://host2.streamafrica.net/listen/kasupe_radio/radio.mp3",
     fallbackUrl: "https://host2.streamafrica.net/listen/kasupe_radio/radio.mp3",
     logo: "assets/logos/kasupe-radio-malawi.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "chanco-community-malawi",
@@ -2552,7 +2556,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://live.netradio.pro/listen/chanco/radio.mp3",
     fallbackUrl: "https://live.netradio.pro/listen/chanco/radio.mp3",
     logo: "assets/logos/chanco-radio-malawi.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -2610,7 +2615,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://ec6.yesstreaming.net:2720/stream",
     fallbackUrl: "https://ec6.yesstreaming.net:2720/stream",
     logo: "assets/logos/radio-nouadhibou-mr.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-zouerate-mr",
@@ -2628,7 +2634,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://ec6.yesstreaming.net:2780/stream",
     fallbackUrl: "https://ec6.yesstreaming.net:2780/stream",
     logo: "assets/logos/radio-zouerate-mr.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -2668,7 +2675,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://radio-streaming.michcom-ix.net/listen/star_radio_fm_103.5/radio.mp3",
     fallbackUrl: "https://radio-streaming.michcom-ix.net/listen/star_radio_fm_103.5/radio.mp3",
     logo: "assets/logos/star-radio-sierra-leone.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "fop-radio-sierra-leone",
@@ -2704,7 +2712,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://tamkorfai1.radioca.st/stream",
     fallbackUrl: "https://tamkorfai1.radioca.st/stream",
     logo: "assets/logos/radio-binkongoh-sl.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "fusionsound-radio-sl",
@@ -2722,7 +2731,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://radio.fusionsoundradio.com/listen/fusionsoundradio/radio.mp3",
     fallbackUrl: "https://radio.fusionsoundradio.com/listen/fusionsoundradio/radio.mp3",
     logo: "assets/logos/fusionsound-radio-sl.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
