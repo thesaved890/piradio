@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.11
+// Pi Radio • Service Worker v5.12
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.11';
+const CACHE_NAME = 'piradio-v5.12';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -211,8 +211,12 @@ const PRECACHE_ASSETS = [
   './assets/logos/trace-fm-ci.svg',
   './assets/logos/skyrock-abidjan.svg',
   './assets/logos/radio-de-la-paix.svg',
+  './assets/logos/radio-de-la-paix-ci.svg',
   './assets/logos/radio-espoir-ci.svg',
   './assets/logos/radio-nationale-catholique.svg',
+  './assets/logos/rnc-radio-ci.svg',
+  './assets/logos/rfi-afrique-abidjan.svg',
+  './assets/logos/rvm-radio-ci.svg',
   './assets/logos/radio-daloa-fm.svg',
   './assets/logos/gbeke-fm-bouake.svg',
   './assets/logos/guemon-fm.svg',

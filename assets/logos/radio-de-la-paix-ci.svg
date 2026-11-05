@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="paixBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#021526"/>
+      <stop offset="50%" stop-color="#052c4c"/>
+      <stop offset="100%" stop-color="#010e1a"/>
+    </linearGradient>
+    <linearGradient id="paixCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#0091ea"/>
+    </linearGradient>
+    <linearGradient id="paixGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd54f"/>
+      <stop offset="100%" stop-color="#ffb300"/>
+    </linearGradient>
+    <filter id="paixGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00e5ff" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="512" height="512" rx="100" fill="url(#paixBg)"/>
+  <rect x="12" y="12" width="488" height="488" rx="88" fill="none" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="4"/>
+
+  <!-- Ondes circulaires de paix -->
+  <circle cx="256" cy="190" r="140" fill="none" stroke="#00e5ff" stroke-opacity="0.1" stroke-width="2"/>
+  <circle cx="256" cy="190" r="170" fill="none" stroke="#00e5ff" stroke-opacity="0.05" stroke-width="2"/>
+
+  <!-- Colombe / Emblème de la paix -->
+  <g filter="url(#paixGlow)">
+    <circle cx="256" cy="175" r="75" fill="#063254" stroke="url(#paixCyan)" stroke-width="5"/>
+    <!-- Colombe stylisée en vol avec rameau -->
+    <path d="M225,185 C230,165 250,150 270,155 C285,160 295,175 290,190 C280,185 270,185 260,190 C250,195 240,205 235,215 C232,205 228,195 225,185 Z" fill="#ffffff"/>
+    <path d="M255,165 C265,145 285,135 300,140 C295,155 285,165 270,170 Z" fill="#b3e5fc"/>
+    <circle cx="275" cy="160" r="3" fill="#0288d1"/>
+    <!-- Rameau d'olivier vert -->
+    <path d="M285,162 Q295,158 305,160" stroke="#00e676" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="295" cy="158" r="2.5" fill="#00e676"/>
+    <circle cx="304" cy="160" r="2.5" fill="#00e676"/>
+  </g>
+
+  <!-- Titre Radio de la Paix -->
+  <text x="256" y="295" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="28" text-anchor="middle" letter-spacing="2">RADIO DE LA PAIX</text>
+  <text x="256" y="325" fill="#80d8ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="16" text-anchor="middle" letter-spacing="3">LA RADIO DE TOUS</text>
+
+  <!-- Badge Fréquence 96.0 FM -->
+  <rect x="156" y="350" width="200" height="46" rx="23" fill="url(#paixGold)"/>
+  <text x="256" y="381" fill="#021526" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="24" text-anchor="middle" letter-spacing="1">96.0 FM</text>
+
+  <!-- Ville / Pays -->
+  <text x="256" y="435" fill="#4fc3f7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="18" text-anchor="middle" letter-spacing="2">ABIDJAN • CÔTE D'IVOIRE</text>
+</svg>

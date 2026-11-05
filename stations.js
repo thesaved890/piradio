@@ -137,6 +137,7 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // ==========================================
   // 1.b 🇨🇮 CÔTE D'IVOIRE
   // ==========================================
   {
@@ -173,7 +174,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://listen.radioking.com/radio/734192/stream/800486",
     fallbackUrl: "https://listen.radioking.com/radio/734192/stream/800486",
     logo: "assets/logos/rti-frequence-2.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-jam-abidjan",
@@ -191,7 +193,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://listen.radioking.com/radio/61201/stream/98566",
     fallbackUrl: "https://listen.radioking.com/radio/61201/stream/98566",
     logo: "assets/logos/radio-jam-abidjan.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "alpha-blondy-fm",
@@ -210,6 +213,62 @@ const CURATED_STATIONS = [
     fallbackUrl: "https://listen.radioking.com/radio/364633/stream/414370",
     logo: "assets/logos/alpha-blondy-fm.svg",
     featured: true
+  },
+  {
+    id: "trace-fm-ci",
+    name: "Trace FM Côte d'Ivoire (95.0 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "95.0",
+    band: "FM",
+    language: "Français & Nouchi",
+    genre: "Hip-Hop, Rap Ivoire, Afrobeats & Hits",
+    streamUrl: "https://stream.trace.tv/trace_fm_ci-midfi.aac",
+    fallbackUrl: "https://stream.trace.tv/trace_fm_ci-midfi.aac",
+    logo: "assets/logos/trace-fm-ci.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "radio-espoir-ci",
+    name: "Radio Espoir (102.8 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "102.8",
+    band: "FM",
+    language: "Français",
+    genre: "Spiritualité chrétienne, Famille & Société",
+    streamUrl: "https://radioespoir.ice.infomaniak.ch/radioespoir.mp3",
+    fallbackUrl: "https://dc1.serverse.com/proxy/radioespoir/stream",
+    logo: "assets/logos/radio-espoir-ci.svg",
+    featured: true
+  },
+  {
+    id: "rfi-afrique-abidjan",
+    name: "RFI Afrique (87.5 FM Abidjan)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "news",
+    frequency: "87.5",
+    band: "FM",
+    language: "Français",
+    genre: "Actualités internationales & Grands reportages Afrique",
+    streamUrl: "https://rfiafrique96k.ice.infomaniak.ch/rfiafrique-96k.mp3",
+    fallbackUrl: "https://rfiafrique96k.ice.infomaniak.ch/rfiafrique-96k.mp3",
+    logo: "assets/logos/rfi-afrique-abidjan.svg",
+    featured: true,
+    locked: true
   },
   {
     id: "africa-radio-abidjan",
@@ -263,7 +322,64 @@ const CURATED_STATIONS = [
     streamUrl: "https://cast4.asurahosting.com/proxy/life/stream",
     fallbackUrl: "https://cast4.asurahosting.com/proxy/life/stream",
     logo: "assets/logos/life-radio-ci.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "rvm-radio-ci",
+    name: "RVM Radio (106.2 FM)",
+    country: "Côte d'Ivoire",
+    city: "Sikensi",
+    state: "Agnéby-Tiassa",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "news",
+    frequency: "106.2",
+    band: "FM",
+    language: "Français & Langues locales",
+    genre: "Actualités régionales, Proximité & Culture ivoirienne",
+    streamUrl: "https://radio.rvmsikensi.com/radio/8000/radio.mp3",
+    fallbackUrl: "https://radio.rvmsikensi.com/radio/8000/radio.mp3",
+    logo: "assets/logos/rvm-radio-ci.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "radio-de-la-paix-ci",
+    name: "Radio de la Paix (96.0 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "news",
+    frequency: "96.0",
+    band: "FM",
+    language: "Français",
+    genre: "Cohésion sociale, Paix, Droits humains & Société",
+    streamUrl: "https://www.radiodelapaix.ci/radio.mp3",
+    fallbackUrl: "https://www.radiodelapaix.ci/radio.mp3",
+    logo: "assets/logos/radio-de-la-paix-ci.svg",
     featured: true
+  },
+  {
+    id: "rnc-radio-ci",
+    name: "Radio Nationale Catholique (102.5 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "102.5",
+    band: "FM",
+    language: "Français",
+    genre: "La Voix de l'Évangile, Foi, Culture & Société",
+    streamUrl: "https://dc1.serverse.com/proxy/rncapp/stream",
+    fallbackUrl: "https://dc1.serverse.com/proxy/rncapp/stream",
+    logo: "assets/logos/rnc-radio-ci.svg",
+    featured: true,
+    locked: true
   },
   {
     id: "radio-al-bayane-ci",
@@ -283,8 +399,26 @@ const CURATED_STATIONS = [
     logo: "assets/logos/radio-al-bayane-ci.svg",
     featured: true
   },
+  {
+    id: "skyrock-abidjan",
+    name: "Skyrock Abidjan (94.8 FM)",
+    country: "Côte d'Ivoire",
+    city: "Abidjan",
+    state: "Lagunes",
+    code: "🇨🇮",
+    continent: "africa",
+    category: "culture",
+    frequency: "94.8",
+    band: "FM",
+    language: "Français",
+    genre: "Rap, Hip-Hop, R&B & Hits urbains",
+    streamUrl: "https://icecast.skyrock.net/s/abidjan_aac_64k",
+    fallbackUrl: "https://icecast.skyrock.net/s/abidjan_aac_64k",
+    logo: "assets/logos/skyrock-abidjan.svg",
+    featured: true,
+    locked: true
+  },
 
-  // ==========================================
   // 1.c 🇬🇭 GHANA
   // ==========================================
   {
@@ -321,7 +455,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://citi973fm.radioca.st/index.html:80/;stream.mp3",
     fallbackUrl: "https://citi973fm.radioca.st/index.html:80/;stream.mp3",
     logo: "assets/logos/citi-fm-ghana.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "peace-fm-ghana",
@@ -357,7 +492,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://mmg.streamguys1.com/AdomFM-mp3",
     fallbackUrl: "https://mmg.streamguys1.com/AdomFM-mp3",
     logo: "assets/logos/adom-fm-ghana.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "yfm-ghana",
@@ -375,7 +511,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://atunwadigital.streamguys1.com/yfm1079accra",
     fallbackUrl: "https://atunwadigital.streamguys1.com/yfm1079accra",
     logo: "assets/logos/yfm-ghana.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "asempa-fm-ghana",
@@ -393,7 +530,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://mmg.streamguys1.com/AsempaFM-mp3",
     fallbackUrl: "https://mmg.streamguys1.com/AsempaFM-mp3",
     logo: "assets/logos/asempa-fm-ghana.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "oman-fm-ghana",
@@ -447,7 +585,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://atunwadigital.streamguys1.com/happyfm989accra",
     fallbackUrl: "https://atunwadigital.streamguys1.com/happyfm989accra",
     logo: "assets/logos/happy-fm-ghana.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "sunny-fm-ghana",
@@ -487,7 +626,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/f38bxpt3v2quv",
     fallbackUrl: "https://stream.zenolive.com/yerp85sughwtv",
     logo: "assets/logos/radio-kledu.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-malijet-bamako",
@@ -523,7 +663,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/60x209af8e9uv",
     fallbackUrl: "https://stream-151.zeno.fm/60x209af8e9uv",
     logo: "assets/logos/noura-fm-bamako.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "joliba-fm-bamako",
@@ -559,7 +700,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/a9pfgv7zw3duv",
     fallbackUrl: "https://stream.zeno.fm/a9pfgv7zw3duv",
     logo: "assets/logos/radio-bamakan.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-dambe-bamako",
@@ -595,7 +737,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/x3gb8t9nzk0uv",
     fallbackUrl: "https://stream.zeno.fm/e1fq9sdhrntuv",
     logo: "assets/logos/radio-bougouni-kunkan.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-kassara-kayes",
@@ -671,7 +814,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/1y2c3qbgbchvv",
     fallbackUrl: "https://stream.zeno.fm/1y2c3qbgbchvv",
     logo: "assets/logos/wadata-radio-niger.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-dallol-baleyara",
@@ -707,7 +851,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/aslxrjp4djutv",
     fallbackUrl: "https://stream.zeno.fm/aslxrjp4djutv",
     logo: "assets/logos/mudubar-radio-niger.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "voix-du-sahel-niamey",
@@ -743,7 +888,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://s1.free-shoutcast.com/stream/18046",
     fallbackUrl: "https://s1.free-shoutcast.com/stream/18046",
     logo: "assets/logos/radio-saraounia-niger.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-anfani-niamey",
@@ -761,7 +907,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/1y2c3qbgbchvv",
     fallbackUrl: "https://s1.free-shoutcast.com/stream/18478/;",
     logo: "assets/logos/radio-anfani-niger.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -801,7 +948,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://pulsarouagadougou.ice.infomaniak.ch/pulsarouagadougou-128.mp3",
     fallbackUrl: "https://pulsarouagadougou.ice.infomaniak.ch/pulsarouagadougou-128.mp3",
     logo: "assets/logos/radio-pulsar-ouaga.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "savane-fm-burkina",
@@ -819,7 +967,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/97fyu5a10bruv",
     fallbackUrl: "https://stream.zeno.fm/97fyu5a10bruv",
     logo: "assets/logos/savane-fm-burkina.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "rtb-radio-burkina",
@@ -855,7 +1004,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/0945crn4bf9uv",
     fallbackUrl: "https://stream.zeno.fm/7861hrn4bf9uv",
     logo: "assets/logos/horizon-fm-ouaga.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-balafon-bobo",
@@ -891,7 +1041,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://sonic.mediacp.eu/8040/;",
     fallbackUrl: "https://sonic.mediacp.eu/8040/;",
     logo: "assets/logos/radio-bizi-inter.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-maria-burkina",
@@ -931,7 +1082,8 @@ const CURATED_STATIONS = [
     streamUrl: "http://listen.radioking.com/radio/16769/stream/49487",
     fallbackUrl: "http://listen.radioking.com/radio/16769/stream/49487",
     logo: "assets/logos/espace-fm-guinee.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "bonheur-fm-guinee-conakry",
@@ -949,7 +1101,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/gzxp5eqkafeuv",
     fallbackUrl: "https://stream.zeno.fm/gzxp5eqkafeuv",
     logo: "assets/logos/bonheur-fm-guinee.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "littoral-fm-guinee",
@@ -985,7 +1138,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/6y3sswt61pcuv",
     fallbackUrl: "https://stream.zeno.fm/6y3sswt61pcuv",
     logo: "assets/logos/lgf-fun-guinee.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "lgf-talk-guinee",
@@ -1123,7 +1277,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://hitradio-maroc.ice.infomaniak.ch/hitradio-maroc-128.mp3",
     fallbackUrl: "https://hitradio-maroc.ice.infomaniak.ch/hitradio-maroc-128.mp3",
     logo: "assets/logos/hit-radio-maroc.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-mars-maroc",
@@ -1141,7 +1296,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://radiomars.ice.infomaniak.ch/radiomars-128.mp3",
     fallbackUrl: "https://radiomars.ice.infomaniak.ch/radiomars-128.mp3",
     logo: "assets/logos/radio-mars-maroc.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-aswat-maroc",
@@ -1159,7 +1315,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://broadcast.ice.infomaniak.ch/aswat-high.mp3",
     fallbackUrl: "http://aswat.ice.infomaniak.ch/aswat-high.mp3",
     logo: "assets/logos/radio-aswat-maroc.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-2m-maroc",
@@ -1231,7 +1388,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.bodkas.com/playlist?id=chadafmradio",
     fallbackUrl: "https://stream.bodkas.com/playlist?id=chadafmradio",
     logo: "assets/logos/chada-fm-maroc.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "medina-fm-maroc",
@@ -1249,7 +1407,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://medinafm.ice.infomaniak.ch/medinafm-128.mp3",
     fallbackUrl: "https://medinafm.ice.infomaniak.ch/medinafm-64.mp3",
     logo: "assets/logos/medina-fm-maroc.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "cap-radio-maroc",
@@ -1289,7 +1448,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://radio.mosaiquefm.net/mosalive",
     fallbackUrl: "http://radio.mosaiquefm.net:8000/mosalive",
     logo: "assets/logos/mosaique-fm-tunisie.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "jawhara-fm-tunisie",
@@ -1307,7 +1467,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://streaming2.toutech.net/jawharafm",
     fallbackUrl: "http://streaming2.toutech.net:8000/jawharafm",
     logo: "assets/logos/jawhara-fm-tunisie.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "diwan-fm-tunisie",
@@ -1325,7 +1486,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://streaming.diwanfm.net/stream",
     fallbackUrl: "https://streaming.diwanfm.net/stream",
     logo: "assets/logos/diwan-fm-tunisie.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "express-fm-tunisie",
@@ -1343,7 +1505,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://expressfm.ice.infomaniak.ch/expressfm-64.mp3",
     fallbackUrl: "https://expressfm.ice.infomaniak.ch/expressfm-64.mp3",
     logo: "assets/logos/express-fm-tunisie.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-nationale-tunisie",
@@ -1451,7 +1614,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://live.misk.art/stream",
     fallbackUrl: "https://live.misk.art/stream",
     logo: "assets/logos/radio-misk-tunisie.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -1527,7 +1691,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://webradio1.tda.dz:8001/Jeunesse_64K.mp3",
     fallbackUrl: "https://webradio2.tda.dz:8001/Jeunesse_64K.mp3",
     logo: "assets/logos/jil-fm-algerie.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "el-bahdja-alger",
@@ -1545,7 +1710,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://webradio1.tda.dz:8001/ElBahdja_64K.mp3",
     fallbackUrl: "https://webradio3.tda.dz:8001/ElBahdja_64K.mp3",
     logo: "assets/logos/el-bahdja-alger.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "algerie-internationale",
@@ -1563,7 +1729,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://webradio3.tda.dz:8001/Internationale_64K.mp3",
     fallbackUrl: "https://webradio1.tda.dz:8001/Internationale_64K.mp3",
     logo: "assets/logos/algerie-internationale.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "algerie-coran",
@@ -1617,7 +1784,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://webradio2.tda.dz:8001/Zamen_64K.mp3",
     fallbackUrl: "https://webradio1.tda.dz:8001/Zamen_64K.mp3",
     logo: "assets/logos/zaman-fm-algerie.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-oran-algerie",
@@ -1635,7 +1803,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://webradio2.tda.dz:8001/Oran_64K.mp3",
     fallbackUrl: "https://webradio1.tda.dz:8001/Oran_64K.mp3",
     logo: "assets/logos/radio-oran-algerie.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -1690,7 +1859,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://kdevstream.myvnc.com/listen/jambofm/jambofm",
     fallbackUrl: "https://kdevstream.myvnc.com/listen/jambofm/jambofm",
     logo: "assets/logos/jambo-fm-douala.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "237onair-yaounde",
@@ -1707,7 +1877,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://radio.237onair.com/listen/237onair/radio.mp3",
     fallbackUrl: "https://radio.237onair.com/listen/237onair/radio.mp3",
     logo: "assets/logos/237onair-yaounde.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "camerhits-radio",
@@ -1724,7 +1895,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://camerhits.com/icecast/stream",
     fallbackUrl: "https://camerhits.com/icecast/stream",
     logo: "assets/logos/camerhits-radio.svg",
-    featured: false
+    featured: false,
+    locked: true
   },
   {
     id: "radio-bonne-nouvelle",
@@ -2280,7 +2452,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://edge.iono.fm/xice/jacarandafm_live_medium.aac",
     fallbackUrl: "https://edge.iono.fm/xice/jacarandafm_live_medium.aac",
     logo: "assets/logos/jacaranda-fm-sa.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "metro-fm-sa",
@@ -2298,7 +2471,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/METROFMAAC.aac",
     fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/METROFMAAC.aac",
     logo: "assets/logos/metro-fm-sa.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "ukhozi-fm-sa",
@@ -2334,7 +2508,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/5FMAAC.aac",
     fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/5FMAAC.aac",
     logo: "assets/logos/5fm-radio-sa.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "kaya-fm-sa",
@@ -2352,7 +2527,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://edge.iono.fm/xice/82_medium.aac",
     fallbackUrl: "https://edge.iono.fm/xice/82_medium.aac",
     logo: "assets/logos/kaya-fm-sa.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "east-coast-radio-sa",
@@ -2370,7 +2546,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://edge.iono.fm/xice/ecr_live_medium.aac",
     fallbackUrl: "https://edge.iono.fm/xice/ecr_live_medium.aac",
     logo: "assets/logos/east-coast-radio-sa.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "kfm-cape-town-sa",
@@ -5222,22 +5399,24 @@ function resolveRegionalStationLogo(st) {
   }
 
   // 1.k Logos officiels Côte d'Ivoire 🇨🇮
-  const isCoteIvoire = (cCode === "CI") || (st.code === "🇨🇮") || (st.country || "").toLowerCase().includes("ivoire") || (st.country || "").toLowerCase().includes("ivory") || stState.includes("abidjan") || stState.includes("yamoussoukro") || stState.includes("bouaké") || stState.includes("bouake") || stState.includes("daloa") || stState.includes("san-pedro") || stState.includes("korhogo") || stState.includes("lagunes") || nameLow.includes("ivoire") || nameLow.includes("ivory") || nameLow.includes("abidjan") || nameLow.includes("yamoussoukro") || nameLow.includes("bouake");
+  const isCoteIvoire = (cCode === "CI") || (st.code === "🇨🇮") || (st.country || "").toLowerCase().includes("ivoire") || (st.country || "").toLowerCase().includes("ivory") || stState.includes("abidjan") || stState.includes("yamoussoukro") || stState.includes("bouaké") || stState.includes("bouake") || stState.includes("daloa") || stState.includes("san-pedro") || stState.includes("korhogo") || stState.includes("lagunes") || nameLow.includes("ivoire") || nameLow.includes("ivory") || nameLow.includes("abidjan") || nameLow.includes("yamoussoukro") || nameLow.includes("bouake") || nameLow.includes("sikensi");
   if (isCoteIvoire) {
     if (nameLow.includes("fréquence 2") || nameLow.includes("frequence 2") || (nameLow.includes("rti") && nameLow.includes("2"))) return "assets/logos/rti-frequence-2.svg";
     if (nameLow.includes("radio côte d'ivoire") || nameLow.includes("radio cote d'ivoire") || (nameLow.includes("rti") && !nameLow.includes("2"))) return "assets/logos/radio-cote-divoire.svg";
     if (nameLow.includes("jam")) return "assets/logos/radio-jam-abidjan.svg";
     if (nameLow.includes("alpha blondy") || nameLow.includes("blondy")) return "assets/logos/alpha-blondy-fm.svg";
+    if (nameLow.includes("trace")) return "assets/logos/trace-fm-ci.svg";
+    if (nameLow.includes("espoir")) return "assets/logos/radio-espoir-ci.svg";
+    if (nameLow.includes("rfi") || nameLow.includes("france internationale")) return "assets/logos/rfi-afrique-abidjan.svg";
     if (nameLow.includes("africa radio")) return "assets/logos/africa-radio-abidjan.svg";
     if (nameLow.includes("hit radio")) return "assets/logos/hit-radio-ci.svg";
     if (nameLow.includes("life radio") || nameLow.includes("life")) return "assets/logos/life-radio-ci.svg";
+    if (nameLow.includes("rvm") || nameLow.includes("moronou") || nameLow.includes("sikensi")) return "assets/logos/rvm-radio-ci.svg";
+    if (nameLow.includes("paix")) return "assets/logos/radio-de-la-paix-ci.svg";
+    if (nameLow.includes("catholique") || nameLow.includes("rnc") || nameLow.includes("évangile") || nameLow.includes("evangile")) return "assets/logos/rnc-radio-ci.svg";
     if (nameLow.includes("bayane") || nameLow.includes("al bayane")) return "assets/logos/radio-al-bayane-ci.svg";
     if (nameLow.includes("nostalgie")) return "assets/logos/nostalgie-ci.svg";
-    if (nameLow.includes("trace")) return "assets/logos/trace-fm-ci.svg";
     if (nameLow.includes("skyrock")) return "assets/logos/skyrock-abidjan.svg";
-    if (nameLow.includes("paix")) return "assets/logos/radio-de-la-paix.svg";
-    if (nameLow.includes("espoir")) return "assets/logos/radio-espoir-ci.svg";
-    if (nameLow.includes("catholique") || nameLow.includes("rnc") || nameLow.includes("évangile") || nameLow.includes("evangile")) return "assets/logos/radio-nationale-catholique.svg";
     if (nameLow.includes("daloa")) return "assets/logos/radio-daloa-fm.svg";
     if (nameLow.includes("gbêkê") || nameLow.includes("gbeke")) return "assets/logos/gbeke-fm-bouake.svg";
     if (nameLow.includes("guémon") || nameLow.includes("guemon")) return "assets/logos/guemon-fm.svg";
