@@ -1549,11 +1549,40 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }, {
           onReadyForServerApproval: function(paymentId) {
-            console.log("[Pi Radio Payment] En attente d'approbation serveur :", paymentId);
+            console.log("[Pi Radio Payment] Envoi de l'approbation au serveur pour :", paymentId);
+            fetch("/api/approve", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ paymentId: paymentId })
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              console.log("[Pi Radio Payment] Réponse approbation serveur :", data);
+              if (data && data.error) {
+                console.warn("[Pi Radio Payment] Avertissement approbation :", data.error);
+              }
+            })
+            .catch(function(err) {
+              console.error("[Pi Radio Payment] Erreur réseau approbation :", err);
+            });
           },
           onReadyForServerCompletion: function(paymentId, txid) {
             console.log("[Pi Radio Payment] Transaction blockchain Pi validée :", txid);
-            completeReceiverActivation(txid);
+            fetch("/api/complete", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ paymentId: paymentId, txid: txid })
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              console.log("[Pi Radio Payment] Réponse finalisation serveur :", data);
+              completeReceiverActivation(txid);
+            })
+            .catch(function(err) {
+              console.error("[Pi Radio Payment] Erreur réseau finalisation :", err);
+              // On active quand même le poste localement puisque la transaction blockchain a été confirmée
+              completeReceiverActivation(txid);
+            });
           },
           onCancel: function(paymentId) {
             console.log("[Pi Radio Payment] Annulé par l'utilisateur :", paymentId);
