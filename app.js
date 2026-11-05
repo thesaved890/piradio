@@ -119,6 +119,41 @@ document.addEventListener("DOMContentLoaded", () => {
     return `data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23140b27' stroke='%23f3b43f' stroke-width='2'/%3E%3Ctext x='50%25' y='64%25' font-size='44' text-anchor='middle'%3E${safeCode}%3C/text%3E%3C/svg%3E`;
   }
 
+  // Badge régional vectoriel de secours officiel (fallback universel garanti)
+  function getRegionalFallbackBadge(st) {
+    if (!st) return "assets/logos/algerie-radio-badge.svg";
+    const cCode = (st.countrycode || "").toUpperCase();
+    const c = (st.country || "").toLowerCase();
+    const s = (st.state || "").toLowerCase();
+    const city = (st.city || "").toLowerCase();
+    const n = (st.name || "").toLowerCase();
+    const code = st.code || "";
+
+    if (code === "🇨🇦" || cCode === "CA" || c.includes("canada") || n.includes("canada") || city.includes("toronto") || city.includes("montreal")) return "assets/logos/canada-radio-badge.svg";
+    if (s.includes("michigan") || n.includes("michigan")) return "assets/logos/michigan-radio-badge.svg";
+    if (s.includes("texas") || n.includes("texas")) return "assets/logos/texas-radio-badge.svg";
+    if (s.includes("hawaii") || s.includes("hawai") || n.includes("hawaii")) return "assets/logos/hawaii-radio-badge.svg";
+    if (s.includes("florida") || s.includes("floride") || n.includes("florida")) return "assets/logos/florida-radio-badge.svg";
+    if (city.includes("chicago") || n.includes("chicago")) return "assets/logos/chicago-radio-badge.svg";
+    if (code === "🇳🇬" || cCode === "NG" || c.includes("nigeria") || n.includes("nigeria")) return "assets/logos/nigeria-radio-badge.svg";
+    if (code === "🇨🇲" || cCode === "CM" || c.includes("cameroun") || c.includes("cameroon")) return "assets/logos/cameroon-radio-badge.svg";
+    if (code === "🇸🇳" || cCode === "SN" || c.includes("senegal") || c.includes("sénégal")) return "assets/logos/senegal-radio-badge.svg";
+    if (code === "🇧🇯" || cCode === "BJ" || c.includes("benin") || c.includes("bénin")) return "assets/logos/benin-radio-badge.svg";
+    if (code === "🇨🇮" || cCode === "CI" || c.includes("cote d") || c.includes("côte d")) return "assets/logos/cote-divoire-radio-badge.svg";
+    if (code === "🇬🇭" || cCode === "GH" || c.includes("ghana")) return "assets/logos/ghana-radio-badge.svg";
+    if (code === "🇲🇱" || cCode === "ML" || c.includes("mali")) return "assets/logos/mali-radio-badge.svg";
+    if (code === "🇳🇪" || cCode === "NE" || c === "niger" || c.includes("the niger")) return "assets/logos/niger-radio-badge.svg";
+    if (code === "🇧🇫" || cCode === "BF" || c.includes("burkina")) return "assets/logos/burkina-faso-radio-badge.svg";
+    if (code === "🇬🇳" || cCode === "GN" || (c.includes("guinee") && !c.includes("bissau") && !c.includes("equat"))) return "assets/logos/guinee-radio-badge.svg";
+    if (code === "🇬🇼" || cCode === "GW" || c.includes("bissau")) return "assets/logos/guinee-bissau-radio-badge.svg";
+    if (code === "🇬🇶" || cCode === "GQ" || c.includes("equat") || c.includes("équat")) return "assets/logos/guinee-equatoriale-badge.svg";
+    if (code === "🇲🇦" || cCode === "MA" || c.includes("maroc") || c.includes("morocco")) return "assets/logos/maroc-radio-badge.svg";
+    if (code === "🇹🇳" || cCode === "TN" || c.includes("tunis")) return "assets/logos/tunisie-radio-badge.svg";
+    if (code === "🇩🇿" || cCode === "DZ" || c.includes("alg") || n.includes("alger") || n.includes("beur") || n.includes("maghreb")) return "assets/logos/algerie-radio-badge.svg";
+
+    return getFlagFallback(code);
+  }
+
   // Résolution intelligente du logo : Logo direct local assets/, logos régionaux (Canada, etc.), Favicon Google 128px ou Badge SVG
   function resolveStationLogo(st) {
     const isSocialOrGenericLogo = (url) => {
@@ -1037,16 +1072,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isCurrent = state.currentStation && state.currentStation.id === st.id;
     const isCardPlaying = isCurrent && state.isPlaying;
     const isFav = state.favorites.includes(st.id);
-    const isCanada = (st.code === "🇨🇦") || (st.country && st.country.toLowerCase().includes("canada"));
-    const isMichigan = (st.state && st.state.toLowerCase().includes("michigan")) || (st.name && st.name.toLowerCase().includes("michigan"));
-    const isTexas = (st.state && st.state.toLowerCase().includes("texas")) || (st.name && st.name.toLowerCase().includes("texas"));
-    const isHawaii = (st.state && (st.state.toLowerCase().includes("hawaii") || st.state.toLowerCase().includes("hawai"))) || (st.name && (st.name.toLowerCase().includes("hawaii") || st.name.toLowerCase().includes("hawai")));
-    const isFlorida = (st.state && (st.state.toLowerCase().includes("florida") || st.state.toLowerCase().includes("floride"))) || (st.name && (st.name.toLowerCase().includes("florida") || st.name.toLowerCase().includes("floride")));
-    const isChicago = (st.city && st.city.toLowerCase().includes("chicago")) || (st.name && st.name.toLowerCase().includes("chicago"));
-    const isNigeria = (st.code === "🇳🇬") || (st.country && (st.country.toLowerCase().includes("nigeria") || st.country.toLowerCase().includes("nigéria"))) || (st.state && (st.state.toLowerCase().includes("lagos") || st.state.toLowerCase().includes("ogun") || st.state.toLowerCase().includes("oyo") || st.state.toLowerCase().includes("enugu") || st.state.toLowerCase().includes("rivers") || st.state.toLowerCase().includes("abia") || st.state.toLowerCase().includes("abuja"))) || (st.city && (st.city.toLowerCase().includes("lagos") || st.city.toLowerCase().includes("abuja") || st.city.toLowerCase().includes("ibadan") || st.city.toLowerCase().includes("abeokuta") || st.city.toLowerCase().includes("enugu"))) || (st.name && (st.name.toLowerCase().includes("nigeria") || st.name.toLowerCase().includes("lagos") || st.name.toLowerCase().includes("abuja") || st.name.toLowerCase().includes("ibadan")));
-    const isCameroon = (st.code === "🇨🇲") || (st.country && (st.country.toLowerCase().includes("cameroun") || st.country.toLowerCase().includes("cameroon"))) || (st.state && (st.state.toLowerCase().includes("yaounde") || st.state.toLowerCase().includes("yaoundé") || st.state.toLowerCase().includes("douala") || st.state.toLowerCase().includes("bamenda") || st.state.toLowerCase().includes("buea") || st.state.toLowerCase().includes("limbe") || st.state.toLowerCase().includes("ebolowa"))) || (st.city && (st.city.toLowerCase().includes("yaounde") || st.city.toLowerCase().includes("yaoundé") || st.city.toLowerCase().includes("douala") || st.city.toLowerCase().includes("bamenda"))) || (st.name && (st.name.toLowerCase().includes("cameroun") || st.name.toLowerCase().includes("cameroon") || st.name.toLowerCase().includes("crtv") || st.name.toLowerCase().includes("237")));
-    const isSenegal = (st.code === "🇸🇳") || (st.country && (st.country.toLowerCase().includes("sénégal") || st.country.toLowerCase().includes("senegal"))) || (st.state && (st.state.toLowerCase().includes("dakar") || st.state.toLowerCase().includes("thiès") || st.state.toLowerCase().includes("thies") || st.state.toLowerCase().includes("kaolack") || st.state.toLowerCase().includes("touba") || st.state.toLowerCase().includes("ziguinchor") || st.state.toLowerCase().includes("saint-louis") || st.state.toLowerCase().includes("matam"))) || (st.city && (st.city.toLowerCase().includes("dakar") || st.city.toLowerCase().includes("thiès") || st.city.toLowerCase().includes("thies") || st.city.toLowerCase().includes("kaolack") || st.city.toLowerCase().includes("touba") || st.city.toLowerCase().includes("ziguinchor"))) || (st.name && (st.name.toLowerCase().includes("sénégal") || st.name.toLowerCase().includes("senegal") || st.name.toLowerCase().includes("dakar") || st.name.toLowerCase().includes("touba") || st.name.toLowerCase().includes("ziguinchor")));
-    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : (isMichigan ? "assets/logos/michigan-radio-badge.svg" : (isTexas ? "assets/logos/texas-radio-badge.svg" : (isHawaii ? "assets/logos/hawaii-radio-badge.svg" : (isFlorida ? "assets/logos/florida-radio-badge.svg" : (isChicago ? "assets/logos/chicago-radio-badge.svg" : (isNigeria ? "assets/logos/nigeria-radio-badge.svg" : (isCameroon ? "assets/logos/cameroon-radio-badge.svg" : (isSenegal ? "assets/logos/senegal-radio-badge.svg" : getFlagFallback(st.code)))))))));
+    const fallbackLogo = getRegionalFallbackBadge(st);
     const resolvedLogo = resolveStationLogo(st);
     
     const badgeHtml = st.frequency 
@@ -1422,16 +1448,7 @@ document.addEventListener("DOMContentLoaded", () => {
     state.retryCount = 0;
 
     const streamToLoad = useFallback && station.fallbackUrl ? station.fallbackUrl : station.streamUrl;
-    const isCanada = (station.code === "🇨🇦") || (station.country && station.country.toLowerCase().includes("canada"));
-    const isMichigan = (station.state && station.state.toLowerCase().includes("michigan")) || (station.name && station.name.toLowerCase().includes("michigan"));
-    const isTexas = (station.state && station.state.toLowerCase().includes("texas")) || (station.name && station.name.toLowerCase().includes("texas"));
-    const isHawaii = (station.state && (station.state.toLowerCase().includes("hawaii") || station.state.toLowerCase().includes("hawai"))) || (station.name && (station.name.toLowerCase().includes("hawaii") || station.name.toLowerCase().includes("hawai")));
-    const isFlorida = (station.state && (station.state.toLowerCase().includes("florida") || station.state.toLowerCase().includes("floride"))) || (station.name && (station.name.toLowerCase().includes("florida") || station.name.toLowerCase().includes("floride")));
-    const isChicago = (station.city && station.city.toLowerCase().includes("chicago")) || (station.name && station.name.toLowerCase().includes("chicago"));
-    const isNigeria = (station.code === "🇳🇬") || (station.country && (station.country.toLowerCase().includes("nigeria") || station.country.toLowerCase().includes("nigéria"))) || (station.state && (station.state.toLowerCase().includes("lagos") || station.state.toLowerCase().includes("ogun") || station.state.toLowerCase().includes("oyo") || station.state.toLowerCase().includes("enugu") || station.state.toLowerCase().includes("rivers") || station.state.toLowerCase().includes("abia") || station.state.toLowerCase().includes("abuja"))) || (station.city && (station.city.toLowerCase().includes("lagos") || station.city.toLowerCase().includes("abuja") || station.city.toLowerCase().includes("ibadan") || station.city.toLowerCase().includes("abeokuta") || station.city.toLowerCase().includes("enugu"))) || (station.name && (station.name.toLowerCase().includes("nigeria") || station.name.toLowerCase().includes("lagos") || station.name.toLowerCase().includes("abuja") || station.name.toLowerCase().includes("ibadan")));
-    const isCameroon = (station.code === "🇨🇲") || (station.country && (station.country.toLowerCase().includes("cameroun") || station.country.toLowerCase().includes("cameroon"))) || (station.state && (station.state.toLowerCase().includes("yaounde") || station.state.toLowerCase().includes("yaoundé") || station.state.toLowerCase().includes("douala") || station.state.toLowerCase().includes("bamenda") || station.state.toLowerCase().includes("buea") || station.state.toLowerCase().includes("limbe") || station.state.toLowerCase().includes("ebolowa"))) || (station.city && (station.city.toLowerCase().includes("yaounde") || station.city.toLowerCase().includes("yaoundé") || station.city.toLowerCase().includes("douala") || station.city.toLowerCase().includes("bamenda"))) || (station.name && (station.name.toLowerCase().includes("cameroun") || station.name.toLowerCase().includes("cameroon") || station.name.toLowerCase().includes("crtv") || station.name.toLowerCase().includes("237")));
-    const isSenegal = (station.code === "🇸🇳") || (station.country && (station.country.toLowerCase().includes("sénégal") || station.country.toLowerCase().includes("senegal"))) || (station.state && (station.state.toLowerCase().includes("dakar") || station.state.toLowerCase().includes("thiès") || station.state.toLowerCase().includes("thies") || station.state.toLowerCase().includes("kaolack") || station.state.toLowerCase().includes("touba") || station.state.toLowerCase().includes("ziguinchor") || station.state.toLowerCase().includes("saint-louis") || station.state.toLowerCase().includes("matam"))) || (station.city && (station.city.toLowerCase().includes("dakar") || station.city.toLowerCase().includes("thiès") || station.city.toLowerCase().includes("thies") || station.city.toLowerCase().includes("kaolack") || station.city.toLowerCase().includes("touba") || station.city.toLowerCase().includes("ziguinchor"))) || (station.name && (station.name.toLowerCase().includes("sénégal") || station.name.toLowerCase().includes("senegal") || station.name.toLowerCase().includes("dakar") || station.name.toLowerCase().includes("touba") || station.name.toLowerCase().includes("ziguinchor")));
-    const fallbackLogo = isCanada ? "assets/logos/canada-radio-badge.svg" : (isMichigan ? "assets/logos/michigan-radio-badge.svg" : (isTexas ? "assets/logos/texas-radio-badge.svg" : (isHawaii ? "assets/logos/hawaii-radio-badge.svg" : (isFlorida ? "assets/logos/florida-radio-badge.svg" : (isChicago ? "assets/logos/chicago-radio-badge.svg" : (isNigeria ? "assets/logos/nigeria-radio-badge.svg" : (isCameroon ? "assets/logos/cameroon-radio-badge.svg" : (isSenegal ? "assets/logos/senegal-radio-badge.svg" : getFlagFallback(station.code)))))))));
+    const fallbackLogo = getRegionalFallbackBadge(station);
     const resolvedLogo = resolveStationLogo(station);
 
     playerStationTitle.textContent = station.name;
