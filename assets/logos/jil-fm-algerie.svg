@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgJil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141419"/>
+      <stop offset="50%" stop-color="#1f1d2e"/>
+      <stop offset="100%" stop-color="#0f0e17"/>
+    </linearGradient>
+    <linearGradient id="jilOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9100"/>
+      <stop offset="50%" stop-color="#FF5722"/>
+      <stop offset="100%" stop-color="#E64A19"/>
+    </linearGradient>
+    <linearGradient id="jilCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#00B0FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bgJil)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#jilOrange)" stroke-width="2" opacity="0.8"/>
+
+  <!-- Logo Jil FM dynamique et percutant -->
+  <!-- Cercle d'ondes musical -->
+  <circle cx="100" cy="80" r="46" fill="#181622" stroke="url(#jilCyan)" stroke-width="2" stroke-dasharray="3 4"/>
+  <circle cx="100" cy="80" r="40" fill="#241b2a" stroke="url(#jilOrange)" stroke-width="3"/>
+
+  <!-- Texte JIL en grand lettrage slanted -->
+  <text x="100" y="88" font-family="'Arial Black', Impact, sans-serif" font-size="34" font-weight="900" font-style="italic" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">JIL</text>
+
+  <!-- Badge FM cyan fluo -->
+  <rect x="74" y="98" width="52" height="20" rx="6" fill="url(#jilCyan)"/>
+  <text x="100" y="112" font-family="'Arial Black', sans-serif" font-size="11" font-weight="900" fill="#0A1826" text-anchor="middle" letter-spacing="1">FM</text>
+
+  <!-- Tagline Jeunesse Algérie -->
+  <text x="100" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="url(#jilOrange)" text-anchor="middle" letter-spacing="2">LA RADIO JEUNESSE</text>
+  <text x="100" y="157" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#B0BEC5" text-anchor="middle">POP • RAÏ • URBAN • ELECTRO</text>
+
+  <!-- Cartouche inférieur Algérie -->
+  <rect x="25" y="166" width="150" height="22" rx="6" fill="#006233"/>
+  <text x="100" y="181" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">🇩🇿 RADIO ALGÉRIE</text>
+</svg>

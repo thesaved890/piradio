@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgCoran" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#021c10"/>
+      <stop offset="50%" stop-color="#063820"/>
+      <stop offset="100%" stop-color="#01160c"/>
+    </linearGradient>
+    <linearGradient id="goldCoran" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3B0"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8C6F12"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bgCoran)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#goldCoran)" stroke-width="2.5" opacity="0.9"/>
+  <rect x="9" y="9" width="182" height="182" rx="28" fill="none" stroke="#0e5433" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Étoile islamique à huit branches stylisée (Rub el Hizb) en filigrane -->
+  <g transform="translate(100, 85)" fill="none" stroke="url(#goldCoran)" stroke-width="1.2" opacity="0.4">
+    <rect x="-38" y="-38" width="76" height="76"/>
+    <rect x="-38" y="-38" width="76" height="76" transform="rotate(45)"/>
+  </g>
+
+  <!-- En-tête Radio Algérie -->
+  <text x="100" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="url(#goldCoran)" text-anchor="middle" letter-spacing="2">RADIO ALGÉRIE</text>
+
+  <!-- Motif médaillon Coran -->
+  <circle cx="100" cy="85" r="42" fill="#042314" stroke="url(#goldCoran)" stroke-width="2"/>
+  
+  <!-- Calligraphie القرآن الكريم -->
+  <text x="100" y="80" font-family="'Amiri', 'Traditional Arabic', serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle">القرآن الكريم</text>
+  <text x="100" y="104" font-family="'Amiri', 'Traditional Arabic', serif" font-size="13" font-weight="bold" fill="url(#goldCoran)" text-anchor="middle">إذاعة القرآن</text>
+
+  <!-- Texte en bas -->
+  <text x="100" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">RADIO CORAN</text>
+  
+  <!-- Cartouche fréquence/statut -->
+  <rect x="30" y="160" width="140" height="25" rx="8" fill="#006233" stroke="url(#goldCoran)" stroke-width="1"/>
+  <text x="100" y="176" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">SAINT CORAN • 24H/24</text>
+</svg>

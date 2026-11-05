@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgCh2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141c2b"/>
+      <stop offset="50%" stop-color="#0a2a44"/>
+      <stop offset="100%" stop-color="#0c1726"/>
+    </linearGradient>
+    <linearGradient id="amazighYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="100%" stop-color="#FBC02D"/>
+    </linearGradient>
+    <linearGradient id="amazighRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5252"/>
+      <stop offset="100%" stop-color="#D32F2F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bgCh2)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#amazighYellow)" stroke-width="2" opacity="0.8"/>
+
+  <!-- En-tête officiel Radio Algérie -->
+  <rect x="25" y="16" width="150" height="24" rx="6" fill="#006233" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="100" y="32" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">RADIO ALGÉRIE</text>
+
+  <!-- Médaillon central Chaine 2 -->
+  <circle cx="100" cy="95" r="48" fill="#071b2d" stroke="url(#amazighRed)" stroke-width="3"/>
+
+  <!-- Grand chiffre 2 stylisé -->
+  <text x="96" y="112" font-family="'Arial Black', Impact, sans-serif" font-size="52" font-weight="900" fill="#FFFFFF" text-anchor="middle">2</text>
+
+  <!-- Symbole Yaz Amazigh (ⵣ) et arabe -->
+  <text x="100" y="136" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="url(#amazighRed)" text-anchor="middle">ⵣ TAMAZIƔT</text>
+
+  <!-- Cartouche inférieur -->
+  <rect x="25" y="156" width="150" height="28" rx="8" fill="url(#amazighRed)"/>
+  <text x="100" y="174" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">CHAÎNE 2 • BERBÈRE</text>
+</svg>

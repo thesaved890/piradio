@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgFM2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1829"/>
+      <stop offset="50%" stop-color="#122a47"/>
+      <stop offset="100%" stop-color="#091421"/>
+    </linearGradient>
+    <linearGradient id="redFM2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF385C"/>
+      <stop offset="100%" stop-color="#C6102D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bgFM2)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#redFM2)" stroke-width="2" opacity="0.85"/>
+
+  <!-- Logo France Maghreb 2 -->
+  <g transform="translate(100, 72)">
+    <!-- Pavé rouge biseauté pour le 2 -->
+    <rect x="-42" y="-36" width="84" height="72" rx="14" fill="url(#redFM2)"/>
+    <text x="0" y="24" font-family="'Arial Black', Impact, sans-serif" font-size="62" font-weight="900" fill="#FFFFFF" text-anchor="middle">2</text>
+  </g>
+
+  <!-- Titre France Maghreb -->
+  <text x="100" y="128" font-family="'Arial Black', sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">FRANCE</text>
+  <text x="100" y="146" font-family="'Arial Black', sans-serif" font-size="15" font-weight="900" fill="#29B6F6" text-anchor="middle" letter-spacing="2">MAGHREB</text>
+
+  <!-- Cartouche inférieur -->
+  <rect x="20" y="158" width="160" height="26" rx="8" fill="#0E233B" stroke="url(#redFM2)" stroke-width="1.2"/>
+  <text x="100" y="175" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">LE GRAND FORUM DU MAGHREB</text>
+</svg>

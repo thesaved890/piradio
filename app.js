@@ -490,6 +490,31 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/tunisie-radio-badge.svg";
     }
 
+    const isAlgerie = (cCode === "DZ") || (st.code === "🇩🇿") || (st.country && st.country.toLowerCase().includes("alg")) ||
+      stState.includes("alger") || stState.includes("oran") || stState.includes("constantine") || stState.includes("tizi") || stState.includes("setif") || stState.includes("annaba") || stState.includes("tlemcen") || stState.includes("batna") || stState.includes("bejaia") || stState.includes("biskra") ||
+      nameLow.includes("algerie") || nameLow.includes("algérie") || nameLow.includes("algeria") || nameLow.includes("alger") || nameLow.includes("oran") || nameLow.includes("constantine") || nameLow.includes("tizi ouzou") || nameLow.includes("beur fm") || nameLow.includes("france maghreb") || nameLow.includes("hits 1");
+    if (isAlgerie) {
+      if (nameLow.includes("chaine 3") || nameLow.includes("chaîne 3") || nameLow.includes("ch-3") || nameLow.includes("ch3")) return "assets/logos/algerie-chaine-3.svg";
+      if (nameLow.includes("chaine 1") || nameLow.includes("chaîne 1") || nameLow.includes("ch-1") || nameLow.includes("ch1") || nameLow.includes("الأولى")) return "assets/logos/algerie-chaine-1.svg";
+      if (nameLow.includes("chaine 2") || nameLow.includes("chaîne 2") || nameLow.includes("ch-2") || nameLow.includes("ch2") || nameLow.includes("الثانية") || nameLow.includes("tamazi")) return "assets/logos/algerie-chaine-2.svg";
+      if (nameLow.includes("internationale") || nameLow.includes("rai") || nameLow.includes("الدولية")) return "assets/logos/algerie-internationale.svg";
+      if (nameLow.includes("coran") || nameLow.includes("القرآن") || nameLow.includes("quran") || nameLow.includes("sahabah") || nameLow.includes("siyra") || nameLow.includes("recitation")) return "assets/logos/algerie-coran.svg";
+      if (nameLow.includes("culture") || nameLow.includes("الثقافة")) return "assets/logos/algerie-culture.svg";
+      if (nameLow.includes("jil fm") || nameLow.includes("jil") || nameLow.includes("jeunesse")) return "assets/logos/jil-fm-algerie.svg";
+      if (nameLow.includes("bahdja") || nameLow.includes("البهجة")) return "assets/logos/el-bahdja-alger.svg";
+      if (nameLow.includes("zaman") || nameLow.includes("zmen") || nameLow.includes("زمان")) return "assets/logos/zaman-fm-algerie.svg";
+      if (nameLow.includes("france maghreb") || nameLow.includes("maghreb 2")) return "assets/logos/france-maghreb-2.svg";
+      if (nameLow.includes("beur fm") || nameLow.includes("beur")) return "assets/logos/beur-fm-algerie.svg";
+      if (nameLow.includes("hits 1") || nameLow.includes("hits1")) return "assets/logos/hits1-algerie.svg";
+      if (nameLow.includes("antinea")) return "assets/logos/antinea-radio.svg";
+      if (nameLow.includes("oran") || nameLow.includes("وهران")) return "assets/logos/radio-oran-algerie.svg";
+      if (nameLow.includes("constantine") || nameLow.includes("قسنطينة") || nameLow.includes("cirta")) return "assets/logos/radio-constantine.svg";
+      if (nameLow.includes("tizi") || nameLow.includes("تيزي")) return "assets/logos/radio-tizi-ouzou.svg";
+      if (nameLow.includes("annaba") || nameLow.includes("عنابة")) return "assets/logos/radio-annaba.svg";
+      if (nameLow.includes("setif") || nameLow.includes("سطيف")) return "assets/logos/radio-setif.svg";
+      return "assets/logos/algerie-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -514,6 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isGuineeEquatoriale) return "assets/logos/guinee-equatoriale-badge.svg";
     if (isMaroc) return "assets/logos/maroc-radio-badge.svg";
     if (isTunisie) return "assets/logos/tunisie-radio-badge.svg";
+    if (isAlgerie) return "assets/logos/algerie-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 

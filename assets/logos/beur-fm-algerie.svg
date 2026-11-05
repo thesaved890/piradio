@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgBeur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1f"/>
+      <stop offset="50%" stop-color="#2c2b18"/>
+      <stop offset="100%" stop-color="#141416"/>
+    </linearGradient>
+    <linearGradient id="beurYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF500"/>
+      <stop offset="50%" stop-color="#FFD600"/>
+      <stop offset="100%" stop-color="#FFAB00"/>
+    </linearGradient>
+    <linearGradient id="beurRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3D00"/>
+      <stop offset="100%" stop-color="#DD2C00"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bgBeur)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#beurYellow)" stroke-width="2.5" opacity="0.9"/>
+
+  <!-- Logo Beur FM iconique Soleil -->
+  <g transform="translate(100, 68)">
+    <circle cx="0" cy="0" r="34" fill="url(#beurYellow)"/>
+    <!-- Rayons soleil stylisés -->
+    <path d="M 0,-44 L 0,-38 M 31,-31 L 26,-26 M 44,0 L 38,0 M 31,31 L 26,26 M 0,44 L 0,38 M -31,31 L -26,26 M -44,0 L -38,0 M -31,-31 L -26,-26" stroke="url(#beurYellow)" stroke-width="3" stroke-linecap="round"/>
+    <!-- Cœur du soleil -->
+    <circle cx="0" cy="0" r="26" fill="#1A1A1D"/>
+    <text x="0" y="8" font-family="'Arial Black', sans-serif" font-size="14" font-weight="900" fill="url(#beurYellow)" text-anchor="middle">FM</text>
+  </g>
+
+  <!-- Bloc BEUR en grand lettrage noir/jaune emblématique -->
+  <rect x="25" y="116" width="150" height="34" rx="8" fill="url(#beurYellow)"/>
+  <text x="100" y="141" font-family="'Arial Black', Impact, sans-serif" font-size="26" font-weight="900" fill="#1A1A1D" text-anchor="middle" letter-spacing="2">BEUR FM</text>
+
+  <!-- Tagline inférieure -->
+  <rect x="25" y="158" width="150" height="25" rx="7" fill="url(#beurRed)"/>
+  <text x="100" y="174" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">LA RADIO SOLEIL • RAÏ & POP</text>
+</svg>

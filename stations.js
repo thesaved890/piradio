@@ -1381,22 +1381,186 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
-  // 2. 🇩🇿 ALGÉRIE (MAGHREB)
+  // 2. 🇩🇿 ALGÉRIE
   // ==========================================
   {
     id: "algerie-chaine-3",
     name: "Radio Algérie Chaîne 3",
     country: "Algérie",
+    city: "Alger",
+    state: "Alger",
     code: "🇩🇿",
     continent: "africa",
     category: "news",
     frequency: "88.4",
     band: "FM",
     language: "Français & Arabe",
-    genre: "Actualités algériennes & Internationales",
+    genre: "Actualités algériennes, Débats, Culture & Société",
     streamUrl: "https://webradio1.tda.dz:8001/Chaine3_64K.mp3",
-    fallbackUrl: "https://webradio1.tda.dz:8001/Chaine3_64K.mp3",
-    logo: "assets/logos/algerie-chaine-3.png",
+    fallbackUrl: "https://webradio2.tda.dz:8001/Chaine3_64K.mp3",
+    logo: "assets/logos/algerie-chaine-3.svg",
+    featured: true
+  },
+  {
+    id: "algerie-chaine-1",
+    name: "Radio Algérie Chaîne 1 (القناة الأولى)",
+    country: "Algérie",
+    city: "Alger",
+    state: "Alger",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "news",
+    frequency: "89.8",
+    band: "FM",
+    language: "العربية",
+    genre: "Première radio généraliste, Information nationale & Société",
+    streamUrl: "https://webradio1.tda.dz:8001/Chaine1_64K.mp3",
+    fallbackUrl: "https://webradio2.tda.dz:8001/Chaine1_64K.mp3",
+    logo: "assets/logos/algerie-chaine-1.svg",
+    featured: true
+  },
+  {
+    id: "algerie-chaine-2",
+    name: "Radio Algérie Chaîne 2 (القناة الثانية - Tamaziɣt)",
+    country: "Algérie",
+    city: "Alger",
+    state: "Alger",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "culture",
+    frequency: "94.7",
+    band: "FM",
+    language: "Tamaziɣt (Kabyle, Chaoui, Mozabite)",
+    genre: "Expression amazighe, Patrimoine & Musique traditionnelle",
+    streamUrl: "https://webradio1.tda.dz:8001/Chaine2_64K.mp3",
+    fallbackUrl: "https://webradio2.tda.dz:8001/Chaine2_64K.mp3",
+    logo: "assets/logos/algerie-chaine-2.svg",
+    featured: true
+  },
+  {
+    id: "jil-fm-algerie",
+    name: "Radio Jil FM (La Radio Jeunesse)",
+    country: "Algérie",
+    city: "Alger",
+    state: "Alger",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "music",
+    frequency: "94.7",
+    band: "FM",
+    language: "Français & Arabe dialectal",
+    genre: "Pop algérienne, Raï moderne, Rap, Urban & Electro",
+    streamUrl: "https://webradio1.tda.dz:8001/Jeunesse_64K.mp3",
+    fallbackUrl: "https://webradio2.tda.dz:8001/Jeunesse_64K.mp3",
+    logo: "assets/logos/jil-fm-algerie.svg",
+    featured: true
+  },
+  {
+    id: "el-bahdja-alger",
+    name: "Radio El Bahdja 94.2 FM (Alger la Blanche)",
+    country: "Algérie",
+    city: "Alger",
+    state: "Alger",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "general",
+    frequency: "94.2",
+    band: "FM",
+    language: "Arabe algérois & Français",
+    genre: "Chaâbi, Musique algéroise, Proximité & Vie de la capitale",
+    streamUrl: "https://webradio1.tda.dz:8001/ElBahdja_64K.mp3",
+    fallbackUrl: "https://webradio3.tda.dz:8001/ElBahdja_64K.mp3",
+    logo: "assets/logos/el-bahdja-alger.svg",
+    featured: true
+  },
+  {
+    id: "algerie-internationale",
+    name: "Radio Algérie Internationale (RAI - الجزائر الدولية)",
+    country: "Algérie",
+    city: "Alger",
+    state: "Alger",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "news",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Français, Arabe, Anglais & Espagnol",
+    genre: "Actualité mondiale, Diplomatie, Géopolitique & Analyses",
+    streamUrl: "https://webradio3.tda.dz:8001/Internationale_64K.mp3",
+    fallbackUrl: "https://webradio1.tda.dz:8001/Internationale_64K.mp3",
+    logo: "assets/logos/algerie-internationale.svg",
+    featured: true
+  },
+  {
+    id: "algerie-coran",
+    name: "Radio Coran Algérie (إذاعة القرآن الكريم)",
+    country: "Algérie",
+    city: "Alger",
+    state: "Alger",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "culture",
+    frequency: "1422",
+    band: "AM",
+    language: "العربية",
+    genre: "Récitation du Saint Coran, Exégèse & Spiritualité",
+    streamUrl: "https://webradio1.tda.dz:8001/Coran_64K.mp3",
+    fallbackUrl: "https://webradio2.tda.dz:8001/Coran_64K.mp3",
+    logo: "assets/logos/algerie-coran.svg",
+    featured: true
+  },
+  {
+    id: "algerie-culture",
+    name: "Radio Algérie Culture (إذاعة الثقافة)",
+    country: "Algérie",
+    city: "Alger",
+    state: "Alger",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "culture",
+    frequency: "91.5",
+    band: "FM",
+    language: "Français & Arabe",
+    genre: "Histoire d'Algérie, Patrimoine, Théâtre, Arts & Littérature",
+    streamUrl: "https://webradio1.tda.dz:8001/Culture_64K.mp3",
+    fallbackUrl: "https://webradio2.tda.dz:8001/Culture_64K.mp3",
+    logo: "assets/logos/algerie-culture.svg",
+    featured: true
+  },
+  {
+    id: "zaman-fm-algerie",
+    name: "Radio Zaman FM (زمان - La Radio du Patrimoine)",
+    country: "Algérie",
+    city: "Alger",
+    state: "Alger",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "Arabe & Français",
+    genre: "Classiques de la chanson algérienne, Andalous & Nostalgie",
+    streamUrl: "https://webradio2.tda.dz:8001/Zamen_64K.mp3",
+    fallbackUrl: "https://webradio1.tda.dz:8001/Zamen_64K.mp3",
+    logo: "assets/logos/zaman-fm-algerie.svg",
+    featured: true
+  },
+  {
+    id: "radio-oran-algerie",
+    name: "Radio Oran El Bahia (إذاعة وهران)",
+    country: "Algérie",
+    city: "Oran",
+    state: "Oran",
+    code: "🇩🇿",
+    continent: "africa",
+    category: "general",
+    frequency: "92.7",
+    band: "FM",
+    language: "Arabe oranais & Français",
+    genre: "Grand Ouest algérien, Berceau du Raï & Culture oranaise",
+    streamUrl: "https://webradio2.tda.dz:8001/Oran_64K.mp3",
+    fallbackUrl: "https://webradio1.tda.dz:8001/Oran_64K.mp3",
+    logo: "assets/logos/radio-oran-algerie.svg",
     featured: true
   },
 
@@ -4037,10 +4201,30 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "meknes": { code: "MA", en: "Morocco", fr: "Meknès", continent: "africa", type: "country" },
   "oujda": { code: "MA", en: "Morocco", fr: "Oujda", continent: "africa", type: "country" },
 
+  // Algérie 🇩🇿
+  "dz": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
   "algerie": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
   "algérie": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
   "algeria": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
   "alger": { code: "DZ", en: "Algeria", fr: "Alger", continent: "africa", type: "country" },
+  "الجزائر": { code: "DZ", en: "Algeria", fr: "Algérie", continent: "africa", type: "country" },
+  "oran": { code: "DZ", en: "Algeria", fr: "Oran", continent: "africa", type: "country" },
+  "وهران": { code: "DZ", en: "Algeria", fr: "Oran", continent: "africa", type: "country" },
+  "constantine": { code: "DZ", en: "Algeria", fr: "Constantine", continent: "africa", type: "country" },
+  "قسنطينة": { code: "DZ", en: "Algeria", fr: "Constantine", continent: "africa", type: "country" },
+  "annaba": { code: "DZ", en: "Algeria", fr: "Annaba", continent: "africa", type: "country" },
+  "عنابة": { code: "DZ", en: "Algeria", fr: "Annaba", continent: "africa", type: "country" },
+  "setif": { code: "DZ", en: "Algeria", fr: "Sétif", continent: "africa", type: "country" },
+  "sétif": { code: "DZ", en: "Algeria", fr: "Sétif", continent: "africa", type: "country" },
+  "سطيف": { code: "DZ", en: "Algeria", fr: "Sétif", continent: "africa", type: "country" },
+  "tizi ouzou": { code: "DZ", en: "Algeria", fr: "Tizi Ouzou", continent: "africa", type: "country" },
+  "tizi": { code: "DZ", en: "Algeria", fr: "Tizi Ouzou", continent: "africa", type: "country" },
+  "تيزي وزو": { code: "DZ", en: "Algeria", fr: "Tizi Ouzou", continent: "africa", type: "country" },
+  "tlemcen": { code: "DZ", en: "Algeria", fr: "Tlemcen", continent: "africa", type: "country" },
+  "batna": { code: "DZ", en: "Algeria", fr: "Batna", continent: "africa", type: "country" },
+  "bejaia": { code: "DZ", en: "Algeria", fr: "Béjaïa", continent: "africa", type: "country" },
+  "béjaïa": { code: "DZ", en: "Algeria", fr: "Béjaïa", continent: "africa", type: "country" },
+  "biskra": { code: "DZ", en: "Algeria", fr: "Biskra", continent: "africa", type: "country" },
 
   // Tunisie 🇹🇳
   "tn": { code: "TN", en: "Tunisia", fr: "Tunisie", continent: "africa", type: "country" },
@@ -4569,6 +4753,32 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/tunisie-radio-badge.svg";
   }
 
+  // 1.u Logos officiels Algérie 🇩🇿
+  const isAlgerie = (cCode === "DZ") || (st.code === "🇩🇿") || (st.country || "").toLowerCase().includes("alg") ||
+    stState.includes("alger") || stState.includes("oran") || stState.includes("constantine") || stState.includes("tizi") || stState.includes("setif") || stState.includes("annaba") || stState.includes("tlemcen") || stState.includes("batna") || stState.includes("bejaia") || stState.includes("biskra") ||
+    nameLow.includes("algerie") || nameLow.includes("algérie") || nameLow.includes("algeria") || nameLow.includes("alger") || nameLow.includes("oran") || nameLow.includes("constantine") || nameLow.includes("tizi ouzou") || nameLow.includes("beur fm") || nameLow.includes("france maghreb") || nameLow.includes("hits 1");
+  if (isAlgerie) {
+    if (nameLow.includes("chaine 3") || nameLow.includes("chaîne 3") || nameLow.includes("ch-3") || nameLow.includes("ch3")) return "assets/logos/algerie-chaine-3.svg";
+    if (nameLow.includes("chaine 1") || nameLow.includes("chaîne 1") || nameLow.includes("ch-1") || nameLow.includes("ch1") || nameLow.includes("الأولى")) return "assets/logos/algerie-chaine-1.svg";
+    if (nameLow.includes("chaine 2") || nameLow.includes("chaîne 2") || nameLow.includes("ch-2") || nameLow.includes("ch2") || nameLow.includes("الثانية") || nameLow.includes("tamazi")) return "assets/logos/algerie-chaine-2.svg";
+    if (nameLow.includes("internationale") || nameLow.includes("rai") || nameLow.includes("الدولية")) return "assets/logos/algerie-internationale.svg";
+    if (nameLow.includes("coran") || nameLow.includes("القرآن") || nameLow.includes("quran") || nameLow.includes("sahabah") || nameLow.includes("siyra") || nameLow.includes("recitation")) return "assets/logos/algerie-coran.svg";
+    if (nameLow.includes("culture") || nameLow.includes("الثقافة")) return "assets/logos/algerie-culture.svg";
+    if (nameLow.includes("jil fm") || nameLow.includes("jil") || nameLow.includes("jeunesse")) return "assets/logos/jil-fm-algerie.svg";
+    if (nameLow.includes("bahdja") || nameLow.includes("البهجة")) return "assets/logos/el-bahdja-alger.svg";
+    if (nameLow.includes("zaman") || nameLow.includes("zmen") || nameLow.includes("زمان")) return "assets/logos/zaman-fm-algerie.svg";
+    if (nameLow.includes("france maghreb") || nameLow.includes("maghreb 2")) return "assets/logos/france-maghreb-2.svg";
+    if (nameLow.includes("beur fm") || nameLow.includes("beur")) return "assets/logos/beur-fm-algerie.svg";
+    if (nameLow.includes("hits 1") || nameLow.includes("hits1")) return "assets/logos/hits1-algerie.svg";
+    if (nameLow.includes("antinea")) return "assets/logos/antinea-radio.svg";
+    if (nameLow.includes("oran") || nameLow.includes("وهران")) return "assets/logos/radio-oran-algerie.svg";
+    if (nameLow.includes("constantine") || nameLow.includes("قسنطينة") || nameLow.includes("cirta")) return "assets/logos/radio-constantine.svg";
+    if (nameLow.includes("tizi") || nameLow.includes("تيزي")) return "assets/logos/radio-tizi-ouzou.svg";
+    if (nameLow.includes("annaba") || nameLow.includes("عنابة")) return "assets/logos/radio-annaba.svg";
+    if (nameLow.includes("setif") || nameLow.includes("سطيف")) return "assets/logos/radio-setif.svg";
+    return "assets/logos/algerie-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -4653,6 +4863,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isTunisie) {
     return "assets/logos/tunisie-radio-badge.svg";
+  }
+  if (isAlgerie) {
+    return "assets/logos/algerie-radio-badge.svg";
   }
 
   return "";
@@ -4796,6 +5009,15 @@ async function searchRadioBrowserAPI(query = "", country = "", limit = 25) {
         const c = (st.countrycode || "").toUpperCase();
         const country = (st.country || "").toLowerCase();
         return c === "GQ" || country.includes("equat") || country.includes("équat") || country.includes("ecuatorial");
+      });
+    }
+
+    // Filtre spécifique Algérie 🇩🇿 pour écarter les radios étrangères mal indexées
+    if (loc && loc.code === "DZ") {
+      uniqueData = uniqueData.filter(st => {
+        const name = (st.name || "").toLowerCase();
+        if (name.includes("chemnitz") || name.includes("k-sun66") || name.includes("svitle") || name.includes("sleep") || name.includes("ygg") || name.includes("christmas kids") || name.includes("frekans avrupa")) return false;
+        return true;
       });
     }
 

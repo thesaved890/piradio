@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.6
+// Pi Radio • Service Worker v5.7
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.6';
+const CACHE_NAME = 'piradio-v5.7';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,26 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Algérie 🇩🇿 (v5.7)
+  './assets/logos/algerie-radio-badge.svg',
+  './assets/logos/algerie-chaine-3.svg',
+  './assets/logos/algerie-chaine-1.svg',
+  './assets/logos/algerie-chaine-2.svg',
+  './assets/logos/algerie-internationale.svg',
+  './assets/logos/algerie-coran.svg',
+  './assets/logos/algerie-culture.svg',
+  './assets/logos/jil-fm-algerie.svg',
+  './assets/logos/el-bahdja-alger.svg',
+  './assets/logos/zaman-fm-algerie.svg',
+  './assets/logos/france-maghreb-2.svg',
+  './assets/logos/beur-fm-algerie.svg',
+  './assets/logos/hits1-algerie.svg',
+  './assets/logos/antinea-radio.svg',
+  './assets/logos/radio-oran-algerie.svg',
+  './assets/logos/radio-constantine.svg',
+  './assets/logos/radio-tizi-ouzou.svg',
+  './assets/logos/radio-annaba.svg',
+  './assets/logos/radio-setif.svg',
   // Logos officiels Tunisie 🇹🇳 (v5.6)
   './assets/logos/tunisie-radio-badge.svg',
   './assets/logos/mosaique-fm-tunisie.svg',
