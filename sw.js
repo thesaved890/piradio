@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.16
+// Pi Radio • Service Worker v5.17
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.16';
+const CACHE_NAME = 'piradio-v5.17';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -347,6 +347,36 @@ const PRECACHE_ASSETS = [
   './assets/logos/kiss-fm-rwanda.png',
   './assets/logos/nrg-radio-uganda.png',
   './assets/logos/capital-fm-uganda.png',
+  // Logos officiels Paris & France 🇫🇷 (v5.17)
+  './assets/logos/france-musique.svg',
+  './assets/logos/mouv-radio.svg',
+  './assets/logos/france-culture.svg',
+  './assets/logos/fip-radio.svg',
+  './assets/logos/ici-paris.svg',
+  './assets/logos/nrj-radio.svg',
+  './assets/logos/nostalgie-france.svg',
+  './assets/logos/cherie-fm.svg',
+  './assets/logos/rtl-france.svg',
+  './assets/logos/rtl2-france.svg',
+  './assets/logos/radio-nova.svg',
+  './assets/logos/radio-fg.svg',
+  './assets/logos/sud-radio.svg',
+  './assets/logos/m-radio-france.svg',
+  './assets/logos/chante-france.svg',
+  './assets/logos/beur-fm.svg',
+  './assets/logos/radio-orient.svg',
+  './assets/logos/radio-1077.svg',
+  './assets/logos/aligre-fm.svg',
+  './assets/logos/radio-campus-paris.svg',
+  './assets/logos/radio-j.svg',
+  './assets/logos/radio-courtoisie.svg',
+  './assets/logos/france-maghreb-2.svg',
+  './assets/logos/radio-notre-dame.svg',
+  './assets/logos/frequence-paris-plurielle.svg',
+  './assets/logos/canal-b-rennes.svg',
+  './assets/logos/radio-laser-guichen.svg',
+  './assets/logos/radio-parole-de-vie.svg',
+  './assets/logos/paris-radio-badge.svg',
   // Logos officiels Bretagne 🇫🇷 (v5.16)
   './assets/logos/bretagne-radio-badge.svg',
   './assets/logos/ici-breizh-izel.svg',

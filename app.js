@@ -636,6 +636,35 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/gambia-radio-badge.svg";
     }
 
+    const isFrance = (cCode === "FR" || st.code === "🇫🇷" || (st.country && st.country.toLowerCase().includes("france")));
+    if (isFrance) {
+      if (nameLow.includes("musique")) return "assets/logos/france-musique.svg";
+      if (nameLow.includes("mouv")) return "assets/logos/mouv-radio.svg";
+      if (nameLow.includes("culture")) return "assets/logos/france-culture.svg";
+      if (nameLow.includes("fip")) return "assets/logos/fip-radio.svg";
+      if (nameLow.includes("ici paris") || (nameLow.includes("bleu") && nameLow.includes("paris"))) return "assets/logos/ici-paris.svg";
+      if (nameLow.includes("nrj") && !nameLow.includes("uganda")) return "assets/logos/nrj-radio.svg";
+      if (nameLow.includes("nostalgie")) return "assets/logos/nostalgie-france.svg";
+      if (nameLow.includes("cherie") || nameLow.includes("chérie")) return "assets/logos/cherie-fm.svg";
+      if (nameLow.includes("rtl 2") || nameLow.includes("rtl2")) return "assets/logos/rtl2-france.svg";
+      if (nameLow.includes("rtl") && !nameLow.includes("italie") && !nameLow.includes("102.5")) return "assets/logos/rtl-france.svg";
+      if (nameLow.includes("nova")) return "assets/logos/radio-nova.svg";
+      if (nameLow.includes("fg")) return "assets/logos/radio-fg.svg";
+      if (nameLow.includes("sud radio")) return "assets/logos/sud-radio.svg";
+      if (nameLow.includes("m radio") || (nameLow.includes("mfm") && !nameLow.includes("maroc"))) return "assets/logos/m-radio-france.svg";
+      if (nameLow.includes("chante france")) return "assets/logos/chante-france.svg";
+      if (nameLow.includes("beur fm")) return "assets/logos/beur-fm.svg";
+      if (nameLow.includes("radio orient")) return "assets/logos/radio-orient.svg";
+      if (nameLow.includes("107.7") || nameLow.includes("vinci") || nameLow.includes("autoroute")) return "assets/logos/radio-1077.svg";
+      if (nameLow.includes("aligre")) return "assets/logos/aligre-fm.svg";
+      if (nameLow.includes("campus paris")) return "assets/logos/radio-campus-paris.svg";
+      if (nameLow.includes("radio j") || nameLow.includes("radio-j")) return "assets/logos/radio-j.svg";
+      if (nameLow.includes("courtoisie")) return "assets/logos/radio-courtoisie.svg";
+      if (nameLow.includes("maghreb 2")) return "assets/logos/france-maghreb-2.svg";
+      if (nameLow.includes("notre-dame") || nameLow.includes("notre dame")) return "assets/logos/radio-notre-dame.svg";
+      if (nameLow.includes("fpp") || nameLow.includes("plurielle")) return "assets/logos/frequence-paris-plurielle.svg";
+    }
+
     const isBretagne = (cCode === "FR" || st.code === "🇫🇷" || (st.country && st.country.toLowerCase().includes("france"))) && (
       stState.includes("bretagne") || stState.includes("brittany") || stState.includes("finistere") || stState.includes("finistère") ||
       stState.includes("morbihan") || stState.includes("ille-et-vilaine") || stState.includes("cotes-d'armor") ||
@@ -659,6 +688,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (nameLow.includes("bro gwened") || nameLow.includes("rbg")) return "assets/logos/radio-bro-gwened.svg";
       if (nameLow.includes("arvorig")) return "assets/logos/arvorig-fm.svg";
       if (nameLow.includes("rcf") && (nameLow.includes("sud") || nameLow.includes("vannes") || nameLow.includes("morbihan"))) return "assets/logos/rcf-sud-bretagne.svg";
+      if (nameLow.includes("canal b")) return "assets/logos/canal-b-rennes.svg";
+      if (nameLow.includes("laser")) return "assets/logos/radio-laser-guichen.svg";
+      if (nameLow.includes("parole de vie")) return "assets/logos/radio-parole-de-vie.svg";
       return "assets/logos/bretagne-radio-badge.svg";
     }
 
