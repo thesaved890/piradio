@@ -4977,8 +4977,8 @@ const CURATED_STATIONS = [
     band: "FM",
     language: "Français",
     genre: "La première radio juive de France, info & culture",
-    streamUrl: "https://radioj.ice.infomaniak.ch/radioj-128.mp3",
-    fallbackUrl: "https://radioj.ice.infomaniak.ch/radioj-128.mp3",
+    streamUrl: "http://stream.rcs.revma.com/138w9xn95tuvv",
+    fallbackUrl: "http://stream.rcs.revma.com/138w9xn95tuvv",
     logo: "assets/logos/radio-j.svg",
     featured: false,
     locked: true
@@ -4996,8 +4996,8 @@ const CURATED_STATIONS = [
     band: "FM",
     language: "Français",
     genre: "La radio libre du pays réel, politique et culture",
-    streamUrl: "https://courtoisie.ice.infomaniak.ch/courtoisie-128.mp3",
-    fallbackUrl: "https://courtoisie.ice.infomaniak.ch/courtoisie-128.mp3",
+    streamUrl: "http://ice.creacast.com/radio-courtoisie",
+    fallbackUrl: "http://ice.creacast.com/radio-courtoisie",
     logo: "assets/logos/radio-courtoisie.svg",
     featured: false,
     locked: false
