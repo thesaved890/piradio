@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.7
+// Pi Radio • Service Worker v5.8
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.7';
+const CACHE_NAME = 'piradio-v5.8';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,26 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Afrique du Sud 🇿🇦 (v5.8)
+  './assets/logos/south-africa-radio-badge.svg',
+  './assets/logos/jacaranda-fm-sa.svg',
+  './assets/logos/metro-fm-sa.svg',
+  './assets/logos/ukhozi-fm-sa.svg',
+  './assets/logos/5fm-radio-sa.svg',
+  './assets/logos/kaya-fm-sa.svg',
+  './assets/logos/east-coast-radio-sa.svg',
+  './assets/logos/kfm-cape-town-sa.svg',
+  './assets/logos/jozi-fm-sa.svg',
+  './assets/logos/hot-1027-fm-sa.svg',
+  './assets/logos/joy-gospel-radio-sa.svg',
+  './assets/logos/amapiano-fm-sa.svg',
+  './assets/logos/radio-702-sa.svg',
+  './assets/logos/power-fm-sa.svg',
+  './assets/logos/capetalk-sa.svg',
+  './assets/logos/helderberg-fm-sa.svg',
+  './assets/logos/bok-radio-sa.svg',
+  './assets/logos/mix-fm-sa.svg',
+  './assets/logos/good-hope-fm-sa.svg',
   // Logos officiels Algérie 🇩🇿 (v5.7)
   './assets/logos/algerie-radio-badge.svg',
   './assets/logos/algerie-chaine-3.svg',

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgAma" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#190d03"/>
+      <stop offset="50%" stop-color="#3d1d05"/>
+      <stop offset="100%" stop-color="#120902"/>
+    </linearGradient>
+    <linearGradient id="amaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="50%" stop-color="#FF9800"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+    <linearGradient id="pianoCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18FFFF"/>
+      <stop offset="100%" stop-color="#00E5FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bgAma)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#amaGold)" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- Logo Clavier de Piano (Amapiano = « les pianos » en zoulou) & Shaker -->
+  <g transform="translate(100, 68)">
+    <circle cx="0" cy="0" r="38" fill="#241003" stroke="url(#pianoCyan)" stroke-width="2"/>
+    <!-- Touches de piano stylisées -->
+    <rect x="-24" y="-14" width="48" height="28" rx="4" fill="#FFFFFF"/>
+    <!-- Touches noires -->
+    <rect x="-18" y="-14" width="6" height="16" fill="#120902"/>
+    <rect x="-8" y="-14" width="6" height="16" fill="#120902"/>
+    <rect x="4" y="-14" width="6" height="16" fill="#120902"/>
+    <rect x="14" y="-14" width="6" height="16" fill="#120902"/>
+  </g>
+
+  <!-- Titre AMAPIANO FM -->
+  <text x="100" y="126" font-family="'Arial Black', Impact, sans-serif" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">AMAPIANO</text>
+  <text x="100" y="146" font-family="'Arial Black', Impact, sans-serif" font-size="22" font-weight="900" fill="url(#amaGold)" text-anchor="middle" letter-spacing="3">FM</text>
+
+  <!-- Cartouche SA Signature Sound -->
+  <rect x="20" y="158" width="160" height="26" rx="8" fill="url(#amaGold)"/>
+  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#190D03" text-anchor="middle" letter-spacing="1">SOUTH AFRICAN DANCE & LOG DRUM</text>
+</svg>

@@ -2187,20 +2187,187 @@ const CURATED_STATIONS = [
     featured: false,
     locked: true
   },
+  // ==========================================
+  // 4a. 🇿🇦 AFRIQUE DU SUD (SOUTH AFRICA)
+  // ==========================================
   {
     id: "jacaranda-fm-sa",
-    name: "Jacaranda FM 94.2 (Afrique du Sud)",
+    name: "Jacaranda FM 94.2 (Gauteng)",
     country: "Afrique du Sud",
+    city: "Pretoria",
+    state: "Gauteng",
     code: "🇿🇦",
     continent: "africa",
-    category: "news",
+    category: "music",
     frequency: "94.2",
     band: "FM",
     language: "English & Afrikaans",
-    genre: "South African News & Hit Music",
+    genre: "More Music You Love, South African Pop & Hits",
     streamUrl: "https://edge.iono.fm/xice/jacarandafm_live_medium.aac",
     fallbackUrl: "https://edge.iono.fm/xice/jacarandafm_live_medium.aac",
-    logo: "assets/logos/jacaranda-fm-sa.png",
+    logo: "assets/logos/jacaranda-fm-sa.svg",
+    featured: true
+  },
+  {
+    id: "metro-fm-sa",
+    name: "Metro FM (SABC National)",
+    country: "Afrique du Sud",
+    city: "Johannesburg",
+    state: "Gauteng",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "music",
+    frequency: "96.4",
+    band: "FM",
+    language: "English",
+    genre: "It's Where You're At, Urban Contemporary, R&B & Hip Hop",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/METROFMAAC.aac",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/METROFMAAC.aac",
+    logo: "assets/logos/metro-fm-sa.svg",
+    featured: true
+  },
+  {
+    id: "ukhozi-fm-sa",
+    name: "Ukhozi FM (SABC - #1 in Africa)",
+    country: "Afrique du Sud",
+    city: "Durban",
+    state: "KwaZulu-Natal",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "general",
+    frequency: "91.5",
+    band: "FM",
+    language: "isiZulu",
+    genre: "Luhamba Phambili, Première radio d'Afrique, Maskandi & Culture",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/UKHOZIFMAAC_SC?dist=triton-widget&pname=tdwidgets",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/UKHOZIFMAAC_SC?dist=triton-widget&pname=tdwidgets",
+    logo: "assets/logos/ukhozi-fm-sa.svg",
+    featured: true
+  },
+  {
+    id: "5fm-radio-sa",
+    name: "5FM (SABC Youth Radio)",
+    country: "Afrique du Sud",
+    city: "Johannesburg",
+    state: "Gauteng",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "music",
+    frequency: "98.0",
+    band: "FM",
+    language: "English",
+    genre: "Live Loud, Pop, Dance, Electro & Rock",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/5FMAAC.aac",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/5FMAAC.aac",
+    logo: "assets/logos/5fm-radio-sa.svg",
+    featured: true
+  },
+  {
+    id: "kaya-fm-sa",
+    name: "Kaya 95.9 (Johannesburg)",
+    country: "Afrique du Sud",
+    city: "Johannesburg",
+    state: "Gauteng",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "music",
+    frequency: "95.9",
+    band: "FM",
+    language: "English & Zulu",
+    genre: "On the Street On the Air, Soul, Afropolitan & Jazz",
+    streamUrl: "https://edge.iono.fm/xice/82_medium.aac",
+    fallbackUrl: "https://edge.iono.fm/xice/82_medium.aac",
+    logo: "assets/logos/kaya-fm-sa.svg",
+    featured: true
+  },
+  {
+    id: "east-coast-radio-sa",
+    name: "East Coast Radio (ECR 94.0 Durban)",
+    country: "Afrique du Sud",
+    city: "Durban",
+    state: "KwaZulu-Natal",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "music",
+    frequency: "94.0",
+    band: "FM",
+    language: "English",
+    genre: "KwaZulu-Natal's #1 Hit Music Station",
+    streamUrl: "https://edge.iono.fm/xice/ecr_live_medium.aac",
+    fallbackUrl: "https://edge.iono.fm/xice/ecr_live_medium.aac",
+    logo: "assets/logos/east-coast-radio-sa.svg",
+    featured: true
+  },
+  {
+    id: "kfm-cape-town-sa",
+    name: "KFM 94.5 (Cape Town)",
+    country: "Afrique du Sud",
+    city: "Cape Town",
+    state: "Western Cape",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "music",
+    frequency: "94.5",
+    band: "FM",
+    language: "English & Afrikaans",
+    genre: "Cape Town's Most Music Station, Western Cape Hits",
+    streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/KFM.mp3",
+    fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/KFM.mp3",
+    logo: "assets/logos/kfm-cape-town-sa.svg",
+    featured: true
+  },
+  {
+    id: "jozi-fm-sa",
+    name: "Jozi FM 105.8 (Soweto)",
+    country: "Afrique du Sud",
+    city: "Soweto",
+    state: "Gauteng",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "general",
+    frequency: "105.8",
+    band: "FM",
+    language: "isiZulu, Sesotho & English",
+    genre: "More Than Just Radio, Soweto Culture & Kwaito",
+    streamUrl: "https://edge.iono.fm/xice/51_medium.aac",
+    fallbackUrl: "https://edge.iono.fm/xice/51_medium.aac",
+    logo: "assets/logos/jozi-fm-sa.svg",
+    featured: true
+  },
+  {
+    id: "hot-1027-fm-sa",
+    name: "Hot 102.7 FM (Johannesburg)",
+    country: "Afrique du Sud",
+    city: "Johannesburg",
+    state: "Gauteng",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "music",
+    frequency: "102.7",
+    band: "FM",
+    language: "English",
+    genre: "Joburg's Best Old Skool and Classic Hits",
+    streamUrl: "https://edge.iono.fm/xice/57_high.aac",
+    fallbackUrl: "https://edge.iono.fm/xice/57_high.aac",
+    logo: "assets/logos/hot-1027-fm-sa.svg",
+    featured: true
+  },
+  {
+    id: "joy-gospel-radio-sa",
+    name: "Joy Gospel Radio Group (South Africa)",
+    country: "Afrique du Sud",
+    city: "Johannesburg",
+    state: "Gauteng",
+    code: "🇿🇦",
+    continent: "africa",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English, Zulu & Xhosa",
+    genre: "South African Praise & Worship, African Gospel 24/7",
+    streamUrl: "https://servidor17.brlogic.com:7012/live",
+    fallbackUrl: "https://servidor17.brlogic.com:7012/live",
+    logo: "assets/logos/joy-gospel-radio-sa.svg",
     featured: true
   },
 
@@ -4258,8 +4425,19 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "burkina": { code: "BF", en: "Burkina Faso", fr: "Burkina Faso", continent: "africa", type: "country" },
   "burkina faso": { code: "BF", en: "Burkina Faso", fr: "Burkina Faso", continent: "africa", type: "country" },
   "madagascar": { code: "MG", en: "Madagascar", fr: "Madagascar", continent: "africa", type: "country" },
+  // Afrique du Sud 🇿🇦
+  "za": { code: "ZA", en: "South Africa", fr: "Afrique du Sud", continent: "africa", type: "country" },
   "afrique du sud": { code: "ZA", en: "South Africa", fr: "Afrique du Sud", continent: "africa", type: "country" },
   "south africa": { code: "ZA", en: "South Africa", fr: "Afrique du Sud", continent: "africa", type: "country" },
+  "suid-afrika": { code: "ZA", en: "South Africa", fr: "Afrique du Sud", continent: "africa", type: "country" },
+  "johannesburg": { code: "ZA", en: "South Africa", fr: "Johannesburg", continent: "africa", type: "country" },
+  "joburg": { code: "ZA", en: "South Africa", fr: "Johannesburg", continent: "africa", type: "country" },
+  "cape town": { code: "ZA", en: "South Africa", fr: "Le Cap", continent: "africa", type: "country" },
+  "le cap": { code: "ZA", en: "South Africa", fr: "Le Cap", continent: "africa", type: "country" },
+  "durban": { code: "ZA", en: "South Africa", fr: "Durban", continent: "africa", type: "country" },
+  "pretoria": { code: "ZA", en: "South Africa", fr: "Pretoria", continent: "africa", type: "country" },
+  "soweto": { code: "ZA", en: "South Africa", fr: "Soweto", continent: "africa", type: "country" },
+  "gauteng": { code: "ZA", en: "South Africa", fr: "Gauteng", continent: "africa", type: "country" },
   "kenya": { code: "KE", en: "Kenya", fr: "Kenya", continent: "africa", type: "country" },
   "angola": { code: "AO", en: "Angola", fr: "Angola", continent: "africa", type: "country" },
   "gabon": { code: "GA", en: "Gabon", fr: "Gabon", continent: "africa", type: "country" },
@@ -4779,6 +4957,32 @@ function resolveRegionalStationLogo(st) {
     return "assets/logos/algerie-radio-badge.svg";
   }
 
+  // 1.v Logos officiels Afrique du Sud 🇿🇦
+  const isSouthAfrica = (cCode === "ZA") || (st.code === "🇿🇦") || (st.country || "").toLowerCase().includes("south africa") || (st.country || "").toLowerCase().includes("afrique du sud") ||
+    stState.includes("gauteng") || stState.includes("western cape") || stState.includes("kwazulu") || stState.includes("durban") || stState.includes("johannesburg") || stState.includes("cape") ||
+    nameLow.includes("south africa") || nameLow.includes("afrique du sud") || nameLow.includes("jacaranda") || nameLow.includes("metro fm") || nameLow.includes("ukhozi") || nameLow.includes("5fm") || nameLow.includes("kaya") || nameLow.includes("east coast") || nameLow.includes("jozi") || nameLow.includes("hot 102") || nameLow.includes("amapiano") || nameLow.includes("helderberg") || nameLow.includes("bok radio");
+  if (isSouthAfrica) {
+    if (nameLow.includes("jacaranda") || nameLow.includes("jakaranda")) return "assets/logos/jacaranda-fm-sa.svg";
+    if (nameLow.includes("metro fm") || nameLow.includes("metrofm") || nameLow.includes("metro")) return "assets/logos/metro-fm-sa.svg";
+    if (nameLow.includes("ukhozi")) return "assets/logos/ukhozi-fm-sa.svg";
+    if (nameLow.includes("5fm") || nameLow.includes("5 fm")) return "assets/logos/5fm-radio-sa.svg";
+    if (nameLow.includes("kaya")) return "assets/logos/kaya-fm-sa.svg";
+    if (nameLow.includes("east coast") || nameLow.includes("ecr")) return "assets/logos/east-coast-radio-sa.svg";
+    if (nameLow.includes("kfm")) return "assets/logos/kfm-cape-town-sa.svg";
+    if (nameLow.includes("jozi")) return "assets/logos/jozi-fm-sa.svg";
+    if (nameLow.includes("hot 102") || nameLow.includes("hot102")) return "assets/logos/hot-1027-fm-sa.svg";
+    if (nameLow.includes("joy gospel") || nameLow.includes("joy")) return "assets/logos/joy-gospel-radio-sa.svg";
+    if (nameLow.includes("amapiano")) return "assets/logos/amapiano-fm-sa.svg";
+    if (nameLow.includes("702")) return "assets/logos/radio-702-sa.svg";
+    if (nameLow.includes("power") || nameLow.includes("98.7")) return "assets/logos/power-fm-sa.svg";
+    if (nameLow.includes("capetalk") || nameLow.includes("cape talk")) return "assets/logos/capetalk-sa.svg";
+    if (nameLow.includes("helderberg")) return "assets/logos/helderberg-fm-sa.svg";
+    if (nameLow.includes("bok radio") || nameLow.includes("bok")) return "assets/logos/bok-radio-sa.svg";
+    if (nameLow.includes("mix fm") || nameLow.includes("mix 93")) return "assets/logos/mix-fm-sa.svg";
+    if (nameLow.includes("good hope") || nameLow.includes("goodhope")) return "assets/logos/good-hope-fm-sa.svg";
+    return "assets/logos/south-africa-radio-badge.svg";
+  }
+
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
   const isSocialOrGenericFavicon = (url) => {
     if (!url) return true;
@@ -4787,6 +4991,8 @@ function resolveRegionalStationLogo(st) {
            u.includes("twitter.com") || u.includes("twimg.com") || u.includes("x.com") ||
            u.includes("instagram.com") || u.includes("youtube.com") || u.includes("ytimg") ||
            u.includes("tiktok.com") || u.includes("linkedin.com") ||
+           u.includes("google.com/search") || u.includes("google.com") ||
+           u.includes("webrad.io") ||
            u.includes("lwshosting.name") ||
            u.includes("radioking") || u.includes("torontocast") || u.includes("streamguys") ||
            u.includes("zeno.fm") || u.includes("zeno-fm");
@@ -4866,6 +5072,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isAlgerie) {
     return "assets/logos/algerie-radio-badge.svg";
+  }
+  if (isSouthAfrica) {
+    return "assets/logos/south-africa-radio-badge.svg";
   }
 
   return "";

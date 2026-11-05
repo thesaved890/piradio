@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgJaca" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19062b"/>
+      <stop offset="60%" stop-color="#3c0e5e"/>
+      <stop offset="100%" stop-color="#120421"/>
+    </linearGradient>
+    <linearGradient id="jacaPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BA68C8"/>
+      <stop offset="100%" stop-color="#7B1FA2"/>
+    </linearGradient>
+    <linearGradient id="jacaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF59D"/>
+      <stop offset="100%" stop-color="#FBC02D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bgJaca)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#jacaPurple)" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- Logo Jacaranda Fleur violette & Ondes -->
+  <g transform="translate(100, 70)">
+    <circle cx="0" cy="0" r="40" fill="#24073d" stroke="url(#jacaPurple)" stroke-width="2"/>
+    <!-- Fleur de jacaranda stylisée à pétales violets & dorés -->
+    <ellipse cx="0" cy="-16" rx="8" ry="16" fill="url(#jacaPurple)" opacity="0.85"/>
+    <ellipse cx="0" cy="16" rx="8" ry="16" fill="url(#jacaPurple)" opacity="0.85"/>
+    <ellipse cx="-16" cy="0" rx="16" ry="8" fill="url(#jacaPurple)" opacity="0.85"/>
+    <ellipse cx="16" cy="0" rx="16" ry="8" fill="url(#jacaPurple)" opacity="0.85"/>
+    <ellipse cx="-12" cy="-12" rx="12" ry="7" transform="rotate(45, -12, -12)" fill="url(#jacaPurple)" opacity="0.75"/>
+    <ellipse cx="12" cy="-12" rx="12" ry="7" transform="rotate(-45, 12, -12)" fill="url(#jacaPurple)" opacity="0.75"/>
+    <ellipse cx="-12" cy="12" rx="12" ry="7" transform="rotate(-45, -12, 12)" fill="url(#jacaPurple)" opacity="0.75"/>
+    <ellipse cx="12" cy="12" rx="12" ry="7" transform="rotate(45, 12, 12)" fill="url(#jacaPurple)" opacity="0.75"/>
+    <circle cx="0" cy="0" r="10" fill="url(#jacaGold)"/>
+  </g>
+
+  <!-- Texte JACARANDA FM -->
+  <text x="100" y="128" font-family="'Arial Black', sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">JACARANDA</text>
+  <text x="100" y="148" font-family="'Arial Black', sans-serif" font-size="18" font-weight="900" fill="url(#jacaGold)" text-anchor="middle" letter-spacing="2">94.2 FM</text>
+
+  <!-- Cartouche inférieur -->
+  <rect x="25" y="160" width="150" height="25" rx="8" fill="url(#jacaPurple)"/>
+  <text x="100" y="176" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">MORE MUSIC YOU LOVE</text>
+</svg>

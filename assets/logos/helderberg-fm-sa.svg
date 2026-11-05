@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgHelder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1d12"/>
+      <stop offset="50%" stop-color="#113a22"/>
+      <stop offset="100%" stop-color="#07170e"/>
+    </linearGradient>
+    <linearGradient id="greenHelder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#66BB6A"/>
+      <stop offset="100%" stop-color="#388E3C"/>
+    </linearGradient>
+    <linearGradient id="goldHelder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bgHelder)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#greenHelder)" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- Logo Montagnes du Helderberg & Vignes -->
+  <g transform="translate(100, 68)">
+    <circle cx="0" cy="0" r="38" fill="#0d2817" stroke="url(#goldHelder)" stroke-width="2"/>
+    <!-- Sommets de montagne -->
+    <polygon points="-24,14 -8,-8 4,4 18,-14 26,14" fill="url(#greenHelder)"/>
+    <text x="0" y="24" font-family="'Arial Black', Impact, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">95.9</text>
+  </g>
+
+  <!-- Titre HELDERBERG FM -->
+  <text x="100" y="126" font-family="'Arial Black', sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">HELDERBERG</text>
+  <text x="100" y="146" font-family="'Arial Black', sans-serif" font-size="18" font-weight="900" fill="url(#goldHelder)" text-anchor="middle" letter-spacing="2">FM 95.9</text>
+
+  <!-- Cartouche Somerset West & Le Cap -->
+  <rect x="20" y="158" width="160" height="26" rx="8" fill="url(#greenHelder)"/>
+  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#0A1D12" text-anchor="middle" letter-spacing="1">SOMERSET WEST & CAPE</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg702" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1a2b"/>
+      <stop offset="50%" stop-color="#112d4d"/>
+      <stop offset="100%" stop-color="#071424"/>
+    </linearGradient>
+    <linearGradient id="red702" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF385C"/>
+      <stop offset="100%" stop-color="#C60B28"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="36" fill="url(#bg702)"/>
+  <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#red702)" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- Logo 702 en grand lettrage -->
+  <g transform="translate(100, 72)">
+    <circle cx="0" cy="0" r="40" fill="#0d243e" stroke="url(#red702)" stroke-width="2.5"/>
+    <text x="0" y="16" font-family="'Arial Black', Impact, sans-serif" font-size="40" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">702</text>
+  </g>
+
+  <!-- Titre TALK RADIO -->
+  <text x="100" y="132" font-family="'Arial Black', sans-serif" font-size="16" font-weight="900" fill="url(#red702)" text-anchor="middle" letter-spacing="2">TALK RADIO</text>
+  <text x="100" y="150" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">LET'S WALK THE TALK</text>
+
+  <!-- Cartouche Joburg News -->
+  <rect x="20" y="160" width="160" height="25" rx="8" fill="url(#red702)"/>
+  <text x="100" y="176" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">JOHANNESBURG NEWS & DEBATE</text>
+</svg>

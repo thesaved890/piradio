@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (code === "🇲🇦" || cCode === "MA" || c.includes("maroc") || c.includes("morocco")) return "assets/logos/maroc-radio-badge.svg";
     if (code === "🇹🇳" || cCode === "TN" || c.includes("tunis")) return "assets/logos/tunisie-radio-badge.svg";
     if (code === "🇩🇿" || cCode === "DZ" || c.includes("alg") || n.includes("alger") || n.includes("beur") || n.includes("maghreb")) return "assets/logos/algerie-radio-badge.svg";
+    if (code === "🇿🇦" || cCode === "ZA" || c.includes("south africa") || c.includes("afrique du sud") || n.includes("jacaranda") || n.includes("kaya") || n.includes("metro fm") || n.includes("ukhozi") || n.includes("jozi") || n.includes("hot 102") || n.includes("amapiano") || n.includes("helderberg") || n.includes("bok radio")) return "assets/logos/south-africa-radio-badge.svg";
 
     return getFlagFallback(code);
   }
@@ -163,6 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
              u.includes("twitter.com") || u.includes("twimg.com") || u.includes("x.com") ||
              u.includes("instagram.com") || u.includes("youtube.com") || u.includes("ytimg") ||
              u.includes("tiktok.com") || u.includes("linkedin.com") ||
+             u.includes("google.com/search") || u.includes("google.com") ||
+             u.includes("webrad.io") ||
              u.includes("lwshosting.name") ||
              u.includes("radioking") || u.includes("torontocast") || u.includes("streamguys") ||
              u.includes("zeno.fm") || u.includes("zeno-fm");
@@ -550,6 +553,31 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/algerie-radio-badge.svg";
     }
 
+    const isSouthAfrica = (cCode === "ZA") || (st.code === "🇿🇦") || (st.country && (st.country.toLowerCase().includes("south africa") || st.country.toLowerCase().includes("afrique du sud"))) ||
+      stState.includes("gauteng") || stState.includes("western cape") || stState.includes("kwazulu") || stState.includes("durban") || stState.includes("johannesburg") || stState.includes("cape") ||
+      nameLow.includes("south africa") || nameLow.includes("afrique du sud") || nameLow.includes("jacaranda") || nameLow.includes("metro fm") || nameLow.includes("ukhozi") || nameLow.includes("5fm") || nameLow.includes("kaya") || nameLow.includes("east coast") || nameLow.includes("jozi") || nameLow.includes("hot 102") || nameLow.includes("amapiano") || nameLow.includes("helderberg") || nameLow.includes("bok radio");
+    if (isSouthAfrica) {
+      if (nameLow.includes("jacaranda") || nameLow.includes("jakaranda")) return "assets/logos/jacaranda-fm-sa.svg";
+      if (nameLow.includes("metro fm") || nameLow.includes("metrofm") || nameLow.includes("metro")) return "assets/logos/metro-fm-sa.svg";
+      if (nameLow.includes("ukhozi")) return "assets/logos/ukhozi-fm-sa.svg";
+      if (nameLow.includes("5fm") || nameLow.includes("5 fm")) return "assets/logos/5fm-radio-sa.svg";
+      if (nameLow.includes("kaya")) return "assets/logos/kaya-fm-sa.svg";
+      if (nameLow.includes("east coast") || nameLow.includes("ecr")) return "assets/logos/east-coast-radio-sa.svg";
+      if (nameLow.includes("kfm")) return "assets/logos/kfm-cape-town-sa.svg";
+      if (nameLow.includes("jozi")) return "assets/logos/jozi-fm-sa.svg";
+      if (nameLow.includes("hot 102") || nameLow.includes("hot102")) return "assets/logos/hot-1027-fm-sa.svg";
+      if (nameLow.includes("joy gospel") || nameLow.includes("joy")) return "assets/logos/joy-gospel-radio-sa.svg";
+      if (nameLow.includes("amapiano")) return "assets/logos/amapiano-fm-sa.svg";
+      if (nameLow.includes("702")) return "assets/logos/radio-702-sa.svg";
+      if (nameLow.includes("power") || nameLow.includes("98.7")) return "assets/logos/power-fm-sa.svg";
+      if (nameLow.includes("capetalk") || nameLow.includes("cape talk")) return "assets/logos/capetalk-sa.svg";
+      if (nameLow.includes("helderberg")) return "assets/logos/helderberg-fm-sa.svg";
+      if (nameLow.includes("bok radio") || nameLow.includes("bok")) return "assets/logos/bok-radio-sa.svg";
+      if (nameLow.includes("mix fm") || nameLow.includes("mix 93")) return "assets/logos/mix-fm-sa.svg";
+      if (nameLow.includes("good hope") || nameLow.includes("goodhope")) return "assets/logos/good-hope-fm-sa.svg";
+      return "assets/logos/south-africa-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -575,6 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isMaroc) return "assets/logos/maroc-radio-badge.svg";
     if (isTunisie) return "assets/logos/tunisie-radio-badge.svg";
     if (isAlgerie) return "assets/logos/algerie-radio-badge.svg";
+    if (isSouthAfrica) return "assets/logos/south-africa-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 
