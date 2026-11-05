@@ -95,7 +95,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://radiotokpa.info/liveradio",
     fallbackUrl: "https://radiotokpa.info/liveradio",
     logo: "assets/logos/radio-tokpa.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "bip-radio-cotonou",
