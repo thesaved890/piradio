@@ -625,6 +625,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/sierra-leone-radio-badge.svg";
     }
 
+    const isGambia = (cCode === "GM") || (st.code === "🇬🇲") || (st.country && (st.country.toLowerCase().includes("gambia") || st.country.toLowerCase().includes("gambie"))) ||
+      stState.includes("banjul") || stState.includes("serrekunda") || stState.includes("brikama") || stState.includes("kotu") ||
+      nameLow.includes("gambia") || nameLow.includes("gambie") || nameLow.includes("west coast radio") || nameLow.includes("star fm") || nameLow.includes("gam express");
+    if (isGambia) {
+      if (nameLow.includes("west coast") && (nameLow.includes("2") || nameLow.includes("95.3"))) return "assets/logos/west-coast-radio-2.svg";
+      if (nameLow.includes("west coast")) return "assets/logos/west-coast-radio-1.svg";
+      if (nameLow.includes("star")) return "assets/logos/star-fm-gambia.svg";
+      if (nameLow.includes("gam express")) return "assets/logos/gam-express-gambia.png";
+      return "assets/logos/gambia-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -654,6 +665,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isMalawi) return "assets/logos/malawi-radio-badge.svg";
     if (isMauritanie) return "assets/logos/mauritanie-radio-badge.svg";
     if (isSierraLeone) return "assets/logos/sierra-leone-radio-badge.svg";
+    if (isGambia) return "assets/logos/gambia-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 

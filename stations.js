@@ -3036,8 +3036,45 @@ const CURATED_STATIONS = [
     genre: "The Voice of Truth • Gambian News & Society",
     streamUrl: "https://stream.zeno.fm/edfd6fhdps8uv",
     fallbackUrl: "https://stream.zeno.fm/edfd6fhdps8uv",
-    logo: "assets/logos/star-fm-gambia.png",
+    logo: "assets/logos/star-fm-gambia.svg",
     featured: true
+  },
+  {
+    id: "west-coast-radio-1",
+    name: "West Coast Radio 1 (92.1 FM Banjul)",
+    country: "Gambie",
+    city: "Banjul",
+    state: "Greater Banjul",
+    code: "🇬🇲",
+    continent: "africa",
+    category: "news",
+    frequency: "92.1",
+    band: "FM",
+    language: "English, Wolof & Mandinka",
+    genre: "News, Talk, Current Affairs & Coffee Time with Peter Gomez",
+    streamUrl: "https://westcoast.gm:8480/westcoast921",
+    fallbackUrl: "https://westcoast.gm:8480/westcoast921",
+    logo: "assets/logos/west-coast-radio-1.svg",
+    featured: true
+  },
+  {
+    id: "west-coast-radio-2",
+    name: "West Coast Radio 2 (95.3 FM Kotu)",
+    country: "Gambie",
+    city: "Kotu",
+    state: "West Coast Region",
+    code: "🇬🇲",
+    continent: "africa",
+    category: "culture",
+    frequency: "95.3",
+    band: "FM",
+    language: "English, Wolof & Mandinka",
+    genre: "Afrobeats, Gambian Music, Reggae & Urban Hits",
+    streamUrl: "https://westcoast.gm:8480/stream",
+    fallbackUrl: "https://westcoast.gm:8480/stream",
+    logo: "assets/logos/west-coast-radio-2.svg",
+    featured: true,
+    locked: true
   },
   {
     id: "gam-express-gambia",
@@ -5685,6 +5722,18 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("binkongoh")) return "assets/logos/radio-binkongoh-sl.svg";
     if (nameLow.includes("fusion")) return "assets/logos/fusionsound-radio-sl.svg";
     return "assets/logos/sierra-leone-radio-badge.svg";
+  }
+
+  // 1.z Logos officiels Gambie 🇬🇲
+  const isGambia = (cCode === "GM") || (st.code === "🇬🇲") || (st.country || "").toLowerCase().includes("gambia") || (st.country || "").toLowerCase().includes("gambie") ||
+    stState.includes("banjul") || stState.includes("serrekunda") || stState.includes("brikama") || stState.includes("kotu") ||
+    nameLow.includes("gambia") || nameLow.includes("gambie") || nameLow.includes("west coast radio") || nameLow.includes("star fm") || nameLow.includes("gam express");
+  if (isGambia) {
+    if (nameLow.includes("west coast") && (nameLow.includes("2") || nameLow.includes("95.3"))) return "assets/logos/west-coast-radio-2.svg";
+    if (nameLow.includes("west coast")) return "assets/logos/west-coast-radio-1.svg";
+    if (nameLow.includes("star")) return "assets/logos/star-fm-gambia.svg";
+    if (nameLow.includes("gam express")) return "assets/logos/gam-express-gambia.png";
+    return "assets/logos/gambia-radio-badge.svg";
   }
 
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
