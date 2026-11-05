@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="mwBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1912"/>
+      <stop offset="50%" stop-color="#140a0a"/>
+      <stop offset="100%" stop-color="#08140c"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff4b3e" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e21a1a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#e21a1a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mwRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff3333"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#00aa44"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#mwBg)"/>
+  <circle cx="100" cy="92" r="66" fill="none" stroke="url(#mwRing)" stroke-width="3" opacity="0.85"/>
+  <circle cx="100" cy="92" r="58" fill="#111111"/>
+  <!-- Malawi Flag Tricolor Disc -->
+  <g clip-path="url(#mwFlagClip)">
+    <clipPath id="mwFlagClip">
+      <circle cx="100" cy="92" r="54"/>
+    </clipPath>
+    <rect x="40" y="38" width="120" height="36" fill="#111111"/>
+    <rect x="40" y="74" width="120" height="36" fill="#dc143c"/>
+    <rect x="40" y="110" width="120" height="36" fill="#138808"/>
+    <!-- Rising Sun on Black Band -->
+    <path d="M 82 74 A 18 18 0 0 1 118 74 Z" fill="#ff3333"/>
+    <!-- Sun Rays -->
+    <g stroke="#ff3333" stroke-width="2" stroke-linecap="round">
+      <line x1="100" y1="52" x2="100" y2="45"/>
+      <line x1="90" y1="55" x2="86" y2="49"/>
+      <line x1="110" y1="55" x2="114" y2="49"/>
+      <line x1="82" y1="62" x2="76" y2="58"/>
+      <line x1="118" y1="62" x2="124" y2="58"/>
+      <line x1="78" y1="71" x2="71" y2="70"/>
+      <line x1="122" y1="71" x2="129" y2="70"/>
+    </g>
+  </g>
+  <!-- Radio Waves Symbol in Foreground -->
+  <circle cx="100" cy="92" r="30" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.65" stroke-dasharray="4 3"/>
+  <polygon points="94,82 108,92 94,102" fill="#ffffff" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.5))"/>
+  <!-- Bottom Ribbon / Label -->
+  <rect x="22" y="152" width="156" height="32" rx="10" fill="#1a1f1b" stroke="#e21a1a" stroke-width="1.5"/>
+  <text x="100" y="173" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1.5" text-anchor="middle">MALAWI 🇲🇼</text>
+</svg>

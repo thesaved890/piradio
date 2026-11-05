@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="grBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c072b"/>
+      <stop offset="50%" stop-color="#360f54"/>
+      <stop offset="100%" stop-color="#10031a"/>
+    </linearGradient>
+    <linearGradient id="grNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="100%" stop-color="#7928ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#grBg)"/>
+  <circle cx="100" cy="84" r="58" fill="none" stroke="url(#grNeon)" stroke-width="2.5"/>
+  <!-- Vinyl Turntable Disc -->
+  <circle cx="100" cy="84" r="42" fill="#12051d" stroke="#ff007f" stroke-width="1.5"/>
+  <circle cx="100" cy="84" r="32" fill="none" stroke="#7928ca" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="100" cy="84" r="14" fill="url(#grNeon)"/>
+  <circle cx="100" cy="84" r="4" fill="#ffffff"/>
+  <text x="100" y="132" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="900" fill="#ff007f" letter-spacing="2" text-anchor="middle">100 FM</text>
+  <!-- Banner -->
+  <rect x="18" y="146" width="164" height="36" rx="10" fill="#140420" stroke="url(#grNeon)" stroke-width="1.5"/>
+  <text x="100" y="163" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="900" fill="#ffffff" letter-spacing="1" text-anchor="middle">GROOVE 100 FM</text>
+  <text x="100" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="700" fill="#ff007f" letter-spacing="1.2" text-anchor="middle">BLANTYRE HIT MUSIC • MALAWI</text>
+</svg>

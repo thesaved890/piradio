@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="zrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a1a09"/>
+      <stop offset="50%" stop-color="#4a2e12"/>
+      <stop offset="100%" stop-color="#1c1105"/>
+    </linearGradient>
+    <linearGradient id="zrGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb74d"/>
+      <stop offset="100%" stop-color="#e65100"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#zrBg)"/>
+  <circle cx="100" cy="85" r="58" fill="none" stroke="url(#zrGold)" stroke-width="2"/>
+  <!-- Desert Mountain of Kediet Ijill (Iron Mountain) & Sun -->
+  <path d="M 55 106 L 85 70 L 105 88 L 125 64 L 145 106 Z" fill="#6d4c41"/>
+  <polygon points="125,64 105,88 125,106 145,106" fill="#4e342e"/>
+  <!-- Broadcast Tower at Peak -->
+  <line x1="85" y1="70" x2="85" y2="50" stroke="#ffd54f" stroke-width="2.5"/>
+  <circle cx="85" cy="48" r="3.5" fill="#ffd54f"/>
+  <path d="M 76 44 A 12 12 0 0 0 76 52" fill="none" stroke="#ffd54f" stroke-width="1.8"/>
+  <path d="M 94 44 A 12 12 0 0 1 94 52" fill="none" stroke="#ffd54f" stroke-width="1.8"/>
+  <!-- Arabic Text -->
+  <text x="100" y="130" font-family="'Amiri', 'Traditional Arabic', serif, system-ui" font-size="14" font-weight="bold" fill="url(#zrGold)" text-anchor="middle">إذاعة ازويرات</text>
+  <!-- Banner -->
+  <rect x="20" y="148" width="160" height="34" rx="10" fill="#1b0f04" stroke="url(#zrGold)" stroke-width="1.5"/>
+  <text x="100" y="165" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="900" fill="#ffffff" letter-spacing="1" text-anchor="middle">RADIO ZOUÉRATE</text>
+  <text x="100" y="177" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="700" fill="url(#zrGold)" letter-spacing="1.2" text-anchor="middle">TIRIS ZEMMOUR • MAURITANIE</text>
+</svg>

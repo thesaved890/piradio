@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="twrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1f33"/>
+      <stop offset="50%" stop-color="#123557"/>
+      <stop offset="100%" stop-color="#061421"/>
+    </linearGradient>
+    <linearGradient id="twrBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38b6ff"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#twrBg)"/>
+  <circle cx="100" cy="84" r="58" fill="none" stroke="url(#twrBlue)" stroke-width="2.5"/>
+  <!-- Globe & Radio Tower -->
+  <circle cx="100" cy="84" r="32" fill="#0d2944" stroke="#38b6ff" stroke-width="1.5"/>
+  <ellipse cx="100" cy="84" rx="32" ry="12" fill="none" stroke="#38b6ff" stroke-width="1" opacity="0.6"/>
+  <line x1="100" y1="52" x2="100" y2="116" stroke="#38b6ff" stroke-width="1" opacity="0.6"/>
+  <!-- Tower Cross -->
+  <path d="M 97 58 L 103 58 L 105 106 L 95 106 Z" fill="#ffffff"/>
+  <rect x="91" y="68" width="18" height="4" rx="2" fill="#ffffff"/>
+  <circle cx="100" cy="56" r="3.5" fill="#ffd700"/>
+  <text x="100" y="132" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="900" fill="#ffffff" letter-spacing="2" text-anchor="middle">TWR</text>
+  <!-- Banner -->
+  <rect x="18" y="146" width="164" height="36" rx="10" fill="#071726" stroke="url(#twrBlue)" stroke-width="1.5"/>
+  <text x="100" y="163" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="900" fill="#ffffff" letter-spacing="1" text-anchor="middle">TWR MALAWI</text>
+  <text x="100" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="700" fill="#38b6ff" letter-spacing="1.2" text-anchor="middle">TRANS WORLD RADIO</text>
+</svg>

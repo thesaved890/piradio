@@ -151,6 +151,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (code === "🇹🇳" || cCode === "TN" || c.includes("tunis")) return "assets/logos/tunisie-radio-badge.svg";
     if (code === "🇩🇿" || cCode === "DZ" || c.includes("alg") || n.includes("alger") || n.includes("beur") || n.includes("maghreb")) return "assets/logos/algerie-radio-badge.svg";
     if (code === "🇿🇦" || cCode === "ZA" || c.includes("south africa") || c.includes("afrique du sud") || n.includes("jacaranda") || n.includes("kaya") || n.includes("metro fm") || n.includes("ukhozi") || n.includes("jozi") || n.includes("hot 102") || n.includes("amapiano") || n.includes("helderberg") || n.includes("bok radio")) return "assets/logos/south-africa-radio-badge.svg";
+    if (code === "🇲🇼" || cCode === "MW" || c.includes("malawi") || n.includes("malawi") || city.includes("lilongwe") || city.includes("blantyre")) return "assets/logos/malawi-radio-badge.svg";
+    if (code === "🇲🇷" || cCode === "MR" || c.includes("mauritani") || c.includes("mouritani") || n.includes("mauritani") || n.includes("mouritani") || city.includes("nouakchott") || city.includes("nouadhibou")) return "assets/logos/mauritanie-radio-badge.svg";
+    if (code === "🇸🇱" || cCode === "SL" || c.includes("sierra leone") || c.includes("serra leone") || n.includes("sierra leone") || n.includes("serra leone") || city.includes("freetown")) return "assets/logos/sierra-leone-radio-badge.svg";
 
     return getFlagFallback(code);
   }
@@ -530,7 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const isAlgerie = (cCode === "DZ") || (st.code === "🇩🇿") || (st.country && st.country.toLowerCase().includes("alg")) ||
       stState.includes("alger") || stState.includes("oran") || stState.includes("constantine") || stState.includes("tizi") || stState.includes("setif") || stState.includes("annaba") || stState.includes("tlemcen") || stState.includes("batna") || stState.includes("bejaia") || stState.includes("biskra") ||
-      nameLow.includes("algerie") || nameLow.includes("algérie") || nameLow.includes("algeria") || nameLow.includes("alger") || nameLow.includes("oran") || nameLow.includes("constantine") || nameLow.includes("tizi ouzou") || nameLow.includes("beur fm") || nameLow.includes("france maghreb") || nameLow.includes("hits 1");
+      nameLow.includes("algerie") || nameLow.includes("algérie") || nameLow.includes("algeria") || nameLow.includes("alger") || (!nameLow.includes("coran") && (nameLow.includes(" oran") || nameLow.includes("oran ") || nameLow.includes("radio oran"))) || nameLow.includes("constantine") || nameLow.includes("tizi ouzou") || nameLow.includes("beur fm") || nameLow.includes("france maghreb") || nameLow.includes("hits 1");
     if (isAlgerie) {
       if (nameLow.includes("chaine 3") || nameLow.includes("chaîne 3") || nameLow.includes("ch-3") || nameLow.includes("ch3")) return "assets/logos/algerie-chaine-3.svg";
       if (nameLow.includes("chaine 1") || nameLow.includes("chaîne 1") || nameLow.includes("ch-1") || nameLow.includes("ch1") || nameLow.includes("الأولى")) return "assets/logos/algerie-chaine-1.svg";
@@ -545,7 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (nameLow.includes("beur fm") || nameLow.includes("beur")) return "assets/logos/beur-fm-algerie.svg";
       if (nameLow.includes("hits 1") || nameLow.includes("hits1")) return "assets/logos/hits1-algerie.svg";
       if (nameLow.includes("antinea")) return "assets/logos/antinea-radio.svg";
-      if (nameLow.includes("oran") || nameLow.includes("وهران")) return "assets/logos/radio-oran-algerie.svg";
+      if ((!nameLow.includes("coran") && (nameLow.includes("oran") || nameLow.includes("وهران")))) return "assets/logos/radio-oran-algerie.svg";
       if (nameLow.includes("constantine") || nameLow.includes("قسنطينة") || nameLow.includes("cirta")) return "assets/logos/radio-constantine.svg";
       if (nameLow.includes("tizi") || nameLow.includes("تيزي")) return "assets/logos/radio-tizi-ouzou.svg";
       if (nameLow.includes("annaba") || nameLow.includes("عنابة")) return "assets/logos/radio-annaba.svg";
@@ -578,6 +581,46 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/south-africa-radio-badge.svg";
     }
 
+    const isMalawi = (cCode === "MW") || (st.code === "🇲🇼") || (st.country && st.country.toLowerCase().includes("malawi")) ||
+      stState.includes("lilongwe") || stState.includes("blantyre") || stState.includes("zomba") || stState.includes("mzuzu") ||
+      nameLow.includes("malawi") || nameLow.includes("zodiak") || nameLow.includes("times radio") || nameLow.includes("radio islam") || nameLow.includes("groove 100") || nameLow.includes("groove100") || nameLow.includes("kuwala") || nameLow.includes("mzati") || nameLow.includes("twr") || nameLow.includes("amaryllis") || nameLow.includes("kasupe") || nameLow.includes("chanco");
+    if (isMalawi) {
+      if (nameLow.includes("times")) return "assets/logos/times-radio-malawi.svg";
+      if (nameLow.includes("zodiak") || nameLow.includes("zbs")) return "assets/logos/zbs-zodiak-malawi.svg";
+      if (nameLow.includes("islam")) return "assets/logos/radio-islam-malawi.svg";
+      if (nameLow.includes("groove")) return "assets/logos/groove100-malawi.svg";
+      if (nameLow.includes("kuwala")) return "assets/logos/kuwala-fm-malawi.svg";
+      if (nameLow.includes("mzati")) return "assets/logos/mzati-radio-malawi.svg";
+      if (nameLow.includes("twr") || nameLow.includes("trans world")) return "assets/logos/twr-malawi.svg";
+      if (nameLow.includes("amaryllis")) return "assets/logos/amaryllis-radio-malawi.svg";
+      if (nameLow.includes("kasupe")) return "assets/logos/kasupe-radio-malawi.svg";
+      if (nameLow.includes("chanco")) return "assets/logos/chanco-radio-malawi.svg";
+      return "assets/logos/malawi-radio-badge.svg";
+    }
+
+    const isMauritanie = (cCode === "MR") || (st.code === "🇲🇷") || (st.country && (st.country.toLowerCase().includes("mauritani") || st.country.toLowerCase().includes("mouritani"))) ||
+      stState.includes("nouakchott") || stState.includes("nouadhibou") || stState.includes("zouerat") || stState.includes("tiris") ||
+      nameLow.includes("mauritani") || nameLow.includes("mouritani") || nameLow.includes("nouakchott") || nameLow.includes("nouadhibou") || nameLow.includes("zouerate") || nameLow.includes("موريتانيا") || nameLow.includes("القرآن الكريم");
+    if (isMauritanie) {
+      if (nameLow.includes("coran") || nameLow.includes("quran") || nameLow.includes("قرآن") || nameLow.includes("alkran")) return "assets/logos/radio-coran-mauritanie.svg";
+      if (nameLow.includes("nouadhibou") || nameLow.includes("نواذيبو")) return "assets/logos/radio-nouadhibou-mr.svg";
+      if (nameLow.includes("zouerat") || nameLow.includes("zouerate") || nameLow.includes("ازويرات")) return "assets/logos/radio-zouerate-mr.svg";
+      if (nameLow.includes("mauritanie") || nameLow.includes("mauritania") || nameLow.includes("موريتانيا") || nameLow.includes("radioma")) return "assets/logos/radio-mauritanie.svg";
+      return "assets/logos/mauritanie-radio-badge.svg";
+    }
+
+    const isSierraLeone = (cCode === "SL") || (st.code === "🇸🇱") || (st.country && (st.country.toLowerCase().includes("sierra leone") || st.country.toLowerCase().includes("serra leone"))) ||
+      stState.includes("freetown") || stState.includes("koidu") || stState.includes("bo") || stState.includes("kenema") || stState.includes("makeni") ||
+      nameLow.includes("sierra leone") || nameLow.includes("serra leone") || nameLow.includes("capital radio") || nameLow.includes("star radio") || nameLow.includes("fop radio") || nameLow.includes("binkongoh") || nameLow.includes("fusionsound");
+    if (isSierraLeone) {
+      if (nameLow.includes("capital")) return "assets/logos/capital-radio-sierra-leone.svg";
+      if (nameLow.includes("star")) return "assets/logos/star-radio-sierra-leone.svg";
+      if (nameLow.includes("fop")) return "assets/logos/fop-radio-sierra-leone.svg";
+      if (nameLow.includes("binkongoh")) return "assets/logos/radio-binkongoh-sl.svg";
+      if (nameLow.includes("fusion")) return "assets/logos/fusionsound-radio-sl.svg";
+      return "assets/logos/sierra-leone-radio-badge.svg";
+    }
+
     const domain = st.homepage ? getDomainFromUrl(st.homepage) : "";
     if (domain && !isSocialOrGenericLogo(domain)) {
       return `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${domain}&size=128`;
@@ -604,6 +647,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isTunisie) return "assets/logos/tunisie-radio-badge.svg";
     if (isAlgerie) return "assets/logos/algerie-radio-badge.svg";
     if (isSouthAfrica) return "assets/logos/south-africa-radio-badge.svg";
+    if (isMalawi) return "assets/logos/malawi-radio-badge.svg";
+    if (isMauritanie) return "assets/logos/mauritanie-radio-badge.svg";
+    if (isSierraLeone) return "assets/logos/sierra-leone-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 

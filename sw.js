@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.8
+// Pi Radio • Service Worker v5.9
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.8';
+const CACHE_NAME = 'piradio-v5.9';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -35,6 +35,30 @@ const PRECACHE_ASSETS = [
   './assets/logos/bok-radio-sa.svg',
   './assets/logos/mix-fm-sa.svg',
   './assets/logos/good-hope-fm-sa.svg',
+
+  // Logos officiels Malawi 🇲🇼, Mauritanie 🇲🇷, Sierra Leone 🇸🇱 (v5.9)
+  './assets/logos/malawi-radio-badge.svg',
+  './assets/logos/times-radio-malawi.svg',
+  './assets/logos/zbs-zodiak-malawi.svg',
+  './assets/logos/radio-islam-malawi.svg',
+  './assets/logos/groove100-malawi.svg',
+  './assets/logos/kuwala-fm-malawi.svg',
+  './assets/logos/mzati-radio-malawi.svg',
+  './assets/logos/twr-malawi.svg',
+  './assets/logos/amaryllis-radio-malawi.svg',
+  './assets/logos/kasupe-radio-malawi.svg',
+  './assets/logos/chanco-radio-malawi.svg',
+  './assets/logos/mauritanie-radio-badge.svg',
+  './assets/logos/radio-mauritanie.svg',
+  './assets/logos/radio-coran-mauritanie.svg',
+  './assets/logos/radio-nouadhibou-mr.svg',
+  './assets/logos/radio-zouerate-mr.svg',
+  './assets/logos/sierra-leone-radio-badge.svg',
+  './assets/logos/capital-radio-sierra-leone.svg',
+  './assets/logos/star-radio-sierra-leone.svg',
+  './assets/logos/fop-radio-sierra-leone.svg',
+  './assets/logos/radio-binkongoh-sl.svg',
+  './assets/logos/fusionsound-radio-sl.svg',
   // Logos officiels Algérie 🇩🇿 (v5.7)
   './assets/logos/algerie-radio-badge.svg',
   './assets/logos/algerie-chaine-3.svg',

@@ -2372,7 +2372,361 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
-  // 4b. 🇹🇬 TOGO, 🇬🇲 GAMBIE, 🇬🇦 GABON, 🇱🇾 LIBYE, 🇷🇼 RWANDA, 🇺🇬 OUGANDA (AFRIQUE)
+  // 4b. 🇲🇼 MALAWI (AFRIQUE AUSTRALE)
+  // ==========================================
+  {
+    id: "times-radio-malawi",
+    name: "Times Radio Malawi",
+    country: "Malawi",
+    city: "Blantyre",
+    state: "Southern Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "news",
+    frequency: "90.0",
+    band: "FM",
+    language: "English & Chichewa",
+    genre: "First with the News, National Current Affairs & Music",
+    streamUrl: "https://ice31.securenetsystems.net/TIMESFM",
+    fallbackUrl: "https://ice31.securenetsystems.net/TIMESFM",
+    logo: "assets/logos/times-radio-malawi.svg",
+    featured: true
+  },
+  {
+    id: "zbs-zodiak-malawi",
+    name: "ZBS Zodiak Broadcasting Station",
+    country: "Malawi",
+    city: "Lilongwe",
+    state: "Central Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "news",
+    frequency: "95.1",
+    band: "FM",
+    language: "Chichewa & English",
+    genre: "Top Independent Radio in Malawi • News & Debates",
+    streamUrl: "https://ice31.securenetsystems.net/0079",
+    fallbackUrl: "https://ice31.securenetsystems.net/0079",
+    logo: "assets/logos/zbs-zodiak-malawi.svg",
+    featured: true
+  },
+  {
+    id: "radio-islam-malawi",
+    name: "Radio Islam Malawi",
+    country: "Malawi",
+    city: "Blantyre",
+    state: "Southern Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "culture",
+    frequency: "96.1",
+    band: "FM",
+    language: "English, Chichewa & Arabic",
+    genre: "Islamic Teachings, Spiritual Guidance & Community Talk",
+    streamUrl: "https://s5.radio.co/s7b138c0fa/listen",
+    fallbackUrl: "https://s5.radio.co/s7b138c0fa/listen",
+    logo: "assets/logos/radio-islam-malawi.svg",
+    featured: true
+  },
+  {
+    id: "groove100-malawi",
+    name: "Groove 100 FM Malawi",
+    country: "Malawi",
+    city: "Blantyre",
+    state: "Southern Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "music",
+    frequency: "100.0",
+    band: "FM",
+    language: "English & Chichewa",
+    genre: "Urban Hits, Afrobeats, Hip-Hop & Youth Culture",
+    streamUrl: "https://a9.asurahosting.com/listen/groove100_fm/radio.mp3",
+    fallbackUrl: "https://a9.asurahosting.com/listen/groove100_fm/radio.mp3",
+    logo: "assets/logos/groove100-malawi.svg",
+    featured: true
+  },
+  {
+    id: "kuwala-fm-malawi",
+    name: "Kuwala FM",
+    country: "Malawi",
+    city: "Lilongwe",
+    state: "Central Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "culture",
+    frequency: "98.5",
+    band: "FM",
+    language: "Chichewa & English",
+    genre: "Radio ya Chitukuko • Education, Empowerment & Culture",
+    streamUrl: "https://host2.streamafrica.net/listen/kuwala_radio/radio.mp3",
+    fallbackUrl: "https://host2.streamafrica.net/listen/kuwala_radio/radio.mp3",
+    logo: "assets/logos/kuwala-fm-malawi.svg",
+    featured: true
+  },
+  {
+    id: "mzati-radio-malawi",
+    name: "Mzati Radio",
+    country: "Malawi",
+    city: "Mulanje",
+    state: "Southern Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "news",
+    frequency: "97.4",
+    band: "FM",
+    language: "Chichewa & English",
+    genre: "The Pillar of Society • Grassroots Development & News",
+    streamUrl: "https://host2.streamafrica.net/listen/mzati_radio/radio.mp3",
+    fallbackUrl: "https://host2.streamafrica.net/listen/mzati_radio/radio.mp3",
+    logo: "assets/logos/mzati-radio-malawi.svg",
+    featured: true
+  },
+  {
+    id: "twr-malawi",
+    name: "TWR Malawi (Trans World Radio)",
+    country: "Malawi",
+    city: "Lilongwe",
+    state: "Central Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "culture",
+    frequency: "103.7",
+    band: "FM",
+    language: "Chichewa, Tumbuka & English",
+    genre: "Gospel, Family Life, Health & Spiritual Encouragement",
+    streamUrl: "https://host2.streamafrica.net/listen/twr_malawi/radio.mp3",
+    fallbackUrl: "https://host2.streamafrica.net/listen/twr_malawi/radio.mp3",
+    logo: "assets/logos/twr-malawi.svg",
+    featured: true
+  },
+  {
+    id: "amaryllis-radio-malawi",
+    name: "Amaryllis E-Radio",
+    country: "Malawi",
+    city: "Blantyre",
+    state: "Southern Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English",
+    genre: "Smooth Chillout, Jazz, Lounge & Contemporary Hits",
+    streamUrl: "https://s4.radio.co/s40c05d6b1/low",
+    fallbackUrl: "https://s4.radio.co/s40c05d6b1/low",
+    logo: "assets/logos/amaryllis-radio-malawi.svg",
+    featured: true
+  },
+  {
+    id: "kasupe-radio-malawi",
+    name: "Kasupe Radio Malawi",
+    country: "Malawi",
+    city: "Lilongwe",
+    state: "Central Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "culture",
+    frequency: "91.5",
+    band: "FM",
+    language: "Chichewa & English",
+    genre: "The Living Spring • Community Life & African Melodies",
+    streamUrl: "https://host2.streamafrica.net/listen/kasupe_radio/radio.mp3",
+    fallbackUrl: "https://host2.streamafrica.net/listen/kasupe_radio/radio.mp3",
+    logo: "assets/logos/kasupe-radio-malawi.svg",
+    featured: true
+  },
+  {
+    id: "chanco-community-malawi",
+    name: "Chanco Community Radio",
+    country: "Malawi",
+    city: "Zomba",
+    state: "Southern Region",
+    code: "🇲🇼",
+    continent: "africa",
+    category: "culture",
+    frequency: "99.0",
+    band: "FM",
+    language: "English & Chichewa",
+    genre: "Chancellor College • Student Debates, Science & Arts",
+    streamUrl: "https://live.netradio.pro/listen/chanco/radio.mp3",
+    fallbackUrl: "https://live.netradio.pro/listen/chanco/radio.mp3",
+    logo: "assets/logos/chanco-radio-malawi.svg",
+    featured: true
+  },
+
+  // ==========================================
+  // 4c. 🇲🇷 MAURITANIE (AFRIQUE DU NORD / SAHEL)
+  // ==========================================
+  {
+    id: "radio-mauritanie-nationale",
+    name: "Radio Mauritanie (إذاعة موريتانيا)",
+    country: "Mauritanie",
+    city: "Nouakchott",
+    state: "Nouakchott",
+    code: "🇲🇷",
+    continent: "africa",
+    category: "news",
+    frequency: "93.3",
+    band: "FM",
+    language: "Arabe & Français",
+    genre: "Chaîne Nationale • Actualités, Culture et Débats de Mauritanie",
+    streamUrl: "https://ec6.yesstreaming.net:2760/stream",
+    fallbackUrl: "https://ec6.yesstreaming.net:2760/stream",
+    logo: "assets/logos/radio-mauritanie.svg",
+    featured: true
+  },
+  {
+    id: "radio-coran-mauritanie",
+    name: "Radio Coran Mauritanie (إذاعة القرآن الكريم)",
+    country: "Mauritanie",
+    city: "Nouakchott",
+    state: "Nouakchott",
+    code: "🇲🇷",
+    continent: "africa",
+    category: "culture",
+    frequency: "98.0",
+    band: "FM",
+    language: "Arabe",
+    genre: "Récitations coraniques continues, Tafsir et Enseignements religieux",
+    streamUrl: "https://ec6.yesstreaming.net:2770/stream",
+    fallbackUrl: "https://ec6.yesstreaming.net:2770/stream",
+    logo: "assets/logos/radio-coran-mauritanie.svg",
+    featured: true
+  },
+  {
+    id: "radio-nouadhibou-mr",
+    name: "Radio Mauritanie Nouadhibou (محطة نواذيبو)",
+    country: "Mauritanie",
+    city: "Nouadhibou",
+    state: "Dakhlet Nouadhibou",
+    code: "🇲🇷",
+    continent: "africa",
+    category: "news",
+    frequency: "94.5",
+    band: "FM",
+    language: "Arabe & Français",
+    genre: "Actualités maritimes, économiques et vie locale du Littoral",
+    streamUrl: "https://ec6.yesstreaming.net:2720/stream",
+    fallbackUrl: "https://ec6.yesstreaming.net:2720/stream",
+    logo: "assets/logos/radio-nouadhibou-mr.svg",
+    featured: true
+  },
+  {
+    id: "radio-zouerate-mr",
+    name: "Radio Zouérate (إذاعة ازويرات)",
+    country: "Mauritanie",
+    city: "Zouérat",
+    state: "Tiris Zemmour",
+    code: "🇲🇷",
+    continent: "africa",
+    category: "culture",
+    frequency: "96.0",
+    band: "FM",
+    language: "Arabe & Hassanya",
+    genre: "Voix du Nord saharien • Culture bédouine et actualité minière",
+    streamUrl: "https://ec6.yesstreaming.net:2780/stream",
+    fallbackUrl: "https://ec6.yesstreaming.net:2780/stream",
+    logo: "assets/logos/radio-zouerate-mr.svg",
+    featured: true
+  },
+
+  // ==========================================
+  // 4d. 🇸🇱 SIERRA LEONE (AFRIQUE DE L'OUEST)
+  // ==========================================
+  {
+    id: "capital-radio-sierra-leone",
+    name: "Capital Radio 104.9 FM Sierra Leone",
+    country: "Sierra Leone",
+    city: "Freetown",
+    state: "Western Area",
+    code: "🇸🇱",
+    continent: "africa",
+    category: "news",
+    frequency: "104.9",
+    band: "FM",
+    language: "English & Krio",
+    genre: "The Sound of Freetown • News, Talk, Afrobeats & Global Pop",
+    streamUrl: "https://global.citrus3.com:8262/stream",
+    fallbackUrl: "https://global.citrus3.com:8262/stream",
+    logo: "assets/logos/capital-radio-sierra-leone.svg",
+    featured: true
+  },
+  {
+    id: "star-radio-sierra-leone",
+    name: "Star Radio SL 103.5 FM",
+    country: "Sierra Leone",
+    city: "Freetown",
+    state: "Western Area",
+    code: "🇸🇱",
+    continent: "africa",
+    category: "news",
+    frequency: "103.5",
+    band: "FM",
+    language: "English & Krio",
+    genre: "The Voice of the Nation • Independent Journalism & Hits",
+    streamUrl: "https://radio-streaming.michcom-ix.net/listen/star_radio_fm_103.5/radio.mp3",
+    fallbackUrl: "https://radio-streaming.michcom-ix.net/listen/star_radio_fm_103.5/radio.mp3",
+    logo: "assets/logos/star-radio-sierra-leone.svg",
+    featured: true
+  },
+  {
+    id: "fop-radio-sierra-leone",
+    name: "FOP Radio Sierra Leone",
+    country: "Sierra Leone",
+    city: "Freetown",
+    state: "Western Area",
+    code: "🇸🇱",
+    continent: "africa",
+    category: "culture",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English & Krio",
+    genre: "Community Voice, Inspirational Music & Youth Empowerment",
+    streamUrl: "https://stream.fopradios.top/main",
+    fallbackUrl: "https://stream.fopradios.top/main",
+    logo: "assets/logos/fop-radio-sierra-leone.svg",
+    featured: true
+  },
+  {
+    id: "radio-binkongoh-sierra-leone",
+    name: "Radio Binkongoh Sierra Leone",
+    country: "Sierra Leone",
+    city: "Koidu",
+    state: "Eastern Province",
+    code: "🇸🇱",
+    continent: "africa",
+    category: "culture",
+    frequency: "98.7",
+    band: "FM",
+    language: "Krio & English",
+    genre: "Grassroots Sierra Leone Culture, Local Stories & Traditional Music",
+    streamUrl: "https://tamkorfai1.radioca.st/stream",
+    fallbackUrl: "https://tamkorfai1.radioca.st/stream",
+    logo: "assets/logos/radio-binkongoh-sl.svg",
+    featured: true
+  },
+  {
+    id: "fusionsound-radio-sl",
+    name: "FusionSound Radio Sierra Leone",
+    country: "Sierra Leone",
+    city: "Freetown",
+    state: "Western Area",
+    code: "🇸🇱",
+    continent: "africa",
+    category: "music",
+    frequency: "WEB",
+    band: "WEB",
+    language: "English & Krio",
+    genre: "Non-stop Afrobeats, Sierra Leone Sounds & Urban Club Hits",
+    streamUrl: "https://radio.fusionsoundradio.com/listen/fusionsoundradio/radio.mp3",
+    fallbackUrl: "https://radio.fusionsoundradio.com/listen/fusionsoundradio/radio.mp3",
+    logo: "assets/logos/fusionsound-radio-sl.svg",
+    featured: true
+  },
+
+  // ==========================================
+  // 4e. 🇹🇬 TOGO, 🇬🇲 GAMBIE, 🇬🇦 GABON, 🇱🇾 LIBYE, 🇷🇼 RWANDA, 🇺🇬 OUGANDA (AFRIQUE)
   // ==========================================
   {
     id: "nana-fm-togo",
@@ -4438,6 +4792,42 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "pretoria": { code: "ZA", en: "South Africa", fr: "Pretoria", continent: "africa", type: "country" },
   "soweto": { code: "ZA", en: "South Africa", fr: "Soweto", continent: "africa", type: "country" },
   "gauteng": { code: "ZA", en: "South Africa", fr: "Gauteng", continent: "africa", type: "country" },
+
+  // Malawi 🇲🇼
+  "mw": { code: "MW", en: "Malawi", fr: "Malawi", continent: "africa", type: "country" },
+  "malawi": { code: "MW", en: "Malawi", fr: "Malawi", continent: "africa", type: "country" },
+  "malawian": { code: "MW", en: "Malawi", fr: "Malawi", continent: "africa", type: "country" },
+  "lilongwe": { code: "MW", en: "Malawi", fr: "Lilongwe", continent: "africa", type: "country" },
+  "blantyre": { code: "MW", en: "Malawi", fr: "Blantyre", continent: "africa", type: "country" },
+  "zomba": { code: "MW", en: "Malawi", fr: "Zomba", continent: "africa", type: "country" },
+  "mzuzu": { code: "MW", en: "Malawi", fr: "Mzuzu", continent: "africa", type: "country" },
+
+  // Mauritanie 🇲🇷
+  "mr": { code: "MR", en: "Mauritania", fr: "Mauritanie", continent: "africa", type: "country" },
+  "mauritanie": { code: "MR", en: "Mauritania", fr: "Mauritanie", continent: "africa", type: "country" },
+  "mouritani": { code: "MR", en: "Mauritania", fr: "Mauritanie", continent: "africa", type: "country" },
+  "mouritanie": { code: "MR", en: "Mauritania", fr: "Mauritanie", continent: "africa", type: "country" },
+  "mauritania": { code: "MR", en: "Mauritania", fr: "Mauritanie", continent: "africa", type: "country" },
+  "mauritanien": { code: "MR", en: "Mauritania", fr: "Mauritanie", continent: "africa", type: "country" },
+  "mauritanienne": { code: "MR", en: "Mauritania", fr: "Mauritanie", continent: "africa", type: "country" },
+  "nouakchott": { code: "MR", en: "Mauritania", fr: "Nouakchott", continent: "africa", type: "country" },
+  "nouadhibou": { code: "MR", en: "Mauritania", fr: "Nouadhibou", continent: "africa", type: "country" },
+  "zouerate": { code: "MR", en: "Mauritania", fr: "Zouérat", continent: "africa", type: "country" },
+  "zouerat": { code: "MR", en: "Mauritania", fr: "Zouérat", continent: "africa", type: "country" },
+  "موريتانيا": { code: "MR", en: "Mauritania", fr: "Mauritanie", continent: "africa", type: "country" },
+
+  // Sierra Leone 🇸🇱
+  "sl": { code: "SL", en: "Sierra Leone", fr: "Sierra Leone", continent: "africa", type: "country" },
+  "sierra leone": { code: "SL", en: "Sierra Leone", fr: "Sierra Leone", continent: "africa", type: "country" },
+  "sierraleone": { code: "SL", en: "Sierra Leone", fr: "Sierra Leone", continent: "africa", type: "country" },
+  "serra leone": { code: "SL", en: "Sierra Leone", fr: "Sierra Leone", continent: "africa", type: "country" },
+  "sierra léone": { code: "SL", en: "Sierra Leone", fr: "Sierra Leone", continent: "africa", type: "country" },
+  "sierraleonais": { code: "SL", en: "Sierra Leone", fr: "Sierra Leone", continent: "africa", type: "country" },
+  "freetown": { code: "SL", en: "Sierra Leone", fr: "Freetown", continent: "africa", type: "country" },
+  "bo": { code: "SL", en: "Sierra Leone", fr: "Bo", continent: "africa", type: "country" },
+  "kenema": { code: "SL", en: "Sierra Leone", fr: "Kenema", continent: "africa", type: "country" },
+  "makeni": { code: "SL", en: "Sierra Leone", fr: "Makeni", continent: "africa", type: "country" },
+  "koidu": { code: "SL", en: "Sierra Leone", fr: "Koidu", continent: "africa", type: "country" },
   "kenya": { code: "KE", en: "Kenya", fr: "Kenya", continent: "africa", type: "country" },
   "angola": { code: "AO", en: "Angola", fr: "Angola", continent: "africa", type: "country" },
   "gabon": { code: "GA", en: "Gabon", fr: "Gabon", continent: "africa", type: "country" },
@@ -4934,7 +5324,7 @@ function resolveRegionalStationLogo(st) {
   // 1.u Logos officiels Algérie 🇩🇿
   const isAlgerie = (cCode === "DZ") || (st.code === "🇩🇿") || (st.country || "").toLowerCase().includes("alg") ||
     stState.includes("alger") || stState.includes("oran") || stState.includes("constantine") || stState.includes("tizi") || stState.includes("setif") || stState.includes("annaba") || stState.includes("tlemcen") || stState.includes("batna") || stState.includes("bejaia") || stState.includes("biskra") ||
-    nameLow.includes("algerie") || nameLow.includes("algérie") || nameLow.includes("algeria") || nameLow.includes("alger") || nameLow.includes("oran") || nameLow.includes("constantine") || nameLow.includes("tizi ouzou") || nameLow.includes("beur fm") || nameLow.includes("france maghreb") || nameLow.includes("hits 1");
+    nameLow.includes("algerie") || nameLow.includes("algérie") || nameLow.includes("algeria") || nameLow.includes("alger") || (!nameLow.includes("coran") && (nameLow.includes(" oran") || nameLow.includes("oran ") || nameLow.includes("radio oran"))) || nameLow.includes("constantine") || nameLow.includes("tizi ouzou") || nameLow.includes("beur fm") || nameLow.includes("france maghreb") || nameLow.includes("hits 1");
   if (isAlgerie) {
     if (nameLow.includes("chaine 3") || nameLow.includes("chaîne 3") || nameLow.includes("ch-3") || nameLow.includes("ch3")) return "assets/logos/algerie-chaine-3.svg";
     if (nameLow.includes("chaine 1") || nameLow.includes("chaîne 1") || nameLow.includes("ch-1") || nameLow.includes("ch1") || nameLow.includes("الأولى")) return "assets/logos/algerie-chaine-1.svg";
@@ -4949,7 +5339,7 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("beur fm") || nameLow.includes("beur")) return "assets/logos/beur-fm-algerie.svg";
     if (nameLow.includes("hits 1") || nameLow.includes("hits1")) return "assets/logos/hits1-algerie.svg";
     if (nameLow.includes("antinea")) return "assets/logos/antinea-radio.svg";
-    if (nameLow.includes("oran") || nameLow.includes("وهران")) return "assets/logos/radio-oran-algerie.svg";
+    if ((!nameLow.includes("coran") && (nameLow.includes("oran") || nameLow.includes("وهران")))) return "assets/logos/radio-oran-algerie.svg";
     if (nameLow.includes("constantine") || nameLow.includes("قسنطينة") || nameLow.includes("cirta")) return "assets/logos/radio-constantine.svg";
     if (nameLow.includes("tizi") || nameLow.includes("تيزي")) return "assets/logos/radio-tizi-ouzou.svg";
     if (nameLow.includes("annaba") || nameLow.includes("عنابة")) return "assets/logos/radio-annaba.svg";
@@ -4981,6 +5371,49 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("mix fm") || nameLow.includes("mix 93")) return "assets/logos/mix-fm-sa.svg";
     if (nameLow.includes("good hope") || nameLow.includes("goodhope")) return "assets/logos/good-hope-fm-sa.svg";
     return "assets/logos/south-africa-radio-badge.svg";
+  }
+
+  // 1.w Logos officiels Malawi 🇲🇼
+  const isMalawi = (cCode === "MW") || (st.code === "🇲🇼") || (st.country || "").toLowerCase().includes("malawi") ||
+    stState.includes("lilongwe") || stState.includes("blantyre") || stState.includes("zomba") || stState.includes("mzuzu") ||
+    nameLow.includes("malawi") || nameLow.includes("zodiak") || nameLow.includes("times radio") || nameLow.includes("radio islam") || nameLow.includes("groove 100") || nameLow.includes("groove100") || nameLow.includes("kuwala") || nameLow.includes("mzati") || nameLow.includes("twr") || nameLow.includes("amaryllis") || nameLow.includes("kasupe") || nameLow.includes("chanco");
+  if (isMalawi) {
+    if (nameLow.includes("times")) return "assets/logos/times-radio-malawi.svg";
+    if (nameLow.includes("zodiak") || nameLow.includes("zbs")) return "assets/logos/zbs-zodiak-malawi.svg";
+    if (nameLow.includes("islam")) return "assets/logos/radio-islam-malawi.svg";
+    if (nameLow.includes("groove")) return "assets/logos/groove100-malawi.svg";
+    if (nameLow.includes("kuwala")) return "assets/logos/kuwala-fm-malawi.svg";
+    if (nameLow.includes("mzati")) return "assets/logos/mzati-radio-malawi.svg";
+    if (nameLow.includes("twr") || nameLow.includes("trans world")) return "assets/logos/twr-malawi.svg";
+    if (nameLow.includes("amaryllis")) return "assets/logos/amaryllis-radio-malawi.svg";
+    if (nameLow.includes("kasupe")) return "assets/logos/kasupe-radio-malawi.svg";
+    if (nameLow.includes("chanco")) return "assets/logos/chanco-radio-malawi.svg";
+    return "assets/logos/malawi-radio-badge.svg";
+  }
+
+  // 1.x Logos officiels Mauritanie 🇲🇷
+  const isMauritanie = (cCode === "MR") || (st.code === "🇲🇷") || (st.country || "").toLowerCase().includes("mauritani") || (st.country || "").toLowerCase().includes("mouritani") ||
+    stState.includes("nouakchott") || stState.includes("nouadhibou") || stState.includes("zouerat") || stState.includes("tiris") ||
+    nameLow.includes("mauritani") || nameLow.includes("mouritani") || nameLow.includes("nouakchott") || nameLow.includes("nouadhibou") || nameLow.includes("zouerate") || nameLow.includes("موريتانيا") || nameLow.includes("القرآن الكريم");
+  if (isMauritanie) {
+    if (nameLow.includes("coran") || nameLow.includes("quran") || nameLow.includes("قرآن") || nameLow.includes("alkran")) return "assets/logos/radio-coran-mauritanie.svg";
+    if (nameLow.includes("nouadhibou") || nameLow.includes("نواذيبو")) return "assets/logos/radio-nouadhibou-mr.svg";
+    if (nameLow.includes("zouerat") || nameLow.includes("zouerate") || nameLow.includes("ازويرات")) return "assets/logos/radio-zouerate-mr.svg";
+    if (nameLow.includes("mauritanie") || nameLow.includes("mauritania") || nameLow.includes("موريتانيا") || nameLow.includes("radioma")) return "assets/logos/radio-mauritanie.svg";
+    return "assets/logos/mauritanie-radio-badge.svg";
+  }
+
+  // 1.y Logos officiels Sierra Leone 🇸🇱
+  const isSierraLeone = (cCode === "SL") || (st.code === "🇸🇱") || (st.country || "").toLowerCase().includes("sierra leone") || (st.country || "").toLowerCase().includes("serra leone") ||
+    stState.includes("freetown") || stState.includes("koidu") || stState.includes("bo") || stState.includes("kenema") || stState.includes("makeni") ||
+    nameLow.includes("sierra leone") || nameLow.includes("serra leone") || nameLow.includes("capital radio") || nameLow.includes("star radio") || nameLow.includes("fop radio") || nameLow.includes("binkongoh") || nameLow.includes("fusionsound");
+  if (isSierraLeone) {
+    if (nameLow.includes("capital")) return "assets/logos/capital-radio-sierra-leone.svg";
+    if (nameLow.includes("star")) return "assets/logos/star-radio-sierra-leone.svg";
+    if (nameLow.includes("fop")) return "assets/logos/fop-radio-sierra-leone.svg";
+    if (nameLow.includes("binkongoh")) return "assets/logos/radio-binkongoh-sl.svg";
+    if (nameLow.includes("fusion")) return "assets/logos/fusionsound-radio-sl.svg";
+    return "assets/logos/sierra-leone-radio-badge.svg";
   }
 
   // Fonction de filtrage des icônes de réseaux sociaux ou hébergeurs génériques (ne doivent JAMAIS servir de logo de radio)
@@ -5075,6 +5508,15 @@ function resolveRegionalStationLogo(st) {
   }
   if (isSouthAfrica) {
     return "assets/logos/south-africa-radio-badge.svg";
+  }
+  if (isMalawi) {
+    return "assets/logos/malawi-radio-badge.svg";
+  }
+  if (isMauritanie) {
+    return "assets/logos/mauritanie-radio-badge.svg";
+  }
+  if (isSierraLeone) {
+    return "assets/logos/sierra-leone-radio-badge.svg";
   }
 
   return "";

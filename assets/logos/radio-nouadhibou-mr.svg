@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="nbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051f2b"/>
+      <stop offset="50%" stop-color="#0a394a"/>
+      <stop offset="100%" stop-color="#031620"/>
+    </linearGradient>
+    <linearGradient id="nbCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#008ba3"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#nbBg)"/>
+  <circle cx="100" cy="85" r="58" fill="none" stroke="url(#nbCyan)" stroke-width="2"/>
+  <!-- Maritime Port Lighthouse / Tower & Ocean Waves -->
+  <path d="M 64 105 Q 82 96 100 105 T 136 105" fill="none" stroke="#00e5ff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 70 114 Q 85 106 100 114 T 130 114" fill="none" stroke="#00b0ff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <!-- Lighthouse Antenna -->
+  <polygon points="95,102 105,102 102,60 98,60" fill="#ffffff"/>
+  <circle cx="100" cy="56" r="5" fill="#ffd700"/>
+  <!-- Beam -->
+  <polygon points="100,56 60,42 60,52" fill="#ffd700" opacity="0.35"/>
+  <polygon points="100,56 140,42 140,52" fill="#ffd700" opacity="0.35"/>
+  <!-- Arabic Text -->
+  <text x="100" y="132" font-family="'Amiri', 'Traditional Arabic', serif, system-ui" font-size="13" font-weight="bold" fill="#00e5ff" text-anchor="middle">إذاعة نواذيبو الجهوية</text>
+  <!-- Banner -->
+  <rect x="18" y="148" width="164" height="34" rx="10" fill="#02131b" stroke="#00e5ff" stroke-width="1.5"/>
+  <text x="100" y="165" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="900" fill="#ffffff" letter-spacing="1" text-anchor="middle">RADIO NOUADHIBOU</text>
+  <text x="100" y="177" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="700" fill="#00e5ff" letter-spacing="1.2" text-anchor="middle">MAURITANIE LITTORAL</text>
+</svg>

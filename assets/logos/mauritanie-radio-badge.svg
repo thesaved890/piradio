@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="mrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071b12"/>
+      <stop offset="50%" stop-color="#0a2a1a"/>
+      <stop offset="100%" stop-color="#05140d"/>
+    </linearGradient>
+    <linearGradient id="mrGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#ffb700"/>
+    </linearGradient>
+    <linearGradient id="mrRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d01c1c"/>
+      <stop offset="100%" stop-color="#e82b2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#mrBg)"/>
+  <circle cx="100" cy="90" r="66" fill="none" stroke="url(#mrGold)" stroke-width="3" opacity="0.85"/>
+  <circle cx="100" cy="90" r="58" fill="#062114"/>
+  <!-- Mauritanie Flag Elements -->
+  <g clip-path="url(#mrFlagClip)">
+    <clipPath id="mrFlagClip">
+      <circle cx="100" cy="90" r="54"/>
+    </clipPath>
+    <rect x="40" y="30" width="120" height="120" fill="#006233"/>
+    <!-- Top & Bottom Red Stripes -->
+    <rect x="40" y="36" width="120" height="18" fill="url(#mrRed)"/>
+    <rect x="40" y="126" width="120" height="18" fill="url(#mrRed)"/>
+    <!-- Golden Crescent & Star -->
+    <g fill="url(#mrGold)">
+      <!-- Crescent -->
+      <path d="M 75 90 A 25 25 0 0 0 125 90 A 22 17 0 0 1 75 90 Z"/>
+      <!-- Star -->
+      <polygon points="100,70 102.5,77 110,77 104,81 106,88 100,84 94,88 96,81 90,77 97.5,77"/>
+    </g>
+  </g>
+  <!-- Broadcast Ring -->
+  <circle cx="100" cy="90" r="44" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.4" stroke-dasharray="3 3"/>
+  <!-- Bottom Ribbon / Label -->
+  <rect x="20" y="152" width="160" height="32" rx="10" fill="#0d2417" stroke="url(#mrGold)" stroke-width="1.5"/>
+  <text x="100" y="173" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" font-weight="900" fill="#ffd700" letter-spacing="1.2" text-anchor="middle">MAURITANIE 🇲🇷</text>
+</svg>
