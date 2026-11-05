@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="uBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120624"/>
+      <stop offset="50%" stop-color="#240c42"/>
+      <stop offset="100%" stop-color="#0b0317"/>
+    </linearGradient>
+    <linearGradient id="uCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#00b0ff"/>
+    </linearGradient>
+    <linearGradient id="uPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4081"/>
+      <stop offset="100%" stop-color="#e040fb"/>
+    </linearGradient>
+    <filter id="uDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#00e5ff" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="512" height="512" rx="100" fill="url(#uBg)"/>
+  <rect x="12" y="12" width="488" height="488" rx="88" fill="none" stroke="#00e5ff" stroke-opacity="0.35" stroke-width="4"/>
+
+  <!-- Logo U stylisé -->
+  <g filter="url(#uDrop)" transform="translate(256, 175)">
+    <circle cx="0" cy="0" r="76" fill="#18072e" stroke="url(#uPink)" stroke-width="5"/>
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="900" fill="url(#uCyan)" text-anchor="middle" letter-spacing="1">U</text>
+  </g>
+
+  <!-- Badge Fréquence 101.1 FM -->
+  <g transform="translate(256, 285)">
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#uCyan)"/>
+    <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#120624" text-anchor="middle" letter-spacing="1">101.1 FM</text>
+  </g>
+
+  <!-- Titre RADIO U -->
+  <text x="256" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">RADIO U</text>
+
+  <!-- Slogan -->
+  <text x="256" y="395" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#ea80fc" text-anchor="middle" letter-spacing="3">LA RADIO CAMPUS DE BREST • UBO</text>
+
+  <!-- Ville / Pays -->
+  <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#ffd54f" text-anchor="middle" letter-spacing="2">BREST • FINISTÈRE 🎓</text>
+</svg>

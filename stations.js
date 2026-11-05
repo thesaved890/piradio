@@ -4293,6 +4293,237 @@ const CURATED_STATIONS = [
     logo: "assets/logos/france-inter.png",
     featured: false
   },
+  // ==========================================
+  // 7b. 🇫🇷 BRETAGNE (FRANCE) — RADIOS RÉGIONALES & LOCALES
+  // ==========================================
+  {
+    id: "ici-breizh-izel",
+    name: "ici Breizh Izel (98.6 / 99.3 / 90.4 FM)",
+    country: "France",
+    city: "Quimper / Brest",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "news",
+    frequency: "98.6 / 99.3 FM",
+    band: "FM",
+    language: "Français / Brezhoneg",
+    genre: "Actualités, culture bretonne & vie locale (Bretagne Ouest)",
+    streamUrl: "https://icecast.radiofrance.fr/fbbreizizel-midfi.mp3",
+    fallbackUrl: "https://icecast.radiofrance.fr/fbbreizizel-midfi.mp3",
+    logo: "assets/logos/ici-breizh-izel.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "ici-armorique",
+    name: "ici Armorique (103.1 / 101.6 FM)",
+    country: "France",
+    city: "Rennes",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "news",
+    frequency: "103.1 / 101.6 FM",
+    band: "FM",
+    language: "Français",
+    genre: "L'info locale en Ille-et-Vilaine & Bretagne",
+    streamUrl: "https://icecast.radiofrance.fr/fbarmorique-midfi.mp3",
+    fallbackUrl: "https://icecast.radiofrance.fr/fbarmorique-midfi.mp3",
+    logo: "assets/logos/ici-armorique.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "hit-west-bretagne",
+    name: "Hit West Bretagne (99.2 / 96.9 FM)",
+    country: "France",
+    city: "Rennes / Brest",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "music",
+    frequency: "99.2 / 96.9 FM",
+    band: "FM",
+    language: "Français",
+    genre: "Le son de l'Ouest, hits pop & infos Grand Ouest",
+    streamUrl: "https://stream.rcs.revma.com/rdma79x0am3vv",
+    fallbackUrl: "https://stream.rcs.revma.com/rdma79x0am3vv",
+    logo: "assets/logos/hit-west.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "oceane-fm-bretagne",
+    name: "Océane FM (100.3 / 97.2 FM)",
+    country: "France",
+    city: "Vannes / Quimper",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "music",
+    frequency: "100.3 / 97.2 FM",
+    band: "FM",
+    language: "Français",
+    genre: "Les plus beaux souvenirs & hits en Bretagne",
+    streamUrl: "https://stream.rcs.revma.com/4q26yzaf0v3vv",
+    fallbackUrl: "https://stream.rcs.revma.com/4q26yzaf0v3vv",
+    logo: "assets/logos/oceane-fm.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "frequence-mutine-brest",
+    name: "Fréquence Mutine (103.8 FM Brest)",
+    country: "France",
+    city: "Brest",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "culture",
+    frequency: "103.8",
+    band: "FM",
+    language: "Français",
+    genre: "Radio associative alternative & musiques indépendantes",
+    streamUrl: "http://icecast.infini.fr:8000/mutine",
+    fallbackUrl: "http://icecast.infini.fr:8000/mutine",
+    logo: "assets/logos/frequence-mutine.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "radio-u-brest",
+    name: "Radio U (101.1 FM Brest)",
+    country: "France",
+    city: "Brest",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "culture",
+    frequency: "101.1",
+    band: "FM",
+    language: "Français",
+    genre: "Radio campus de Brest, cultures actuelles & découvertes",
+    streamUrl: "https://icecast.infini.fr:8443/radiou.mp3",
+    fallbackUrl: "https://icecast.infini.fr:8443/radiou.mp3",
+    logo: "assets/logos/radio-u-brest.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "radio-neptune-brest",
+    name: "Radio Neptune (95.0 FM Brest)",
+    country: "France",
+    city: "Brest",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "music",
+    frequency: "95.0",
+    band: "FM",
+    language: "Français",
+    genre: "Classique, jazz, blues & culture maritime",
+    streamUrl: "http://icecast.infini.fr:8000/neptune",
+    fallbackUrl: "http://icecast.infini.fr:8000/neptune",
+    logo: "assets/logos/radio-neptune.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "radio-rennes",
+    name: "Radio Rennes (100.8 FM)",
+    country: "France",
+    city: "Rennes",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "culture",
+    frequency: "100.8",
+    band: "FM",
+    language: "Français",
+    genre: "Radio citoyenne historique, débats & musiques du monde",
+    streamUrl: "https://stream4.vestaradio.com/RADIORENNES",
+    fallbackUrl: "https://stream4.vestaradio.com/RADIORENNES",
+    logo: "assets/logos/radio-rennes.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "rcf-alpha-rennes",
+    name: "RCF Alpha Rennes (96.3 FM)",
+    country: "France",
+    city: "Rennes",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "culture",
+    frequency: "96.3",
+    band: "FM",
+    language: "Français",
+    genre: "La joie de partager, info locale & dialogue à Rennes",
+    streamUrl: "https://rcf.streamakaci.com/rcf35.mp3",
+    fallbackUrl: "https://rcf.streamakaci.com/rcf35.mp3",
+    logo: "assets/logos/rcf-alpha-rennes.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "radio-bro-gwened",
+    name: "Radio Bro Gwened (101.7 FM Pontivy)",
+    country: "France",
+    city: "Pontivy",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "culture",
+    frequency: "101.7",
+    band: "FM",
+    language: "Brezhoneg / Français",
+    genre: "Radio en langue bretonne & française du Pays Vannetais",
+    streamUrl: "https://stream.radios.bzh/listen/rbg/radio.mp3",
+    fallbackUrl: "https://stream.radios.bzh/listen/rbg/radio.mp3",
+    logo: "assets/logos/radio-bro-gwened.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "arvorig-fm",
+    name: "Arvorig FM (91.7 / 107 FM Landerneau)",
+    country: "France",
+    city: "Landerneau",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "culture",
+    frequency: "91.7 / 107.0",
+    band: "FM",
+    language: "Brezhoneg",
+    genre: "100% bretonnante, culture, musique & terroir breton",
+    streamUrl: "https://stream.radios.bzh/listen/arvorig/radio.mp3",
+    fallbackUrl: "https://stream.radios.bzh/listen/arvorig/radio.mp3",
+    logo: "assets/logos/arvorig-fm.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "rcf-sud-bretagne",
+    name: "RCF Sud Bretagne (90.2 FM Vannes)",
+    country: "France",
+    city: "Vannes",
+    state: "Bretagne",
+    code: "🇫🇷",
+    continent: "europe",
+    category: "culture",
+    frequency: "90.2",
+    band: "FM",
+    language: "Français",
+    genre: "Radio chrétienne de proximité dans le Morbihan",
+    streamUrl: "https://stream.rcs.revma.com/wwgk4h73h3nwv",
+    fallbackUrl: "https://stream.rcs.revma.com/wwgk4h73h3nwv",
+    logo: "assets/logos/rcf-sud-bretagne.svg",
+    featured: false,
+    locked: true
+  },
   {
     id: "bbc-world-service",
     name: "BBC World Service",
@@ -5001,6 +5232,29 @@ const GLOBAL_LOCATION_SYNONYMS = {
   // --- EUROPE ---
   "france": { code: "FR", en: "France", fr: "France", continent: "europe", type: "country" },
   "paris": { code: "FR", en: "France", fr: "Paris", continent: "europe", type: "country" },
+
+  // Bretagne & Villes Bretonnes 🇫🇷
+  "bretagne": { code: "FR", en: "Brittany", fr: "Bretagne", continent: "europe", type: "region" },
+  "brittany": { code: "FR", en: "Brittany", fr: "Bretagne", continent: "europe", type: "region" },
+  "breizh": { code: "FR", en: "Brittany", fr: "Bretagne", continent: "europe", type: "region" },
+  "rennes": { code: "FR", en: "Rennes", fr: "Rennes", continent: "europe", type: "city" },
+  "brest": { code: "FR", en: "Brest", fr: "Brest", continent: "europe", type: "city" },
+  "quimper": { code: "FR", en: "Quimper", fr: "Quimper", continent: "europe", type: "city" },
+  "lorient": { code: "FR", en: "Lorient", fr: "Lorient", continent: "europe", type: "city" },
+  "vannes": { code: "FR", en: "Vannes", fr: "Vannes", continent: "europe", type: "city" },
+  "saint-brieuc": { code: "FR", en: "Saint-Brieuc", fr: "Saint-Brieuc", continent: "europe", type: "city" },
+  "saint brieuc": { code: "FR", en: "Saint-Brieuc", fr: "Saint-Brieuc", continent: "europe", type: "city" },
+  "saint-malo": { code: "FR", en: "Saint-Malo", fr: "Saint-Malo", continent: "europe", type: "city" },
+  "saint malo": { code: "FR", en: "Saint-Malo", fr: "Saint-Malo", continent: "europe", type: "city" },
+  "lannion": { code: "FR", en: "Lannion", fr: "Lannion", continent: "europe", type: "city" },
+  "concarneau": { code: "FR", en: "Concarneau", fr: "Concarneau", continent: "europe", type: "city" },
+  "pontivy": { code: "FR", en: "Pontivy", fr: "Pontivy", continent: "europe", type: "city" },
+  "landerneau": { code: "FR", en: "Landerneau", fr: "Landerneau", continent: "europe", type: "city" },
+  "morbihan": { code: "FR", en: "Morbihan", fr: "Morbihan", continent: "europe", type: "region" },
+  "finistere": { code: "FR", en: "Finistère", fr: "Finistère", continent: "europe", type: "region" },
+  "finistère": { code: "FR", en: "Finistère", fr: "Finistère", continent: "europe", type: "region" },
+  "ille-et-vilaine": { code: "FR", en: "Ille-et-Vilaine", fr: "Ille-et-Vilaine", continent: "europe", type: "region" },
+  "cotes-d-armor": { code: "FR", en: "Côtes-d'Armor", fr: "Côtes-d'Armor", continent: "europe", type: "region" },
 
   "allemagne": { code: "DE", en: "Germany", fr: "Allemagne", continent: "europe", type: "country" },
   "germany": { code: "DE", en: "Germany", fr: "Allemagne", continent: "europe", type: "country" },
@@ -5899,6 +6153,33 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("gam express")) return "assets/logos/gam-express-gambia.png";
     return "assets/logos/gambia-radio-badge.svg";
   }
+  // 1.br Logos officiels Bretagne 🇫🇷
+  const isBretagne = (cCode === "FR" || st.code === "🇫🇷" || (st.country || "").toLowerCase().includes("france")) && (
+    stState.includes("bretagne") || stState.includes("brittany") || stState.includes("finistere") || stState.includes("finistère") ||
+    stState.includes("morbihan") || stState.includes("ille-et-vilaine") || stState.includes("cotes-d'armor") ||
+    stState.includes("rennes") || stState.includes("brest") || stState.includes("quimper") || stState.includes("lorient") ||
+    stState.includes("vannes") || stState.includes("pontivy") || stState.includes("landerneau") ||
+    nameLow.includes("breizh") || nameLow.includes("bretagne") || nameLow.includes("armorique") || nameLow.includes("hit west") ||
+    nameLow.includes("oceane") || nameLow.includes("océane") || nameLow.includes("mutine") || nameLow.includes("radio u") || nameLow.includes("neptune") ||
+    nameLow.includes("radio rennes") || nameLow.includes("rcf alpha") || nameLow.includes("bro gwened") || nameLow.includes("arvorig") ||
+    nameLow.includes("rcf sud bretagne")
+  );
+  if (isBretagne) {
+    if (nameLow.includes("breizh")) return "assets/logos/ici-breizh-izel.svg";
+    if (nameLow.includes("armorique")) return "assets/logos/ici-armorique.svg";
+    if (nameLow.includes("hit west")) return "assets/logos/hit-west.svg";
+    if (nameLow.includes("oceane") || nameLow.includes("océane")) return "assets/logos/oceane-fm.svg";
+    if (nameLow.includes("mutine")) return "assets/logos/frequence-mutine.svg";
+    if (nameLow.includes("radio u") || (nameLow.includes("radiou"))) return "assets/logos/radio-u-brest.svg";
+    if (nameLow.includes("neptune")) return "assets/logos/radio-neptune.svg";
+    if (nameLow.includes("radio rennes")) return "assets/logos/radio-rennes.svg";
+    if (nameLow.includes("alpha")) return "assets/logos/rcf-alpha-rennes.svg";
+    if (nameLow.includes("bro gwened") || nameLow.includes("rbg")) return "assets/logos/radio-bro-gwened.svg";
+    if (nameLow.includes("arvorig")) return "assets/logos/arvorig-fm.svg";
+    if (nameLow.includes("rcf") && (nameLow.includes("sud") || nameLow.includes("vannes") || nameLow.includes("morbihan"))) return "assets/logos/rcf-sud-bretagne.svg";
+    return "assets/logos/bretagne-radio-badge.svg";
+  }
+
   // 1.za Logos officiels Zambie 🇿🇲
   const isZambia = (cCode === "ZM") || (st.code === "🇿🇲") || (st.country || "").toLowerCase().includes("zambia") || (st.country || "").toLowerCase().includes("zambie") ||
     stState.includes("lusaka") || stState.includes("ndola") || stState.includes("kitwe") || stState.includes("livingstone") ||

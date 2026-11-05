@@ -636,6 +636,32 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/gambia-radio-badge.svg";
     }
 
+    const isBretagne = (cCode === "FR" || st.code === "🇫🇷" || (st.country && st.country.toLowerCase().includes("france"))) && (
+      stState.includes("bretagne") || stState.includes("brittany") || stState.includes("finistere") || stState.includes("finistère") ||
+      stState.includes("morbihan") || stState.includes("ille-et-vilaine") || stState.includes("cotes-d'armor") ||
+      stState.includes("rennes") || stState.includes("brest") || stState.includes("quimper") || stState.includes("lorient") ||
+      stState.includes("vannes") || stState.includes("pontivy") || stState.includes("landerneau") ||
+      nameLow.includes("breizh") || nameLow.includes("bretagne") || nameLow.includes("armorique") || nameLow.includes("hit west") ||
+      nameLow.includes("oceane") || nameLow.includes("océane") || nameLow.includes("mutine") || nameLow.includes("radio u") || nameLow.includes("neptune") ||
+      nameLow.includes("radio rennes") || nameLow.includes("rcf alpha") || nameLow.includes("bro gwened") || nameLow.includes("arvorig") ||
+      nameLow.includes("rcf sud bretagne")
+    );
+    if (isBretagne) {
+      if (nameLow.includes("breizh")) return "assets/logos/ici-breizh-izel.svg";
+      if (nameLow.includes("armorique")) return "assets/logos/ici-armorique.svg";
+      if (nameLow.includes("hit west")) return "assets/logos/hit-west.svg";
+      if (nameLow.includes("oceane") || nameLow.includes("océane")) return "assets/logos/oceane-fm.svg";
+      if (nameLow.includes("mutine")) return "assets/logos/frequence-mutine.svg";
+      if (nameLow.includes("radio u") || (nameLow.includes("radiou"))) return "assets/logos/radio-u-brest.svg";
+      if (nameLow.includes("neptune")) return "assets/logos/radio-neptune.svg";
+      if (nameLow.includes("radio rennes")) return "assets/logos/radio-rennes.svg";
+      if (nameLow.includes("alpha")) return "assets/logos/rcf-alpha-rennes.svg";
+      if (nameLow.includes("bro gwened") || nameLow.includes("rbg")) return "assets/logos/radio-bro-gwened.svg";
+      if (nameLow.includes("arvorig")) return "assets/logos/arvorig-fm.svg";
+      if (nameLow.includes("rcf") && (nameLow.includes("sud") || nameLow.includes("vannes") || nameLow.includes("morbihan"))) return "assets/logos/rcf-sud-bretagne.svg";
+      return "assets/logos/bretagne-radio-badge.svg";
+    }
+
     const isZambia = (cCode === "ZM") || (st.code === "🇿🇲") || (st.country && (st.country.toLowerCase().includes("zambia") || st.country.toLowerCase().includes("zambie"))) ||
       stState.includes("lusaka") || stState.includes("ndola") || stState.includes("kitwe") || stState.includes("livingstone") ||
       nameLow.includes("zambia") || nameLow.includes("zambie") || nameLow.includes("phoenix") || nameLow.includes("hot fm") || nameLow.includes("rock fm") || nameLow.includes("5fm") || nameLow.includes("zamcom") || nameLow.includes("christian voice");
@@ -682,6 +708,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isSierraLeone) return "assets/logos/sierra-leone-radio-badge.svg";
     if (isGambia) return "assets/logos/gambia-radio-badge.svg";
     if (isZambia) return "assets/logos/zambia-radio-badge.svg";
+    if (isBretagne) return "assets/logos/bretagne-radio-badge.svg";
     return getFlagFallback(st.code);
   }
 
