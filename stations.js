@@ -1198,7 +1198,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/iwioelqe6qwtv",
     fallbackUrl: "https://stream.zeno.fm/iwioelqe6qwtv",
     logo: "assets/logos/radio-voz-da-guine.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-voz-de-esperanca-bissau",
@@ -1238,7 +1239,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://rpn.bozztv.com/ses/tvge/tvgeradio/playlist.m3u8",
     fallbackUrl: "https://rpn.bozztv.com/ses/tvge/tvgeradio/playlist.m3u8",
     logo: "assets/logos/rnge-radio-malabo.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -1825,7 +1827,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://paineldj5.com.br:20087/stream",
     fallbackUrl: "https://paineldj5.com.br:20087/stream",
     logo: "assets/logos/angola-radio-nacional.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "crtv-poste-national",
@@ -2382,7 +2385,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://listen.senemultimedia.net:8112/stream",
     fallbackUrl: "https://listen.senemultimedia.net:8112/stream",
     logo: "assets/logos/radio-thiossane-dakar.svg",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "h24-senegal",
@@ -2399,7 +2403,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://listen.senemultimedia.net:8072/stream",
     fallbackUrl: "https://listen.senemultimedia.net:8072/stream",
     logo: "assets/logos/h24-senegal.svg",
-    featured: false
+    featured: false,
+    locked: true
   },
   {
     id: "capital-fm-kenya",
@@ -3497,7 +3502,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://azura.easyrock.com.ph/listen/easy_rock_manila/radio.mp3",
     fallbackUrl: "https://azura.easyrock.com.ph/listen/easy_rock_manila/radio.mp3",
     logo: "assets/logos/easy-rock-manila.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "capital-958-singapore",
@@ -3513,7 +3519,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CAPITAL958FM_PREM.aac",
     fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CAPITAL958FM_PREM.aac",
     logo: "assets/logos/capital-958-singapore.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "sonora-fm-jakarta",
@@ -3529,7 +3536,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://sonora-radio.arenastreaming.com/8130/stream",
     fallbackUrl: "https://sonora-radio.arenastreaming.com/8130/stream",
     logo: "assets/logos/sonora-fm-jakarta.png",
-    featured: true
+    featured: true,
+    locked: true
   },
 
   // ==========================================
@@ -3583,7 +3591,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://26583.live.streamtheworld.com/RT_CALIAAC_SC",
     fallbackUrl: "https://26583.live.streamtheworld.com/RT_CALIAAC_SC",
     logo: "assets/logos/radio-tiempo-89-5.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "fox-sports-640-am",
@@ -3616,7 +3625,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_SP_SC.mp3",
     fallbackUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_SP_SC.mp3",
     logo: "assets/logos/cbn-sao-paulo.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "hot-97-newyork",
@@ -5418,7 +5428,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://qurango.net/radio/mishary_alafasi",
     fallbackUrl: "https://qurango.net/radio/mishary_alafasi",
     logo: "assets/logos/quran-mishary-alafasy.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "quran-abdulbasit",
@@ -5468,7 +5479,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://l3.itworkscdn.net/smcquranlive/quranradiolive/icecast.audio",
     fallbackUrl: "https://l3.itworkscdn.net/smcquranlive/quranradiolive/icecast.audio",
     logo: "assets/logos/quran-radio-sharjah.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "alaraby-radio-qatar",
@@ -5484,7 +5496,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://l3.itworkscdn.net/alarabyradiolive/alarabyradio_audio/icecast.audio",
     fallbackUrl: "https://l3.itworkscdn.net/alarabyradiolive/alarabyradio_audio/icecast.audio",
     logo: "assets/logos/alaraby-radio-qatar.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-9090-egypt",
@@ -5517,7 +5530,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://stream.zeno.fm/9vrahqqfuuhvv",
     fallbackUrl: "https://stream.zeno.fm/9vrahqqfuuhvv",
     logo: "assets/logos/radio-fairuz-liban.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "hayat-fm-jordan",
@@ -5533,7 +5547,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://dc1.serverse.com/proxy/kjxwtpdt/stream",
     fallbackUrl: "https://dc1.serverse.com/proxy/kjxwtpdt/stream",
     logo: "assets/logos/hayat-fm-jordan.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "radio-swiss-jazz",
@@ -5550,7 +5565,8 @@ const CURATED_STATIONS = [
     fallbackUrl: "https://stream.srg-ssr.ch/m/rsj/aacp_96",
     logo: "assets/logos/radio-swiss-jazz.png",
     homepage: "https://www.radioswissjazz.ch",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "capital-chill-uk",
@@ -5656,7 +5672,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://icecast1.sere.plus/Bula",
     fallbackUrl: "https://icecast1.sere.plus/Bula",
     logo: "assets/logos/bula-fm-fiji.png",
-    featured: true
+    featured: true,
+    locked: true
   },
   {
     id: "polynesie-la-1ere-tahiti",
@@ -5672,7 +5689,8 @@ const CURATED_STATIONS = [
     streamUrl: "https://polynesie.ice.infomaniak.ch/polynesie-128.mp3",
     fallbackUrl: "https://polynesie.ice.infomaniak.ch/polynesie-128.mp3",
     logo: "assets/logos/polynesie-la-1ere-tahiti.png",
-    featured: true
+    featured: true,
+    locked: true
   }
 ];
 
