@@ -5938,6 +5938,162 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 7.d 🇻🇳 VIETNAM (VOV & ĐÀI TIẾNG NÓI VIỆT NAM - PIONEERS ASIA)
+  // ==========================================
+  {
+    id: "vov1-thoi-su-vietnam",
+    name: "VOV1 - Thời sự (Đài Tiếng nói Việt Nam)",
+    country: "Vietnam",
+    city: "Hà Nội",
+    state: "Hà Nội",
+    code: "🇻🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "100.0",
+    band: "FM",
+    language: "Tiếng Việt",
+    genre: "Thời sự, Chính trị & Tin tức Quốc tế",
+    streamUrl: "https://str.vov.gov.vn/vovlive/vov1vov5Vietnamese.sdp_aac/playlist.m3u8",
+    fallbackUrl: "https://str.vov.gov.vn/vovlive/vov1vov5Vietnamese.sdp_aac/playlist.m3u8",
+    logo: "assets/logos/vov1-vietnam.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "vov2-van-hoa-vietnam",
+    name: "VOV2 - Văn hóa & Đời sống (Hà Nội)",
+    country: "Vietnam",
+    city: "Hà Nội",
+    state: "Hà Nội",
+    code: "🇻🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "96.5",
+    band: "FM",
+    language: "Tiếng Việt",
+    genre: "Văn hóa, Khoa giáo, Sức khỏe & Gia đình",
+    streamUrl: "https://str.vov.gov.vn/vovlive/vov2.sdp_aac/playlist.m3u8",
+    fallbackUrl: "https://str.vov.gov.vn/vovlive/vov2.sdp_aac/playlist.m3u8",
+    logo: "assets/logos/vov2-vietnam.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "vov3-am-nhac-vietnam",
+    name: "VOV3 - Âm nhạc & Trẻ (V-Pop & Quốc tế)",
+    country: "Vietnam",
+    city: "Hà Nội",
+    state: "Hà Nội",
+    code: "🇻🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "102.7",
+    band: "FM",
+    language: "Tiếng Việt",
+    genre: "V-Pop, Âm nhạc Trẻ, Hit Parade & Giải trí",
+    streamUrl: "https://str.vov.gov.vn/vovlive/vov3.sdp_aac/playlist.m3u8",
+    fallbackUrl: "https://str.vov.gov.vn/vovlive/vov3.sdp_aac/playlist.m3u8",
+    logo: "assets/logos/vov3-vietnam.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "vov5-vov-world-vietnam",
+    name: "VOV5 - VOV World (Phát thanh Đối ngoại)",
+    country: "Vietnam",
+    city: "Hà Nội",
+    state: "Hà Nội",
+    code: "🇻🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "105.5",
+    band: "FM",
+    language: "Tiếng Việt & English",
+    genre: "Phát thanh Đối ngoại, Tin tức Toàn cầu & Văn hóa",
+    streamUrl: "https://str.vov.gov.vn/vovlive/vov5.sdp_aac/playlist.m3u8",
+    fallbackUrl: "https://str.vov.gov.vn/vovlive/vov5.sdp_aac/playlist.m3u8",
+    logo: "assets/logos/vov5-vietnam.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "vov-giao-thong-hanoi",
+    name: "VOV Giao Thông - Hà Nội 91.0 FM",
+    country: "Vietnam",
+    city: "Hà Nội",
+    state: "Hà Nội",
+    code: "🇻🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "91.0",
+    band: "FM",
+    language: "Tiếng Việt",
+    genre: "Giao thông Trực tiếp, Tin tức Đô thị & Âm nhạc",
+    streamUrl: "https://play.vovgiaothong.vn/live/gthn/playlist.m3u8",
+    fallbackUrl: "https://play.vovgiaothong.vn/live/gthn/playlist.m3u8",
+    logo: "assets/logos/vov-giao-thong-hanoi.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "vov-giao-thong-hcm",
+    name: "VOV Giao Thông - TP. Hồ Chí Minh 91.0 FM",
+    country: "Vietnam",
+    city: "TP. Hồ Chí Minh",
+    state: "TP. Hồ Chí Minh",
+    code: "🇻🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "91.0",
+    band: "FM",
+    language: "Tiếng Việt",
+    genre: "Giao thông Nam Bộ, Nhịp sống Sài Gòn & Đô thị",
+    streamUrl: "https://play.vovgiaothong.vn/live/gthcm/playlist.m3u8",
+    fallbackUrl: "https://play.vovgiaothong.vn/live/gthcm/playlist.m3u8",
+    logo: "assets/logos/vov-giao-thong-hcm.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "rfi-tieng-viet",
+    name: "RFI Tiếng Việt (Radio France Internationale)",
+    country: "Vietnam",
+    city: "Paris / Hà Nội",
+    state: "Quốc tế",
+    code: "🇻🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "Web",
+    band: "WEB",
+    language: "Tiếng Việt",
+    genre: "Tin tức Quốc tế, Phân tích & Thời sự Châu Á",
+    streamUrl: "https://rfienvietnamien64k.ice.infomaniak.ch/rfienvietnamien-64.mp3",
+    fallbackUrl: "https://rfienvietnamien64k.ice.infomaniak.ch/rfienvietnamien-64.mp3",
+    logo: "assets/logos/rfi-tieng-viet.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "hanoi-community-radio",
+    name: "Hà Nội Community Radio (Indie & Beats)",
+    country: "Vietnam",
+    city: "Hà Nội",
+    state: "Hà Nội",
+    code: "🇻🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "Web",
+    band: "WEB",
+    language: "Tiếng Việt",
+    genre: "Indie Việt, Electronic, Lofi Beats & Nghệ thuật",
+    streamUrl: "https://ha-noi-community-radio.radiocult.fm/stream",
+    fallbackUrl: "https://ha-noi-community-radio.radiocult.fm/stream",
+    logo: "assets/logos/hanoi-community-radio.svg",
+    featured: false,
+    locked: true
+  },
+
+  // ==========================================
   // 8. ⚽ SPORTS EN DIRECT (FOOTBALL & MULTIPLEX)
   // ==========================================
   {
@@ -7081,6 +7237,21 @@ function resolveRegionalStationLogo(st) {
 
   const isAllemagne = (cCode === "DE") || (st.code === "🇩🇪") || (st.country || "").toLowerCase().includes("germany") || (st.country || "").toLowerCase().includes("allemagne") || nameLow.includes("berlin") || nameLow.includes("munich");
 
+  // 1.vn Logos officiels Vietnam 🇻🇳 (v5.27)
+  const isVietnam = (cCode === "VN") || (st.code === "🇻🇳") || (st.country || "").toLowerCase().includes("vietnam") || (st.country || "").toLowerCase().includes("viet nam") || (st.country || "").toLowerCase().includes("viêt nam") || nameLow.includes("vietnam") || nameLow.includes("tiếng việt") || nameLow.includes("tieng viet") || nameLow.includes("hà nội") || nameLow.includes("hanoi") || nameLow.includes("sài gòn") || nameLow.includes("saigon") || nameLow.includes("hồ chí minh") || nameLow.includes("ho chi minh") || nameLow.includes("vov");
+  if (isVietnam) {
+    if (nameLow.includes("vov1") || (nameLow.includes("vov 1") || (nameLow.includes("vov") && nameLow.includes("thời sự")))) return "assets/logos/vov1-vietnam.svg";
+    if (nameLow.includes("vov2") || (nameLow.includes("vov 2") || (nameLow.includes("vov") && nameLow.includes("văn hóa")))) return "assets/logos/vov2-vietnam.svg";
+    if (nameLow.includes("vov3") || (nameLow.includes("vov 3") || (nameLow.includes("vov") && nameLow.includes("âm nhạc")))) return "assets/logos/vov3-vietnam.svg";
+    if (nameLow.includes("vov5") || nameLow.includes("vov 5") || nameLow.includes("vov world")) return "assets/logos/vov5-vietnam.svg";
+    if (nameLow.includes("giao thông") || nameLow.includes("giao thong") || nameLow.includes("gt")) {
+      if (nameLow.includes("hcm") || nameLow.includes("hồ chí minh") || nameLow.includes("saigon") || nameLow.includes("sài gòn")) return "assets/logos/vov-giao-thong-hcm.svg";
+      return "assets/logos/vov-giao-thong-hanoi.svg";
+    }
+    if (nameLow.includes("rfi") && (nameLow.includes("viet") || nameLow.includes("việt"))) return "assets/logos/rfi-tieng-viet.svg";
+    if (nameLow.includes("community") || nameLow.includes("hcr")) return "assets/logos/hanoi-community-radio.svg";
+  }
+
   // 1.g Logos officiels Nigéria 🇳🇬
   const isNigeria = (cCode === "NG") || (st.code === "🇳🇬") || (st.country || "").toLowerCase().includes("nigeria") || (st.country || "").toLowerCase().includes("nigéria") || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
   if (isNigeria) {
@@ -7661,6 +7832,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isAllemagne) {
     return "assets/logos/allemagne-radio-badge.svg";
+  }
+  if (isVietnam) {
+    return "assets/logos/vietnam-radio-badge.svg";
   }
   if (isNigeria) {
     return "assets/logos/nigeria-radio-badge.svg";

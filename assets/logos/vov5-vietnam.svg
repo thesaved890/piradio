@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vov5Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e"/>
+      <stop offset="50%" stop-color="#082f49"/>
+      <stop offset="100%" stop-color="#031525"/>
+    </linearGradient>
+    <linearGradient id="vov5Cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="100" fill="url(#vov5Bg)"/>
+  <rect x="14" y="14" width="484" height="484" rx="86" fill="none" stroke="#0284c7" stroke-opacity="0.4" stroke-width="4"/>
+  <g transform="translate(256, 175)">
+    <rect x="-85" y="-50" width="170" height="100" rx="20" fill="url(#vov5Cyan)"/>
+    <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">VOV5</text>
+  </g>
+  <g transform="translate(256, 285)">
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="#0284c7"/>
+    <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">105.5 FM</text>
+  </g>
+  <text x="256" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">VOV WORLD</text>
+  <text x="256" y="395" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="3">PHÁT THANH ĐỐI NGOẠI</text>
+  <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#e2e8f0" text-anchor="middle" letter-spacing="2">INTERNATIONAL • VIETNAM 🇻🇳</text>
+</svg>

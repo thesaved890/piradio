@@ -244,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (code === "🇮🇹" || cCode === "IT" || c.includes("italy") || c.includes("italie") || city.includes("rome") || city.includes("milan")) return "assets/logos/italie-radio-badge.svg";
     if (code === "🇪🇸" || cCode === "ES" || c.includes("spain") || c.includes("espagne") || city.includes("madrid") || city.includes("barcelon")) return "assets/logos/espagne-radio-badge.svg";
     if (code === "🇩🇪" || cCode === "DE" || c.includes("germany") || c.includes("allemagne") || city.includes("berlin") || city.includes("munich")) return "assets/logos/allemagne-radio-badge.svg";
+    if (code === "🇻🇳" || cCode === "VN" || c.includes("vietnam") || c.includes("viet nam") || n.includes("vietnam") || city.includes("hanoi") || city.includes("saigon") || city.includes("ho chi minh")) return "assets/logos/vietnam-radio-badge.svg";
     if (s.includes("michigan") || n.includes("michigan")) return "assets/logos/michigan-radio-badge.svg";
     if (s.includes("texas") || n.includes("texas")) return "assets/logos/texas-radio-badge.svg";
     if (s.includes("hawaii") || s.includes("hawai") || n.includes("hawaii")) return "assets/logos/hawaii-radio-badge.svg";
@@ -476,6 +477,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const isEspagne = (cCode === "ES") || (st.code === "🇪🇸") || (st.country || "").toLowerCase().includes("spain") || (st.country || "").toLowerCase().includes("espagne") || nameLow.includes("madrid") || nameLow.includes("barcelona");
 
     const isAllemagne = (cCode === "DE") || (st.code === "🇩🇪") || (st.country || "").toLowerCase().includes("germany") || (st.country || "").toLowerCase().includes("allemagne") || nameLow.includes("berlin") || nameLow.includes("munich");
+
+    // 1.vn Logos officiels Vietnam 🇻🇳 (v5.27)
+    const isVietnam = (cCode === "VN") || (st.code === "🇻🇳") || (st.country || "").toLowerCase().includes("vietnam") || (st.country || "").toLowerCase().includes("viet nam") || (st.country || "").toLowerCase().includes("viêt nam") || nameLow.includes("vietnam") || nameLow.includes("tiếng việt") || nameLow.includes("tieng viet") || nameLow.includes("hà nội") || nameLow.includes("hanoi") || nameLow.includes("sài gòn") || nameLow.includes("saigon") || nameLow.includes("hồ chí minh") || nameLow.includes("ho chi minh") || nameLow.includes("vov");
+    if (isVietnam) {
+      if (nameLow.includes("vov1") || (nameLow.includes("vov 1") || (nameLow.includes("vov") && nameLow.includes("thời sự")))) return "assets/logos/vov1-vietnam.svg";
+      if (nameLow.includes("vov2") || (nameLow.includes("vov 2") || (nameLow.includes("vov") && nameLow.includes("văn hóa")))) return "assets/logos/vov2-vietnam.svg";
+      if (nameLow.includes("vov3") || (nameLow.includes("vov 3") || (nameLow.includes("vov") && nameLow.includes("âm nhạc")))) return "assets/logos/vov3-vietnam.svg";
+      if (nameLow.includes("vov5") || nameLow.includes("vov 5") || nameLow.includes("vov world")) return "assets/logos/vov5-vietnam.svg";
+      if (nameLow.includes("giao thông") || nameLow.includes("giao thong") || nameLow.includes("gt")) {
+        if (nameLow.includes("hcm") || nameLow.includes("hồ chí minh") || nameLow.includes("saigon") || nameLow.includes("sài gòn")) return "assets/logos/vov-giao-thong-hcm.svg";
+        return "assets/logos/vov-giao-thong-hanoi.svg";
+      }
+      if (nameLow.includes("rfi") && (nameLow.includes("viet") || nameLow.includes("việt"))) return "assets/logos/rfi-tieng-viet.svg";
+      if (nameLow.includes("community") || nameLow.includes("hcr")) return "assets/logos/hanoi-community-radio.svg";
+    }
 
     const isNigeria = (st.code === "🇳🇬") || (st.country && (st.country.toLowerCase().includes("nigeria") || st.country.toLowerCase().includes("nigéria"))) || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
     if (isNigeria) {
@@ -964,6 +980,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isItalie) return "assets/logos/italie-radio-badge.svg";
     if (isEspagne) return "assets/logos/espagne-radio-badge.svg";
     if (isAllemagne) return "assets/logos/allemagne-radio-badge.svg";
+    if (isVietnam) return "assets/logos/vietnam-radio-badge.svg";
     if (isNigeria) return "assets/logos/nigeria-radio-badge.svg";
     if (isCameroon) return "assets/logos/cameroon-radio-badge.svg";
     if (isSenegal) return "assets/logos/senegal-radio-badge.svg";
