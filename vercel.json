@@ -1,6 +1,7 @@
 {
   "framework": null,
   "buildCommand": null,
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/assets/logos/(.*\\.svg)",
