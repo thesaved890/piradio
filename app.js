@@ -224,6 +224,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const code = st.code || "";
 
     if (code === "🇨🇦" || cCode === "CA" || c.includes("canada") || n.includes("canada") || city.includes("toronto") || city.includes("montreal")) return "assets/logos/canada-radio-badge.svg";
+    if (s.includes("tennessee") || city.includes("nashville") || city.includes("chattanooga")) return "assets/logos/wrlt-lightning-100-nashville.svg";
+    if (s.includes("louisiana") || s.includes("louisiane") || city.includes("new orleans")) return "assets/logos/wwoz-90-7-neworleans.svg";
+    if (s.includes("georgia") || s.includes("géorgie") || city.includes("atlanta")) return "assets/logos/wclk-91-9-atlanta.svg";
+    if (s.includes("pennsylvania") || s.includes("pennsylvanie") || city.includes("philadelphia") || city.includes("pittsburgh")) return "assets/logos/wxpn-88-5-philadelphia.svg";
+    if (s.includes("massachusetts") || city.includes("boston")) return "assets/logos/wbur-90-9-boston.svg";
+    if (s.includes("colorado") || city.includes("denver") || city.includes("boulder")) return "assets/logos/kuvo-89-3-denver.svg";
+    if (s.includes("minnesota") || city.includes("minneapolis") || city.includes("st. paul")) return "assets/logos/the-current-kcmp-minneapolis.svg";
+    if (s.includes("nevada") || city.includes("las vegas")) return "assets/logos/kunv-91-5-lasvegas.svg";
+    if (s.includes("columbia") || city.includes("washington")) return "assets/logos/wamu-88-5-dc.svg";
+    if (s.includes("ohio") || city.includes("cleveland") || city.includes("columbus")) return "assets/logos/wclv-90-3-cleveland.svg";
     if (s.includes("michigan") || n.includes("michigan")) return "assets/logos/michigan-radio-badge.svg";
     if (s.includes("texas") || n.includes("texas")) return "assets/logos/texas-radio-badge.svg";
     if (s.includes("hawaii") || s.includes("hawai") || n.includes("hawaii")) return "assets/logos/hawaii-radio-badge.svg";

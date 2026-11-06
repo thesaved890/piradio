@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.22
+// Pi Radio • Service Worker v5.23
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.22';
+const CACHE_NAME = 'piradio-v5.23';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -17,6 +17,25 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Logos officiels Nouveaux États des États-Unis 🇺🇸 (v5.23)
+  './assets/logos/wrlt-lightning-100-nashville.svg',
+  './assets/logos/wmot-roots-radio-nashville.svg',
+  './assets/logos/wsmc-classical-chattanooga.svg',
+  './assets/logos/wwoz-90-7-neworleans.svg',
+  './assets/logos/wtul-91-5-neworleans.svg',
+  './assets/logos/wclk-91-9-atlanta.svg',
+  './assets/logos/gpb-88-5-atlanta.svg',
+  './assets/logos/wxpn-88-5-philadelphia.svg',
+  './assets/logos/wrti-90-1-jazz-philly.svg',
+  './assets/logos/wbur-90-9-boston.svg',
+  './assets/logos/wgbh-89-7-boston.svg',
+  './assets/logos/kuvo-89-3-denver.svg',
+  './assets/logos/kgnu-88-5-boulder-denver.svg',
+  './assets/logos/the-current-kcmp-minneapolis.svg',
+  './assets/logos/kunv-91-5-lasvegas.svg',
+  './assets/logos/wamu-88-5-dc.svg',
+  './assets/logos/wclv-90-3-cleveland.svg',
+  './assets/logos/wjcu-88-7-cleveland.svg',
   // Logos officiels Afrique du Sud 🇿🇦 (v5.8)
   './assets/logos/south-africa-radio-badge.svg',
   './assets/logos/jacaranda-fm-sa.svg',
