@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="wcr2Bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -17,9 +18,7 @@
       <stop offset="0%" stop-color="#00e5ff"/>
       <stop offset="100%" stop-color="#00b0ff"/>
     </linearGradient>
-    <filter id="wcr2Drop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#ff4081" flood-opacity="0.4"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond -->
@@ -34,7 +33,7 @@
   </g>
 
   <!-- Emblème central WEST COAST RADIO 2 -->
-  <g filter="url(#wcr2Drop)" transform="translate(256, 185)">
+  <g transform="translate(256, 185)">
     <circle cx="0" cy="0" r="76" fill="#1b0824" stroke="url(#wcr2Magenta)" stroke-width="5"/>
     <!-- Vague &amp; Soleil music vibe -->
     <path d="M -45 15 Q -20 -15 0 10 Q 20 -15 45 15 L 45 35 L -45 35 Z" fill="url(#wcr2Cyan)" opacity="0.85"/>
@@ -44,7 +43,7 @@
 
   <!-- Badge Fréquence 95.3 FM -->
   <g transform="translate(256, 290)">
-    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#wcr2Gold)" filter="url(#wcr2Drop)"/>
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#wcr2Gold)"/>
     <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="21" font-weight="900" fill="#14061a" text-anchor="middle" letter-spacing="1">95.3 FM</text>
   </g>
 
@@ -57,4 +56,3 @@
   <!-- Ville et pays -->
   <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#ffd54f" text-anchor="middle" letter-spacing="2">KOTU • THE GAMBIA 🇬🇲</text>
 </svg>
-

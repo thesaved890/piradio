@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="iebg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#iebg)" stroke="#10b981" stroke-width="2"/>
+  <!-- Irish Shamrock / Harp Motif -->
+  <circle cx="85" cy="72" r="14" fill="#10b981"/>
+  <circle cx="115" cy="72" r="14" fill="#f97316"/>
+  <circle cx="100" cy="56" r="14" fill="#ffffff"/>
+  <path d="M100,72 L100,105" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <text x="100" y="152" font-family="'Inter',sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">IRLANDE</text>
+  <text x="100" y="172" font-family="'Inter',sans-serif" font-size="9" font-weight="700" fill="#6ee7b7" text-anchor="middle" letter-spacing="2">ÉIRE RADIO LIVE</text>
+</svg>

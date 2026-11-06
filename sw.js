@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.25
+// Pi Radio • Service Worker v5.26
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.25';
+const CACHE_NAME = 'piradio-v5.26';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -47,6 +47,33 @@ const PRECACHE_ASSETS = [
   './assets/logos/wamu-88-5-dc.svg',
   './assets/logos/wclv-90-3-cleveland.svg',
   './assets/logos/wjcu-88-7-cleveland.svg',
+  // Badges Nationaux d'Europe 🇪🇺 (v5.26)
+  './assets/logos/portugal-radio-badge.svg',
+  './assets/logos/pays-bas-radio-badge.svg',
+  './assets/logos/suisse-radio-badge.svg',
+  './assets/logos/irlande-radio-badge.svg',
+  './assets/logos/pologne-radio-badge.svg',
+  './assets/logos/autriche-radio-badge.svg',
+  './assets/logos/uk-radio-badge.svg',
+  './assets/logos/italie-radio-badge.svg',
+  './assets/logos/espagne-radio-badge.svg',
+  './assets/logos/allemagne-radio-badge.svg',
+  // Logos Officiels Stations d'Europe 🇪🇺 (v5.26)
+  './assets/logos/antena1-portugal.svg',
+  './assets/logos/antena3-portugal.svg',
+  './assets/logos/npo-radio1-nl.svg',
+  './assets/logos/npo-3fm-nl.svg',
+  './assets/logos/rts-la-premiere-suisse.svg',
+  './assets/logos/srf3-suisse.svg',
+  './assets/logos/rte-radio1-ireland.svg',
+  './assets/logos/newstalk-ireland.svg',
+  './assets/logos/rmf-fm-pologne.svg',
+  './assets/logos/radio-zet-pologne.svg',
+  './assets/logos/hitradio-oe3-austria.svg',
+  './assets/logos/fm4-austria.svg',
+  './assets/logos/lbc-london.svg',
+  './assets/logos/classic-fm-uk.svg',
+  './assets/logos/radio-105-italie.svg',
   // Logos officiels Afrique du Sud 🇿🇦 (v5.8)
   './assets/logos/south-africa-radio-badge.svg',
   './assets/logos/jacaranda-fm-sa.svg',

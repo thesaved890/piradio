@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="rtiBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -24,9 +25,7 @@
       <stop offset="0%" stop-color="#FF8200" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="#FF8200" stop-opacity="0"/>
     </radialGradient>
-    <filter id="rtiDrop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
   <circle cx="256" cy="256" r="240" fill="url(#rtiBg)"/>
@@ -41,7 +40,7 @@
   </g>
 
   <!-- Capsule RTI Blanche -->
-  <g filter="url(#rtiDrop)" transform="translate(256, 185)">
+  <g transform="translate(256, 185)">
     <rect x="-105" y="-55" width="210" height="110" rx="20" fill="#FFFFFF"/>
     <!-- Ruban spiralé RTI Orange et Vert -->
     <path d="M -80 5 C -80 -30 -40 -30 -20 -5 C 0 20 40 20 60 -5 C 70 -20 80 -20 80 -5" fill="none" stroke="url(#rtiOrange)" stroke-width="8" stroke-linecap="round"/>
@@ -52,7 +51,7 @@
 
   <!-- Badge 88.0 FM La Nationale -->
   <g transform="translate(256, 285)">
-    <rect x="-115" y="-18" width="230" height="36" rx="18" fill="url(#rtiOrange)" filter="url(#rtiDrop)"/>
+    <rect x="-115" y="-18" width="230" height="36" rx="18" fill="url(#rtiOrange)"/>
     <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">88.0 FM • LA NATIONALE</text>
   </g>
 

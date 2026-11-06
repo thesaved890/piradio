@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="paixBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -13,9 +14,7 @@
       <stop offset="0%" stop-color="#ffd54f"/>
       <stop offset="100%" stop-color="#ffb300"/>
     </linearGradient>
-    <filter id="paixGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00e5ff" flood-opacity="0.35"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond -->
@@ -27,7 +26,7 @@
   <circle cx="256" cy="190" r="170" fill="none" stroke="#00e5ff" stroke-opacity="0.05" stroke-width="2"/>
 
   <!-- Colombe / Emblème de la paix -->
-  <g filter="url(#paixGlow)">
+  <g>
     <circle cx="256" cy="175" r="75" fill="#063254" stroke="url(#paixCyan)" stroke-width="5"/>
     <!-- Colombe stylisée en vol avec rameau -->
     <path d="M225,185 C230,165 250,150 270,155 C285,160 295,175 290,190 C280,185 270,185 260,190 C250,195 240,205 235,215 C232,205 228,195 225,185 Z" fill="#ffffff"/>
@@ -50,4 +49,3 @@
   <!-- Ville / Pays -->
   <text x="256" y="435" fill="#4fc3f7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="18" text-anchor="middle" letter-spacing="2">ABIDJAN • CÔTE D'IVOIRE</text>
 </svg>
-

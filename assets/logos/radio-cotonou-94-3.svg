@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="rcBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -24,9 +25,7 @@
       <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="#FF6B35" stop-opacity="0"/>
     </radialGradient>
-    <filter id="rcDrop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond circulaire et lueur -->
@@ -42,7 +41,7 @@
   </g>
 
   <!-- Tour émettrice / Micro stylisé au centre -->
-  <g filter="url(#rcDrop)" transform="translate(256, 195)">
+  <g transform="translate(256, 195)">
     <!-- Disque central orange soleil couchant -->
     <circle cx="0" cy="0" r="62" fill="url(#rcOrange)"/>
     <circle cx="0" cy="0" r="56" fill="#0A192F" stroke="url(#rcOrange)" stroke-width="2"/>
@@ -56,7 +55,7 @@
 
   <!-- Badge Fréquence 94.3 FM -->
   <g transform="translate(256, 290)">
-    <rect x="-85" y="-18" width="170" height="36" rx="18" fill="url(#rcOrange)" filter="url(#rcDrop)"/>
+    <rect x="-85" y="-18" width="170" height="36" rx="18" fill="url(#rcOrange)"/>
     <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">94.3 FM</text>
   </g>
 

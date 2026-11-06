@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="ortbBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -21,9 +22,7 @@
       <stop offset="0%" stop-color="#00C853" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="#00C853" stop-opacity="0"/>
     </radialGradient>
-    <filter id="ortbDrop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond circulaire -->
@@ -39,7 +38,7 @@
   </g>
 
   <!-- Logo stylisé ORTB -->
-  <g filter="url(#ortbDrop)" transform="translate(256, 185)">
+  <g transform="translate(256, 185)">
     <!-- Carte / capsule centrale blanche pour lisibilité parfaite -->
     <rect x="-105" y="-55" width="210" height="110" rx="20" fill="#FFFFFF"/>
     <!-- Ruban spiralé ORTB vert et rouge -->
@@ -51,7 +50,7 @@
 
   <!-- Badge 98.2 FM La Nationale -->
   <g transform="translate(256, 285)">
-    <rect x="-115" y="-18" width="230" height="36" rx="18" fill="url(#ortbGreen)" filter="url(#ortbDrop)"/>
+    <rect x="-115" y="-18" width="230" height="36" rx="18" fill="url(#ortbGreen)"/>
     <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">98.2 FM • LA NATIONALE</text>
   </g>
 

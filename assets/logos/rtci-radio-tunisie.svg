@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
   <defs>
     <linearGradient id="rtciBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -10,12 +11,10 @@
       <stop offset="50%" stop-color="#00B4D8"/>
       <stop offset="100%" stop-color="#FFD100"/>
     </linearGradient>
-    <filter id="rtciShadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
-  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#rtciBg)" stroke="#00B4D8" stroke-width="3" filter="url(#rtciShadow)"/>
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#rtciBg)" stroke="#00B4D8" stroke-width="3"/>
 
   <!-- Globe international et ondes RTCI -->
   <g transform="translate(100, 52)">
@@ -25,7 +24,7 @@
   </g>
 
   <!-- Titre RTCI -->
-  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="26" letter-spacing="3" text-anchor="middle" filter="url(#rtciShadow)">RTCI</text>
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="26" letter-spacing="3" text-anchor="middle">RTCI</text>
 
   <!-- Tag CHAÎNE INTERNATIONALE -->
   <rect x="30" y="116" width="140" height="26" rx="8" fill="url(#rtciBlue)"/>
@@ -35,4 +34,3 @@
   <rect x="24" y="152" width="152" height="28" rx="8" fill="#061c30" stroke="#00B4D8" stroke-width="1.2"/>
   <text x="100" y="171" fill="#00B4D8" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="1.8" text-anchor="middle">RADIO TUNIS • 92.0 FM</text>
 </svg>
-

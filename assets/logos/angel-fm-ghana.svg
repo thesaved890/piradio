@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="angBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -10,16 +11,14 @@
       <stop offset="50%" stop-color="#FCD116"/>
       <stop offset="100%" stop-color="#F57F17"/>
     </linearGradient>
-    <filter id="angDrop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
   <circle cx="256" cy="256" r="240" fill="url(#angBg)"/>
   <circle cx="256" cy="256" r="236" fill="none" stroke="url(#angGold)" stroke-width="3" stroke-opacity="0.8"/>
 
   <!-- Logo Ailes d'Ange stylisées -->
-  <g filter="url(#angDrop)" transform="translate(256, 185)">
+  <g transform="translate(256, 185)">
     <circle cx="0" cy="0" r="62" fill="#14264d" stroke="url(#angGold)" stroke-width="3"/>
     <!-- Ailes dorées -->
     <path d="M -28 10 C -40 -15 -15 -35 0 -8 C 15 -35 40 -15 28 10 C 18 25 0 28 0 28 C 0 28 -18 25 -28 10 Z" fill="url(#angGold)"/>
@@ -27,7 +26,7 @@
 
   <!-- Badge 102.9 FM Accra / Kumasi -->
   <g transform="translate(256, 285)">
-    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#angGold)" filter="url(#angDrop)"/>
+    <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#angGold)"/>
     <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#0a1226" text-anchor="middle" letter-spacing="2">102.9 FM • ACCRA</text>
   </g>
 

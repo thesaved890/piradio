@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="bzhBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -9,9 +10,7 @@
       <stop offset="0%" stop-color="#ffd54f"/>
       <stop offset="100%" stop-color="#ffb300"/>
     </linearGradient>
-    <filter id="bzhDrop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond -->
@@ -23,7 +22,7 @@
   <circle cx="256" cy="190" r="170" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="2"/>
 
   <!-- Emblème central Gwenn ha Du &amp; Triskell -->
-  <g filter="url(#bzhDrop)">
+  <g>
     <circle cx="256" cy="180" r="76" fill="#111620" stroke="url(#bzhGold)" stroke-width="4"/>
     <!-- Triskell celte stylisé doré -->
     <g fill="none" stroke="url(#bzhGold)" stroke-width="6" stroke-linecap="round">
@@ -46,4 +45,3 @@
   <!-- Villes phares -->
   <text x="256" y="435" fill="#e0e0e0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="16" text-anchor="middle" letter-spacing="2">RENNES • BREST • QUIMPER • VANNES</text>
 </svg>
-

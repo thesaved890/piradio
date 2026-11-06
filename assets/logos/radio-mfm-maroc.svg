@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
   <defs>
     <linearGradient id="mfmBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -10,12 +11,10 @@
       <stop offset="50%" stop-color="#FCBF49"/>
       <stop offset="100%" stop-color="#EAE2B7"/>
     </linearGradient>
-    <filter id="mfmShadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
-  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#mfmBg)" stroke="#F77F00" stroke-width="3" filter="url(#mfmShadow)"/>
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#mfmBg)" stroke="#F77F00" stroke-width="3"/>
 
   <!-- Sigle MFM dynamique -->
   <g transform="translate(100, 52)">
@@ -24,7 +23,7 @@
   </g>
 
   <!-- Titre RADIO MFM -->
-  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle" filter="url(#mfmShadow)">RADIO MFM</text>
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle">RADIO MFM</text>
 
   <!-- Tag LA RADIO DU MAROC -->
   <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#mfmOrange)"/>

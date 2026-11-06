@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="fiveBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -13,9 +14,7 @@
       <stop offset="0%" stop-color="#facc15"/>
       <stop offset="100%" stop-color="#eab308"/>
     </linearGradient>
-    <filter id="fiveDrop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#3d82f6" flood-opacity="0.4"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond -->
@@ -23,14 +22,14 @@
   <rect x="12" y="12" width="488" height="488" rx="88" fill="none" stroke="#3d82f6" stroke-opacity="0.35" stroke-width="4"/>
 
   <!-- Logo 5FM central -->
-  <g filter="url(#fiveDrop)" transform="translate(256, 175)">
+  <g transform="translate(256, 175)">
     <circle cx="0" cy="0" r="76" fill="#0d1933" stroke="url(#fiveGold)" stroke-width="5"/>
     <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="62" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">5FM</text>
   </g>
 
   <!-- Badge Fréquence 89.9 FM -->
   <g transform="translate(256, 285)">
-    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#fiveGold)" filter="url(#fiveDrop)"/>
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#fiveGold)"/>
     <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#0a1224" text-anchor="middle" letter-spacing="1">89.9 FM</text>
   </g>
 
@@ -43,4 +42,3 @@
   <!-- Ville / Pays -->
   <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#facc15" text-anchor="middle" letter-spacing="2">LUSAKA • ZAMBIA 🇿🇲</text>
 </svg>
-

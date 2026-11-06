@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="wcr1Bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -13,9 +14,7 @@
       <stop offset="0%" stop-color="#29b6f6"/>
       <stop offset="100%" stop-color="#0288d1"/>
     </linearGradient>
-    <filter id="wcr1Drop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond -->
@@ -30,7 +29,7 @@
   </g>
 
   <!-- Emblème central WEST COAST RADIO 1 -->
-  <g filter="url(#wcr1Drop)" transform="translate(256, 185)">
+  <g transform="translate(256, 185)">
     <circle cx="0" cy="0" r="76" fill="#031b30" stroke="url(#wcr1Gold)" stroke-width="5"/>
     <!-- Vague &amp; Soleil stylisé -->
     <path d="M -45 15 Q -20 -15 0 10 Q 20 -15 45 15 L 45 35 L -45 35 Z" fill="url(#wcr1Cyan)" opacity="0.85"/>
@@ -40,7 +39,7 @@
 
   <!-- Badge Fréquence 92.1 FM -->
   <g transform="translate(256, 290)">
-    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#wcr1Gold)" filter="url(#wcr1Drop)"/>
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#wcr1Gold)"/>
     <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="21" font-weight="900" fill="#021526" text-anchor="middle" letter-spacing="1">92.1 FM</text>
   </g>
 
@@ -53,4 +52,3 @@
   <!-- Drapeau gambien miniature et ville -->
   <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#ffd54f" text-anchor="middle" letter-spacing="2">BANJUL • THE GAMBIA 🇬🇲</text>
 </svg>
-

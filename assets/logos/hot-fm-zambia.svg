@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="hotBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -14,9 +15,7 @@
       <stop offset="0%" stop-color="#ffd54f"/>
       <stop offset="100%" stop-color="#ff9100"/>
     </linearGradient>
-    <filter id="hotDrop" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#ff3d00" flood-opacity="0.5"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond -->
@@ -24,7 +23,7 @@
   <rect x="12" y="12" width="488" height="488" rx="88" fill="none" stroke="#ff3d00" stroke-opacity="0.35" stroke-width="4"/>
 
   <!-- Flamme HOT FM stylisée -->
-  <g filter="url(#hotDrop)" transform="translate(256, 175)">
+  <g transform="translate(256, 175)">
     <circle cx="0" cy="0" r="76" fill="#200500" stroke="url(#hotFlame)" stroke-width="5"/>
     <!-- Flamme dynamique -->
     <path d="M 0 -45 C 20 -25 35 -10 30 20 C 25 35 15 45 0 45 C -15 45 -25 35 -30 20 C -35 5 -15 -10 0 -45 Z" fill="url(#hotFlame)"/>
@@ -33,7 +32,7 @@
 
   <!-- Badge Fréquence 87.7 FM -->
   <g transform="translate(256, 285)">
-    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#hotGold)" filter="url(#hotDrop)"/>
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="url(#hotGold)"/>
     <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#1a0400" text-anchor="middle" letter-spacing="1">87.7 FM</text>
   </g>
 
@@ -46,4 +45,3 @@
   <!-- Ville / Pays -->
   <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#ffd54f" text-anchor="middle" letter-spacing="2">LUSAKA • ZAMBIA 🇿🇲</text>
 </svg>
-

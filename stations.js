@@ -5664,6 +5664,280 @@ const CURATED_STATIONS = [
   },
 
   // ==========================================
+  // 7.b 🇪🇺 EXPANSION EUROPÉENNE (Portugal, Pays-Bas, Suisse, Irlande, Pologne, Autriche, UK, Italie)
+  // ==========================================
+  {
+    id: "antena1-portugal",
+    name: "Antena 1 (RTP) 98.3 FM",
+    country: "Portugal",
+    city: "Lisbonne",
+    code: "🇵🇹",
+    continent: "europe",
+    category: "news",
+    frequency: "98.3",
+    band: "FM",
+    language: "Português",
+    genre: "Notícias, Cultura Portuguesa e Informação Nacional",
+    streamUrl: "https://radiocast.rtp.pt/antena180a.mp3",
+    fallbackUrl: "https://radiocast.rtp.pt/antena180a.mp3",
+    logo: "assets/logos/antena1-portugal.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "antena3-portugal",
+    name: "Antena 3 (RTP) 100.3 FM",
+    country: "Portugal",
+    city: "Lisbonne",
+    code: "🇵🇹",
+    continent: "europe",
+    category: "culture",
+    frequency: "100.3",
+    band: "FM",
+    language: "Português",
+    genre: "Música Alternativa, Indie, Pop & Novos Talentos",
+    streamUrl: "https://radiocast.rtp.pt/antena380a.mp3",
+    fallbackUrl: "https://radiocast.rtp.pt/antena380a.mp3",
+    logo: "assets/logos/antena3-portugal.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "npo-radio1-nl",
+    name: "NPO Radio 1 98.9 FM",
+    country: "Pays-Bas",
+    city: "Hilversum / Amsterdam",
+    code: "🇳🇱",
+    continent: "europe",
+    category: "news",
+    frequency: "98.9",
+    band: "FM",
+    language: "Nederlands",
+    genre: "Nieuws, Achtergronden, Sport & Publieke Omroep",
+    streamUrl: "https://icecast.omroep.nl/radio1-bb-mp3",
+    fallbackUrl: "https://icecast.omroep.nl/radio1-bb-mp3",
+    logo: "assets/logos/npo-radio1-nl.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "npo-3fm-nl",
+    name: "NPO 3FM 96.8 FM",
+    country: "Pays-Bas",
+    city: "Amsterdam",
+    code: "🇳🇱",
+    continent: "europe",
+    category: "culture",
+    frequency: "96.8",
+    band: "FM",
+    language: "Nederlands",
+    genre: "Pop, Indie Rock, Festivals & Nieuwe Muziek",
+    streamUrl: "https://icecast.omroep.nl/3fm-bb-mp3",
+    fallbackUrl: "https://icecast.omroep.nl/3fm-bb-mp3",
+    logo: "assets/logos/npo-3fm-nl.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "rts-la-premiere-suisse",
+    name: "RTS La Première 91.2 FM",
+    country: "Suisse",
+    city: "Genève / Lausanne",
+    code: "🇨🇭",
+    continent: "europe",
+    category: "news",
+    frequency: "91.2",
+    band: "FM",
+    language: "Français",
+    genre: "Actualités suisses et internationales, Débats & Culture romande",
+    streamUrl: "https://stream.srg-ssr.ch/m/la-1ere/mp3_128",
+    fallbackUrl: "https://stream.srg-ssr.ch/m/la-1ere/mp3_128",
+    logo: "assets/logos/rts-la-premiere-suisse.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "srf3-suisse",
+    name: "SRF 3 103.8 FM",
+    country: "Suisse",
+    city: "Zurich",
+    code: "🇨🇭",
+    continent: "europe",
+    category: "culture",
+    frequency: "103.8",
+    band: "FM",
+    language: "Deutsch / Schwiizerdütsch",
+    genre: "Pop-Rock, Popkultur & Schweizer Musikszene",
+    streamUrl: "https://stream.srg-ssr.ch/m/srf3/mp3_128",
+    fallbackUrl: "https://stream.srg-ssr.ch/m/srf3/mp3_128",
+    logo: "assets/logos/srf3-suisse.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "rte-radio1-ireland",
+    name: "RTÉ Radio 1 88.5 FM",
+    country: "Irlande",
+    city: "Dublin",
+    code: "🇮🇪",
+    continent: "europe",
+    category: "news",
+    frequency: "88.5",
+    band: "FM",
+    language: "English & Gaeilge",
+    genre: "Irish News, Current Affairs, Drama & Arts",
+    streamUrl: "https://icecast2.rte.ie/radio1",
+    fallbackUrl: "https://icecast2.rte.ie/radio1",
+    logo: "assets/logos/rte-radio1-ireland.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "newstalk-ireland",
+    name: "Newstalk 106.0 FM",
+    country: "Irlande",
+    city: "Dublin",
+    code: "🇮🇪",
+    continent: "europe",
+    category: "news",
+    frequency: "106.0",
+    band: "FM",
+    language: "English",
+    genre: "Independent Irish Talk, Business, Sport & Opinion",
+    streamUrl: "https://stream.audioxi.com/NT",
+    fallbackUrl: "https://stream.audioxi.com/NT",
+    logo: "assets/logos/newstalk-ireland.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "rmf-fm-pologne",
+    name: "RMF FM 96.0 FM",
+    country: "Pologne",
+    city: "Cracovie / Varsovie",
+    code: "🇵🇱",
+    continent: "europe",
+    category: "culture",
+    frequency: "96.0",
+    band: "FM",
+    language: "Polski",
+    genre: "Największe Przeboje, Fakty RMF & Wiadomości",
+    streamUrl: "https://rs6-krk2.rmfstream.pl/RMFFM48",
+    fallbackUrl: "https://rs6-krk2.rmfstream.pl/RMFFM48",
+    logo: "assets/logos/rmf-fm-pologne.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "radio-zet-pologne",
+    name: "Radio ZET 107.5 FM",
+    country: "Pologne",
+    city: "Varsovie",
+    code: "🇵🇱",
+    continent: "europe",
+    category: "culture",
+    frequency: "107.5",
+    band: "FM",
+    language: "Polski",
+    genre: "Wiadomości, Hity na Czasie & Rozmowy Poranne",
+    streamUrl: "https://zt.cdn.eurozet.pl/zet-net.mp3",
+    fallbackUrl: "https://zt.cdn.eurozet.pl/zet-net.mp3",
+    logo: "assets/logos/radio-zet-pologne.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "hitradio-oe3-austria",
+    name: "Hitradio Ö3 99.9 FM",
+    country: "Autriche",
+    city: "Vienne",
+    code: "🇦🇹",
+    continent: "europe",
+    category: "culture",
+    frequency: "99.9",
+    band: "FM",
+    language: "Deutsch",
+    genre: "Österreichs Pop-Radio, Ö3-Nachrichten & Charts",
+    streamUrl: "https://orf-live.ors-shoutcast.at/oe3-q2a",
+    fallbackUrl: "https://orf-live.ors-shoutcast.at/oe3-q2a",
+    logo: "assets/logos/hitradio-oe3-austria.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "fm4-austria",
+    name: "Radio FM4 103.8 FM",
+    country: "Autriche",
+    city: "Vienne",
+    code: "🇦🇹",
+    continent: "europe",
+    category: "culture",
+    frequency: "103.8",
+    band: "FM",
+    language: "English & Deutsch",
+    genre: "Indie Rock, Electronic, Youth Culture & Global News",
+    streamUrl: "https://orf-live.ors-shoutcast.at/fm4-q2a",
+    fallbackUrl: "https://orf-live.ors-shoutcast.at/fm4-q2a",
+    logo: "assets/logos/fm4-austria.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "lbc-london",
+    name: "LBC 97.3 FM (London)",
+    country: "Royaume-Uni",
+    city: "Londres",
+    code: "🇬🇧",
+    continent: "europe",
+    category: "news",
+    frequency: "97.3",
+    band: "FM",
+    language: "English",
+    genre: "Leading Britain's Conversation • News, Politics & Debate",
+    streamUrl: "https://icecast.thisisdax.com/LBCUK",
+    fallbackUrl: "https://icecast.thisisdax.com/LBCUK",
+    logo: "assets/logos/lbc-london.svg",
+    featured: true,
+    locked: true
+  },
+  {
+    id: "classic-fm-uk",
+    name: "Classic FM 100.9 FM",
+    country: "Royaume-Uni",
+    city: "Londres",
+    code: "🇬🇧",
+    continent: "europe",
+    category: "culture",
+    frequency: "100.9",
+    band: "FM",
+    language: "English",
+    genre: "World's Greatest Classical Music & Relaxing Soundscapes",
+    streamUrl: "https://icecast.thisisdax.com/ClassicFM",
+    fallbackUrl: "https://icecast.thisisdax.com/ClassicFM",
+    logo: "assets/logos/classic-fm-uk.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "radio-105-italie",
+    name: "Radio 105 99.1 FM",
+    country: "Italie",
+    city: "Milan",
+    code: "🇮🇹",
+    continent: "europe",
+    category: "culture",
+    frequency: "99.1",
+    band: "FM",
+    language: "Italiano",
+    genre: "Musica Pop, Intrattenimento, Lo Zoo di 105 & Hit Parade",
+    streamUrl: "https://icecast.unitedradio.it/Radio105.mp3",
+    fallbackUrl: "https://icecast.unitedradio.it/Radio105.mp3",
+    logo: "assets/logos/radio-105-italie.svg",
+    featured: true,
+    locked: true
+  },
+
+  // ==========================================
   // 8. ⚽ SPORTS EN DIRECT (FOOTBALL & MULTIPLEX)
   // ==========================================
   {
@@ -6180,17 +6454,59 @@ const GLOBAL_LOCATION_SYNONYMS = {
   "italia": { code: "IT", en: "Italy", fr: "Italie", continent: "europe", type: "country" },
 
   "portugal": { code: "PT", en: "Portugal", fr: "Portugal", continent: "europe", type: "country" },
+  "lisbonne": { code: "PT", en: "Lisbon", fr: "Lisbonne", continent: "europe", type: "city" },
+  "lisbon": { code: "PT", en: "Lisbon", fr: "Lisbonne", continent: "europe", type: "city" },
+  "porto": { code: "PT", en: "Porto", fr: "Porto", continent: "europe", type: "city" },
+
   "belgique": { code: "BE", en: "Belgium", fr: "Belgique", continent: "europe", type: "country" },
   "belgium": { code: "BE", en: "Belgium", fr: "Belgique", continent: "europe", type: "country" },
+  "bruxelles": { code: "BE", en: "Brussels", fr: "Bruxelles", continent: "europe", type: "city" },
+  "brussels": { code: "BE", en: "Brussels", fr: "Bruxelles", continent: "europe", type: "city" },
+
   "suisse": { code: "CH", en: "Switzerland", fr: "Suisse", continent: "europe", type: "country" },
   "switzerland": { code: "CH", en: "Switzerland", fr: "Suisse", continent: "europe", type: "country" },
+  "schweiz": { code: "CH", en: "Switzerland", fr: "Suisse", continent: "europe", type: "country" },
+  "svizzera": { code: "CH", en: "Switzerland", fr: "Suisse", continent: "europe", type: "country" },
+  "geneve": { code: "CH", en: "Geneva", fr: "Genève", continent: "europe", type: "city" },
+  "genève": { code: "CH", en: "Geneva", fr: "Genève", continent: "europe", type: "city" },
+  "lausanne": { code: "CH", en: "Lausanne", fr: "Lausanne", continent: "europe", type: "city" },
+  "zurich": { code: "CH", en: "Zurich", fr: "Zurich", continent: "europe", type: "city" },
+  "zürich": { code: "CH", en: "Zurich", fr: "Zurich", continent: "europe", type: "city" },
+
   "pays-bas": { code: "NL", en: "Netherlands", fr: "Pays-Bas", continent: "europe", type: "country" },
   "pays bas": { code: "NL", en: "Netherlands", fr: "Pays-Bas", continent: "europe", type: "country" },
   "hollande": { code: "NL", en: "Netherlands", fr: "Hollande", continent: "europe", type: "country" },
   "netherlands": { code: "NL", en: "Netherlands", fr: "Pays-Bas", continent: "europe", type: "country" },
+  "nederland": { code: "NL", en: "Netherlands", fr: "Pays-Bas", continent: "europe", type: "country" },
+  "amsterdam": { code: "NL", en: "Amsterdam", fr: "Amsterdam", continent: "europe", type: "city" },
+  "rotterdam": { code: "NL", en: "Rotterdam", fr: "Rotterdam", continent: "europe", type: "city" },
+
+  "irlande": { code: "IE", en: "Ireland", fr: "Irlande", continent: "europe", type: "country" },
+  "ireland": { code: "IE", en: "Ireland", fr: "Irlande", continent: "europe", type: "country" },
+  "éire": { code: "IE", en: "Ireland", fr: "Irlande", continent: "europe", type: "country" },
+  "dublin": { code: "IE", en: "Dublin", fr: "Dublin", continent: "europe", type: "city" },
+
+  "autriche": { code: "AT", en: "Austria", fr: "Autriche", continent: "europe", type: "country" },
+  "austria": { code: "AT", en: "Austria", fr: "Autriche", continent: "europe", type: "country" },
+  "österreich": { code: "AT", en: "Austria", fr: "Autriche", continent: "europe", type: "country" },
+  "vienne": { code: "AT", en: "Vienna", fr: "Vienne", continent: "europe", type: "city" },
+  "wien": { code: "AT", en: "Vienna", fr: "Vienne", continent: "europe", type: "city" },
+
+  "pologne": { code: "PL", en: "Poland", fr: "Pologne", continent: "europe", type: "country" },
+  "poland": { code: "PL", en: "Poland", fr: "Pologne", continent: "europe", type: "country" },
+  "polska": { code: "PL", en: "Poland", fr: "Pologne", continent: "europe", type: "country" },
+  "varsovie": { code: "PL", en: "Warsaw", fr: "Varsovie", continent: "europe", type: "city" },
+  "warsaw": { code: "PL", en: "Warsaw", fr: "Varsovie", continent: "europe", type: "city" },
+  "cracovie": { code: "PL", en: "Krakow", fr: "Cracovie", continent: "europe", type: "city" },
+  "krakow": { code: "PL", en: "Krakow", fr: "Cracovie", continent: "europe", type: "city" },
+
+  "milan": { code: "IT", en: "Milan", fr: "Milan", continent: "europe", type: "city" },
+  "milano": { code: "IT", en: "Milan", fr: "Milan", continent: "europe", type: "city" },
+  "rome": { code: "IT", en: "Rome", fr: "Rome", continent: "europe", type: "city" },
+  "roma": { code: "IT", en: "Rome", fr: "Rome", continent: "europe", type: "city" },
+
   "russie": { code: "RU", en: "Russia", fr: "Russie", continent: "europe", type: "country" },
   "russia": { code: "RU", en: "Russia", fr: "Russie", continent: "europe", type: "country" },
-  "pologne": { code: "PL", en: "Poland", fr: "Pologne", continent: "europe", type: "country" },
   "grece": { code: "GR", en: "Greece", fr: "Grèce", continent: "europe", type: "country" },
   "grèce": { code: "GR", en: "Greece", fr: "Grèce", continent: "europe", type: "country" },
 
@@ -6712,6 +7028,58 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("wclv") || nameLow.includes("90.3")) return "assets/logos/wclv-90-3-cleveland.svg";
     if (nameLow.includes("wjcu") || nameLow.includes("88.7")) return "assets/logos/wjcu-88-7-cleveland.svg";
   }
+
+  // 1.f-3 Hubs Pionniers Majeurs d'Europe 🇪🇺 (v5.26)
+  const isPortugal = (cCode === "PT") || (st.code === "🇵🇹") || (st.country || "").toLowerCase().includes("portugal") || nameLow.includes("portugal") || nameLow.includes("lisboa") || nameLow.includes("lisbonne") || nameLow.includes("porto");
+  if (isPortugal) {
+    if (nameLow.includes("antena 1") || nameLow.includes("antena1")) return "assets/logos/antena1-portugal.svg";
+    if (nameLow.includes("antena 3") || nameLow.includes("antena3")) return "assets/logos/antena3-portugal.svg";
+  }
+
+  const isPaysBas = (cCode === "NL") || (st.code === "🇳🇱") || (st.country || "").toLowerCase().includes("netherlands") || (st.country || "").toLowerCase().includes("pays-bas") || (st.country || "").toLowerCase().includes("pays bas") || nameLow.includes("amsterdam") || nameLow.includes("rotterdam");
+  if (isPaysBas) {
+    if (nameLow.includes("npo radio 1") || (nameLow.includes("npo") && nameLow.includes("radio 1"))) return "assets/logos/npo-radio1-nl.svg";
+    if (nameLow.includes("npo 3fm") || nameLow.includes("3fm")) return "assets/logos/npo-3fm-nl.svg";
+  }
+
+  const isSuisse = (cCode === "CH") || (st.code === "🇨🇭") || (st.country || "").toLowerCase().includes("switzerland") || (st.country || "").toLowerCase().includes("suisse") || nameLow.includes("geneve") || nameLow.includes("genève") || nameLow.includes("lausanne") || nameLow.includes("zurich");
+  if (isSuisse) {
+    if (nameLow.includes("première") || nameLow.includes("premiere") || nameLow.includes("rts la 1ère") || nameLow.includes("rts la premiere")) return "assets/logos/rts-la-premiere-suisse.svg";
+    if (nameLow.includes("srf 3") || nameLow.includes("srf3")) return "assets/logos/srf3-suisse.svg";
+  }
+
+  const isIrlande = (cCode === "IE") || (st.code === "🇮🇪") || (st.country || "").toLowerCase().includes("ireland") || (st.country || "").toLowerCase().includes("irlande") || nameLow.includes("dublin");
+  if (isIrlande) {
+    if (nameLow.includes("rté radio 1") || nameLow.includes("rte radio 1")) return "assets/logos/rte-radio1-ireland.svg";
+    if (nameLow.includes("newstalk")) return "assets/logos/newstalk-ireland.svg";
+  }
+
+  const isPologne = (cCode === "PL") || (st.code === "🇵🇱") || (st.country || "").toLowerCase().includes("poland") || (st.country || "").toLowerCase().includes("pologne") || nameLow.includes("warsaw") || nameLow.includes("varsovie") || nameLow.includes("krakow");
+  if (isPologne) {
+    if (nameLow.includes("rmf fm") || nameLow.includes("rmf")) return "assets/logos/rmf-fm-pologne.svg";
+    if (nameLow.includes("radio zet") || nameLow.includes("zet")) return "assets/logos/radio-zet-pologne.svg";
+  }
+
+  const isAutriche = (cCode === "AT") || (st.code === "🇦🇹") || (st.country || "").toLowerCase().includes("austria") || (st.country || "").toLowerCase().includes("autriche") || nameLow.includes("vienna") || nameLow.includes("vienne");
+  if (isAutriche) {
+    if (nameLow.includes("oe3") || nameLow.includes("ö3") || nameLow.includes("hitradio")) return "assets/logos/hitradio-oe3-austria.svg";
+    if (nameLow.includes("fm4")) return "assets/logos/fm4-austria.svg";
+  }
+
+  const isUK = (cCode === "GB") || (cCode === "UK") || (st.code === "🇬🇧") || (st.country || "").toLowerCase().includes("united kingdom") || (st.country || "").toLowerCase().includes("royaume-uni") || nameLow.includes("london") || nameLow.includes("londres");
+  if (isUK) {
+    if (nameLow.includes("lbc") && !nameLow.includes("news")) return "assets/logos/lbc-london.svg";
+    if (nameLow.includes("classic fm") && (isUK || nameLow.includes("uk") || nameLow.includes("london"))) return "assets/logos/classic-fm-uk.svg";
+  }
+
+  const isItalie = (cCode === "IT") || (st.code === "🇮🇹") || (st.country || "").toLowerCase().includes("italy") || (st.country || "").toLowerCase().includes("italie") || nameLow.includes("roma") || nameLow.includes("rome") || nameLow.includes("milan") || nameLow.includes("milano");
+  if (isItalie) {
+    if (nameLow.includes("105") || nameLow.includes("radio 105")) return "assets/logos/radio-105-italie.svg";
+  }
+
+  const isEspagne = (cCode === "ES") || (st.code === "🇪🇸") || (st.country || "").toLowerCase().includes("spain") || (st.country || "").toLowerCase().includes("espagne") || nameLow.includes("madrid") || nameLow.includes("barcelona");
+
+  const isAllemagne = (cCode === "DE") || (st.code === "🇩🇪") || (st.country || "").toLowerCase().includes("germany") || (st.country || "").toLowerCase().includes("allemagne") || nameLow.includes("berlin") || nameLow.includes("munich");
 
   // 1.g Logos officiels Nigéria 🇳🇬
   const isNigeria = (cCode === "NG") || (st.code === "🇳🇬") || (st.country || "").toLowerCase().includes("nigeria") || (st.country || "").toLowerCase().includes("nigéria") || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
@@ -7263,6 +7631,36 @@ function resolveRegionalStationLogo(st) {
   }
   if (isOhio) {
     return "assets/logos/ohio-radio-badge.svg";
+  }
+  if (isPortugal) {
+    return "assets/logos/portugal-radio-badge.svg";
+  }
+  if (isPaysBas) {
+    return "assets/logos/pays-bas-radio-badge.svg";
+  }
+  if (isSuisse) {
+    return "assets/logos/suisse-radio-badge.svg";
+  }
+  if (isIrlande) {
+    return "assets/logos/irlande-radio-badge.svg";
+  }
+  if (isPologne) {
+    return "assets/logos/pologne-radio-badge.svg";
+  }
+  if (isAutriche) {
+    return "assets/logos/autriche-radio-badge.svg";
+  }
+  if (isUK) {
+    return "assets/logos/uk-radio-badge.svg";
+  }
+  if (isItalie) {
+    return "assets/logos/italie-radio-badge.svg";
+  }
+  if (isEspagne) {
+    return "assets/logos/espagne-radio-badge.svg";
+  }
+  if (isAllemagne) {
+    return "assets/logos/allemagne-radio-badge.svg";
   }
   if (isNigeria) {
     return "assets/logos/nigeria-radio-badge.svg";

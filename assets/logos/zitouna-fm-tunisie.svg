@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
   <defs>
     <linearGradient id="zitBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -10,12 +11,10 @@
       <stop offset="50%" stop-color="#52B788"/>
       <stop offset="100%" stop-color="#D4AF37"/>
     </linearGradient>
-    <filter id="zitShadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
-  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#zitBg)" stroke="#52B788" stroke-width="3" filter="url(#zitShadow)"/>
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#zitBg)" stroke="#52B788" stroke-width="3"/>
 
   <!-- Rameau d'olivier (Zitouna) stylisé -->
   <g transform="translate(100, 52)">
@@ -26,7 +25,7 @@
   </g>
 
   <!-- Titre ZITOUNA FM -->
-  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="21" letter-spacing="2" text-anchor="middle" filter="url(#zitShadow)">ZITOUNA FM</text>
+  <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="21" letter-spacing="2" text-anchor="middle">ZITOUNA FM</text>
 
   <!-- Tag إذاعة الزيتونة للقرآن الكريم -->
   <rect x="34" y="116" width="132" height="26" rx="8" fill="#2D6A4F" stroke="#D4AF37" stroke-width="1.2"/>
@@ -36,4 +35,3 @@
   <rect x="24" y="152" width="152" height="28" rx="8" fill="#092115" stroke="#52B788" stroke-width="1.2"/>
   <text x="100" y="171" fill="#D4AF37" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="1.8" text-anchor="middle">إذاعة الزيتونة • TUNISIE</text>
 </svg>
-

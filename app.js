@@ -234,6 +234,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (s.includes("nevada") || city.includes("las vegas")) return "assets/logos/nevada-radio-badge.svg";
     if (s.includes("columbia") || city.includes("washington")) return "assets/logos/dc-radio-badge.svg";
     if (s.includes("ohio") || city.includes("cleveland") || city.includes("columbus")) return "assets/logos/ohio-radio-badge.svg";
+    if (code === "🇵🇹" || cCode === "PT" || c.includes("portugal") || n.includes("portugal") || city.includes("lisbon") || city.includes("porto")) return "assets/logos/portugal-radio-badge.svg";
+    if (code === "🇳🇱" || cCode === "NL" || c.includes("netherlands") || c.includes("pays-bas") || city.includes("amsterdam") || city.includes("rotterdam")) return "assets/logos/pays-bas-radio-badge.svg";
+    if (code === "🇨🇭" || cCode === "CH" || c.includes("switzerland") || c.includes("suisse") || city.includes("genev") || city.includes("zurich")) return "assets/logos/suisse-radio-badge.svg";
+    if (code === "🇮🇪" || cCode === "IE" || c.includes("ireland") || c.includes("irlande") || city.includes("dublin")) return "assets/logos/irlande-radio-badge.svg";
+    if (code === "🇵🇱" || cCode === "PL" || c.includes("poland") || c.includes("pologne") || city.includes("warsaw") || city.includes("krakow")) return "assets/logos/pologne-radio-badge.svg";
+    if (code === "🇦🇹" || cCode === "AT" || c.includes("austria") || c.includes("autriche") || city.includes("vienna")) return "assets/logos/autriche-radio-badge.svg";
+    if (code === "🇬🇧" || cCode === "GB" || cCode === "UK" || c.includes("kingdom") || c.includes("royaume-uni") || city.includes("london")) return "assets/logos/uk-radio-badge.svg";
+    if (code === "🇮🇹" || cCode === "IT" || c.includes("italy") || c.includes("italie") || city.includes("rome") || city.includes("milan")) return "assets/logos/italie-radio-badge.svg";
+    if (code === "🇪🇸" || cCode === "ES" || c.includes("spain") || c.includes("espagne") || city.includes("madrid") || city.includes("barcelon")) return "assets/logos/espagne-radio-badge.svg";
+    if (code === "🇩🇪" || cCode === "DE" || c.includes("germany") || c.includes("allemagne") || city.includes("berlin") || city.includes("munich")) return "assets/logos/allemagne-radio-badge.svg";
     if (s.includes("michigan") || n.includes("michigan")) return "assets/logos/michigan-radio-badge.svg";
     if (s.includes("texas") || n.includes("texas")) return "assets/logos/texas-radio-badge.svg";
     if (s.includes("hawaii") || s.includes("hawai") || n.includes("hawaii")) return "assets/logos/hawaii-radio-badge.svg";
@@ -414,6 +424,58 @@ document.addEventListener("DOMContentLoaded", () => {
       if (nameLow.includes("wclv") || nameLow.includes("90.3")) return "assets/logos/wclv-90-3-cleveland.svg";
       if (nameLow.includes("wjcu") || nameLow.includes("88.7")) return "assets/logos/wjcu-88-7-cleveland.svg";
     }
+
+    // 1.f-3 Hubs Pionniers Majeurs d'Europe 🇪🇺 (v5.26)
+    const isPortugal = (cCode === "PT") || (st.code === "🇵🇹") || (st.country || "").toLowerCase().includes("portugal") || nameLow.includes("portugal") || nameLow.includes("lisboa") || nameLow.includes("lisbonne") || nameLow.includes("porto");
+    if (isPortugal) {
+      if (nameLow.includes("antena 1") || nameLow.includes("antena1")) return "assets/logos/antena1-portugal.svg";
+      if (nameLow.includes("antena 3") || nameLow.includes("antena3")) return "assets/logos/antena3-portugal.svg";
+    }
+
+    const isPaysBas = (cCode === "NL") || (st.code === "🇳🇱") || (st.country || "").toLowerCase().includes("netherlands") || (st.country || "").toLowerCase().includes("pays-bas") || (st.country || "").toLowerCase().includes("pays bas") || nameLow.includes("amsterdam") || nameLow.includes("rotterdam");
+    if (isPaysBas) {
+      if (nameLow.includes("npo radio 1") || (nameLow.includes("npo") && nameLow.includes("radio 1"))) return "assets/logos/npo-radio1-nl.svg";
+      if (nameLow.includes("npo 3fm") || nameLow.includes("3fm")) return "assets/logos/npo-3fm-nl.svg";
+    }
+
+    const isSuisse = (cCode === "CH") || (st.code === "🇨🇭") || (st.country || "").toLowerCase().includes("switzerland") || (st.country || "").toLowerCase().includes("suisse") || nameLow.includes("geneve") || nameLow.includes("genève") || nameLow.includes("lausanne") || nameLow.includes("zurich");
+    if (isSuisse) {
+      if (nameLow.includes("première") || nameLow.includes("premiere") || nameLow.includes("rts la 1ère") || nameLow.includes("rts la premiere")) return "assets/logos/rts-la-premiere-suisse.svg";
+      if (nameLow.includes("srf 3") || nameLow.includes("srf3")) return "assets/logos/srf3-suisse.svg";
+    }
+
+    const isIrlande = (cCode === "IE") || (st.code === "🇮🇪") || (st.country || "").toLowerCase().includes("ireland") || (st.country || "").toLowerCase().includes("irlande") || nameLow.includes("dublin");
+    if (isIrlande) {
+      if (nameLow.includes("rté radio 1") || nameLow.includes("rte radio 1")) return "assets/logos/rte-radio1-ireland.svg";
+      if (nameLow.includes("newstalk")) return "assets/logos/newstalk-ireland.svg";
+    }
+
+    const isPologne = (cCode === "PL") || (st.code === "🇵🇱") || (st.country || "").toLowerCase().includes("poland") || (st.country || "").toLowerCase().includes("pologne") || nameLow.includes("warsaw") || nameLow.includes("varsovie") || nameLow.includes("krakow");
+    if (isPologne) {
+      if (nameLow.includes("rmf fm") || nameLow.includes("rmf")) return "assets/logos/rmf-fm-pologne.svg";
+      if (nameLow.includes("radio zet") || nameLow.includes("zet")) return "assets/logos/radio-zet-pologne.svg";
+    }
+
+    const isAutriche = (cCode === "AT") || (st.code === "🇦🇹") || (st.country || "").toLowerCase().includes("austria") || (st.country || "").toLowerCase().includes("autriche") || nameLow.includes("vienna") || nameLow.includes("vienne");
+    if (isAutriche) {
+      if (nameLow.includes("oe3") || nameLow.includes("ö3") || nameLow.includes("hitradio")) return "assets/logos/hitradio-oe3-austria.svg";
+      if (nameLow.includes("fm4")) return "assets/logos/fm4-austria.svg";
+    }
+
+    const isUK = (cCode === "GB") || (cCode === "UK") || (st.code === "🇬🇧") || (st.country || "").toLowerCase().includes("united kingdom") || (st.country || "").toLowerCase().includes("royaume-uni") || nameLow.includes("london") || nameLow.includes("londres");
+    if (isUK) {
+      if (nameLow.includes("lbc") && !nameLow.includes("news")) return "assets/logos/lbc-london.svg";
+      if (nameLow.includes("classic fm") && (isUK || nameLow.includes("uk") || nameLow.includes("london"))) return "assets/logos/classic-fm-uk.svg";
+    }
+
+    const isItalie = (cCode === "IT") || (st.code === "🇮🇹") || (st.country || "").toLowerCase().includes("italy") || (st.country || "").toLowerCase().includes("italie") || nameLow.includes("roma") || nameLow.includes("rome") || nameLow.includes("milan") || nameLow.includes("milano");
+    if (isItalie) {
+      if (nameLow.includes("105") || nameLow.includes("radio 105")) return "assets/logos/radio-105-italie.svg";
+    }
+
+    const isEspagne = (cCode === "ES") || (st.code === "🇪🇸") || (st.country || "").toLowerCase().includes("spain") || (st.country || "").toLowerCase().includes("espagne") || nameLow.includes("madrid") || nameLow.includes("barcelona");
+
+    const isAllemagne = (cCode === "DE") || (st.code === "🇩🇪") || (st.country || "").toLowerCase().includes("germany") || (st.country || "").toLowerCase().includes("allemagne") || nameLow.includes("berlin") || nameLow.includes("munich");
 
     const isNigeria = (st.code === "🇳🇬") || (st.country && (st.country.toLowerCase().includes("nigeria") || st.country.toLowerCase().includes("nigéria"))) || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
     if (isNigeria) {
@@ -892,6 +954,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isNevada) return "assets/logos/nevada-radio-badge.svg";
     if (isDC) return "assets/logos/dc-radio-badge.svg";
     if (isOhio) return "assets/logos/ohio-radio-badge.svg";
+    if (isPortugal) return "assets/logos/portugal-radio-badge.svg";
+    if (isPaysBas) return "assets/logos/pays-bas-radio-badge.svg";
+    if (isSuisse) return "assets/logos/suisse-radio-badge.svg";
+    if (isIrlande) return "assets/logos/irlande-radio-badge.svg";
+    if (isPologne) return "assets/logos/pologne-radio-badge.svg";
+    if (isAutriche) return "assets/logos/autriche-radio-badge.svg";
+    if (isUK) return "assets/logos/uk-radio-badge.svg";
+    if (isItalie) return "assets/logos/italie-radio-badge.svg";
+    if (isEspagne) return "assets/logos/espagne-radio-badge.svg";
+    if (isAllemagne) return "assets/logos/allemagne-radio-badge.svg";
     if (isNigeria) return "assets/logos/nigeria-radio-badge.svg";
     if (isCameroon) return "assets/logos/cameroon-radio-badge.svg";
     if (isSenegal) return "assets/logos/senegal-radio-badge.svg";
@@ -1434,8 +1506,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const card = document.createElement("div");
     card.className = `station-card ${isCardPlaying ? "playing" : ""}`;
+    const flagFallbackUrl = getFlagFallback(st.code || '📻');
     card.innerHTML = `
-      <img class="station-logo" src="${resolvedLogo}" alt="${st.name}" loading="lazy"/>
+      <img class="station-logo" src="${resolvedLogo}" alt="${st.name}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackLogo}';this.onerror=function(){this.src='${flagFallbackUrl}';};"/>
       <div class="station-info">
         <div class="station-name">${st.name}</div>
         <div class="station-origin">

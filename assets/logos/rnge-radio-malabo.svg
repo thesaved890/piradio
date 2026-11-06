@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
   <defs>
     <linearGradient id="rngeBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -10,12 +11,10 @@
       <stop offset="50%" stop-color="#FFA000"/>
       <stop offset="100%" stop-color="#FF6F00"/>
     </linearGradient>
-    <filter id="rngeShadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
-  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#rngeBg)" stroke="#0073CE" stroke-width="3" filter="url(#rngeShadow)"/>
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#rngeBg)" stroke="#0073CE" stroke-width="3"/>
 
   <!-- 6 Étoiles d'or officielles au sommet -->
   <g transform="translate(45, 24)" fill="#FFD100">
@@ -28,7 +27,7 @@
   </g>
 
   <!-- Sigle RNGE imposant -->
-  <g transform="translate(100, 72)" filter="url(#rngeShadow)">
+  <g transform="translate(100, 72)">
     <text x="0" y="0" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="34" letter-spacing="3" text-anchor="middle">RNGE</text>
   </g>
 
@@ -40,4 +39,3 @@
   <rect x="20" y="150" width="160" height="30" rx="8" fill="#081e36" stroke="url(#rngeGold)" stroke-width="1.2"/>
   <text x="100" y="170" fill="#FFD100" font-family="'Inter', sans-serif" font-weight="800" font-size="10.5" letter-spacing="1.5" text-anchor="middle">MALABO • EMISORA OFICIAL</text>
 </svg>
-

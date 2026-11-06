@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
   <defs>
     <linearGradient id="maBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -10,16 +11,14 @@
       <stop offset="50%" stop-color="#FFA000"/>
       <stop offset="100%" stop-color="#FF6F00"/>
     </linearGradient>
-    <filter id="maDropShadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    
   </defs>
 
   <!-- Fond arrondi avec bordure dorée -->
-  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#maBgGrad)" stroke="url(#maGoldGlow)" stroke-width="3" filter="url(#maDropShadow)"/>
+  <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#maBgGrad)" stroke="url(#maGoldGlow)" stroke-width="3"/>
 
   <!-- Écusson chérifien marocain -->
-  <g transform="translate(42, 28)" filter="url(#maDropShadow)">
+  <g transform="translate(42, 28)">
     <clipPath id="maShieldClip">
       <path d="M 0 10 Q 0 0 10 0 L 106 0 Q 116 0 116 10 L 116 55 Q 116 95 58 116 Q 0 95 0 55 Z"/>
     </clipPath>

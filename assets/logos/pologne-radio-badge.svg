@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="plbg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4c0519"/>
+      <stop offset="100%" stop-color="#1f020a"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#plbg)" stroke="#f43f5e" stroke-width="2"/>
+  <rect x="40" y="52" width="120" height="28" fill="#ffffff" rx="4"/>
+  <rect x="40" y="80" width="120" height="28" fill="#e11d48" rx="4"/>
+  <text x="100" y="152" font-family="'Inter',sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">POLOGNE</text>
+  <text x="100" y="172" font-family="'Inter',sans-serif" font-size="9" font-weight="700" fill="#fda4af" text-anchor="middle" letter-spacing="2">POLSKIE RADIO</text>
+</svg>
