@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.28
+// Pi Radio • Service Worker v5.29
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.28';
+const CACHE_NAME = 'piradio-v5.29';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -94,6 +94,16 @@ const PRECACHE_ASSETS = [
   './assets/logos/cnr9-literature-radio.svg',
   './assets/logos/cnr15-traffic-radio.svg',
   './assets/logos/cri-global-news.svg',
+  // Logos Officiels Inde 🇮🇳 (v5.29)
+  './assets/logos/india-radio-badge.svg',
+  './assets/logos/air-vividh-bharati.svg',
+  './assets/logos/air-news-247.svg',
+  './assets/logos/air-fm-gold.svg',
+  './assets/logos/air-fm-rainbow.svg',
+  './assets/logos/air-fm-rainbow-mumbai.svg',
+  './assets/logos/radio-mirchi-top20.svg',
+  './assets/logos/radio-mirchi-love.svg',
+  './assets/logos/air-raagam-classical.svg',
   // Logos officiels Afrique du Sud 🇿🇦 (v5.8)
   './assets/logos/south-africa-radio-badge.svg',
   './assets/logos/jacaranda-fm-sa.svg',

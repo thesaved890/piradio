@@ -3421,36 +3421,154 @@ const CURATED_STATIONS = [
     locked: true
   },
   {
+    id: "air-vividh-bharati",
+    name: "AIR Vividh Bharati (विविध भारती)",
+    country: "Inde",
+    city: "Mumbai / National",
+    state: "Maharashtra",
+    code: "🇮🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "102.8",
+    band: "FM",
+    language: "हिन्दी (Hindi)",
+    genre: "Retro Bollywood, Golden Oldies & Iconic Hindi Radio • विविध भारती",
+    streamUrl: "https://air.pc.cdn.bitgravity.com/air/live/pbaudio001/playlist.m3u8",
+    fallbackUrl: "https://air.pc.cdn.bitgravity.com/air/live/pbaudio001/playlist.m3u8",
+    logo: "assets/logos/air-vividh-bharati.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "air-news-247-delhi",
+    name: "AIR News 24/7 (आकाशवाणी समाचार)",
+    country: "Inde",
+    city: "New Delhi",
+    state: "Delhi",
+    code: "🇮🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "100.1",
+    band: "FM",
+    language: "हिन्दी / English",
+    genre: "National News in Hindi & English, Debates & Current Affairs",
+    streamUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio002/hlspbaudio00264kbps.m3u8",
+    fallbackUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio002/hlspbaudio00264kbps.m3u8",
+    logo: "assets/logos/air-news-247.svg",
+    featured: true,
+    locked: false
+  },
+  {
     id: "radio-mirchi-top20",
     name: "Radio Mirchi Top 20 Bollywood",
     country: "Inde",
+    city: "Mumbai / National",
+    state: "Maharashtra",
     code: "🇮🇳",
     continent: "asia",
     category: "culture",
     frequency: "98.3",
     band: "FM",
     language: "हिन्दी / English",
-    genre: "India's #1 Bollywood Hits & Charts",
+    genre: "India's #1 Bollywood Hits & Charts • मिर्च टॉप 20",
     streamUrl: "https://drive.uber.radio/uber/bollywoodnow/icecast.audio",
     fallbackUrl: "https://drive.uber.radio/uber/bollywoodnow/icecast.audio",
-    logo: "assets/logos/radio-mirchi-top20.png",
+    logo: "assets/logos/radio-mirchi-top20.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "air-fm-rainbow-delhi",
+    name: "AIR FM Rainbow Delhi 102.6 FM",
+    country: "Inde",
+    city: "New Delhi",
+    state: "Delhi",
+    code: "🇮🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "102.6",
+    band: "FM",
+    language: "हिन्दी / English",
+    genre: "Bollywood Pop, Youth Hits, Indie & Filmi Music • रेनबो",
+    streamUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio004/hlspbaudio00464kbps.m3u8",
+    fallbackUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio004/hlspbaudio00464kbps.m3u8",
+    logo: "assets/logos/air-fm-rainbow.svg",
+    featured: false,
+    locked: false
+  },
+  {
+    id: "air-fm-gold-delhi",
+    name: "AIR FM Gold Delhi 106.4 FM",
+    country: "Inde",
+    city: "New Delhi",
+    state: "Delhi",
+    code: "🇮🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "106.4",
+    band: "FM",
+    language: "हिन्दी (Hindi)",
+    genre: "Evergreen Hindi Classics, Retro Melodies & Delhi News • एफएम गोल्ड",
+    streamUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio005/hlspbaudio00564kbps.m3u8",
+    fallbackUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio005/hlspbaudio00564kbps.m3u8",
+    logo: "assets/logos/air-fm-gold.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "air-fm-rainbow-mumbai",
+    name: "AIR FM Rainbow Mumbai 107.1 FM",
+    country: "Inde",
+    city: "Mumbai",
+    state: "Maharashtra",
+    code: "🇮🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "107.1",
+    band: "FM",
+    language: "हिन्दी / मराठी / English",
+    genre: "Amchi Mumbai Vibe, Bollywood Pop & Retro Classics",
+    streamUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio008/hlspbaudio008_Auto.m3u8",
+    fallbackUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio008/hlspbaudio008_Auto.m3u8",
+    logo: "assets/logos/air-fm-rainbow-mumbai.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "radio-mirchi-love",
+    name: "Radio Mirchi Love (Bollywood Romance)",
+    country: "Inde",
+    city: "Mumbai",
+    state: "Maharashtra",
+    code: "🇮🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "Web",
+    band: "WEB",
+    language: "हिन्दी",
+    genre: "Romantic Hindi Melodies, Love Songs & Acoustic Ballads • मिर्ची लव",
+    streamUrl: "https://drive.uber.radio/uber/bollywoodlove/icecast.audio",
+    fallbackUrl: "https://drive.uber.radio/uber/bollywoodlove/icecast.audio",
+    logo: "assets/logos/radio-mirchi-love.svg",
     featured: true,
     locked: true
   },
   {
-    id: "bollywood-gaane-purane",
-    name: "Bollywood Gaane Purane",
+    id: "air-raagam-classical",
+    name: "AIR Raagam (Indian Classical Ragas)",
     country: "Inde",
+    city: "Bengaluru / Chennai",
+    state: "Karnataka",
     code: "🇮🇳",
     continent: "asia",
     category: "culture",
-    frequency: "WEB",
+    frequency: "Web",
     band: "WEB",
-    language: "हिन्दी",
-    genre: "Classic Retro Bollywood Legends",
-    streamUrl: "https://stream.zeno.fm/6n6ewddtad0uv",
-    fallbackUrl: "https://stream.zeno.fm/6n6ewddtad0uv",
-    logo: "assets/logos/bollywood-gaane-purane.png",
+    language: "Classical (Carnatic & Hindustani)",
+    genre: "Classical Carnatic, Hindustani & Traditional Ragas • रागम्",
+    streamUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudioragam/hlspbaudioragam64kbps.m3u8",
+    fallbackUrl: "https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudioragam/hlspbaudioragam64kbps.m3u8",
+    logo: "assets/logos/air-raagam-classical.svg",
     featured: false,
     locked: true
   },
@@ -7400,6 +7518,21 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("cri") || nameLow.includes("环球资讯") || nameLow.includes("global news")) return "assets/logos/cri-global-news.svg";
   }
 
+  // 1.in Logos officiels Inde 🇮🇳 (v5.29)
+  const isIndia = (cCode === "IN") || (st.code === "🇮🇳") || (st.country || "").toLowerCase().includes("india") || (st.country || "").toLowerCase().includes("inde") || nameLow.includes("india") || nameLow.includes("inde") || nameLow.includes("delhi") || nameLow.includes("mumbai") || nameLow.includes("bombay") || nameLow.includes("bollywood") || nameLow.includes("akashvani") || nameLow.includes("vividh") || nameLow.includes("mirchi");
+  if (isIndia) {
+    if (nameLow.includes("vividh") || nameLow.includes("bharti") || nameLow.includes("bharati")) return "assets/logos/air-vividh-bharati.svg";
+    if (nameLow.includes("news 24") || (nameLow.includes("air") && nameLow.includes("news"))) return "assets/logos/air-news-247.svg";
+    if (nameLow.includes("gold")) return "assets/logos/air-fm-gold.svg";
+    if (nameLow.includes("rainbow")) {
+      if (nameLow.includes("mumbai") || nameLow.includes("bombay")) return "assets/logos/air-fm-rainbow-mumbai.svg";
+      return "assets/logos/air-fm-rainbow.svg";
+    }
+    if (nameLow.includes("mirchi") && (nameLow.includes("love") || nameLow.includes("romantic"))) return "assets/logos/radio-mirchi-love.svg";
+    if (nameLow.includes("mirchi")) return "assets/logos/radio-mirchi-top20.svg";
+    if (nameLow.includes("raagam") || nameLow.includes("ragam") || nameLow.includes("carnatic")) return "assets/logos/air-raagam-classical.svg";
+  }
+
   // 1.g Logos officiels Nigéria 🇳🇬
   const isNigeria = (cCode === "NG") || (st.code === "🇳🇬") || (st.country || "").toLowerCase().includes("nigeria") || (st.country || "").toLowerCase().includes("nigéria") || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
   if (isNigeria) {
@@ -7986,6 +8119,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isChine) {
     return "assets/logos/china-radio-badge.svg";
+  }
+  if (isIndia) {
+    return "assets/logos/india-radio-badge.svg";
   }
   if (isNigeria) {
     return "assets/logos/nigeria-radio-badge.svg";

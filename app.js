@@ -246,6 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (code === "🇩🇪" || cCode === "DE" || c.includes("germany") || c.includes("allemagne") || city.includes("berlin") || city.includes("munich")) return "assets/logos/allemagne-radio-badge.svg";
     if (code === "🇻🇳" || cCode === "VN" || c.includes("vietnam") || c.includes("viet nam") || n.includes("vietnam") || city.includes("hanoi") || city.includes("saigon") || city.includes("ho chi minh")) return "assets/logos/vietnam-radio-badge.svg";
     if (code === "🇨🇳" || cCode === "CN" || c.includes("china") || c.includes("chine") || n.includes("china") || city.includes("beijing") || city.includes("shanghai") || city.includes("pekin")) return "assets/logos/china-radio-badge.svg";
+    if (code === "🇮🇳" || cCode === "IN" || c.includes("india") || c.includes("inde") || n.includes("india") || city.includes("delhi") || city.includes("mumbai")) return "assets/logos/india-radio-badge.svg";
     if (s.includes("michigan") || n.includes("michigan")) return "assets/logos/michigan-radio-badge.svg";
     if (s.includes("texas") || n.includes("texas")) return "assets/logos/texas-radio-badge.svg";
     if (s.includes("hawaii") || s.includes("hawai") || n.includes("hawaii")) return "assets/logos/hawaii-radio-badge.svg";
@@ -505,6 +506,21 @@ document.addEventListener("DOMContentLoaded", () => {
       if (nameLow.includes("cnr 9") || nameLow.includes("cnr-9") || nameLow.includes("文艺之声") || nameLow.includes("literature")) return "assets/logos/cnr9-literature-radio.svg";
       if (nameLow.includes("cnr 15") || nameLow.includes("cnr-15") || nameLow.includes("交通广播") || nameLow.includes("traffic")) return "assets/logos/cnr15-traffic-radio.svg";
       if (nameLow.includes("cri") || nameLow.includes("环球资讯") || nameLow.includes("global news")) return "assets/logos/cri-global-news.svg";
+    }
+
+    // 1.in Logos officiels Inde 🇮🇳 (v5.29)
+    const isIndia = (cCode === "IN") || (st.code === "🇮🇳") || (st.country || "").toLowerCase().includes("india") || (st.country || "").toLowerCase().includes("inde") || nameLow.includes("india") || nameLow.includes("inde") || nameLow.includes("delhi") || nameLow.includes("mumbai") || nameLow.includes("bombay") || nameLow.includes("bollywood") || nameLow.includes("akashvani") || nameLow.includes("vividh") || nameLow.includes("mirchi");
+    if (isIndia) {
+      if (nameLow.includes("vividh") || nameLow.includes("bharti") || nameLow.includes("bharati")) return "assets/logos/air-vividh-bharati.svg";
+      if (nameLow.includes("news 24") || (nameLow.includes("air") && nameLow.includes("news"))) return "assets/logos/air-news-247.svg";
+      if (nameLow.includes("gold")) return "assets/logos/air-fm-gold.svg";
+      if (nameLow.includes("rainbow")) {
+        if (nameLow.includes("mumbai") || nameLow.includes("bombay")) return "assets/logos/air-fm-rainbow-mumbai.svg";
+        return "assets/logos/air-fm-rainbow.svg";
+      }
+      if (nameLow.includes("mirchi") && (nameLow.includes("love") || nameLow.includes("romantic"))) return "assets/logos/radio-mirchi-love.svg";
+      if (nameLow.includes("mirchi")) return "assets/logos/radio-mirchi-top20.svg";
+      if (nameLow.includes("raagam") || nameLow.includes("ragam") || nameLow.includes("carnatic")) return "assets/logos/air-raagam-classical.svg";
     }
 
     const isNigeria = (st.code === "🇳🇬") || (st.country && (st.country.toLowerCase().includes("nigeria") || st.country.toLowerCase().includes("nigéria"))) || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
@@ -996,6 +1012,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isAllemagne) return "assets/logos/allemagne-radio-badge.svg";
     if (isVietnam) return "assets/logos/vietnam-radio-badge.svg";
     if (isChine) return "assets/logos/china-radio-badge.svg";
+    if (isIndia) return "assets/logos/india-radio-badge.svg";
     if (isNigeria) return "assets/logos/nigeria-radio-badge.svg";
     if (isCameroon) return "assets/logos/cameroon-radio-badge.svg";
     if (isSenegal) return "assets/logos/senegal-radio-badge.svg";
