@@ -3,11 +3,16 @@
 // Axe 2 : Recherche Avancée (Fréquences FM, Sélecteur de Pays & Puces directes)
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialisation officielle du SDK Pi Network en mode Mainnet (sandbox: false)
+  // Détection dynamique et intelligente de l'environnement (Testnet vs Mainnet)
+  const isMainnetDomain = window.location.hostname.includes("mainnet");
+  const forceSandbox = window.location.search.includes("sandbox=true");
+  const forceMainnet = window.location.search.includes("sandbox=false");
+  const isSandbox = forceMainnet ? false : (forceSandbox || !isMainnetDomain);
+
   if (window.Pi) {
     try {
-      window.Pi.init({ version: "2.0", sandbox: false });
-      console.log("[Pi Radio] Pi SDK v2.0 initialisé avec succès en mode Mainnet officiel (sandbox: false).");
+      window.Pi.init({ version: "2.0", sandbox: isSandbox });
+      console.log(`[Pi Radio] Pi SDK v2.0 initialisé en mode ${isSandbox ? "Testnet (sandbox: true)" : "Mainnet (sandbox: false)"} sur ${window.location.hostname}.`);
     } catch (err) {
       console.warn("[Pi Radio] Pi.init notification :", err);
     }
