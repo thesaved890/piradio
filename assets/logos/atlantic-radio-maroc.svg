@@ -27,7 +27,7 @@
   <!-- Titre ATLANTIC -->
   <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle" filter="url(#atlShadow)">ATLANTIC</text>
 
-  <!-- Tag ÉCONOMIE & CULTURE -->
+  <!-- Tag ÉCONOMIE &amp; CULTURE -->
   <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#atlGold)"/>
   <text x="100" y="134" fill="#081426" font-family="'Inter', sans-serif" font-weight="900" font-size="11.5" letter-spacing="1.2" text-anchor="middle">RADIO D'INFLUENCE</text>
 

@@ -35,7 +35,7 @@
     <path d="M 200 190 A 70 70 0 0 1 312 190" stroke-width="5"/>
   </g>
 
-  <!-- Logo JAM dynamique avec casque & flamme -->
+  <!-- Logo JAM dynamique avec casque &amp; flamme -->
   <g filter="url(#jamDrop)" transform="translate(256, 185)">
     <circle cx="0" cy="0" r="62" fill="url(#jamFlame)"/>
     <circle cx="0" cy="0" r="54" fill="#1f0a00"/>

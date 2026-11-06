@@ -21,7 +21,7 @@
 
   <!-- Icon: Waves / Mountain / Kayes Sun -->
   <circle cx="100" cy="74" r="38" fill="#140b03" stroke="url(#kassaraTeal)" stroke-width="2"/>
-  <!-- Stylized Sun & River Senegal -->
+  <!-- Stylized Sun &amp; River Senegal -->
   <circle cx="100" cy="66" r="14" fill="url(#kassaraAmber)"/>
   <path d="M 74 82 Q 87 75, 100 82 T 126 82" fill="none" stroke="url(#kassaraTeal)" stroke-width="2.5" stroke-linecap="round"/>
   <path d="M 78 89 Q 89 82, 100 89 T 122 89" fill="none" stroke="url(#kassaraTeal)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>

@@ -12,7 +12,7 @@
   </defs>
   <rect width="200" height="200" rx="36" fill="url(#chBg)"/>
   <circle cx="100" cy="84" r="58" fill="none" stroke="url(#chGold)" stroke-width="2"/>
-  <!-- Graduation Cap & Radio Tower (Chancellor College) -->
+  <!-- Graduation Cap &amp; Radio Tower (Chancellor College) -->
   <polygon points="100,56 128,68 100,80 72,68" fill="url(#chGold)"/>
   <rect x="86" y="80" width="28" height="12" rx="3" fill="#ffffff"/>
   <!-- Radio Waves -->

@@ -28,7 +28,7 @@
   <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="82" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">TIMTIMOL FM</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="38" fill="url(#timGold)" text-anchor="middle" letter-spacing="6">OUROSSOGUI</text>
 
-  <!-- Slogan & Region -->
+  <!-- Slogan &amp; Region -->
   <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#BBDEFB" text-anchor="middle" letter-spacing="3">RÉGION DE MATAM</text>
   <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#E3F2FD" text-anchor="middle" letter-spacing="2">COMMUNAUTÉ DU FOUTA • SÉNÉGAL</text>
 

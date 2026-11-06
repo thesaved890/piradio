@@ -27,7 +27,7 @@
   <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="110" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">WALF FM</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="36" fill="url(#gold)" text-anchor="middle" letter-spacing="6">GROUPE WALFADJRI</text>
 
-  <!-- Slogan & Country -->
+  <!-- Slogan &amp; Country -->
   <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#BBDEFB" text-anchor="middle" letter-spacing="3">LA VOIX DES SANS-VOIX</text>
   <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#E3F2FD" text-anchor="middle" letter-spacing="2">DAKAR • SÉNÉGAL</text>
 

@@ -17,7 +17,7 @@
   <!-- Logo Springbok (Gazelle emblème d'Afrique du Sud) -->
   <g transform="translate(100, 68)">
     <circle cx="0" cy="0" r="38" fill="#0d2b19" stroke="url(#bokGold)" stroke-width="2"/>
-    <!-- Silhouette cornes de Springbok & tête -->
+    <!-- Silhouette cornes de Springbok &amp; tête -->
     <path d="M -12,14 L -4,-6 Q -12,-22 -16,-26 Q -10,-24 -2,-12 L 0,-6 L 2,-12 Q 10,-24 16,-26 Q 12,-22 4,-6 L 12,14 Z" fill="url(#bokGold)"/>
   </g>
 

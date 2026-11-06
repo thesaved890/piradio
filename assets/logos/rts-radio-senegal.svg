@@ -24,7 +24,7 @@
   <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="120" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">RTS</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="36" fill="url(#rtsGold)" text-anchor="middle" letter-spacing="6">RADIO SÉNÉGAL</text>
 
-  <!-- Slogan & Country -->
+  <!-- Slogan &amp; Country -->
   <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#C8E6C9" text-anchor="middle" letter-spacing="3">RADIODIFFUSION TÉLÉVISION</text>
   <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">LA VOIX DU SÉNÉGAL • 24/7</text>
 

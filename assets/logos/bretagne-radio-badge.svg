@@ -22,7 +22,7 @@
   <circle cx="256" cy="190" r="140" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2"/>
   <circle cx="256" cy="190" r="170" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="2"/>
 
-  <!-- Emblème central Gwenn ha Du & Triskell -->
+  <!-- Emblème central Gwenn ha Du &amp; Triskell -->
   <g filter="url(#bzhDrop)">
     <circle cx="256" cy="180" r="76" fill="#111620" stroke="url(#bzhGold)" stroke-width="4"/>
     <!-- Triskell celte stylisé doré -->

@@ -21,7 +21,7 @@
   <!-- En-tête Radio Algérie -->
   <text x="100" y="28" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="url(#kabyleYellow)" text-anchor="middle" letter-spacing="2">RADIO ALGÉRIE</text>
 
-  <!-- Montagnes du Djurdjura & Symbole Yaz Amazigh ⵣ -->
+  <!-- Montagnes du Djurdjura &amp; Symbole Yaz Amazigh ⵣ -->
   <g transform="translate(100, 74)">
     <circle cx="0" cy="0" r="40" fill="#0b241c" stroke="url(#kabyleRed)" stroke-width="2.5"/>
     <!-- Sommets enneigés Djurdjura -->

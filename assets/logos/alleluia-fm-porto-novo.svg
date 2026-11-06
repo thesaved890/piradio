@@ -17,7 +17,7 @@
   </defs>
   <rect width="200" height="200" rx="36" fill="url(#allBg)"/>
   <circle cx="100" cy="84" r="58" fill="none" stroke="url(#allGold)" stroke-width="2.5"/>
-  <!-- Dove & Radiant Cross Motif -->
+  <!-- Dove &amp; Radiant Cross Motif -->
   <circle cx="100" cy="80" r="30" fill="url(#haloGlow)"/>
   <!-- Latin Cross -->
   <rect x="96" y="52" width="8" height="42" rx="2" fill="#ffffff"/>

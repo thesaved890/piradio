@@ -17,7 +17,7 @@
   <rect width="512" height="512" rx="96" fill="url(#fyBg)"/>
   <rect width="504" height="504" x="4" y="4" rx="92" fill="none" stroke="url(#gold)" stroke-width="4" stroke-opacity="0.85"/>
 
-  <!-- Center Heart & Sound Waves -->
+  <!-- Center Heart &amp; Sound Waves -->
   <g transform="translate(256, 150)">
     <circle cx="0" cy="0" r="65" fill="#04203B" stroke="url(#fyBlue)" stroke-width="4"/>
     <text x="0" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="64" fill="url(#gold)" text-anchor="middle">💙</text>
@@ -27,7 +27,7 @@
   <text x="256" y="265" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="76" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">FOR YOU</text>
   <text x="256" y="315" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="34" fill="url(#fyBlue)" text-anchor="middle" letter-spacing="8">RADIO</text>
 
-  <!-- Slogan & Country -->
+  <!-- Slogan &amp; Country -->
   <text x="256" y="370" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#B3E5FC" text-anchor="middle" letter-spacing="3">AFRICA MEDIA NETWORK</text>
   <text x="256" y="405" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="16" fill="#E1F5FE" text-anchor="middle" letter-spacing="2">DOUALA • CAMEROUN</text>
 

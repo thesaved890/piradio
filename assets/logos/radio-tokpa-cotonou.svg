@@ -18,7 +18,7 @@
   </defs>
   <rect width="200" height="200" rx="36" fill="url(#tokpaBg)"/>
   <circle cx="100" cy="84" r="58" fill="none" stroke="url(#tokpaGold)" stroke-width="2.5"/>
-  <!-- Dantokpa Canoe / Sun & Radio Tower Motif -->
+  <!-- Dantokpa Canoe / Sun &amp; Radio Tower Motif -->
   <path d="M 64 100 C 76 108, 124 108, 136 100 C 128 114, 72 114, 64 100 Z" fill="url(#tokpaGold)"/>
   <!-- Lagoon Waves beneath -->
   <path d="M 68 116 Q 84 110 100 116 T 132 116" fill="none" stroke="#26a69a" stroke-width="2.5" stroke-linecap="round"/>

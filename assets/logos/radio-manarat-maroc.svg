@@ -28,7 +28,7 @@
   <!-- Titre MANARAT -->
   <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle" filter="url(#manaratShadow)">MANARAT</text>
 
-  <!-- Tag CULTURE & ÉDUCATION -->
+  <!-- Tag CULTURE &amp; ÉDUCATION -->
   <rect x="34" y="116" width="132" height="26" rx="8" fill="url(#manaratGold)"/>
   <text x="100" y="134" fill="#081C12" font-family="'Inter', sans-serif" font-weight="900" font-size="11" letter-spacing="1.2" text-anchor="middle">CULTURE &amp; FORMATION</text>
 

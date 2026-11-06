@@ -18,7 +18,7 @@
   <!-- Logo Kaya FM Afropolitan -->
   <g transform="translate(100, 68)">
     <circle cx="0" cy="0" r="38" fill="#24170a" stroke="url(#goldKaya)" stroke-width="2.5"/>
-    <!-- Saxophone / Note de Jazz & silhouette urbaine Joburg -->
+    <!-- Saxophone / Note de Jazz &amp; silhouette urbaine Joburg -->
     <path d="M -10,-18 L -10,8 A 12 12 0 0 0 10,8 L 10,-8" fill="none" stroke="url(#goldKaya)" stroke-width="3"/>
     <circle cx="10" cy="-8" r="4" fill="#FFFFFF"/>
   </g>
@@ -29,5 +29,5 @@
 
   <!-- Cartouche Joburg Afropolitan -->
   <rect x="20" y="158" width="160" height="26" rx="8" fill="url(#goldKaya)"/>
-  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#1C1106" text-anchor="middle" letter-spacing="1">JOHANNESBURG • SOUL & JAZZ</text>
+  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#1C1106" text-anchor="middle" letter-spacing="1">JOHANNESBURG • SOUL &amp; JAZZ</text>
 </svg>

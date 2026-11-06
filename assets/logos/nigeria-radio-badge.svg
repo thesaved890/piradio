@@ -51,7 +51,7 @@
   <circle cx="256" cy="188" r="8" fill="#FFFFFF"/>
   <text x="256" y="244" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="34" fill="url(#ngGold)" text-anchor="middle">π</text>
 
-  <!-- Broadcast Signal Arcs left & right -->
+  <!-- Broadcast Signal Arcs left &amp; right -->
   <path d="M 205 215 A 32 32 0 0 0 205 255" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
   <path d="M 190 205 A 46 46 0 0 0 190 265" fill="none" stroke="url(#ngGold)" stroke-width="3" stroke-linecap="round"/>
   <path d="M 307 215 A 32 32 0 0 1 307 255" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>

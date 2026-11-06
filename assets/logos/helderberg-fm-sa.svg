@@ -18,7 +18,7 @@
   <rect width="200" height="200" rx="36" fill="url(#bgHelder)"/>
   <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#greenHelder)" stroke-width="2.5" opacity="0.85"/>
 
-  <!-- Logo Montagnes du Helderberg & Vignes -->
+  <!-- Logo Montagnes du Helderberg &amp; Vignes -->
   <g transform="translate(100, 68)">
     <circle cx="0" cy="0" r="38" fill="#0d2817" stroke="url(#goldHelder)" stroke-width="2"/>
     <!-- Sommets de montagne -->
@@ -30,7 +30,7 @@
   <text x="100" y="126" font-family="'Arial Black', sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">HELDERBERG</text>
   <text x="100" y="146" font-family="'Arial Black', sans-serif" font-size="18" font-weight="900" fill="url(#goldHelder)" text-anchor="middle" letter-spacing="2">FM 95.9</text>
 
-  <!-- Cartouche Somerset West & Le Cap -->
+  <!-- Cartouche Somerset West &amp; Le Cap -->
   <rect x="20" y="158" width="160" height="26" rx="8" fill="url(#greenHelder)"/>
-  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#0A1D12" text-anchor="middle" letter-spacing="1">SOMERSET WEST & CAPE</text>
+  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#0A1D12" text-anchor="middle" letter-spacing="1">SOMERSET WEST &amp; CAPE</text>
 </svg>

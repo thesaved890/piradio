@@ -22,7 +22,7 @@
   <!-- En-tête Radio Algérie -->
   <text x="100" y="28" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="url(#goldSetif)" text-anchor="middle" letter-spacing="2">RADIO ALGÉRIE</text>
 
-  <!-- Fontaine d'Aïn Fouara & Hauts-Plateaux stylisé -->
+  <!-- Fontaine d'Aïn Fouara &amp; Hauts-Plateaux stylisé -->
   <g transform="translate(100, 74)">
     <circle cx="0" cy="0" r="40" fill="#082126" stroke="url(#tealSetif)" stroke-width="2.5"/>
     <!-- Vasque fontaine d'Aïn Fouara stylisée -->

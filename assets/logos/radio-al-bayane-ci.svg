@@ -35,7 +35,7 @@
     <path d="M 200 190 A 70 70 0 0 1 312 190" stroke-width="5"/>
   </g>
 
-  <!-- Médaillon Al Bayane Croissant & Étoile dorés -->
+  <!-- Médaillon Al Bayane Croissant &amp; Étoile dorés -->
   <g filter="url(#bayDrop)" transform="translate(256, 185)">
     <circle cx="0" cy="0" r="62" fill="url(#bayGreen)"/>
     <circle cx="0" cy="0" r="54" fill="#051c10"/>
@@ -53,7 +53,7 @@
   <!-- Titre Principal RADIO AL BAYANE -->
   <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">RADIO AL BAYANE</text>
 
-  <!-- Sous-titre Spiritualité & Société -->
+  <!-- Sous-titre Spiritualité &amp; Société -->
   <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#bayGold)" text-anchor="middle" letter-spacing="3">SPIRITUALITÉ &amp; ÉDUCATION</text>
 
   <!-- Drapeau ivoirien miniature en bas -->

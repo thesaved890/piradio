@@ -26,7 +26,7 @@
   <!-- Titre DIWAN FM -->
   <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="23" letter-spacing="2" text-anchor="middle" filter="url(#diwanShadow)">DIWAN FM</text>
 
-  <!-- Tag صوتكم • SFAX & TUNIS -->
+  <!-- Tag صوتكم • SFAX &amp; TUNIS -->
   <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#diwanGold)"/>
   <text x="100" y="134" fill="#12133B" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.2" text-anchor="middle">SFAX • GRAND TUNIS</text>
 

@@ -27,7 +27,7 @@
   <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="115" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">SUD FM</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="38" fill="url(#sudOrange)" text-anchor="middle" letter-spacing="6">LA PREMIÈRE RADIO</text>
 
-  <!-- Slogan & Country -->
+  <!-- Slogan &amp; Country -->
   <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#FFE0B2" text-anchor="middle" letter-spacing="3">SUD COMMUNICATION</text>
   <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#FFF3E0" text-anchor="middle" letter-spacing="2">DAKAR &amp; TOUT LE SÉNÉGAL</text>
 

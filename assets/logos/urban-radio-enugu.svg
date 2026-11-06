@@ -27,7 +27,7 @@
   <text x="256" y="210" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="96" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">URBAN</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="44" fill="url(#urbanOrange)" text-anchor="middle" letter-spacing="8">RADIO</text>
 
-  <!-- Location Tag & Slogan -->
+  <!-- Location Tag &amp; Slogan -->
   <text x="256" y="345" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="34" fill="#FFFFFF" text-anchor="middle" letter-spacing="6">ENUGU</text>
   <text x="256" y="385" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="20" fill="#90CAF9" text-anchor="middle" letter-spacing="2">THE SOUND OF THE EAST</text>
 

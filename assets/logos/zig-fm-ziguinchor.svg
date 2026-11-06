@@ -28,7 +28,7 @@
   <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="115" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">ZIG FM</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="38" fill="url(#zigGold)" text-anchor="middle" letter-spacing="6">ZIGUINCHOR &amp; KOLDA</text>
 
-  <!-- Slogan & Region -->
+  <!-- Slogan &amp; Region -->
   <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#C8E6C9" text-anchor="middle" letter-spacing="3">LA VOIX DE LA CASAMANCE</text>
   <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#E8F5E9" text-anchor="middle" letter-spacing="2">SÉNÉGAL DU SUD</text>
 

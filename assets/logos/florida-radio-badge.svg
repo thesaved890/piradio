@@ -6,7 +6,7 @@
     </radialGradient>
   </defs>
   <rect width="200" height="200" rx="40" fill="url(#flbg)" stroke="#f3b43f" stroke-width="2"/>
-  <!-- Sunshine & Palm -->
+  <!-- Sunshine &amp; Palm -->
   <circle cx="100" cy="70" r="32" fill="#f3b43f"/>
   <path d="M100,60 Q105,80 100,105 L96,105 Q100,80 96,60 Z" fill="#4e342e"/>
   <path d="M100,60 Q75,50 65,65 Q85,65 100,60 Z" fill="#00e676"/>

@@ -44,7 +44,7 @@
     <text x="0" y="38" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="900" fill="url(#f2Magenta)" text-anchor="middle">2</text>
   </g>
 
-  <!-- Badge 92.0 FM Musique & Jeunesse -->
+  <!-- Badge 92.0 FM Musique &amp; Jeunesse -->
   <g transform="translate(256, 285)">
     <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#f2Orange)" filter="url(#f2Drop)"/>
     <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">92.0 FM • ABIDJAN</text>
@@ -53,7 +53,7 @@
   <!-- Titre Principal RTI FRÉQUENCE 2 -->
   <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">FRÉQUENCE 2</text>
 
-  <!-- Sous-titre Culture & Musique -->
+  <!-- Sous-titre Culture &amp; Musique -->
   <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#f2Magenta)" text-anchor="middle" letter-spacing="3">JEUNESSE, HITS &amp; CULTURE</text>
 
   <!-- Drapeau ivoirien miniature en bas -->

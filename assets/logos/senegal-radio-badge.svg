@@ -52,14 +52,14 @@
   <!-- Central Glowing Disc -->
   <circle cx="256" cy="235" r="70" fill="#00210E" stroke="url(#snGold)" stroke-width="4" filter="url(#glow)"/>
 
-  <!-- Radio Tower & Green Star with Pi Symbol -->
+  <!-- Radio Tower &amp; Green Star with Pi Symbol -->
   <path d="M 230 275 L 256 195 L 282 275" fill="none" stroke="url(#snGold)" stroke-width="4" stroke-linejoin="round"/>
   <path d="M 238 250 L 274 250" fill="none" stroke="url(#snGold)" stroke-width="3"/>
   <path d="M 244 230 L 268 230" fill="none" stroke="url(#snGold)" stroke-width="3"/>
   <text x="256" y="196" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="26" fill="#00E676" text-anchor="middle">★</text>
   <text x="256" y="244" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" text-anchor="middle">π</text>
 
-  <!-- Broadcast Signal Arcs left & right -->
+  <!-- Broadcast Signal Arcs left &amp; right -->
   <path d="M 205 215 A 32 32 0 0 0 205 255" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
   <path d="M 190 205 A 46 46 0 0 0 190 265" fill="none" stroke="url(#snGold)" stroke-width="3" stroke-linecap="round"/>
   <path d="M 307 215 A 32 32 0 0 1 307 255" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>

@@ -18,7 +18,7 @@
   <rect width="200" height="200" rx="36" fill="url(#anfaniBg)"/>
   <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#anfaniCyan)" stroke-width="2.5" stroke-opacity="0.85"/>
 
-  <!-- Icon: Pioneer Radio Antenna & Voice waves -->
+  <!-- Icon: Pioneer Radio Antenna &amp; Voice waves -->
   <circle cx="100" cy="74" r="38" fill="#031318" stroke="url(#anfaniGold)" stroke-width="2"/>
   <path d="M 88 88 L 100 52 L 112 88" stroke="url(#anfaniCyan)" stroke-width="3" stroke-linecap="round"/>
   <line x1="92" y1="76" x2="108" y2="76" stroke="url(#anfaniCyan)" stroke-width="2"/>

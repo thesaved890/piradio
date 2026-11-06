@@ -38,7 +38,7 @@
   <!-- Titre Principal AHOTOR FM -->
   <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">AHOTOR 92.3 FM</text>
 
-  <!-- Sous-titre Comfort & Voice of the People -->
+  <!-- Sous-titre Comfort &amp; Voice of the People -->
   <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#ahCyan)" text-anchor="middle" letter-spacing="3">VOICE OF THE PEOPLE</text>
 
   <!-- Drapeau ghanéen miniature en bas -->

@@ -28,7 +28,7 @@
   <!-- Titre SABRA FM -->
   <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2" text-anchor="middle" filter="url(#sabShadow)">SABRA FM</text>
 
-  <!-- Tag KAIROUAN & CENTRE -->
+  <!-- Tag KAIROUAN &amp; CENTRE -->
   <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#sabOchre)"/>
   <text x="100" y="134" fill="#241005" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.2" text-anchor="middle">صبرة إف إم • 98.8 FM</text>
 

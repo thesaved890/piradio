@@ -38,7 +38,7 @@
   <!-- Inner Dark Glass Circle -->
   <circle cx="100" cy="95" r="62" fill="#0b1713" stroke="url(#mlGoldGlow)" stroke-width="2" filter="url(#mlGlow)"/>
 
-  <!-- Radio Antenna & Signal Waves -->
+  <!-- Radio Antenna &amp; Signal Waves -->
   <path d="M 68 80 A 42 42 0 0 1 68 110" fill="none" stroke="url(#mlGreenGrad)" stroke-width="3" stroke-linecap="round"/>
   <path d="M 58 72 A 56 56 0 0 1 58 118" fill="none" stroke="url(#mlGreenGrad)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 3"/>
   <path d="M 132 80 A 42 42 0 0 0 132 110" fill="none" stroke="url(#mlRedGrad)" stroke-width="3" stroke-linecap="round"/>

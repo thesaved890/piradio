@@ -27,7 +27,7 @@
   <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="96" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">SPLASH FM</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="38" fill="url(#splashOrange)" text-anchor="middle" letter-spacing="6">THE INTEGRITY STATION</text>
 
-  <!-- Location Tag & Slogan -->
+  <!-- Location Tag &amp; Slogan -->
   <text x="256" y="345" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="26" fill="#BEE9E8" text-anchor="middle" letter-spacing="3">IBADAN &amp; ABEOKUTA</text>
   <text x="256" y="385" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">NIGERIA FIRST INDEPENDENT RADIO</text>
 

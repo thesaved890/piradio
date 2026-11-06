@@ -14,7 +14,7 @@
   <rect width="512" height="512" rx="96" fill="url(#nagBg)"/>
   <rect width="504" height="504" x="4" y="4" rx="92" fill="none" stroke="url(#nagGold)" stroke-width="4" stroke-opacity="0.8"/>
 
-  <!-- Islamic / Cultural crescent & star / microphone -->
+  <!-- Islamic / Cultural crescent &amp; star / microphone -->
   <g transform="translate(256, 160)">
     <circle cx="0" cy="0" r="62" fill="#00180B" stroke="url(#nagGold)" stroke-width="4"/>
     <text x="0" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="64" fill="url(#nagGold)" text-anchor="middle">🌙</text>

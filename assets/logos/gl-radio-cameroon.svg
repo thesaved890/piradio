@@ -27,7 +27,7 @@
   <text x="256" y="275" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="78" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">GL RADIO</text>
   <text x="256" y="325" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="36" fill="url(#glPink)" text-anchor="middle" letter-spacing="6">GOD'S LOVE LINE</text>
 
-  <!-- Slogan & Country -->
+  <!-- Slogan &amp; Country -->
   <text x="256" y="375" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#F8BBD0" text-anchor="middle" letter-spacing="3">GOSPEL JAMBOREE</text>
   <text x="256" y="405" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="16" fill="#FCE4EC" text-anchor="middle" letter-spacing="2">KOUMÉ • CAMEROUN</text>
 

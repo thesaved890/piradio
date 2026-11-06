@@ -27,7 +27,7 @@
   <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="105" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">RUSH FM</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="44" fill="url(#rushYellow)" text-anchor="middle" letter-spacing="8">BAMENDA</text>
 
-  <!-- Slogan & Region -->
+  <!-- Slogan &amp; Region -->
   <text x="256" y="348" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="24" fill="#E1BEE7" text-anchor="middle" letter-spacing="3">NORTHWEST CAMEROON</text>
   <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#F3E5F5" text-anchor="middle" letter-spacing="2">NEWS, ENTERTAINMENT &amp; MUSIC</text>
 

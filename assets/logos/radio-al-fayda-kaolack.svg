@@ -30,7 +30,7 @@
   <text x="256" y="275" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="76" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">AL FAYDA</text>
   <text x="256" y="325" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="34" fill="url(#faydaGold)" text-anchor="middle" letter-spacing="8">RADIO KAOLACK</text>
 
-  <!-- Slogan & Country -->
+  <!-- Slogan &amp; Country -->
   <text x="256" y="375" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#C8E6C9" text-anchor="middle" letter-spacing="3">MÉDINA BAYE NIASS</text>
   <text x="256" y="405" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="16" fill="#E8F5E9" text-anchor="middle" letter-spacing="2">SPIRITUALITÉ, CULTURE &amp; DÉVELOPPEMENT</text>
 

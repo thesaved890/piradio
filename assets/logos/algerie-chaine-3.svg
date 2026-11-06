@@ -29,7 +29,7 @@
   <!-- Grand chiffre 3 stylisé avec croissant -->
   <text x="96" y="116" font-family="'Arial Black', Impact, sans-serif" font-size="54" font-weight="900" fill="#FFFFFF" text-anchor="middle">3</text>
   
-  <!-- Croissant & Étoile rouge -->
+  <!-- Croissant &amp; Étoile rouge -->
   <path d="M 124,78 A 10 10 0 1 0 134,92 A 8 8 0 1 1 124,78 Z" fill="#D21034"/>
   <polygon points="135,84 136.5,88 140.5,88 137.5,90.5 138.5,94.5 135,92 131.5,94.5 132.5,90.5 129.5,88 133.5,88" fill="#D21034"/>
 

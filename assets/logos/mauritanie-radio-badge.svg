@@ -23,10 +23,10 @@
       <circle cx="100" cy="90" r="54"/>
     </clipPath>
     <rect x="40" y="30" width="120" height="120" fill="#006233"/>
-    <!-- Top & Bottom Red Stripes -->
+    <!-- Top &amp; Bottom Red Stripes -->
     <rect x="40" y="36" width="120" height="18" fill="url(#mrRed)"/>
     <rect x="40" y="126" width="120" height="18" fill="url(#mrRed)"/>
-    <!-- Golden Crescent & Star -->
+    <!-- Golden Crescent &amp; Star -->
     <g fill="url(#mrGold)">
       <!-- Crescent -->
       <path d="M 75 90 A 25 25 0 0 0 125 90 A 22 17 0 0 1 75 90 Z"/>

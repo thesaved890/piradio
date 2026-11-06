@@ -19,7 +19,7 @@
   <rect width="194" height="194" x="3" y="3" rx="33" fill="none" stroke="url(#woyoGreen)" stroke-width="2.5" stroke-opacity="0.85"/>
 
   <circle cx="100" cy="74" r="38" fill="#051210" stroke="url(#woyoGold)" stroke-width="2"/>
-  <!-- Stylized W & River Wave -->
+  <!-- Stylized W &amp; River Wave -->
   <path d="M 78 62 L 86 86 L 95 68 L 105 86 L 114 62 L 122 62 L 110 90 L 101 74 L 92 90 L 70 62 Z" fill="url(#woyoGreen)"/>
 
   <text x="100" y="130" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="16" letter-spacing="1" text-anchor="middle">WOYOWAYANKO</text>

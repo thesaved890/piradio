@@ -28,7 +28,7 @@
   <text x="256" y="225" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="120" fill="url(#gold)" text-anchor="middle" letter-spacing="4">237</text>
   <text x="256" y="285" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="44" fill="#FFFFFF" text-anchor="middle" letter-spacing="8">ONAIR RADIO</text>
 
-  <!-- Slogan & Country -->
+  <!-- Slogan &amp; Country -->
   <text x="256" y="350" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#E0E0E0" text-anchor="middle" letter-spacing="3">LE SON DU CAMEROUN</text>
   <text x="256" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="16" fill="#90CAF9" text-anchor="middle" letter-spacing="2">YAOUNDÉ • HIT MUSIC 24/7</text>
 

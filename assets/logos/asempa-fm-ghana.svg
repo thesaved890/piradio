@@ -29,7 +29,7 @@
     <text x="0" y="20" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="38" font-weight="900" fill="#007E33" text-anchor="middle" letter-spacing="2">asempa</text>
   </g>
 
-  <!-- Badge 94.7 FM All Sports & Talk -->
+  <!-- Badge 94.7 FM All Sports &amp; Talk -->
   <g transform="translate(256, 285)">
     <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#asGold)" filter="url(#asDrop)"/>
     <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#051408" text-anchor="middle" letter-spacing="2">94.7 FM • ACCRA</text>
@@ -38,7 +38,7 @@
   <!-- Titre Principal ASEMPA FM -->
   <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">ASEMPA 94.7 FM</text>
 
-  <!-- Sous-titre All Sports & Talk -->
+  <!-- Sous-titre All Sports &amp; Talk -->
   <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#asGreen)" text-anchor="middle" letter-spacing="3">ALL SPORTS &amp; TALK</text>
 
   <!-- Drapeau ghanéen miniature en bas -->

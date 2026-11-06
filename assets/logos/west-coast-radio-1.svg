@@ -32,7 +32,7 @@
   <!-- Emblème central WEST COAST RADIO 1 -->
   <g filter="url(#wcr1Drop)" transform="translate(256, 185)">
     <circle cx="0" cy="0" r="76" fill="#031b30" stroke="url(#wcr1Gold)" stroke-width="5"/>
-    <!-- Vague & Soleil stylisé -->
+    <!-- Vague &amp; Soleil stylisé -->
     <path d="M -45 15 Q -20 -15 0 10 Q 20 -15 45 15 L 45 35 L -45 35 Z" fill="url(#wcr1Cyan)" opacity="0.85"/>
     <circle cx="0" cy="-22" r="20" fill="url(#wcr1Gold)"/>
     <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">WCR 1</text>
@@ -47,7 +47,7 @@
   <!-- Titre Principal WEST COAST RADIO -->
   <text x="256" y="365" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">WEST COAST RADIO 1</text>
 
-  <!-- Sous-titre News, Talk & Coffee Time -->
+  <!-- Sous-titre News, Talk &amp; Coffee Time -->
   <text x="256" y="398" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#81d4fa" text-anchor="middle" letter-spacing="3">NEWS, TALK &amp; CURRENT AFFAIRS</text>
 
   <!-- Drapeau gambien miniature et ville -->

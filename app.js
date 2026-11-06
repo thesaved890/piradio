@@ -356,6 +356,62 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/chicago-radio-badge.svg";
     }
 
+    // 1.g Nouveaux États Iconiques des États-Unis 🇺🇸 (v5.24)
+    if (stState.includes("tennessee") || nameLow.includes("nashville") || nameLow.includes("chattanooga") || nameLow.includes("memphis")) {
+      if (nameLow.includes("lightning") || nameLow.includes("wrlt") || nameLow.includes("100.1")) return "assets/logos/wrlt-lightning-100-nashville.svg";
+      if (nameLow.includes("roots") || nameLow.includes("wmot") || nameLow.includes("89.5")) return "assets/logos/wmot-roots-radio-nashville.svg";
+      if (nameLow.includes("classical 90") || nameLow.includes("wsmc") || nameLow.includes("90.5")) return "assets/logos/wsmc-classical-chattanooga.svg";
+      return "assets/logos/wrlt-lightning-100-nashville.svg";
+    }
+
+    if (stState.includes("louisiana") || stState.includes("louisiane") || nameLow.includes("new orleans") || nameLow.includes("la nouvelle-orléans")) {
+      if (nameLow.includes("wwoz") || nameLow.includes("90.7")) return "assets/logos/wwoz-90-7-neworleans.svg";
+      if (nameLow.includes("wtul") || nameLow.includes("91.5")) return "assets/logos/wtul-91-5-neworleans.svg";
+      return "assets/logos/wwoz-90-7-neworleans.svg";
+    }
+
+    if (stState.includes("georgia") || stState.includes("géorgie") || nameLow.includes("atlanta") || nameLow.includes("savannah")) {
+      if (nameLow.includes("wclk") || nameLow.includes("91.9")) return "assets/logos/wclk-91-9-atlanta.svg";
+      if (nameLow.includes("gpb") || nameLow.includes("88.5")) return "assets/logos/gpb-88-5-atlanta.svg";
+      return "assets/logos/wclk-91-9-atlanta.svg";
+    }
+
+    if (stState.includes("pennsylvania") || stState.includes("pennsylvanie") || nameLow.includes("philadelphia") || nameLow.includes("pittsburgh") || nameLow.includes("philly")) {
+      if (nameLow.includes("wxpn") || nameLow.includes("88.5")) return "assets/logos/wxpn-88-5-philadelphia.svg";
+      if (nameLow.includes("wrti") || nameLow.includes("90.1")) return "assets/logos/wrti-90-1-jazz-philly.svg";
+      return "assets/logos/wxpn-88-5-philadelphia.svg";
+    }
+
+    if (stState.includes("massachusetts") || nameLow.includes("boston") || nameLow.includes("cambridge")) {
+      if (nameLow.includes("wbur") || nameLow.includes("90.9")) return "assets/logos/wbur-90-9-boston.svg";
+      if (nameLow.includes("wgbh") || nameLow.includes("gbh") || nameLow.includes("89.7")) return "assets/logos/wgbh-89-7-boston.svg";
+      return "assets/logos/wbur-90-9-boston.svg";
+    }
+
+    if (stState.includes("colorado") || nameLow.includes("denver") || nameLow.includes("boulder") || nameLow.includes("colorado")) {
+      if (nameLow.includes("kuvo") || nameLow.includes("89.3")) return "assets/logos/kuvo-89-3-denver.svg";
+      if (nameLow.includes("kgnu") || nameLow.includes("88.5")) return "assets/logos/kgnu-88-5-boulder-denver.svg";
+      return "assets/logos/kuvo-89-3-denver.svg";
+    }
+
+    if (stState.includes("minnesota") || nameLow.includes("minneapolis") || nameLow.includes("st. paul") || nameLow.includes("saint paul")) {
+      return "assets/logos/the-current-kcmp-minneapolis.svg";
+    }
+
+    if (stState.includes("nevada") || nameLow.includes("las vegas") || nameLow.includes("reno")) {
+      return "assets/logos/kunv-91-5-lasvegas.svg";
+    }
+
+    if (stState.includes("columbia") || nameLow.includes("washington") || nameLow.includes("dc") || nameLow.includes("d.c.")) {
+      return "assets/logos/wamu-88-5-dc.svg";
+    }
+
+    if (stState.includes("ohio") || nameLow.includes("cleveland") || nameLow.includes("columbus") || nameLow.includes("cincinnati")) {
+      if (nameLow.includes("wclv") || nameLow.includes("90.3")) return "assets/logos/wclv-90-3-cleveland.svg";
+      if (nameLow.includes("wjcu") || nameLow.includes("88.7")) return "assets/logos/wjcu-88-7-cleveland.svg";
+      return "assets/logos/wclv-90-3-cleveland.svg";
+    }
+
     const isNigeria = (st.code === "🇳🇬") || (st.country && (st.country.toLowerCase().includes("nigeria") || st.country.toLowerCase().includes("nigéria"))) || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
     if (isNigeria) {
       if (nameLow.includes("rfi") && (nameLow.includes("haoussa") || nameLow.includes("hausa"))) return "assets/logos/rfi-haoussa.svg";
@@ -1393,9 +1449,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const logoImg = card.querySelector(".station-logo");
     if (logoImg) {
-      logoImg.addEventListener("error", function() {
-        this.src = fallbackLogo;
-      }, { once: true });
+      const handleImgError = function() {
+        const flagFallback = getFlagFallback(st.code || '📻');
+        if (fallbackLogo && !logoImg.src.endsWith(fallbackLogo)) {
+          logoImg.src = fallbackLogo;
+          logoImg.addEventListener("error", function() {
+            logoImg.src = flagFallback;
+          }, { once: true });
+        } else {
+          logoImg.src = flagFallback;
+        }
+      };
+      logoImg.addEventListener("error", handleImgError, { once: true });
+      if (logoImg.complete && logoImg.naturalWidth === 0) {
+        handleImgError();
+      }
     }
 
     const favBtn = card.querySelector(".card-fav-btn");

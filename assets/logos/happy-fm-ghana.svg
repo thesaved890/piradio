@@ -27,7 +27,7 @@
     <path d="M -26 10 C -18 30 18 30 26 10" fill="none" stroke="#190a00" stroke-width="6" stroke-linecap="round"/>
   </g>
 
-  <!-- Badge 98.9 FM Accra Sports & Talk -->
+  <!-- Badge 98.9 FM Accra Sports &amp; Talk -->
   <g transform="translate(256, 285)">
     <rect x="-105" y="-18" width="210" height="36" rx="18" fill="url(#hapYellow)" filter="url(#hapDrop)"/>
     <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="900" fill="#190a00" text-anchor="middle" letter-spacing="2">98.9 FM • ACCRA</text>
@@ -36,7 +36,7 @@
   <!-- Titre Principal HAPPY FM -->
   <text x="256" y="360" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">HAPPY 98.9 FM</text>
 
-  <!-- Sous-titre Leaders in Sports & Talk -->
+  <!-- Sous-titre Leaders in Sports &amp; Talk -->
   <text x="256" y="395" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="url(#hapYellow)" text-anchor="middle" letter-spacing="3">LEADERS IN SPORTS &amp; TALK</text>
 
   <!-- Drapeau ghanéen miniature en bas -->

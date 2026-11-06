@@ -27,7 +27,7 @@
   <!-- Titre OXYGÈNE FM -->
   <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="21" letter-spacing="2" text-anchor="middle" filter="url(#oxyShadow)">OXYGÈNE FM</text>
 
-  <!-- Tag BIZERTE & NORD -->
+  <!-- Tag BIZERTE &amp; NORD -->
   <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#oxyAqua)"/>
   <text x="100" y="134" fill="#031B24" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.2" text-anchor="middle">BIZERTE • 90.0 FM</text>
 

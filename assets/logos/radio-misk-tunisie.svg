@@ -26,7 +26,7 @@
   <!-- Titre RADIO MISK -->
   <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2.5" text-anchor="middle" filter="url(#miskShadow)">RADIO MISK</text>
 
-  <!-- Tag CULTURE & INDIE -->
+  <!-- Tag CULTURE &amp; INDIE -->
   <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#miskGold)"/>
   <text x="100" y="134" fill="#141414" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.2" text-anchor="middle">CULTURE &amp; INDIE</text>
 

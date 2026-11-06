@@ -33,5 +33,5 @@
 
   <!-- Cartouche inférieur -->
   <rect x="25" y="162" width="150" height="25" rx="8" fill="url(#goldZaman)"/>
-  <text x="100" y="178" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="900" fill="#241708" text-anchor="middle" letter-spacing="1">PATRIMOINE & NOSTALGIE</text>
+  <text x="100" y="178" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="900" fill="#241708" text-anchor="middle" letter-spacing="1">PATRIMOINE &amp; NOSTALGIE</text>
 </svg>

@@ -28,7 +28,7 @@
   <!-- Titre HIP HOP SOUL -->
   <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="20" letter-spacing="1.5" text-anchor="middle" filter="url(#hhsShadow)">HIP HOP SOUL</text>
 
-  <!-- Tag RAP & SOUL MAROC -->
+  <!-- Tag RAP &amp; SOUL MAROC -->
   <rect x="36" y="116" width="128" height="26" rx="8" fill="url(#hhsNeon)"/>
   <text x="100" y="134" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.2" text-anchor="middle">URBAN &amp; BEATS</text>
 

@@ -28,7 +28,7 @@
   <text x="256" y="270" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="60" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">BONNE NOUVELLE</text>
   <text x="256" y="325" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="38" fill="url(#rbnCyan)" text-anchor="middle" letter-spacing="8">RADIO DOUALA</text>
 
-  <!-- Slogan & Country -->
+  <!-- Slogan &amp; Country -->
   <text x="256" y="375" font-family="'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#B3E5FC" text-anchor="middle" letter-spacing="3">L'ÉVANGILE AU QUOTIDIEN</text>
   <text x="256" y="405" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="16" fill="#E1F5FE" text-anchor="middle" letter-spacing="2">DOUALA • CAMEROUN</text>
 

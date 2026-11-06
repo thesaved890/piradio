@@ -35,7 +35,7 @@
   <rect x="44" y="116" width="112" height="26" rx="8" fill="url(#littoralWave)"/>
   <text x="100" y="134" fill="#041b2d" font-family="'Inter', sans-serif" font-weight="900" font-size="13.5" letter-spacing="1.5" text-anchor="middle">GUINÉE LIVE</text>
 
-  <!-- Cartouche Fréquence & Région -->
+  <!-- Cartouche Fréquence &amp; Région -->
   <rect x="24" y="152" width="152" height="28" rx="8" fill="#061f36" stroke="#00B4D8" stroke-width="1.2"/>
   <text x="100" y="171" fill="#48CAE4" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="2" text-anchor="middle">99.7 FM • CONAKRY</text>
 </svg>

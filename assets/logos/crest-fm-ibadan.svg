@@ -27,7 +27,7 @@
   <text x="256" y="215" font-family="'Impact', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="96" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">CREST FM</text>
   <text x="256" y="275" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="44" fill="url(#crestRed)" text-anchor="middle" letter-spacing="8">IBADAN</text>
 
-  <!-- Location Tag & Slogan -->
+  <!-- Location Tag &amp; Slogan -->
   <text x="256" y="345" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="24" fill="#E1BEE7" text-anchor="middle" letter-spacing="3">OYO STATE • NIGERIA</text>
   <text x="256" y="385" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#F8BBD0" text-anchor="middle" letter-spacing="2">NEWS, VIEWS &amp; BEST OF ENTERTAINMENT</text>
 

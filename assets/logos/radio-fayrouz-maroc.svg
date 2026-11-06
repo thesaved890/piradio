@@ -27,7 +27,7 @@
   <!-- Titre FAYROUZ -->
   <text x="100" y="105" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="2.5" text-anchor="middle" filter="url(#fayShadow)">FAYROUZ</text>
 
-  <!-- Tag TARAB & NOSTALGIE -->
+  <!-- Tag TARAB &amp; NOSTALGIE -->
   <rect x="34" y="116" width="132" height="26" rx="8" fill="url(#fayGold)"/>
   <text x="100" y="134" fill="#0A1324" font-family="'Inter', sans-serif" font-weight="900" font-size="12" letter-spacing="1.5" text-anchor="middle">TARAB &amp; CLASSIQUES</text>
 

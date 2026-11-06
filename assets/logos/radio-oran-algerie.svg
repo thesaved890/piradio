@@ -21,7 +21,7 @@
   <!-- En-tête Radio Algérie -->
   <text x="100" y="28" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="url(#goldOran)" text-anchor="middle" letter-spacing="2">RADIO ALGÉRIE</text>
 
-  <!-- Fort de Santa Cruz & Baie d'Oran stylisé -->
+  <!-- Fort de Santa Cruz &amp; Baie d'Oran stylisé -->
   <g transform="translate(100, 74)">
     <circle cx="0" cy="0" r="40" fill="#082542" stroke="url(#oranSunset)" stroke-width="2.5"/>
     <!-- Muraille fortifiée Santa Cruz sur le mont Murdjadjo -->

@@ -19,7 +19,7 @@
   <rect width="200" height="200" rx="36" fill="url(#bgAma)"/>
   <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#amaGold)" stroke-width="2.5" opacity="0.85"/>
 
-  <!-- Logo Clavier de Piano (Amapiano = « les pianos » en zoulou) & Shaker -->
+  <!-- Logo Clavier de Piano (Amapiano = « les pianos » en zoulou) &amp; Shaker -->
   <g transform="translate(100, 68)">
     <circle cx="0" cy="0" r="38" fill="#241003" stroke="url(#pianoCyan)" stroke-width="2"/>
     <!-- Touches de piano stylisées -->
@@ -37,5 +37,5 @@
 
   <!-- Cartouche SA Signature Sound -->
   <rect x="20" y="158" width="160" height="26" rx="8" fill="url(#amaGold)"/>
-  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#190D03" text-anchor="middle" letter-spacing="1">SOUTH AFRICAN DANCE & LOG DRUM</text>
+  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#190D03" text-anchor="middle" letter-spacing="1">SOUTH AFRICAN DANCE &amp; LOG DRUM</text>
 </svg>

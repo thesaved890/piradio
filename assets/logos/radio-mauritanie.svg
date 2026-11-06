@@ -13,7 +13,7 @@
   </defs>
   <rect width="200" height="200" rx="36" fill="url(#rmBg)"/>
   <circle cx="100" cy="85" r="58" fill="none" stroke="url(#rmGold)" stroke-width="2.5"/>
-  <!-- Islamic Crescent & Star Emblem -->
+  <!-- Islamic Crescent &amp; Star Emblem -->
   <g fill="url(#rmGold)">
     <path d="M 72 85 A 28 28 0 0 0 128 85 A 25 19 0 0 1 72 85 Z"/>
     <polygon points="100,62 102.8,70 111,70 104.5,75 107,83 100,78.5 93,83 95.5,75 89,70 97.2,70"/>

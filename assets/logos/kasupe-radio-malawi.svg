@@ -12,7 +12,7 @@
   </defs>
   <rect width="200" height="200" rx="36" fill="url(#ksBg)"/>
   <circle cx="100" cy="84" r="58" fill="none" stroke="url(#ksWater)" stroke-width="2"/>
-  <!-- Kasupe (Spring/Fountain) Water Droplet & Waves -->
+  <!-- Kasupe (Spring/Fountain) Water Droplet &amp; Waves -->
   <path d="M 100 56 C 90 72, 80 82, 80 94 A 20 20 0 0 0 120 94 C 120 82, 110 72, 100 56 Z" fill="url(#ksWater)"/>
   <circle cx="100" cy="94" r="8" fill="#ffffff" opacity="0.8"/>
   <!-- Ripple waves -->

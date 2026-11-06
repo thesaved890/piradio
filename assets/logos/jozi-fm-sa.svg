@@ -18,7 +18,7 @@
   <rect width="200" height="200" rx="36" fill="url(#bgJozi)"/>
   <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#orangeJozi)" stroke-width="2.5" opacity="0.85"/>
 
-  <!-- Logo Jozi FM Soweto & Tours d'Orlando stylisées -->
+  <!-- Logo Jozi FM Soweto &amp; Tours d'Orlando stylisées -->
   <g transform="translate(100, 68)">
     <circle cx="0" cy="0" r="38" fill="#291204" stroke="url(#orangeJozi)" stroke-width="2"/>
     <!-- Tours de refroidissement d'Orlando à Soweto stylisées -->
@@ -31,7 +31,7 @@
   <text x="100" y="128" font-family="'Arial Black', Impact, sans-serif" font-size="24" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">JOZI FM</text>
   <text x="100" y="146" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="url(#goldJozi)" text-anchor="middle" letter-spacing="2">MORE THAN JUST RADIO</text>
 
-  <!-- Cartouche Soweto & Joburg -->
+  <!-- Cartouche Soweto &amp; Joburg -->
   <rect x="20" y="158" width="160" height="26" rx="8" fill="url(#orangeJozi)"/>
   <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">SOWETO • GAUTENG</text>
 </svg>

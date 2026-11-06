@@ -18,7 +18,7 @@
   <rect width="200" height="200" rx="36" fill="url(#bgCape)"/>
   <rect x="5" y="5" width="190" height="190" rx="32" fill="none" stroke="url(#capeCyan)" stroke-width="2.5" opacity="0.85"/>
 
-  <!-- Logo CapeTalk & Table Mountain / Mer -->
+  <!-- Logo CapeTalk &amp; Table Mountain / Mer -->
   <g transform="translate(100, 68)">
     <circle cx="0" cy="0" r="38" fill="#09283a" stroke="url(#capeYellow)" stroke-width="2"/>
     <!-- Profil Table Mountain stylisé -->
@@ -32,5 +32,5 @@
 
   <!-- Cartouche Le Cap -->
   <rect x="20" y="158" width="160" height="26" rx="8" fill="url(#capeCyan)"/>
-  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#081D29" text-anchor="middle" letter-spacing="1">CAPE TOWN TALK & NEWS</text>
+  <text x="100" y="175" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="900" fill="#081D29" text-anchor="middle" letter-spacing="1">CAPE TOWN TALK &amp; NEWS</text>
 </svg>
