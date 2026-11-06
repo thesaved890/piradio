@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (code === "🇪🇸" || cCode === "ES" || c.includes("spain") || c.includes("espagne") || city.includes("madrid") || city.includes("barcelon")) return "assets/logos/espagne-radio-badge.svg";
     if (code === "🇩🇪" || cCode === "DE" || c.includes("germany") || c.includes("allemagne") || city.includes("berlin") || city.includes("munich")) return "assets/logos/allemagne-radio-badge.svg";
     if (code === "🇻🇳" || cCode === "VN" || c.includes("vietnam") || c.includes("viet nam") || n.includes("vietnam") || city.includes("hanoi") || city.includes("saigon") || city.includes("ho chi minh")) return "assets/logos/vietnam-radio-badge.svg";
+    if (code === "🇨🇳" || cCode === "CN" || c.includes("china") || c.includes("chine") || n.includes("china") || city.includes("beijing") || city.includes("shanghai") || city.includes("pekin")) return "assets/logos/china-radio-badge.svg";
     if (s.includes("michigan") || n.includes("michigan")) return "assets/logos/michigan-radio-badge.svg";
     if (s.includes("texas") || n.includes("texas")) return "assets/logos/texas-radio-badge.svg";
     if (s.includes("hawaii") || s.includes("hawai") || n.includes("hawaii")) return "assets/logos/hawaii-radio-badge.svg";
@@ -491,6 +492,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (nameLow.includes("rfi") && (nameLow.includes("viet") || nameLow.includes("việt"))) return "assets/logos/rfi-tieng-viet.svg";
       if (nameLow.includes("community") || nameLow.includes("hcr")) return "assets/logos/hanoi-community-radio.svg";
+    }
+
+    // 1.cn Logos officiels Chine 🇨🇳 (v5.28)
+    const isChine = (cCode === "CN") || (st.code === "🇨🇳") || (st.country || "").toLowerCase().includes("china") || (st.country || "").toLowerCase().includes("chine") || nameLow.includes("china") || nameLow.includes("chine") || nameLow.includes("beijing") || nameLow.includes("shanghai") || nameLow.includes("pekin") || nameLow.includes("pékin") || nameLow.includes("cnr") || nameLow.includes("cctv") || nameLow.includes("cri");
+    if (isChine) {
+      if (nameLow.includes("cnr 1") || nameLow.includes("cnr-1") || nameLow.includes("中国之声") || nameLow.includes("voice of china")) return "assets/logos/cnr1-voice-of-china.svg";
+      if (nameLow.includes("cnr 2") || nameLow.includes("cnr-2") || nameLow.includes("经济之声") || nameLow.includes("economy")) return "assets/logos/cnr2-economy-radio.svg";
+      if (nameLow.includes("cnr 3") || nameLow.includes("cnr-3") || nameLow.includes("音乐之声") || nameLow.includes("musicradio")) return "assets/logos/cnr3-music-radio.svg";
+      if (nameLow.includes("cnr 4") || nameLow.includes("cnr-4") || nameLow.includes("经典音乐") || nameLow.includes("classic")) return "assets/logos/cnr4-classic-music.svg";
+      if (nameLow.includes("cnr 5") || nameLow.includes("cnr-5") || nameLow.includes("中华之声") || nameLow.includes("cross-strait")) return "assets/logos/cnr5-cross-strait.svg";
+      if (nameLow.includes("cnr 9") || nameLow.includes("cnr-9") || nameLow.includes("文艺之声") || nameLow.includes("literature")) return "assets/logos/cnr9-literature-radio.svg";
+      if (nameLow.includes("cnr 15") || nameLow.includes("cnr-15") || nameLow.includes("交通广播") || nameLow.includes("traffic")) return "assets/logos/cnr15-traffic-radio.svg";
+      if (nameLow.includes("cri") || nameLow.includes("环球资讯") || nameLow.includes("global news")) return "assets/logos/cri-global-news.svg";
     }
 
     const isNigeria = (st.code === "🇳🇬") || (st.country && (st.country.toLowerCase().includes("nigeria") || st.country.toLowerCase().includes("nigéria"))) || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
@@ -981,6 +995,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isEspagne) return "assets/logos/espagne-radio-badge.svg";
     if (isAllemagne) return "assets/logos/allemagne-radio-badge.svg";
     if (isVietnam) return "assets/logos/vietnam-radio-badge.svg";
+    if (isChine) return "assets/logos/china-radio-badge.svg";
     if (isNigeria) return "assets/logos/nigeria-radio-badge.svg";
     if (isCameroon) return "assets/logos/cameroon-radio-badge.svg";
     if (isSenegal) return "assets/logos/senegal-radio-badge.svg";

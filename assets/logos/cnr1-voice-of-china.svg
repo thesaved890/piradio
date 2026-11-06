@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cnr1Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="50%" stop-color="#450a0a"/>
+      <stop offset="100%" stop-color="#180404"/>
+    </linearGradient>
+    <linearGradient id="cnr1Red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="100" fill="url(#cnr1Bg)"/>
+  <rect x="14" y="14" width="484" height="484" rx="86" fill="none" stroke="#ef4444" stroke-opacity="0.45" stroke-width="4"/>
+  <g transform="translate(256, 170)">
+    <rect x="-95" y="-50" width="190" height="100" rx="20" fill="url(#cnr1Red)"/>
+    <text x="0" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">CNR 1</text>
+  </g>
+  <g transform="translate(256, 285)">
+    <rect x="-115" y="-18" width="230" height="38" rx="19" fill="#ef4444"/>
+    <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">106.1 FM • BEIJING</text>
+  </g>
+  <text x="256" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">中国之声</text>
+  <text x="256" y="400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#fca5a5" text-anchor="middle" letter-spacing="3">VOICE OF CHINA • NATIONAL NEWS</text>
+  <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#e2e8f0" text-anchor="middle" letter-spacing="2">中央人民广播电台 🇨🇳</text>
+</svg>

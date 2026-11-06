@@ -3475,18 +3475,153 @@ const CURATED_STATIONS = [
     id: "cnr-1-voice-of-china",
     name: "CNR-1 中国之声 Voice of China",
     country: "Chine",
+    city: "Pékin (Beijing)",
+    state: "Beijing",
     code: "🇨🇳",
     continent: "asia",
     category: "news",
     frequency: "106.1",
     band: "FM",
     language: "中文 (Mandarin)",
-    genre: "National News & Culture from Beijing",
+    genre: "National News & Culture from Beijing • 中国之声",
     streamUrl: "https://lhttp.qtfm.cn/live/15318317/64k.mp3",
-    fallbackUrl: "https://lhttp.qtfm.cn/live/15318317/64k.mp3",
-    logo: "assets/logos/cnr-1-voice-of-china.png",
+    fallbackUrl: "https://ngcdn002.cnr.cn/live/zgzs/index.m3u8",
+    logo: "assets/logos/cnr1-voice-of-china.svg",
     featured: true,
+    locked: false
+  },
+  {
+    id: "cnr-2-economy-china",
+    name: "CNR-2 经济之声 Business Radio",
+    country: "Chine",
+    city: "Pékin (Beijing)",
+    state: "Beijing",
+    code: "🇨🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "96.6",
+    band: "FM",
+    language: "中文 (Mandarin)",
+    genre: "Business, Economy, Markets & Finance • 经济之声",
+    streamUrl: "https://ngcdn002.cnr.cn/live/jjzs/index.m3u8",
+    fallbackUrl: "https://ngcdn002.cnr.cn/live/jjzs/index.m3u8",
+    logo: "assets/logos/cnr2-economy-radio.svg",
+    featured: false,
     locked: true
+  },
+  {
+    id: "cnr-3-music-china",
+    name: "CNR-3 音乐之声 MusicRadio",
+    country: "Chine",
+    city: "Pékin & Shanghai",
+    state: "National",
+    code: "🇨🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "90.0",
+    band: "FM",
+    language: "中文 (Mandarin)",
+    genre: "MusicRadio, C-Pop, Mandopop & Top Hits • 音乐之声",
+    streamUrl: "https://ngcdn001.cnr.cn/live/yyzs/index.m3u8",
+    fallbackUrl: "https://ngcdn001.cnr.cn/live/yyzs/index.m3u8",
+    logo: "assets/logos/cnr3-music-radio.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "cnr-4-classic-china",
+    name: "CNR-4 经典音乐广播 Classic Symphony",
+    country: "Chine",
+    city: "Pékin (Beijing)",
+    state: "Beijing",
+    code: "🇨🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "95.5",
+    band: "FM",
+    language: "中文 (Mandarin)",
+    genre: "Classical Music, Opera, Symphony & Heritage • 经典音乐",
+    streamUrl: "https://ngcdn001.cnr.cn/live/dszs/index.m3u8",
+    fallbackUrl: "https://ngcdn001.cnr.cn/live/dszs/index.m3u8",
+    logo: "assets/logos/cnr4-classic-music.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "cnr-5-cross-strait",
+    name: "CNR-5 中华之声 Cross-Strait Voice",
+    country: "Chine",
+    city: "Pékin / Fuzhou",
+    state: "National",
+    code: "🇨🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "549",
+    band: "AM",
+    language: "中文 (Mandarin / Minnan)",
+    genre: "Cross-Strait Culture, Traditions & News • 中华之声",
+    streamUrl: "https://ngcdn001.cnr.cn/live/zhzs/index.m3u8",
+    fallbackUrl: "https://ngcdn001.cnr.cn/live/zhzs/index.m3u8",
+    logo: "assets/logos/cnr5-cross-strait.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "cnr-9-literature-china",
+    name: "CNR-9 文艺之声 Literature & Arts",
+    country: "Chine",
+    city: "Pékin (Beijing)",
+    state: "Beijing",
+    code: "🇨🇳",
+    continent: "asia",
+    category: "culture",
+    frequency: "104.5",
+    band: "FM",
+    language: "中文 (Mandarin)",
+    genre: "Literature, Audiobooks, Storytelling & Arts • 文艺之声",
+    streamUrl: "https://ngcdn001.cnr.cn/live/wyzs/index.m3u8",
+    fallbackUrl: "https://ngcdn001.cnr.cn/live/wyzs/index.m3u8",
+    logo: "assets/logos/cnr9-literature-radio.svg",
+    featured: false,
+    locked: true
+  },
+  {
+    id: "cnr-15-traffic-china",
+    name: "CNR-15 中国交通广播 National Traffic",
+    country: "Chine",
+    city: "Pékin (Beijing)",
+    state: "National",
+    code: "🇨🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "99.6",
+    band: "FM",
+    language: "中文 (Mandarin)",
+    genre: "National Highway Traffic, Emergency & Travel • 中国交通广播",
+    streamUrl: "https://ngcdn002.cnr.cn/live/gsgljtgb/index.m3u8",
+    fallbackUrl: "https://ngcdn002.cnr.cn/live/gsgljtgb/index.m3u8",
+    logo: "assets/logos/cnr15-traffic-radio.svg",
+    featured: true,
+    locked: false
+  },
+  {
+    id: "cri-global-news-china",
+    name: "CRI 环球资讯广播 Global News",
+    country: "Chine",
+    city: "Pékin (Beijing)",
+    state: "Beijing",
+    code: "🇨🇳",
+    continent: "asia",
+    category: "news",
+    frequency: "90.5",
+    band: "FM",
+    language: "中文 / English",
+    genre: "Global News, International Affairs & Diplomacy • 环球资讯广播",
+    streamUrl: "https://sk.cri.cn/905.m3u8",
+    fallbackUrl: "https://sk.cri.cn/905.m3u8",
+    logo: "assets/logos/cri-global-news.svg",
+    featured: true,
+    locked: false
   },
   {
     id: "easy-rock-manila",
@@ -7252,6 +7387,19 @@ function resolveRegionalStationLogo(st) {
     if (nameLow.includes("community") || nameLow.includes("hcr")) return "assets/logos/hanoi-community-radio.svg";
   }
 
+  // 1.cn Logos officiels Chine 🇨🇳 (v5.28)
+  const isChine = (cCode === "CN") || (st.code === "🇨🇳") || (st.country || "").toLowerCase().includes("china") || (st.country || "").toLowerCase().includes("chine") || nameLow.includes("china") || nameLow.includes("chine") || nameLow.includes("beijing") || nameLow.includes("shanghai") || nameLow.includes("pekin") || nameLow.includes("pékin") || nameLow.includes("cnr") || nameLow.includes("cctv") || nameLow.includes("cri");
+  if (isChine) {
+    if (nameLow.includes("cnr 1") || nameLow.includes("cnr-1") || nameLow.includes("中国之声") || nameLow.includes("voice of china")) return "assets/logos/cnr1-voice-of-china.svg";
+    if (nameLow.includes("cnr 2") || nameLow.includes("cnr-2") || nameLow.includes("经济之声") || nameLow.includes("economy")) return "assets/logos/cnr2-economy-radio.svg";
+    if (nameLow.includes("cnr 3") || nameLow.includes("cnr-3") || nameLow.includes("音乐之声") || nameLow.includes("musicradio")) return "assets/logos/cnr3-music-radio.svg";
+    if (nameLow.includes("cnr 4") || nameLow.includes("cnr-4") || nameLow.includes("经典音乐") || nameLow.includes("classic")) return "assets/logos/cnr4-classic-music.svg";
+    if (nameLow.includes("cnr 5") || nameLow.includes("cnr-5") || nameLow.includes("中华之声") || nameLow.includes("cross-strait")) return "assets/logos/cnr5-cross-strait.svg";
+    if (nameLow.includes("cnr 9") || nameLow.includes("cnr-9") || nameLow.includes("文艺之声") || nameLow.includes("literature")) return "assets/logos/cnr9-literature-radio.svg";
+    if (nameLow.includes("cnr 15") || nameLow.includes("cnr-15") || nameLow.includes("交通广播") || nameLow.includes("traffic")) return "assets/logos/cnr15-traffic-radio.svg";
+    if (nameLow.includes("cri") || nameLow.includes("环球资讯") || nameLow.includes("global news")) return "assets/logos/cri-global-news.svg";
+  }
+
   // 1.g Logos officiels Nigéria 🇳🇬
   const isNigeria = (cCode === "NG") || (st.code === "🇳🇬") || (st.country || "").toLowerCase().includes("nigeria") || (st.country || "").toLowerCase().includes("nigéria") || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
   if (isNigeria) {
@@ -7835,6 +7983,9 @@ function resolveRegionalStationLogo(st) {
   }
   if (isVietnam) {
     return "assets/logos/vietnam-radio-badge.svg";
+  }
+  if (isChine) {
+    return "assets/logos/china-radio-badge.svg";
   }
   if (isNigeria) {
     return "assets/logos/nigeria-radio-badge.svg";
