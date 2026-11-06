@@ -249,12 +249,22 @@ body {
   background: rgba(255, 71, 87, 0.15);
   border: 1px solid rgba(255, 71, 87, 0.4);
   color: #ff4757;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.disconnect-symbol {
+  font-size: 0.92rem;
+  line-height: 1;
 }
 
 .disconnect-icon-btn:hover {
@@ -1311,6 +1321,52 @@ body {
 }
 
 @media (max-width: 640px) {
+  .header {
+    padding: 8px 10px;
+  }
+  .header-container {
+    gap: 6px;
+  }
+  .brand {
+    gap: 8px;
+    min-width: 0;
+  }
+  .brand-icon-img {
+    width: 34px;
+    height: 34px;
+  }
+  .brand-title {
+    font-size: 1.15rem;
+  }
+  .brand-slogan {
+    display: none; /* Masqué sur mobile pour laisser respirer l'en-tête et les badges */
+  }
+  .header-actions {
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .header-receiver-badge {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+  .auth-btn {
+    padding: 4px 8px;
+    font-size: 0.76rem;
+    max-width: 120px;
+  }
+  .auth-btn span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .disconnect-icon-btn {
+    padding: 5px 8px;
+    font-size: 0.76rem;
+  }
+  .disconnect-text {
+    display: none; /* Affiche l'icône rouge ⏻ seule sur smartphone, éliminant tout débordement */
+  }
+
   .livechat-panel {
     padding: 16px 12px;
     width: 100%;
