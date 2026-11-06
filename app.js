@@ -224,16 +224,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const code = st.code || "";
 
     if (code === "🇨🇦" || cCode === "CA" || c.includes("canada") || n.includes("canada") || city.includes("toronto") || city.includes("montreal")) return "assets/logos/canada-radio-badge.svg";
-    if (s.includes("tennessee") || city.includes("nashville") || city.includes("chattanooga")) return "assets/logos/wrlt-lightning-100-nashville.svg";
-    if (s.includes("louisiana") || s.includes("louisiane") || city.includes("new orleans")) return "assets/logos/wwoz-90-7-neworleans.svg";
-    if (s.includes("georgia") || s.includes("géorgie") || city.includes("atlanta")) return "assets/logos/wclk-91-9-atlanta.svg";
-    if (s.includes("pennsylvania") || s.includes("pennsylvanie") || city.includes("philadelphia") || city.includes("pittsburgh")) return "assets/logos/wxpn-88-5-philadelphia.svg";
-    if (s.includes("massachusetts") || city.includes("boston")) return "assets/logos/wbur-90-9-boston.svg";
-    if (s.includes("colorado") || city.includes("denver") || city.includes("boulder")) return "assets/logos/kuvo-89-3-denver.svg";
-    if (s.includes("minnesota") || city.includes("minneapolis") || city.includes("st. paul")) return "assets/logos/the-current-kcmp-minneapolis.svg";
-    if (s.includes("nevada") || city.includes("las vegas")) return "assets/logos/kunv-91-5-lasvegas.svg";
-    if (s.includes("columbia") || city.includes("washington")) return "assets/logos/wamu-88-5-dc.svg";
-    if (s.includes("ohio") || city.includes("cleveland") || city.includes("columbus")) return "assets/logos/wclv-90-3-cleveland.svg";
+    if (s.includes("tennessee") || city.includes("nashville") || city.includes("chattanooga")) return "assets/logos/tennessee-radio-badge.svg";
+    if (s.includes("louisiana") || s.includes("louisiane") || city.includes("new orleans")) return "assets/logos/louisiana-radio-badge.svg";
+    if (s.includes("georgia") || s.includes("géorgie") || city.includes("atlanta")) return "assets/logos/georgia-radio-badge.svg";
+    if (s.includes("pennsylvania") || s.includes("pennsylvanie") || city.includes("philadelphia") || city.includes("pittsburgh")) return "assets/logos/pennsylvania-radio-badge.svg";
+    if (s.includes("massachusetts") || city.includes("boston")) return "assets/logos/massachusetts-radio-badge.svg";
+    if (s.includes("colorado") || city.includes("denver") || city.includes("boulder")) return "assets/logos/colorado-radio-badge.svg";
+    if (s.includes("minnesota") || city.includes("minneapolis") || city.includes("st. paul")) return "assets/logos/minnesota-radio-badge.svg";
+    if (s.includes("nevada") || city.includes("las vegas")) return "assets/logos/nevada-radio-badge.svg";
+    if (s.includes("columbia") || city.includes("washington")) return "assets/logos/dc-radio-badge.svg";
+    if (s.includes("ohio") || city.includes("cleveland") || city.includes("columbus")) return "assets/logos/ohio-radio-badge.svg";
     if (s.includes("michigan") || n.includes("michigan")) return "assets/logos/michigan-radio-badge.svg";
     if (s.includes("texas") || n.includes("texas")) return "assets/logos/texas-radio-badge.svg";
     if (s.includes("hawaii") || s.includes("hawai") || n.includes("hawaii")) return "assets/logos/hawaii-radio-badge.svg";
@@ -356,60 +356,63 @@ document.addEventListener("DOMContentLoaded", () => {
       return "assets/logos/chicago-radio-badge.svg";
     }
 
-    // 1.g Nouveaux États Iconiques des États-Unis 🇺🇸 (v5.24)
-    if (stState.includes("tennessee") || nameLow.includes("nashville") || nameLow.includes("chattanooga") || nameLow.includes("memphis")) {
+    // 1.g Nouveaux États Iconiques des États-Unis 🇺🇸 (v5.25)
+    const isTennessee = stState.includes("tennessee") || nameLow.includes("nashville") || nameLow.includes("chattanooga") || nameLow.includes("memphis");
+    if (isTennessee) {
       if (nameLow.includes("lightning") || nameLow.includes("wrlt") || nameLow.includes("100.1")) return "assets/logos/wrlt-lightning-100-nashville.svg";
       if (nameLow.includes("roots") || nameLow.includes("wmot") || nameLow.includes("89.5")) return "assets/logos/wmot-roots-radio-nashville.svg";
       if (nameLow.includes("classical 90") || nameLow.includes("wsmc") || nameLow.includes("90.5")) return "assets/logos/wsmc-classical-chattanooga.svg";
-      return "assets/logos/wrlt-lightning-100-nashville.svg";
     }
 
-    if (stState.includes("louisiana") || stState.includes("louisiane") || nameLow.includes("new orleans") || nameLow.includes("la nouvelle-orléans")) {
+    const isLouisiana = stState.includes("louisiana") || stState.includes("louisiane") || nameLow.includes("new orleans") || nameLow.includes("la nouvelle-orléans");
+    if (isLouisiana) {
       if (nameLow.includes("wwoz") || nameLow.includes("90.7")) return "assets/logos/wwoz-90-7-neworleans.svg";
       if (nameLow.includes("wtul") || nameLow.includes("91.5")) return "assets/logos/wtul-91-5-neworleans.svg";
-      return "assets/logos/wwoz-90-7-neworleans.svg";
     }
 
-    if (stState.includes("georgia") || stState.includes("géorgie") || nameLow.includes("atlanta") || nameLow.includes("savannah")) {
+    const isGeorgia = stState.includes("georgia") || stState.includes("géorgie") || nameLow.includes("atlanta") || nameLow.includes("savannah");
+    if (isGeorgia) {
       if (nameLow.includes("wclk") || nameLow.includes("91.9")) return "assets/logos/wclk-91-9-atlanta.svg";
       if (nameLow.includes("gpb") || nameLow.includes("88.5")) return "assets/logos/gpb-88-5-atlanta.svg";
-      return "assets/logos/wclk-91-9-atlanta.svg";
     }
 
-    if (stState.includes("pennsylvania") || stState.includes("pennsylvanie") || nameLow.includes("philadelphia") || nameLow.includes("pittsburgh") || nameLow.includes("philly")) {
+    const isPennsylvania = stState.includes("pennsylvania") || stState.includes("pennsylvanie") || nameLow.includes("philadelphia") || nameLow.includes("pittsburgh") || nameLow.includes("philly");
+    if (isPennsylvania) {
       if (nameLow.includes("wxpn") || nameLow.includes("88.5")) return "assets/logos/wxpn-88-5-philadelphia.svg";
       if (nameLow.includes("wrti") || nameLow.includes("90.1")) return "assets/logos/wrti-90-1-jazz-philly.svg";
-      return "assets/logos/wxpn-88-5-philadelphia.svg";
     }
 
-    if (stState.includes("massachusetts") || nameLow.includes("boston") || nameLow.includes("cambridge")) {
+    const isMassachusetts = stState.includes("massachusetts") || nameLow.includes("boston") || nameLow.includes("cambridge");
+    if (isMassachusetts) {
       if (nameLow.includes("wbur") || nameLow.includes("90.9")) return "assets/logos/wbur-90-9-boston.svg";
       if (nameLow.includes("wgbh") || nameLow.includes("gbh") || nameLow.includes("89.7")) return "assets/logos/wgbh-89-7-boston.svg";
-      return "assets/logos/wbur-90-9-boston.svg";
     }
 
-    if (stState.includes("colorado") || nameLow.includes("denver") || nameLow.includes("boulder") || nameLow.includes("colorado")) {
+    const isColorado = stState.includes("colorado") || nameLow.includes("denver") || nameLow.includes("boulder") || nameLow.includes("colorado");
+    if (isColorado) {
       if (nameLow.includes("kuvo") || nameLow.includes("89.3")) return "assets/logos/kuvo-89-3-denver.svg";
       if (nameLow.includes("kgnu") || nameLow.includes("88.5")) return "assets/logos/kgnu-88-5-boulder-denver.svg";
-      return "assets/logos/kuvo-89-3-denver.svg";
     }
 
-    if (stState.includes("minnesota") || nameLow.includes("minneapolis") || nameLow.includes("st. paul") || nameLow.includes("saint paul")) {
-      return "assets/logos/the-current-kcmp-minneapolis.svg";
+    const isMinnesota = stState.includes("minnesota") || nameLow.includes("minneapolis") || nameLow.includes("st. paul") || nameLow.includes("saint paul");
+    if (isMinnesota) {
+      if (nameLow.includes("kcmp") || nameLow.includes("the current")) return "assets/logos/the-current-kcmp-minneapolis.svg";
     }
 
-    if (stState.includes("nevada") || nameLow.includes("las vegas") || nameLow.includes("reno")) {
-      return "assets/logos/kunv-91-5-lasvegas.svg";
+    const isNevada = stState.includes("nevada") || nameLow.includes("las vegas") || nameLow.includes("reno");
+    if (isNevada) {
+      if (nameLow.includes("kunv") || nameLow.includes("91.5")) return "assets/logos/kunv-91-5-lasvegas.svg";
     }
 
-    if (stState.includes("columbia") || nameLow.includes("washington") || nameLow.includes("dc") || nameLow.includes("d.c.")) {
-      return "assets/logos/wamu-88-5-dc.svg";
+    const isDC = stState.includes("columbia") || nameLow.includes("washington") || nameLow.includes("dc") || nameLow.includes("d.c.");
+    if (isDC) {
+      if (nameLow.includes("wamu") || nameLow.includes("88.5")) return "assets/logos/wamu-88-5-dc.svg";
     }
 
-    if (stState.includes("ohio") || nameLow.includes("cleveland") || nameLow.includes("columbus") || nameLow.includes("cincinnati")) {
+    const isOhio = stState.includes("ohio") || nameLow.includes("cleveland") || nameLow.includes("columbus") || nameLow.includes("cincinnati");
+    if (isOhio) {
       if (nameLow.includes("wclv") || nameLow.includes("90.3")) return "assets/logos/wclv-90-3-cleveland.svg";
       if (nameLow.includes("wjcu") || nameLow.includes("88.7")) return "assets/logos/wjcu-88-7-cleveland.svg";
-      return "assets/logos/wclv-90-3-cleveland.svg";
     }
 
     const isNigeria = (st.code === "🇳🇬") || (st.country && (st.country.toLowerCase().includes("nigeria") || st.country.toLowerCase().includes("nigéria"))) || stState.includes("lagos") || stState.includes("ogun") || stState.includes("oyo") || stState.includes("enugu") || stState.includes("rivers") || stState.includes("abia") || stState.includes("abuja") || nameLow.includes("nigeria") || nameLow.includes("lagos") || nameLow.includes("abuja") || nameLow.includes("ibadan") || nameLow.includes("enugu") || nameLow.includes("abeokuta");
@@ -879,6 +882,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isHawaii) return "assets/logos/hawaii-radio-badge.svg";
     if (isFlorida) return "assets/logos/florida-radio-badge.svg";
     if (isChicago) return "assets/logos/chicago-radio-badge.svg";
+    if (isPennsylvania) return "assets/logos/pennsylvania-radio-badge.svg";
+    if (isTennessee) return "assets/logos/tennessee-radio-badge.svg";
+    if (isLouisiana) return "assets/logos/louisiana-radio-badge.svg";
+    if (isGeorgia) return "assets/logos/georgia-radio-badge.svg";
+    if (isMassachusetts) return "assets/logos/massachusetts-radio-badge.svg";
+    if (isColorado) return "assets/logos/colorado-radio-badge.svg";
+    if (isMinnesota) return "assets/logos/minnesota-radio-badge.svg";
+    if (isNevada) return "assets/logos/nevada-radio-badge.svg";
+    if (isDC) return "assets/logos/dc-radio-badge.svg";
+    if (isOhio) return "assets/logos/ohio-radio-badge.svg";
     if (isNigeria) return "assets/logos/nigeria-radio-badge.svg";
     if (isCameroon) return "assets/logos/cameroon-radio-badge.svg";
     if (isSenegal) return "assets/logos/senegal-radio-badge.svg";

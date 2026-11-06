@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.24
+// Pi Radio • Service Worker v5.25
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.24';
+const CACHE_NAME = 'piradio-v5.25';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -17,6 +17,17 @@ const PRECACHE_ASSETS = [
   './icon-maskable.png',
   './apple-touch-icon.png',
   './favicon.png',
+  // Badges d'États officiels des États-Unis 🇺🇸 (v5.25)
+  './assets/logos/pennsylvania-radio-badge.svg',
+  './assets/logos/tennessee-radio-badge.svg',
+  './assets/logos/louisiana-radio-badge.svg',
+  './assets/logos/georgia-radio-badge.svg',
+  './assets/logos/massachusetts-radio-badge.svg',
+  './assets/logos/colorado-radio-badge.svg',
+  './assets/logos/ohio-radio-badge.svg',
+  './assets/logos/minnesota-radio-badge.svg',
+  './assets/logos/nevada-radio-badge.svg',
+  './assets/logos/dc-radio-badge.svg',
   // Logos officiels Nouveaux États des États-Unis 🇺🇸 (v5.23)
   './assets/logos/wrlt-lightning-100-nashville.svg',
   './assets/logos/wmot-roots-radio-nashville.svg',
@@ -592,14 +603,16 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Requêtes vers assets/logos : Cache-First avec fallback Réseau
+  // Requêtes vers assets/logos : Network-First avec fallback Cache (garantit les logos toujours à jour)
   if (url.pathname.includes('/assets/logos/')) {
     event.respondWith(
-      caches.match(req).then((cached) => cached || fetch(req).then((res) => {
-        const copy = res.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
-        return res;
-      }))
+      fetch(req).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
+          const copy = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
+        }
+        return networkResponse;
+      }).catch(() => caches.match(req))
     );
     return;
   }

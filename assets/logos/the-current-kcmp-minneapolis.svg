@@ -1,23 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="bg_the_current_kcmp_minneapolis_svg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#07161b"/>
       <stop offset="100%" stop-color="#0f2c37"/>
     </linearGradient>
-    <filter id="glow_the_current_kcmp_minneapolis_svg" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#06b6d4" flood-opacity="0.4"/>
-    </filter>
+    
   </defs>
 
   <rect width="512" height="512" rx="100" fill="url(#bg_the_current_kcmp_minneapolis_svg)"/>
   <rect x="14" y="14" width="484" height="484" rx="86" fill="none" stroke="#06b6d4" stroke-opacity="0.35" stroke-width="4"/>
 
-  <g filter="url(#glow_the_current_kcmp_minneapolis_svg)" transform="translate(256, 175)">
+  <g transform="translate(256, 175)">
     <circle cx="0" cy="0" r="44" fill="#0e7490" stroke="#22d3ee" stroke-width="4"/><text x="0" y="14" font-family="sans-serif" font-size="26" font-weight="900" fill="#cffafe" text-anchor="middle">CURRENT</text>
   </g>
 
   <g transform="translate(256, 285)">
-    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="#06b6d4" filter="url(#glow_the_current_kcmp_minneapolis_svg)"/>
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="#06b6d4"/>
     <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#0c0618" text-anchor="middle" letter-spacing="1">89.3 FM</text>
   </g>
 

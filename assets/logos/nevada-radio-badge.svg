@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="nvbg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#110f3c"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#nvbg)" stroke="#a5b4fc" stroke-width="2"/>
+  <polygon points="100,45 108,68 132,68 112,82 120,105 100,90 80,105 88,82 68,68 92,68" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="2"/>
+  <circle cx="100" cy="78" r="4" fill="#38bdf8"/>
+  <text x="100" y="152" font-family="'Inter',sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">NEVADA</text>
+  <text x="100" y="172" font-family="'Inter',sans-serif" font-size="9" font-weight="700" fill="#a5b4fc" text-anchor="middle" letter-spacing="2">SILVER STATE &amp; VEGAS</text>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="tnbg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#450a0a"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#tnbg)" stroke="#ef4444" stroke-width="2"/>
+  <circle cx="100" cy="80" r="38" fill="#1e3a8a" stroke="#ffffff" stroke-width="2.5"/>
+  <polygon points="100,56 103,64 111,64 105,69 107,77 100,72 93,77 95,69 89,64 97,64" fill="#ffffff"/>
+  <polygon points="90,82 93,90 101,90 95,95 97,103 90,98 83,103 85,95 79,90 87,90" fill="#ffffff"/>
+  <polygon points="110,82 113,90 121,90 115,95 117,103 110,98 103,103 105,95 99,90 107,90" fill="#ffffff"/>
+  <text x="100" y="152" font-family="'Inter',sans-serif" font-size="15" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">TENNESSEE</text>
+  <text x="100" y="172" font-family="'Inter',sans-serif" font-size="9" font-weight="700" fill="#f87171" text-anchor="middle" letter-spacing="2">MUSIC CITY RADIO</text>
+</svg>

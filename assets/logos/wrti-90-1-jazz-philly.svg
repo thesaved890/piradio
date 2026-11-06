@@ -1,23 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="bg_wrti_90_1_jazz_philly_svg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#09152e"/>
       <stop offset="100%" stop-color="#122654"/>
     </linearGradient>
-    <filter id="glow_wrti_90_1_jazz_philly_svg" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#60a5fa" flood-opacity="0.4"/>
-    </filter>
+    
   </defs>
 
   <rect width="512" height="512" rx="100" fill="url(#bg_wrti_90_1_jazz_philly_svg)"/>
   <rect x="14" y="14" width="484" height="484" rx="86" fill="none" stroke="#60a5fa" stroke-opacity="0.35" stroke-width="4"/>
 
-  <g filter="url(#glow_wrti_90_1_jazz_philly_svg)" transform="translate(256, 175)">
+  <g transform="translate(256, 175)">
     <circle cx="0" cy="0" r="42" fill="#1e40af" stroke="#60a5fa" stroke-width="4"/><text x="0" y="14" font-family="sans-serif" font-size="28" font-weight="900" fill="#dbeafe" text-anchor="middle">WRTI</text>
   </g>
 
   <g transform="translate(256, 285)">
-    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="#60a5fa" filter="url(#glow_wrti_90_1_jazz_philly_svg)"/>
+    <rect x="-110" y="-18" width="220" height="38" rx="19" fill="#60a5fa"/>
     <text x="0" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#0c0618" text-anchor="middle" letter-spacing="1">90.1 FM</text>
   </g>
 
