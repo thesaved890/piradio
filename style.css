@@ -1148,18 +1148,19 @@ body {
   border: 1px solid rgba(243, 180, 63, 0.35);
   border-top: 5px solid var(--pi-gold);
   border-radius: 20px;
-  max-width: 440px;
+  max-width: 480px;
   width: 100%;
-  padding: 28px 24px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 24px 18px;
   text-align: center;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 0 0 30px rgba(243, 180, 63, 0.15);
   position: relative;
-  overflow: hidden;
 }
 
 .receiver-modal-icon {
-  font-size: 46px;
-  margin-bottom: 10px;
+  font-size: 42px;
+  margin-bottom: 8px;
   filter: drop-shadow(0 0 12px var(--pi-gold-glow));
   animation: pulse-trial 2.5s infinite ease-in-out;
 }
@@ -1168,50 +1169,147 @@ body {
   font-size: 1.35rem;
   font-weight: 800;
   color: #ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   letter-spacing: -0.3px;
 }
 
 .receiver-modal-desc {
   color: var(--text-secondary);
-  font-size: 0.88rem;
-  line-height: 1.45;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* Grille des Plans d'Abonnement */
+.subscription-plans-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 18px;
 }
 
-.receiver-price-card {
-  background: rgba(243, 180, 63, 0.08);
-  border: 1px dashed rgba(243, 180, 63, 0.5);
+.sub-plan-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.09);
   border-radius: 14px;
-  padding: 14px 12px;
-  margin-bottom: 18px;
+  padding: 11px 14px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  position: relative;
+  user-select: none;
 }
 
-.receiver-price-badge {
-  display: inline-block;
-  background: var(--pi-gold);
+.sub-plan-card:hover {
+  background: rgba(243, 180, 63, 0.06);
+  border-color: rgba(243, 180, 63, 0.4);
+  transform: translateY(-1px);
+}
+
+.sub-plan-card.selected {
+  background: rgba(243, 180, 63, 0.12);
+  border-color: var(--pi-gold);
+  box-shadow: 0 0 16px rgba(243, 180, 63, 0.25);
+}
+
+.sub-plan-card.popular-plan.selected {
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.35);
+}
+
+.sub-plan-card.vip-plan {
+  background: linear-gradient(145deg, rgba(224, 64, 251, 0.05) 0%, rgba(243, 180, 63, 0.05) 100%);
+  border-color: rgba(224, 64, 251, 0.25);
+}
+
+.sub-plan-card.vip-plan:hover {
+  background: linear-gradient(145deg, rgba(224, 64, 251, 0.1) 0%, rgba(243, 180, 63, 0.1) 100%);
+  border-color: rgba(224, 64, 251, 0.6);
+}
+
+.sub-plan-card.vip-plan.selected {
+  border-color: #e040fb;
+  background: linear-gradient(145deg, rgba(224, 64, 251, 0.18) 0%, rgba(243, 180, 63, 0.15) 100%);
+  box-shadow: 0 0 24px rgba(224, 64, 251, 0.45);
+}
+
+.sub-plan-top-banner {
+  position: absolute;
+  top: -9px;
+  right: 12px;
+  background: linear-gradient(135deg, #ffd700 0%, #ff9800 100%);
   color: #0c0618;
+  font-size: 0.62rem;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 8px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.sub-plan-top-banner.vip-banner {
+  background: linear-gradient(135deg, #e040fb 0%, #ffd700 100%);
+  color: #0c0618;
+}
+
+.sub-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.sub-plan-badge {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.sub-plan-save-pill {
   font-size: 0.68rem;
   font-weight: 800;
-  padding: 2px 10px;
-  border-radius: 10px;
-  letter-spacing: 0.8px;
-  margin-bottom: 6px;
+  background: rgba(0, 230, 118, 0.18);
+  color: var(--live-green);
+  border: 1px solid rgba(0, 230, 118, 0.4);
+  padding: 1px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
 }
 
-.receiver-price-amount {
-  font-size: 1.9rem;
+.sub-plan-save-pill.highlight {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.sub-plan-save-pill.vip-pill {
+  background: rgba(224, 64, 251, 0.25);
+  color: #f38fff;
+  border-color: rgba(224, 64, 251, 0.6);
+}
+
+.sub-plan-price {
+  font-size: 1.15rem;
   font-weight: 900;
   color: var(--pi-gold);
-  line-height: 1.1;
-  text-shadow: 0 0 14px var(--pi-gold-glow);
+  text-shadow: 0 0 10px var(--pi-gold-glow);
 }
 
-.receiver-price-gcv {
-  font-size: 0.76rem;
-  color: #e0d8f0;
-  margin-top: 4px;
-  font-weight: 600;
+.sub-plan-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: #bfb2d8;
+}
+
+.sub-plan-gcv {
+  font-weight: 700;
+  color: #e8dff8;
+}
+
+.sub-plan-monthly {
+  color: var(--text-muted);
 }
 
 .receiver-features-list {

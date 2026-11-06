@@ -18,12 +18,44 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!savedTxid || savedTxid.startsWith("sim_")) {
     localStorage.removeItem("piradio_receiver_activated");
     localStorage.removeItem("piradio_receiver_txid");
+    localStorage.removeItem("piradio_subscription");
     localStorage.removeItem("piradio_station_trials");
   }
   const savedUser = JSON.parse(localStorage.getItem("piradio_user") || "null");
   if (savedUser && savedUser.username === "PioneerGlobal") {
     localStorage.removeItem("piradio_user");
   }
+
+  // Chargement et validation de l'abonnement
+  let savedSub = null;
+  try {
+    savedSub = JSON.parse(localStorage.getItem("piradio_subscription") || "null");
+  } catch(e) {
+    savedSub = null;
+  }
+
+  if (savedSub && savedSub.txid && savedSub.txid.startsWith("sim_")) {
+    localStorage.removeItem("piradio_subscription");
+    localStorage.removeItem("piradio_receiver_activated");
+    localStorage.removeItem("piradio_receiver_txid");
+    savedSub = null;
+  }
+
+  // Vérifier expiration de l'abonnement s'il a une date de fin
+  if (savedSub && savedSub.expiresAt && Date.now() > savedSub.expiresAt) {
+    localStorage.removeItem("piradio_receiver_activated");
+  }
+
+  const isSubActiveInitial = Boolean(
+    savedSub &&
+    savedSub.txid &&
+    !savedSub.txid.startsWith("sim_") &&
+    (!savedSub.expiresAt || Date.now() < savedSub.expiresAt)
+  ) || Boolean(
+    localStorage.getItem("piradio_receiver_activated") === "true" &&
+    localStorage.getItem("piradio_receiver_txid") &&
+    !localStorage.getItem("piradio_receiver_txid").startsWith("sim_")
+  );
 
   // --- ÉTAT GLOBAL DE L'APPLICATION ---
   const state = {
@@ -48,13 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
     dataSaver: localStorage.getItem("piradio_datasaver") === "true",
     favorites: JSON.parse(localStorage.getItem("piradio_favs") || "[]"),
     pioneerUser: JSON.parse(localStorage.getItem("piradio_user") || "null"),
+    subscription: savedSub,
+    selectedPlanId: "plan_1y", // Plan 1 An sélectionné par défaut
     isBoosted: false,
     isNormalizerOn: localStorage.getItem("piradio_normalizer") !== "false",
-    isReceiverActivated: Boolean(
-      localStorage.getItem("piradio_receiver_activated") === "true" &&
-      localStorage.getItem("piradio_receiver_txid") &&
-      !localStorage.getItem("piradio_receiver_txid").startsWith("sim_")
-    ),
+    isReceiverActivated: isSubActiveInitial,
     stationTrials: JSON.parse(localStorage.getItem("piradio_station_trials") || "{}"),
     trialTimerInterval: null,
     audio: new Audio(),
@@ -120,14 +150,62 @@ document.addEventListener("DOMContentLoaded", () => {
   const pwaInstallBtn = null;
   const pwaInstalledNotice = null;
 
-  // Modale Licence Poste Pi Radio (Étape 2 & 3)
+  // Modale Abonnements & Pass Pi Radio (GCV Officiel)
   const receiverModal = document.getElementById("receiverModal");
   const activateReceiverBtn = document.getElementById("activateReceiverBtn");
   const closeReceiverBtn = document.getElementById("closeReceiverBtn");
   const openReceiverModalFromSettingsBtn = document.getElementById("openReceiverModalFromSettingsBtn");
   const receiverSettingStatusText = document.getElementById("receiverSettingStatusText");
   const headerReceiverBadge = document.getElementById("headerReceiverBadge");
-  const RECEIVER_LICENSE_PRICE_PI = 0.00005;
+  const payBtnLabel = document.getElementById("payBtnLabel");
+  const subscriptionPlansGrid = document.getElementById("subscriptionPlansGrid");
+
+  const SUBSCRIPTION_PLANS = {
+    plan_3m: {
+      id: "plan_3m",
+      name: "Pass 3 Mois",
+      durationDays: 90,
+      pricePi: 0.00005,
+      gcvUsd: "15,71 $",
+      monthlyUsd: "~5,24 $/mois",
+      labelFr: "Activer le Pass 3 Mois (0.00005 π)",
+      labelEn: "Activate 3 Months Pass (0.00005 π)",
+      memo: "Abonnement Pi Radio - Pass 3 Mois (0.00005 π)"
+    },
+    plan_6m: {
+      id: "plan_6m",
+      name: "Pass 6 Mois",
+      durationDays: 180,
+      pricePi: 0.000086,
+      gcvUsd: "27,13 $",
+      monthlyUsd: "~4,52 $/mois",
+      labelFr: "Activer le Pass 6 Mois (0.000086 π)",
+      labelEn: "Activate 6 Months Pass (0.000086 π)",
+      memo: "Abonnement Pi Radio - Pass 6 Mois (0.000086 π)"
+    },
+    plan_1y: {
+      id: "plan_1y",
+      name: "Pass 1 An",
+      durationDays: 365,
+      pricePi: 0.00015,
+      gcvUsd: "46,99 $",
+      monthlyUsd: "~3,92 $/mois",
+      labelFr: "Activer le Pass 1 An (0.00015 π)",
+      labelEn: "Activate 1 Year Pass (0.00015 π)",
+      memo: "Abonnement Pi Radio - Pass 1 An (0.00015 π)"
+    },
+    plan_vip: {
+      id: "plan_vip",
+      name: "Pass VIP à Vie",
+      durationDays: 0,
+      pricePi: 0.00050,
+      gcvUsd: "157,08 $",
+      monthlyUsd: "Accès Permanent Définitif",
+      labelFr: "Activer le Pass VIP à Vie (0.00050 π)",
+      labelEn: "Activate Lifetime VIP Pass (0.00050 π)",
+      memo: "Abonnement Pi Radio - Pass VIP Prestige à Vie (0.00050 π)"
+    }
+  };
 
   // Badge officiel avec drapeau national (anti-photos génériques et safe SVG)
   function getFlagFallback(code) {
@@ -1271,7 +1349,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         trialTagHtml = `<span class="card-trial-badge">${t.trialCardBadge || '🔒 Essai 3min'}</span>`;
       }
-    } else if (state.isReceiverActivated && (st.locked || st.id.startsWith("rb_"))) {
+    } else if (isSubscriptionActive() && (st.locked || st.id.startsWith("rb_"))) {
       trialTagHtml = `<span class="card-unlocked-badge">${t.trialUnlocked || '📻 Débloqué'}</span>`;
     }
 
@@ -1392,13 +1470,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================================================
   function isStationLocked(station) {
     if (!station) return false;
-    if (state.isReceiverActivated) return false;
+    if (isSubscriptionActive()) return false;
     // Une station est verrouillée si station.locked === true ou si issue d'une recherche (rb_...)
     return station.locked === true || station.id.startsWith("rb_");
   }
 
   function getStationRemainingSeconds(stId) {
-    if (state.isReceiverActivated) return 999999;
+    if (isSubscriptionActive()) return 999999;
     if (!stId) return 180;
     if (state.stationTrials[stId] === undefined) {
       return 180; // 3 minutes complètes garanties
@@ -1414,14 +1492,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startTrialCountdown(station) {
     stopTrialCountdown();
-    if (state.isReceiverActivated) {
+    if (isSubscriptionActive()) {
       if (trialCountdownBadge) {
         trialCountdownBadge.style.display = "inline-flex";
         trialCountdownBadge.style.color = "var(--live-green)";
         trialCountdownBadge.style.borderColor = "var(--live-green)";
         trialCountdownBadge.style.background = "rgba(0, 230, 118, 0.15)";
-        const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-        trialCountdownBadge.textContent = t.trialUnlocked || "📻 Débloqué";
+        const remDays = getSubscriptionRemainingDays();
+        trialCountdownBadge.textContent = remDays === Infinity ? "👑 VIP à Vie" : `📻 Débloqué (${remDays}j)`;
       }
       return;
     }
@@ -1486,12 +1564,71 @@ document.addEventListener("DOMContentLoaded", () => {
     openReceiverModal();
   }
 
+  // Vérifier si un abonnement ou une licence est actuellement actif
+  function isSubscriptionActive() {
+    if (state.subscription) {
+      if (state.subscription.planId === "plan_vip") return true;
+      if (state.subscription.expiresAt) {
+        return Date.now() < state.subscription.expiresAt;
+      }
+    }
+    return Boolean(
+      state.isReceiverActivated &&
+      localStorage.getItem("piradio_receiver_txid") &&
+      !localStorage.getItem("piradio_receiver_txid").startsWith("sim_")
+    );
+  }
+
+  // Nombre de jours restants sur l'abonnement
+  function getSubscriptionRemainingDays() {
+    if (!isSubscriptionActive()) return 0;
+    if (state.subscription && state.subscription.planId === "plan_vip") return Infinity;
+    if (state.subscription && state.subscription.expiresAt) {
+      const diff = state.subscription.expiresAt - Date.now();
+      return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+    }
+    return Infinity;
+  }
+
+  // Sélection visuelle d'un plan dans la modale
+  function selectSubscriptionPlan(planId) {
+    if (!SUBSCRIPTION_PLANS[planId]) return;
+    state.selectedPlanId = planId;
+    const plan = SUBSCRIPTION_PLANS[planId];
+
+    if (subscriptionPlansGrid) {
+      const cards = subscriptionPlansGrid.querySelectorAll(".sub-plan-card");
+      cards.forEach(c => {
+        if (c.getAttribute("data-plan") === planId) {
+          c.classList.add("selected");
+        } else {
+          c.classList.remove("selected");
+        }
+      });
+    }
+
+    if (payBtnLabel) {
+      payBtnLabel.textContent = (state.lang === "en") ? plan.labelEn : plan.labelFr;
+    }
+  }
+
+  if (subscriptionPlansGrid) {
+    subscriptionPlansGrid.addEventListener("click", (e) => {
+      const card = e.target.closest(".sub-plan-card");
+      if (card) {
+        const pId = card.getAttribute("data-plan");
+        if (pId) selectSubscriptionPlan(pId);
+      }
+    });
+  }
+
   function openReceiverModal() {
-    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-    if (state.isReceiverActivated) {
-      showToast(t.receiverAlreadyActive || "Votre Poste Pi Radio est déjà actif à vie !");
+    // Si déjà VIP, pas besoin d'ouvrir le paywall
+    if (state.subscription && state.subscription.planId === "plan_vip") {
+      showToast("Votre Pass VIP Prestige à Vie est actif en illimité 👑");
       return;
     }
+    selectSubscriptionPlan(state.selectedPlanId || "plan_1y");
     if (receiverModal) receiverModal.classList.add("active");
   }
 
@@ -1499,54 +1636,100 @@ document.addEventListener("DOMContentLoaded", () => {
     if (receiverModal) receiverModal.classList.remove("active");
   }
 
-  // Mettre à jour l'affichage de l'état de la licence
+  // Mettre à jour l'affichage de l'état de l'abonnement
   function updateReceiverLicenseUI() {
     const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    const active = isSubscriptionActive();
+    const remainingDays = getSubscriptionRemainingDays();
+
     if (headerReceiverBadge) {
-      headerReceiverBadge.style.display = state.isReceiverActivated ? "inline-flex" : "none";
-    }
-    if (receiverSettingStatusText) {
-      if (state.isReceiverActivated) {
-        receiverSettingStatusText.textContent = "✅ " + (t.receiverActivatedBadge || "Poste Activé à vie");
+      if (active) {
+        headerReceiverBadge.style.display = "inline-flex";
+        if (remainingDays === Infinity) {
+          headerReceiverBadge.innerHTML = `<span>👑</span> <span>VIP à Vie</span>`;
+          headerReceiverBadge.style.borderColor = "var(--pi-gold)";
+        } else {
+          headerReceiverBadge.innerHTML = `<span>⚡</span> <span>Pass : ${remainingDays}j</span>`;
+          headerReceiverBadge.style.borderColor = "var(--live-green)";
+        }
       } else {
-        receiverSettingStatusText.textContent = t.receiverActivateBtn || "Activer mon Poste (0.00005 π)";
+        headerReceiverBadge.style.display = "none";
       }
     }
-    if (state.isReceiverActivated && trialCountdownBadge) {
+
+    if (receiverSettingStatusText) {
+      if (active) {
+        if (remainingDays === Infinity) {
+          receiverSettingStatusText.textContent = "👑 Pass VIP Prestige à Vie (Actif)";
+        } else {
+          receiverSettingStatusText.textContent = `✅ Pass Actif (${remainingDays} jours restants)`;
+        }
+      } else {
+        receiverSettingStatusText.textContent = t.receiverActivateBtn || "Choisir un abonnement";
+      }
+    }
+
+    if (active && trialCountdownBadge) {
       trialCountdownBadge.style.display = "inline-flex";
       trialCountdownBadge.style.color = "var(--live-green)";
       trialCountdownBadge.style.borderColor = "var(--live-green)";
       trialCountdownBadge.style.background = "rgba(0, 230, 118, 0.15)";
-      trialCountdownBadge.textContent = t.trialUnlocked || "📻 Débloqué";
+      trialCountdownBadge.textContent = remainingDays === Infinity ? "👑 VIP à Vie" : `📻 Débloqué (${remainingDays}j)`;
     }
   }
 
-  // Finalisation du déblocage permanent du Poste Pi Radio
-  function completeReceiverActivation(txid) {
+  // Finalisation du déblocage avec calcul de la durée d'abonnement
+  function completeReceiverActivation(txid, planId) {
+    const chosenPlan = SUBSCRIPTION_PLANS[planId || state.selectedPlanId] || SUBSCRIPTION_PLANS.plan_1y;
+    const now = Date.now();
+    let expiresAt = null;
+
+    if (chosenPlan.durationDays > 0) {
+      const currentExpiry = (state.subscription && state.subscription.expiresAt && state.subscription.expiresAt > now)
+        ? state.subscription.expiresAt
+        : now;
+      expiresAt = currentExpiry + (chosenPlan.durationDays * 24 * 60 * 60 * 1000);
+    }
+
+    const subData = {
+      planId: chosenPlan.id,
+      planName: chosenPlan.name,
+      pricePi: chosenPlan.pricePi,
+      txid: txid,
+      activatedAt: now,
+      expiresAt: expiresAt
+    };
+
+    state.subscription = subData;
     state.isReceiverActivated = true;
+    localStorage.setItem("piradio_subscription", JSON.stringify(subData));
     localStorage.setItem("piradio_receiver_activated", "true");
     if (txid) {
       localStorage.setItem("piradio_receiver_txid", txid);
     }
+
     stopTrialCountdown();
     closeReceiverModal();
     updateReceiverLicenseUI();
     renderStations();
 
-    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-    showToast(t.receiverActivatedSuccess || "Félicitations ! Votre Poste Pi Radio est activé à vie 📻");
+    const successMsg = chosenPlan.durationDays === 0
+      ? "👑 Félicitations ! Votre Pass VIP Prestige à Vie est activé !"
+      : `📻 Félicitations ! Votre ${chosenPlan.name} est activé pour ${chosenPlan.durationDays} jours !`;
+    showToast(successMsg);
 
-    // Si une station était en attente de lecture, la relancer immédiatement
     if (state.currentStation && !state.isPlaying) {
       startPlayback(state.currentStation, false);
     }
   }
 
-  // Traitement officiel du paiement Pi Network SDK (0.00005 Pi) via Pi Wallet
+  // Traitement officiel du paiement Pi Network SDK multi-formules via Pi Wallet
   function handleReceiverPayment() {
+    const chosenPlan = SUBSCRIPTION_PLANS[state.selectedPlanId || "plan_1y"];
     const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
-    if (state.isReceiverActivated) {
-      showToast(t.receiverAlreadyActive || "Votre Poste Pi Radio est déjà actif à vie !");
+
+    if (state.subscription && state.subscription.planId === "plan_vip") {
+      showToast("Votre Pass VIP Prestige à Vie est déjà actif en illimité 👑");
       closeReceiverModal();
       return;
     }
@@ -1565,9 +1748,9 @@ document.addEventListener("DOMContentLoaded", () => {
           fetch("/api/complete", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ paymentId: payment.identifier, txid: payment.transaction.txid })
+            body: JSON.stringify({ paymentId: payment.identifier, txid: payment.transaction.txid, planId: chosenPlan.id })
           }).then(function() {
-            completeReceiverActivation(payment.transaction.txid);
+            completeReceiverActivation(payment.transaction.txid, chosenPlan.id);
           });
         }
       })
@@ -1575,7 +1758,7 @@ document.addEventListener("DOMContentLoaded", () => {
         state.pioneerUser = auth.user;
         localStorage.setItem("piradio_user", JSON.stringify(auth.user));
         updateAuthUI();
-        executePiPayment();
+        executePiPayment(chosenPlan);
       })
       .catch(function(err) {
         console.error("[Pi Radio] Erreur authentification Pi :", err);
@@ -1584,34 +1767,38 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    executePiPayment();
+    executePiPayment(chosenPlan);
   }
 
-  function executePiPayment() {
+  function executePiPayment(plan) {
     if (!window.Pi || !window.Pi.createPayment) {
       showToast("Pi SDK non disponible. Veuillez ouvrir dans le Pi Browser.", "error");
       return;
     }
 
-    showToast("Ouverture de votre Pi Wallet...");
+    const currentPlan = plan || SUBSCRIPTION_PLANS[state.selectedPlanId || "plan_1y"];
+    showToast(`Ouverture de votre Pi Wallet (${currentPlan.pricePi} π)...`);
 
     try {
       window.Pi.createPayment({
-        amount: RECEIVER_LICENSE_PRICE_PI,
-        memo: "Licence Poste Pi Radio à vie - 50 000 stations",
+        amount: currentPlan.pricePi,
+        memo: currentPlan.memo,
         metadata: {
-          type: "lifetime_receiver_license",
-          amount_pi: RECEIVER_LICENSE_PRICE_PI,
+          type: "piradio_subscription",
+          plan_id: currentPlan.id,
+          plan_name: currentPlan.name,
+          amount_pi: currentPlan.pricePi,
+          duration_days: currentPlan.durationDays,
           app: "Pi Radio",
           user_uid: state.pioneerUser ? state.pioneerUser.uid : "pioneer"
         }
       }, {
         onReadyForServerApproval: function(paymentId) {
-          console.log("[Pi Radio Payment] Envoi de l'approbation au serveur pour :", paymentId);
+          console.log(`[Pi Radio Payment] Envoi approbation serveur pour : ${paymentId} (${currentPlan.name})`);
           fetch("/api/approve", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ paymentId: paymentId })
+            body: JSON.stringify({ paymentId: paymentId, planId: currentPlan.id })
           })
           .then(function(res) { return res.json(); })
           .then(function(data) {
@@ -1625,20 +1812,20 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         },
         onReadyForServerCompletion: function(paymentId, txid) {
-          console.log("[Pi Radio Payment] Transaction blockchain Pi validée :", txid);
+          console.log(`[Pi Radio Payment] Transaction blockchain Pi validée : ${txid} (${currentPlan.name})`);
           fetch("/api/complete", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ paymentId: paymentId, txid: txid })
+            body: JSON.stringify({ paymentId: paymentId, txid: txid, planId: currentPlan.id })
           })
           .then(function(res) { return res.json(); })
           .then(function(data) {
             console.log("[Pi Radio Payment] Réponse finalisation serveur :", data);
-            completeReceiverActivation(txid);
+            completeReceiverActivation(txid, currentPlan.id);
           })
           .catch(function(err) {
             console.error("[Pi Radio Payment] Erreur réseau finalisation :", err);
-            completeReceiverActivation(txid);
+            completeReceiverActivation(txid, currentPlan.id);
           });
         },
         onCancel: function(paymentId) {
@@ -1669,7 +1856,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isStationLocked(station)) {
       const remaining = getStationRemainingSeconds(station.id);
-      if (!state.isReceiverActivated && remaining <= 0) {
+      if (!isSubscriptionActive() && remaining <= 0) {
         handleTrialExpiration(station);
         return;
       }
@@ -1744,7 +1931,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isStationLocked(state.currentStation)) {
       const remaining = getStationRemainingSeconds(state.currentStation.id);
-      if (!state.isReceiverActivated && remaining <= 0) {
+      if (!isSubscriptionActive() && remaining <= 0) {
         handleTrialExpiration(state.currentStation);
         return;
       }
