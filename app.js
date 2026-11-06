@@ -3,11 +3,11 @@
 // Axe 2 : Recherche Avancée (Fréquences FM, Sélecteur de Pays & Puces directes)
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialisation officielle du SDK Pi Network en mode Testnet (sandbox: true)
+  // Initialisation officielle du SDK Pi Network en mode Mainnet (sandbox: false)
   if (window.Pi) {
     try {
-      window.Pi.init({ version: "2.0", sandbox: true });
-      console.log("[Pi Radio] Pi SDK v2.0 initialisé avec succès en mode Testnet (sandbox: true).");
+      window.Pi.init({ version: "2.0", sandbox: false });
+      console.log("[Pi Radio] Pi SDK v2.0 initialisé avec succès en mode Mainnet officiel (sandbox: false).");
     } catch (err) {
       console.warn("[Pi Radio] Pi.init notification :", err);
     }
