@@ -2929,6 +2929,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Envoi de message gratuit (avec filtre anti-spam 60s)
   if (sendFreeMessageBtn) {
     sendFreeMessageBtn.addEventListener("click", () => {
+      if (!state.pioneerUser) {
+        openAuthGateModal();
+        return;
+      }
+
       if (!livechatInput) return;
       const text = livechatInput.value.trim();
       if (!text) {
@@ -2949,7 +2954,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const currentStationName = state.currentStation ? `${state.currentStation.name} (${state.currentStation.frequency || 'LIVE'})` : "";
       const currentFlag = state.currentStation ? (state.currentStation.flag || "🌍") : "🌍";
-      const username = state.user && state.user.username ? `@${state.user.username}` : "@PioneerListener";
+      const username = state.pioneerUser && state.pioneerUser.username ? `@${state.pioneerUser.username}` : "@PioneerListener";
 
       const newMsg = {
         id: `msg_${Date.now()}`,
@@ -2975,10 +2980,141 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Bouton SuperChat (Étape 1 : information et préparation pour l'Étape 2)
+  // Raccordement officiel Pi SDK v2 pour la Dédicace d'Antenne (0.00010 π)
+  function executeSuperChatPayment(text) {
+    if (!window.Pi || !window.Pi.createPayment) {
+      showToast("Le règlement de la dédicace (0.00010 π) nécessite d'ouvrir Pi Radio dans le Pi Browser.", "error");
+      return;
+    }
+
+    const currentStationName = state.currentStation ? `${state.currentStation.name} (${state.currentStation.frequency || 'LIVE'})` : "Pi Radio Mondial";
+    const currentFlag = state.currentStation ? (state.currentStation.flag || "🌍") : "🌍";
+    const currentCountry = state.currentStation ? state.currentStation.country : "Global";
+    const username = state.pioneerUser && state.pioneerUser.username ? `@${state.pioneerUser.username}` : "@PioneerListener";
+
+    showToast("Ouverture de votre Pi Wallet pour la dédicace d'antenne (0.00010 π)...");
+
+    try {
+      window.Pi.createPayment({
+        amount: 0.00010,
+        memo: "Pi Radio • Dédicace Officielle à l'Antenne",
+        metadata: {
+          type: "piradio_superchat",
+          amount_pi: 0.00010,
+          app: "Pi Radio",
+          user_uid: state.pioneerUser.uid,
+          username: username,
+          station_name: currentStationName,
+          country: currentCountry,
+          text: text.substring(0, 280)
+        }
+      }, {
+        onReadyForServerApproval: function(paymentId) {
+          console.log(`[Pi Radio SuperChat] Envoi approbation serveur pour : ${paymentId}`);
+          fetch("/api/approve", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ paymentId: paymentId, type: "piradio_superchat" })
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            console.log("[Pi Radio SuperChat] Réponse approbation serveur :", data);
+          })
+          .catch(function(err) {
+            console.error("[Pi Radio SuperChat] Erreur réseau approbation :", err);
+          });
+        },
+        onReadyForServerCompletion: function(paymentId, txid) {
+          console.log(`[Pi Radio SuperChat] Blockchain transaction validée : ${txid}`);
+          fetch("/api/complete", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ paymentId: paymentId, txid: txid, type: "piradio_superchat" })
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            console.log("[Pi Radio SuperChat] Finalisation serveur :", data);
+            completeSuperChatPublication(text, txid);
+          })
+          .catch(function(err) {
+            console.error("[Pi Radio SuperChat] Erreur réseau finalisation :", err);
+            completeSuperChatPublication(text, txid);
+          });
+        },
+        onCancel: function(paymentId) {
+          console.log("[Pi Radio SuperChat] Annulé par l'utilisateur :", paymentId);
+          showToast("Dédicace d'antenne annulée.");
+        },
+        onError: function(error, payment) {
+          console.error("[Pi Radio SuperChat] Erreur Pi SDK :", error);
+          showToast("Erreur Pi Network : " + (error ? (error.message || JSON.stringify(error)) : "Transaction non aboutie"), "error");
+        }
+      });
+    } catch (err) {
+      console.error("[Pi Radio SuperChat] Exception createPayment :", err);
+      showToast("Erreur Pi : " + (err.message || err), "error");
+    }
+  }
+
+  function completeSuperChatPublication(text, txid) {
+    const nowTime = new Date();
+    const hh = String(nowTime.getHours()).padStart(2, "0");
+    const mm = String(nowTime.getMinutes()).padStart(2, "0");
+
+    const currentStationName = state.currentStation ? `${state.currentStation.name} (${state.currentStation.frequency || 'LIVE'})` : "Pi Radio Mondial";
+    const currentFlag = state.currentStation ? (state.currentStation.flag || "🌍") : "🌍";
+    const username = state.pioneerUser && state.pioneerUser.username ? `@${state.pioneerUser.username}` : "@PioneerListener";
+
+    const superMsg = {
+      id: `sc_${Date.now()}`,
+      user: username,
+      flag: currentFlag,
+      country: state.currentStation ? state.currentStation.country : "Global",
+      station: currentStationName,
+      time: `${hh}:${mm}`,
+      text: text,
+      isSuperChat: true,
+      amount: "0.00010 π",
+      txid: txid || "pi_tx_verified"
+    };
+
+    const messages = getLiveChatMessages();
+    messages.push(superMsg);
+    saveLiveChatMessages(messages);
+
+    if (livechatInput) livechatInput.value = "";
+    if (livechatCharCounter) livechatCharCounter.textContent = "0";
+
+    renderLiveChatMessages();
+    showToast("⭐ Dédicace officielle validée sur la blockchain Pi et diffusée à l'antenne ! 📻");
+  }
+
+  // Bouton SuperChat raccordé au Pi SDK (0.00010 π)
   if (sendSuperChatBtn) {
     sendSuperChatBtn.addEventListener("click", () => {
-      showToast("⭐ Dédicace d'Antenne (0.00010 π) : Raccordement Pi SDK programmé pour l'Étape 2.");
+      if (!state.pioneerUser) {
+        openAuthGateModal();
+        return;
+      }
+
+      if (!livechatInput) return;
+      const text = livechatInput.value.trim();
+      if (!text) {
+        showToast("Veuillez saisir votre message de dédicace d'abord.");
+        return;
+      }
+
+      executeSuperChatPayment(text);
+    });
+  }
+
+  // Raccourci clavier Ctrl+Enter / Cmd+Enter pour envoyer rapidement
+  if (livechatInput) {
+    livechatInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        if (sendFreeMessageBtn) sendFreeMessageBtn.click();
+      }
     });
   }
 
