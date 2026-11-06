@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- ÉTAT GLOBAL DE L'APPLICATION ---
   const state = {
     lang: localStorage.getItem("piradio_lang") || "fr",
-    activeTab: "home", // home, explore, news, culture, sports, settings
+    activeTab: "home", // home, explore, news, culture, sports, livechat, settings
     activeContinent: "all",
     selectedCountry: "all",
     selectedBand: "all",
@@ -103,6 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionBackBtn = document.getElementById("sectionBackBtn");
   const sectionBackBtnText = document.getElementById("sectionBackBtnText");
   const backFromSettingsBtn = document.getElementById("backFromSettingsBtn");
+  const livechatPanel = document.getElementById("livechatPanel");
+  const backFromLivechatBtn = document.getElementById("backFromLivechatBtn");
+  const livechatFeed = document.getElementById("livechatFeed");
+  const livechatInput = document.getElementById("livechatInput");
+  const livechatCharCounter = document.getElementById("livechatCharCounter");
+  const livechatStationName = document.getElementById("livechatStationName");
+  const sendFreeMessageBtn = document.getElementById("sendFreeMessageBtn");
+  const sendSuperChatBtn = document.getElementById("sendSuperChatBtn");
+  const onairTickerContent = document.getElementById("onairTickerContent");
   const totalCountEl = document.getElementById("totalCount");
   const searchInput = document.getElementById("searchInput");
   const clearSearchBtn = document.getElementById("clearSearchBtn");
@@ -1334,10 +1343,24 @@ document.addEventListener("DOMContentLoaded", () => {
       searchSection.style.display = "none";
       mainContentArea.style.display = "none";
       if (favoritesSection) favoritesSection.style.display = "none";
+      if (livechatPanel) livechatPanel.classList.remove("active");
       settingsPanel.classList.add("active");
       return;
     }
 
+    if (state.activeTab === "livechat") {
+      heroSection.style.display = "none";
+      searchSection.style.display = "none";
+      mainContentArea.style.display = "none";
+      if (favoritesSection) favoritesSection.style.display = "none";
+      settingsPanel.classList.remove("active");
+      if (livechatPanel) livechatPanel.classList.add("active");
+      updateLiveChatListeningStation();
+      renderLiveChatMessages();
+      return;
+    }
+
+    if (livechatPanel) livechatPanel.classList.remove("active");
     settingsPanel.classList.remove("active");
     mainContentArea.style.display = "block";
     heroSection.style.display = "block";
@@ -2243,6 +2266,7 @@ document.addEventListener("DOMContentLoaded", () => {
       playerStatusText.textContent = t.stopped;
       playerStatusIndicator.className = "player-status-indicator stopped";
     }
+    updateLiveChatListeningStation();
   }
 
   // ============================================================
@@ -2732,6 +2756,229 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       renderView();
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // ============================================================
+  // GESTION DU FORUM "ANTENNE & DÉBATS" (ÉTAPE 1 : STRUCTURE & DESIGN)
+  // ============================================================
+  let lastLiveChatPostTime = 0;
+
+  function escapeHtml(str) {
+    if (!str) return "";
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  const DEFAULT_COMMUNITY_MESSAGES = [
+    {
+      id: "msg_1",
+      user: "@Kwame_Pioneer",
+      flag: "🇧🇯",
+      country: "Bénin",
+      station: "ORTB Bénin (98.2 FM)",
+      time: "21:18",
+      text: "Très belle émission économique ce soir sur ORTB ! La tokenisation et la monnaie numérique sont le futur pour nos PME en Afrique de l'Ouest.",
+      isSuperChat: false
+    },
+    {
+      id: "msg_2",
+      user: "@JeanLuc_Paris",
+      flag: "🇫🇷",
+      country: "France",
+      station: "RFI Monde (89.0 FM)",
+      time: "21:24",
+      text: "Depuis Paris, j'écoute le débat sur la transition Web3. La diaspora africaine et mondiale soutient massivement l'utilité réelle de Pi !",
+      isSuperChat: false
+    },
+    {
+      id: "msg_3",
+      user: "@Nguyen_Minh",
+      flag: "🇻🇳",
+      country: "Vietnam",
+      station: "VOV1 Thời Sự Hà Nội (100.0 FM)",
+      time: "21:29",
+      text: "Chào các Pioneer trên toàn cầu! Tin tức kinh tế tối nay rất tích cực. Pi Radio giúp chúng tôi kết nối xuyên biên giới. 0.00010 Pi gửi tặng cộng đồng!",
+      isSuperChat: true,
+      amount: "0.00010 π"
+    },
+    {
+      id: "msg_4",
+      user: "@Amina_Dakar",
+      flag: "🇸🇳",
+      country: "Sénégal",
+      station: "RTS Dakar (92.5 FM)",
+      time: "21:33",
+      text: "L'analyse des marchés et du commerce transfrontalier en direct est passionnante. Bravo aux journalistes pour cette émission !",
+      isSuperChat: false
+    },
+    {
+      id: "msg_5",
+      user: "@Li_Wei",
+      flag: "🇨🇳",
+      country: "Chine",
+      station: "CNR-1 Voice of China (106.1 FM)",
+      time: "21:37",
+      text: "从中国向全球先锋问好！全球电台汇聚在Pi Radio，为去中心化生态开辟了最真实的落地场景。",
+      isSuperChat: false
+    },
+    {
+      id: "msg_6",
+      user: "@Rajesh_Mumbai",
+      flag: "🇮🇳",
+      country: "Inde",
+      station: "AIR Vividh Bharati (102.8 FM)",
+      time: "21:42",
+      text: "Listening to vivid debates on digital financial inclusion right from Mumbai. The global Pioneer network is truly unstoppable!",
+      isSuperChat: false
+    }
+  ];
+
+  function getLiveChatMessages() {
+    try {
+      const stored = localStorage.getItem("piradio_livechat_messages");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (e) {
+      console.warn("Erreur lecture livechat messages:", e);
+    }
+    return DEFAULT_COMMUNITY_MESSAGES;
+  }
+
+  function saveLiveChatMessages(messages) {
+    try {
+      localStorage.setItem("piradio_livechat_messages", JSON.stringify(messages));
+    } catch (e) {
+      console.warn("Erreur sauvegarde livechat messages:", e);
+    }
+  }
+
+  function updateOnAirTicker(messages) {
+    if (!onairTickerContent) return;
+    const superchat = messages.slice().reverse().find(m => m.isSuperChat) || messages[0];
+    if (superchat) {
+      onairTickerContent.innerHTML = `
+        <span class="ticker-user">${escapeHtml(superchat.user)}</span>
+        <span class="ticker-text">« ${escapeHtml(superchat.text)} »</span>
+        ${superchat.isSuperChat ? `<span class="ticker-badge">${escapeHtml(superchat.amount || "0.00010 π")}</span>` : ""}
+      `;
+    }
+  }
+
+  function updateLiveChatListeningStation() {
+    if (!livechatStationName) return;
+    const t = TRANSLATIONS[state.lang] || TRANSLATIONS.fr;
+    if (state.currentStation) {
+      const flag = state.currentStation.flag || "📻";
+      const freq = state.currentStation.frequency ? ` (${state.currentStation.frequency})` : "";
+      livechatStationName.textContent = `${flag} ${state.currentStation.name}${freq}`;
+    } else {
+      livechatStationName.textContent = t.liveChatNoStation || "Aucune radio sélectionnée";
+    }
+  }
+
+  function renderLiveChatMessages() {
+    if (!livechatFeed) return;
+    const messages = getLiveChatMessages();
+    updateOnAirTicker(messages);
+
+    livechatFeed.innerHTML = messages.map(msg => {
+      const isSuperChat = !!msg.isSuperChat;
+      return `
+        <div class="chat-msg-row ${isSuperChat ? "superchat" : ""}">
+          <div class="chat-msg-header">
+            <span class="chat-msg-time">[${escapeHtml(msg.time)}]</span>
+            <span class="chat-msg-flag">${escapeHtml(msg.flag || "🌍")}</span>
+            <span class="chat-msg-user">${escapeHtml(msg.user)}</span>
+            ${msg.station ? `<span class="chat-msg-station-badge">🎧 ${escapeHtml(msg.station)}</span>` : ""}
+            ${isSuperChat ? `<span class="superchat-badge-pill">⭐ DÉDICACE OFFICIELLE • ${escapeHtml(msg.amount || "0.00010 π")}</span>` : ""}
+          </div>
+          <div class="chat-msg-text">${escapeHtml(msg.text)}</div>
+        </div>
+      `;
+    }).join("");
+
+    livechatFeed.scrollTop = livechatFeed.scrollHeight;
+  }
+
+  // Flèche de retour depuis le panneau Antenne & Débats
+  if (backFromLivechatBtn) {
+    backFromLivechatBtn.addEventListener("click", () => {
+      state.activeTab = "home";
+      navTabs.forEach(t => {
+        t.classList.toggle("active", t.getAttribute("data-tab") === "home");
+      });
+      renderView();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // Compteur dynamique de caractères
+  if (livechatInput && livechatCharCounter) {
+    livechatInput.addEventListener("input", () => {
+      livechatCharCounter.textContent = livechatInput.value.length;
+    });
+  }
+
+  // Envoi de message gratuit (avec filtre anti-spam 60s)
+  if (sendFreeMessageBtn) {
+    sendFreeMessageBtn.addEventListener("click", () => {
+      if (!livechatInput) return;
+      const text = livechatInput.value.trim();
+      if (!text) {
+        showToast("Veuillez saisir votre message pour participer aux débats.");
+        return;
+      }
+
+      const now = Date.now();
+      const elapsed = Math.floor((now - lastLiveChatPostTime) / 1000);
+      if (lastLiveChatPostTime > 0 && elapsed < 60) {
+        showToast(`Débats modérés : veuillez patienter ${60 - elapsed}s avant votre prochain message.`);
+        return;
+      }
+
+      const nowTime = new Date();
+      const hh = String(nowTime.getHours()).padStart(2, "0");
+      const mm = String(nowTime.getMinutes()).padStart(2, "0");
+
+      const currentStationName = state.currentStation ? `${state.currentStation.name} (${state.currentStation.frequency || 'LIVE'})` : "";
+      const currentFlag = state.currentStation ? (state.currentStation.flag || "🌍") : "🌍";
+      const username = state.user && state.user.username ? `@${state.user.username}` : "@PioneerListener";
+
+      const newMsg = {
+        id: `msg_${Date.now()}`,
+        user: username,
+        flag: currentFlag,
+        country: state.currentStation ? state.currentStation.country : "Global",
+        station: currentStationName,
+        time: `${hh}:${mm}`,
+        text: text,
+        isSuperChat: false
+      };
+
+      const messages = getLiveChatMessages();
+      messages.push(newMsg);
+      saveLiveChatMessages(messages);
+
+      lastLiveChatPostTime = now;
+      livechatInput.value = "";
+      if (livechatCharCounter) livechatCharCounter.textContent = "0";
+
+      renderLiveChatMessages();
+      showToast("Message diffusé sur le fil d'antenne ! 💬");
+    });
+  }
+
+  // Bouton SuperChat (Étape 1 : information et préparation pour l'Étape 2)
+  if (sendSuperChatBtn) {
+    sendSuperChatBtn.addEventListener("click", () => {
+      showToast("⭐ Dédicace d'Antenne (0.00010 π) : Raccordement Pi SDK programmé pour l'Étape 2.");
     });
   }
 

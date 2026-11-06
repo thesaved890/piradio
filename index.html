@@ -85,6 +85,9 @@
       <button class="nav-tab-item" data-tab="sports">
         <span>⚽</span> <span data-i18n="navSports">Sports & Humour</span>
       </button>
+      <button class="nav-tab-item" data-tab="livechat">
+        <span>💬</span> <span data-i18n="navLiveChat">Antenne & Débats</span>
+      </button>
       <button class="nav-tab-item" data-tab="settings">
         <span>⚙️</span> <span data-i18n="navSettings">Paramètres</span>
       </button>
@@ -337,6 +340,86 @@
         </button>
       </div>
     </div>
+
+    <!-- ============================================================
+         PANNEAU ANTENNE & DÉBATS (LIVE ON-AIR FORUM)
+         ============================================================ -->
+    <div class="livechat-panel" id="livechatPanel">
+      <!-- Header avec bouton retour et statut direct -->
+      <div class="livechat-header">
+        <button id="backFromLivechatBtn" class="back-nav-btn" title="Retour à la radio">
+          <span>←</span> <span data-i18n="backToRadio">Retour à la radio</span>
+        </button>
+        <div class="livechat-title-group">
+          <div class="livechat-title-badge-row">
+            <h2 class="livechat-title" data-i18n="liveChatTitle">Antenne & Débats Mondiaux</h2>
+            <span class="livechat-live-pill"><span class="live-dot"></span> LIVE ON-AIR</span>
+          </div>
+          <p class="livechat-subtitle" data-i18n="liveChatSubtitle">
+            Espace officiel d'échange pour les Pionniers et la diaspora autour des émissions en direct.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bandeau téléscripteur officiel "Dédicace d'Antenne" (On-Air Ticker) -->
+      <div class="onair-ticker-bar" id="onairTickerBar">
+        <div class="onair-ticker-tag">
+          <span class="ticker-star">⭐</span>
+          <span data-i18n="liveChatTickerLabel">MESSAGE À L'ANTENNE</span>
+        </div>
+        <div class="onair-ticker-viewport">
+          <div class="onair-ticker-content" id="onairTickerContent">
+            <span class="ticker-user">@PioneerGlobal</span>
+            <span class="ticker-text">« Salutations fraternelles à tous les Pionniers branchés sur Pi Radio ! Unis pour l'Open Mainnet. »</span>
+            <span class="ticker-badge">0.00010 π</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flux des débats et messages (Chronologique, sobre, institutionnel) -->
+      <div class="livechat-feed-container">
+        <div class="livechat-feed" id="livechatFeed">
+          <!-- Les messages s'affichent dynamiquement -->
+        </div>
+      </div>
+
+      <!-- Barre de contribution sobre et professionnelle -->
+      <div class="livechat-composer">
+        <div class="livechat-now-listening-bar" id="livechatNowListeningBar">
+          <div class="listening-indicator">
+            <span class="sound-wave-icon">📻</span>
+            <span class="listening-label" data-i18n="liveChatListeningNow">En écoute :</span>
+            <span class="listening-station-name" id="livechatStationName" data-i18n="liveChatNoStation">Aucune radio sélectionnée</span>
+          </div>
+          <div class="livechat-char-count"><span id="livechatCharCounter">0</span> / 280</div>
+        </div>
+
+        <div class="livechat-input-wrapper">
+          <textarea 
+            id="livechatInput" 
+            class="livechat-textarea" 
+            placeholder="Partagez votre point de vue sur l'émission en cours avec les auditeurs du monde..." 
+            rows="2" 
+            maxlength="280"
+          ></textarea>
+        </div>
+
+        <div class="livechat-footer-row">
+          <div class="livechat-notice">
+            <span>🛡️</span>
+            <span data-i18n="liveChatAntiSpamNotice">Débats respectueux • Cadence modérée de diffusion</span>
+          </div>
+          <div class="livechat-actions">
+            <button id="sendFreeMessageBtn" class="livechat-btn-free">
+              <span>💬</span> <span data-i18n="liveChatSendBtn">Envoyer (Gratuit)</span>
+            </button>
+            <button id="sendSuperChatBtn" class="livechat-btn-superchat" title="Dédicace mise en avant dans le bandeau officiel d'antenne">
+              <span>⭐</span> <span data-i18n="liveChatSuperChatBtn">Dédicace d'Antenne (0.00010 π)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ============================================================
@@ -493,8 +576,8 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script src="translations.js?v=5.29"></script>
-  <script src="stations.js?v=5.29"></script>
-  <script src="app.js?v=5.29"></script>
+  <script src="translations.js?v=5.30"></script>
+  <script src="stations.js?v=5.30"></script>
+  <script src="app.js?v=5.30"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
-// Pi Radio • Service Worker v5.29
+// Pi Radio • Service Worker v5.30
 // Cache App Shell & Mode Hors-Ligne pour PWA avec Logos Officiels
 
-const CACHE_NAME = 'piradio-v5.29';
+const CACHE_NAME = 'piradio-v5.30';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
